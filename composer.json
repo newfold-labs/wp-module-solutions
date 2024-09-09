@@ -1,0 +1,39 @@
+{
+    "name": "newfold-labs/wp-module-pls",
+    "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "aratidgr8",
+            "email": "aratidgr8@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NewfoldLabs\\WP\\Module\\WPSolutions\\": "includes"
+        },
+        "files": [
+            "bootstrap.php"
+        ]
+    },
+    "repositories": {
+        "newfold": {
+            "type": "composer",
+            "url": "https://newfold-labs.github.io/satis/",
+            "only": [
+                "newfold-labs/*"
+            ]
+        }
+    },
+    "require-dev": {
+        "newfold-labs/wp-php-standards": "^1.2",
+        "wp-cli/i18n-command": "^2.4.3"
+    },
+    "require": {},
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
