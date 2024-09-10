@@ -40,6 +40,7 @@
     "@wordpress/date": "^4.55.0",
     "@wordpress/element": "^5.32.0",
     "@wordpress/i18n": "^4.55.0",
+    "ajv": "^8.17.1",
     "classnames": "2.5.1",
     "moment": "^2.29.4",
     "swr": "2.1.5"
@@ -49,7 +50,7 @@
     "@testing-library/cypress": "^10.0.1",
     "@wordpress/dom-ready": "^3.55.0",
     "@wordpress/env": "^9.5.0",
-    "@wordpress/scripts": "27.6.0",
+    "@wordpress/scripts": "^27.6.0",
     "cypress": "^13.7.0",
     "cypress-axe": "^1.5.0",
     "cypress-iframe": "^1.0.1",
