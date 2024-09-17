@@ -1,12 +1,11 @@
 
-import apiFetch from "@wordpress/api-fetch";
 import { Spinner } from "@newfold/ui-component-library";
 import { __ } from "@wordpress/i18n";
 import { AnalyticsSdk } from "./sdk/analytics";
 import { PluginList } from "./components/PluginList";
 
 
-const fetcher = (path) => apiFetch({ url: NewfoldRuntime.createApiUrl(path) });
+
 
 domReady(() => {
   AnalyticsSdk.initialize();
