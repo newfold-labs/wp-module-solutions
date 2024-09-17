@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import apiFetch from "@wordpress/api-fetch";
+import { Spinner } from "@newfold/ui-component-library";
+import { __ } from "@wordpress/i18n";
+import { AnalyticsSdk } from "./sdk/analytics";
+import { PluginList } from "./components/PluginList";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const fetcher = (path) => apiFetch({ url: NewfoldRuntime.createApiUrl(path) });
+
+domReady(() => {
+  AnalyticsSdk.initialize();
+});
+
+
+export function MyPluginsTools(props) {
+  useEffect(() => {
+  }, []);
+
+  if (purchasedSolution === undefined) {
+    return (
+      <div className="nfd-flex nfd-items-center nfd-text-center nfd-justify-center nfd-h-full">
+        <Spinner size="8" className="nfd-text-primary" />
+      </div>
+    );
+  }
+  
+  return (
+    <PluginList keyword="all" />
+  );
+}
