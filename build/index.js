@@ -1073,10 +1073,11 @@ __webpack_require__.r(__webpack_exports__);
 
 // import { ReactComponent as GreenTick } from "../icons/green-tick.svg";
 
-function PluginList() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Content, {
+function PluginList(props) {
+  console.log(props, "props");
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Container, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Content, {
     className: "nfd-core-tool-mypluginsntools"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Hi I am plugin list component", "wp-module-solutions"))));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Hi I am translated plugin list component", "wp-module-solutions"))));
 }
 
 /***/ }),
@@ -1213,9 +1214,9 @@ const Section = {
 
 /***/ }),
 
-/***/ "./src/sdk/analytics.js":
+/***/ "./src/sdk/Analytics.js":
 /*!******************************!*\
-  !*** ./src/sdk/analytics.js ***!
+  !*** ./src/sdk/Analytics.js ***!
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -2399,6 +2400,17 @@ module.exports = window["wp"]["data"];
 
 /***/ }),
 
+/***/ "@wordpress/dom-ready":
+/*!**********************************!*\
+  !*** external ["wp","domReady"] ***!
+  \**********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["domReady"];
+
+/***/ }),
+
 /***/ "@wordpress/element":
 /*!*********************************!*\
   !*** external ["wp","element"] ***!
@@ -2584,34 +2596,48 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MyPluginsTools: () => (/* binding */ MyPluginsTools)
+/* harmony export */   NewfoldSolutions: () => (/* binding */ NewfoldSolutions)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/spinner/index.js");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _sdk_analytics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sdk/analytics */ "./src/sdk/analytics.js");
-/* harmony import */ var _components_PluginList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/PluginList */ "./src/components/PluginList.js");
+/* harmony import */ var _sdk_Analytics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sdk/Analytics */ "./src/sdk/Analytics.js");
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/dom-ready */ "@wordpress/dom-ready");
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_PluginList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/PluginList */ "./src/components/PluginList.js");
 
 
 
 
 
-domReady(() => {
-  _sdk_analytics__WEBPACK_IMPORTED_MODULE_2__.AnalyticsSdk.initialize();
+
+
+_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_3___default()(() => {
+  _sdk_Analytics__WEBPACK_IMPORTED_MODULE_2__.AnalyticsSdk.initialize();
 });
-function MyPluginsTools(props) {
-  useEffect(() => {}, []);
-  if (purchasedSolution === undefined) {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "nfd-flex nfd-items-center nfd-text-center nfd-justify-center nfd-h-full"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      size: "8",
-      className: "nfd-text-primary"
-    }));
-  }
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_PluginList__WEBPACK_IMPORTED_MODULE_3__.PluginList, {
+
+/** @type {import ("..").NewfoldSolutions} */
+function NewfoldSolutions(props) {
+  // const purchasedSolution = "";
+
+  // useEffect(() => {
+
+  //   purchasedSolution = "ecommerce";
+
+  // }, []);
+
+  // if (purchasedSolution === "") {
+  //   return (
+  //     <div className="nfd-flex nfd-items-center nfd-text-center nfd-justify-center nfd-h-full">
+  //       <Spinner size="8" className="nfd-text-primary" />
+  //     </div>
+  //   );
+  // }
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_PluginList__WEBPACK_IMPORTED_MODULE_5__.PluginList, {
     keyword: "all"
   });
 }

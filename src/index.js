@@ -1,10 +1,10 @@
 
 import { Spinner } from "@newfold/ui-component-library";
 import { __ } from "@wordpress/i18n";
-import { AnalyticsSdk } from "./sdk/analytics";
+import { AnalyticsSdk } from './sdk/Analytics';
+import domReady from "@wordpress/dom-ready";
+import { useEffect, useState } from "@wordpress/element";
 import { PluginList } from "./components/PluginList";
-
-
 
 
 domReady(() => {
@@ -12,17 +12,25 @@ domReady(() => {
 });
 
 
-export function MyPluginsTools(props) {
-  useEffect(() => {
-  }, []);
 
-  if (purchasedSolution === undefined) {
-    return (
-      <div className="nfd-flex nfd-items-center nfd-text-center nfd-justify-center nfd-h-full">
-        <Spinner size="8" className="nfd-text-primary" />
-      </div>
-    );
-  }
+/** @type {import ("..").NewfoldSolutions} */
+export function NewfoldSolutions(props) {
+  
+  // const purchasedSolution = "";
+
+  // useEffect(() => {
+
+  //   purchasedSolution = "ecommerce";
+
+  // }, []);
+
+  // if (purchasedSolution === "") {
+  //   return (
+  //     <div className="nfd-flex nfd-items-center nfd-text-center nfd-justify-center nfd-h-full">
+  //       <Spinner size="8" className="nfd-text-primary" />
+  //     </div>
+  //   );
+  // }
   
   return (
     <PluginList keyword="all" />
