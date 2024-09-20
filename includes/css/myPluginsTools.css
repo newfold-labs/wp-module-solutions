@@ -31,3 +31,8 @@ h3.nfd-solutions-availble-list-item-title{
     line-height: 2.15384615;
     min-height: 30px;
 }
+
+/* hide the search field in my plugins && tools tab */
+.wrap.plugin-install-tab-nfd_my_plugins_and_tools .search-form.search-plugins{
+    display: none;
+}

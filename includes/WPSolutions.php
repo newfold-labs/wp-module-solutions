@@ -101,20 +101,7 @@ class WPSolutions {
 
 		echo "hello";
 
-		// $assetsDir = container()->plugin()->url . 'vendor/newfold-labs/wp-module-marketplace/includes/assets/';
-
-		// wp_enqueue_style( 'nfd_plugins_marketplace_css', $assetsDir . 'css/NFDPluginsMarketplace.css', array(), container()->plugin()->version );
-		// wp_enqueue_script( 'nfd_plugins_marketplace_js', $assetsDir . 'js/NFDPluginsMarketplace.js', array(), container()->plugin()->version, true );
-
-		// wp_localize_script(
-		// 	'nfd_plugins_marketplace_js',
-		// 	'nfdPremiumPluginsMarketplace',
-		// 	array(
-		// 		'restApiRoot'            => \get_home_url() . '/index.php?rest_route=',
-		// 		'restApiNonce'           => wp_create_nonce( 'wp_rest' ),
-		// 		'marketplaceDescription' => __( 'Unlock the full potential of your WordPress website with premium plugins from', 'newfold-marketplace-module' ) . ' ' . ucwords( container()->plugin()->id ),
-		// 	)
-		// );
+		
 	}
 
 }
