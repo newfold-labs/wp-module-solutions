@@ -25,6 +25,9 @@ class WPSolutions {
 		// We're trying to avoid adding more stuff to this.
 		$this->container = $container;
 
+		add_filter( 'install_plugins_tabs', array( __CLASS__, 'add_my_plugins_and_tools_tab' ) );
+		add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
+
 		do_action( 'qm/debug', 'Hello from the Solutions module!' );
 	}
 
@@ -70,6 +73,48 @@ class WPSolutions {
 			);
 			\wp_enqueue_script( 'nfd-wpsolutions-dependency' );
 		}
+	}
+
+	/**
+	 * Add "My Plugins & tools" tab to plugins install tabs.
+	 *
+	 * @param array $tabs Collection of tabs.
+	 *
+	 * @return array
+	 */
+	public static function add_my_plugins_and_tools_tab( array $tabs ) {
+		$tabs['nfd_my_plugins_and_tools'] = __( 'My Plugins & Tools', 'wp-module-solutions' );
+
+		return $tabs;
+	}
+
+	/**
+	 * Enqueue assets and set locals.
+	 */
+	public static function my_plugins_and_tools_tab_enqueue_assets() {
+		if ( false === ( isset( $_GET['tab'] ) && 'nfd_my_plugins_and_tools' === $_GET['tab'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			return;
+		}
+		wp_enqueue_style( 'nfd_myplugin_solutions_css', NFD_WPSOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css', array(), '1.0' );
+		wp_enqueue_script('nfd_myplugin_solutions_js', NFD_WPSOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
+		do_action( 'qm/debug', 'Hello from the Solutions module! Ramy' );
+
+		echo "hello";
+
+		// $assetsDir = container()->plugin()->url . 'vendor/newfold-labs/wp-module-marketplace/includes/assets/';
+
+		// wp_enqueue_style( 'nfd_plugins_marketplace_css', $assetsDir . 'css/NFDPluginsMarketplace.css', array(), container()->plugin()->version );
+		// wp_enqueue_script( 'nfd_plugins_marketplace_js', $assetsDir . 'js/NFDPluginsMarketplace.js', array(), container()->plugin()->version, true );
+
+		// wp_localize_script(
+		// 	'nfd_plugins_marketplace_js',
+		// 	'nfdPremiumPluginsMarketplace',
+		// 	array(
+		// 		'restApiRoot'            => \get_home_url() . '/index.php?rest_route=',
+		// 		'restApiNonce'           => wp_create_nonce( 'wp_rest' ),
+		// 		'marketplaceDescription' => __( 'Unlock the full potential of your WordPress website with premium plugins from', 'newfold-marketplace-module' ) . ' ' . ucwords( container()->plugin()->id ),
+		// 	)
+		// );
 	}
 
 }

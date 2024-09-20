@@ -1,0 +1,33 @@
+.nfd-solutions-availble-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-right: 20px;
+}
+
+.nfd-solutions-availble-list-item{
+    display: flex;
+    gap: 12px;
+    background-color: white;
+    border: 1px solid #dcdcde;
+    padding: 20px;
+}
+
+h3.nfd-solutions-availble-list-item-title{
+    margin-top: 0px;
+}
+
+.nfd-solutions-availble-list-item-button{
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    max-width: fit-content;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 2.15384615;
+    min-height: 30px;
+}
