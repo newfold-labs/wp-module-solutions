@@ -4,7 +4,7 @@ import { __ } from "@wordpress/i18n";
 import { AnalyticsSdk } from './sdk/Analytics';
 import domReady from "@wordpress/dom-ready";
 import { useEffect, useState } from "@wordpress/element";
-import { PluginList } from "./components/PluginList";
+import { MyPluginsAndToolList } from "./components/MyPluginsAndToolsList";
 
 
 domReady(() => {
@@ -19,9 +19,7 @@ export function NewfoldSolutions(props) {
   // const purchasedSolution = "";
 
   // useEffect(() => {
-
   //   purchasedSolution = "ecommerce";
-
   // }, []);
 
   // if (purchasedSolution === "") {
@@ -33,6 +31,6 @@ export function NewfoldSolutions(props) {
   // }
   
   return (
-    <PluginList keyword="all" />
+    <MyPluginsAndToolList keyword="all" />
   );
 }

@@ -1048,16 +1048,16 @@ const useSvgAria = (isFocusable = null) => {
 
 /***/ }),
 
-/***/ "./src/components/PluginList.js":
-/*!**************************************!*\
-  !*** ./src/components/PluginList.js ***!
-  \**************************************/
+/***/ "./src/components/MyPluginsAndToolsList.js":
+/*!*************************************************!*\
+  !*** ./src/components/MyPluginsAndToolsList.js ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   PluginList: () => (/* binding */ PluginList)
+/* harmony export */   MyPluginsAndToolList: () => (/* binding */ MyPluginsAndToolList)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -1066,6 +1066,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Section */ "./src/components/Section.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants */ "./src/constants.js");
+
 
 
 
@@ -1073,11 +1075,32 @@ __webpack_require__.r(__webpack_exports__);
 
 // import { ReactComponent as GreenTick } from "../icons/green-tick.svg";
 
-function PluginList(props) {
-  console.log(props, "props");
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Container, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Content, {
+function MyPluginsAndToolList(props) {
+  //console.log(props, "props", Object.values(PluginList)[0], 'plugin list');
+
+  const PluginListArray = Object.values(_constants__WEBPACK_IMPORTED_MODULE_4__.PluginList)[0];
+  let core = [],
+    content = [],
+    customer = [],
+    product = [],
+    sales = [],
+    seo = [],
+    store = [];
+  PluginListArray.map((plugin, index) => {
+    return _constants__WEBPACK_IMPORTED_MODULE_4__.core_tools.includes(plugin['name']) ? core.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.content_monetization.includes(plugin['name']) ? content.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.customer_engagement.includes(plugin['name']) ? customer.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.product_management.includes(plugin['name']) ? product.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.sales_and_checkout.includes(plugin['name']) ? sales.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.search_engine_optimization.includes(plugin['name']) ? seo.push(plugin) : store.push(plugin);
+  });
+
+  //console.log(core, "core", content, "content", customer, "customer", product, "product", sales, "sales", seo, "seo", store, "store")
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Container, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Header, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("My Plugins & Tools", "wp-module-solutions"),
+    anchor: {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add a New Plugin", "wp-module-solutions"),
+      className: "nfd-text-[#196CDF]"
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Content, {
     className: "nfd-core-tool-mypluginsntools"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Hi I am translated plugin list component", "wp-module-solutions"))));
+  }));
 }
 
 /***/ }),
@@ -1126,6 +1149,11 @@ const Header = ({
     title: false,
     className: false,
     onClick: false
+  },
+  anchor = {
+    title: false,
+    className: false,
+    href: false
   }
 }) => {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -1134,7 +1162,10 @@ const Header = ({
     className: "xl:nfd-w-7/12 nfd-flex nfd-flex-col nfd-gap-3"
   }, title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "nfd-text-2xl nfd-font-medium nfd-text-title"
-  }, title), subTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, subTitle)), (primaryAction.title || secondaryAction.title) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, title), subTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, subTitle), anchor && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: anchor.href,
+    className: anchor.className
+  }, anchor.title)), (primaryAction.title || secondaryAction.title) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "xl:nfd-w-5/12 nfd-flex nfd-flex-row-reverse nfd-flex-wrap nfd-gap-3"
   }, primaryAction.title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_2__["default"], {
     as: "button",
@@ -1211,6 +1242,807 @@ const Section = {
   Header,
   Settings
 };
+
+/***/ }),
+
+/***/ "./src/constants.js":
+/*!**************************!*\
+  !*** ./src/constants.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PluginList: () => (/* binding */ PluginList),
+/* harmony export */   content_monetization: () => (/* binding */ content_monetization),
+/* harmony export */   core_tools: () => (/* binding */ core_tools),
+/* harmony export */   customer_engagement: () => (/* binding */ customer_engagement),
+/* harmony export */   product_management: () => (/* binding */ product_management),
+/* harmony export */   sales_and_checkout: () => (/* binding */ sales_and_checkout),
+/* harmony export */   search_engine_optimization: () => (/* binding */ search_engine_optimization),
+/* harmony export */   store_operations: () => (/* binding */ store_operations)
+/* harmony export */ });
+const PluginList = {
+  "entitlements": [{
+    "type": "plugin",
+    "name": "Jetpack Forms",
+    "description": "Offer exclusive content to customers who sign up as members in your store.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "jetpack-forms"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "WonderBlocks",
+    "description": "Build webpages fast with tailored block patterns and page templates.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "wonderblocks"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Affiliate Programs",
+    "description": "Grant your affiliates earnings each time someone purchases from their link.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
+    "status": "",
+    "image": {
+      "primaryImage": "affiliate-programs"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "CreativeMail Email Marketing",
+    "description": "Send newsletters, promotions, updates and transactional e-commerce emails. ",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
+    "status": "",
+    "image": {
+      "primaryImage": "creativemail-email-marketing"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Memberships",
+    "description": "Offer exclusive content to customers who sign up as members in your store.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
+    "status": "",
+    "image": {
+      "primaryImage": "jetpack-forms"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Sensei LMS",
+    "description": "Create beautiful and engaging online courses, lessons, and quizzes.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "sensei-lms"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Advanced Reviews",
+    "description": "Get positive product reviews and use social proof to drive sales.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "advanced-reviews"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Custom Email Templates",
+    "description": "Manage and customize email templates sent from your store.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "custom-email-templates"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Customize My Account Page",
+    "description": "Add videos, files, discount codes, and more to your customers account page. ",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "customize-my-account-page"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Points & Rewards",
+    "description": "Reward customer loyalty with an effective points program.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "points-&-rewards"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Product Filters",
+    "description": "Offer exclusive content to customers who sign up as members in your store.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "product-filters"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Product Search",
+    "description": "Speed up search for your customers with a predictive real-time search engine.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "product-search"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Social Login",
+    "description": "Allow your users to save time and login or signup using their social profiles.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "social-login"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Wishlists",
+    "description": "Let customers add products to lists and share them with family and friends.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "social-login"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Composite Products",
+    "description": "Allow customers to assemble a product using other products from your store.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "composite-products"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "ecomdash",
+    "description": "Boost sales by selling products and services across multiple marketplaces. ",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "ecomdash"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "PDP Tab Manager",
+    "description": "Setup customized tabs in product pages to show all the info you need.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "pdp-tab-manager"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Product Add-Ons & Extra Options",
+    "description": "Add advanced options (free or paid) to your product pages using varied fields.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "product-add-ons-&-extra-options"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Product Catalog Mode",
+    "description": "Encourage customers to contact you for pricing or additional information.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "product-catalog-mode"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Product Comparison",
+    "description": "Compare products to highlight differences and focus on key product features.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "product-comparison"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Bookings & Appointments",
+    "description": "Manage renting or booking of services and items.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "bookings-&-appointments"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Gift Cards",
+    "description": "Offer customizable gift cards with personalized messages for the recipient.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "gift-cards"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Request a Quote",
+    "description": "Hide prices, disable shopping carts, and encourage customers to request a quote for products in your store.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "request-a-quote"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "One-Click Checkout",
+    "description": "Enable an easy and one-quick checkout option (like on Amazon) for users already registered with your store.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "one-click-checkout"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Subscriptions",
+    "description": "Create passive revenue by selling subscription-based products or services.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "subscriptions"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "WonderCart",
+    "description": "Generate more sales with custom upsell, cross-sell and other campaigns.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "wonder-cart"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Yoast Premium",
+    "description": "SEO made easy! Improve your ranking in search engines, boost performance and visibility, and get 24/7 premium support.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "yoast-premium"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Yoast Local SEO",
+    "description": "Increase your online presence and search rank on a local level.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "yoast-local-seo"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Yoast News SEO",
+    "description": "Aim for that top spot in Google's news carousel.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "yoast-new-seo"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Yoast Video SEO",
+    "description": "Automate technical SEO for videos to drive search traffic to your website. ",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "yoast-video-seo"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Yoast WooCommerce SEO",
+    "description": "Unlock extra tools, features, and SEO for your WooCommerce store.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "yoast-woocommerce-seo"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Jetpack",
+    "description": "Security, performance, and marketing tools made by WordPress experts.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "jetpack"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "PDF Invoices",
+    "description": "Generate invoices and create packing slips to speed up the shipping process.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "pdf-invoices"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "SMS Notifications",
+    "description": "You and your customer can stay updated on all order activity via SMS.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "sms-notifications"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }, {
+    "type": "plugin",
+    "name": "Store Locator",
+    "description": "Enable a store locator on your website to help customers find you easily.",
+    "author": {
+      "name": "x",
+      "url": "https://lipsum.com"
+    },
+    "url": "https://lipsum.com/",
+    "download": "https://lipsum.com/",
+    "slug": "",
+    "basename": "",
+    "status": "",
+    "image": {
+      "primaryImage": "store-locator"
+    },
+    "license": {
+      "key": "alkdjlakjdflakj",
+      "storageMethod": "option",
+      "storageName": "hg_license_key",
+      "validUntil": "2024-08-21T18:57:33Z"
+    }
+  }]
+};
+const core_tools = ["Jetpack Forms", "WonderBlocks"];
+const content_monetization = ['Affiliate Programs', 'Sensei LMS', 'Memberships', 'CreativeMail Email Marketing'];
+const customer_engagement = ['Advanced Reviews', 'Custom Email Templates', 'Customize My Account Page', 'Points & Rewards', 'Product Filters', 'Product Search', 'Social Login', 'Wishlists'];
+const product_management = ['Composite Products', 'Product Comparison', 'Product Catalog Mode', 'Product Add-Ons & Extra Options', 'PDP Tab Manager', 'ecomdash'];
+const sales_and_checkout = ['Bookings & Appointments', 'Gift Cards', 'Request a Quote', 'One-Click Checkout', 'Subscriptions', 'WonderCart'];
+const search_engine_optimization = ['Yoast Premium', 'Yoast Local SEO', 'Yoast News SEO', 'Yoast Video SEO', 'Yoast WooCommerce SEO'];
+const store_operations = ['Jetpack', 'PDF Invoices', 'SMS Notifications', 'Store Locator'];
 
 /***/ }),
 
@@ -2607,7 +3439,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_PluginList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/PluginList */ "./src/components/PluginList.js");
+/* harmony import */ var _components_MyPluginsAndToolsList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/MyPluginsAndToolsList */ "./src/components/MyPluginsAndToolsList.js");
 
 
 
@@ -2624,9 +3456,7 @@ function NewfoldSolutions(props) {
   // const purchasedSolution = "";
 
   // useEffect(() => {
-
   //   purchasedSolution = "ecommerce";
-
   // }, []);
 
   // if (purchasedSolution === "") {
@@ -2637,7 +3467,7 @@ function NewfoldSolutions(props) {
   //   );
   // }
 
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_PluginList__WEBPACK_IMPORTED_MODULE_5__.PluginList, {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_MyPluginsAndToolsList__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolList, {
     keyword: "all"
   });
 }

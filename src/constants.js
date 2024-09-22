@@ -1,7 +1,5 @@
 export const PluginList = {
-    "entitlements" :  {
-
-                            "Core Tools" : [
+    "entitlements" :  [                            
                                 {
                                     "type": "plugin",
                                     "name" : "Jetpack Forms",
@@ -39,7 +37,7 @@ export const PluginList = {
                                     "basename": "",
                                     "status": "",                            
                                     "image": {
-                                        "primaryImage": "wonder-blocks"
+                                        "primaryImage": "wonderblocks"
                                     },
                                     "license": {
                                         "key": "alkdjlakjdflakj",
@@ -47,9 +45,8 @@ export const PluginList = {
                                         "storageName": "hg_license_key",
                                         "validUntil": "2024-08-21T18:57:33Z"
                                     }
-                                }
-                            ],
-                            "Content Monetization" : [
+                                },
+                            
                                 {
                                     "type": "plugin",
                                     "name" : "Affiliate Programs",
@@ -141,9 +138,8 @@ export const PluginList = {
                                         "storageName": "hg_license_key",
                                         "validUntil": "2024-08-21T18:57:33Z"
                                     }
-                                }
-                            ],
-                            "Customer Engagement": [
+                                },                            
+                            
                                 {
                                     "type": "plugin",
                                     "name" : "Advanced Reviews",
@@ -327,9 +323,8 @@ export const PluginList = {
                                         "storageName": "hg_license_key",
                                         "validUntil": "2024-08-21T18:57:33Z"
                                     }
-                                },            
-                            ],
-                            "Product Management" : [
+                                },                                        
+                            
                                 {
                                     "type": "plugin",
                                     "name" : "Composite Products",
@@ -467,9 +462,8 @@ export const PluginList = {
                                         "storageName": "hg_license_key",
                                         "validUntil": "2024-08-21T18:57:33Z"
                                     }
-                                },             
-                            ],
-                            "Sales & Checkout" : [
+                                },                                         
+                            
                                 {
                                     "type": "plugin",
                                     "name" : "Bookings & Appointments",
@@ -607,9 +601,8 @@ export const PluginList = {
                                         "storageName": "hg_license_key",
                                         "validUntil": "2024-08-21T18:57:33Z"
                                     }
-                                }, 
-                            ],
-                            "Search Engine Optimization" : [
+                                },                             
+                            
                                 {
                                     "type": "plugin",
                                     "name" : "Yoast Premium",
@@ -724,9 +717,8 @@ export const PluginList = {
                                         "storageName": "hg_license_key",
                                         "validUntil": "2024-08-21T18:57:33Z"
                                     }
-                                },                 
-                            ],
-                            "Store Operations" : [
+                                },                                            
+                            
                                 {
                                     "type": "plugin",
                                     "name" : "Jetpack",
@@ -818,7 +810,44 @@ export const PluginList = {
                                         "storageName": "hg_license_key",
                                         "validUntil": "2024-08-21T18:57:33Z"
                                     }
-                                },                                                             
-                            ]        
-                    }
+                                },                                                                                          
+                        ]
     }
+
+export const core_tools = ["Jetpack Forms", "WonderBlocks"];
+
+export const content_monetization = [   'Affiliate Programs', 
+                                        'Sensei LMS', 
+                                        'Memberships', 
+                                        'CreativeMail Email Marketing'
+                             ];
+
+export const customer_engagement = [    'Advanced Reviews', 
+                                        'Custom Email Templates', 
+                                        'Customize My Account Page', 
+                                        'Points & Rewards', 
+                                        'Product Filters', 
+                                        'Product Search',
+                                        'Social Login',
+                                        'Wishlists'
+                            ];
+
+export const product_management = [ 'Composite Products', 
+                                    'Product Comparison',
+                                    'Product Catalog Mode',
+                                    'Product Add-Ons & Extra Options',
+                                    'PDP Tab Manager',
+                                    'ecomdash'                            
+                                  ];
+
+export const sales_and_checkout = [ 'Bookings & Appointments',
+                                    'Gift Cards',
+                                    'Request a Quote',
+                                    'One-Click Checkout',
+                                    'Subscriptions',
+                                    'WonderCart'
+                                  ];
+
+export const search_engine_optimization = ['Yoast Premium', 'Yoast Local SEO', 'Yoast News SEO', 'Yoast Video SEO', 'Yoast WooCommerce SEO'];
+
+export const store_operations = ['Jetpack', 'PDF Invoices', 'SMS Notifications', 'Store Locator'];
