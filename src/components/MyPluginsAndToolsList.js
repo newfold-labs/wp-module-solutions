@@ -16,7 +16,7 @@ import { MyPluginsAndToolsCard } from "./MyPluginsAndToolsCard";
 
 export function MyPluginsAndToolList(props){
 
-    //console.log(props, "props", Object.values(PluginList)[0], 'plugin list');
+    //console.log(props, "props");
 
     const PluginListArray = Object.values(PluginList)[0];
 

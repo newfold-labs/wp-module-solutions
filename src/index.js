@@ -31,6 +31,6 @@ export function NewfoldSolutions(props) {
   }
   
   return (
-    <MyPluginsAndToolList keyword="all" />
+    <MyPluginsAndToolList searchkeyword="all" />
   );
 }

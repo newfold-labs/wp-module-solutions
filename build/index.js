@@ -1151,7 +1151,7 @@ __webpack_require__.r(__webpack_exports__);
 // import { ReactComponent as GreenTick } from "../icons/green-tick.svg";
 
 function MyPluginsAndToolList(props) {
-  //console.log(props, "props", Object.values(PluginList)[0], 'plugin list');
+  //console.log(props, "props");
 
   const PluginListArray = Object.values(_constants__WEBPACK_IMPORTED_MODULE_4__.PluginList)[0];
   let core = [],
@@ -3647,7 +3647,7 @@ function NewfoldSolutions(props) {
     }));
   }
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_MyPluginsAndToolsList__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolList, {
-    keyword: "all"
+    searchkeyword: "all"
   });
 }
 })();
