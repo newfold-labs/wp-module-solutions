@@ -16,19 +16,19 @@ domReady(() => {
 /** @type {import ("..").NewfoldSolutions} */
 export function NewfoldSolutions(props) {
   
-  // const purchasedSolution = "";
+  const purchasedSolution = "ecommerce";
 
   // useEffect(() => {
   //   purchasedSolution = "ecommerce";
   // }, []);
 
-  // if (purchasedSolution === "") {
-  //   return (
-  //     <div className="nfd-flex nfd-items-center nfd-text-center nfd-justify-center nfd-h-full">
-  //       <Spinner size="8" className="nfd-text-primary" />
-  //     </div>
-  //   );
-  // }
+  if (purchasedSolution === "") {
+    return (
+      <div className="nfd-flex nfd-items-center nfd-text-center nfd-justify-center nfd-h-full">
+        <Spinner size="8" className="nfd-text-primary" />
+      </div>
+    );
+  }
   
   return (
     <MyPluginsAndToolList keyword="all" />

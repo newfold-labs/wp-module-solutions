@@ -10,9 +10,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Jetpack Forms",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "jetpack-forms"
                                     },
@@ -33,9 +33,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "WonderBlocks",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "wonderblocks"
                                     },
@@ -57,9 +57,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Affiliate Programs",
                                     "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "affiliate-programs"
                                     },
@@ -80,9 +80,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "CreativeMail Email Marketing",
                                     "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "creativemail-email-marketing"
                                     },
@@ -103,9 +103,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Memberships",
                                     "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "jetpack-forms"
                                     },
@@ -126,9 +126,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Sensei LMS",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "sensei-lms"
                                     },
@@ -150,9 +150,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Advanced Reviews",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "advanced-reviews"
                                     },
@@ -173,9 +173,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Custom Email Templates",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "custom-email-templates"
                                     },
@@ -196,9 +196,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Customize My Account Page",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "customize-my-account-page"
                                     },
@@ -219,9 +219,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Points & Rewards",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "points-&-rewards"
                                     },
@@ -242,9 +242,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Product Filters",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "product-filters"
                                     },
@@ -265,9 +265,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Product Search",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "product-search"
                                     },
@@ -288,9 +288,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Social Login",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "social-login"
                                     },
@@ -311,9 +311,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Wishlists",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "social-login"
                                     },
@@ -335,9 +335,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Composite Products",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "composite-products"
                                     },
@@ -358,9 +358,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "ecomdash",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "ecomdash"
                                     },
@@ -381,9 +381,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "PDP Tab Manager",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "pdp-tab-manager"
                                     },
@@ -404,9 +404,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Product Add-Ons & Extra Options",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "product-add-ons-&-extra-options"
                                     },
@@ -427,9 +427,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Product Catalog Mode",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "product-catalog-mode"
                                     },
@@ -450,9 +450,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Product Comparison",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "product-comparison"
                                     },
@@ -474,9 +474,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Bookings & Appointments",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "bookings-&-appointments"
                                     },
@@ -497,9 +497,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Gift Cards",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "gift-cards"
                                     },
@@ -520,9 +520,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Request a Quote",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "request-a-quote"
                                     },
@@ -543,9 +543,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "One-Click Checkout",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "one-click-checkout"
                                     },
@@ -566,9 +566,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Subscriptions",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "subscriptions"
                                     },
@@ -589,11 +589,11 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "WonderCart",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
-                                        "primaryImage": "wonder-cart"
+                                        "primaryImage": "wondercart"
                                     },
                                     "license": {
                                         "key": "alkdjlakjdflakj",
@@ -613,9 +613,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Yoast Premium",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "yoast-premium"
                                     },
@@ -636,9 +636,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Yoast Local SEO",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "yoast-local-seo"
                                     },
@@ -659,11 +659,11 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Yoast News SEO",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
-                                        "primaryImage": "yoast-new-seo"
+                                        "primaryImage": "yoast-news-seo"
                                     },
                                     "license": {
                                         "key": "alkdjlakjdflakj",
@@ -682,9 +682,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Yoast Video SEO",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "yoast-video-seo"
                                     },
@@ -705,9 +705,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Yoast WooCommerce SEO",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "yoast-woocommerce-seo"
                                     },
@@ -729,9 +729,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Jetpack",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "jetpack"
                                     },
@@ -752,9 +752,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "PDF Invoices",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "pdf-invoices"
                                     },
@@ -775,9 +775,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "SMS Notifications",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "sms-notifications"
                                     },
@@ -798,9 +798,9 @@ export const PluginList = {
                                     },
                                     "url": "https://lipsum.com/",
                                     "download": "https://lipsum.com/",
-                                    "slug": "",
+                                    "slug": "Store Locator",
                                     "basename": "",
-                                    "status": "",                            
+                                    "status": "active",                            
                                     "image": {
                                         "primaryImage": "store-locator"
                                     },

@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/newfold-labs/wp-module-solutions#readme",
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
     "@newfold-labs/js-utility-ui-analytics": "^1.2.0",
     "@newfold-labs/wp-module-runtime": "^1.0.0",
     "@newfold/ui-component-library": "^1.1.0",

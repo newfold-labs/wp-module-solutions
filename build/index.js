@@ -1061,28 +1061,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/button/index.js");
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/button/index.js");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Section */ "./src/components/Section.js");
+/* harmony import */ var _heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @heroicons/react/24/outline */ "./node_modules/@heroicons/react/24/outline/esm/ChevronDownIcon.js");
+/* harmony import */ var _heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @heroicons/react/24/outline */ "./node_modules/@heroicons/react/24/outline/esm/ChevronUpIcon.js");
+
 
 
 
 
 
 function MyPluginsAndToolsCard(props) {
+  const [collapse, setCollapse] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+  const handleDisplay = () => {
+    setCollapse(!collapse);
+  };
   const {
     tittle,
     pluginsTools
   } = props;
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(tittle, "wp-module-solutions")), pluginsTools.map(plugin => {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(plugin.name, "wp-module-solutions")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(plugin.description, "wp-module-solutions")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "nfd-mt-8 nfd-mb-8 nfd-flex nfd-flex-row " + (collapse ? "" : "nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "nfd-text-[#111729] nfd-text-base nfd-font-bold"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(tittle, "wp-module-solutions")), collapse ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto",
+    onClick: handleDisplay
+  }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: "nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto",
+    onClick: handleDisplay
+  })), collapse ? pluginsTools.map((plugin, index) => {
+    let iconUrl = window.location.origin + "/wp-content/plugins/bluehost-wordpress-plugin/vendor/newfold-labs/wp-module-solutions/src/icons/" + plugin.image['primaryImage'] + ".svg";
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("object", {
+      type: "image/svg+xml",
+      id: plugin.name.replace(/\s/g, '') + '_' + index,
+      height: "48",
+      width: "48",
+      data: iconUrl
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "nfd-flex nfd-flex-col nfd-ml-4"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+      className: "nfd-text-[#000000] nfd-font-medium"
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(plugin.name, "wp-module-solutions")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "nfd-text-[#4A5567] nfd-font-normal nfd-mt-2"
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(plugin.description, "wp-module-solutions"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
       as: "a",
-      href: ""
-    }, plugin.status === "active" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Manage", "wp-module-solutions") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Install", "wp-module-solutions")));
-  }));
+      href: "",
+      className: "nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]",
+      variant: "secondary"
+    }, plugin.status === "active" ? plugin.name === "WonderBlocks" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Build a Webpage", "wp-module-solutions") : plugin.name === "Customize My Account Page" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Customize", "wp-module-solutions") : plugin.name === "Product Filters" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Setup", "wp-module-solutions") : plugin.name === "Product Search" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Configure", "wp-module-solutions") : plugin.name === "Setup Wishlists" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Setup Wishlists", "wp-module-solutions") : plugin.name === "ecomdash" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Manage Sales Channels", "wp-module-solutions") : plugin.name === "Gift Cards" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Configure Gift Cards", "wp-module-solutions") : plugin.name === "WonderCart" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Create a Campaign", "wp-module-solutions") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Manage", "wp-module-solutions") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Install", "wp-module-solutions")));
+  }) : null);
 }
 
 /***/ }),
@@ -1127,8 +1161,8 @@ function MyPluginsAndToolList(props) {
     sales = [],
     seo = [],
     store = [];
-  PluginListArray.map((plugin, index) => {
-    return _constants__WEBPACK_IMPORTED_MODULE_4__.core_tools.includes(plugin['name']) ? core.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.content_monetization.includes(plugin['name']) ? content.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.customer_engagement.includes(plugin['name']) ? customer.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.product_management.includes(plugin['name']) ? product.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.sales_and_checkout.includes(plugin['name']) ? sales.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.search_engine_optimization.includes(plugin['name']) ? seo.push(plugin) : store.push(plugin);
+  PluginListArray.map(plugin => {
+    return _constants__WEBPACK_IMPORTED_MODULE_4__.core_tools.includes(plugin['slug']) ? core.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.content_monetization.includes(plugin['slug']) ? content.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.customer_engagement.includes(plugin['slug']) ? customer.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.product_management.includes(plugin['slug']) ? product.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.sales_and_checkout.includes(plugin['slug']) ? sales.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.search_engine_optimization.includes(plugin['slug']) ? seo.push(plugin) : store.push(plugin);
   });
 
   //console.log(core, "core", content, "content", customer, "customer", product, "product", sales, "sales", seo, "seo", store, "store")
@@ -1336,9 +1370,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Jetpack Forms",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "jetpack-forms"
     },
@@ -1358,9 +1392,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "WonderBlocks",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "wonderblocks"
     },
@@ -1380,9 +1414,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Affiliate Programs",
     "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "affiliate-programs"
     },
@@ -1402,9 +1436,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "CreativeMail Email Marketing",
     "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "creativemail-email-marketing"
     },
@@ -1424,9 +1458,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Memberships",
     "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "jetpack-forms"
     },
@@ -1446,9 +1480,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Sensei LMS",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "sensei-lms"
     },
@@ -1468,9 +1502,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Advanced Reviews",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "advanced-reviews"
     },
@@ -1490,9 +1524,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Custom Email Templates",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "custom-email-templates"
     },
@@ -1512,9 +1546,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Customize My Account Page",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "customize-my-account-page"
     },
@@ -1534,9 +1568,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Points & Rewards",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "points-&-rewards"
     },
@@ -1556,9 +1590,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Product Filters",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "product-filters"
     },
@@ -1578,9 +1612,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Product Search",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "product-search"
     },
@@ -1600,9 +1634,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Social Login",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "social-login"
     },
@@ -1622,9 +1656,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Wishlists",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "social-login"
     },
@@ -1644,9 +1678,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Composite Products",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "composite-products"
     },
@@ -1666,9 +1700,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "ecomdash",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "ecomdash"
     },
@@ -1688,9 +1722,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "PDP Tab Manager",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "pdp-tab-manager"
     },
@@ -1710,9 +1744,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Product Add-Ons & Extra Options",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "product-add-ons-&-extra-options"
     },
@@ -1732,9 +1766,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Product Catalog Mode",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "product-catalog-mode"
     },
@@ -1754,9 +1788,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Product Comparison",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "product-comparison"
     },
@@ -1776,9 +1810,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Bookings & Appointments",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "bookings-&-appointments"
     },
@@ -1798,9 +1832,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Gift Cards",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "gift-cards"
     },
@@ -1820,9 +1854,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Request a Quote",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "request-a-quote"
     },
@@ -1842,9 +1876,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "One-Click Checkout",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "one-click-checkout"
     },
@@ -1864,9 +1898,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Subscriptions",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "subscriptions"
     },
@@ -1886,11 +1920,11 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "WonderCart",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
-      "primaryImage": "wonder-cart"
+      "primaryImage": "wondercart"
     },
     "license": {
       "key": "alkdjlakjdflakj",
@@ -1908,9 +1942,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Yoast Premium",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "yoast-premium"
     },
@@ -1930,9 +1964,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Yoast Local SEO",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "yoast-local-seo"
     },
@@ -1952,11 +1986,11 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Yoast News SEO",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
-      "primaryImage": "yoast-new-seo"
+      "primaryImage": "yoast-news-seo"
     },
     "license": {
       "key": "alkdjlakjdflakj",
@@ -1974,9 +2008,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Yoast Video SEO",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "yoast-video-seo"
     },
@@ -1996,9 +2030,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Yoast WooCommerce SEO",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "yoast-woocommerce-seo"
     },
@@ -2018,9 +2052,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Jetpack",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "jetpack"
     },
@@ -2040,9 +2074,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "PDF Invoices",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "pdf-invoices"
     },
@@ -2062,9 +2096,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "SMS Notifications",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "sms-notifications"
     },
@@ -2084,9 +2118,9 @@ const PluginList = {
     },
     "url": "https://lipsum.com/",
     "download": "https://lipsum.com/",
-    "slug": "",
+    "slug": "Store Locator",
     "basename": "",
-    "status": "",
+    "status": "active",
     "image": {
       "primaryImage": "store-locator"
     },
@@ -3411,6 +3445,88 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 }());
 
 
+/***/ }),
+
+/***/ "./node_modules/@heroicons/react/24/outline/esm/ChevronDownIcon.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@heroicons/react/24/outline/esm/ChevronDownIcon.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+
+function ChevronDownIcon({
+  title,
+  titleId,
+  ...props
+}, svgRef) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    strokeWidth: 1.5,
+    stroke: "currentColor",
+    "aria-hidden": "true",
+    "data-slot": "icon",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("title", {
+    id: titleId
+  }, title) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "m19.5 8.25-7.5 7.5-7.5-7.5"
+  }));
+}
+const ForwardRef = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(ChevronDownIcon);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ForwardRef);
+
+/***/ }),
+
+/***/ "./node_modules/@heroicons/react/24/outline/esm/ChevronUpIcon.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@heroicons/react/24/outline/esm/ChevronUpIcon.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+
+function ChevronUpIcon({
+  title,
+  titleId,
+  ...props
+}, svgRef) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    strokeWidth: 1.5,
+    stroke: "currentColor",
+    "aria-hidden": "true",
+    "data-slot": "icon",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("title", {
+    id: titleId
+  }, title) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "m4.5 15.75 7.5-7.5 7.5 7.5"
+  }));
+}
+const ForwardRef = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(ChevronUpIcon);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ForwardRef);
+
 /***/ })
 
 /******/ 	});
@@ -3494,6 +3610,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/spinner/index.js");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _sdk_Analytics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sdk/Analytics */ "./src/sdk/Analytics.js");
@@ -3515,20 +3632,20 @@ _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_3___default()(() => {
 
 /** @type {import ("..").NewfoldSolutions} */
 function NewfoldSolutions(props) {
-  // const purchasedSolution = "";
+  const purchasedSolution = "ecommerce";
 
   // useEffect(() => {
   //   purchasedSolution = "ecommerce";
   // }, []);
 
-  // if (purchasedSolution === "") {
-  //   return (
-  //     <div className="nfd-flex nfd-items-center nfd-text-center nfd-justify-center nfd-h-full">
-  //       <Spinner size="8" className="nfd-text-primary" />
-  //     </div>
-  //   );
-  // }
-
+  if (purchasedSolution === "") {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "nfd-flex nfd-items-center nfd-text-center nfd-justify-center nfd-h-full"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      size: "8",
+      className: "nfd-text-primary"
+    }));
+  }
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_MyPluginsAndToolsList__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolList, {
     keyword: "all"
   });
