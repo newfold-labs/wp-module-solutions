@@ -3,11 +3,12 @@ import { useEffect, useState } from "@wordpress/element";
 import { __ } from "@wordpress/i18n";
 import { Section } from "./Section";
 import { PluginList, core_tools, content_monetization, customer_engagement, product_management, sales_and_checkout, search_engine_optimization, store_operations } from "../constants";
+import { MyPluginsAndToolsCard } from "./MyPluginsAndToolsCard";
 // import { ReactComponent as GreenTick } from "../icons/green-tick.svg";
 
 
 export function MyPluginsAndToolList(props){
-    
+
     //console.log(props, "props", Object.values(PluginList)[0], 'plugin list');
 
     const PluginListArray = Object.values(PluginList)[0];
@@ -33,88 +34,15 @@ export function MyPluginsAndToolList(props){
                     anchor={{title : __( "Add a New Plugin", "wp-module-solutions" ), className:"nfd-text-[#196CDF]" }} 
                     />
                     <Section.Content className="nfd-core-tool-mypluginsntools">            
-                        {/* {
-                            <>
-                                <h2>{__("Core Tools", "wp-module-solutions")}</h2>
-                                {
-                                    core.map((plugin, index) => {
-                                    return (
-                                        <div>
-                                            <h2>{plugin.name}</h2>
-                                            <p>{plugin.description}</p>
-                                        </div>
-                                    )
-                                    }) 
-                                }
-                                <h2>{__("Content Monetization", "wp-module-solutions")}</h2>
-                                {
-                                    content.map((plugin, index) => {
-                                    return (
-                                        <div>
-                                            <h2>{plugin.name}</h2>
-                                            <p>{plugin.description}</p>
-                                        </div>
-                                    )
-                                    }) 
-                                }
-                                <h2>{__("Customer Engagement", "wp-module-solutions")}</h2>
-                                {
-                                    customer.map((plugin, index) => {
-                                    return (
-                                        <div>
-                                            <h2>{plugin.name}</h2>
-                                            <p>{plugin.description}</p>
-                                        </div>
-                                    )
-                                    }) 
-                                }
-                                <h2>{__("Product Management", "wp-module-solutions")}</h2>
-                                {
-                                    product.map((plugin, index) => {
-                                    return (
-                                        <div>
-                                            <h2>{plugin.name}</h2>
-                                            <p>{plugin.description}</p>
-                                        </div>
-                                    )
-                                    }) 
-                                }
-                                <h2>{__("Sales & Checkout", "wp-module-solutions")}</h2>
-                                {
-                                    sales.map((plugin, index) => {
-                                    return (
-                                        <div>
-                                            <h2>{plugin.name}</h2>
-                                            <p>{plugin.description}</p>
-                                        </div>
-                                    )
-                                    }) 
-                                }
-                                <h2>{__("Search Engine Optimization", "wp-module-solutions")}</h2>
-                                {
-                                    seo.map((plugin, index) => {
-                                    return (
-                                        <div>
-                                            <h2>{plugin.name}</h2>
-                                            <p>{plugin.description}</p>
-                                        </div>
-                                    )
-                                    }) 
-                                }
-                                <h2>{__("Store Operations", "wp-module-solutions")}</h2>       
-                                {
-                                    store.map((plugin, index) => {
-                                    return (
-                                        <div>
-                                            <h2>{plugin.name}</h2>
-                                            <p>{plugin.description}</p>
-                                        </div>
-                                    )
-                                    }) 
-                                }                     
-                            </>
-
-                        } */}
+                        <>
+                            <MyPluginsAndToolsCard tittle="Core Tools" pluginsTools={core} />
+                            <MyPluginsAndToolsCard tittle="Content Monetization" pluginsTools={content} />
+                            <MyPluginsAndToolsCard tittle="Customer Engagement" pluginsTools={customer} />
+                            <MyPluginsAndToolsCard tittle="Product Management" pluginsTools={product} />
+                            <MyPluginsAndToolsCard tittle="Sales & Checkout" pluginsTools={sales} />
+                            <MyPluginsAndToolsCard tittle="Search Engine Optimization" pluginsTools={seo} />
+                            <MyPluginsAndToolsCard tittle="Store Operations" pluginsTools={store} />
+                        </>                        
                     </Section.Content>
                 </Section.Container>     
     )
