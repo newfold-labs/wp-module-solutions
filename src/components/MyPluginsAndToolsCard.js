@@ -28,8 +28,8 @@ export function MyPluginsAndToolsCard(props){
                 }
             </h2>
             {
-                collapse ?
-                pluginsTools.map((plugin, index) => {
+                collapse &&
+                pluginsTools?.map((plugin, index) => {
                     let iconUrl = window.location.origin+"/wp-content/plugins/bluehost-wordpress-plugin/vendor/newfold-labs/wp-module-solutions/src/icons/"+plugin.image['primaryImage']+".svg";
                     return (
                         <div className="nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]">                            
@@ -61,9 +61,7 @@ export function MyPluginsAndToolsCard(props){
                             </Button>
                         </div>
                     )
-                }) 
-                :
-                null
+                })                 
             }
         </>
     )

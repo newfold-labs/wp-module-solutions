@@ -1,22 +1,17 @@
-import { Button } from "@newfold/ui-component-library";
-import { useEffect, useState } from "@wordpress/element";
 import { __ } from "@wordpress/i18n";
-import { Section } from "./Section";
-import { PluginList, 
-        core_tools, 
-        content_monetization, 
-        customer_engagement, 
-        product_management, 
-        sales_and_checkout, 
-        search_engine_optimization,
-        store_operations } from "../constants";
+import {
+    PluginList,
+    content_monetization,
+    core_tools,
+    customer_engagement,
+    product_management,
+    sales_and_checkout,
+    search_engine_optimization
+} from "../constants";
 import { MyPluginsAndToolsCard } from "./MyPluginsAndToolsCard";
-// import { ReactComponent as GreenTick } from "../icons/green-tick.svg";
-
+import { Section } from "./Section";
 
 export function MyPluginsAndToolList(props){
-
-    //console.log(props, "props");
 
     const PluginListArray = Object.values(PluginList)[0];
 
@@ -31,9 +26,7 @@ export function MyPluginsAndToolList(props){
             sales_and_checkout.includes(plugin['slug']) ? sales.push(plugin) :
             search_engine_optimization.includes(plugin['slug']) ? seo.push(plugin) : store.push(plugin))
     });
-
-    //console.log(core, "core", content, "content", customer, "customer", product, "product", sales, "sales", seo, "seo", store, "store")
-
+    
     return(                           
                 <Section.Container>
                     <Section.Header

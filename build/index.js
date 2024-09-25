@@ -1210,7 +1210,7 @@ function MyPluginsAndToolsCard(props) {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto",
     onClick: handleDisplay
-  })), collapse ? pluginsTools.map((plugin, index) => {
+  })), collapse && pluginsTools?.map((plugin, index) => {
     let iconUrl = window.location.origin + "/wp-content/plugins/bluehost-wordpress-plugin/vendor/newfold-labs/wp-module-solutions/src/icons/" + plugin.image['primaryImage'] + ".svg";
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]"
@@ -1232,7 +1232,7 @@ function MyPluginsAndToolsCard(props) {
       className: "nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]",
       variant: "secondary"
     }, plugin.status === "active" ? plugin.name === "WonderBlocks" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Build a Webpage", "wp-module-solutions") : plugin.name === "Customize My Account Page" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Customize", "wp-module-solutions") : plugin.name === "Product Filters" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Setup", "wp-module-solutions") : plugin.name === "Product Search" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Configure", "wp-module-solutions") : plugin.name === "Setup Wishlists" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Setup Wishlists", "wp-module-solutions") : plugin.name === "ecomdash" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Manage Sales Channels", "wp-module-solutions") : plugin.name === "Gift Cards" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Configure Gift Cards", "wp-module-solutions") : plugin.name === "WonderCart" ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Create a Campaign", "wp-module-solutions") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Manage", "wp-module-solutions") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Install", "wp-module-solutions")));
-  }) : null);
+  }));
 }
 
 /***/ }),
@@ -1250,26 +1250,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Section */ "./src/components/Section.js");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants */ "./src/constants.js");
-/* harmony import */ var _MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./MyPluginsAndToolsCard */ "./src/components/MyPluginsAndToolsCard.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants */ "./src/constants.js");
+/* harmony import */ var _MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MyPluginsAndToolsCard */ "./src/components/MyPluginsAndToolsCard.js");
+/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Section */ "./src/components/Section.js");
 
 
 
 
-
-
-
-// import { ReactComponent as GreenTick } from "../icons/green-tick.svg";
 
 function MyPluginsAndToolList(props) {
-  //console.log(props, "props");
-
-  const PluginListArray = Object.values(_constants__WEBPACK_IMPORTED_MODULE_4__.PluginList)[0];
+  const PluginListArray = Object.values(_constants__WEBPACK_IMPORTED_MODULE_2__.PluginList)[0];
   let core = [],
     content = [],
     customer = [],
@@ -1278,38 +1270,35 @@ function MyPluginsAndToolList(props) {
     seo = [],
     store = [];
   PluginListArray.map(plugin => {
-    return _constants__WEBPACK_IMPORTED_MODULE_4__.core_tools.includes(plugin['slug']) ? core.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.content_monetization.includes(plugin['slug']) ? content.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.customer_engagement.includes(plugin['slug']) ? customer.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.product_management.includes(plugin['slug']) ? product.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.sales_and_checkout.includes(plugin['slug']) ? sales.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_4__.search_engine_optimization.includes(plugin['slug']) ? seo.push(plugin) : store.push(plugin);
+    return _constants__WEBPACK_IMPORTED_MODULE_2__.core_tools.includes(plugin['slug']) ? core.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_2__.content_monetization.includes(plugin['slug']) ? content.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_2__.customer_engagement.includes(plugin['slug']) ? customer.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_2__.product_management.includes(plugin['slug']) ? product.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_2__.sales_and_checkout.includes(plugin['slug']) ? sales.push(plugin) : _constants__WEBPACK_IMPORTED_MODULE_2__.search_engine_optimization.includes(plugin['slug']) ? seo.push(plugin) : store.push(plugin);
   });
-
-  //console.log(core, "core", content, "content", customer, "customer", product, "product", sales, "sales", seo, "seo", store, "store")
-
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Container, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Header, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("My Plugins & Tools", "wp-module-solutions"),
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_4__.Section.Container, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_4__.Section.Header, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("My Plugins & Tools", "wp-module-solutions"),
     anchor: {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add a New Plugin", "wp-module-solutions"),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add a New Plugin", "wp-module-solutions"),
       className: "nfd-text-[#196CDF]"
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Content, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_4__.Section.Content, {
     className: "nfd-core-tool-mypluginsntools"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_3__.MyPluginsAndToolsCard, {
     title: "Core Tools",
     pluginsTools: core
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_3__.MyPluginsAndToolsCard, {
     title: "Content Monetization",
     pluginsTools: content
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_3__.MyPluginsAndToolsCard, {
     title: "Customer Engagement",
     pluginsTools: customer
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_3__.MyPluginsAndToolsCard, {
     title: "Product Management",
     pluginsTools: product
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_3__.MyPluginsAndToolsCard, {
     title: "Sales & Checkout",
     pluginsTools: sales
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_3__.MyPluginsAndToolsCard, {
     title: "Search Engine Optimization",
     pluginsTools: seo
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_3__.MyPluginsAndToolsCard, {
     title: "Store Operations",
     pluginsTools: store
   }))));
