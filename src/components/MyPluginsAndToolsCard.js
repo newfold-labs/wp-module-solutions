@@ -1,10 +1,8 @@
 import { Button } from "@newfold/ui-component-library";
-import { useEffect, useState } from "@wordpress/element";
+import { useState } from "@wordpress/element";
 import { __ } from "@wordpress/i18n";
-import { Section } from "./Section";
-import {
-	ChevronDownIcon, ChevronUpIcon
-} from '@heroicons/react/24/outline';
+import { Icon, chevronDown, chevronUp } from '@wordpress/icons';
+
 
 export function MyPluginsAndToolsCard(props){
 
@@ -22,9 +20,9 @@ export function MyPluginsAndToolsCard(props){
                 </span>
                 {
                     collapse ? 
-                    <ChevronDownIcon className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto"  onClick={handleDisplay} /> 
+                    <Icon icon={chevronDown} className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" onClick={handleDisplay} />
                     : 
-                    <ChevronUpIcon className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" onClick={handleDisplay} />
+                    <Icon icon={chevronUp} className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" onClick={handleDisplay} />
                 }
             </h2>
             {
