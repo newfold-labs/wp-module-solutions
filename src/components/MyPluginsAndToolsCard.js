@@ -10,13 +10,13 @@ export function MyPluginsAndToolsCard(props){
     const handleDisplay = () => {
         setCollapse(!collapse)
     }
-    const { tittle, pluginsTools } = props;
+    const { title, pluginsTools } = props;
 
     return(
         <>
             <h2 className={"nfd-mt-8 nfd-mb-8 nfd-flex nfd-flex-row nfd-cursor-pointer "+(collapse ? "" : "nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4")} onClick={handleDisplay}>
                 <span className="nfd-text-[#111729] nfd-text-base nfd-font-bold">
-                    {__(tittle, "wp-module-solutions")}
+                    {__(title, "wp-module-solutions")}
                 </span>
                 {
                     collapse ? 

@@ -1189,7 +1189,7 @@ function MyPluginsAndToolsCard(props) {
     setCollapse(!collapse);
   };
   const {
-    tittle,
+    title,
     pluginsTools
   } = props;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
@@ -1197,7 +1197,7 @@ function MyPluginsAndToolsCard(props) {
     onClick: handleDisplay
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "nfd-text-[#111729] nfd-text-base nfd-font-bold"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(tittle, "wp-module-solutions")), collapse ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(title, "wp-module-solutions")), collapse ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"], {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
     className: "nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto",
     onClick: handleDisplay
@@ -1287,25 +1287,25 @@ function MyPluginsAndToolList(props) {
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Section__WEBPACK_IMPORTED_MODULE_3__.Section.Content, {
     className: "nfd-core-tool-mypluginsntools"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
-    tittle: "Core Tools",
+    title: "Core Tools",
     pluginsTools: core
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
-    tittle: "Content Monetization",
+    title: "Content Monetization",
     pluginsTools: content
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
-    tittle: "Customer Engagement",
+    title: "Customer Engagement",
     pluginsTools: customer
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
-    tittle: "Product Management",
+    title: "Product Management",
     pluginsTools: product
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
-    tittle: "Sales & Checkout",
+    title: "Sales & Checkout",
     pluginsTools: sales
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
-    tittle: "Search Engine Optimization",
+    title: "Search Engine Optimization",
     pluginsTools: seo
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_MyPluginsAndToolsCard__WEBPACK_IMPORTED_MODULE_5__.MyPluginsAndToolsCard, {
-    tittle: "Store Operations",
+    title: "Store Operations",
     pluginsTools: store
   }))));
 }

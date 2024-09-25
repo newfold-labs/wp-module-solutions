@@ -42,13 +42,13 @@ export function MyPluginsAndToolList(props){
                     />
                     <Section.Content className="nfd-core-tool-mypluginsntools">            
                         <>                        
-                            <MyPluginsAndToolsCard tittle="Core Tools" pluginsTools={core} />
-                            <MyPluginsAndToolsCard tittle="Content Monetization" pluginsTools={content} />
-                            <MyPluginsAndToolsCard tittle="Customer Engagement" pluginsTools={customer} />
-                            <MyPluginsAndToolsCard tittle="Product Management" pluginsTools={product} />
-                            <MyPluginsAndToolsCard tittle="Sales & Checkout" pluginsTools={sales} />
-                            <MyPluginsAndToolsCard tittle="Search Engine Optimization" pluginsTools={seo} />
-                            <MyPluginsAndToolsCard tittle="Store Operations" pluginsTools={store} />
+                            <MyPluginsAndToolsCard title="Core Tools" pluginsTools={core} />
+                            <MyPluginsAndToolsCard title="Content Monetization" pluginsTools={content} />
+                            <MyPluginsAndToolsCard title="Customer Engagement" pluginsTools={customer} />
+                            <MyPluginsAndToolsCard title="Product Management" pluginsTools={product} />
+                            <MyPluginsAndToolsCard title="Sales & Checkout" pluginsTools={sales} />
+                            <MyPluginsAndToolsCard title="Search Engine Optimization" pluginsTools={seo} />
+                            <MyPluginsAndToolsCard title="Store Operations" pluginsTools={store} />
                         </>                        
                     </Section.Content>
                 </Section.Container>     
