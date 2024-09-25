@@ -2,6 +2,7 @@ import { Button } from "@newfold/ui-component-library";
 import { useState } from "@wordpress/element";
 import { __ } from "@wordpress/i18n";
 import { Icon, chevronDown, chevronUp } from '@wordpress/icons';
+import classNames from "classnames";
 
 
 export function MyPluginsAndToolsCard(props){
@@ -14,7 +15,8 @@ export function MyPluginsAndToolsCard(props){
 
     return(
         <>
-            <h2 className={"nfd-mt-8 nfd-mb-8 nfd-flex nfd-flex-row nfd-cursor-pointer "+(collapse ? "" : "nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4")} onClick={handleDisplay}>
+            <h2 className={classNames('nfd-mt-8', 'nfd-mb-8', 'nfd-flex', 'nfd-flex-row', 'nfd-cursor-pointer',
+                            { 'nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4': !collapse, })} onClick={handleDisplay}>                     
                 <span className="nfd-text-[#111729] nfd-text-base nfd-font-bold">
                     {__(title, "wp-module-solutions")}
                 </span>
