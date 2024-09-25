@@ -19,8 +19,3 @@ type NewfoldSolutionsProps = {
 };
 
 export type NewfoldSolutions = (props: NewfoldSolutionsProps) => JSX.Element;
-  
-
-  
-  
-  
