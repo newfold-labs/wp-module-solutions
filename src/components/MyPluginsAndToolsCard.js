@@ -16,7 +16,7 @@ export function MyPluginsAndToolsCard(props){
 
     return(
         <>
-            <h2 className={"nfd-mt-8 nfd-mb-8 nfd-flex nfd-flex-row "+(collapse ? "" : "nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4")}>
+            <h2 className={"nfd-mt-8 nfd-mb-8 nfd-flex nfd-flex-row nfd-cursor-pointer "+(collapse ? "" : "nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4")} onClick={handleDisplay}>
                 <span className="nfd-text-[#111729] nfd-text-base nfd-font-bold">
                     {__(tittle, "wp-module-solutions")}
                 </span>

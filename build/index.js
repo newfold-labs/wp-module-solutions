@@ -1085,7 +1085,8 @@ function MyPluginsAndToolsCard(props) {
     pluginsTools
   } = props;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "nfd-mt-8 nfd-mb-8 nfd-flex nfd-flex-row " + (collapse ? "" : "nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4")
+    className: "nfd-mt-8 nfd-mb-8 nfd-flex nfd-flex-row nfd-cursor-pointer " + (collapse ? "" : "nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4"),
+    onClick: handleDisplay
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "nfd-text-[#111729] nfd-text-base nfd-font-bold"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(tittle, "wp-module-solutions")), collapse ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_4__["default"], {

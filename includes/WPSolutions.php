@@ -36,7 +36,7 @@ class WPSolutions {
 	public static function load_php_textdomain() {
 		return I18nService::load_php_translations(
 			'wp-module-solutions',
-			NFD_WPSOLUTIONS_PLUGIN_DIRNAME . '/vendor/newfold-labs/wp-module-solutions/languages'
+			NFD_SOLUTIONS_PLUGIN_DIRNAME . '/vendor/newfold-labs/wp-module-solutions/languages'
 		);
 	}
 
@@ -54,19 +54,19 @@ class WPSolutions {
 	 * Load WP dependencies into the page.
 	 */
 	public function register_assets() {
-		$asset_file = NFD_WPSOLUTIONS_BUILD_DIR . 'index.asset.php';
+		$asset_file = NFD_SOLUTIONS_BUILD_DIR . 'index.asset.php';
 		if ( file_exists( $asset_file ) ) {
 			$asset = require $asset_file;
 			\wp_register_script(
 				'nfd-wpsolutions-dependency',
-				NFD_WPSOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/index.js',
+				NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/index.js',
 				array_merge( $asset['dependencies'], array() ),
 				$asset['version']
 			);
 			I18nService::load_js_translations(
 				'wp-module-solutions',
 				'nfd-wpsolutions-dependency',
-				NFD_WPSOLUTIONS_DIR . '/languages'
+				NFD_SOLUTIONS_DIR . '/languages'
 			);
 			\wp_enqueue_script( 'nfd-wpsolutions-dependency' );
 		}
