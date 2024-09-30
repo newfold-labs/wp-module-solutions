@@ -4,6 +4,7 @@ namespace NewfoldLabs\WP\Module\WPSolutions;
 
 use NewfoldLabs\WP\ModuleLoader\Container;
 use NewfoldLabs\WP\Module\WPSolutions\I18nService;
+use NewfoldLabs\WP\Module\Data\HiiveConnection;
 
 /**
  * Manages all the functionalities for the module.
@@ -26,6 +27,7 @@ class WPSolutions {
 		$this->container = $container;
 
 		do_action( 'qm/debug', 'Hello from the Solutions module!' );
+		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 	}
 
 	/**
@@ -70,6 +72,16 @@ class WPSolutions {
 			);
 			\wp_enqueue_script( 'nfd-wpsolutions-dependency' );
 		}
+	}
+
+	/**
+	 * Initialize the Entitilement API Controller.
+	 */
+	public function init_entitilements_apis(): void {
+		$hiive = new HiiveConnection();
+
+		$entitlements_api = new EntitlementsApi( $hiive );
+		$entitlements_api->register_routes();
 	}
 
 }
