@@ -26,6 +26,9 @@ class WPSolutions {
 		// We're trying to avoid adding more stuff to this.
 		$this->container = $container;
 
+		add_filter( 'install_plugins_tabs', array( __CLASS__, 'add_my_plugins_and_tools_tab' ) );
+		add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
+
 		do_action( 'qm/debug', 'Hello from the Solutions module!' );
 		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 	}
@@ -82,6 +85,35 @@ class WPSolutions {
 
 		$entitlements_api = new EntitlementsApi( $hiive );
 		$entitlements_api->register_routes();
+	}
+
+	/** 
+	 * Add "My Plugins & tools" tab to plugins install tabs.
+	 *
+	 * @param array $tabs Collection of tabs.
+	 *
+	 * @return array
+	 */
+	public static function add_my_plugins_and_tools_tab( array $tabs ) {
+		$tabs['nfd_my_plugins_and_tools'] = __( 'My Plugins & Tools', 'wp-module-solutions' );
+
+		return $tabs;
+	}
+
+	/**
+	 * Enqueue assets and set locals.
+	 */
+	public static function my_plugins_and_tools_tab_enqueue_assets() {
+		if ( false === ( isset( $_GET['tab'] ) && 'nfd_my_plugins_and_tools' === $_GET['tab'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			return;
+		}
+		wp_enqueue_style( 'nfd_myplugin_solutions_css', NFD_WPSOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css', array(), '1.0' );
+		wp_enqueue_script('nfd_myplugin_solutions_js', NFD_WPSOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
+		do_action( 'qm/debug', 'Hello from the Solutions module! Ramy' );
+
+		echo "hello";
+
+		
 	}
 
 }
