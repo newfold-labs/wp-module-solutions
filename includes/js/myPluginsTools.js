@@ -54,18 +54,32 @@ const availblePluginsData = {
 }]
 }
 
-const buildPluginsBlock = ( pluginData ) => {
-    return `<div class="nfd-solutions-availble-list-item">
-                <div><img src=${pluginData?.image?.primaryImage} width="128px" height="128px" /></div>
-                <div><h3 class="nfd-solutions-availble-list-item-title">${pluginData?.name}</h3><p>${pluginData?.description}</p></div>
-                <div><button class="nfd-solutions-availble-list-item-button">Manage</button></div>
-            </div>`;
+
+const getAvailbleProducts = () => {
+const availblePluginsList = fetch("").then(res => res.json())
+}
+class MyPluginTools {
+    constructor() {
+        this.setUpContainer();
+    }
+
+    buildPluginsBlock( pluginData ) {
+        return `<div class="nfd-solutions-availble-list-item">
+        <div><img src=${pluginData?.image?.primaryImage} width="128px" height="128px" /></div>
+        <div><h3 class="nfd-solutions-availble-list-item-title">${pluginData?.name}</h3><p>${pluginData?.description}</p></div>
+        <div><button class="nfd-solutions-availble-list-item-button">Manage</button></div>
+        </div>`;
+    }
+    
+    setUpContainer() {
+        const wpBody = document.getElementById("wpbody-content");
+
+        let myPlugins = document.createElement("div");
+        myPlugins.classList.add("nfd-solutions-availble-list")
+         availblePluginsData?.entitlements?.forEach( ( data ) => ( myPlugins.innerHTML +=  this.buildPluginsBlock(data)   ) );
+         
+        wpBody.appendChild(myPlugins)
+    }
 }
 
-const wpBody = document.getElementById("wpbody-content");
-
-let myPlugins = document.createElement("div");
-myPlugins.classList.add("nfd-solutions-availble-list")
- availblePluginsData?.entitlements?.forEach( ( data ) => ( myPlugins.innerHTML +=  buildPluginsBlock(data)   ) );
- 
-wpBody.appendChild(myPlugins)
+const pluginList = new MyPluginTools();
