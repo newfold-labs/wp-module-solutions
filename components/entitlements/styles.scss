@@ -1,0 +1,14 @@
+.newfold-entitlement {
+    display:flex;
+    flex-direction: row;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #eee;
+    grid-gap: 1rem;
+    align-items: center;
+
+    img {
+        width: 48px;
+        height: 48px;
+    }
+}

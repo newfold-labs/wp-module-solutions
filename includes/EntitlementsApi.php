@@ -79,12 +79,14 @@ class EntitlementsApi {
 	 */
 	public function get_items() {
 
-		// for debugging - use a local json file rather than hiive entitlement endpoint response
-		return file_get_contents( NFD_SOLUTIONS_DIR . '/includes/js/debug.json');
-
+		
 		// If there is no Hiive connection, bail.
 		if(! HiiveConnection::is_connected()) {
-			return;
+			if ( defined('WP_DEBUG') && true === WP_DEBUG ) {
+				// for debugging - use a local json file rather than hiive entitlement endpoint response
+				return new WP_REST_Response( array( 'data' => file_get_contents( NFD_SOLUTIONS_DIR . '/includes/js/debug.json') ), 203 );
+			}
+			return new WP_REST_Response( array( 'message' => 'Not allowed to load entitlements from server.' ), 403 );
 		}
 
 		$entitlements = get_transient( self::TRANSIENT );

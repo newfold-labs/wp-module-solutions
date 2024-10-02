@@ -1,3 +1,4 @@
+import './styles.scss';
 import { Container, Title } from '@newfold/ui-component-library';
 
 const defaults = {
@@ -43,14 +44,14 @@ const Entitlements = ( { methods, constants, ...props } ) => {
 			} )
 			.then( ( response ) => {
                 // check response for data
-                const r = JSON.parse(response);
-                console.log(r);
+                const r = JSON.parse( response.data );
+                console.log( r );
 				if (
 					! r.hasOwnProperty( 'categories' ) ||
 					! r.hasOwnProperty( 'entitlements' )
 				) {
 					setIsError( true );
-                    setIsLoading(false);
+                    setIsLoading( false );
 				} else {
                     setActiveSolution( 
                         validateSolution( r.solution, r.solutions )
@@ -58,9 +59,14 @@ const Entitlements = ( { methods, constants, ...props } ) => {
 					setEntitlementsCategories(
 						validateCategories( r.categories, r.entitlements )
 					);
-                    setIsLoading(false);
+                    setIsLoading( false );
 				}
-			} );
+			} ).catch( ( response ) => {
+                // if a site is not connected to hiive it cannot load entitlements
+                console.log( response.message );
+                setIsLoading( false );
+                setIsError( true );
+            });
 	}, [] );
 
 	/**
@@ -90,9 +96,9 @@ const Entitlements = ( { methods, constants, ...props } ) => {
 		} );
 	};
 
-    const validateSolution = (solution, solutions) => {
-        const activeSolution = solutions.filter( (s) => {
-            return solution == s.sku;
+    const validateSolution = ( solution, solutions ) => {
+        const activeSolution = solutions.filter( ( thesolution ) => {
+            return solution == thesolution.sku;
         });
         return activeSolution[0];
     };
@@ -125,31 +131,38 @@ const Entitlements = ( { methods, constants, ...props } ) => {
         } );
 	};
 
-    const renderCategory = (category) => {
-        console.log( category.name, category.priority);
-        return (
-            <div
-                className={category.className}
-                key={category.className}
-            >
-                <Title as="h2" size="2">
-                    { category.name }
-                </Title>
-                { category.entitlements.length > 0 && renderEntitlementList( category.entitlements ) }
-            </div>
-        );
+    const renderCategory = ( category ) => {
+        return <div
+                    className={ category.className }
+                    key={ category.className }
+                >
+            { category.entitlements.length > 0 &&
+                <>
+                    <Title as="h2" size="2">
+                        { category.name }
+                    </Title>
+                    { renderEntitlementList( category.entitlements ) }
+                </>   
+            }
+            </div>;
     };
 
     const renderEntitlementList = ( entitlements ) => {
-        return entitlements.map( (entitlement) => (
+        return entitlements.map( ( entitlement ) => (
             <div
-                className={`entitlement-${entitlement.slug} entitlement-${entitlement.type}`}
-                key={entitlement.basename}
+                className={`newfold-entitlement entitlement-${entitlement.slug} entitlement-${entitlement.type}`}
+                key={ entitlement.basename }
             >
-                <Title as="h3" size="3">
-                    { entitlement.name }
-                </Title>
-                <p>{entitlement.description}</p>
+                <img className="entitlement-image" src={entitlement.image.primaryImage} />
+                <div>
+                    <Title as="h3" size="3">
+                        { entitlement.name }
+                    </Title>
+                    <p>{ entitlement.description }</p>
+                </div>
+                <a 
+                    href={entitlement.cta.url}
+                >{ entitlement.cta.text }</a>
             </div>
         ) );
     };
@@ -168,22 +181,22 @@ const Entitlements = ( { methods, constants, ...props } ) => {
                 />
             ) }
             { !isLoading && !isError &&
-            <>
-                <Container.Header
-                    title={ constants.text.title +': '+ activeSolution.name }
-                    description={ constants.text.subTitle }
-                />
-                <Container.Block
-                    className={ methods.classNames(
-                        'newfold-entitlements-wrapper',
-                    ) }
-                >
-                    { ! isLoading && ! isError && (
-                        entitlementCategories.map( ( category ) => (
-                            renderCategory(category)
-                        ) )
-                    ) }
-                </Container.Block>
+                <>
+                    <Container.Header
+                        title={ constants.text.title + ': ' + activeSolution.name }
+                        description={ constants.text.subTitle }
+                    />
+                    <Container.Block
+                        className={ methods.classNames(
+                            'newfold-entitlements-wrapper',
+                        ) }
+                    >
+                        { ! isLoading && ! isError && (
+                            entitlementCategories.map( ( category ) => (
+                                renderCategory(category)
+                            ) )
+                        ) }
+                    </Container.Block>
                 </>
             }
 		</>
