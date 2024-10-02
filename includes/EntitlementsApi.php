@@ -1,6 +1,6 @@
 <?php
 
-namespace NewfoldLabs\WP\Module\WPSolutions;
+namespace NewfoldLabs\WP\Module\Solutions;
 
 use NewfoldLabs\WP\Module\Data\HiiveConnection;
 use WP_Error;
@@ -78,6 +78,14 @@ class EntitlementsApi {
 	 * @return \WP_REST_Response|\WP_Error Response object on success, or WP_Error object on failure.
 	 */
 	public function get_items() {
+
+		// for debugging - use a local json file rather than hiive entitlement endpoint response
+		return file_get_contents( NFD_SOLUTIONS_DIR . '/includes/js/debug.json');
+
+		// If there is no Hiive connection, bail.
+		if(! HiiveConnection::is_connected()) {
+			return;
+		}
 
 		$entitlements = get_transient( self::TRANSIENT );
 

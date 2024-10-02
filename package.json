@@ -1,79 +1,10 @@
 {
   "name": "@newfold-labs/wp-module-solutions",
-  "version": "1.0.0",
   "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers.",
-  "main": "build/index.js",
-  "private": true,
-  "scripts": {
-    "prepublishOnly": "npm run build",
-    "build": "wp-scripts build ./src/index.js --config ./scripts/webpack.config.js",
-    "lint": "wp-scripts lint-js ./src/index.js",
-    "start": "wp-scripts start ./src/index.js --config ./scripts/webpack.config.js",
-    "test:unit": "echo \"No tests implemented\"",
-    "test:e2e": "echo \"No tests implemented\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/newfold-labs/wp-module-solutions.git"
-  },
-  "files": [
-    "build/",
-    "*.d.ts",
-    "*.css"
-  ],
-  "types": "index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
-  "author": "arati bhandare",
   "license": "GPL-2.0-or-later",
-  "bugs": {
-    "url": "https://github.com/newfold-labs/wp-module-solutions/issues"
-  },
-  "homepage": "https://github.com/newfold-labs/wp-module-solutions#readme",
+  "private": true,
+  "author": "arati bhandare",
   "dependencies": {
-    "@newfold-labs/js-utility-ui-analytics": "^1.2.0",
-    "@newfold-labs/wp-module-runtime": "^1.0.0",
-    "@newfold/ui-component-library": "^1.1.0",
-    "@reduxjs/toolkit": "2.2.3",
-    "@wordpress/api-fetch": "^6.55.0",
-    "@wordpress/components": "^27.3.0",
-    "@wordpress/date": "^4.55.0",
-    "@wordpress/element": "^5.35.0",
-    "@wordpress/i18n": "^4.58.0",
-    "@wordpress/icons": "^10.8.0",
-    "ajv": "^8.17.1",
-    "classnames": "^2.5.1",
-    "moment": "^2.29.4",
-    "swr": "2.1.5"
-  },
-  "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "@testing-library/cypress": "^10.0.1",
-    "@wordpress/dom-ready": "^3.58.0",
-    "@wordpress/env": "^9.5.0",
-    "@wordpress/scripts": "^27.6.0",
-    "cypress": "^13.7.0",
-    "cypress-axe": "^1.5.0",
-    "cypress-iframe": "^1.0.1",
-    "tailwindcss": "^3.4.1"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@newfold/ui-component-library": "^1.1.0"
   }
 }

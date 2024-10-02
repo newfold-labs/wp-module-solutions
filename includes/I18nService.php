@@ -1,6 +1,6 @@
 <?php
 
-namespace NewfoldLabs\WP\Module\WPSolutions;
+namespace NewfoldLabs\WP\Module\Solutions;
 
 /**
  * Class for handling internationalization.

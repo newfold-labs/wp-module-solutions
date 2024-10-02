@@ -1,15 +1,15 @@
 <?php
 
-namespace NewfoldLabs\WP\Module\WPSolutions;
+namespace NewfoldLabs\WP\Module\Solutions;
 
 use NewfoldLabs\WP\ModuleLoader\Container;
-use NewfoldLabs\WP\Module\WPSolutions\I18nService;
+use NewfoldLabs\WP\Module\Solutions\I18nService;
 use NewfoldLabs\WP\Module\Data\HiiveConnection;
 
 /**
  * Manages all the functionalities for the module.
  */
-class WPSolutions {
+class Solutions {
 	/**
 	 * Dependency injection container.
 	 *
@@ -18,7 +18,7 @@ class WPSolutions {
 	protected $container;
 
 	/**
-	 * Constructor for the WPSolutions class.
+	 * Constructor for the Solutions class.
 	 *
 	 * @param Container $container The module container.
 	 */
@@ -26,10 +26,10 @@ class WPSolutions {
 		// We're trying to avoid adding more stuff to this.
 		$this->container = $container;
 
-		add_filter( 'install_plugins_tabs', array( __CLASS__, 'add_my_plugins_and_tools_tab' ) );
-		add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
+		// add_filter( 'install_plugins_tabs', array( __CLASS__, 'add_my_plugins_and_tools_tab' ) );
+		// add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
 
-		do_action( 'qm/debug', 'Hello from the Solutions module!' );
+		// do_action( 'qm/debug', 'Hello from the Solutions module!' );
 		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 	}
 
@@ -50,7 +50,7 @@ class WPSolutions {
 	 */
 	public function register_textdomains() {
 		$MODULE_LANG_DIR = $this->container->plugin()->dir . 'vendor/newfold-labs/wp-module-solutions/languages';
-		\load_script_textdomain( 'nfd-wpsolutions-dependency', 'wp-module-solutions', $MODULE_LANG_DIR );
+		\load_script_textdomain( 'nfd-solutions-dependency', 'wp-module-solutions', $MODULE_LANG_DIR );
 		$current_language = get_locale();
 		\load_textdomain( 'wp-module-solutions', $MODULE_LANG_DIR . '/wp-module-solutions-' . $current_language . '.mo' );
 	}	
@@ -63,17 +63,17 @@ class WPSolutions {
 		if ( file_exists( $asset_file ) ) {
 			$asset = require $asset_file;
 			\wp_register_script(
-				'nfd-wpsolutions-dependency',
+				'nfd-solutions-dependency',
 				NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/index.js',
 				array_merge( $asset['dependencies'], array() ),
 				$asset['version']
 			);
 			I18nService::load_js_translations(
 				'wp-module-solutions',
-				'nfd-wpsolutions-dependency',
+				'nfd-solutions-dependency',
 				NFD_SOLUTIONS_DIR . '/languages'
 			);
-			\wp_enqueue_script( 'nfd-wpsolutions-dependency' );
+			\wp_enqueue_script( 'nfd-solutions-dependency' );
 		}
 	}
 
@@ -107,13 +107,9 @@ class WPSolutions {
 		if ( false === ( isset( $_GET['tab'] ) && 'nfd_my_plugins_and_tools' === $_GET['tab'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
 		}
-		wp_enqueue_style( 'nfd_myplugin_solutions_css', NFD_WPSOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css', array(), '1.0' );
-		wp_enqueue_script('nfd_myplugin_solutions_js', NFD_WPSOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
-		do_action( 'qm/debug', 'Hello from the Solutions module! Ramy' );
-
-		echo "hello";
-
-		
+		wp_enqueue_style( 'nfd_myplugin_solutions_css', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css', array(), '1.0' );
+		wp_enqueue_script('nfd_myplugin_solutions_js', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
+	
 	}
 
 }
