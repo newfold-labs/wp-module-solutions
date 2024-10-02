@@ -21,6 +21,7 @@ const Header = ({
   className,
   primaryAction = { title: false, className: false, onClick: false },
   secondaryAction = { title: false, className: false, onClick: false },
+  anchor = {title: false, className: false, href: false}
 }) => {
   return (
     <div
@@ -37,6 +38,7 @@ const Header = ({
           </h2>
         )}
         {subTitle && <p>{subTitle}</p>}
+        {anchor && <a href={anchor.href} className={anchor.className}>{anchor.title}</a>}
       </div>
       {(primaryAction.title || secondaryAction.title) && (
         <div className="xl:nfd-w-5/12 nfd-flex nfd-flex-row-reverse nfd-flex-wrap nfd-gap-3">

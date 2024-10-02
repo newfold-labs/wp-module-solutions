@@ -1,5 +1,5 @@
 {
-  "name": "wp-module-solutions",
+  "name": "@newfold-labs/wp-module-solutions",
   "version": "1.0.0",
   "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers.",
   "main": "build/index.js",
@@ -21,6 +21,7 @@
     "*.d.ts",
     "*.css"
   ],
+  "types": "index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
@@ -40,6 +41,7 @@
     "@wordpress/date": "^4.55.0",
     "@wordpress/element": "^5.35.0",
     "@wordpress/i18n": "^4.58.0",
+    "@wordpress/icons": "^10.8.0",
     "ajv": "^8.17.1",
     "classnames": "^2.5.1",
     "moment": "^2.29.4",
@@ -48,7 +50,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@testing-library/cypress": "^10.0.1",
-    "@wordpress/dom-ready": "^3.55.0",
+    "@wordpress/dom-ready": "^3.58.0",
     "@wordpress/env": "^9.5.0",
     "@wordpress/scripts": "^27.6.0",
     "cypress": "^13.7.0",
