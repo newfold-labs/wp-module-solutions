@@ -1,0 +1,26 @@
+.newfold-entitlement {
+    align-items: center;
+    border: 1px solid #eee;
+    display:flex;
+    flex-direction: row;
+    grid-gap: 1rem;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 1rem;
+
+    .entitlement-image {
+        height: auto;
+        max-width: 48px;
+    }
+
+    .entitlement-detail {
+        display: flex;
+        flex-grow: 2;
+        flex-direction: column;
+        grid-gap: .25rem; 
+    }
+
+    .entitlement-cta {
+        text-wrap: nowrap;
+    }
+}

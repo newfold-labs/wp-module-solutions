@@ -1,7 +1,7 @@
 <?php
 
 use NewfoldLabs\WP\ModuleLoader\Container;
-use NewfoldLabs\WP\Module\WPSolutions\WPSolutions;
+use NewfoldLabs\WP\Module\Solutions\Solutions;
 
 use function NewfoldLabs\WP\ModuleLoader\register;
 
@@ -14,7 +14,7 @@ if ( function_exists( 'add_action' ) ) {
 					'name'     => 'wp-module-solutions',
 					'label'    => __( 'wp-module-solutions', 'wp-module-solutions' ),
 					'callback' => function ( Container $container ) {
-						new WPSolutions( $container );
+						new Solutions( $container );
 						define( 'NFD_SOLUTIONS_DIR', __DIR__ );
 						define( 'NFD_SOLUTIONS_BUILD_DIR', __DIR__ . '/build/' );
 						define( 'NFD_SOLUTIONS_PLUGIN_URL', $container->plugin()->url );

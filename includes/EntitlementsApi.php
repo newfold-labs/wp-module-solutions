@@ -1,6 +1,6 @@
 <?php
 
-namespace NewfoldLabs\WP\Module\WPSolutions;
+namespace NewfoldLabs\WP\Module\Solutions;
 
 use NewfoldLabs\WP\Module\Data\HiiveConnection;
 use WP_Error;
@@ -22,7 +22,7 @@ class EntitlementsApi {
 	/**
 	 * Hiive API endpoint for fetching site entitlements.
 	 */
-	const HIIVE_API_ENTITLEMENTS_ENDPOINT = 'sites/v1/entitlements';
+	const HIIVE_API_ENTITLEMENTS_ENDPOINT = '/sites/v1/entitlements';
 
 	/**
 	 * Instance of the HiiveConnection class.
@@ -30,6 +30,8 @@ class EntitlementsApi {
 	 * @var HiiveConnection
 	 */
 	private $hiive;
+	private $namespace;
+	private $rest_base;
 
 	/**
 	 * EntitilementsApi constructor.
@@ -55,7 +57,7 @@ class EntitlementsApi {
 				'methods'             => \WP_REST_Server::READABLE,
 				'callback'            => array( $this, 'get_items' ),
 				'permission_callback' => function () {
-					return current_user_can( 'read' );
+					return current_user_can( 'manage_options' );
 				},
 			)
 		);
@@ -79,32 +81,47 @@ class EntitlementsApi {
 	 */
 	public function get_items() {
 
+		// If there is no Hiive connection, bail.
+		if( ! HiiveConnection::is_connected()) {
+			if ( defined('WP_DEBUG') && true === WP_DEBUG ) {
+				// for debugging - use a local json file rather than hiive entitlement endpoint response
+				return new WP_REST_Response( json_decode( file_get_contents( NFD_SOLUTIONS_DIR . '/includes/js/debug.json' ) ), 218 );
+			}
+			return new WP_REST_Response( array( 'message' => 'Not allowed to load entitlements from server.' ), 403 );
+		}
+
 		$entitlements = get_transient( self::TRANSIENT );
 
 		if ( false === $entitlements ) {
 
-			$args = array(
-				'method' => 'GET'
+			$response = wp_remote_get(
+				NFD_HIIVE_URL . self::HIIVE_API_ENTITLEMENTS_ENDPOINT,
+				array(
+					'headers' => array(
+						'Content-Type'  => 'application/json',
+						'Accept'        => 'application/json',
+						'Authorization' => 'Bearer ' . HiiveConnection::get_auth_token(),
+					),
+				)
 			);
-	
-			$hiive_response = $this->hiive->hiive_request( self::HIIVE_API_ENTITLEMENTS_ENDPOINT, array(), $args );
-	
-			if ( is_wp_error( $hiive_response ) ) {
-				return new \WP_REST_Response( $hiive_response->get_error_message(), 401 );
+			
+			if ( is_wp_error( $response ) ) {
+				return new WP_REST_Response( array( 'message' => 'An error occurred with the entitlements response.' ), 500 );
 			}
-	
-			$status_code = wp_remote_retrieve_response_code( $hiive_response );
-	
-			if ( 200 !== $status_code ) {
-				return new \WP_REST_Response( wp_remote_retrieve_response_message( $hiive_response ), $status_code );
-			}
-	
-			$entitlements = json_decode( wp_remote_retrieve_body( $hiive_response ) );
-			$this->setTransient( $entitlements );
 
+			$body = wp_remote_retrieve_body( $response );
+			$data = json_decode( $body, true );
+			if (
+				$data &&
+				is_array( $data ) &&
+				array_key_exists('solutions', $data) &&
+				array_key_exists('categories', $data)
+			) {
+				$entitlements = $data;
+			}
 		}
 
-		return new \WP_REST_Response( $entitlements, 201 );
+		return new WP_REST_Response( $entitlements, 200 );
 	}
 
 }
