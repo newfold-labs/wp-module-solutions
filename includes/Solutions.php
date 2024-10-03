@@ -26,8 +26,8 @@ class Solutions {
 		// We're trying to avoid adding more stuff to this.
 		$this->container = $container;
 
-		// add_filter( 'install_plugins_tabs', array( __CLASS__, 'add_my_plugins_and_tools_tab' ) );
-		// add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
+		add_filter( 'install_plugins_tabs', array( __CLASS__, 'add_my_plugins_and_tools_tab' ) );
+		add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
 
 		// do_action( 'qm/debug', 'Hello from the Solutions module!' );
 		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
