@@ -49,7 +49,7 @@ const Entitlements = ( { methods, constants, ...props } ) => {
                     console.log( 'Sample entitlements loaded.')
                     r = JSON.parse( response );
                 }
-                console.log(r);
+                // console.log(r);
                 // check response for proper data
 				if (
 					r.hasOwnProperty( 'solution' ) &&
