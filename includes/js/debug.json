@@ -3,299 +3,839 @@
     "entitlements": [
         {
             "type": "plugin",
-            "name": "Miles Armstrong Sr.",
-            "description": "Sed et dolor accusamus ratione expedita quia perspiciatis aspernatur. Quis minus facere ea illo assumenda. Id consequuntur fuga quia similique voluptas corrupti. Et corporis eius necessitatibus.",
-            "longDescription": "Mollitia ut placeat est voluptatum. Autem eum voluptatem qui et iste repellendus. Blanditiis dolores excepturi aut.",
+            "name": "Yoast SEO",
+            "description": "Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.",
+            "longDescription": null,
             "author": {
-                "name": "Mr. Abelardo Kovacek",
-                "url": "http://shanahan.org/provident-eos-et-voluptatem-autem-aut"
+                "name": "Yoast",
+                "url": "https://yoast.com/"
             },
-            "url": "http://dickinson.biz/sit-et-est-unde-ad-qui.html",
+            "url": "https://wordpress.org/plugins/wordpress-seo/",
             "cta": {
-                "text": "Learn More",
-                "url": "http://jacobson.net/pariatur-nam-iusto-magnam-et-ea.html"
+                "text": "Configure",
+                "url": "{siteUrl}/wp-admin/admin.php?page=wpseo_dashboard#top#first-time-configuration"
             },
-            "providerName": "et_delectus",
-            "download": "",
-            "slug": "reba-bergstrom",
-            "basename": "reba-bergstrom/reba-bergstrom.php",
+            "providerName": null,
+            "download": "https://downloads.wordpress.org/plugin/wordpress-seo.latest-stable.zip",
+            "slug": "wp-seo",
+            "basename": "wordpress-seo/wp-seo.php",
             "image": {
-                "primaryImage": "https://via.placeholder.com/640x480.png/0077ee?text=molestiae"
-            },
-            "category": "Payments"
-        },
-        {
-            "type": "feature",
-            "name": "Darryl Homenick MD",
-            "description": "Laborum consectetur vel libero sint quos. Tempore consectetur nobis perferendis aut magni quidem est. Vel dolor fugit voluptas distinctio dolorem.",
-            "longDescription": "Est accusamus est eaque. Autem iure optio a omnis. Excepturi voluptatem hic asperiores.",
-            "author": {
-                "name": "Karina Kihn",
-                "url": "http://www.moen.com/consequatur-delectus-dolor-aut-sit"
-            },
-            "url": "http://mraz.com/eos-quam-impedit-veniam-corrupti-magnam-et.html",
-            "cta": {
-                "text": "Learn More",
-                "url": "http://vandervort.com/quas-soluta-eligendi-aliquam-enim-laborum"
-            },
-            "providerName": "consequatur_eveniet",
-            "download": "",
-            "slug": "vena-macejkovic",
-            "basename": "vena-macejkovic/vena-macejkovic.php",
-            "image": {
-                "primaryImage": "https://via.placeholder.com/640x480.png/008899?text=quasi"
-            },
-            "category": "Store/Business Operations"
-        },
-        {
-            "type": "plugin",
-            "name": "Florence Brekke",
-            "description": "Quaerat est odit ad sunt. Quaerat veritatis rerum et minus consequatur non. Expedita ducimus non aut.",
-            "longDescription": "Sunt cum qui et corrupti recusandae ut eveniet. Ut et qui odio voluptatem provident est quia totam. Et sapiente ut assumenda ab. Quia ut magni veniam consequatur placeat.",
-            "author": {
-                "name": "Zola Quitzon Sr.",
-                "url": "https://okeefe.org/quis-voluptatum-est-voluptatem-facere.html"
-            },
-            "url": "http://oreilly.com/in-pariatur-magnam-quas-mollitia-sunt-sit-esse.html",
-            "cta": {
-                "text": "Learn More",
-                "url": "http://www.bruen.org/et-dolores-ducimus-eligendi-vitae-fugiat-non-est"
-            },
-            "providerName": "veritatis_nisi",
-            "download": "",
-            "slug": "remington-friesen",
-            "basename": "remington-friesen/remington-friesen.php",
-            "image": {
-                "primaryImage": "https://via.placeholder.com/640x480.png/00aa88?text=et"
-            },
-            "category": "Core"
-        },
-        {
-            "type": "theme",
-            "name": "Aric Stark IV",
-            "description": "Repellendus eligendi quidem repellendus suscipit tempore nobis. Ut voluptatibus omnis similique labore quia nulla. Quos quibusdam debitis explicabo cum. Ab quos et eveniet.",
-            "longDescription": "Ea veritatis non eaque sunt quo sit hic. Et quia accusamus voluptates et molestiae tenetur culpa. Eos autem rerum aspernatur suscipit inventore.",
-            "author": {
-                "name": "Olga Kreiger",
-                "url": "http://mohr.org/"
-            },
-            "url": "http://oreilly.com/",
-            "cta": {
-                "text": "Learn More",
-                "url": "http://www.sipes.com/"
-            },
-            "providerName": "",
-            "download": "http://www.murray.info/",
-            "slug": "matilda-schiller",
-            "basename": "matilda-schiller/matilda-schiller.php",
-            "image": {
-                "primaryImage": "https://via.placeholder.com/640x480.png/00ccaa?text=quo"
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/yoast-premium.svg"
             },
             "category": "Search Engine Optimization"
         },
         {
             "type": "plugin",
-            "name": "Jed Mueller",
-            "description": "Nam et reiciendis ducimus quibusdam labore voluptate. Perferendis tempora est autem aspernatur. Perferendis et sint accusamus et ratione. Asperiores nemo velit et sunt minima.",
-            "longDescription": "Officia esse quasi numquam ducimus labore dolorem laboriosam. Ipsa et suscipit eaque harum similique ab eos. Sit ratione iure earum earum. Voluptatum impedit est sed quo non iure et.",
+            "name": "Advanced Reviews",
+            "description": "Get positive product reviews and use social proof to drive sales.",
+            "longDescription": null,
             "author": {
-                "name": "Ahmad Dickens",
-                "url": "https://www.bradtke.com/eos-aliquid-mollitia-minima-numquam"
+                "name": "Example",
+                "url": "https://example.com"
             },
-            "url": "http://www.powlowski.org/",
+            "url": "https://example.com",
             "cta": {
-                "text": "Learn More",
-                "url": "http://www.harber.net/in-sunt-sint-non-aperiam-quos-sed"
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": "placeat_nam",
-            "download": "",
-            "slug": "johnnie-douglas",
-            "basename": "johnnie-douglas/johnnie-douglas.php",
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
             "image": {
-                "primaryImage": "https://via.placeholder.com/640x480.png/007700?text=soluta"
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/advanced-reviews.svg"
+            },
+            "category": "Customer Engagement"
+        },
+        {
+            "type": "plugin",
+            "name": "Custom Email Templates",
+            "description": "Manage and customize email templates sent from your store.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/custom-email-templates.svg"
+            },
+            "category": "Customer Engagement"
+        },
+        {
+            "type": "plugin",
+            "name": "PDF Invoices",
+            "description": "Generate invoices and create packing slips to speed up the shipping process.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/pdf-invoices.svg"
+            },
+            "category": "Store Operations"
+        },
+        {
+            "type": "plugin",
+            "name": "Request a Quote",
+            "description": "Hide prices, disable shopping carts, and encourage customers to request a quote for products in your store.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/request-a-quote.svg"
+            },
+            "category": "Sales & Checkout"
+        },
+        {
+            "type": "plugin",
+            "name": "Product Add-Ons & Extra Options",
+            "description": "Add advanced options (free or paid) to your product pages using varied fields.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/product-add-ons-extra-options.svg"
             },
             "category": "Product Management"
         },
         {
-            "type": "feature",
-            "name": "Lorenza Waelchi",
-            "description": "Qui odit dignissimos unde dolore numquam omnis eos voluptas. Doloremque nulla aperiam sed iusto qui nesciunt eius laborum. Ullam vero nisi debitis assumenda inventore dicta.",
-            "longDescription": "Aut laudantium eaque nulla aut non. Corrupti dolore sapiente nemo aut vel illum ea.",
+            "type": "plugin",
+            "name": "Composite Products",
+            "description": "Allow customers to assemble a product using other products from your store.",
+            "longDescription": null,
             "author": {
-                "name": "Jerrell Heathcote",
-                "url": "http://cremin.com/"
+                "name": "Example",
+                "url": "https://example.com"
             },
-            "url": "https://www.bartoletti.org/veritatis-doloribus-maiores-aspernatur-deleniti-similique-hic-dicta-laudantium",
+            "url": "https://example.com",
             "cta": {
-                "text": "Learn More",
-                "url": "http://yundt.org/ipsum-est-eaque-blanditiis.html"
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": "quibusdam_iure",
-            "download": "",
-            "slug": "jessy-swift",
-            "basename": "jessy-swift/jessy-swift.php",
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
             "image": {
-                "primaryImage": "https://via.placeholder.com/640x480.png/0066ee?text=quae"
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/composite-products.svg"
+            },
+            "category": "Product Management"
+        },
+        {
+            "type": "plugin",
+            "name": "Gift Cards",
+            "description": "Offer customizable gift cards with personalized messages for the recipient.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/gift-cards.svg"
+            },
+            "category": "Sales & Checkout"
+        },
+        {
+            "type": "plugin",
+            "name": "Yoast Local SEO",
+            "description": "Increase your online presence and search rank on a local level.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://yoast.com"
+            },
+            "url": "https://yoast.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/yoast-local-seo.svg"
             },
             "category": "Search Engine Optimization"
         },
         {
             "type": "plugin",
-            "name": "Edgar Kshlerin",
-            "description": "Omnis qui officiis voluptatem. Totam vero explicabo eius porro vero quis doloribus et. Voluptatem cupiditate reprehenderit consequuntur ea qui nam nemo. Et quibusdam perferendis eos.",
-            "longDescription": "Sint aut dicta consequatur inventore. Fugiat quo sit amet temporibus. Dolore nam labore sunt pariatur quidem aliquam corporis.",
+            "name": "Yoast News SEO",
+            "description": "Aim for that top spot in Google's news carousel.",
+            "longDescription": null,
             "author": {
-                "name": "Dr. Benny Smitham Sr.",
-                "url": "http://www.goodwin.biz/"
+                "name": "Example",
+                "url": "https://yoast.com"
             },
-            "url": "https://lynch.biz/assumenda-aut-velit-alias-voluptatem.html",
+            "url": "https://yoast.com",
             "cta": {
-                "text": "Learn More",
-                "url": "http://www.berge.net/odio-libero-quo-molestias-eius"
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": "",
-            "download": "http://dare.com/quos-minus-aut-corporis-dignissimos-voluptate-ab-aliquid-quaerat.html",
-            "slug": "stephany-kemmer",
-            "basename": "stephany-kemmer/stephany-kemmer.php",
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
             "image": {
-                "primaryImage": "https://via.placeholder.com/640x480.png/00ccdd?text=et"
-            },
-            "category": "Core"
-        },
-        {
-            "type": "plugin",
-            "name": "Mr. Chris Yost PhD",
-            "description": "Aperiam accusamus aliquid minus corporis. Quibusdam excepturi commodi qui et numquam ab. Voluptate voluptatem eligendi excepturi similique ipsa enim nesciunt incidunt. Voluptatibus pariatur dolores optio omnis asperiores consequatur.",
-            "longDescription": "Blanditiis consequuntur ab architecto fugiat sit non. Optio delectus nam nostrum voluptatum. Voluptas ut aliquid soluta. Aut modi quia sit rem et consequatur.",
-            "author": {
-                "name": "Mr. Berta Huels",
-                "url": "https://www.wunsch.com/illo-ut-at-totam"
-            },
-            "url": "http://wuckert.org/quia-temporibus-et-aliquam-dolor.html",
-            "cta": {
-                "text": "Learn More",
-                "url": "http://www.osinski.biz/tempore-et-maiores-qui-doloribus-repellat-error-at"
-            },
-            "providerName": "",
-            "download": "http://bosco.com/autem-reiciendis-nihil-laborum-doloremque-odio",
-            "slug": "xzavier-gulgowski",
-            "basename": "xzavier-gulgowski/xzavier-gulgowski.php",
-            "image": {
-                "primaryImage": "https://via.placeholder.com/640x480.png/000066?text=eos"
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/yoast-news-seo.svg"
             },
             "category": "Search Engine Optimization"
         },
         {
-            "type": "theme",
-            "name": "Dr. Ethel Kreiger V",
-            "description": "Minus cupiditate ut sit adipisci autem. Tempora voluptates ut dolore est. Quo officia dignissimos libero at praesentium sit omnis id. Dolor consequatur rerum assumenda.",
-            "longDescription": "Saepe animi a pariatur quo error officiis. Quis a debitis id consequatur eos. Mollitia eveniet laudantium ut.",
+            "type": "plugin",
+            "name": "Product Comparison",
+            "description": "Compare products to highlight differences and focus on key product features.",
+            "longDescription": null,
             "author": {
-                "name": "Mrs. Cayla Stehr DDS",
-                "url": "http://www.leuschke.com/laboriosam-omnis-possimus-provident-expedita-natus-beatae.html"
+                "name": "Example",
+                "url": "https://example.com"
             },
-            "url": "http://www.fritsch.biz/iure-cupiditate-velit-hic",
+            "url": "https://example.com",
             "cta": {
-                "text": "Learn More",
-                "url": "http://gerlach.com/in-quisquam-debitis-error-iusto-recusandae-est"
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": "",
-            "download": "http://rath.info/excepturi-saepe-quia-consequatur-asperiores-fugit",
-            "slug": "allene-emard",
-            "basename": "allene-emard/allene-emard.php",
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
             "image": {
-                "primaryImage": "https://via.placeholder.com/640x480.png/007711?text=dolor"
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/product-comparison.svg"
             },
-            "category": "Store/Business Operations"
+            "category": "Product Management"
         },
         {
             "type": "plugin",
-            "name": "Keely Hirthe",
-            "description": "Cum vel facere officia aut rem. Nulla quaerat quidem nemo reiciendis. Delectus mollitia maiores architecto enim iste. Expedita quia velit rerum omnis. Animi vel ad ipsum et blanditiis.",
-            "longDescription": "Architecto illum expedita quia nulla placeat. Et iste cum sed dolorem ipsum accusantium culpa iusto.",
+            "name": "Yoast WooCommerce SEO",
+            "description": "Unlock extra tools, features, and SEO for your WooCommerce store.",
+            "longDescription": null,
             "author": {
-                "name": "Aurelia Homenick",
-                "url": "http://www.sporer.com/enim-architecto-vitae-qui"
+                "name": "Yoast",
+                "url": "https://yoast.com"
             },
-            "url": "http://stiedemann.com/",
+            "url": "https://yoast.com",
             "cta": {
-                "text": "Learn More",
-                "url": "http://larkin.com/enim-esse-harum-esse-dolorem-qui-nam"
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": "",
-            "download": "http://www.heidenreich.com/",
-            "slug": "lina-o'conner",
-            "basename": "lina-o'conner/lina-o'conner.php",
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
             "image": {
-                "primaryImage": "https://via.placeholder.com/640x480.png/00bb77?text=sit"
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/yoast-woocommerce-seo.svg"
             },
-            "category": "Payments"
+            "category": "Search Engine Optimization"
+        },
+        {
+            "type": "plugin",
+            "name": "One-Click Checkout",
+            "description": "Enable an easy and one-quick checkout option (like on Amazon) for users already registered with your store.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/one-click-checkout.svg"
+            },
+            "category": "Sales & Checkout"
+        },
+        {
+            "type": "plugin",
+            "name": "Subscriptions",
+            "description": "Create passive revenue by selling subscription-based products or services.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/subscriptions.svg"
+            },
+            "category": "Sales & Checkout"
+        },
+        {
+            "type": "plugin",
+            "name": "Creative Email Marketing",
+            "description": "Send newsletters, promotions, updates and transactional e-commerce emails.",
+            "longDescription": null,
+            "author": {
+                "name": "Newfold Digital",
+                "url": "https://newfold.com"
+            },
+            "url": "https://wordpress.org/plugins/creative-mail-by-constant-contact/",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=creativemail"
+            },
+            "providerName": null,
+            "download": "https://downloads.wordpress.org/plugin/creative-mail-by-constant-contact.zip",
+            "slug": "creative-mail-plugin",
+            "basename": "creative-mail-by-constant-contact/creative-mail-plugin.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/creativemail-email-marketing.svg"
+            },
+            "category": "Content Monetization"
+        },
+        {
+            "type": "plugin",
+            "name": "Product Search",
+            "description": "Speed up search for your customers with a predictive real-time search engine.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/product-search.svg"
+            },
+            "category": "Customer Engagement"
+        },
+        {
+            "type": "plugin",
+            "name": "PDP Tab Manager",
+            "description": "Setup customized tabs in product pages to show all the info you need.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/pdp-tab-manager.svg"
+            },
+            "category": "Product Management"
+        },
+        {
+            "type": "plugin",
+            "name": "Social Login",
+            "description": "Allow your users to save time and login or signup using their social profiles.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/social-login.svg"
+            },
+            "category": "Customer Engagement"
+        },
+        {
+            "type": "plugin",
+            "name": "ecomdash",
+            "description": "Security, performance, and marketing tools made by WordPress experts.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://automattic.com/"
+            },
+            "url": "https://jetpack.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/ecomdash.svg"
+            },
+            "category": "Store Operations"
+        },
+        {
+            "type": "plugin",
+            "name": "Memberships",
+            "description": "Offer exclusive content to customers who sign up as members in your store.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https://yith.com"
+            },
+            "url": "https://yith.com/tbd/memberships/",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/"
+            },
+            "providerName": null,
+            "download": "https://yith.com/tbd/memberships/tbd.zip",
+            "slug": "memberships",
+            "basename": "yith-memberships/memberships.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/memberships.svg"
+            },
+            "category": "Content Monetization"
+        },
+        {
+            "type": "plugin",
+            "name": "Jetpack Forms",
+            "description": "Capture contacts, leads, and questions from your posts and pages",
+            "longDescription": "Build a robust contact list and manage subscriber relationships effectively, enhancing your marketing efforts.",
+            "author": {
+                "name": "Automattic",
+                "url": "https://jetpack.com/"
+            },
+            "url": "https://jetpack.com/",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/edit.php?post_type=feedback"
+            },
+            "providerName": null,
+            "download": "https://tbd.com/jetpack.zip",
+            "slug": "jetpack",
+            "basename": "jetpack/jetpack.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/jetpack-forms.svg"
+            },
+            "category": "Core Tools"
+        },
+        {
+            "type": "plugin",
+            "name": "Points & Rewards",
+            "description": "Reward customer loyalty with an effective points program.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/points-rewards.svg"
+            },
+            "category": "Customer Engagement"
+        },
+        {
+            "type": "plugin",
+            "name": "SMS Notifications",
+            "description": "You and your customer can stay updated on all order activity via SMS.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/sms-notifications.svg"
+            },
+            "category": "Store Operations"
+        },
+        {
+            "type": "plugin",
+            "name": "Bookings & Appointments",
+            "description": "Manage renting or booking of services and items.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/bookings-appointments.svg"
+            },
+            "category": "Sales & Checkout"
+        },
+        {
+            "type": "plugin",
+            "name": "Store Locator",
+            "description": "Enable a store locator on your website to help customers find you easily.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/store-locator.svg"
+            },
+            "category": "Store Operations"
+        },
+        {
+            "type": "plugin",
+            "name": "Product Filters",
+            "description": "Offer exclusive content to customers who sign up as members in your store.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/product-filters.svg"
+            },
+            "category": "Customer Engagement"
+        },
+        {
+            "type": "plugin",
+            "name": "Affiliate Programs",
+            "description": "Grant your affiliates earnings each time someone purchases from their link.",
+            "longDescription": null,
+            "author": {
+                "name": "Bluehost",
+                "url": "https://bluehost.com"
+            },
+            "url": "https://tbd.com/",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/wonderblocks-example"
+            },
+            "providerName": null,
+            "download": "https://tbd.com/tbd.zip",
+            "slug": "commerce-entitlement",
+            "basename": "commerce-entitlement/commerce-entitlement.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/affiliate-programs.svg"
+            },
+            "category": "Content Monetization"
+        },
+        {
+            "type": "plugin",
+            "name": "Product Catalog Mode",
+            "description": "Encourage customers to contact you for pricing or additional information.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/product-catalog-mode.svg"
+            },
+            "category": "Product Management"
+        },
+        {
+            "type": "plugin",
+            "name": "Wishlists",
+            "description": "Let customers add products to lists and share them with family and friends.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/wishlists.svg"
+            },
+            "category": "Customer Engagement"
+        },
+        {
+            "type": "plugin",
+            "name": "Yoast Video SEO",
+            "description": "Automate technical SEO for videos to drive search traffic to your website.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://yoast.com"
+            },
+            "url": "https://yoast.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/yoast-video-seo.svg"
+            },
+            "category": "Search Engine Optimization"
+        },
+        {
+            "type": "plugin",
+            "name": "WonderCart",
+            "description": "Generate more sales with custom upsell, cross-sell and other campaigns.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/wondercart.svg"
+            },
+            "category": "Sales & Checkout"
+        },
+        {
+            "type": "plugin",
+            "name": "Customize My Account Page",
+            "description": "Add videos, files, discount codes, and more to your customers account page.",
+            "longDescription": null,
+            "author": {
+                "name": "Example",
+                "url": "https://example.com"
+            },
+            "url": "https://example.com",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+            },
+            "providerName": null,
+            "download": "https://example.com/example.zip",
+            "slug": "example",
+            "basename": "example.com/example.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/customize-my-account-page.svg"
+            },
+            "category": "Customer Engagement"
+        },
+        {
+            "type": "plugin",
+            "name": "WonderBlocks",
+            "description": "Build webpages fast with tailored block patterns and page templates.",
+            "longDescription": "Build webpages fast with tailored block patterns and page templates and then some.",
+            "author": {
+                "name": "Bluehost",
+                "url": "https://bluehost.com"
+            },
+            "url": null,
+            "cta": {
+                "text": "Build a Webpage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/wonderblocks-example"
+            },
+            "providerName": null,
+            "download": "https://tbd.com/wonderblocks.zip",
+            "slug": "wonderblocks",
+            "basename": "wonderblocks/wonderblocks.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/wonderblocks.svg"
+            },
+            "category": "Core Tools"
         }
     ],
     "categories": [
         {
-            "name": "Store/Business Operations",
-            "priority": 60
-        },
-        {
-            "name": "Content Monetization",
-            "priority": 40
-        },
-        {
-            "name": "Payments",
-            "priority": 20
+            "name": "Store Operations",
+            "priority": 70
         },
         {
             "name": "Search Engine Optimization",
-            "priority": 30
-        },
-        {
-            "name": "Customer Engagement",
-            "priority": 70
+            "priority": 60
         },
         {
             "name": "Sales & Checkout",
             "priority": 50
         },
         {
-            "name": "Product Management",
-            "priority": 80
+            "name": "Content Monetization",
+            "priority": 20
         },
         {
-            "name": "Core",
+            "name": "Core Tools",
             "priority": 10
+        },
+        {
+            "name": "Customer Engagement",
+            "priority": 30
+        },
+        {
+            "name": "Product Management",
+            "priority": 40
         }
     ],
     "solutions": [
         {
-            "name": "Commerce",
-            "sku": "WP_SOLUTION_COMMERCE",
-            "description": "Harum et et hic neque. Ut alias rerum corrupti velit reiciendis maiores qui rerum.",
-            "price": "29.37",
-            "fullPrice": "38.51",
-            "url": "http://kiehn.org/aliquam-ipsum-totam-ut-et",
-            "ctbId": null,
-            "features": null
-        },
-        {
             "name": "Services",
             "sku": "WP_SOLUTION_SERVICE",
-            "description": "Minima totam laborum earum. Odit molestiae vel sed. Delectus et qui est reiciendis est reiciendis quia.",
-            "price": "24.38",
-            "fullPrice": "38.69",
-            "url": "http://www.watsica.org/doloribus-aut-non-dolorem.html",
+            "description": "Boost local visibility and streamline your business operations with specialized tools",
+            "price": "0.00",
+            "fullPrice": "0.00",
+            "url": null,
             "ctbId": null,
-            "features": null
+            "features": [
+                "Includes the <strong>Content Creator bundle</strong>",
+                "8 Exclusive Local Business Plugins",
+                "Integrated Invoicing",
+                "Local Social Media and SEO Plugins"
+            ]
+        },
+        {
+            "name": "Commerce",
+            "sku": "WP_SOLUTION_COMMERCE",
+            "description": "Promote, sell, and grow your online store with powerful eCommerce tools.",
+            "price": "0.00",
+            "fullPrice": "0.00",
+            "url": null,
+            "ctbId": null,
+            "features": [
+                "Includes the <strong>Service Business</strong> bundle",
+                "Express 1-Click Checkout",
+                "24 Exclusive eCommerce Plugins",
+                "Customizable Customer Account Creation"
+            ]
         },
         {
             "name": "Content Creator",
             "sku": "WP_SOLUTION_CREATOR",
-            "description": "Fuga quae consectetur at accusamus. At soluta nostrum itaque eveniet quia ut. Est enim eos qui perspiciatis.",
-            "price": "20.79",
-            "fullPrice": "38.06",
-            "url": "http://www.jaskolski.biz/nulla-sequi-rerum-ratione-nobis-doloribus",
+            "description": "Manage your site, build your brand, and monetize your content with essential tools.",
+            "price": "0.00",
+            "fullPrice": "0.00",
+            "url": null,
             "ctbId": null,
-            "features": null
+            "features": [
+                "Monetize Content with Ease",
+                "4 Exclusive Social Media Plugins",
+                "6 Exclusive Marketing Plugins",
+                "Secure Payment Gateway Included"
+            ]
         }
     ]
 }
