@@ -1,5 +1,5 @@
 import './styles.scss';
-import { Container, Title } from '@newfold/ui-component-library';
+import { Container, Title, Button } from '@newfold/ui-component-library';
 
 const defaults = {
 	eventEndpoint: '/newfold-data/v1/events/',
@@ -43,22 +43,30 @@ const Entitlements = ( { methods, constants, ...props } ) => {
 				),
 			} )
 			.then( ( response ) => {
-                // check response for data
-                const r = JSON.parse( response.data );
-                console.log( r );
+                let r = response;
+                // if response is not already json parse it (debug mode)
+                if ( typeof r === 'string' ) {
+                    console.log( 'Sample entitlements loaded.')
+                    r = JSON.parse( response );
+                }
+                // console.log(r);
+                // check response for proper data
 				if (
-					! r.hasOwnProperty( 'categories' ) ||
-					! r.hasOwnProperty( 'entitlements' )
+					r.hasOwnProperty( 'solution' ) &&
+					r.hasOwnProperty( 'solutions' ) &&
+					r.hasOwnProperty( 'entitlements' ) &&
+					r.hasOwnProperty( 'categories' )
 				) {
-					setIsError( true );
-                    setIsLoading( false );
-				} else {
                     setActiveSolution( 
                         validateSolution( r.solution, r.solutions )
                     );
 					setEntitlementsCategories(
 						validateCategories( r.categories, r.entitlements )
 					);
+                    setIsLoading( false );
+				} else {
+                    console.log( 'Invalid or malformed entitlements response.' );
+					setIsError( true );
                     setIsLoading( false );
 				}
 			} ).catch( ( response ) => {
@@ -142,27 +150,34 @@ const Entitlements = ( { methods, constants, ...props } ) => {
                         { category.name }
                     </Title>
                     { renderEntitlementList( category.entitlements ) }
-                </>   
+                </>
             }
             </div>;
     };
+    
+    const renderCTAUrl = ( url ) => {
+        return url.replace('{siteUrl}', window.NewfoldRuntime.base_url);
+    };
 
     const renderEntitlementList = ( entitlements ) => {
-        return entitlements.map( ( entitlement ) => (
+        return entitlements.map( ( entitlement, i ) => (
             <div
                 className={`newfold-entitlement entitlement-${entitlement.slug} entitlement-${entitlement.type}`}
-                key={ entitlement.basename }
+                key={ entitlement.basename + i }
             >
                 <img className="entitlement-image" src={entitlement.image.primaryImage} />
-                <div>
+                <div className="entitlement-detail">
                     <Title as="h3" size="3">
                         { entitlement.name }
                     </Title>
                     <p>{ entitlement.description }</p>
                 </div>
-                <a 
-                    href={entitlement.cta.url}
-                >{ entitlement.cta.text }</a>
+                <Button
+                    as="a"
+                    className="entitlement-cta"
+                    href={ renderCTAUrl( entitlement.cta.url ) }
+                    variant="secondary"
+                >{ entitlement.cta.text }</Button>
             </div>
         ) );
     };
