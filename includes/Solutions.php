@@ -29,7 +29,6 @@ class Solutions {
 		add_filter( 'install_plugins_tabs', array( __CLASS__, 'add_my_plugins_and_tools_tab' ) );
 		add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
 
-		// do_action( 'qm/debug', 'Hello from the Solutions module!' );
 		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 	}
 
@@ -49,10 +48,10 @@ class Solutions {
 	 * Load the textdomains for the module.
 	 */
 	public function register_textdomains() {
-		$MODULE_LANG_DIR = $this->container->plugin()->dir . 'vendor/newfold-labs/wp-module-solutions/languages';
-		\load_script_textdomain( 'nfd-solutions-dependency', 'wp-module-solutions', $MODULE_LANG_DIR );
+		$module_lang_dir = $this->container->plugin()->dir . 'vendor/newfold-labs/wp-module-solutions/languages';
+		\load_script_textdomain( 'nfd-solutions-dependency', 'wp-module-solutions', $module_lang_dir );
 		$current_language = get_locale();
-		\load_textdomain( 'wp-module-solutions', $MODULE_LANG_DIR . '/wp-module-solutions-' . $current_language . '.mo' );
+		\load_textdomain( 'wp-module-solutions', $module_lang_dir . '/wp-module-solutions-' . $current_language . '.mo' );
 	}
 
 	/**
@@ -95,7 +94,13 @@ class Solutions {
 	 * @return array
 	 */
 	public static function add_my_plugins_and_tools_tab( array $tabs ) {
-		$tabs['nfd_my_plugins_and_tools'] = __( 'My Plugins & Tools', 'wp-module-solutions' );
+		// $hiive        = new HiiveConnection();
+		// $api          = new EntitlementsApi( $hiive );
+		// $entitlements = $api->get_items();
+		// if ( $entitlements->data->entitlements ) {
+			$tabs['nfd_my_plugins_and_tools'] = __( 'My Plugins & Tools', 'wp-module-solutions' );
+
+		// }
 
 		return $tabs;
 	}
@@ -109,13 +114,5 @@ class Solutions {
 		}
 		wp_enqueue_style( 'nfd_myplugin_solutions_css', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css', array(), '1.0' );
 		wp_enqueue_script( 'nfd_myplugin_solutions_js', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
-		wp_localize_script(
-			'nfd_myplugin_solutions_js',
-			'pluigin_details',
-			array(
-				'installed_plugins' => get_plugins(),
-				'active_plugins'    => get_option( 'active_plugins' ),
-			)
-		);
 	}
 }
