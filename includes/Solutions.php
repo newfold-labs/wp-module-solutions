@@ -53,7 +53,7 @@ class Solutions {
 		\load_script_textdomain( 'nfd-solutions-dependency', 'wp-module-solutions', $MODULE_LANG_DIR );
 		$current_language = get_locale();
 		\load_textdomain( 'wp-module-solutions', $MODULE_LANG_DIR . '/wp-module-solutions-' . $current_language . '.mo' );
-	}	
+	}
 
 	/**
 	 * Load WP dependencies into the page.
@@ -87,7 +87,7 @@ class Solutions {
 		$entitlements_api->register_routes();
 	}
 
-	/** 
+	/**
 	 * Add "My Plugins & tools" tab to plugins install tabs.
 	 *
 	 * @param array $tabs Collection of tabs.
@@ -108,11 +108,14 @@ class Solutions {
 			return;
 		}
 		wp_enqueue_style( 'nfd_myplugin_solutions_css', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css', array(), '1.0' );
-		wp_enqueue_script('nfd_myplugin_solutions_js', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
-		wp_localize_script( 'nfd_myplugin_solutions_js', 'pluigin_details', array(
-			'installed_plugins' => get_plugins(),
-			'active_plugins'	=> get_option( 'active_plugins' )
-		) );
+		wp_enqueue_script( 'nfd_myplugin_solutions_js', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
+		wp_localize_script(
+			'nfd_myplugin_solutions_js',
+			'pluigin_details',
+			array(
+				'installed_plugins' => get_plugins(),
+				'active_plugins'    => get_option( 'active_plugins' ),
+			)
+		);
 	}
-
 }

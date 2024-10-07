@@ -30,7 +30,19 @@ class EntitlementsApi {
 	 * @var HiiveConnection
 	 */
 	private $hiive;
+
+	/**
+	 * REST namespace
+	 *
+	 * @var string
+	 */
 	private $namespace;
+
+	/**
+	 * REST base
+	 *
+	 * @var string
+	 */
 	private $rest_base;
 
 	/**
@@ -66,7 +78,7 @@ class EntitlementsApi {
 	/**
 	 * Set the transient where entitlements are stored (6 Hours).
 	 *
-	 * @param array     $data 
+	 * @param array     $data           Data to be stored
 	 * @param float|int $expiration    Transient expiration.
 	 */
 	public function setTransient( $data, $expiration = 21600 ) {
@@ -76,14 +88,13 @@ class EntitlementsApi {
 	/**
 	 * Get entitlements of a site.
 	 *
-	 *
 	 * @return \WP_REST_Response|\WP_Error Response object on success, or WP_Error object on failure.
 	 */
 	public function get_items() {
 
 		// If there is no Hiive connection, bail.
-		if( ! HiiveConnection::is_connected()) {
-			if ( defined('WP_DEBUG') && true === WP_DEBUG ) {
+		if ( ! HiiveConnection::is_connected() ) {
+			if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 				// for debugging - use a local json file rather than hiive entitlement endpoint response
 				return new WP_REST_Response( json_decode( file_get_contents( NFD_SOLUTIONS_DIR . '/includes/js/debug.json' ) ), 218 );
 			}
@@ -104,7 +115,7 @@ class EntitlementsApi {
 					),
 				)
 			);
-			
+
 			if ( is_wp_error( $response ) ) {
 				return new WP_REST_Response( array( 'message' => 'An error occurred with the entitlements response.' ), 500 );
 			}
@@ -114,8 +125,8 @@ class EntitlementsApi {
 			if (
 				$data &&
 				is_array( $data ) &&
-				array_key_exists('solutions', $data) &&
-				array_key_exists('categories', $data)
+				array_key_exists( 'solutions', $data ) &&
+				array_key_exists( 'categories', $data )
 			) {
 				$entitlements = $data;
 			}
@@ -123,5 +134,4 @@ class EntitlementsApi {
 
 		return new WP_REST_Response( $entitlements, 200 );
 	}
-
 }
