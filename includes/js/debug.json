@@ -796,8 +796,8 @@
             "name": "Services",
             "sku": "WP_SOLUTION_SERVICE",
             "description": "Boost local visibility and streamline your business operations with specialized tools",
-            "price": "0.00",
-            "fullPrice": "0.00",
+            "price": "$0.00",
+            "fullPrice": "$0.00",
             "url": null,
             "ctbId": null,
             "features": [
@@ -811,8 +811,8 @@
             "name": "Commerce",
             "sku": "WP_SOLUTION_COMMERCE",
             "description": "Promote, sell, and grow your online store with powerful eCommerce tools.",
-            "price": "0.00",
-            "fullPrice": "0.00",
+            "price": "$0.00",
+            "fullPrice": "$0.00",
             "url": null,
             "ctbId": null,
             "features": [
@@ -826,8 +826,8 @@
             "name": "Content Creator",
             "sku": "WP_SOLUTION_CREATOR",
             "description": "Manage your site, build your brand, and monetize your content with essential tools.",
-            "price": "0.00",
-            "fullPrice": "0.00",
+            "price": "$0.00",
+            "fullPrice": "$0.00",
             "url": null,
             "ctbId": null,
             "features": [
