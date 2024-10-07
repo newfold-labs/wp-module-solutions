@@ -109,7 +109,10 @@ class Solutions {
 		}
 		wp_enqueue_style( 'nfd_myplugin_solutions_css', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css', array(), '1.0' );
 		wp_enqueue_script('nfd_myplugin_solutions_js', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
-	
+		wp_localize_script( 'nfd_myplugin_solutions_js', 'pluigin_details', array(
+			'installed_plugins' => get_plugins(),
+			'active_plugins'	=> get_option( 'active_plugins' )
+		) );
 	}
 
 }

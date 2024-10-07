@@ -16,14 +16,28 @@ class MyPluginTools {
         .then((response) => response.json()).then(res => {
            
             const pluginsData = res?.data?.entitlements?.filter(data => data?.type === 'plugin' );
-
-            console.log(pluginsData)
-            this.setUpContainer(pluginsData);
-            this.entitlements_list = res?.data;
+            const installedPlugins = Object.keys(pluigin_details?.installed_plugins)
+            const pluginWithStatus = pluginsData.map(val => ({
+              ...val,
+              isInstalled: installedPlugins?.includes( val.basename ),
+              isActive: pluigin_details?.active_plugins?.includes( val.basename ),
+              nonce: pluigin_details?.nonce
+            }))
+            this.setUpContainer(pluginWithStatus);
         })
     
     })
         
+    }
+
+    getElementByStatus( isActive, isInstalled, pluginData ) {
+      if( isActive && isInstalled ){
+        return `<a href=${pluginData?.cta?.url} target="_blank" class="nfd-solutions-availble-list-item-button">${pluginData?.cta?.text}</a>`;
+      }else if ( isInstalled ){
+        return `<a href="plugins.php?action=activate&plugin=${pluginData?.basename}&plugin_status=all&paged=1&s&_wpnonce=${nfdplugin.restApiNonce}" class="nfd-solutions-availble-list-item-button">Activate</a>`;
+      }else {
+        return `<a href=${pluginData?.url} target="_blank" class="nfd-solutions-availble-list-item-button" data-nfd-installer-plugin-slug=${pluginData?.slug} data-nfd-installer-plugin-provider=${pluginData?.providerName}>Install</a>`;
+      }
     }
 
     buildPluginsBlock( pluginData ) {
@@ -32,7 +46,7 @@ class MyPluginTools {
                     <div class="details">
                         <h3 class="nfd-solutions-availble-list-item-title">${pluginData?.name}</h3>
                         <div>
-                        <a href=${pluginData?.cta?.url} target="_blank" class="nfd-solutions-availble-list-item-button">${pluginData?.cta?.text}</a>
+                       ${this.getElementByStatus( pluginData?.isActive, pluginData?.isInstalled, pluginData )}
                         </div>
                         <p>${pluginData?.description}</p>
                     </div>
