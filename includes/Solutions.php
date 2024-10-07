@@ -97,7 +97,7 @@ class Solutions {
 		$hiive        = new HiiveConnection();
 		$api          = new EntitlementsApi( $hiive );
 		$entitlements = $api->get_items();
-		if ( $entitlements->data->entitlements ) {
+		if ( $entitlements->data['data']->entitlements ) {
 			$tabs['nfd_my_plugins_and_tools'] = __( 'My Plugins & Tools', 'wp-module-solutions' );
 		}
 
