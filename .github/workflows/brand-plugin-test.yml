@@ -33,7 +33,6 @@ jobs:
       module-branch: ${{ needs.setup.outputs.branch }}
       plugin-repo: 'bluehost/bluehost-wordpress-plugin'
       plugin-branch: 'solutions'
-      sync-npm-package: true
     secrets: inherit
 
   # hostgator:
