@@ -94,7 +94,7 @@ class EntitlementsApi {
 	 * @param array     $data           Data to be stored
 	 * @param float|int $expiration    Transient expiration.
 	 */
-	public function setTransient( $data, $expiration = 21600 ) {
+	public function set_the_transient( $data, $expiration = 21600 ) {
 		set_transient( self::TRANSIENT, $data, $expiration );
 	}
 
@@ -142,6 +142,7 @@ class EntitlementsApi {
 				array_key_exists( 'categories', $data )
 			) {
 				$entitlements = $data;
+				set_the_transient( $entitlements );
 			}
 		}
 
