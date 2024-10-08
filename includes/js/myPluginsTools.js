@@ -15,7 +15,7 @@ class MyPluginTools {
       )
         .then((response) => response.json()).then(res => {
            
-            const pluginsData = res?.data?.entitlements?.filter(data => data?.type === 'plugin' );
+            const pluginsData = res?.entitlements?.filter(data => data?.type === 'plugin' );
             const installedPlugins = Object.keys(pluigin_details?.installed_plugins)
             const pluginWithStatus = pluginsData.map(val => ({
               ...val,
@@ -30,11 +30,34 @@ class MyPluginTools {
         
     }
 
+    activate_plugin ( plugin_path ){
+      fetch(
+        nfdplugin.restApiUrl +
+          '/newfold-solutions/v1/activate_plugin',
+        {
+          credentials: 'same-origin',
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'X-WP-Nonce': nfdplugin.restApiNonce,
+          },
+          body: JSON.stringify({
+            plugin: plugin_path
+          })
+        }
+      ).then(res => res.json() ).then(res => {
+        if( res?.message ){
+          window.location.reload();
+        }
+      })
+       
+    }
+
     getElementByStatus( isActive, isInstalled, pluginData ) {
       if( isActive && isInstalled ){
         return `<a href=${pluginData?.cta?.url} target="_blank" class="nfd-solutions-availble-list-item-button">${pluginData?.cta?.text}</a>`;
       }else if ( isInstalled ){
-        return `<a href="plugins.php?action=activate&plugin=${pluginData?.basename}&plugin_status=all&paged=1&s&_wpnonce=${nfdplugin.restApiNonce}" class="nfd-solutions-availble-list-item-button">Activate</a>`;
+        return `<button data-plugin="${pluginData?.basename}" class="nfd-solutions-availble-list-item-button nfd-activate-btn">Activate</button>`;
       }else {
         return `<a href=${pluginData?.url} target="_blank" class="nfd-solutions-availble-list-item-button" data-nfd-installer-plugin-slug=${pluginData?.slug} data-nfd-installer-plugin-provider=${pluginData?.providerName}>Install</a>`;
       }
@@ -60,8 +83,21 @@ class MyPluginTools {
         myPlugins.classList.add("nfd-solutions-availble-list")
         entitlements?.forEach( ( data ) => ( myPlugins.innerHTML +=  this.buildPluginsBlock(data)   ) );
          
-        wpBody.appendChild(myPlugins)
+        wpBody.appendChild(myPlugins);
+        this.bindActivateButtons();
     }
+
+    bindActivateButtons() {
+     
+      const activateButtons = document.querySelectorAll(".nfd-activate-btn");
+      activateButtons.forEach((button) => {
+          button.addEventListener("click", (event) => {
+              const pluginPath = event.target.getAttribute("data-plugin");
+              this.activate_plugin(pluginPath); 
+          });
+      });
+  }
 }
+
 
 const pluginList = new MyPluginTools();

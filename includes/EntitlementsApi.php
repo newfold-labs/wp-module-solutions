@@ -73,6 +73,19 @@ class EntitlementsApi {
 				},
 			)
 		);
+
+		// Add route for activating plugins
+		register_rest_route(
+			$this->namespace,
+			'/activate_plugin',
+			array(
+				'methods'             => \WP_REST_Server::CREATABLE,
+				'callback'            => array( $this, 'activate_plugins' ),
+				'permission_callback' => function () {
+					return current_user_can( 'manage_options' );
+				},
+			)
+		);
 	}
 
 	/**
@@ -133,5 +146,23 @@ class EntitlementsApi {
 		}
 
 		return new WP_REST_Response( $entitlements, 200 );
+	}
+
+	public function activate_plugins( $resquest ){
+		$plugin_path = json_decode($resquest->get_body())->plugin;
+		if( $plugin_path ){
+			error_log($plugin_path);
+			activate_plugin( $plugin_path );
+			return new \WP_REST_Response( array(
+				"message" => "Activated the plugin successfully!"
+			), 201 );
+		}
+		return new \WP_Error(
+			'nfd_module_solution_error',
+			__( 'Please send valid Plugin', 'wp-module-solutions' ),
+			array(
+				'status' => 400,
+			),
+		);
 	}
 }
