@@ -156,7 +156,6 @@ class EntitlementsApi {
 	public function activate_plugins( $resquest ) {
 		$plugin_path = json_decode( $resquest->get_body() )->plugin;
 		if ( $plugin_path ) {
-			error_log( $plugin_path );
 			activate_plugin( $plugin_path );
 			return new \WP_REST_Response(
 				array(
