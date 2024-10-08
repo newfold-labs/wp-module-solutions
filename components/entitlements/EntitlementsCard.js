@@ -8,26 +8,24 @@ import { Section } from "./Section";
 
 export function EntitlementsCard(props){
 
-    const { entitlementCategories, renderCTAUrl } = props;
+    const { entitlementCategories, renderCTAUrl, activeSolution } = props;
     const [collapse, setCollapse] = useState(false)
-    const handleDisplay = () => {
+    const handleDisplay = () => {        
         setCollapse(!collapse)
     }
-
-    console.log(collapse, "collapse");
     
     return(
         <Section.Container>
             <Section.Header
-            title={__("My Plugins & Tools", "wp-module-solutions")}
-            anchor={{title : __( "Add a New Plugin", "wp-module-solutions" ), className:"nfd-text-[#196CDF]" }} 
+            title={__(`${activeSolution} Tools`, "wp-module-solutions")}
+            anchor={{title : __( "Add a New Plugin", "wp-module-solutions" ), className:"nfd-text-[#196CDF]", href:"/wp-admin/plugin-install.php" }} 
             /> 
             <Section.Content className="nfd-core-tool-mypluginsntools">
                 <>
                     {                    
-                        entitlementCategories.map((category) => {
+                        entitlementCategories.map((category, index) => {
                             return (
-                                <>
+                                <div key={index}>
                                     <h2 className={classNames('nfd-mt-8', 'nfd-mb-8', 'nfd-flex', 'nfd-flex-row', 'nfd-cursor-pointer',
                                         { 'nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4': !collapse, })} onClick={handleDisplay}>                     
                                         <span className="nfd-text-[#111729] nfd-text-base nfd-font-bold">
@@ -63,7 +61,7 @@ export function EntitlementsCard(props){
                                             })
                                         )
                                     }    
-                                </>
+                                </div>
                             )
                         })
                     }
