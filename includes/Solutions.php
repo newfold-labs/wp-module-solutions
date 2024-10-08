@@ -116,7 +116,7 @@ class Solutions {
 
 		wp_localize_script(
 			'nfd_myplugin_solutions_js',
-			'pluigin_details',
+			'plugin_details',
 			array(
 				'installed_plugins' => get_plugins(),
 				'active_plugins'    => get_option( 'active_plugins' ),

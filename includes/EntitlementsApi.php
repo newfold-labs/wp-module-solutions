@@ -151,22 +151,22 @@ class EntitlementsApi {
 	/**
 	 * Activate the plugin based on Plugin path
 	 *
-	 * @param \WP_REST_REQUEST $resquest           Data to be stored
+	 * @param \WP_REST_REQUEST $request           Data to be stored
 	 */
-	public function activate_plugins( $resquest ) {
-		$plugin_path = json_decode( $resquest->get_body() )->plugin;
+	public function activate_plugins( $request ) {
+		$plugin_path = json_decode( $request->get_body() )->plugin;
 		if ( $plugin_path ) {
 			activate_plugin( $plugin_path );
 			return new \WP_REST_Response(
 				array(
-					'message' => 'Activated the plugin successfully!',
+					'message' => __( 'Activated the plugin successfully!', 'wp-module-solutions' ),
 				),
 				201
 			);
 		}
 		return new \WP_Error(
 			'nfd_module_solution_error',
-			__( 'Please send valid Plugin', 'wp-module-solutions' ),
+			__( 'Please send valid plugin', 'wp-module-solutions' ),
 			array(
 				'status' => 400,
 			),

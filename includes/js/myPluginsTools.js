@@ -13,15 +13,15 @@ class MyPluginTools {
           },
         }
       )
-        .then((response) => response.json()).then(res => {
+        .then((response) => response.json()).then((response) => {
            
-            const pluginsData = res?.entitlements?.filter(data => data?.type === 'plugin' );
-            const installedPlugins = Object.keys(pluigin_details?.installed_plugins)
+            const pluginsData = response?.entitlements?.filter(data => data?.type === 'plugin' );
+            const installedPlugins = Object.keys(plugin_details?.installed_plugins)
             const pluginWithStatus = pluginsData.map(val => ({
               ...val,
               isInstalled: installedPlugins?.includes( val.basename ),
-              isActive: pluigin_details?.active_plugins?.includes( val.basename ),
-              nonce: pluigin_details?.nonce
+              isActive: plugin_details?.active_plugins?.includes( val.basename ),
+              nonce: plugin_details?.nonce
             }))
             this.setUpContainer(pluginWithStatus);
         })
@@ -45,8 +45,8 @@ class MyPluginTools {
             plugin: plugin_path
           })
         }
-      ).then(res => res.json() ).then(res => {
-        if( res?.message ){
+      ).then((response) => response.json() ).then((response) => {
+        if( response?.message ){
           window.location.reload();
         }
       })
