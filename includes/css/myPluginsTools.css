@@ -1,6 +1,6 @@
 .nfd-solutions-availble-list{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat( auto-fit, minmax(calc(33.1% - 8px), 1fr) );
     gap: 16px;
     margin-right: 20px;
 }
@@ -13,26 +13,57 @@
     padding: 20px;
 }
 
+.nfd-solutions-availble-list-item .details{
+    display: grid;
+    grid-template-columns: 2.5fr 0.5fr;
+    place-self: flex-start;
+    gap: 5px;
+}
+
+.nfd-solutions-availble-list-item .details p{
+   margin: 0px;
+}
+
 h3.nfd-solutions-availble-list-item-title{
     margin-top: 0px;
 }
 
+/* learn more link */
 .nfd-solutions-availble-list-item-button{
+    display: inline-block;
     background: #2271b1;
     border-color: #2271b1;
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     text-shadow: none;
     max-width: fit-content;
-    padding: 0 10px;
+    padding: 6px 10px;
     cursor: pointer;
     border-radius: 3px;
     font-size: 13px;
-    line-height: 2.15384615;
-    min-height: 30px;
+    width: 82px;
 }
 
 /* hide the search field in my plugins && tools tab */
 .wrap.plugin-install-tab-nfd_my_plugins_and_tools .search-form.search-plugins{
     display: none;
+}
+
+/* responsive */
+@media screen and (max-width: 782px) {
+  
+     .nfd-solutions-availble-list{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .nfd-solutions-availble-list .details{
+      display: block;
+    }
+
+    .nfd-solutions-availble-list-item .details p{
+        margin: 1em 0;
+     }
 }

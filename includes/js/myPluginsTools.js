@@ -1,85 +1,107 @@
-// window.addEventListener("DOMContentLoaded", () => {
-  
-// })
-
-
-const availblePluginsData = {
-    "entitlements":[ {
-        "type": "plugin",
-        "name": "The HostGator Plugin",
-        "description": "WordPress plugin that integrates a WordPress site with the HostGator control panel, including performance, security, and update features.",
-        "author": {
-            "name": "HostGator",
-            "url": "https://hostgator.com"
-        },
-        "url": "https://hostgator.com",
-        "download": "https://github.com/newfold-labs/wp-plugin-hostgator/releases/download/2.11.3/wp-plugin-hostgator.zip",
-        "slug": "wp-plugin-hostgator",
-        "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
-        "image": {
-            "primaryImage": "https://hiive-space-cdn.nyc3.cdn.digitaloceanspaces.com/marketplace/premium-plugins/yoast-pro.webp"
-        }
-  },
-  {
-    "type": "plugin",
-    "name": "The HostGator Plugin1",
-    "description": "WordPress plugin that integrates a WordPress site with the HostGator control panel, including performance, security, and update features.",
-    "author": {
-        "name": "HostGator",
-        "url": "https://hostgator.com"
-    },
-    "url": "https://hostgator.com",
-    "download": "https://github.com/newfold-labs/wp-plugin-hostgator/releases/download/2.11.3/wp-plugin-hostgator.zip",
-    "slug": "wp-plugin-hostgator",
-    "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
-    "image": {
-        "primaryImage": "https://hiive-space-cdn.nyc3.cdn.digitaloceanspaces.com/marketplace/premium-plugins/yoast-pro.webp"
-    }
-},
-{
-    "type": "plugin",
-    "name": "The HostGator Plugin2",
-    "description": "WordPress plugin that integrates a WordPress site with the HostGator control panel,WordPress plugin that integrates a WordPress site with the HostGator control panel, including performance, security, and update features.",
-    "author": {
-        "name": "HostGator",
-        "url": "https://hostgator.com"
-    },
-    "url": "https://hostgator.com",
-    "download": "https://github.com/newfold-labs/wp-plugin-hostgator/releases/download/2.11.3/wp-plugin-hostgator.zip",
-    "slug": "wp-plugin-hostgator",
-    "basename": "wp-plugin-hostgator/wp-plugin-hostgator.php",
-    "image": {
-        "primaryImage": "https://hiive-space-cdn.nyc3.cdn.digitaloceanspaces.com/marketplace/premium-plugins/yoast-pro.webp"
-    }
-}]
-}
-
-
-const getAvailbleProducts = () => {
-const availblePluginsList = fetch("").then(res => res.json())
-}
 class MyPluginTools {
+
     constructor() {
-        this.setUpContainer();
+    window.addEventListener("DOMContentLoaded", () => {
+    fetch(
+        nfdplugin.restApiUrl +
+          '/newfold-solutions/v1/entitlements',
+        {
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-WP-Nonce': nfdplugin.restApiNonce,
+          },
+        }
+      )
+        .then((response) => response.json()).then((response) => {
+           
+            const pluginsData = response?.entitlements?.filter(data => data?.type === 'plugin' );
+            const installedPlugins = Object.keys(plugin_details?.installed_plugins)
+            const pluginWithStatus = pluginsData.map(val => ({
+              ...val,
+              isInstalled: installedPlugins?.includes( val.basename ),
+              isActive: plugin_details?.active_plugins?.includes( val.basename ),
+              nonce: plugin_details?.nonce
+            }))
+            this.setUpContainer(pluginWithStatus);
+        })
+    
+    })
+        
+    }
+
+    activate_plugin ( plugin_path ){
+      fetch(
+        nfdplugin.restApiUrl +
+          '/newfold-solutions/v1/activate_plugin',
+        {
+          credentials: 'same-origin',
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'X-WP-Nonce': nfdplugin.restApiNonce,
+          },
+          body: JSON.stringify({
+            plugin: plugin_path
+          })
+        }
+      ).then((response) => response.json() ).then((response) => {
+        if( response?.message ){
+          window.location.reload();
+        }
+      })
+       
+    }
+
+    getElementByStatus( isActive, isInstalled, pluginData ) {
+      if( isActive && isInstalled ){
+        return `<a href=${pluginData?.cta?.url} target="_blank" class="nfd-solutions-availble-list-item-button">${pluginData?.cta?.text}</a>`;
+      }else if ( isInstalled ){
+        return `<button data-plugin="${pluginData?.basename}" class="nfd-solutions-availble-list-item-button nfd-activate-btn">Activate</button>`;
+      }else {
+        if ( pluginData?.providerName && pluginData?.slug ){
+          return `<button class="nfd-solutions-availble-list-item-button" data-nfd-installer-plugin-slug=${pluginData?.slug} data-nfd-installer-plugin-provider=${pluginData?.providerName}>Install</button>`;
+        } else {
+          return `<a href=${pluginData?.url} target="_blank" class="nfd-solutions-availble-list-item-button">Install</a>`;
+        }
+      }
     }
 
     buildPluginsBlock( pluginData ) {
         return `<div class="nfd-solutions-availble-list-item">
-        <div><img src=${pluginData?.image?.primaryImage} width="128px" height="128px" /></div>
-        <div><h3 class="nfd-solutions-availble-list-item-title">${pluginData?.name}</h3><p>${pluginData?.description}</p></div>
-        <div><button class="nfd-solutions-availble-list-item-button">Manage</button></div>
-        </div>`;
+                    <div><img src=${pluginData?.image?.primaryImage} width="128px" height="128px" /></div>
+                    <div class="details">
+                        <h3 class="nfd-solutions-availble-list-item-title">${pluginData?.name}</h3>
+                        <div>
+                       ${this.getElementByStatus( pluginData?.isActive, pluginData?.isInstalled, pluginData )}
+                        </div>
+                        <p>${pluginData?.description}</p>
+                    </div>
+                </div>`;
     }
     
-    setUpContainer() {
+    setUpContainer( entitlements ) {
         const wpBody = document.getElementById("wpbody-content");
 
         let myPlugins = document.createElement("div");
         myPlugins.classList.add("nfd-solutions-availble-list")
-         availblePluginsData?.entitlements?.forEach( ( data ) => ( myPlugins.innerHTML +=  this.buildPluginsBlock(data)   ) );
+        entitlements?.forEach( ( data ) => ( myPlugins.innerHTML +=  this.buildPluginsBlock(data)   ) );
          
-        wpBody.appendChild(myPlugins)
+        wpBody.appendChild(myPlugins);
+        this.bindActivateButtons();
     }
+
+    bindActivateButtons() {
+     
+      const activateButtons = document.querySelectorAll(".nfd-activate-btn");
+      activateButtons.forEach((button) => {
+          button.addEventListener("click", (event) => {
+              const pluginPath = event.target.getAttribute("data-plugin");
+              this.activate_plugin(pluginPath); 
+          });
+      });
+  }
 }
+
 
 const pluginList = new MyPluginTools();
