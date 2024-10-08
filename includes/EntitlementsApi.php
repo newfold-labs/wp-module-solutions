@@ -148,14 +148,22 @@ class EntitlementsApi {
 		return new WP_REST_Response( $entitlements, 200 );
 	}
 
-	public function activate_plugins( $resquest ){
-		$plugin_path = json_decode($resquest->get_body())->plugin;
-		if( $plugin_path ){
-			error_log($plugin_path);
+	/**
+	 * Activate the plugin based on Plugin path
+	 *
+	 * @param \WP_REST_REQUEST $resquest           Data to be stored
+	 */
+	public function activate_plugins( $resquest ) {
+		$plugin_path = json_decode( $resquest->get_body() )->plugin;
+		if ( $plugin_path ) {
+			error_log( $plugin_path );
 			activate_plugin( $plugin_path );
-			return new \WP_REST_Response( array(
-				"message" => "Activated the plugin successfully!"
-			), 201 );
+			return new \WP_REST_Response(
+				array(
+					'message' => 'Activated the plugin successfully!',
+				),
+				201
+			);
 		}
 		return new \WP_Error(
 			'nfd_module_solution_error',

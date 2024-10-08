@@ -94,10 +94,10 @@ class Solutions {
 	 * @return array
 	 */
 	public static function add_my_plugins_and_tools_tab( array $tabs ) {
-		$hiive = new HiiveConnection();
-		$api = new EntitlementsApi( $hiive );
+		$hiive        = new HiiveConnection();
+		$api          = new EntitlementsApi( $hiive );
 		$entitlements = $api->get_items();
-		if( $entitlements->data->entitlements ) {
+		if ( $entitlements->data->entitlements ) {
 			$tabs['nfd_my_plugins_and_tools'] = __( 'My Plugins & Tools', 'wp-module-solutions' );
 		}
 
@@ -122,6 +122,5 @@ class Solutions {
 				'active_plugins'    => get_option( 'active_plugins' ),
 			)
 		);
-
 	}
 }
