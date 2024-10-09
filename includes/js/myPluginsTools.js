@@ -59,8 +59,8 @@ class MyPluginTools {
       }else if ( isInstalled ){
         return `<button data-plugin="${pluginData?.basename}" class="nfd-solutions-availble-list-item-button nfd-activate-btn">Activate</button>`;
       }else {
-        if ( pluginData?.providerName && pluginData?.slug ){
-          return `<button class="nfd-solutions-availble-list-item-button" data-nfd-installer-plugin-slug=${pluginData?.slug} data-nfd-installer-plugin-provider=${pluginData?.providerName}>Install</button>`;
+        if ( pluginData?.plsProviderName && pluginData?.plsSlug ){
+          return `<button class="nfd-solutions-availble-list-item-button" data-nfd-installer-plugin-slug=${pluginData?.plsSlug} data-nfd-installer-plugin-provider=${pluginData?.plsProviderName}>Install</button>`;
         } else {
           return `<a href=${pluginData?.url} target="_blank" class="nfd-solutions-availble-list-item-button">Install</a>`;
         }
