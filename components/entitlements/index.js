@@ -1,6 +1,6 @@
-import { EntitlementsCard } from './EntitlementsCard';
 import './styles.scss';
-import { Container, Title, Button } from '@newfold/ui-component-library';
+import { Container } from '@newfold/ui-component-library';
+import { EntitlementsCard } from './EntitlementsCard';
 
 const defaults = {
 	eventEndpoint: '/newfold-data/v1/events/',
@@ -157,7 +157,13 @@ const Entitlements = ( { methods, constants, ...props } ) => {
                     description={ constants.text.error }
                 />
             ) }
-            { !isLoading && !isError && (<EntitlementsCard entitlementCategories={entitlementCategories} renderCTAUrl={renderCTAUrl} activeSolution={activeSolution['name']} />) }
+            { !isLoading && !isError && (
+				<EntitlementsCard 
+					entitlementCategories={entitlementCategories} 
+					renderCTAUrl={renderCTAUrl} 
+					activeSolution={activeSolution['name']}
+				/>
+			) }
 		</>
 	);
 };

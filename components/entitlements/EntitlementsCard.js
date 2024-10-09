@@ -6,8 +6,6 @@ import { __ } from "@wordpress/i18n";
 import classNames from "classnames";
 import { Section } from "./Section";
 
-
-
 export function EntitlementsCard(props){
     const { entitlementCategories, renderCTAUrl, activeSolution } = props;
     const [ error, setError ] = useState(null);
@@ -75,42 +73,42 @@ export function EntitlementsCard(props){
                                         </h2>
                                         {
                                             collapse[category.name] && (
-                                                            category.entitlements.map((entitlement) => {
-                                                                return(
-                                                                    <div className="nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]">                            
-                                                                        <img className="entitlement-image" src={entitlement.image.primaryImage} />
-                                                                        <div className="nfd-flex nfd-flex-col nfd-ml-4">
-                                                                            <h2 className="nfd-text-[#000000] nfd-font-medium">{__(entitlement.name, "wp-module-solutions")}</h2>
-                                                                            <p className="nfd-text-[#4A5567] nfd-font-normal nfd-mt-2">{__(entitlement.description, "wp-module-solutions" )}</p>                            
-                                                                        </div>                
-                                                                        {
-                                                                            activePluginsArray.includes(entitlement.basename) ?
-                                                                            (
-                                                                                <Button
-                                                                                as="a"
-                                                                                className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
-                                                                                href={ renderCTAUrl( entitlement.cta.url ) }
-                                                                                variant="secondary"
-                                                                                >
-                                                                                    { __(`${entitlement.cta.text}`, "wp-module-solutions") }
-                                                                                </Button>
-                                                                            )
-                                                                            :
-                                                                            (
-                                                                                <Button
-                                                                                className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
-                                                                                variant="secondary"
-                                                                                as="button" 
-                                                                                data-nfd-installer-plugin-slug={entitlement.plsSlug} 
-                                                                                data-nfd-installer-plugin-provider={entitlement.plsProviderName} 
-                                                                                data-nfd-installer-plugin-activate={true}
-                                                                                >
-                                                                                    { __("Install", "wp-module-solutions")}
-                                                                                </Button>
-                                                                            )
-                                                                        }       
-                                                                    </div>
-                                                        )
+                                                category.entitlements.map((entitlement) => {
+                                                    return(
+                                                        <div className="nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]">                            
+                                                            <img className="entitlement-image" src={entitlement.image.primaryImage} />
+                                                            <div className="nfd-flex nfd-flex-col nfd-ml-4">
+                                                                <h2 className="nfd-text-[#000000] nfd-font-medium">{__(entitlement.name, "wp-module-solutions")}</h2>
+                                                                <p className="nfd-text-[#4A5567] nfd-font-normal nfd-mt-2">{__(entitlement.description, "wp-module-solutions" )}</p>                            
+                                                            </div>                
+                                                            {
+                                                                activePluginsArray.includes(entitlement.basename) ?
+                                                                (
+                                                                    <Button
+                                                                    as="a"
+                                                                    className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
+                                                                    href={ renderCTAUrl( entitlement.cta.url ) }
+                                                                    variant="secondary"
+                                                                    >
+                                                                        { __(`${entitlement.cta.text}`, "wp-module-solutions") }
+                                                                    </Button>
+                                                                )
+                                                                :
+                                                                (
+                                                                    <Button
+                                                                    className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
+                                                                    variant="secondary"
+                                                                    as="button" 
+                                                                    data-nfd-installer-plugin-slug={entitlement.plsSlug} 
+                                                                    data-nfd-installer-plugin-provider={entitlement.plsProviderName} 
+                                                                    data-nfd-installer-plugin-activate={true}
+                                                                    >
+                                                                        { __("Install", "wp-module-solutions")}
+                                                                    </Button>
+                                                                )
+                                                            }       
+                                                        </div>
+                                                    )
                                                 })
                                             )
                                         }    
