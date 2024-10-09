@@ -1,3 +1,4 @@
+import { EntitlementsCard } from './EntitlementsCard';
 import './styles.scss';
 import { Container, Title, Button } from '@newfold/ui-component-library';
 
@@ -138,49 +139,12 @@ const Entitlements = ( { methods, constants, ...props } ) => {
             return a.priority - b.priority;
         } );
 	};
-
-    const renderCategory = ( category ) => {
-        return <div
-                    className={ category.className }
-                    key={ category.className }
-                >
-            { category.entitlements.length > 0 &&
-                <>
-                    <Title as="h2" size="2">
-                        { category.name }
-                    </Title>
-                    { renderEntitlementList( category.entitlements ) }
-                </>
-            }
-            </div>;
-    };
     
     const renderCTAUrl = ( url ) => {
         return url.replace('{siteUrl}', window.NewfoldRuntime.base_url);
     };
 
-    const renderEntitlementList = ( entitlements ) => {
-        return entitlements.map( ( entitlement, i ) => (
-            <div
-                className={`newfold-entitlement entitlement-${entitlement.slug} entitlement-${entitlement.type}`}
-                key={ entitlement.basename + i }
-            >
-                <img className="entitlement-image" src={entitlement.image.primaryImage} />
-                <div className="entitlement-detail">
-                    <Title as="h3" size="3">
-                        { entitlement.name }
-                    </Title>
-                    <p>{ entitlement.description }</p>
-                </div>
-                <Button
-                    as="a"
-                    className="entitlement-cta"
-                    href={ renderCTAUrl( entitlement.cta.url ) }
-                    variant="secondary"
-                >{ entitlement.cta.text }</Button>
-            </div>
-        ) );
-    };
+    console.log(activeSolution, "activeSolution")
 
 	return (
         <>
@@ -195,25 +159,7 @@ const Entitlements = ( { methods, constants, ...props } ) => {
                     description={ constants.text.error }
                 />
             ) }
-            { !isLoading && !isError &&
-                <>
-                    <Container.Header
-                        title={ constants.text.title + ': ' + activeSolution.name }
-                        description={ constants.text.subTitle }
-                    />
-                    <Container.Block
-                        className={ methods.classNames(
-                            'newfold-entitlements-wrapper',
-                        ) }
-                    >
-                        { ! isLoading && ! isError && (
-                            entitlementCategories.map( ( category ) => (
-                                renderCategory(category)
-                            ) )
-                        ) }
-                    </Container.Block>
-                </>
-            }
+            { !isLoading && !isError && (<EntitlementsCard entitlementCategories={entitlementCategories} renderCTAUrl={renderCTAUrl} activeSolution={activeSolution['name']} />) }
 		</>
 	);
 };
