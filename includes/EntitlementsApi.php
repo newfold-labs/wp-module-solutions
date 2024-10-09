@@ -142,7 +142,7 @@ class EntitlementsApi {
 				array_key_exists( 'categories', $data )
 			) {
 				$entitlements = $data;
-				set_the_transient( $entitlements );
+				$this->set_the_transient( $entitlements );
 			}
 		}
 
