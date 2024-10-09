@@ -9,17 +9,16 @@ import { Section } from "./Section";
 
 
 export function EntitlementsCard(props){
-
     const { entitlementCategories, renderCTAUrl, activeSolution } = props;
     const [ error, setError ] = useState(null);
     const [ apiResponse, setApiResponse ] = useState(null);
     const [ isLoaded, setIsLoaded ] = useState( false );
-    const [collapse, setCollapse] = useState(false);
+    const [collapse, setCollapse] = useState({});
     let activePluginsArray = [];
     let installedPluginsArray = [];
 
-    const handleDisplay = () => {        
-        setCollapse(!collapse)
+    const handleDisplay = ( category ) => {   
+        setCollapse( (prevState) => ({...prevState, [category.name]: !prevState[category.name]}))    
     }
     
     useEffect( () => {
@@ -63,19 +62,19 @@ export function EntitlementsCard(props){
                                 return (
                                     <div key={index}>
                                         <h2 className={classNames('nfd-mt-8', 'nfd-mb-8', 'nfd-flex', 'nfd-flex-row', 'nfd-cursor-pointer',
-                                            { 'nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4': !collapse, })} onClick={handleDisplay}>                     
+                                            { 'nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4': !collapse[category.name], })} onClick={() => handleDisplay(category)}>                     
                                             <span className="nfd-text-[#111729] nfd-text-base nfd-font-bold">
                                                 {__(category.name, "wp-module-solutions")}
                                             </span>
                                             {
-                                                collapse ? 
-                                                <ChevronDownIcon  className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" onClick={handleDisplay} />                                            
+                                                collapse[category.name] ? 
+                                                <ChevronDownIcon  className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" onClick={() => handleDisplay(category)} />                                            
                                                 : 
-                                                <ChevronUpIcon className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" onClick={handleDisplay} />
+                                                <ChevronUpIcon className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" onClick={() => handleDisplay(category)} />
                                             }
                                         </h2>
                                         {
-                                            collapse && (
+                                            collapse[category.name] && (
                                                             category.entitlements.map((entitlement) => {
                                                                 return(
                                                                     <div className="nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]">                            
