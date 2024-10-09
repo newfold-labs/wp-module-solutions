@@ -143,9 +143,7 @@ const Entitlements = ( { methods, constants, ...props } ) => {
     const renderCTAUrl = ( url ) => {
         return url.replace('{siteUrl}', window.NewfoldRuntime.base_url);
     };
-
-    console.log(activeSolution, "activeSolution")
-
+    
 	return (
         <>
             { isLoading && (
