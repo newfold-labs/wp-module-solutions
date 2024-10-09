@@ -101,8 +101,8 @@ export function EntitlementsCard(props){
                                                                                 className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
                                                                                 variant="secondary"
                                                                                 as="button" 
-                                                                                data-nfd-installer-plugin-slug={entitlement.slug} 
-                                                                                data-nfd-installer-plugin-provider={entitlement.providerName} 
+                                                                                data-nfd-installer-plugin-slug={entitlement.plsSlug} 
+                                                                                data-nfd-installer-plugin-provider={entitlement.plsProviderName} 
                                                                                 data-nfd-installer-plugin-activate={true}
                                                                                 >
                                                                                     { __("Install", "wp-module-solutions")}
