@@ -53,22 +53,40 @@ class MyPluginTools {
        
     }
 
+    renderCTAUrl( url ) {
+      if ( ! window.NewfoldRuntime.base_url ) {
+        // fallback to site relative url if no base_url is found
+        return url.replace('{siteUrl}', '');
+      }
+      return url.replace('{siteUrl}', window.NewfoldRuntime.base_url);
+    }
+
     getElementByStatus( isActive, isInstalled, pluginData ) {
       if( isActive && isInstalled ){
-        return `<a href=${pluginData?.cta?.url} target="_blank" class="nfd-solutions-availble-list-item-button">${pluginData?.cta?.text}</a>`;
-      }else if ( isInstalled ){
-        return `<button data-plugin="${pluginData?.basename}" class="nfd-solutions-availble-list-item-button nfd-activate-btn">Activate</button>`;
-      }else {
+        return `<a 
+          href=${renderCTAUrl(pluginData?.cta?.url)} 
+          class="nfd-solutions-availble-list-item-button"
+        >${pluginData?.cta?.text}</a>`;
+      } else if ( isInstalled ){
+        return `<button 
+          data-plugin="${pluginData?.basename}"
+          class="nfd-solutions-availble-list-item-button nfd-activate-btn"
+        >Activate</button>`;
+      } else {
         if ( pluginData?.plsProviderName && pluginData?.plsSlug ){
           return `<button class="nfd-solutions-availble-list-item-button"
-          data-nfd-installer-plugin-activate=${true}
-          data-nfd-installer-plugin-slug=${pluginData?.plsSlug}
-          data-nfd-installer-plugin-provider=${pluginData?.plsProviderName}
-          data-nfd-installer-plugin-name=${pluginData?.name}
-          data-nfd-installer-plugin-url=${pluginData?.url}
+            data-nfd-installer-plugin-activate=${true}
+            data-nfd-installer-plugin-slug=${pluginData?.plsSlug}
+            data-nfd-installer-plugin-provider=${pluginData?.plsProviderName}
+            data-nfd-installer-plugin-name=${pluginData?.name}
+            data-nfd-installer-plugin-url=${pluginData?.url}
           >Install</button>`;
         } else {
-          return `<a href=${pluginData?.url} target="_blank" class="nfd-solutions-availble-list-item-button">Install</a>`;
+          return `<a
+            href=${pluginData?.url}
+            target="_blank"
+            class="nfd-solutions-availble-list-item-button"
+          >Install</a>`;
         }
       }
     }
@@ -91,7 +109,7 @@ class MyPluginTools {
 
         let myPlugins = document.createElement("div");
         myPlugins.classList.add("nfd-solutions-availble-list")
-        entitlements?.forEach( ( data ) => ( myPlugins.innerHTML +=  this.buildPluginsBlock(data)   ) );
+        entitlements?.forEach( ( data ) => ( myPlugins.innerHTML += this.buildPluginsBlock(data) ) );
          
         wpBody.appendChild(myPlugins);
         this.bindActivateButtons();
