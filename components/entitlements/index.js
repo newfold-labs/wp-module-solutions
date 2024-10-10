@@ -141,7 +141,10 @@ const Entitlements = ( { methods, constants, ...props } ) => {
 	};
     
     const renderCTAUrl = ( url ) => {
-        return url.replace('{siteUrl}', window.NewfoldRuntime.base_url);
+        if ( ! window.NewfoldRuntime || ! window.NewfoldRuntime.siteUrl ) {
+			return url.replace( '{siteUrl}', '' ); // fallback to site relative url if no siteUrl is found
+		}
+		return url.replace( '{siteUrl}', window.NewfoldRuntime.siteUrl );
     };
     
 	return (
