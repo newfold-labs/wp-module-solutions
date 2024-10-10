@@ -133,7 +133,6 @@ const Entitlements = ( { methods, constants, ...props } ) => {
             cat.entitlements = filterCategoryEntitlements( cat.name, entitlements );
             thecategories.push( cat );
 		} );
-        
         // sort by priority
 		return thecategories.sort( ( a, b ) => {
             return a.priority - b.priority;
@@ -146,7 +145,7 @@ const Entitlements = ( { methods, constants, ...props } ) => {
 		}
 		return url.replace( '{siteUrl}', window.NewfoldRuntime.siteUrl );
     };
-    
+
 	return (
         <>
             { isLoading && (
