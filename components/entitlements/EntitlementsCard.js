@@ -52,9 +52,7 @@ export function EntitlementsCard(props){
         return(
             <Section.Container>
                 <Section.Header
-                //TODO: Uncomment line nos. 57 and remove line nos. 56 to make title value dynamically update as per purchased solution
                 title={__('My Plugins & Tools', "wp-module-solutions")}
-                //title={__(`${activeSolution} Tools`, "wp-module-solutions")}
                 anchor={{title : __( "Add a New Plugin", "wp-module-solutions" ), className:"nfd-text-[#196CDF]", href:"/wp-admin/plugin-install.php" }} 
                 /> 
                 <Section.Content className="nfd-core-tool-mypluginsntools">
