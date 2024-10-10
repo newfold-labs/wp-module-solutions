@@ -52,8 +52,12 @@ export function EntitlementsCard(props){
         return(
             <Section.Container>
                 <Section.Header
-                title={__('My Plugins & Tools', "wp-module-solutions")}
-                anchor={{title : __( "Add a New Plugin", "wp-module-solutions" ), className:"nfd-text-[#196CDF]", href:"/wp-admin/plugin-install.php" }} 
+                    title={__('My Plugins & Tools', "wp-module-solutions")}
+                    anchor={{
+                        title : __( "Add a New Plugin", "wp-module-solutions" ),
+                        className:"nfd-text-[#196CDF]",
+                        href:"/wp-admin/plugin-install.php"
+                    }} 
                 /> 
                 <Section.Content className="nfd-core-tool-mypluginsntools">
                     <>
