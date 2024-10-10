@@ -17,7 +17,7 @@ export function EntitlementsCard(props){
     let activePluginsArray = [];
     let installedPluginsArray = [];
 
-    const handleDisplay = ( category ) => {   
+    const handleDisplay = ( category ) => {
         setCollapse( (prevState) => ({...prevState, [category.name]: !prevState[category.name]}))    
     }
     
@@ -68,16 +68,16 @@ export function EntitlementsCard(props){
                                             </span>
                                             {
                                                 collapse[category.name] ? 
-                                                <ChevronDownIcon  className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" onClick={() => handleDisplay(category)} />                                            
+                                                <ChevronUpIcon  className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" />                                            
                                                 : 
-                                                <ChevronUpIcon className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" onClick={() => handleDisplay(category)} />
+                                                <ChevronDownIcon className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" />
                                             }
                                         </h2>
                                         {
                                             collapse[category.name] && (
                                                             category.entitlements.map((entitlement) => {
                                                                 return(
-                                                                    <div className="nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]">                            
+                                                                    <div className="nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]" key={entitlement.slug}>                            
                                                                         <img className="entitlement-image" src={entitlement.image.primaryImage} />
                                                                         <div className="nfd-flex nfd-flex-col nfd-ml-4">
                                                                             <h2 className="nfd-text-[#000000] nfd-font-medium">{__(entitlement.name, "wp-module-solutions")}</h2>
