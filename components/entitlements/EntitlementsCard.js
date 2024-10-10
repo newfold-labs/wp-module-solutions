@@ -63,8 +63,11 @@ export function EntitlementsCard(props){
                             entitlementCategories.map((category, index) => {
                                 return (
                                     <div key={index}>
-                                        <h2 className={classNames('nfd-mt-8', 'nfd-mb-8', 'nfd-flex', 'nfd-flex-row', 'nfd-cursor-pointer',
-                                            { 'nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4': !collapse[category.name], })} onClick={() => handleDisplay(category)}>                     
+                                        <h2 className={
+                                                classNames('nfd-mt-8', 'nfd-mb-8', 'nfd-flex', 'nfd-flex-row', 'nfd-cursor-pointer',
+                                                { 'nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4': !collapse[category.name], })
+                                            } 
+                                            onClick={() => handleDisplay(category)}>
                                             <span className="nfd-text-[#111729] nfd-text-base nfd-font-bold">
                                                 {__(category.name, "wp-module-solutions")}
                                             </span>
