@@ -143,7 +143,7 @@ export function EntitlementsCard(props){
                             entitlementCategories.map((category, index) => {
                                 return (
                                     <div key={index}>
-                                        <h2 className={
+                                        <h3 className={
                                                 classNames('nfd-mt-8', 'nfd-mb-8', 'nfd-flex', 'nfd-flex-row', 'nfd-cursor-pointer',
                                                 { 'nfd-border-b nfd-border-[#CBD5E1] nfd-pb-4': collapse[category.name], })
                                             }
@@ -157,7 +157,7 @@ export function EntitlementsCard(props){
                                                 :
                                                 <ChevronDownIcon className="nfd-w-[24px] nfd-h-[24px] nfd-self-center nfd-ml-auto" />
                                             }
-                                        </h2>
+                                        </h3>
                                         {
                                             ! collapse[category.name] && (
                                                 category.entitlements.map((entitlement, index) => {
@@ -169,9 +169,9 @@ export function EntitlementsCard(props){
                                                         >
                                                             <img className="entitlement-image" src={entitlement.image.primaryImage} />
                                                             <div className="nfd-flex nfd-flex-col nfd-ml-4">
-                                                                <h2
+                                                                <h4
                                                                     className="nfd-text-[#000000] nfd-font-medium"
-                                                                >{__(entitlement.name, "wp-module-solutions")}</h2>
+                                                                >{__(entitlement.name, "wp-module-solutions")}</h4>
                                                                 <p
                                                                     className="nfd-text-[#4A5567] nfd-font-normal nfd-mt-2"
                                                                 >{__(entitlement.description, "wp-module-solutions" )}</p>
