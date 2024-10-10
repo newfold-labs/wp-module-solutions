@@ -15,7 +15,8 @@
                 "text": "Configure",
                 "url": "{siteUrl}/wp-admin/admin.php?page=wpseo_dashboard#top#first-time-configuration"
             },
-            "providerName": null,
+            "plsProviderName": null,
+            "plsSlug": null,
             "download": "https://downloads.wordpress.org/plugin/wordpress-seo.latest-stable.zip",
             "slug": "wp-seo",
             "basename": "wordpress-seo/wp-seo.php",
@@ -38,8 +39,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-advanced-reviews",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -61,8 +63,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-email-templates",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -84,8 +87,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-pdf-invoice",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -107,8 +111,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-request-a-quote",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -130,8 +135,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-advanced-product-options",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -153,8 +159,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-composite-products-for-woocommerce",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -176,8 +183,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-gift-cards",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -197,12 +205,13 @@
             "url": "https://yoast.com",
             "cta": {
                 "text": "Manage",
-                "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
+                "url": "https://evaninstonemountain.com/wp-admin/admin.php?page=wpseo_local"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
-            "slug": "example",
-            "basename": "example.com/example.php",
+            "plsProviderName": "yoast",
+            "plsSlug": "yoast-seo-local",
+            "download": "https://my.yoast.com/api/licensing/download/?license=a9622659-866e-11ef-a95e-6b1bf2b8dada&product=yoast-seo-local",
+            "slug": "local-seo",
+            "basename": "wpseo-local/local-seo.php",
             "image": {
                 "primaryImage": "https://cdn.hiive.space/solutions/entitlements/yoast-local-seo.svg"
             },
@@ -222,10 +231,11 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
-            "slug": "example",
-            "basename": "example.com/example.php",
+            "plsProviderName": "yoast",
+            "plsSlug": "yoast-seo-news",
+            "download": null,
+            "slug": "yoast-seo-news",
+            "basename": "yoast-seo-news/yoast-seo-news.php",
             "image": {
                 "primaryImage": "https://cdn.hiive.space/solutions/entitlements/yoast-news-seo.svg"
             },
@@ -245,8 +255,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-compare",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -268,7 +279,8 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
+            "plsProviderName": "yoast",
+            "plsSlug": "yoast-seo-woocommerce",
             "download": "https://example.com/example.zip",
             "slug": "example",
             "basename": "example.com/example.php",
@@ -291,8 +303,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-one-click-checkout",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -314,8 +327,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-subscription",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -337,7 +351,8 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=creativemail"
             },
-            "providerName": null,
+            "plsProviderName": null,
+            "plsSlug": null,
             "download": "https://downloads.wordpress.org/plugin/creative-mail-by-constant-contact.zip",
             "slug": "creative-mail-plugin",
             "basename": "creative-mail-by-constant-contact/creative-mail-plugin.php",
@@ -360,8 +375,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-ajax-search",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -383,8 +399,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-tab-manager",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -406,8 +423,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-social-login",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -429,7 +447,8 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
+            "plsProviderName": null,
+            "plsSlug": null,
             "download": "https://example.com/example.zip",
             "slug": "example",
             "basename": "example.com/example.php",
@@ -452,8 +471,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/"
             },
-            "providerName": null,
-            "download": "https://yith.com/tbd/memberships/tbd.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-membership",
+            "download": null,
             "slug": "memberships",
             "basename": "yith-memberships/memberships.php",
             "image": {
@@ -475,8 +495,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/edit.php?post_type=feedback"
             },
-            "providerName": null,
-            "download": "https://tbd.com/jetpack.zip",
+            "plsProviderName": null,
+            "plsSlug": null,
+            "download": "https://downloads.wordpress.org/plugin/jetpack.latest-stable.zip",
             "slug": "jetpack",
             "basename": "jetpack/jetpack.php",
             "image": {
@@ -498,8 +519,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-points-and-rewards",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -521,8 +543,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-sms-notifications",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -544,8 +567,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-booking",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -567,8 +591,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-store-locator-for-wordpress",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -590,7 +615,8 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
+            "plsProviderName": null,
+            "plsSlug": null,
             "download": "https://example.com/example.zip",
             "slug": "example",
             "basename": "example.com/example.php",
@@ -613,8 +639,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/wonderblocks-example"
             },
-            "providerName": null,
-            "download": "https://tbd.com/tbd.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-affiliates",
+            "download": null,
             "slug": "commerce-entitlement",
             "basename": "commerce-entitlement/commerce-entitlement.php",
             "image": {
@@ -636,8 +663,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-catalog-mode",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -659,8 +687,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-wishlist",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -682,7 +711,8 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
+            "plsProviderName": "yoast",
+            "plsSlug": "yoast-seo-video",
             "download": "https://example.com/example.zip",
             "slug": "example",
             "basename": "example.com/example.php",
@@ -705,8 +735,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "wonder-cart",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -728,8 +759,9 @@
                 "text": "Manage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/example"
             },
-            "providerName": null,
-            "download": "https://example.com/example.zip",
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-customize-myaccount-page",
+            "download": null,
             "slug": "example",
             "basename": "example.com/example.php",
             "image": {
@@ -751,7 +783,8 @@
                 "text": "Build a Webpage",
                 "url": "{siteUrl}/wp-admin/admin.php?page=bluehost#/wonderblocks-example"
             },
-            "providerName": null,
+            "plsProviderName": null,
+            "plsSlug": null,
             "download": "https://tbd.com/wonderblocks.zip",
             "slug": "wonderblocks",
             "basename": "wonderblocks/wonderblocks.php",
@@ -800,6 +833,7 @@
             "fullPrice": "$0.00",
             "url": null,
             "ctbId": null,
+            "priority": 20,
             "features": [
                 "Includes the <strong>Content Creator bundle</strong>",
                 "8 Exclusive Local Business Plugins",
@@ -815,6 +849,7 @@
             "fullPrice": "$0.00",
             "url": null,
             "ctbId": null,
+            "priority": 30,
             "features": [
                 "Includes the <strong>Service Business</strong> bundle",
                 "Express 1-Click Checkout",
@@ -830,6 +865,7 @@
             "fullPrice": "$0.00",
             "url": null,
             "ctbId": null,
+            "priority": 10,
             "features": [
                 "Monetize Content with Ease",
                 "4 Exclusive Social Media Plugins",
