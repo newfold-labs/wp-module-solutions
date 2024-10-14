@@ -91,30 +91,50 @@ export function EntitlementsCard(props){
                                                                             <p className="nfd-text-[#4A5567] nfd-font-normal nfd-mt-2">{__(entitlement.description, "wp-module-solutions" )}</p>                            
                                                                         </div>                
                                                                         {
-                                                                            activePluginsArray.includes(entitlement.basename) ?
+
+                                                                            entitlement.type === "plugin" ? 
+                                                                            (
+                                                                                activePluginsArray.includes(entitlement.basename) ?
+                                                                                (
+                                                                                    <Button
+                                                                                    as="a"
+                                                                                    className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
+                                                                                    href={ renderCTAUrl(entitlement.cta.url) }
+                                                                                    variant="secondary"
+                                                                                    >
+                                                                                        { __(`${entitlement.cta.text}`, "wp-module-solutions") }
+                                                                                    </Button>
+                                                                                )
+                                                                                :
+                                                                                (                                                                                                                                                                                                                                                    
+                                                                                    <Button
+                                                                                    className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
+                                                                                    variant="secondary"
+                                                                                    as="button" 
+                                                                                    data-nfd-installer-plugin-slug={entitlement.plsSlug !== "" ? entitlement.plsSlug : ""} 
+                                                                                    data-nfd-installer-plugin-provider={entitlement.plsProviderName !== "" ? entitlement.plsProviderName : ""} 
+                                                                                    data-nfd-installer-download-url = {  entitlement.download !== "" ? entitlement.download : "" }
+                                                                                    data-nfd-installer-plugin-activate={true}
+                                                                                    data-nfd-installer-plugin-name={entitlement.name}
+                                                                                    data-nfd-installer-plugin-url={renderCTAUrl(entitlement.cta.url)}
+                                                                                    data-nfd-installer-plugin-storage-key={entitlement.storageKey}
+                                                                                    >
+                                                                                        { __(`${entitlement.cta.text}`, "wp-module-solutions") }
+                                                                                    </Button>                                                                                                                                                                    
+                                                                                )                                                                                
+                                                                            )
+                                                                            :
                                                                             (
                                                                                 <Button
                                                                                 as="a"
                                                                                 className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
-                                                                                href={ renderCTAUrl( entitlement.cta.url ) }
+                                                                                href={ renderCTAUrl(entitlement.cta.url) }
                                                                                 variant="secondary"
                                                                                 >
                                                                                     { __(`${entitlement.cta.text}`, "wp-module-solutions") }
                                                                                 </Button>
                                                                             )
-                                                                            :
-                                                                            (
-                                                                                <Button
-                                                                                className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
-                                                                                variant="secondary"
-                                                                                as="button" 
-                                                                                data-nfd-installer-plugin-slug={entitlement.plsSlug} 
-                                                                                data-nfd-installer-plugin-provider={entitlement.plsProviderName} 
-                                                                                data-nfd-installer-plugin-activate={true}
-                                                                                >
-                                                                                    { __("Install", "wp-module-solutions")}
-                                                                                </Button>
-                                                                            )
+
                                                                         }       
                                                                     </div>
                                                         )
