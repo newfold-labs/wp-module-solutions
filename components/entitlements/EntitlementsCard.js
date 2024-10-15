@@ -71,7 +71,7 @@ export function EntitlementsCard(props){
                                             } 
                                             onClick={() => handleDisplay(category)}>
                                             <span className="nfd-text-[#111729] nfd-text-base nfd-font-bold">
-                                                {__(category.name, "wp-module-solutions")}
+                                                {category.name}
                                             </span>
                                             {
                                                 collapse[category.name] ? 
@@ -87,8 +87,8 @@ export function EntitlementsCard(props){
                                                                     <div className="nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]" key={entitlement.slug}>                            
                                                                         <img className="entitlement-image" src={entitlement.image.primaryImage} />
                                                                         <div className="nfd-flex nfd-flex-col nfd-ml-4">
-                                                                            <h2 className="nfd-text-[#000000] nfd-font-medium">{__(entitlement.name, "wp-module-solutions")}</h2>
-                                                                            <p className="nfd-text-[#4A5567] nfd-font-normal nfd-mt-2">{__(entitlement.description, "wp-module-solutions" )}</p>                            
+                                                                            <h2 className="nfd-text-[#000000] nfd-font-medium">{entitlement.name}</h2>
+                                                                            <p className="nfd-text-[#4A5567] nfd-font-normal nfd-mt-2">{entitlement.description}</p>
                                                                         </div>                
                                                                         {
 
@@ -102,7 +102,7 @@ export function EntitlementsCard(props){
                                                                                     href={ renderCTAUrl(entitlement.cta.url) }
                                                                                     variant="secondary"
                                                                                     >
-                                                                                        { __(`${entitlement.cta.text}`, "wp-module-solutions") }
+                                                                                        {entitlement.cta.text}
                                                                                     </Button>
                                                                                 )
                                                                                 :
@@ -119,7 +119,7 @@ export function EntitlementsCard(props){
                                                                                     data-nfd-installer-plugin-url={renderCTAUrl(entitlement.cta.url)}
                                                                                     data-nfd-installer-plugin-storage-key={entitlement.storageKey}
                                                                                     >
-                                                                                        { __(`${entitlement.cta.text}`, "wp-module-solutions") }
+                                                                                        {entitlement.cta.text}
                                                                                     </Button>                                                                                                                                                                    
                                                                                 )                                                                                
                                                                             )
@@ -131,7 +131,7 @@ export function EntitlementsCard(props){
                                                                                 href={ renderCTAUrl(entitlement.cta.url) }
                                                                                 variant="secondary"
                                                                                 >
-                                                                                    { __(`${entitlement.cta.text}`, "wp-module-solutions") }
+                                                                                    {entitlement.cta.text}
                                                                                 </Button>
                                                                             )
 
