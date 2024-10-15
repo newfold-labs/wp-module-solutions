@@ -12,7 +12,7 @@ if ( function_exists( 'add_action' ) ) {
 			register(
 				array(
 					'name'     => 'wp-module-solutions',
-					'label'    => __( 'wp-module-solutions', 'wp-module-solutions' ),
+					'label'    => __( 'Solutions', 'wp-module-solutions' ),
 					'callback' => function ( Container $container ) {
 						new Solutions( $container );
 						define( 'NFD_SOLUTIONS_DIR', __DIR__ );
