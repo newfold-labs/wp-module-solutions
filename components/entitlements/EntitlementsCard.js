@@ -107,22 +107,34 @@ export function EntitlementsCard(props){
                                                                                     </Button>
                                                                                 )
                                                                                 :
-                                                                                (                                                                                                                                                                                                                                                    
-                                                                                    <Button
-                                                                                    key={`button_${index}`}
-                                                                                    className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
-                                                                                    variant="secondary"
-                                                                                    as="button" 
-                                                                                    data-nfd-installer-plugin-slug={entitlement.plsSlug !== "" ? entitlement.plsSlug : ""}
-                                                                                    data-nfd-installer-plugin-provider={entitlement.plsProviderName !== "" ? entitlement.plsProviderName : ""} 
-                                                                                    data-nfd-installer-download-url = {entitlement.download !== "" ? entitlement.download : "" }
-                                                                                    data-nfd-installer-plugin-activate={true}
-                                                                                    data-nfd-installer-plugin-name={entitlement.name}
-                                                                                    data-nfd-installer-plugin-url={renderCTAUrl(entitlement.cta.url)}
-                                                                                    data-nfd-installer-plugin-storage-key={entitlement.storageKey}
-                                                                                    >
-                                                                                        {entitlement.cta.text}
-                                                                                    </Button>                                                                                                                                                                    
+                                                                                (  
+                                                                                    entitlement.download ?
+                                                                                        (<Button
+                                                                                        key={`button_${index}`}
+                                                                                        className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
+                                                                                        variant="secondary"
+                                                                                        as="button" 
+                                                                                        data-nfd-installer-download-url = {entitlement.download}
+                                                                                        data-nfd-installer-plugin-activate={true}
+                                                                                        data-nfd-installer-plugin-name={entitlement.name}
+                                                                                        data-nfd-installer-plugin-url={renderCTAUrl(entitlement.cta.url)}
+                                                                                        >
+                                                                                            {entitlement.cta.text}
+                                                                                        </Button>)
+                                                                                        :                                                                                                                                                                                                                                                  
+                                                                                        (<Button
+                                                                                        key={`button_${index}`}
+                                                                                        className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
+                                                                                        variant="secondary"
+                                                                                        as="button" 
+                                                                                        data-nfd-installer-pls-slug={entitlement.plsSlug}
+                                                                                        data-nfd-installer-pls-provider={entitlement.plsProviderName} 
+                                                                                        data-nfd-installer-plugin-activate={true}
+                                                                                        data-nfd-installer-plugin-name={entitlement.name}
+                                                                                        data-nfd-installer-plugin-url={renderCTAUrl(entitlement.cta.url)}
+                                                                                        >
+                                                                                            {entitlement.cta.text}
+                                                                                        </Button>)                                                                                                                                                                
                                                                                 )                                                                                
                                                                             )
                                                                             :
