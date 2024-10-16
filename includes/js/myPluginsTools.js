@@ -65,11 +65,11 @@ class MyPluginTools {
       if( isActive && isInstalled ){ // active and installed
         return `<a 
           title="Manage"
-          href=${this.renderCTAUrl(pluginData?.cta?.url)} 
+          href="${this.renderCTAUrl(pluginData?.cta?.url)}"
           class="nfd-solutions-availble-list-item-button"
         >${pluginData?.cta?.text}</a>`;
       } else if ( isInstalled ){ // already installed
-        return `<button 
+        return `<button
           title="Activate Plugin"
           data-plugin="${pluginData?.basename}"
           class="nfd-solutions-availble-list-item-button nfd-activate-btn"
