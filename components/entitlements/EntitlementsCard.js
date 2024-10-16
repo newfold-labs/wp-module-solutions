@@ -82,11 +82,11 @@ export function EntitlementsCard(props){
                                         </h2>
                                         {
                                             collapse[category.name] && (
-                                                            category.entitlements.map((entitlement) => {
+                                                            category.entitlements.map((entitlement, index) => {
                                                                 return(
-                                                                    <div className="nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]" key={entitlement.slug}>                            
+                                                                    <div className="nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]" key={`row-${index}`}>                            
                                                                         <img className="entitlement-image" src={entitlement.image.primaryImage} />
-                                                                        <div className="nfd-flex nfd-flex-col nfd-ml-4">
+                                                                        <div className="nfd-flex nfd-flex-col nfd-ml-4" key={`heading_${index}`}>
                                                                             <h2 className="nfd-text-[#000000] nfd-font-medium">{entitlement.name}</h2>
                                                                             <p className="nfd-text-[#4A5567] nfd-font-normal nfd-mt-2">{entitlement.description}</p>
                                                                         </div>                
@@ -97,6 +97,7 @@ export function EntitlementsCard(props){
                                                                                 activePluginsArray.includes(entitlement.basename) ?
                                                                                 (
                                                                                     <Button
+                                                                                    key={`button_${index}`}
                                                                                     as="a"
                                                                                     className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
                                                                                     href={ renderCTAUrl(entitlement.cta.url) }
@@ -108,6 +109,7 @@ export function EntitlementsCard(props){
                                                                                 :
                                                                                 (                                                                                                                                                                                                                                                    
                                                                                     <Button
+                                                                                    key={`button_${index}`}
                                                                                     className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
                                                                                     variant="secondary"
                                                                                     as="button" 
@@ -126,6 +128,7 @@ export function EntitlementsCard(props){
                                                                             :
                                                                             (
                                                                                 <Button
+                                                                                key={`button_${index}`}
                                                                                 as="a"
                                                                                 className="nfd-button nfd-button--secondary nfd-self-center nfd-ml-auto nfd-font-normal nfd-text-[#000000]" 
                                                                                 href={ renderCTAUrl(entitlement.cta.url) }
