@@ -80,26 +80,25 @@ class MyPluginTools {
         return `<button
           title="Install Premium Plugin"
           class="nfd-solutions-availble-list-item-button"
-          data-nfd-installer-plugin-activate=${true}
-          data-nfd-installer-plugin-slug=${pluginData?.plsSlug}
-          data-nfd-installer-plugin-provider=${pluginData?.plsProviderName}
-          data-nfd-installer-plugin-name=${pluginData?.name}
-          data-nfd-installer-plugin-url=${this.renderCTAUrl(pluginData?.cta?.url)}
+          data-nfd-installer-plugin-activate="${true}"
+          data-nfd-installer-plugin-slug="${pluginData?.plsSlug}"
+          data-nfd-installer-plugin-provider="${pluginData?.plsProviderName}"
+          data-nfd-installer-plugin-name="${pluginData?.name}"
+          data-nfd-installer-plugin-url="${this.renderCTAUrl(pluginData?.cta?.url)}"
         >${pluginData?.cta?.text}</button>`;
       } else if ( pluginData?.download ) { // free plugin
         return `<button
           title="Install Plugin"
           class="nfd-solutions-availble-list-item-button"
-          data-nfd-installer-plugin-activate=${true}
-          data-nfd-installer-plugin-name=${pluginData?.name}
-          data-nfd-installer-download-url=${pluginData?.download}
-          data-nfd-installer-plugin-url=${this.renderCTAUrl(pluginData?.cta?.url)}
+          data-nfd-installer-plugin-activate="${true}"
+          data-nfd-installer-plugin-name="${pluginData?.name}"
+          data-nfd-installer-download-url="${pluginData?.download}"
+          data-nfd-installer-plugin-url="${this.renderCTAUrl(pluginData?.cta?.url)}"
         >${pluginData?.cta?.text}</button>`;
       } else { // fallback
         return `<a
           title="Learn More"
-          href=${pluginData?.url}
-          target="_blank"
+          href="${pluginData?.url}"
           class="nfd-solutions-availble-list-item-button"
         >${pluginData?.cta?.text}</a>`;
       }
