@@ -6,9 +6,9 @@ const defaults = {
 	eventEndpoint: '/newfold-data/v1/events/',
 	text: {
 		title: 'Solutions',
-		subTitle: 'Explore the entitlements available with your solution.',
-		error: 'Oops, there was an error loading the entitlements, please try again later.',
-		noEntitlements: 'Sorry, no current entitlements. Please, try again later.',
+		subTitle: 'Explore the plugins & tools available with your solution.',
+		error: 'Oops, there was an error loading the plugins & tools, please try again later.',
+		noEntitlements: 'Sorry, no current plugins & tools. Please, try again later.',
 		loadMore: 'Load More',
 	},
 };
