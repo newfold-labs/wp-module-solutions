@@ -129,15 +129,19 @@ class Solutions {
 		if ( false === ( isset( $_GET['tab'] ) && 'nfd_my_plugins_and_tools' === $_GET['tab'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
 		}
+
+		// TODO: update this to a dependency script
+		do_action( 'newfold/installer/enqueue_scripts' );
+
 		wp_enqueue_style( 'nfd_myplugin_solutions_css', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css', array(), '1.0' );
 		wp_enqueue_script( 'nfd_myplugin_solutions_js', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
 
 		wp_localize_script(
 			'nfd_myplugin_solutions_js',
-			'plugin_details',
+			'nfdPluginDetails',
 			array(
-				'installed_plugins' => get_plugins(),
-				'active_plugins'    => get_option( 'active_plugins' ),
+				'installed' => get_plugins(),
+				'active'    => get_option( 'active_plugins' ),
 			)
 		);
 	}
