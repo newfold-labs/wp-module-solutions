@@ -123,6 +123,9 @@ const Entitlements = ( { methods, constants, ...props } ) => {
 			return [];
 		}
 
+		//sort entitlements in alphabetical order
+		const sortedPluginNames = entitlements.sort((a, b) => a.name.localeCompare(b.name))
+
 		let thecategories = [];
 
         // assign entitlements
@@ -130,7 +133,7 @@ const Entitlements = ( { methods, constants, ...props } ) => {
             // add class name to category
 			cat.className = 'newfold-entitlement-category-' + cat.name.toLowerCase().replace(' & ','_').replace('/','_').replace(' ','_');
             // get entitlements for this category
-            cat.entitlements = filterCategoryEntitlements( cat.name, entitlements );
+            cat.entitlements = filterCategoryEntitlements( cat.name, sortedPluginNames );
             thecategories.push( cat );
 		} );
         // sort by priority
@@ -146,6 +149,10 @@ const Entitlements = ( { methods, constants, ...props } ) => {
 		return url.replace( '{siteUrl}', window.NewfoldRuntime.siteUrl );
     };
 
+	const filterDataWithEntitlements = ( entitlementCategories ) => {
+		return entitlementCategories.filter( val => val.entitlements?.length > 0 );
+	}
+
 	return (
         <>
             { isLoading && (
@@ -159,7 +166,7 @@ const Entitlements = ( { methods, constants, ...props } ) => {
                     description={ constants.text.error }
                 />
             ) }
-            { !isLoading && !isError && (<EntitlementsCard entitlementCategories={entitlementCategories} renderCTAUrl={renderCTAUrl} activeSolution={activeSolution['name']} />) }
+            { !isLoading && !isError && (<EntitlementsCard entitlementCategories={filterDataWithEntitlements(entitlementCategories)} renderCTAUrl={renderCTAUrl} activeSolution={activeSolution['name']} />) }
 		</>
 	);
 };

@@ -20,17 +20,18 @@ class MyPluginTools {
             const pluginWithStatus = pluginsData.map(val => ({
               ...val,
               isInstalled: installedPlugins?.includes( val.basename ),
-              isActive: plugin_details?.active_plugins?.includes( val.basename ),
+              isActive: plugin_details?.active_plugins?.find( plugin => plugin === val.basename ),
               nonce: plugin_details?.nonce
             }))
-            this.setUpContainer(pluginWithStatus);
+            const sortedPluginNames = pluginWithStatus.sort( ( a, b ) => a.name.localeCompare( b.name ) )
+            this.setUpContainer( sortedPluginNames );
         })
     
     })
         
     }
 
-    activate_plugin ( plugin_path ){
+    activate_plugin ( plugin_path, href ){
       fetch(
         nfdplugin.restApiUrl +
           '/newfold-solutions/v1/activate_plugin',
@@ -47,7 +48,7 @@ class MyPluginTools {
         }
       ).then((response) => response.json() ).then((response) => {
         if( response?.message ){
-          window.location.reload();
+          window.location.href = href;
         }
       })
        
@@ -72,6 +73,7 @@ class MyPluginTools {
         return `<button
           title="Activate Plugin"
           data-plugin="${pluginData?.basename}"
+          href="${this.renderCTAUrl(pluginData?.cta?.url)}"
           class="nfd-solutions-availble-list-item-button nfd-activate-btn"
         >${pluginData?.cta?.text}</button>`;
       }
@@ -134,7 +136,8 @@ class MyPluginTools {
       activateButtons.forEach((button) => {
           button.addEventListener("click", (event) => {
               const pluginPath = event.target.getAttribute("data-plugin");
-              this.activate_plugin(pluginPath); 
+              const href =  event.target.getAttribute("href");
+              this.activate_plugin(pluginPath, href); 
           });
       });
   }
