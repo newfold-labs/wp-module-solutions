@@ -53,7 +53,7 @@ export function EntitlementsCard( props ) {
 					anchor={ {
 						title: __( 'Add a New Plugin', 'wp-module-solutions' ),
 						className: 'nfd-text-[#196CDF]',
-						href: '/wp-admin/plugin-install.php',
+						href: `${NewfoldRuntime.adminUrl}plugin-install.php`,
 					} }
 				/>
 				<Section.Content className="nfd-core-tool-mypluginsntools">

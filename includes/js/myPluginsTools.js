@@ -20,10 +20,11 @@ class MyPluginTools {
             const pluginWithStatus = pluginsData.map(val => ({
               ...val,
               isInstalled: installedPlugins?.includes( val.basename ),
-              isActive: plugin_details?.active_plugins?.includes( val.basename ),
+              isActive: plugin_details?.active_plugins?.find( plugin => plugin === val.basename ),
               nonce: plugin_details?.nonce
             }))
-            this.setUpContainer(pluginWithStatus);
+            const sortedPluginNames = pluginWithStatus.sort( ( a, b ) => a.name.localeCompare( b.name ) )
+            this.setUpContainer( sortedPluginNames );
         })
     
     })

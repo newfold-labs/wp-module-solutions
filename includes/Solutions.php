@@ -30,6 +30,8 @@ class Solutions {
 		add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
 
 		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
+		add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
+
 	}
 
 	/**
@@ -100,8 +102,25 @@ class Solutions {
 		if ( is_array( $entitlements->data ) ? $entitlements->data['entitlements'] : $entitlements->data->entitlements ) {
 			$tabs['nfd_my_plugins_and_tools'] = __( 'My Plugins & Tools', 'wp-module-solutions' );
 		}
-
 		return $tabs;
+	}
+
+	/**
+	 * Add "Plugins && tools" sub-link to admin menu.
+	 */
+	public static function add_plugins_and_tools_menu_link() {
+		$hiive        = new HiiveConnection();
+		$api          = new EntitlementsApi( $hiive );
+		$entitlements = $api->get_items();
+		if ( is_array( $entitlements->data ) ? $entitlements->data['entitlements'] : $entitlements->data->entitlements ) {
+			add_submenu_page(
+				'plugins.php',
+				'nfd_my_plugins_and_tools',
+				'My plugins & Tools',
+				'manage_options',
+				'plugin-install.php?tab=nfd_my_plugins_and_tools'
+			);
+		}
 	}
 
 	/**
