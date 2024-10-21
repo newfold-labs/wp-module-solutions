@@ -31,7 +31,6 @@ class Solutions {
 
 		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 		add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
-
 	}
 
 	/**
