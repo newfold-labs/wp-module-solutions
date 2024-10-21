@@ -53,65 +53,13 @@ class MyPluginTools {
        
     }
 
-    renderCTAUrl( url ) {
-      if ( ! window.NewfoldRuntime || ! window.NewfoldRuntime.siteUrl ) {
-        // fallback to site relative url if no base_url is found
-        return url.replace( '{siteUrl}', '' );
-      }
-      return url.replace( '{siteUrl}', window.NewfoldRuntime.siteUrl );
-    }
-
-    getElementByStatus( isActive, isInstalled, pluginData ) {
-      if( isActive && isInstalled ){ // active and installed
-        return `<a 
-          title="Manage"
-          href="${this.renderCTAUrl(pluginData?.cta?.url)}"
-          class="nfd-solutions-availble-list-item-button"
-        >${pluginData?.cta?.text}</a>`;
-      } else if ( isInstalled ){ // already installed
-        return `<button
-          title="Activate Plugin"
-          data-plugin="${pluginData?.basename}"
-          href="${this.renderCTAUrl(pluginData?.cta?.url)}"
-          class="nfd-solutions-availble-list-item-button nfd-activate-btn"
-        >${pluginData?.cta?.text}</button>`;
-      }
-
-      if ( pluginData?.plsProviderName && pluginData?.plsSlug ){ // premium plugin with pls
-        return `<button
-          title="Install Premium Plugin"
-          class="nfd-solutions-availble-list-item-button"
-          data-nfd-installer-plugin-activate="${true}"
-          data-nfd-installer-plugin-slug="${pluginData?.plsSlug}"
-          data-nfd-installer-plugin-provider="${pluginData?.plsProviderName}"
-          data-nfd-installer-plugin-name="${pluginData?.name}"
-          data-nfd-installer-plugin-url="${this.renderCTAUrl(pluginData?.cta?.url)}"
-        >${pluginData?.cta?.text}</button>`;
-      } else if ( pluginData?.download ) { // free plugin
-        return `<button
-          title="Install Plugin"
-          class="nfd-solutions-availble-list-item-button"
-          data-nfd-installer-plugin-activate="${true}"
-          data-nfd-installer-plugin-name="${pluginData?.name}"
-          data-nfd-installer-download-url="${pluginData?.download}"
-          data-nfd-installer-plugin-url="${this.renderCTAUrl(pluginData?.cta?.url)}"
-        >${pluginData?.cta?.text}</button>`;
-      } else { // fallback
-        return `<a
-          title="Learn More"
-          href="${pluginData?.url}"
-          class="nfd-solutions-availble-list-item-button"
-        >${pluginData?.cta?.text}</a>`;
-      }
-    }
-
     buildPluginsBlock( pluginData ) {
         return `<div class="nfd-solutions-availble-list-item">
                     <div><img src=${pluginData?.image?.primaryImage} width="128px" height="128px" /></div>
                     <div class="details">
                         <h3 class="nfd-solutions-availble-list-item-title">${pluginData?.name}</h3>
                         <div>
-                       ${this.getElementByStatus( pluginData?.isActive, pluginData?.isInstalled, pluginData )}
+                       ${ window.NewfoldRuntime.installer.renderInstallerButton( pluginData, 'nfd-solutions-availble-list-item-button' ) }
                         </div>
                         <p>${pluginData?.description}</p>
                     </div>
