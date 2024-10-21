@@ -131,7 +131,7 @@ class Solutions {
 		}
 
 		// TODO: update this to a dependency script
-		do_action( 'newfold/installer/enqueue_scripts' ); 
+		do_action( 'newfold/installer/enqueue_scripts' );
 
 		wp_enqueue_style( 'nfd_myplugin_solutions_css', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css', array(), '1.0' );
 		wp_enqueue_script( 'nfd_myplugin_solutions_js', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
