@@ -20,8 +20,7 @@ class MyPluginTools {
             const pluginWithStatus = pluginsData.map(val => ({
               ...val,
               isInstalled: installedPlugins?.includes( val.basename ),
-              isActive: Object.values( nfdPluginDetails?.active ).find( ( plugin ) => plugin === val.basename ),
-              nonce: plugin_details?.nonce
+              isActive: Object.values( nfdPluginDetails?.active ).find( ( plugin ) => plugin === val.basename )
             }))
             const sortedPluginNames = pluginWithStatus.sort( ( a, b ) => a.name.localeCompare( b.name ) )
             this.setUpContainer( sortedPluginNames );
