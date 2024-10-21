@@ -91,7 +91,7 @@ export function EntitlementsCard( props ) {
 											( entitlement, i ) => {
 												return (
 													<div
-														className="nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA]"
+														className="nfd-flex nfd-flex-row nfd-pb-4 nfd-mb-4 nfd-border-b nfd-border-[#DCE2EA] nfd-gap-4"
 														key={ `row-${ i }` }
 													>
 														<img
@@ -104,7 +104,7 @@ export function EntitlementsCard( props ) {
 															}
 														/>
 														<div
-															className="nfd-flex nfd-flex-col nfd-ml-4"
+															className="nfd-flex nfd-flex-col"
 															key={ `heading_${ i }` }
 														>
 															<h3 className="nfd-text-[#000000] nfd-font-medium">
