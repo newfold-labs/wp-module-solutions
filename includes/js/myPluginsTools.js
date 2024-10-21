@@ -16,11 +16,11 @@ class MyPluginTools {
         .then((response) => response.json()).then((response) => {
            
             const pluginsData = response?.entitlements?.filter(data => data?.type === 'plugin' );
-            const installedPlugins = Object.keys(plugin_details?.installed_plugins)
+            const installedPlugins = Object.keys( nfdPluginDetails?.installed )
             const pluginWithStatus = pluginsData.map(val => ({
               ...val,
               isInstalled: installedPlugins?.includes( val.basename ),
-              isActive: Object.values( plugin_details?.active_plugins ).find( ( plugin ) => plugin === val.basename ),
+              isActive: Object.values( nfdPluginDetails?.active ).find( ( plugin ) => plugin === val.basename ),
               nonce: plugin_details?.nonce
             }))
             const sortedPluginNames = pluginWithStatus.sort( ( a, b ) => a.name.localeCompare( b.name ) )

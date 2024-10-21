@@ -134,10 +134,10 @@ class Solutions {
 
 		wp_localize_script(
 			'nfd_myplugin_solutions_js',
-			'plugin_details',
+			'nfdPluginDetails',
 			array(
-				'installed_plugins' => get_plugins(),
-				'active_plugins'    => get_option( 'active_plugins' ),
+				'installed' => get_plugins(),
+				'active'    => get_option( 'active_plugins' ),
 			)
 		);
 	}
