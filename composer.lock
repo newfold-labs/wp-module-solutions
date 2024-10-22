@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73a06a003e9b40062a728e9890db7a8d",
+    "content-hash": "8ce4e2e9bc5438e532f5d3d74d28b0c7",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -141,21 +141,76 @@
             "time": "2022-08-26T17:23:54+00:00"
         },
         {
-            "name": "newfold-labs/wp-module-data",
-            "version": "2.6.3",
+            "name": "newfold-labs/wp-module-context",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/newfold-labs/wp-module-data.git",
-                "reference": "f98dfabe6a4cb10aec6dcd6e81fc7d269238e9a4"
+                "url": "https://github.com/newfold-labs/wp-module-context.git",
+                "reference": "fb57e927df45ef33573fe7f429ef1e088b0a6df0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/f98dfabe6a4cb10aec6dcd6e81fc7d269238e9a4",
-                "reference": "f98dfabe6a4cb10aec6dcd6e81fc7d269238e9a4",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-context/zipball/fb57e927df45ef33573fe7f429ef1e088b0a6df0",
+                "reference": "fb57e927df45ef33573fe7f429ef1e088b0a6df0",
+                "shasum": ""
+            },
+            "require": {
+                "wp-forge/helpers": "^2.0"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Context\\": "includes"
+                },
+                "files": [
+                    "includes/functions.php",
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf . --standard=phpcs.xml"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Evan Mullins",
+                    "homepage": "https://evanmullins.com"
+                }
+            ],
+            "description": "Newfold module to determine context for various brands and platforms.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-context/tree/1.0.1",
+                "issues": "https://github.com/newfold-labs/wp-module-context/issues"
+            },
+            "time": "2024-05-23T20:34:28+00:00"
+        },
+        {
+            "name": "newfold-labs/wp-module-data",
+            "version": "2.6.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-data.git",
+                "reference": "002cc3da70565af1708408f7d7604396d2af55e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/002cc3da70565af1708408f7d7604396d2af55e3",
+                "reference": "002cc3da70565af1708408f7d7604396d2af55e3",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
+                "newfold-labs/wp-module-context": "^1.0",
                 "newfold-labs/wp-module-loader": "^1.0.10",
                 "wp-forge/helpers": "^2.0",
                 "wp-forge/wp-query-builder": "^1.0.4",
@@ -233,10 +288,10 @@
             ],
             "description": "Newfold Data Module",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.6.3",
+                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.6.5",
                 "issues": "https://github.com/newfold-labs/wp-module-data/issues"
             },
-            "time": "2024-08-30T19:51:58+00:00"
+            "time": "2024-10-18T19:30:28+00:00"
         },
         {
             "name": "newfold-labs/wp-module-loader",
