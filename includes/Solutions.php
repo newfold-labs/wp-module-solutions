@@ -98,9 +98,9 @@ class Solutions {
 	public static function add_my_plugins_and_tools_tab( array $tabs ) {
 		$capability = new SiteCapabilities();
 
-		$hasSolutions = $capability->get( 'hasSolution' );
+		$has_solutions = $capability->get( 'hasSolution' );
 
-		if ( ! $hasSolutions ) {
+		if ( ! $has_solutions ) {
 			return $tabs;
 		}
 		$hiive        = new HiiveConnection();
@@ -118,9 +118,9 @@ class Solutions {
 	public static function add_plugins_and_tools_menu_link() {
 		$capability = new SiteCapabilities();
 
-		$hasSolutions = $capability->get( 'hasSolution' );
+		$has_solutions = $capability->get( 'hasSolution' );
 
-		if ( $hasSolutions ) {
+		if ( $has_solutions ) {
 			$hiive        = new HiiveConnection();
 			$api          = new EntitlementsApi( $hiive );
 			$entitlements = $api->get_items();
