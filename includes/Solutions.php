@@ -5,6 +5,7 @@ namespace NewfoldLabs\WP\Module\Solutions;
 use NewfoldLabs\WP\ModuleLoader\Container;
 use NewfoldLabs\WP\Module\Solutions\I18nService;
 use NewfoldLabs\WP\Module\Data\HiiveConnection;
+use NewfoldLabs\WP\Module\Data\SiteCapabilities;
 
 /**
  * Manages all the functionalities for the module.
@@ -95,6 +96,13 @@ class Solutions {
 	 * @return array
 	 */
 	public static function add_my_plugins_and_tools_tab( array $tabs ) {
+		$capability = new SiteCapabilities();
+ 
+        $hasSolutions = $capability->get( 'hasSolution' );
+
+		if( !$hasSolutions){
+			return $tabs;
+		}
 		$hiive        = new HiiveConnection();
 		$api          = new EntitlementsApi( $hiive );
 		$entitlements = $api->get_items();
@@ -108,17 +116,23 @@ class Solutions {
 	 * Add "Plugins && tools" sub-link to admin menu.
 	 */
 	public static function add_plugins_and_tools_menu_link() {
-		$hiive        = new HiiveConnection();
-		$api          = new EntitlementsApi( $hiive );
-		$entitlements = $api->get_items();
-		if ( is_array( $entitlements->data ) ? $entitlements->data['entitlements'] : $entitlements->data->entitlements ) {
-			add_submenu_page(
-				'plugins.php',
-				'nfd_my_plugins_and_tools',
-				'My plugins & Tools',
-				'manage_options',
-				'plugin-install.php?tab=nfd_my_plugins_and_tools'
-			);
+		$capability = new SiteCapabilities();
+ 
+        $hasSolutions = $capability->get( 'hasSolution' );
+
+		if ( $hasSolutions ) {
+			$hiive        = new HiiveConnection();
+			$api          = new EntitlementsApi( $hiive );
+			$entitlements = $api->get_items();
+			if( is_array( $entitlements->data ) ? $entitlements->data['entitlements'] : $entitlements->data->entitlements ){
+				add_submenu_page(
+					'plugins.php',
+					'nfd_my_plugins_and_tools',
+					'My plugins & Tools',
+					'manage_options',
+					'plugin-install.php?tab=nfd_my_plugins_and_tools'
+				);
+			}
 		}
 	}
 

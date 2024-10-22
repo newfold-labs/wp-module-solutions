@@ -155,6 +155,9 @@ export function EntitlementsCard( props ) {
 																	data-nfd-installer-plugin-name={
 																		entitlement.name
 																	}
+																	data-nfd-installer-pls-provider={
+																		entitlement.plsProviderName
+																	}
 																	data-nfd-installer-plugin-url={ renderCTAUrl(
 																		entitlement
 																			.cta

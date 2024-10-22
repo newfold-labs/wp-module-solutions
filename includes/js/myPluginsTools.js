@@ -71,7 +71,11 @@ class MyPluginTools {
       } else if ( isInstalled ){ // already installed
         return `<button
           title="Activate Plugin"
-          data-plugin="${pluginData?.basename}"
+          data-nfd-installer-plugin-activate="${true}"
+          data-nfd-installer-plugin-slug="${pluginData?.plsSlug}"
+          data-nfd-installer-plugin-provider="${pluginData?.plsProviderName}"
+          data-nfd-installer-plugin-name="${pluginData?.name}"
+          data-nfd-installer-plugin-url="${this.renderCTAUrl(pluginData?.cta?.url)}"
           href="${this.renderCTAUrl(pluginData?.cta?.url)}"
           class="nfd-solutions-availble-list-item-button nfd-activate-btn"
         >${pluginData?.cta?.text}</button>`;
@@ -91,6 +95,7 @@ class MyPluginTools {
         return `<button
           title="Install Plugin"
           class="nfd-solutions-availble-list-item-button"
+          data-nfd-installer-plugin-provider="${pluginData?.plsProviderName}"
           data-nfd-installer-plugin-activate="${true}"
           data-nfd-installer-plugin-name="${pluginData?.name}"
           data-nfd-installer-download-url="${pluginData?.download}"
@@ -126,7 +131,7 @@ class MyPluginTools {
         entitlements?.forEach( ( data ) => ( myPlugins.innerHTML += this.buildPluginsBlock(data) ) );
          
         wpBody.appendChild(myPlugins);
-        this.bindActivateButtons();
+        
     }
 
     bindActivateButtons() {
