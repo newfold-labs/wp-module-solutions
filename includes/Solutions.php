@@ -97,10 +97,10 @@ class Solutions {
 	 */
 	public static function add_my_plugins_and_tools_tab( array $tabs ) {
 		$capability = new SiteCapabilities();
- 
-        $hasSolutions = $capability->get( 'hasSolution' );
 
-		if( !$hasSolutions){
+		$hasSolutions = $capability->get( 'hasSolution' );
+
+		if ( ! $hasSolutions ) {
 			return $tabs;
 		}
 		$hiive        = new HiiveConnection();
@@ -117,14 +117,14 @@ class Solutions {
 	 */
 	public static function add_plugins_and_tools_menu_link() {
 		$capability = new SiteCapabilities();
- 
-        $hasSolutions = $capability->get( 'hasSolution' );
+
+		$hasSolutions = $capability->get( 'hasSolution' );
 
 		if ( $hasSolutions ) {
 			$hiive        = new HiiveConnection();
 			$api          = new EntitlementsApi( $hiive );
 			$entitlements = $api->get_items();
-			if( is_array( $entitlements->data ) ? $entitlements->data['entitlements'] : $entitlements->data->entitlements ){
+			if ( is_array( $entitlements->data ) ? $entitlements->data['entitlements'] : $entitlements->data->entitlements ) {
 				add_submenu_page(
 					'plugins.php',
 					'nfd_my_plugins_and_tools',
