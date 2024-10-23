@@ -16,21 +16,21 @@ class MyPluginTools {
         .then((response) => response.json()).then((response) => {
            
             const pluginsData = response?.entitlements?.filter(data => data?.type === 'plugin' );
-            const installedPlugins = Object.keys(plugin_details?.installed_plugins)
+            const installedPlugins = Object.keys( nfdPluginDetails?.installed )
             const pluginWithStatus = pluginsData.map(val => ({
               ...val,
               isInstalled: installedPlugins?.includes( val.basename ),
-              isActive: plugin_details?.active_plugins?.includes( val.basename ),
-              nonce: plugin_details?.nonce
+              isActive: Object.values( nfdPluginDetails?.active ).find( ( plugin ) => plugin === val.basename )
             }))
-            this.setUpContainer(pluginWithStatus);
+            const sortedPluginNames = pluginWithStatus.sort( ( a, b ) => a.name.localeCompare( b.name ) )
+            this.setUpContainer( sortedPluginNames );
         })
     
     })
         
     }
 
-    activate_plugin ( plugin_path ){
+    activate_plugin ( plugin_path, href ){
       fetch(
         nfdplugin.restApiUrl +
           '/newfold-solutions/v1/activate_plugin',
@@ -47,7 +47,7 @@ class MyPluginTools {
         }
       ).then((response) => response.json() ).then((response) => {
         if( response?.message ){
-          window.location.reload();
+          window.location.href = href;
         }
       })
        
@@ -65,13 +65,18 @@ class MyPluginTools {
       if( isActive && isInstalled ){ // active and installed
         return `<a 
           title="Manage"
-          href=${this.renderCTAUrl(pluginData?.cta?.url)} 
+          href="${this.renderCTAUrl(pluginData?.cta?.url)}"
           class="nfd-solutions-availble-list-item-button"
         >${pluginData?.cta?.text}</a>`;
       } else if ( isInstalled ){ // already installed
-        return `<button 
+        return `<button
           title="Activate Plugin"
-          data-plugin="${pluginData?.basename}"
+          data-nfd-installer-plugin-activate="${true}"
+          data-nfd-installer-pls-slug="${pluginData?.plsSlug}"
+          data-nfd-installer-pls-provider="${pluginData?.plsProviderName}"
+          data-nfd-installer-plugin-name="${pluginData?.name}"
+          data-nfd-installer-plugin-url="${this.renderCTAUrl(pluginData?.cta?.url)}"
+          href="${this.renderCTAUrl(pluginData?.cta?.url)}"
           class="nfd-solutions-availble-list-item-button nfd-activate-btn"
         >${pluginData?.cta?.text}</button>`;
       }
@@ -80,26 +85,26 @@ class MyPluginTools {
         return `<button
           title="Install Premium Plugin"
           class="nfd-solutions-availble-list-item-button"
-          data-nfd-installer-plugin-activate=${true}
-          data-nfd-installer-plugin-slug=${pluginData?.plsSlug}
-          data-nfd-installer-plugin-provider=${pluginData?.plsProviderName}
-          data-nfd-installer-plugin-name=${pluginData?.name}
-          data-nfd-installer-plugin-url=${this.renderCTAUrl(pluginData?.cta?.url)}
+          data-nfd-installer-plugin-activate="${true}"
+          data-nfd-installer-pls-slug="${pluginData?.plsSlug}"
+          data-nfd-installer-pls-provider="${pluginData?.plsProviderName}"
+          data-nfd-installer-plugin-name="${pluginData?.name}"
+          data-nfd-installer-plugin-url="${this.renderCTAUrl(pluginData?.cta?.url)}"
         >${pluginData?.cta?.text}</button>`;
       } else if ( pluginData?.download ) { // free plugin
         return `<button
           title="Install Plugin"
           class="nfd-solutions-availble-list-item-button"
-          data-nfd-installer-plugin-activate=${true}
-          data-nfd-installer-plugin-name=${pluginData?.name}
-          data-nfd-installer-download-url=${pluginData?.download}
-          data-nfd-installer-plugin-url=${this.renderCTAUrl(pluginData?.cta?.url)}
+          data-nfd-installer-pls-provider="${pluginData?.plsProviderName}"
+          data-nfd-installer-plugin-activate="${true}"
+          data-nfd-installer-plugin-name="${pluginData?.name}"
+          data-nfd-installer-download-url="${pluginData?.download}"
+          data-nfd-installer-plugin-url="${this.renderCTAUrl(pluginData?.cta?.url)}"
         >${pluginData?.cta?.text}</button>`;
       } else { // fallback
         return `<a
           title="Learn More"
-          href=${pluginData?.url}
-          target="_blank"
+          href="${pluginData?.url}"
           class="nfd-solutions-availble-list-item-button"
         >${pluginData?.cta?.text}</a>`;
       }
@@ -126,7 +131,7 @@ class MyPluginTools {
         entitlements?.forEach( ( data ) => ( myPlugins.innerHTML += this.buildPluginsBlock(data) ) );
          
         wpBody.appendChild(myPlugins);
-        this.bindActivateButtons();
+        
     }
 
     bindActivateButtons() {
@@ -135,7 +140,8 @@ class MyPluginTools {
       activateButtons.forEach((button) => {
           button.addEventListener("click", (event) => {
               const pluginPath = event.target.getAttribute("data-plugin");
-              this.activate_plugin(pluginPath); 
+              const href =  event.target.getAttribute("href");
+              this.activate_plugin(pluginPath, href); 
           });
       });
   }

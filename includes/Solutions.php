@@ -5,6 +5,7 @@ namespace NewfoldLabs\WP\Module\Solutions;
 use NewfoldLabs\WP\ModuleLoader\Container;
 use NewfoldLabs\WP\Module\Solutions\I18nService;
 use NewfoldLabs\WP\Module\Data\HiiveConnection;
+use NewfoldLabs\WP\Module\Data\SiteCapabilities;
 
 /**
  * Manages all the functionalities for the module.
@@ -30,6 +31,7 @@ class Solutions {
 		add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
 
 		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
+		add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
 	}
 
 	/**
@@ -94,14 +96,44 @@ class Solutions {
 	 * @return array
 	 */
 	public static function add_my_plugins_and_tools_tab( array $tabs ) {
+		$capability = new SiteCapabilities();
+
+		$has_solutions = $capability->get( 'hasSolution' );
+
+		if ( ! $has_solutions ) {
+			return $tabs;
+		}
 		$hiive        = new HiiveConnection();
 		$api          = new EntitlementsApi( $hiive );
 		$entitlements = $api->get_items();
 		if ( is_array( $entitlements->data ) ? $entitlements->data['entitlements'] : $entitlements->data->entitlements ) {
 			$tabs['nfd_my_plugins_and_tools'] = __( 'My Plugins & Tools', 'wp-module-solutions' );
 		}
-
 		return $tabs;
+	}
+
+	/**
+	 * Add "Plugins && tools" sub-link to admin menu.
+	 */
+	public static function add_plugins_and_tools_menu_link() {
+		$capability = new SiteCapabilities();
+
+		$has_solutions = $capability->get( 'hasSolution' );
+
+		if ( $has_solutions ) {
+			$hiive        = new HiiveConnection();
+			$api          = new EntitlementsApi( $hiive );
+			$entitlements = $api->get_items();
+			if ( is_array( $entitlements->data ) ? $entitlements->data['entitlements'] : $entitlements->data->entitlements ) {
+				add_submenu_page(
+					'plugins.php',
+					'nfd_my_plugins_and_tools',
+					'My Plugins & Tools',
+					'manage_options',
+					'plugin-install.php?tab=nfd_my_plugins_and_tools'
+				);
+			}
+		}
 	}
 
 	/**
@@ -111,15 +143,19 @@ class Solutions {
 		if ( false === ( isset( $_GET['tab'] ) && 'nfd_my_plugins_and_tools' === $_GET['tab'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
 		}
+
+		// TODO: update this to a dependency script
+		do_action( 'newfold/installer/enqueue_scripts' );
+
 		wp_enqueue_style( 'nfd_myplugin_solutions_css', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css', array(), '1.0' );
 		wp_enqueue_script( 'nfd_myplugin_solutions_js', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
 
 		wp_localize_script(
 			'nfd_myplugin_solutions_js',
-			'plugin_details',
+			'nfdPluginDetails',
 			array(
-				'installed_plugins' => get_plugins(),
-				'active_plugins'    => get_option( 'active_plugins' ),
+				'installed' => get_plugins(),
+				'active'    => get_option( 'active_plugins' ),
 			)
 		);
 	}
