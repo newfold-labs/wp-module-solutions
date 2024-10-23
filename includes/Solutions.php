@@ -128,7 +128,7 @@ class Solutions {
 				add_submenu_page(
 					'plugins.php',
 					'nfd_my_plugins_and_tools',
-					'My plugins & Tools',
+					'My Plugins & Tools',
 					'manage_options',
 					'plugin-install.php?tab=nfd_my_plugins_and_tools'
 				);
