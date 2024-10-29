@@ -8,18 +8,18 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 
 	after( () => {
 		cy.exec(
-			`npx wp-env run cli wp transient delete nfd_site_capabilities`
+			`npx wp-env run cli wp option delete _transient_nfd_site_capabilities`
 		);
-		cy.exec( `npx wp-env run cli wp transient delete newfold_solutions` );
+		cy.exec( `npx wp-env run cli wp option delete _transient_newfold_solutions` );
 		cy.exec( `npx wp-env run cli wp option delete nfd_data_token` );
 	} );
 
 	// check that it does not display when capabilities.hasSolution is false
 	it( 'My Plugins & Tools tab does not display without solution', () => {
 		cy.exec(
-			`npx wp-env run cli wp transient delete nfd_site_capabilities`
+			`npx wp-env run cli wp option delete _transient_nfd_site_capabilities`
 		);
-		cy.exec( `npx wp-env run cli wp transient delete newfold_solutions` );
+		cy.exec( `npx wp-env run cli wp option delete _transient_newfold_solutions` );
 
 		// need a cli command to set a capability before a test
 		cy.visit( '/wp-admin/plugin-install.php' );
