@@ -10,7 +10,9 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 		cy.exec(
 			`npx wp-env run cli wp option delete _transient_nfd_site_capabilities`
 		);
-		cy.exec( `npx wp-env run cli wp option delete _transient_newfold_solutions` );
+		cy.exec(
+			`npx wp-env run cli wp option delete _transient_newfold_solutions`
+		);
 		cy.exec( `npx wp-env run cli wp option delete nfd_data_token` );
 	} );
 
@@ -19,7 +21,9 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 		cy.exec(
 			`npx wp-env run cli wp option delete _transient_nfd_site_capabilities`
 		);
-		cy.exec( `npx wp-env run cli wp option delete _transient_newfold_solutions` );
+		cy.exec(
+			`npx wp-env run cli wp option delete _transient_newfold_solutions`
+		);
 
 		// need a cli command to set a capability before a test
 		cy.visit( '/wp-admin/plugin-install.php' );
@@ -36,24 +40,41 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 		// drop test entitlements into transient
 		cy.exec(
 			`npx wp-env run cli wp option set _transient_newfold_solutions --format=json < ${ entitlementsjson }`
-		);
+		).then( ( result ) => {
+			cy.log( result.stderr );
+		} );
 		// spoof hiive connection
-		cy.exec( `npx wp-env run cli wp option set nfd_data_token 'xyc123'` );
+		cy.exec(
+			`npx wp-env run cli wp option set nfd_data_token 'xyc123'`
+		).then( ( result ) => {
+			cy.log( result.stderr );
+		} );
 		// Set hasSolution:true in capabilities
 		cy.exec(
 			`npx wp-env run cli wp option set _transient_nfd_site_capabilities '{"hasSolution": true}' --format=json`
-		);
+		).then( ( result ) => {
+			cy.log( result.stderr );
+		} );
 		// Set a long timeout for the transients
 		cy.exec(
 			`npx wp-env run cli wp option set _transient_timeout_newfold_solutions 4102444800`
-		);
+		).then( ( result ) => {
+			cy.log( result.stderr );
+		} );
 		cy.exec(
 			`npx wp-env run cli wp option set _transient_timeout_nfd_site_capabilities 4102444800`
-		);
+		).then( ( result ) => {
+			cy.log( result.stderr );
+		} );
 
 		// reload plugin install page
 		cy.reload( true );
 		cy.visit( '/wp-admin/plugin-install.php' );
+		cy.window().then( ( win ) => {
+			cy.log(
+				`NewfoldRuntime.capabilities.hasSolution: ${ win.NewfoldRuntime.capabilities.hasSolution }`
+			);
+		} );
 
 		// check that my plugins and tools tab displays when capabilities.hasSolution is true
 		cy.get(
@@ -66,6 +87,8 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 		cy.get( '.plugin-install-nfd_my_plugins_and_tools' ).should(
 			'be.visible'
 		);
+
+		cy.get( '.nfd-solutions-availble-list' ).should( 'exist' );
 
 		cy.get( '.nfd-solutions-availble-list' )
 			.contains( 'h3', 'Jetpack' )
