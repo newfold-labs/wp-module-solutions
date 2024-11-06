@@ -42,6 +42,18 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 
 	// check that entitlement categories load in accordions
 	it( 'Entitlements Display with Solution', () => {
+
+		cy.intercept(
+			{
+				method: 'GET',
+				url: /newfold-solutions(\/|%2F)v1(\/|%2F)entitlements/,
+			},
+			{
+				body: entitlementsFixture,
+				delay: 100,
+			}
+		).as( 'getEntitlements' );
+		
 		cy.visit(
 			'/wp-admin/admin.php?page=' +
 				Cypress.env( 'pluginId' ) +
@@ -55,16 +67,6 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 			}
 		);
 
-		cy.intercept(
-			{
-				method: 'GET',
-				url: /newfold-solutions(\/|%2F)v1(\/|%2F)entitlements/,
-			},
-			{
-				body: entitlementsFixture,
-				delay: 100,
-			}
-		).as( 'getEntitlements' );
 		cy.wait( '@getEntitlements' );
 
 		cy.get( 'a.wppbh-app-navitem[href="#/my_plugins_and_tools"]' ).should(
