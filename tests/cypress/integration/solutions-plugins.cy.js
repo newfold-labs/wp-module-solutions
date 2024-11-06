@@ -11,7 +11,9 @@ const wpcli = ( cmd ) => {
 			NODE_TLS_REJECT_UNAUTHORIZED: '1',
 		},
 	} ).then( ( result ) => {
-		cy.log( result.stderr );
+		for ( const [ key, value ] of Object.entries( result ) ) {
+			cy.log( `${ key }: ${ value }` );
+		}
 	} );
 };
 
@@ -39,20 +41,20 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 	} );
 
 	it( 'My Plugins & Tools exists', () => {
-		// drop test entitlements into transient
-		wpcli(
-			`option set _transient_newfold_solutions --format=json < ${ entitlementsjson }`
-		);
-		// spoof hiive connection
-		wpcli( `option set nfd_data_token 'xyc123'` );
 		// Set hasSolution:true in capabilities
 		wpcli(
 			`option set _transient_nfd_site_capabilities '{"hasSolution": true}' --format=json`
 		);
+		// spoof hiive connection
+		wpcli( `option set nfd_data_token 'xyc123'` );
 		// Set a long timeout for the transients
 		wpcli( `option set _transient_timeout_newfold_solutions 4102444800` );
 		wpcli(
 			`option set _transient_timeout_nfd_site_capabilities 4102444800`
+		);
+		// add test entitlements into transient
+		wpcli(
+			`option set _transient_newfold_solutions --format=json < ${ entitlementsjson }`
 		);
 
 		// reload plugin install page
@@ -71,6 +73,7 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 
 		// check that entitlement plugins load
 		cy.visit( '/wp-admin/plugin-install.php?tab=nfd_my_plugins_and_tools' );
+		cy.reload( true );
 
 		cy.get( '.plugin-install-nfd_my_plugins_and_tools' ).should(
 			'be.visible'
