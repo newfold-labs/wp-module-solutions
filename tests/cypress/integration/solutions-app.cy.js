@@ -1,8 +1,11 @@
 // <reference types="Cypress" />
+import { wpLogin } from '../wp-module-support/utils.cy';
+
 const entitlementsFixture = require( '../fixtures/entitlements.json' );
 
-describe( 'My Plugins and Tools in Plugin App', function () {
+describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 	beforeEach( () => {
+		wpLogin();
 		cy.visit( '/wp-admin/index.php' );
 	} );
 
@@ -24,25 +27,7 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 	} );
 
 	// check that my plugins and tools displays when capabilities.hasSolution is true
-	it( 'My Plugins & Tools nav displays with Solution', () => {
-		cy.visit(
-			'/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '#/',
-			{
-				onLoad() {
-					cy.window().then( ( win ) => {
-						win.NewfoldRuntime.capabilities.hasSolution = true;
-					} );
-				},
-			}
-		);
-		cy.get( 'a.wppbh-app-navitem[href="#/my_plugins_and_tools"]' ).should(
-			'be.visible'
-		);
-	} );
-
-	// check that entitlement categories load in accordions
-	it( 'Entitlements Display with Solution', () => {
-
+	it( 'My Plugins & Tools displays with Solution', () => {
 		cy.intercept(
 			{
 				method: 'GET',
@@ -53,7 +38,7 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 				delay: 100,
 			}
 		).as( 'getEntitlements' );
-		
+
 		cy.visit(
 			'/wp-admin/admin.php?page=' +
 				Cypress.env( 'pluginId' ) +
@@ -65,6 +50,16 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 					} );
 				},
 			}
+		);
+
+		cy.window().then( ( win ) => {
+			cy.log(
+				`NewfoldRuntime.capabilities.hasSolution: ${ win.NewfoldRuntime.capabilities.hasSolution }`
+			);
+		} );
+
+		cy.get( 'a.wppbh-app-navitem[href="#/my_plugins_and_tools"]' ).should(
+			'be.visible'
 		);
 
 		cy.wait( '@getEntitlements' );

@@ -1,33 +1,26 @@
 // <reference types="Cypress" />
-const entitlementsFixture = require( '../fixtures/entitlements.json' );
+import { wpLogin, wpCli } from '../wp-module-support/utils.cy';
+
 // path to the entitlements json to load into transient
 const entitlementsjson =
 	'vendor/newfold-labs/wp-module-solutions/tests/cypress/fixtures/entitlements.json';
 
-// wp cli wrapper
-const wpcli = ( cmd ) => {
-	cy.exec( `npx wp-env run cli wp ${ cmd }`, {
-		env: {
-			NODE_TLS_REJECT_UNAUTHORIZED: '1',
-		},
-	} ).then( ( result ) => {
-		for ( const [ key, value ] of Object.entries( result ) ) {
-			cy.log( `${ key }: ${ value }` );
-		}
+describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
+	beforeEach( () => {
+		wpLogin();
+		cy.visit( '/wp-admin/index.php' );
 	} );
-};
 
-describe( 'My Plugins and Tools in Plugin App', function () {
 	after( () => {
-		wpcli( `option delete _transient_nfd_site_capabilities` );
-		wpcli( `option delete _transient_newfold_solutions` );
-		wpcli( `option delete nfd_data_token` );
+		wpCli( `transient delete nfd_site_capabilities` );
+		wpCli( `transient delete newfold_solutions` );
+		wpCli( `option delete nfd_data_token` );
 	} );
 
 	// check that it does not display when capabilities.hasSolution is false
 	it( 'My Plugins & Tools tab does not display without solution', () => {
-		wpcli( `option delete _transient_nfd_site_capabilities` );
-		wpcli( `option delete _transient_newfold_solutions` );
+		wpCli( `transient delete nfd_site_capabilities` );
+		wpCli( `transient delete newfold_solutions` );
 
 		// need a cli command to set a capability before a test
 		cy.visit( '/wp-admin/plugin-install.php' );
@@ -41,25 +34,28 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 	} );
 
 	it( 'My Plugins & Tools exists', () => {
+		// set transient expiration to one hour from now
+		const expiry = Math.floor( new Date().getTime() / 1000.0 ) + 3600;
+
+		// spoof hiive connection
+		wpCli( `option set nfd_data_token 'xyc123'` );
 		// Set hasSolution:true in capabilities
-		wpcli(
+		wpCli(
 			`option set _transient_nfd_site_capabilities '{"hasSolution": true}' --format=json`
 		);
-		// spoof hiive connection
-		wpcli( `option set nfd_data_token 'xyc123'` );
-		// Set a long timeout for the transients
-		wpcli( `option set _transient_timeout_newfold_solutions 4102444800` );
-		wpcli(
-			`option set _transient_timeout_nfd_site_capabilities 4102444800`
-		);
 		// add test entitlements into transient
-		wpcli(
+		wpCli(
 			`option set _transient_newfold_solutions --format=json < ${ entitlementsjson }`
 		);
+		// manually set expiration for the transients
+		wpCli(
+			`option set _transient_timeout_nfd_site_capabilities ${ expiry }`
+		);
+		wpCli( `option set _transient_timeout_newfold_solutions ${ expiry }` );
 
-		// reload plugin install page
-		cy.reload( true );
+		// load plugin install page
 		cy.visit( '/wp-admin/plugin-install.php' );
+
 		cy.window().then( ( win ) => {
 			cy.log(
 				`NewfoldRuntime.capabilities.hasSolution: ${ win.NewfoldRuntime.capabilities.hasSolution }`
