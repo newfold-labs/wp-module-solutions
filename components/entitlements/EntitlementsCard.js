@@ -1,17 +1,15 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import { Button, Container } from '@newfold/ui-component-library';
-import apiFetch from '@wordpress/api-fetch';
-import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
 import { Section } from './Section';
 
-export function EntitlementsCard( props ) {
+export function EntitlementsCard( { methods, constants, ...props } ) {
 	const { entitlementCategories, renderCTAUrl } = props;
-	const [ error, setError ] = useState( null );
-	const [ apiResponse, setApiResponse ] = useState( null );
-	const [ isLoaded, setIsLoaded ] = useState( false );
-	const [ collapse, setCollapse ] = useState( {} );
+	const [ error, setError ] = methods.useState( null );
+	const [ apiResponse, setApiResponse ] = methods.useState( null );
+	const [ isLoaded, setIsLoaded ] = methods.useState( false );
+	const [ collapse, setCollapse ] = methods.useState( {} );
 	const activePluginsArray = [];
 	const installedPluginsArray = [];
 
@@ -22,23 +20,35 @@ export function EntitlementsCard( props ) {
 		} ) );
 	};
 
-	useEffect( () => {
-		apiFetch( { path: '/wp/v2/plugins' } ).then(
-			function ( result ) {
-				setIsLoaded( true );
-				setApiResponse( result );
-			},
-			function ( error ) {
-				setIsLoaded( true );
-				setError( error );
-			}
-		);
+	methods.useEffect( () => {
+		methods
+			.apiFetch( {
+				url: methods.NewfoldRuntime.createApiUrl( '/wp/v2/plugins' ),
+			} )
+			.then(
+				function ( result ) {
+					setIsLoaded( true );
+					setApiResponse( result );
+				},
+				function ( e ) {
+					setIsLoaded( true );
+					setError( e );
+				}
+			);
 	}, [] );
 
 	if ( error ) {
-		console.error( error.message, 'error' );
+		return (
+			<Container>
+				<Container.Header title="Error" description={ error.message } />
+			</Container>
+		);
 	} else if ( ! isLoaded ) {
-		return <Container.Header title="Loading..." />;
+		return (
+			<Container>
+				<Container.Header title="Loading..." />
+			</Container>
+		);
 	} else if ( apiResponse ) {
 		apiResponse.forEach( ( res ) => {
 			res.status === 'active'
@@ -53,7 +63,7 @@ export function EntitlementsCard( props ) {
 					anchor={ {
 						title: __( 'Add a New Plugin', 'wp-module-solutions' ),
 						className: 'nfd-text-[#196CDF]',
-						href: `${NewfoldRuntime.adminUrl}plugin-install.php`,
+						href: `${ window.NewfoldRuntime.adminUrl }plugin-install.php`,
 					} }
 				/>
 				<Section.Content className="nfd-core-tool-mypluginsntools">
