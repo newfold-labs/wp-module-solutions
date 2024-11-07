@@ -30,10 +30,12 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 				cy.visit(
 					'/wp-admin/plugin-install.php?tab=nfd_my_plugins_and_tools'
 				);
-				cy.get(
-					"//h3[@class='nfd-solutions-availble-list-item-title' and text()='Jetpack']//parent::div[@class='details']//*[@class='nfd-solutions-availble-list-item-button']",
-					{ timeout: customCommandTimeout }
-				)
+				cy.get( 'h3.nfd-solutions-availble-list-item-title', {
+					timeout: customCommandTimeout,
+				} )
+					.contains( 'Jetpack' )
+					.parent( 'div.details' )
+					.find( '.nfd-solutions-availble-list-item-button' )
 					.should( 'be.visible' )
 					.click();
 				cy.visit( '/wp-admin/plugins.php' );
