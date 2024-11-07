@@ -30,13 +30,14 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 				cy.visit(
 					'/wp-admin/plugin-install.php?tab=nfd_my_plugins_and_tools'
 				);
-				cy.get( '.nfd-solutions-availble-list-item-title' )
-					.contains( 'h3', 'Jetpack' )
+				cy.get( '.nfd-solutions-availble-list' )
+                    .find('.nfd-solutions-availble-list-item' )
+                    .contains( 'h3', 'Jetpack' )
 					.scrollIntoView()
-					.should( 'be.visible' );
-				cy.get( '.nfd-solutions-availble-list-item-button' )
 					.should( 'be.visible' )
-					.click();
+                    .find( '.nfd-solutions-availble-list-item-button' )
+                    .should( 'be.visible' )
+                    .click();
                 cy.visit( '/wp-admin/plugins.php' );
                 cy.get( '[title="My Jetpack dashboard"]' ).should(
 					'be.visible'
