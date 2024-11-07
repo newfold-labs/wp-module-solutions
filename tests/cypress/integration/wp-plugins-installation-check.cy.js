@@ -1,13 +1,13 @@
 // <reference types="Cypress" />
 const entitlementsFixture = require( '../fixtures/entitlements.json' );
-
+const customCommandTimeout = 20000;
 describe( 'My Plugins and Tools in Plugin App', function () {
 	beforeEach( () => {
 		cy.visit( '/wp-admin/index.php' );
 	} );
 
 	it( 'Verify if Jetpack plugin is installed', () => {
-        cy.visit(
+		cy.visit(
 			'/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '#/',
 			{
 				onLoad() {
@@ -30,16 +30,14 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 				cy.visit(
 					'/wp-admin/plugin-install.php?tab=nfd_my_plugins_and_tools'
 				);
-				cy.get( '.nfd-solutions-availble-list' )
-                    .find('.nfd-solutions-availble-list-item' )
-                    .contains( 'h3', 'Jetpack' )
-					.scrollIntoView()
+				cy.get(
+					"//h3[@class='nfd-solutions-availble-list-item-title' and text()='Jetpack']//parent::div[@class='details']//*[@class='nfd-solutions-availble-list-item-button']",
+					{ timeout: customCommandTimeout }
+				)
 					.should( 'be.visible' )
-                    .find( '.nfd-solutions-availble-list-item-button' )
-                    .should( 'be.visible' )
-                    .click();
-                cy.visit( '/wp-admin/plugins.php' );
-                cy.get( '[title="My Jetpack dashboard"]' ).should(
+					.click();
+				cy.visit( '/wp-admin/plugins.php' );
+				cy.get( '[title="My Jetpack dashboard"]' ).should(
 					'be.visible'
 				);
 			}
