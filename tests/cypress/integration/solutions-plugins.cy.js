@@ -38,23 +38,24 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 		const expiry = Math.floor( new Date().getTime() / 1000.0 ) + 3600;
 
 		// spoof hiive connection
-		wpCli( `option set nfd_data_token 'xyc123'` );
+		wpCli( `option update nfd_data_token 'xyc123'` );
 		// Set hasSolution:true in capabilities
 		wpCli(
-			`option set _transient_nfd_site_capabilities '{"hasSolution": true}' --format=json`
+			`option update _transient_nfd_site_capabilities '{"hasSolution": true}' --format=json`
 		);
 		// add test entitlements into transient
 		wpCli(
-			`option set _transient_newfold_solutions --format=json < ${ entitlementsjson }`
+			`option update _transient_newfold_solutions --format=json < ${ entitlementsjson }`
 		);
 		// manually set expiration for the transients
 		wpCli(
-			`option set _transient_timeout_nfd_site_capabilities ${ expiry }`
+			`option update _transient_timeout_nfd_site_capabilities ${ expiry }`
 		);
-		wpCli( `option set _transient_timeout_newfold_solutions ${ expiry }` );
+		wpCli( `option update _transient_timeout_newfold_solutions ${ expiry }` );
 
 		// load plugin install page
 		cy.visit( '/wp-admin/plugin-install.php' );
+		cy.reload();
 
 		cy.window().then( ( win ) => {
 			cy.log(
