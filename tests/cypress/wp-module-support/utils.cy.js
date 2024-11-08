@@ -1,9 +1,17 @@
-// login
+/**
+ * Loginto WordPress.
+ */
 export const wpLogin = () => {
 	cy.login( Cypress.env( 'wpUsername' ), Cypress.env( 'wpPassword' ) );
 };
 
-// wp cli wrapper
+/**
+ * wp-cli helper
+ *
+ * This wraps the command in the required npx wp-env run cli wp
+ *
+ * @param {string} cmd the command to send to wp-cli
+ */
 export const wpCli = ( cmd ) => {
 	cy.exec( `npx wp-env run cli wp ${ cmd }`, {
 		env: {
@@ -14,4 +22,26 @@ export const wpCli = ( cmd ) => {
 			cy.log( `${ key }: ${ value }` );
 		}
 	} );
+};
+
+/**
+ * Set capability helper
+ *
+ * This calls performs a cli command to set a specific capability
+ *
+ * @param {*}      capJSON    json of capabilities
+ * @param {number} expiration seconds for transient to expire, defualt 3600 (1 hour)
+ */
+export const setCapability = ( capJSON, expiration = 3600 ) => {
+	wpCli(
+		`option update _transient_nfd_site_capabilities '${ JSON.stringify(
+			capJSON
+		) }' --format=json`
+	);
+	// set transient expiration to one hour (default) from now
+	const expiry = Math.floor( new Date().getTime() / 1000.0 ) + expiration;
+	// manually set expiration for the transients
+	wpCli(
+		`option update _transient_timeout_nfd_site_capabilities ${ expiry }`
+	);
 };
