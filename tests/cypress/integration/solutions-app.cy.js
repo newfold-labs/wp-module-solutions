@@ -28,6 +28,7 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 
 	// check that my plugins and tools displays when capabilities.hasSolution is true
 	it( 'My Plugins & Tools displays with Solution', () => {
+		// set up the intercept for entitlements
 		cy.intercept(
 			{
 				method: 'GET',
@@ -58,11 +59,12 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 			);
 		} );
 
+		cy.wait( '@getEntitlements' );
+
 		cy.get( 'a.wppbh-app-navitem[href="#/my_plugins_and_tools"]' ).should(
 			'be.visible'
 		);
 
-		cy.wait( '@getEntitlements' );
 
 		cy.get( 'a.wppbh-app-navitem[href="#/my_plugins_and_tools"]' ).should(
 			'be.visible'

@@ -1,9 +1,7 @@
 // <reference types="Cypress" />
-import { wpLogin, wpCli } from '../wp-module-support/utils.cy';
+import { wpLogin, wpCli, setCapability } from '../wp-module-support/utils.cy';
 
-// path to the entitlements json to load into transient
-const entitlementsjson =
-	'vendor/newfold-labs/wp-module-solutions/tests/cypress/fixtures/entitlements.json';
+const entitlementsFixture = require( '../fixtures/entitlements.json' );
 
 describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 	beforeEach( () => {
@@ -13,14 +11,11 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 
 	after( () => {
 		wpCli( `transient delete nfd_site_capabilities` );
-		wpCli( `transient delete newfold_solutions` );
-		wpCli( `option delete nfd_data_token` );
 	} );
 
 	// check that it does not display when capabilities.hasSolution is false
 	it( 'My Plugins & Tools tab does not display without solution', () => {
 		wpCli( `transient delete nfd_site_capabilities` );
-		wpCli( `transient delete newfold_solutions` );
 
 		// need a cli command to set a capability before a test
 		cy.visit( '/wp-admin/plugin-install.php' );
@@ -34,24 +29,19 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 	} );
 
 	it( 'My Plugins & Tools exists', () => {
-		// set transient expiration to one hour from now
-		const expiry = Math.floor( new Date().getTime() / 1000.0 ) + 3600;
-
-		// spoof hiive connection
-		wpCli( `option set nfd_data_token 'xyc123'` );
 		// Set hasSolution:true in capabilities
-		wpCli(
-			`option set _transient_nfd_site_capabilities '{"hasSolution": true}' --format=json`
-		);
-		// add test entitlements into transient
-		wpCli(
-			`option set _transient_newfold_solutions --format=json < ${ entitlementsjson }`
-		);
-		// manually set expiration for the transients
-		wpCli(
-			`option set _transient_timeout_nfd_site_capabilities ${ expiry }`
-		);
-		wpCli( `option set _transient_timeout_newfold_solutions ${ expiry }` );
+		setCapability( { hasSolution: true } );
+
+		cy.intercept(
+			{
+				method: 'GET',
+				url: /newfold-solutions(\/|%2F)v1(\/|%2F)entitlements/,
+			},
+			{
+				body: entitlementsFixture,
+				delay: 100,
+			}
+		).as( 'getEntitlements' );
 
 		// load plugin install page
 		cy.visit( '/wp-admin/plugin-install.php' );
@@ -65,11 +55,14 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 		// check that my plugins and tools tab displays when capabilities.hasSolution is true
 		cy.get(
 			'#adminmenu a[href="plugin-install.php?tab=nfd_my_plugins_and_tools"]'
-		).should( 'be.visible' );
+		)
+			.should( 'be.visible' )
+			.click();
+
+		cy.wait( '@getEntitlements' );
 
 		// check that entitlement plugins load
-		cy.visit( '/wp-admin/plugin-install.php?tab=nfd_my_plugins_and_tools' );
-		cy.reload( true );
+		cy.url().should( 'contain', 'nfd_my_plugins_and_tools' );
 
 		cy.get( '.plugin-install-nfd_my_plugins_and_tools' ).should(
 			'be.visible'
