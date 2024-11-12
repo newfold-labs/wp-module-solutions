@@ -3,7 +3,7 @@ const entitlementsFixture = require( '../fixtures/entitlements.json' );
 // path to the entitlements json to load into transient
 const entitlementsjson =
 	'vendor/newfold-labs/wp-module-solutions/tests/cypress/fixtures/entitlements.json';
-    const customCommandTimeout = 20000;
+const customCommandTimeout = 20000;
 // wp cli wrapper
 const wpcli = ( cmd ) => {
 	cy.exec( `npx wp-env run cli wp ${ cmd }`, {
@@ -25,24 +25,16 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 	} );
 
 	// check that it does not display when capabilities.hasSolution is false
-	it( 'My Plugins & Tools tab does not display without solution', () => {
+	it( 'My Plugins & Tools tab does not display without solution Jetpack check', () => {
 		wpcli( `option delete _transient_nfd_site_capabilities` );
 		wpcli( `option delete _transient_newfold_solutions` );
-        cy.visit( '/wp-admin/plugins.php',{
-            timeout: customCommandTimeout,
-        } );
-		
-        cy.get( 'body' ).then( ( $body ) => {
-			if ( $body.find( '[data-plugin="jetpack/jetpack.php"]' ).length ) {
-				cy.get( '[title="My Jetpack dashboard"]' ).should(
-					'not.be.visible'
-				);
-			} else {
-				cy.visit(
-					'/wp-admin/plugin-install.php?tab=nfd_my_plugins_and_tools'
-				);
-            }
-            });
+		cy.visit( '/wp-admin/plugins.php', {
+			timeout: customCommandTimeout,
+		} );
+
+		cy.get( '#the-list' ).within( () => {
+			cy.get( 'tr[data-slug="jetpack"]' ).should( 'not.exist' );
+		} );
 
 		// need a cli command to set a capability before a test
 		cy.visit( '/wp-admin/plugin-install.php' );
@@ -101,18 +93,16 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 			.scrollIntoView()
 			.should( 'be.visible' );
 
-            cy.get( 'h3.nfd-solutions-availble-list-item-title', {
-                timeout: customCommandTimeout,
-            } )
-                .contains( 'Jetpack' )
-                .parent( 'div.details' )
-                .find( '.nfd-solutions-availble-list-item-button' )
-                .should( 'be.visible' )
-                .click();
-            cy.visit( '/wp-admin/plugins.php' );
-            cy.get( '[title="My Jetpack dashboard"]' ).should(
-                'be.visible'
-            );
+		cy.get( 'h3.nfd-solutions-availble-list-item-title', {
+			timeout: customCommandTimeout,
+		} )
+			.contains( 'Jetpack' )
+			.parent( 'div.details' )
+			.find( '.nfd-solutions-availble-list-item-button' )
+			.should( 'be.visible' )
+			.click();
+		cy.visit( '/wp-admin/plugins.php' );
+		cy.get( '[title="My Jetpack dashboard"]' ).should( 'be.visible' );
 	} );
 
 	// test each entitlement button case state
