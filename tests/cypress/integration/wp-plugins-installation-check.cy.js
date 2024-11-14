@@ -102,7 +102,9 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 			.should( 'be.visible' )
 			.click();
 		cy.visit( '/wp-admin/plugins.php' );
-		cy.get( '[title="My Jetpack dashboard"]' ).should( 'be.visible' );
+		cy.get( '#the-list' ).within( () => {
+			cy.get( 'tr[data-slug="jetpack"]' ).should( 'exist' );
+		} );
 	} );
 
 	// test each entitlement button case state
