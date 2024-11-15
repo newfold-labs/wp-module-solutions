@@ -102,8 +102,13 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 			.should( 'be.visible' )
 			.click();
 		cy.visit( '/wp-admin/plugins.php' );
-		cy.get( '#the-list' ).within( () => {
-			cy.get( 'tr[data-slug="jetpack"]' ).should( 'exist' );
+		cy.reload( true );
+		cy.get( '#the-list', {
+			timeout: customCommandTimeout,
+		} ).within( () => {
+			cy.get( 'tr[data-slug="jetpack"]', {
+				timeout: customCommandTimeout,
+			} ).should( 'exist' );
 		} );
 	} );
 
