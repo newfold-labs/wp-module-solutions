@@ -35,6 +35,9 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 		cy.get( '#the-list' ).within( () => {
 			cy.get( 'tr[data-slug="jetpack"]' ).should( 'not.exist' );
 		} );
+		cy.get( '#the-list' ).within( () => {
+			cy.get( 'tr[data-slug="wordpress-seo"]' ).should( 'not.exist' );
+		} );
 
 		// need a cli command to set a capability before a test
 		cy.visit( '/wp-admin/plugin-install.php' );
@@ -101,14 +104,43 @@ describe( 'My Plugins and Tools in Plugin App', function () {
 			.find( '.nfd-solutions-availble-list-item-button' )
 			.should( 'be.visible' )
 			.click();
+		cy.wait( 10000 );
 		cy.visit( '/wp-admin/plugins.php' );
 		cy.reload( true );
+		cy.wait( 10000 );
 		cy.get( '#the-list', {
 			timeout: customCommandTimeout,
 		} ).within( () => {
 			cy.get( 'tr[data-slug="jetpack"]', {
 				timeout: customCommandTimeout,
 			} ).should( 'exist' );
+
+			cy.get( '.nfd-solutions-availble-list' )
+				.contains( 'h3', 'Yoast SEO' )
+				.scrollIntoView()
+				.should( 'be.visible' );
+
+			cy.get( 'h3.nfd-solutions-availble-list-item-title', {
+				timeout: customCommandTimeout,
+			} )
+				.contains( 'Yoast SEO' )
+				.parent( 'div.details' )
+				.find( '.nfd-solutions-availble-list-item-button' )
+				.should( 'be.visible' )
+				.click();
+			cy.wait( 10000 );
+			cy.visit( '/wp-admin/plugins.php', {
+				timeout: customCommandTimeout,
+			} );
+			cy.reload( true );
+			cy.wait( 10000 );
+			cy.get( '#the-list', {
+				timeout: customCommandTimeout,
+			} ).within( () => {
+				cy.get( 'tr[data-slug="wordpress-seo"]', {
+					timeout: customCommandTimeout,
+				} ).should( 'exist' );
+			} );
 		} );
 	} );
 
