@@ -41,9 +41,7 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 		).as( 'getEntitlements' );
 
 		cy.visit(
-			'/wp-admin/admin.php?page=' +
-				Cypress.env( 'pluginId' ) +
-				'#/my_plugins_and_tools',
+			'/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '#/',
 			{
 				onLoad() {
 					cy.window().then( ( win ) => {
@@ -59,16 +57,11 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 			);
 		} );
 
-		cy.wait( '@getEntitlements' );
+		cy.get( 'a.wppbh-app-navitem[href="#/my_plugins_and_tools"]' )
+			.should( 'be.visible' )
+			.click();
 
-		cy.get( 'a.wppbh-app-navitem[href="#/my_plugins_and_tools"]' ).should(
-			'be.visible'
-		);
-
-
-		cy.get( 'a.wppbh-app-navitem[href="#/my_plugins_and_tools"]' ).should(
-			'be.visible'
-		);
+		cy.wait( '@getEntitlements', { timeout: 10000 } );
 
 		cy.get( '.newfold-entitlements-container' )
 			.contains( 'h2', 'Plugins & Tools' )
