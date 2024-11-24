@@ -12,12 +12,16 @@ export const wpLogin = () => {
  *
  * @param {string} cmd the command to send to wp-cli
  */
-export const wpCli = ( cmd ) => {
-	cy.exec( `npx wp-env run cli wp ${ cmd }`, {
+export const wpCli = ( cmd, failOnNonZeroExit = true ) => {
+	const args = {
 		env: {
 			NODE_TLS_REJECT_UNAUTHORIZED: '1',
 		},
-	} ).then( ( result ) => {
+	};
+	if ( ! failOnNonZeroExit ) {
+		args.failOnNonZeroExit = false;
+	}
+	cy.exec( `npx wp-env run cli wp ${ cmd }`, args ).then( ( result ) => {
 		for ( const [ key, value ] of Object.entries( result ) ) {
 			cy.log( `${ key }: ${ value }` );
 		}
