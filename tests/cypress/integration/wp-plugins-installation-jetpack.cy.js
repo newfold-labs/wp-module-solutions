@@ -11,7 +11,7 @@ const entitlementsFixture = require( '../fixtures/entitlements.json' );
 
 describe(
 	'My Plugins and Tools in Plugin App - Jetpack',
-	{ testIsolation: true, retries: 0 },
+	{ testIsolation: true },
 	() => {
 		beforeEach( () => {
 			wpLogin();
