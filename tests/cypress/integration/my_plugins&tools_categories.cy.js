@@ -179,6 +179,7 @@ it('Verify the Add New Plugin link near the title', () => {
 	.should('be.visible')
 	.click()
 	cy.url().should('eq', 'https://bjo.kax.mybluehost.me/website_489152c4/wp-admin/plugin-install.php')
+	
   });
 });  
 
