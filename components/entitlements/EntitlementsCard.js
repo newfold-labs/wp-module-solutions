@@ -131,7 +131,7 @@ export function EntitlementsCard( { methods, constants, ...props } ) {
 														{ entitlement.type ===
 														'plugin' ? (
 															activePluginsArray.includes(
-																entitlement.basename
+																entitlement.basename.split('.')[0]
 															) ? (
 																<Button
 																	key={ `button_${ i }` }
