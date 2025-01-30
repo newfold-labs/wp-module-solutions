@@ -57,28 +57,6 @@ class Solutions {
 	}
 
 	/**
-	 * Load WP dependencies into the page.
-	 */
-	public function register_assets() {
-		$asset_file = NFD_SOLUTIONS_BUILD_DIR . 'index.asset.php';
-		if ( file_exists( $asset_file ) ) {
-			$asset = require $asset_file;
-			\wp_register_script(
-				'nfd-solutions-dependency',
-				NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/index.js',
-				array_merge( $asset['dependencies'], array() ),
-				$asset['version']
-			);
-			I18nService::load_js_translations(
-				'wp-module-solutions',
-				'nfd-solutions-dependency',
-				NFD_SOLUTIONS_DIR . '/languages'
-			);
-			\wp_enqueue_script( 'nfd-solutions-dependency' );
-		}
-	}
-
-	/**
 	 * Initialize the Entitilement API Controller.
 	 */
 	public function init_entitilements_apis(): void {
