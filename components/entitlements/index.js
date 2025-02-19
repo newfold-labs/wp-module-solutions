@@ -5,12 +5,24 @@ import { Container } from '@newfold/ui-component-library';
 const defaults = {
 	eventEndpoint: '/newfold-data/v1/events/',
 	text: {
-		title: 'Solutions',
-		subTitle: 'Explore the plugins & tools available with your solution.',
-		error: 'Oops, there was an error loading the plugins & tools, please try again later.',
-		noEntitlements:
+		title: __( 'Solutions', 'wp-module-solutions' ),
+		subTitle: __(
+			'Explore the plugins & tools available with your solution.',
+			'wp-module-solutions'
+		),
+		errorTitle: __( 'Error', 'wp-module-solutions' ),
+		errorMessage: __(
+			'Oops, there was an error loading the plugins & tools, please try again later.',
+			'wp-module-solutions'
+		),
+		noEntitlements: __(
 			'Sorry, no current plugins & tools. Please, try again later.',
-		loadMore: 'Load More',
+			'wp-module-solutions'
+		),
+		loadMore: __( 'Load More', 'wp-module-solutions' ),
+		loading: __( 'Loading…', 'wp-module-solutions' ),
+		addNewPlugin: __( 'Add a New Plugin', 'wp-module-solutions' ),
+		myPluginsTools: __( 'My Plugins & Tools', 'wp-module-solutions' ),
 	},
 };
 
@@ -23,6 +35,7 @@ const defaults = {
  */
 const Entitlements = ( { methods, constants, ...props } ) => {
 	const [ isLoading, setIsLoading ] = methods.useState( true );
+	const [ errorMsg, setErrorMsg ] = methods.useState( '' );
 	const [ isError, setIsError ] = methods.useState( false );
 	const [ activeSolution, setActiveSolution ] = methods.useState( '' );
 	const [ entitlementCategories, setEntitlementsCategories ] =
@@ -67,14 +80,16 @@ const Entitlements = ( { methods, constants, ...props } ) => {
 						'Invalid or malformed entitlements response.'
 					);
 					setIsError( true );
+					setErrorMsg( constants.text.errorMessage );
 					setIsLoading( false );
 				}
 			} )
 			.catch( ( response ) => {
 				// if a site is not connected to hiive it cannot load entitlements
 				console.log( response.message );
-				setIsLoading( false );
 				setIsError( true );
+				setErrorMsg( constants.text.noEntitlements );
+				setIsLoading( false );
 			} );
 	}, [] );
 
@@ -168,11 +183,13 @@ const Entitlements = ( { methods, constants, ...props } ) => {
 
 	return (
 		<>
-			{ isLoading && <Container.Header title="Loading..." /> }
+			{ isLoading && (
+				<Container.Header title={ constants.text.loading } />
+			) }
 			{ ! isLoading && isError && (
 				<Container.Header
-					title="Error"
-					description={ constants.text.error }
+					title={ constants.text.errorTitle }
+					description={ errorMsg }
 				/>
 			) }
 			{ ! isLoading && ! isError && (

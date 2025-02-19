@@ -40,13 +40,13 @@ export function EntitlementsCard( { methods, constants, ...props } ) {
 	if ( error ) {
 		return (
 			<Container>
-				<Container.Header title="Error" description={ error.message } />
+				<Container.Header title={ constants.text.errorTitle } description={ error.message } />
 			</Container>
 		);
 	} else if ( ! isLoaded ) {
 		return (
 			<Container>
-				<Container.Header title="Loading..." />
+				<Container.Header title={ constants.text.loading } />
 			</Container>
 		);
 	} else if ( apiResponse ) {
@@ -59,9 +59,9 @@ export function EntitlementsCard( { methods, constants, ...props } ) {
 		return (
 			<Section.Container>
 				<Section.Header
-					title={ __( 'My Plugins & Tools', 'wp-module-solutions' ) }
+					title={ constants.text.myPluginsTools }
 					anchor={ {
-						title: __( 'Add a New Plugin', 'wp-module-solutions' ),
+						title: constants.text.addNewPlugin,
 						className: 'nfd-text-[#196CDF]',
 						href: `${ window.NewfoldRuntime.adminUrl }plugin-install.php`,
 					} }
