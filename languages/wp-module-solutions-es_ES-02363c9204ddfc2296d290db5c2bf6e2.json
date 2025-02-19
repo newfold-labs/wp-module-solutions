@@ -1,0 +1,21 @@
+{
+    "translation-revision-date": "2025-02-19 14:32",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "components\/entitlements\/EntitlementsCard.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "My Plugins & Tools": [
+                "Mis Plugins y Herramientas"
+            ],
+            "Add a New Plugin": [
+                "A\u00f1adir un nuevo Plugin"
+            ]
+        }
+    }
+}
