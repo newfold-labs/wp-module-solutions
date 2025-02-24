@@ -1,0 +1,2 @@
+<?php
+return ['domain'=>'wp-module-solutions','plural-forms'=>'nplurals=2; plural=(n != 1);','language'=>'nl_NL','project-id-version'=>'newfold-labswp-module-staging','pot-creation-date'=>'2025-02-13T10:58:13+00:00','po-revision-date'=>'2025-02-19 14:32','x-generator'=>'WP-CLI 2.11.0','messages'=>['Solutions'=>'Oplossingen','Activated the plugin successfully!'=>'De plugin is succesvol geactiveerd!','Please send valid plugin'=>'Stuur een geldige plugin','My Plugins & Tools'=>'Mijn plug-ins & gereedschap','Add a New Plugin'=>'Een nieuwe plugin toevoegen']];

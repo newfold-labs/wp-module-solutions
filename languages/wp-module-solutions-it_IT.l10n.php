@@ -1,0 +1,2 @@
+<?php
+return ['domain'=>'wp-module-solutions','plural-forms'=>'nplurals=2; plural=(n != 1);','language'=>'it_IT','project-id-version'=>'newfold-labswp-module-staging','pot-creation-date'=>'2025-02-13T10:58:13+00:00','po-revision-date'=>'2025-02-19 14:32','x-generator'=>'WP-CLI 2.11.0','messages'=>['Solutions'=>'Soluzioni','Activated the plugin successfully!'=>'Attivato il plugin con successo!','Please send valid plugin'=>'Invia un plugin valido','My Plugins & Tools'=>'I Miei Plugin E Strumenti','Add a New Plugin'=>'Aggiungi un nuovo plugin']];
