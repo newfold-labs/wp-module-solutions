@@ -1,0 +1,42 @@
+{
+    "translation-revision-date": "2025-02-13 19:37+0530",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "components\/entitlements\/index.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "en_GB",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Solutions": [
+                "Solutions"
+            ],
+            "My Plugins & Tools": [
+                "My Plugins & Tools"
+            ],
+            "Explore the plugins & tools available with your solution.": [
+                "Explore the plugins & tools available with your solution."
+            ],
+            "Error": [
+                "Error"
+            ],
+            "Oops, there was an error loading the plugins & tools, please try again later.": [
+                "Oops, there was an error loading the plugins & tools, please try again later."
+            ],
+            "Sorry, no current plugins & tools. Please, try again later.": [
+                "Sorry, no current plugins & tools. Please, try again later."
+            ],
+            "Load More": [
+                "Load More"
+            ],
+            "Loading\u2026": [
+                "Loading\u2026"
+            ],
+            "Add a New Plugin": [
+                "Add a New Plugin"
+            ]
+        }
+    }
+}
