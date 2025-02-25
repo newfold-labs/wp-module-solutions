@@ -169,5 +169,4 @@ class Solutions {
 			NFD_SOLUTIONS_DIR . '/languages'
 		);
 	}
-
 }
