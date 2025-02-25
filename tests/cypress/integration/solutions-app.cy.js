@@ -1,5 +1,5 @@
 // <reference types="Cypress" />
-import { wpLogin } from '../wp-module-support/utils.cy';
+import { wpLogin, wpCli, setCapability } from '../wp-module-support/utils.cy';
 
 const entitlementsFixture = require( '../fixtures/entitlements.json' );
 
@@ -9,17 +9,17 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 		cy.visit( '/wp-admin/index.php' );
 	} );
 
+	after( () => {
+		wpCli( `transient delete nfd_site_capabilities` );
+	} );
+
 	// check that it does not display when capabilities.hasSolution is false
 	it( 'My Plugins & Tools nav does not display without solution', () => {
+		// Set hasSolution:false in capabilities
+		setCapability( { hasSolution: false } );
+
 		cy.visit(
-			'/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '#/',
-			{
-				onLoad() {
-					cy.window().then( ( win ) => {
-						win.NewfoldRuntime.capabilities.hasSolution = false;
-					} );
-				},
-			}
+			'/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '#/'
 		);
 		cy.get( 'a.wppbh-app-navitem[href="#/my_plugins_and_tools"]' ).should(
 			'not.exist'
@@ -28,6 +28,9 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 
 	// check that my plugins and tools displays when capabilities.hasSolution is true
 	it( 'My Plugins & Tools displays with Solution', () => {
+		// Set hasSolution:true in capabilities
+		setCapability( { hasSolution: true } );
+
 		// set up the intercept for entitlements
 		cy.intercept(
 			{
@@ -41,14 +44,7 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 		).as( 'getEntitlements' );
 
 		cy.visit(
-			'/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '#/',
-			{
-				onLoad() {
-					cy.window().then( ( win ) => {
-						win.NewfoldRuntime.capabilities.hasSolution = true;
-					} );
-				},
-			}
+			'/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '#/'
 		);
 
 		cy.window().then( ( win ) => {

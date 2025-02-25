@@ -1,0 +1,42 @@
+{
+    "translation-revision-date": "2025-02-19 14:32",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "components\/entitlements\/index.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Solutions": [
+                "Solution"
+            ],
+            "My Plugins & Tools": [
+                "Mes plugins et outils"
+            ],
+            "Explore the plugins & tools available with your solution.": [
+                "Explorez les plugins et outils disponibles avec votre solution."
+            ],
+            "Error": [
+                "Erreur"
+            ],
+            "Oops, there was an error loading the plugins & tools, please try again later.": [
+                "Oups, il y a eu une erreur lors du chargement des plugins et outils, veuillez r\u00e9essayer plus tard."
+            ],
+            "Sorry, no current plugins & tools. Please, try again later.": [
+                "D\u00e9sol\u00e9, aucun plugin et outil actuel. Veuillez r\u00e9essayer plus tard."
+            ],
+            "Load More": [
+                "Charger plus"
+            ],
+            "Loading\u2026": [
+                "Chargement de\u2026"
+            ],
+            "Add a New Plugin": [
+                "Ajouter un nouveau plugin"
+            ]
+        }
+    }
+}
