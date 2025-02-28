@@ -1,0 +1,42 @@
+{
+    "translation-revision-date": "2025-02-19 14:32",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "components\/entitlements\/index.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Solutions": [
+                "Oplossingen"
+            ],
+            "My Plugins & Tools": [
+                "Mijn plug-ins & gereedschap"
+            ],
+            "Explore the plugins & tools available with your solution.": [
+                "Ontdek de plug-ins en gereedschappen die beschikbaar zijn met jouw oplossing."
+            ],
+            "Error": [
+                "Foutmelding"
+            ],
+            "Oops, there was an error loading the plugins & tools, please try again later.": [
+                "Oeps, er is een fout opgetreden bij het laden van de plugins & tools, probeer het later opnieuw."
+            ],
+            "Sorry, no current plugins & tools. Please, try again later.": [
+                "Sorry, geen huidige plugins & tools. Probeer het later opnieuw."
+            ],
+            "Load More": [
+                "Meer laden"
+            ],
+            "Loading\u2026": [
+                "Laden\u2026"
+            ],
+            "Add a New Plugin": [
+                "Een nieuwe plugin toevoegen"
+            ]
+        }
+    }
+}

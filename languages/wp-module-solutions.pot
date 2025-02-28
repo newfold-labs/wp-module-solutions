@@ -1,0 +1,59 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-module-solutions/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-02-13T09:55:55+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: wp-module-solutions\n"
+
+#: bootstrap.php:15
+#: components/entitlements/index.js:8
+msgid "Solutions"
+msgstr ""
+
+#: includes/EntitlementsApi.php:163
+msgid "Activated the plugin successfully!"
+msgstr ""
+
+#: includes/EntitlementsApi.php:170
+msgid "Please send valid plugin"
+msgstr ""
+
+#: includes/Solutions.php:102
+#: components/entitlements/index.js:25
+msgid "My Plugins & Tools"
+msgstr ""
+
+#: components/entitlements/index.js:9
+msgid "Explore the plugins & tools available with your solution."
+msgstr ""
+
+#: components/entitlements/index.js:13
+msgid "Error"
+msgstr ""
+
+#: components/entitlements/index.js:14
+msgid "Oops, there was an error loading the plugins & tools, please try again later."
+msgstr ""
+
+#: components/entitlements/index.js:18
+msgid "Sorry, no current plugins & tools. Please, try again later."
+msgstr ""
+
+#: components/entitlements/index.js:22
+msgid "Load More"
+msgstr ""
+
+#: components/entitlements/index.js:23
+msgid "Loading…"
+msgstr ""
+
+#: components/entitlements/index.js:24
+msgid "Add a New Plugin"
+msgstr ""

@@ -32,6 +32,7 @@ class Solutions {
 
 		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 		add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
+		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
 	}
 
 	/**
@@ -149,6 +150,32 @@ class Solutions {
 				'installed' => get_plugins(),
 				'active'    => get_option( 'active_plugins' ),
 			)
+		);
+
+		\wp_set_script_translations(
+			'nfd_myplugin_solutions_js',
+			'wp-module-solutions',
+			NFD_SOLUTIONS_DIR . '/languages'
+		);
+	}
+
+	/**
+	 * Load text domain for Module
+	 *
+	 * @return void
+	 */
+	public static function load_text_domain() {
+
+		\load_plugin_textdomain(
+			'wp-module-solutions',
+			false,
+			NFD_SOLUTIONS_DIR . '/languages'
+		);
+
+		\load_script_textdomain(
+			'nfd_myplugin_solutions_js',
+			'wp-module-solutions',
+			NFD_SOLUTIONS_DIR . '/languages'
 		);
 	}
 }

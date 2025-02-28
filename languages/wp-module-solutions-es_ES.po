@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: newfold-labswp-module-staging\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-02-13T10:58:13+00:00\n"
+"PO-Revision-Date: 2025-02-19 14:32\n"
+"Language: es_ES\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: wp-module-solutions\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: newfold-labswp-module-staging\n"
+"X-Crowdin-Project-ID: 764889\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: wp-module-solutions.pot\n"
+"X-Crowdin-File-ID: 24\n"
+
+#: bootstrap.php:15
+#: components/entitlements/index.js:8
+msgid "Solutions"
+msgstr "Soluciones"
+
+#: includes/EntitlementsApi.php:163
+msgid "Activated the plugin successfully!"
+msgstr "¡Se ha activado el plugin con éxito!"
+
+#: includes/EntitlementsApi.php:170
+msgid "Please send valid plugin"
+msgstr "Por favor, envíe un plugin válido"
+
+#: includes/Solutions.php:102
+#: components/entitlements/index.js:25
+msgid "My Plugins & Tools"
+msgstr "Mis Plugins y Herramientas"
+
+#: components/entitlements/index.js:9
+msgid "Explore the plugins & tools available with your solution."
+msgstr "Explore los plugins y herramientas disponibles con su solución."
+
+#: components/entitlements/index.js:13
+msgid "Error"
+msgstr "Error"
+
+#: components/entitlements/index.js:14
+msgid "Oops, there was an error loading the plugins & tools, please try again later."
+msgstr "Vaya, hubo un error al cargar los plugins y herramientas, por favor inténtalo de nuevo más tarde."
+
+#: components/entitlements/index.js:18
+msgid "Sorry, no current plugins & tools. Please, try again later."
+msgstr "Lo sentimos, no hay plugins y herramientas actuales. Por favor, inténtalo de nuevo más tarde."
+
+#: components/entitlements/index.js:22
+msgid "Load More"
+msgstr "Cargar más"
+
+#: components/entitlements/index.js:23
+msgid "Loading…"
+msgstr "Cargando…"
+
+#: components/entitlements/index.js:24
+msgid "Add a New Plugin"
+msgstr "Añadir un nuevo Plugin"
