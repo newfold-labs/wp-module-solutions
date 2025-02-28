@@ -131,7 +131,7 @@ class Solutions {
 		wp_enqueue_style(
 			'nfd_myplugin_solutions_css',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css',
-			array(),
+			array( 'nfd-installer' ),
 			'1.1.0'
 		);
 
