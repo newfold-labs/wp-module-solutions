@@ -137,7 +137,7 @@ class Solutions {
 		wp_enqueue_script(
 			'nfd_myplugin_solutions_js',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js',
-			// array( 'nfd-installer' ),
+			array( 'nfd-installer' ),
 			'1.1.0',
 			true
 		);
