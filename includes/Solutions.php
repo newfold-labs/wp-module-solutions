@@ -128,11 +128,23 @@ class Solutions {
 			return;
 		}
 
-		// TODO: update this to a dependency script
-		do_action( 'newfold/installer/enqueue_scripts' );
+		wp_enqueue_style(
+			'nfd_myplugin_solutions_css',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css',
+			// Note the dependency on the installer styles to ensure the installer module styles are loaded.
+			array( 'nfd-installer' ),
+			'1.1.0'
+		);
 
-		wp_enqueue_style( 'nfd_myplugin_solutions_css', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css', array(), '1.0' );
-		wp_enqueue_script( 'nfd_myplugin_solutions_js', NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js', array(), '1.0', true );
+		wp_enqueue_script(
+			'nfd_myplugin_solutions_js',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js',
+			// Note the dependency on the installer script to ensure the installer module scripts is loaded.
+			// If the installer module is not also loaded via brand plugin, this solutions script will not load.
+			array( 'nfd-installer' ),
+			'1.1.0',
+			true
+		);
 
 		wp_localize_script(
 			'nfd_myplugin_solutions_js',
