@@ -131,7 +131,7 @@ class Solutions {
 		wp_enqueue_style(
 			'nfd_myplugin_solutions_css',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css',
-			// Note the dependency on the installer script to ensure the installer module styles are loaded.
+			// Note the dependency on the installer styles to ensure the installer module styles are loaded.
 			array( 'nfd-installer' ),
 			'1.1.0'
 		);
@@ -140,7 +140,7 @@ class Solutions {
 			'nfd_myplugin_solutions_js',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js',
 			// Note the dependency on the installer script to ensure the installer module scripts is loaded.
-			// If the installer module is not also loaded via brand plugin, the script will not load.
+			// If the installer module is not also loaded via brand plugin, this solutions script will not load.
 			array( 'nfd-installer' ),
 			'1.1.0',
 			true
