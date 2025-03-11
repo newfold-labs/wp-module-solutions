@@ -29,10 +29,12 @@ class Solutions {
 
 		add_filter( 'install_plugins_tabs', array( __CLASS__, 'add_my_plugins_and_tools_tab' ) );
 		add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
+		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_admin_assets' ) );
 
 		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 		add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
 		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
+		add_action( 'admin_menu', array( __CLASS__, 'add_solutions_page' ) );
 	}
 
 	/**
@@ -118,6 +120,52 @@ class Solutions {
 				'plugin-install.php?tab=nfd_my_plugins_and_tools'
 			);
 		}
+	}
+
+	/**
+	 * Add "Solutions" page to admin menu.
+	 */
+	public static function add_solutions_page() {
+		$capability = new SiteCapabilities();
+		if ( $capability->get( 'hasSolution' ) ) {
+			add_menu_page(
+				__( 'Solutions', 'wp-module-solutions' ),
+				__( 'Solutions', 'wp-module-solutions' ),
+				'manage_options',
+				'solutions',
+				array( __CLASS__, 'render_solutions_page' ),
+				'dashicons-lightbulb',
+				-1
+			);
+		}
+	}
+
+	/**
+	 * Render "Solutions" page root
+	 *
+	 * @return void
+	 */
+	public static function render_solutions_page() {
+		echo '<div id="nfd-solutions-app"></div>';
+	}
+
+	/**
+	 * Enqueue assets and set locals.
+	 */
+	public static function enqueue_admin_assets( $hook ) {
+		if ( $hook !== 'toplevel_page_solutions' ) {
+			return;
+		}
+
+		$plugin_url = plugin_dir_url( __FILE__ );
+
+		wp_enqueue_script(
+			'solutions-react',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/bundle.js',
+			[ 'wp-element', 'wp-dom-ready' ],
+			'1.0.0',
+			true
+		);
 	}
 
 	/**
