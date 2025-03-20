@@ -1,5 +1,6 @@
 import { SidebarNavigation, Title, TextInput } from '@newfold/ui-component-library';
 import { FireIcon, HeartIcon, StarIcon } from '@heroicons/react/24/outline';
+import { __ } from '@wordpress/i18n';
 
 export const Sidebar = () => {
 	const categories = {
@@ -8,9 +9,18 @@ export const Sidebar = () => {
 		third: { label: 'Third' }
 	};
 	const staticCategories = {
-		popular: { label: 'Most popular', icon: FireIcon },
-		favourites: { label: 'Your Favourites', icon: HeartIcon },
-		premium: { label: 'Premium Tools', icon: StarIcon }
+		popular: {
+			label: __( 'Most popular', 'wp-module-solutions' ),
+			icon: FireIcon
+		},
+		favourites: {
+			label: __( 'Your Favourites', 'wp-module-solutions' ),
+			icon: HeartIcon
+		},
+		premium: {
+			label: __( 'Premium Tools', 'wp-module-solutions' ),
+			icon: StarIcon
+		}
 	};
 
 	const mergedCats = { ...categories, ...staticCategories }
@@ -21,7 +31,7 @@ export const Sidebar = () => {
 				<SidebarNavigation.Sidebar className="nfd-w-[300px]">
 					<div className="nfd-solutions-search nfd-flex nfd-flex-col">
 						<Title as="h4">
-							Search
+							{ __( 'Search', 'wp-module-solutions' ) }
 						</Title>
 						<TextInput placeholder="Website URL"/>
 					</div>

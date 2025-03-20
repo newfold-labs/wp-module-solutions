@@ -239,6 +239,9 @@
 .nfd-inline-flex{
 	display : inline-flex !important;
 }
+.nfd-grid{
+	display : grid !important;
+}
 .nfd-hidden{
 	display : none !important;
 }
@@ -268,6 +271,9 @@
 }
 .nfd-h-8{
 	height : 2rem !important;
+}
+.nfd-h-auto{
+	height : auto !important;
 }
 .nfd-h-full{
 	height : 100% !important;
@@ -382,6 +388,9 @@
 .nfd-list-disc{
 	list-style-type : disc !important;
 }
+.nfd-grid-cols-\[repeat\(auto-fit\,minmax\(200px\,1fr\)\)\]{
+	grid-template-columns : repeat(auto-fit,minmax(200px,1fr)) !important;
+}
 .nfd-flex-col{
 	flex-direction : column !important;
 }
@@ -402,6 +411,9 @@
 }
 .nfd-gap-3{
 	gap : 0.75rem !important;
+}
+.nfd-gap-4{
+	gap : 1rem !important;
 }
 .nfd-gap-6{
 	gap : 1.5rem !important;
@@ -465,6 +477,9 @@
 	--tw-border-opacity : 1 !important;
 	border-left-color : rgb(226 232 240 / var(--tw-border-opacity, 1)) !important;
 }
+.nfd-bg-inherit{
+	background-color : inherit !important;
+}
 .nfd-bg-slate-100{
 	--tw-bg-opacity : 1 !important;
 	background-color : rgb(241 245 249 / var(--tw-bg-opacity, 1)) !important;
@@ -480,6 +495,9 @@
 .nfd-bg-slate-600{
 	--tw-bg-opacity : 1 !important;
 	background-color : rgb(71 85 105 / var(--tw-bg-opacity, 1)) !important;
+}
+.nfd-bg-transparent{
+	background-color : transparent !important;
 }
 .nfd-bg-white{
 	--tw-bg-opacity : 1 !important;
@@ -675,6 +693,52 @@
 	margin : 0 !important;
 }
 
+.nfd-solutions-tool-card {
+	background : linear-gradient(#ECF4FA, #FFF);
+	position   : relative;
+}
+
+.nfd-solutions-tool-card * {
+	z-index : 1;
+}
+
+.nfd-solutions-tool-card:before {
+	content    : '';
+	position   : absolute;
+	width      : 100%;
+	height     : 100%;
+	box-sizing : border-box;
+	top        : 0;
+	right       : 0;
+	background : #ECF4FA;
+	opacity    : 0;
+	z-index    : 0;
+	transition : .5s;
+}
+
+.nfd-solutions-tool-card:hover:before {
+	opacity : 1;
+}
+
+.nfd-solutions-tool-card .nfd-card__header svg{
+	overflow         : visible;
+}
+
+.nfd-solutions-tool-card .nfd-svg-rotate-5deg,
+.nfd-solutions-tool-card .nfd-svg-rotate--5deg {
+	transform        : rotate(0deg);
+	transform-origin : center center;
+	transition       : .4s;
+}
+
+.nfd-solutions-tool-card:hover .nfd-svg-rotate-5deg {
+	transform : rotate(-5deg);
+}
+
+.nfd-solutions-tool-card:hover .nfd-svg-rotate--5deg {
+	transform : rotate(5deg);
+}
+
 .odd\:nfd-bg-white:nth-child(odd){
 	--tw-bg-opacity : 1 !important;
 	background-color : rgb(255 255 255 / var(--tw-bg-opacity, 1)) !important;
@@ -799,4 +863,6 @@
 		max-width : 1536px !important;
 	}
 }
+
+
 

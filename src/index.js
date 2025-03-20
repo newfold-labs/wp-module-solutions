@@ -7,8 +7,8 @@ import { Header } from './components/header';
 import { FavouritesProvider } from './contexts/FavouritesContext';
 import { CategoryProvider } from './contexts/CategoryContext';
 import { Sidebar } from './components/sidebar';
+import { Tools } from './components/tools';
 import { useLocation, HashRouter as Router } from 'react-router-dom';
-
 
 const WP_SOLUTIONS_PAGE_ROOT_ELEMENT = 'nfd-solutions-app';
 
@@ -22,7 +22,9 @@ const App = () => {
 							<Header/>
 							<div className="nfd-flex nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0">
 								<Sidebar/>
-								<main>Eccolo</main>
+								<main className="nfd-w-full">
+									<Tools/>
+								</main>
 							</div>
 						</Page>
 					</Router>

@@ -8,3 +8,51 @@
 .nfd-solutions-sidebar ul {
 	margin : 0 !important;
 }
+
+.nfd-solutions-tool-card {
+	background : linear-gradient(#ECF4FA, #FFF);
+	position   : relative;
+}
+
+.nfd-solutions-tool-card * {
+	z-index : 1;
+}
+
+.nfd-solutions-tool-card:before {
+	content    : '';
+	position   : absolute;
+	width      : 100%;
+	height     : 100%;
+	box-sizing : border-box;
+	top        : 0;
+	left       : 0;
+	background : #ECF4FA;
+	opacity    : 0;
+	z-index    : 0;
+	transition : .5s;
+}
+
+.nfd-solutions-tool-card:hover:before {
+	opacity : 1;
+}
+
+.nfd-solutions-tool-card .nfd-card__header svg{
+	overflow         : visible;
+}
+
+.nfd-solutions-tool-card .nfd-svg-rotate-5deg,
+.nfd-solutions-tool-card .nfd-svg-rotate--5deg {
+	transform        : rotate(0deg);
+	transform-origin : center center;
+	transition       : .4s;
+}
+
+.nfd-solutions-tool-card:hover .nfd-svg-rotate-5deg {
+	transform : rotate(5deg);
+}
+
+.nfd-solutions-tool-card:hover .nfd-svg-rotate--5deg {
+	transform : rotate(-5deg);
+}
+
+
