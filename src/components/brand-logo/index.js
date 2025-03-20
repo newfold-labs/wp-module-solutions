@@ -1,3 +1,3 @@
-import { BrandLogo } from './brand-logo';
+import { BrandLogo } from './BrandLogo';
 
 export { BrandLogo };
