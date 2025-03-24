@@ -33,6 +33,25 @@ class Solutions {
 		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 		add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
 		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
+		add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
+
+	}
+
+	/**
+	 * Add to the Newfold subnav.
+	 *
+	 * @param array $subnav The nav array.
+	 * @return array The filtered nav array
+	 */
+	public function add_nfd_subnav( $subnav ) {
+		$brand = $this->container->get( 'plugin' )['id'];
+		$performance = array(
+			'route'    => $brand . '#/my_plugins_and_tools',
+			'title'    => __( 'Solution', 'wp-module-solutions' ),
+			'priority' => 10,
+		);
+		array_push( $subnav, $performance );
+		return $subnav;
 	}
 
 	/**
