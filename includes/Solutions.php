@@ -19,11 +19,21 @@ class Solutions {
 	protected $container;
 
 	/**
+	 * Entitlements API class instance.
+	 *
+	 * @var EntitlementsApi
+	 */
+	static protected $entitlements_api;
+
+	/**
 	 * Constructor for the Solutions class.
 	 *
 	 * @param Container $container The module container.
 	 */
 	public function __construct( Container $container ) {
+		$hiive = new HiiveConnection();
+
+		self::$entitlements_api = new EntitlementsApi( $hiive );
 		// We're trying to avoid adding more stuff to this.
 		$this->container = $container;
 
@@ -85,10 +95,7 @@ class Solutions {
 	 * Initialize the Entitilement API Controller.
 	 */
 	public function init_entitilements_apis(): void {
-		$hiive = new HiiveConnection();
-
-		$entitlements_api = new EntitlementsApi( $hiive );
-		$entitlements_api->register_routes();
+		self::$entitlements_api->register_routes();
 	}
 
 	/**
@@ -162,22 +169,37 @@ class Solutions {
 		wp_enqueue_script(
 			'solutions-react',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/bundle.js',
-			$assets_info['dependencies'],
+			array_merge(
+				$assets_info['dependencies'],
+				array( 'nfd-installer' ),
+			),
 			$assets_info['version'],
 			true
 		);
 
 		wp_enqueue_style(
-			'solutions-react',
-			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/main.css',
-			array(),
-			$assets_info['version']
-		);
-		wp_enqueue_style(
 			'solutions-react-style',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/style-main.css',
-			array(),
+			array( 'nfd-installer' ),
 			$assets_info['version']
+		);
+
+		wp_enqueue_style(
+			'solutions-react-main-style',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/main.css',
+			array( 'nfd-installer' ),
+			$assets_info['version']
+		);
+
+		wp_localize_script(
+			'solutions-react',
+			'NewfoldSolutions',
+			array_merge(
+				json_decode( json_encode( self::$entitlements_api->get_items()->data ), true ),
+				array(
+					'siteUrl' => get_site_url(),
+				)
+			)
 		);
 	}
 

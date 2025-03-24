@@ -51,30 +51,37 @@
     ],
     "categories": [
         {
+            "id": "store-operations",
             "name": "Store Operations",
             "priority": 70
         },
         {
+            "id": "seo",
             "name": "Search Engine Optimization",
             "priority": 60
         },
         {
+            "id": "sales-and-checkout",
             "name": "Sales & Checkout",
             "priority": 50
         },
         {
+            "id": "content-monetization",
             "name": "Content Monetization",
             "priority": 20
         },
         {
+            "id": "core",
             "name": "Core Tools",
             "priority": 10
         },
         {
+            "id": "customer-engagement",
             "name": "Customer Engagement",
             "priority": 30
         },
         {
+            "id": "product-management",
             "name": "Product Management",
             "priority": 40
         }
@@ -103,7 +110,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-premium.svg"
             },
-            "category": "Search Engine Optimization"
+            "category": "seo"
         },
         {
             "type": "plugin",
@@ -127,7 +134,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/advanced-reviews.svg"
             },
-            "category": "Customer Engagement"
+            "category": "customer-engagement"
         },
         {
             "type": "plugin",
@@ -151,7 +158,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-add-ons-extra-options.svg"
             },
-            "category": "Sales & Checkout"
+            "category": "sales-and-checkout"
         },
         {
             "type": "plugin",
@@ -175,7 +182,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/custom-email-templates.svg"
             },
-            "category": "Customer Engagement"
+            "category": "customer-engagement"
         },
         {
             "type": "plugin",
@@ -199,7 +206,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/pdf-invoices.svg"
             },
-            "category": "Store Operations"
+            "category": "store-operations"
         },
         {
             "type": "plugin",
@@ -223,7 +230,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/request-a-quote.svg"
             },
-            "category": "Sales & Checkout"
+            "category": "sales-and-checkout"
         },
         {
             "type": "plugin",
@@ -247,7 +254,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-add-ons-extra-options.svg"
             },
-            "category": "Product Management"
+            "category": "product-management"
         },
         {
             "type": "plugin",
@@ -271,7 +278,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/composite-products.svg"
             },
-            "category": "Product Management"
+            "category": "product-management"
         },
         {
             "type": "plugin",
@@ -295,7 +302,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/gift-cards.svg"
             },
-            "category": "Sales & Checkout"
+            "category": "sales-and-checkout"
         },
         {
             "type": "plugin",
@@ -319,7 +326,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/jetpack.svg"
             },
-            "category": "Store Operations"
+            "category": "store-operations"
         },
         {
             "type": "plugin",
@@ -343,7 +350,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/sensei-lms.svg"
             },
-            "category": "Content Monetization"
+            "category": "content-monetization"
         },
         {
             "type": "plugin",
@@ -367,7 +374,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-local-seo.svg"
             },
-            "category": "Search Engine Optimization"
+            "category": "seo"
         },
         {
             "type": "plugin",
@@ -391,7 +398,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-news-seo.svg"
             },
-            "category": "Search Engine Optimization"
+            "category": "seo"
         },
         {
             "type": "plugin",
@@ -415,7 +422,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-comparison.svg"
             },
-            "category": "Product Management"
+            "category": "product-management"
         },
         {
             "type": "plugin",
@@ -439,7 +446,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-woocommerce-seo.svg"
             },
-            "category": "Search Engine Optimization"
+            "category": "seo"
         },
         {
             "type": "plugin",
@@ -463,7 +470,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/one-click-checkout.svg"
             },
-            "category": "Sales & Checkout"
+            "category": "sales-and-checkout"
         },
         {
             "type": "plugin",
@@ -487,7 +494,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/subscriptions.svg"
             },
-            "category": "Sales & Checkout"
+            "category": "sales-and-checkout"
         },
         {
             "type": "plugin",
@@ -511,7 +518,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/creativemail-email-marketing.svg"
             },
-            "category": "Content Monetization"
+            "category": "content-monetization"
         },
         {
             "type": "plugin",
@@ -535,7 +542,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-search.svg"
             },
-            "category": "Customer Engagement"
+            "category": "customer-engagement"
         },
         {
             "type": "plugin",
@@ -559,7 +566,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/pdp-tab-manager.svg"
             },
-            "category": "Product Management"
+            "category": "product-management"
         },
         {
             "type": "plugin",
@@ -583,7 +590,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/social-login.svg"
             },
-            "category": "Customer Engagement"
+            "category": "customer-engagement"
         },
         {
             "type": "plugin",
@@ -607,7 +614,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/ecomdash.svg"
             },
-            "category": "Store Operations"
+            "category": "store-operations"
         },
         {
             "type": "plugin",
@@ -631,7 +638,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/memberships.svg"
             },
-            "category": "Content Monetization"
+            "category": "content-monetization"
         },
         {
             "type": "plugin",
@@ -655,7 +662,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/jetpack-forms.svg"
             },
-            "category": "Core Tools"
+            "category": "core"
         },
         {
             "type": "plugin",
@@ -679,7 +686,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/points-rewards.svg"
             },
-            "category": "Customer Engagement"
+            "category": "customer-engagement"
         },
         {
             "type": "plugin",
@@ -703,7 +710,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/sms-notifications.svg"
             },
-            "category": "Store Operations"
+            "category": "store-operations"
         },
         {
             "type": "plugin",
@@ -727,7 +734,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/bookings-appointments.svg"
             },
-            "category": "Sales & Checkout"
+            "category": "sales-and-checkout"
         },
         {
             "type": "plugin",
@@ -751,7 +758,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/store-locator.svg"
             },
-            "category": "Store Operations"
+            "category": "store-operations"
         },
         {
             "type": "plugin",
@@ -775,7 +782,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-filters.svg"
             },
-            "category": "Customer Engagement"
+            "category": "customer-engagement"
         },
         {
             "type": "plugin",
@@ -799,7 +806,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/affiliate-programs.svg"
             },
-            "category": "Content Monetization"
+            "category": "content-monetization"
         },
         {
             "type": "plugin",
@@ -823,7 +830,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-catalog-mode.svg"
             },
-            "category": "Product Management"
+            "category": "product-management"
         },
         {
             "type": "plugin",
@@ -847,7 +854,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/wishlists.svg"
             },
-            "category": "Customer Engagement"
+            "category": "customer-engagement"
         },
         {
             "type": "plugin",
@@ -871,7 +878,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-video-seo.svg"
             },
-            "category": "Search Engine Optimization"
+            "category": "seo"
         },
         {
             "type": "plugin",
@@ -895,7 +902,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/wondercart.svg"
             },
-            "category": "Sales & Checkout"
+            "category": "sales-and-checkout"
         },
         {
             "type": "plugin",
@@ -919,7 +926,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/customize-my-account-page.svg"
             },
-            "category": "Customer Engagement"
+            "category": "customer-engagement"
         },
         {
             "type": "feature",
@@ -943,7 +950,7 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/wonderblocks.png"
             },
-            "category": "Core Tools"
+            "category": "core"
         }
     ]
 }

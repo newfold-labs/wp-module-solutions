@@ -388,9 +388,6 @@
 .nfd-list-disc{
 	list-style-type : disc !important;
 }
-.nfd-grid-cols-\[repeat\(auto-fit\,minmax\(200px\,1fr\)\)\]{
-	grid-template-columns : repeat(auto-fit,minmax(200px,1fr)) !important;
-}
 .nfd-flex-col{
 	flex-direction : column !important;
 }
@@ -593,6 +590,10 @@
 	--tw-text-opacity : 1 !important;
 	color : rgb(15 23 42 / var(--tw-text-opacity, 1)) !important;
 }
+.nfd-text-title{
+	--tw-text-opacity : 1 !important;
+	color : rgb(15 23 42 / var(--tw-text-opacity, 1)) !important;
+}
 .nfd-text-white{
 	--tw-text-opacity : 1 !important;
 	color : rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
@@ -693,50 +694,61 @@
 	margin : 0 !important;
 }
 
+.nfd-solutions-tools {
+	grid-template-columns : repeat(auto-fit, minmax(350px, 1fr)) !important;
+	max-width             : calc(350px * 3 + 2rem);
+}
+
 .nfd-solutions-tool-card {
 	background : linear-gradient(#ECF4FA, #FFF);
 	position   : relative;
-}
 
-.nfd-solutions-tool-card * {
-	z-index : 1;
-}
+	&:before {
+		content    : '';
+		position   : absolute;
+		width      : 100%;
+		height     : 100%;
+		box-sizing : border-box;
+		top        : 0;
+		left       : 0;
+		background : #ECF4FA;
+		opacity    : 0;
+		z-index    : 0;
+		transition : .5s;
+	}
 
-.nfd-solutions-tool-card:before {
-	content    : '';
-	position   : absolute;
-	width      : 100%;
-	height     : 100%;
-	box-sizing : border-box;
-	top        : 0;
-	left       : 0;
-	background : #ECF4FA;
-	opacity    : 0;
-	z-index    : 0;
-	transition : .5s;
-}
+	* {
+		z-index : 1;
+	}
 
-.nfd-solutions-tool-card:hover:before {
-	opacity : 1;
-}
+	.nfd-card__header svg {
+		overflow : visible;
+	}
 
-.nfd-solutions-tool-card .nfd-card__header svg{
-	overflow         : visible;
-}
+	.nfd-card__footer {
+		border : none;
+	}
 
-.nfd-solutions-tool-card .nfd-svg-rotate-5deg,
-.nfd-solutions-tool-card .nfd-svg-rotate--5deg {
-	transform        : rotate(0deg);
-	transform-origin : center center;
-	transition       : .4s;
-}
+	.nfd-svg-rotate-5deg,
+	.nfd-svg-rotate--5deg {
+		transform        : rotate(0deg);
+		transform-origin : center center;
+		transition       : .4s;
+	}
 
-.nfd-solutions-tool-card:hover .nfd-svg-rotate-5deg {
-	transform : rotate(5deg);
-}
+	&:hover {
+		&:before {
+			opacity : 1;
+		}
 
-.nfd-solutions-tool-card:hover .nfd-svg-rotate--5deg {
-	transform : rotate(-5deg);
+		.nfd-svg-rotate-5deg {
+			transform : rotate(5deg);
+		}
+
+		.nfd-svg-rotate--5deg {
+			transform : rotate(-5deg);
+		}
+	}
 }
 
 .odd\:nfd-bg-white:nth-child(odd){
@@ -863,8 +875,6 @@
 		max-width : 1536px !important;
 	}
 }
-
-
 
 
 /*# sourceMappingURL=main.css.map*/

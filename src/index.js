@@ -15,9 +15,9 @@ const WP_SOLUTIONS_PAGE_ROOT_ELEMENT = 'nfd-solutions-app';
 const App = () => {
 	return (
 		<Root>
-			<CategoryProvider>
-				<FavouritesProvider>
-					<Router>
+			<Router>
+				<CategoryProvider>
+					<FavouritesProvider>
 						<Page className="nfd-solutions-app-container nfd-page min-[783px]:nfd-p-8 min-[783px]:nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0">
 							<Header/>
 							<div className="nfd-flex nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0">
@@ -27,9 +27,9 @@ const App = () => {
 								</main>
 							</div>
 						</Page>
-					</Router>
-				</FavouritesProvider>
-			</CategoryProvider>
+					</FavouritesProvider>
+				</CategoryProvider>
+			</Router>
 		</Root>
 	);
 }
