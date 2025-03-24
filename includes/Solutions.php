@@ -34,7 +34,6 @@ class Solutions {
 		add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
 		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
 		add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
-
 	}
 
 	/**
@@ -44,7 +43,7 @@ class Solutions {
 	 * @return array The filtered nav array
 	 */
 	public function add_nfd_subnav( $subnav ) {
-		$brand = $this->container->get( 'plugin' )['id'];
+		$brand       = $this->container->get( 'plugin' )['id'];
 		$performance = array(
 			'route'    => $brand . '#/my_plugins_and_tools',
 			'title'    => __( 'Solution', 'wp-module-solutions' ),
