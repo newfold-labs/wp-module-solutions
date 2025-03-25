@@ -4,55 +4,60 @@ import { __ } from '@wordpress/i18n';
 import { useCategory } from './../../contexts/CategoryContext';
 
 export const Sidebar = () => {
-	const categories = {};
+	const categories = [];
 	NewfoldSolutions.categories.map( cat => {
-		categories[ cat.id ] = { label: cat.name };
+		categories.push( {
+			id: cat.id,
+			label: cat.name
+		} );
 	} );
 
 	const { selectedCategory, changeCategory } = useCategory();
 
-	const staticCategories = {
-		popular: {
+	const staticCategories = [
+		{
+			id: 'popular',
 			label: __( 'Most popular', 'wp-module-solutions' ),
 			icon: FireIcon
 		},
-		favourites: {
-			label: __( 'Your Favourites', 'wp-module-solutions' ),
-			icon: HeartIcon
-		},
-		premium: {
+		{
+			id: 'premium',
 			label: __( 'Premium Tools', 'wp-module-solutions' ),
 			icon: StarIcon
 		}
-	};
+	];
 
-	const mergedCats = {
-		'all': {
+	const mergedCats = [
+		{
+			id: 'all',
 			label: __( 'All', 'wp-module-solutions' )
 		},
 		...categories,
 		...staticCategories
-	};
+	];
 
 	return (
 		<aside className={ 'nfd-solutions-sidebar' }>
 			<SidebarNavigation activePath={ selectedCategory }>
 				<SidebarNavigation.Sidebar className="nfd-w-[300px]">
-					<div className="nfd-solutions-search nfd-flex nfd-flex-col">
+					<div className="nfd-solutions-search nfd-flex nfd-flex-col nfd-gap-4 nfd-mb-8">
 						<Title as="h4">
 							{ __( 'Search', 'wp-module-solutions' ) }
 						</Title>
-						<TextInput placeholder="Website URL"/>
+						<TextInput/>
 					</div>
 					<SidebarNavigation.MenuItem label="Categories" defaultOpen={ true } className={ 'nfd-hidden' }>
-						{ Object.keys( mergedCats ).map( ( id ) =>
+						<Title as="h4" className="nfd-solutions-categories-title nfd-mb-4">
+							{ __( 'Categories', 'wp-module-solutions' ) }
+						</Title>
+						{ mergedCats.map( cat =>
 							<SidebarNavigation.SubmenuItem
 								pathProp="id"
-								id={ id }
-								label={ mergedCats[ id ]?.label }
-								key={ id }
-								icon={ mergedCats[ id ]?.icon }
-								onClick={ () => changeCategory( id ) }
+								id={ cat.id }
+								label={ cat.label }
+								key={ cat.id }
+								icon={ cat.icon }
+								onClick={ () => changeCategory( cat.id ) }
 							/>
 						) }
 					</SidebarNavigation.MenuItem>

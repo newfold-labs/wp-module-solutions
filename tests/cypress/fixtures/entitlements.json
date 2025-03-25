@@ -134,7 +134,8 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/advanced-reviews.svg"
             },
-            "category": "customer-engagement"
+            "category": "customer-engagement",
+            "wide": true
         },
         {
             "type": "plugin",
@@ -158,7 +159,8 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-add-ons-extra-options.svg"
             },
-            "category": "sales-and-checkout"
+            "category": "sales-and-checkout",
+            "popular": true
         },
         {
             "type": "plugin",
@@ -182,7 +184,8 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/custom-email-templates.svg"
             },
-            "category": "customer-engagement"
+            "category": "customer-engagement",
+            "premium": true
         },
         {
             "type": "plugin",
@@ -206,7 +209,9 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/pdf-invoices.svg"
             },
-            "category": "store-operations"
+            "category": "store-operations",
+            "popular": true,
+            "premium": true
         },
         {
             "type": "plugin",
@@ -734,7 +739,10 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/bookings-appointments.svg"
             },
-            "category": "sales-and-checkout"
+            "category": "sales-and-checkout",
+            "wide": true,
+            "premium": true,
+            "popular": true
         },
         {
             "type": "plugin",
@@ -758,7 +766,8 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/store-locator.svg"
             },
-            "category": "store-operations"
+            "category": "store-operations",
+            "premium": true
         },
         {
             "type": "plugin",
@@ -782,7 +791,8 @@
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-filters.svg"
             },
-            "category": "customer-engagement"
+            "category": "customer-engagement",
+            "popular": true
         },
         {
             "type": "plugin",

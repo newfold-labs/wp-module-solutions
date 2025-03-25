@@ -3,8 +3,8 @@ import { Title } from '@newfold/ui-component-library';
 import { __ } from '@wordpress/i18n';
 
 export const Header = () => {
-	return <div>
-		<BrandLogo width={ '120px' }/>
+	return <div className="nfd-solutions-app-header nfd-flex nfd-flex-col nfd-gap-y-4 nfd-mb-8">
+		<BrandLogo width={ '140px' } className="nfd-mb-8"/>
 		<Title>
 			{ __( 'Premium tools available in your Commerce solution', 'wp-module-solutions' ) }
 		</Title>

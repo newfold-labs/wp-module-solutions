@@ -6442,6 +6442,9 @@
 .nfd-mb-2 {
 		margin-bottom: 0.5rem !important;
 }
+.nfd-mb-40 {
+		margin-bottom: 10rem !important;
+}
 .nfd-mb-px {
 		margin-bottom: 1px !important;
 }
@@ -6471,6 +6474,15 @@
 }
 .nfd-mt-8 {
 		margin-top: 2rem !important;
+}
+.nfd-mb-8 {
+		margin-bottom: 2rem !important;
+}
+.nfd-mb-4 {
+		margin-bottom: 1rem !important;
+}
+.nfd-mb-10 {
+		margin-bottom: 2.5rem !important;
 }
 .nfd-flex {
 		display: flex !important;
@@ -6626,9 +6638,6 @@
 .nfd-list-disc {
 		list-style-type: disc !important;
 }
-.nfd-grid-cols-\[repeat\(auto-fit\,minmax\(200px\,1fr\)\)\] {
-		grid-template-columns: repeat(auto-fit,minmax(200px,1fr)) !important;
-}
 .nfd-flex-col {
 		flex-direction: column !important;
 }
@@ -6638,11 +6647,17 @@
 .nfd-items-center {
 		align-items: center !important;
 }
+.nfd-items-baseline {
+		align-items: baseline !important;
+}
 .nfd-justify-center {
 		justify-content: center !important;
 }
 .nfd-justify-between {
 		justify-content: space-between !important;
+}
+.nfd-gap-10 {
+		gap: 2.5rem !important;
 }
 .nfd-gap-2 {
 		gap: 0.5rem !important;
@@ -6655,6 +6670,12 @@
 }
 .nfd-gap-6 {
 		gap: 1.5rem !important;
+}
+.nfd-gap-1 {
+		gap: 0.25rem !important;
+}
+.nfd-gap-y-4 {
+		row-gap: 1rem !important;
 }
 .nfd-space-y-1 > :not([hidden]) ~ :not([hidden]) {
 		--tw-space-y-reverse: 0 !important;

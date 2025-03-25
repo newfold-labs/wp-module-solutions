@@ -1,5 +1,5 @@
-export const BrandLogo = ( { width, height } ) => {
-	return <svg viewBox="0 0 116.8 19.3" xmlns="http://www.w3.org/2000/svg" width={ width } height={ height }>
+export const BrandLogo = ( { width, height, ...props } ) => {
+	return <svg viewBox="0 0 116.8 19.3" xmlns="http://www.w3.org/2000/svg" width={ width } height={ height } { ...props }>
 		<g fill="#3575d3">
 			<path d="m0 0h5.3v5.3h-5.3zm6.8 0h5.3v5.3h-5.3zm6.9 0h5.3v5.3h-5.3zm-13.7 6.8h5.3v5.3h-5.3zm6.8 0h5.3v5.3h-5.3zm6.9 0h5.3v5.3h-5.3zm-13.7 6.9h5.3v5.3h-5.3zm6.8 0h5.3v5.3h-5.3z"/>
 			<path d="m13.7 13.7h5.3v5.3h-5.3z"/>
