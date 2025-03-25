@@ -27,13 +27,12 @@ class Solutions {
 		// We're trying to avoid adding more stuff to this.
 		$this->container = $container;
 
-		add_filter( 'install_plugins_tabs', array( __CLASS__, 'add_my_plugins_and_tools_tab' ) );
-		add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
-
-		add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
-		add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
+		\add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
+		\add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
+		\add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
 		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
-		add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
+		\add_filter( 'install_plugins_tabs', array( __CLASS__, 'add_my_plugins_and_tools_tab' ) );
+		\add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
 	}
 
 	/**
@@ -128,7 +127,7 @@ class Solutions {
 	public static function add_plugins_and_tools_menu_link() {
 		$capability = new SiteCapabilities();
 		if ( $capability->get( 'hasSolution' ) ) {
-			add_submenu_page(
+			\add_submenu_page(
 				'plugins.php',
 				'nfd_my_plugins_and_tools',
 				'My Plugins & Tools',
@@ -146,7 +145,7 @@ class Solutions {
 			return;
 		}
 
-		wp_enqueue_style(
+		\wp_enqueue_style(
 			'nfd_myplugin_solutions_css',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/css/myPluginsTools.css',
 			// Note the dependency on the installer styles to ensure the installer module styles are loaded.
@@ -154,7 +153,7 @@ class Solutions {
 			'1.1.0'
 		);
 
-		wp_enqueue_script(
+		\wp_enqueue_script(
 			'nfd_myplugin_solutions_js',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/includes/js/myPluginsTools.js',
 			// Note the dependency on the installer script to ensure the installer module scripts is loaded.
@@ -164,12 +163,12 @@ class Solutions {
 			true
 		);
 
-		wp_localize_script(
+		\wp_localize_script(
 			'nfd_myplugin_solutions_js',
 			'nfdPluginDetails',
 			array(
-				'installed' => get_plugins(),
-				'active'    => get_option( 'active_plugins' ),
+				'installed' => \get_plugins(),
+				'active'    => \get_option( 'active_plugins' ),
 			)
 		);
 
