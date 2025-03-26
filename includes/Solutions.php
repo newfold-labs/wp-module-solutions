@@ -149,18 +149,15 @@ class Solutions {
 	 * Add "Solutions" page to admin menu.
 	 */
 	public static function add_solutions_page() {
-		$capability = new SiteCapabilities();
-		if ( $capability->get( 'hasSolution' ) ) {
-			add_menu_page(
-				__( 'Solutions', 'wp-module-solutions' ),
-				__( 'Solutions', 'wp-module-solutions' ),
-				'manage_options',
-				'solutions',
-				array( __CLASS__, 'render_solutions_page' ),
-				'dashicons-lightbulb',
-				-1
-			);
-		}
+		\add_menu_page(
+			__( 'Solutions', 'wp-module-solutions' ),
+			__( 'Solutions', 'wp-module-solutions' ),
+			'manage_options',
+			'solutions',
+			array( __CLASS__, 'render_solutions_page' ),
+			'dashicons-lightbulb',
+			-1
+		);
 	}
 
 	/**
