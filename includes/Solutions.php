@@ -118,7 +118,7 @@ class Solutions {
 	public static function add_plugins_and_tools_menu_link() {
 		$capability = new SiteCapabilities();
 		if ( $capability->get( 'hasSolution' ) ) {
-			/add_submenu_page(
+			\add_submenu_page(
 				'plugins.php',
 				'nfd_my_plugins_and_tools',
 				'My Plugins & Tools',
