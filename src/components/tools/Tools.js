@@ -1,5 +1,6 @@
+import { EmptyTools } from './EmptyTools';
 import { Tool } from './tool';
-import { useCategory } from './../../contexts/CategoryContext';
+import { useFilter } from './../../contexts/FilterContext';
 import {
 	AdvancedReviewIcon,
 	BookingIcon,
@@ -75,7 +76,7 @@ function layoutTools( tools ) {
 }
 
 export const Tools = () => {
-	const { selectedCategory } = useCategory();
+	const { category, search } = useFilter();
 	let tools = NewfoldSolutions.entitlements
 		//.filter( tool => Object.keys( toolsIcons ).includes( tool.name ) )
 		.sort( ( a, b ) => {
@@ -87,25 +88,41 @@ export const Tools = () => {
 			return 0;
 		} );
 
-	if ( 'all' !== selectedCategory ) {
-		tools = tools.filter( tool => tool.category === selectedCategory );
+	if ( 'all' !== category ) {
+		tools = tools.filter( tool => tool.category === category );
 	}
 
-	return <div className="nfd-solutions-tools nfd-grid nfd-gap-4">
+	if ( search ) {
+		tools = tools.filter( tool => tool?.name?.toLowerCase().includes( search.toLowerCase() ) || tool?.plsSlug?.toLowerCase().includes( search.toLowerCase() ) );
+	}
+
+	tools = layoutTools( [ ...tools ] );
+
+	return <>
+		{ ! tools.length && <EmptyTools/> }
 		{
-			layoutTools( [ ...tools ] ).map(
-				tool =>
-					<Tool
-						name={ tool?.name }
-						description={ tool.description }
-						href={ tool.cta?.url.replace( '{siteUrl}', NewfoldSolutions.siteUrl ) }
-						icon={ toolsIcons[ tool?.name ] }
-						wide={ tool?.wide }
-						premium={tool?.premium}
-						popular={tool?.popular}
-						key={ tool?.name }
-					/>
-			)
+			!! tools.length &&
+			<div className="nfd-solutions-tools nfd-grid nfd-gap-4">
+				{
+					tools.map(
+						tool =>
+							<Tool
+								name={ tool?.name }
+								description={ tool.description }
+								href={ tool.cta?.url.replace( '{siteUrl}', NewfoldSolutions.siteUrl ) }
+								icon={ toolsIcons[ tool?.name ] }
+								smallIcon={ ! toolsIcons[ tool?.name ] ? tool.image.primaryImage : null }
+								wide={ tool?.wide }
+								premium={ tool?.premium }
+								popular={ tool?.popular }
+								key={ tool?.name }
+								isActive={ tool?.isActive }
+								plsProvider={ tool?.plsProviderName }
+								plsSlug={ tool?.plsSlug }
+							/>
+					)
+				}
+			</div>
 		}
-	</div>;
+	</>;
 }

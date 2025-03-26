@@ -5,6 +5,7 @@ export default () => (
 		height="245"
 		fill="none"
 		viewBox="0 0 297 245"
+		className="nfd-solutions-booking-icon"
 	>
 		<g filter="url(#filter0_d_1651_1362)">
 			<rect width="162" height="192" x="15" y="17" fill="#fff" rx="6"></rect>

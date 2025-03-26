@@ -179,23 +179,24 @@ class Solutions {
 
 		wp_enqueue_style(
 			'solutions-react-style',
-			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/style-main.css',
-			array( 'nfd-installer' ),
-			$assets_info['version']
-		);
-
-		wp_enqueue_style(
-			'solutions-react-main-style',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/main.css',
 			array( 'nfd-installer' ),
 			$assets_info['version']
 		);
 
+		$solutions_data = json_decode( json_encode( self::$entitlements_api->get_items()->data ), true );
+
+		$solutions_data['entitlements'] = array_map( function ( $entitlement ) {
+			'yith-woocommerce-booking-premium/init.php' === $entitlement['basename'] && var_log( is_plugin_active( $entitlement['basename'] ) );
+			$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
+			return $entitlement;
+		}, $solutions_data['entitlements'] );
+
 		wp_localize_script(
 			'solutions-react',
 			'NewfoldSolutions',
 			array_merge(
-				json_decode( json_encode( self::$entitlements_api->get_items()->data ), true ),
+				$solutions_data,
 				array(
 					'siteUrl' => get_site_url(),
 				)
