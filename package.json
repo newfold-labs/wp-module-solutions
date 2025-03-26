@@ -1,7 +1,7 @@
 {
   "name": "@newfold-labs/wp-module-solutions",
   "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers.",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "license": "GPL-2.0-or-later",
   "private": true,
   "author": "arati bhandare",
