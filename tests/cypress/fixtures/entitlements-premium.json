@@ -5,10 +5,10 @@
             "name": "Services",
             "sku": "WP_SOLUTION_SERVICE",
             "description": "Boost local visibility and streamline your business operations with specialized tools",
-            "price": "$3.40",
-            "fullPrice": "$",
+            "price": "$4.99",
+            "fullPrice": "$0.00",
             "url": null,
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13",
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f",
             "priority": 20,
             "features": [
                 "Includes the <strong>Content Creator bundle<\/strong>",
@@ -22,10 +22,10 @@
             "name": "Commerce",
             "sku": "WP_SOLUTION_COMMERCE",
             "description": "Promote, sell, and grow your online store with powerful eCommerce tools.",
-            "price": "$5.10",
-            "fullPrice": "$",
+            "price": "$6.99",
+            "fullPrice": "$0.00",
             "url": null,
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13",
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f",
             "priority": 30,
             "features": [
                 "Includes the <strong>Service Business<\/strong> bundle",
@@ -39,10 +39,10 @@
             "name": "Content Creator",
             "sku": "WP_SOLUTION_CREATOR",
             "description": "Manage your site, build your brand, and monetize your content with essential tools.",
-            "price": "$2.38",
+            "price": "$3.99",
             "fullPrice": "$0.00",
             "url": null,
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13",
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f",
             "priority": 10,
             "features": [
                 "Monetize Content with Ease",
@@ -57,77 +57,53 @@
             "id": "0d0743fa-8f69-44ef-a64a-6f2bab8025d0",
             "name": "Store Operations",
             "priority": 70,
-            "count": 5
+            "count": 5,
+            "slug": "store-operations"
         },
         {
             "id": "1d464335-e588-4a5d-9f57-a7581a2273dc",
             "name": "Search Engine Optimization",
             "priority": 60,
-            "count": 6
+            "count": 6,
+            "slug": "search-engine-optimization"
         },
         {
             "id": "1df2e41d-7458-48c8-b2d7-a6dfd6ab9b01",
             "name": "Sales & Checkout",
             "priority": 50,
-            "count": 7
+            "count": 7,
+            "slug": "sales-checkout"
         },
         {
             "id": "2bb5e44d-4397-4816-bc21-ba8c94a21907",
             "name": "Content Monetization",
             "priority": 20,
-            "count": 4
+            "count": 5,
+            "slug": "content-monetization"
         },
         {
             "id": "4c1c3382-7a3e-410a-9ef5-1e532ce9640b",
             "name": "Core Tools",
             "priority": 10,
-            "count": 2
+            "count": 2,
+            "slug": "core-tools"
         },
         {
             "id": "a8519715-61b2-417a-8a4f-8ecbe27b1a4e",
             "name": "Customer Engagement",
             "priority": 30,
-            "count": 8
+            "count": 9,
+            "slug": "customer-engagement"
         },
         {
             "id": "f7959867-a50c-4ca3-ae7c-bd215d6fa681",
             "name": "Product Management",
             "priority": 40,
-            "count": 5
+            "count": 5,
+            "slug": "product-management"
         }
     ],
     "premium": [
-        {
-            "id": "20085485-7185-40fd-89e4-14dbb690aea2",
-            "type": "plugin",
-            "name": "Advanced Reviews",
-            "description": "Get positive product reviews and use social proof to drive sales.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_ywar_panel"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-woocommerce-advanced-reviews",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-woocommerce-advanced-reviews-premium\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/advanced-reviews.svg",
-                "featureImage": ""
-            },
-            "category": "Customer Engagement",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
-        },
         {
             "id": "273e46c2-da7d-46b0-ace1-68578c037594",
             "type": "plugin",
@@ -153,104 +129,12 @@
                 "featureImage": ""
             },
             "category": "Sales & Checkout",
+            "categorySlug": "sales-checkout",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
-        },
-        {
-            "id": "28d4bd77-2f56-4639-89dd-76f9b8b3f54e",
-            "type": "plugin",
-            "name": "Custom Email Templates",
-            "description": "Manage and customize email templates sent from your store.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_wcet_panel"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-woocommerce-email-templates",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-woocommerce-email-templates-premium\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/custom-email-templates.svg",
-                "featureImage": ""
-            },
-            "category": "Customer Engagement",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
-        },
-        {
-            "id": "2eb48da8-9b9b-4f5f-92fd-bcf2ed0db91e",
-            "type": "plugin",
-            "name": "PDF Invoices",
-            "description": "Generate invoices and create packing slips to speed up the shipping process.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_woocommerce_pdf_invoice_panel"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-woocommerce-pdf-invoice",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-woocommerce-pdf-invoice-premium\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/pdf-invoices.svg",
-                "featureImage": ""
-            },
-            "category": "Store Operations",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
-        },
-        {
-            "id": "4038b1c2-e418-4d5e-9704-ae14569bb63a",
-            "type": "plugin",
-            "name": "Request a Quote",
-            "description": "Hide prices, disable shopping carts, and encourage customers to request a quote for products in your store.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_woocommerce_request_a_quote"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-woocommerce-request-a-quote",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-woocommerce-request-a-quote-premium\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/request-a-quote.svg",
-                "featureImage": ""
-            },
-            "category": "Sales & Checkout",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         },
         {
             "id": "415f4b6c-a459-4794-9404-fefdfdc2d5e9",
@@ -277,11 +161,12 @@
                 "featureImage": ""
             },
             "category": "Product Management",
+            "categorySlug": "product-management",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         },
         {
             "id": "440fba07-fab8-432a-995f-63e3c56dcb61",
@@ -308,11 +193,9 @@
                 "featureImage": ""
             },
             "category": "Product Management",
+            "categorySlug": "product-management",
             "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "solutions": []
         },
         {
             "id": "48cd03e6-1271-4a67-ae1c-791c32fa9500",
@@ -339,11 +222,12 @@
                 "featureImage": ""
             },
             "category": "Sales & Checkout",
+            "categorySlug": "sales-checkout",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         },
         {
             "id": "49efa0f3-4e0d-43a7-a486-5e87420d995a",
@@ -370,11 +254,12 @@
                 "featureImage": ""
             },
             "category": "Store Operations",
+            "categorySlug": "store-operations",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         },
         {
             "id": "59ab96ef-ff8a-4f81-bb0c-f6422719ad58",
@@ -401,11 +286,12 @@
                 "featureImage": ""
             },
             "category": "Product Management",
+            "categorySlug": "product-management",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         },
         {
             "id": "5ef26369-550f-4e9a-870d-0771197bdf91",
@@ -432,11 +318,12 @@
                 "featureImage": ""
             },
             "category": "Search Engine Optimization",
+            "categorySlug": "search-engine-optimization",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         },
         {
             "id": "63a82492-9656-4794-9b9e-43810eaed452",
@@ -463,42 +350,12 @@
                 "featureImage": ""
             },
             "category": "Sales & Checkout",
+            "categorySlug": "sales-checkout",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
-        },
-        {
-            "id": "663f5488-5191-487a-b39c-2e3ed7059a61",
-            "type": "plugin",
-            "name": "Subscriptions",
-            "description": "Create passive revenue by selling subscription-based products or services.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_woocommerce_subscription"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-woocommerce-subscription",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-woocommerce-subscription-premium\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/subscriptions.svg",
-                "featureImage": ""
-            },
-            "category": "Sales & Checkout",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         },
         {
             "id": "6d6e63c2-b03a-4f09-9493-3310a130bc55",
@@ -525,16 +382,17 @@
                 "featureImage": ""
             },
             "category": "Customer Engagement",
+            "categorySlug": "customer-engagement",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         },
         {
             "id": "77c00c44-3880-4f19-9798-6aa44445c12e",
             "type": "plugin",
-            "name": "PDP Tab Manager",
+            "name": "Tab Manager",
             "description": "Setup customized tabs in product pages to show all the info you need.",
             "longDescription": null,
             "author": {
@@ -556,11 +414,41 @@
                 "featureImage": ""
             },
             "category": "Product Management",
+            "categorySlug": "product-management",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
+        },
+        {
+            "id": "78ec1e62-98d7-4db3-b32b-14112e3807dd",
+            "type": "plugin",
+            "name": "Affiliate Program",
+            "description": "Streamline the login and signup process by allowing visitors to use their Google or Facebook account.",
+            "longDescription": null,
+            "author": {
+                "name": "YITH",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_wcaf_panel"
+            },
+            "plsProviderName": null,
+            "plsSlug": null,
+            "download": "https:\/\/downloads.wordpress.org\/plugin\/yith-woocommerce-affiliates.latest-stable.zip",
+            "slug": "init",
+            "basename": "yith-woocommerce-affiliates\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/affiliate-programs.svg",
+                "featureImage": ""
+            },
+            "category": "Content Monetization",
+            "categorySlug": "content-monetization",
+            "priority": null,
+            "solutions": []
         },
         {
             "id": "7b0f3192-ec30-4231-8c35-0c7bc5e2ee97",
@@ -587,11 +475,9 @@
                 "featureImage": ""
             },
             "category": "Customer Engagement",
+            "categorySlug": "customer-engagement",
             "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "solutions": []
         },
         {
             "id": "7b19a90e-d222-499d-8338-618ef42dd5ce",
@@ -618,141 +504,18 @@
                 "featureImage": ""
             },
             "category": "Store Operations",
+            "categorySlug": "store-operations",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
-        },
-        {
-            "id": "8f2ee7f7-e230-4587-a8b6-b222cfd5d0e6",
-            "type": "plugin",
-            "name": "Points & Rewards",
-            "description": "Reward customer loyalty with an effective points program.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_woocommerce_points_and_rewards"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-woocommerce-points-and-rewards",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-woocommerce-points-and-rewards-premium\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/points-rewards.svg",
-                "featureImage": ""
-            },
-            "category": "Customer Engagement",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
-        },
-        {
-            "id": "91fe7536-b081-4b4f-b65d-2d47fe8b0624",
-            "type": "plugin",
-            "name": "SMS Notifications",
-            "description": "You and your customer can stay updated on all order activity via SMS.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith-wc-sms-notifications"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-woocommerce-sms-notifications",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-woocommerce-sms-notifications-premium\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/sms-notifications.svg",
-                "featureImage": ""
-            },
-            "category": "Store Operations",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
-        },
-        {
-            "id": "ad68e506-8c2b-4c0f-a9e3-16623d00041e",
-            "type": "plugin",
-            "name": "Bookings & Appointments",
-            "description": "Manage renting or booking of services and items.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/edit.php?post_type=yith_booking&yith-plugin-fw-panel-skip-redirect=1"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-woocommerce-booking",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-woocommerce-booking-premium\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/bookings-appointments.svg",
-                "featureImage": ""
-            },
-            "category": "Sales & Checkout",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
-        },
-        {
-            "id": "b0cc72fe-8794-4345-b31a-c82598211732",
-            "type": "plugin",
-            "name": "Store Locator",
-            "description": "Enable a store locator on your website to help customers find you easily.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/edit.php?post_type=yith_sl_store"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-store-locator-for-wordpress",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-store-locator-for-wordpress\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/store-locator.svg",
-                "featureImage": ""
-            },
-            "category": "Store Operations",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         },
         {
             "id": "b21b564d-f9f2-4bd5-90f2-dcaa74c30487",
             "type": "plugin",
             "name": "Product Filters",
-            "description": "Offer exclusive content to customers who sign up as members in your store.",
+            "description": "Make it easier for customers to find what they need quickly, improving the overall shopping experience.",
             "longDescription": null,
             "author": {
                 "name": "Yith",
@@ -773,43 +536,12 @@
                 "featureImage": ""
             },
             "category": "Customer Engagement",
+            "categorySlug": "customer-engagement",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
-        },
-        {
-            "id": "b2975e80-e719-45ee-8c53-caacebb6f10d",
-            "type": "plugin",
-            "name": "Affiliate Program",
-            "description": "Grant your affiliates earnings each time someone purchases from their link.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_wcaf_panel"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-woocommerce-affiliates",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-woocommerce-affiliates-premium\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/affiliate-programs.svg",
-                "featureImage": ""
-            },
-            "category": "Content Monetization",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE",
-                "WP_SOLUTION_CREATOR"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         },
         {
             "id": "bb65fce0-24b6-4714-8d5d-3a693f428df4",
@@ -833,43 +565,13 @@
             "basename": "wordpress-seo-premium\/wordpress-seo-premium.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-premium.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-premium.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yoast-premium-premium-entitlement.svg"
             },
             "category": "Search Engine Optimization",
+            "categorySlug": "search-engine-optimization",
             "priority": 0,
             "solutions": [],
-            "ctbId": "CUSTOM_CTB_ID"
-        },
-        {
-            "id": "cbd192f2-49e0-4e17-99f0-7aa7f8c9c64c",
-            "type": "plugin",
-            "name": "Product Catalog Mode",
-            "description": "Encourage customers to contact you for pricing or additional information.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_wc_catalog_mode_panel"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-woocommerce-catalog-mode",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-woocommerce-catalog-mode-premium\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-catalog-mode.svg",
-                "featureImage": ""
-            },
-            "category": "Product Management",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "57d6a568-783c-45e2-a388-847cff155897"
         },
         {
             "id": "d561ecd7-678b-4a19-ad34-385894bea07a",
@@ -896,11 +598,12 @@
                 "featureImage": ""
             },
             "category": "Customer Engagement",
+            "categorySlug": "customer-engagement",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         },
         {
             "id": "e86bfab7-c47d-4be6-b538-5cb4d1d4b504",
@@ -927,42 +630,12 @@
                 "featureImage": ""
             },
             "category": "Sales & Checkout",
+            "categorySlug": "sales-checkout",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
-        },
-        {
-            "id": "ed4bfb96-5df9-4aa4-9832-49556e179229",
-            "type": "plugin",
-            "name": "Customize My Account Page",
-            "description": "Add videos, files, discount codes, and more to your customers account page.",
-            "longDescription": null,
-            "author": {
-                "name": "Yith",
-                "url": "https:\/\/yithemes.com\/"
-            },
-            "url": null,
-            "cta": {
-                "text": "Manage",
-                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_wcmap_panel"
-            },
-            "plsProviderName": "yith",
-            "plsSlug": "yith-woocommerce-customize-myaccount-page",
-            "download": null,
-            "slug": "init",
-            "basename": "yith-woocommerce-customize-myaccount-page\/init.php",
-            "image": {
-                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/customize-my-account-page.svg",
-                "featureImage": ""
-            },
-            "category": "Customer Engagement",
-            "priority": null,
-            "solutions": [
-                "WP_SOLUTION_COMMERCE"
-            ],
-            "ctbId": "ee4d2f87-bb22-4377-beb4-f9283d2eff13"
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
         }
     ],
     "solution": "WP_SOLUTION_SERVICE",
@@ -992,11 +665,141 @@
                 "featureImage": ""
             },
             "category": "Search Engine Optimization",
+            "categorySlug": "search-engine-optimization",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
                 "WP_SOLUTION_CREATOR"
+            ]
+        },
+        {
+            "id": "20085485-7185-40fd-89e4-14dbb690aea2",
+            "type": "plugin",
+            "name": "Advanced Reviews",
+            "description": "Get positive product reviews and use social proof to drive sales.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_ywar_panel"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-advanced-reviews",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-advanced-reviews-premium\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/advanced-reviews.svg",
+                "featureImage": ""
+            },
+            "category": "Customer Engagement",
+            "categorySlug": "customer-engagement",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE"
+            ]
+        },
+        {
+            "id": "28d4bd77-2f56-4639-89dd-76f9b8b3f54e",
+            "type": "plugin",
+            "name": "Custom Email Templates",
+            "description": "Manage and customize email templates sent from your store.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_wcet_panel"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-email-templates",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-email-templates-premium\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/custom-email-templates.svg",
+                "featureImage": ""
+            },
+            "category": "Customer Engagement",
+            "categorySlug": "customer-engagement",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE",
+                "WP_SOLUTION_CREATOR"
+            ]
+        },
+        {
+            "id": "2eb48da8-9b9b-4f5f-92fd-bcf2ed0db91e",
+            "type": "plugin",
+            "name": "PDF Invoices",
+            "description": "Generate invoices and create packing slips to speed up the shipping process.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_woocommerce_pdf_invoice_panel"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-pdf-invoice",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-pdf-invoice-premium\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/pdf-invoices.svg",
+                "featureImage": ""
+            },
+            "category": "Store Operations",
+            "categorySlug": "store-operations",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE"
+            ]
+        },
+        {
+            "id": "4038b1c2-e418-4d5e-9704-ae14569bb63a",
+            "type": "plugin",
+            "name": "Request a Quote",
+            "description": "Hide prices, disable shopping carts, and encourage customers to request a quote for products in your store.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_woocommerce_request_a_quote"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-request-a-quote",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-request-a-quote-premium\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/request-a-quote.svg",
+                "featureImage": ""
+            },
+            "category": "Sales & Checkout",
+            "categorySlug": "sales-checkout",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE"
             ]
         },
         {
@@ -1024,6 +827,40 @@
                 "featureImage": ""
             },
             "category": "Content Monetization",
+            "categorySlug": "content-monetization",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE",
+                "WP_SOLUTION_CREATOR"
+            ]
+        },
+        {
+            "id": "4ee67608-21be-4b70-b917-646933358503",
+            "type": "plugin",
+            "name": "Easy Login",
+            "description": "Streamline the login and signup process by allowing visitors to use their Google or Facebook account.",
+            "longDescription": null,
+            "author": {
+                "name": "YITH",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": "https:\/\/yithemes.com\/",
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_welrp_panel"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-easy-login-register-popup-for-woocommerce",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-easy-login-register-popup-for-woocommerce\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/easy-login.svg",
+                "featureImage": ""
+            },
+            "category": "Customer Engagement",
+            "categorySlug": "customer-engagement",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
@@ -1056,6 +893,7 @@
                 "featureImage": ""
             },
             "category": "Search Engine Optimization",
+            "categorySlug": "search-engine-optimization",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
@@ -1087,6 +925,40 @@
                 "featureImage": ""
             },
             "category": "Search Engine Optimization",
+            "categorySlug": "search-engine-optimization",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE",
+                "WP_SOLUTION_CREATOR"
+            ]
+        },
+        {
+            "id": "663f5488-5191-487a-b39c-2e3ed7059a61",
+            "type": "plugin",
+            "name": "Subscriptions",
+            "description": "Create passive revenue by selling subscription-based products or services.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_woocommerce_subscription"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-subscription",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-subscription-premium\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/subscriptions.svg",
+                "featureImage": ""
+            },
+            "category": "Sales & Checkout",
+            "categorySlug": "sales-checkout",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
@@ -1119,6 +991,7 @@
                 "featureImage": ""
             },
             "category": "Content Monetization",
+            "categorySlug": "content-monetization",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
@@ -1151,6 +1024,7 @@
                 "featureImage": ""
             },
             "category": "Content Monetization",
+            "categorySlug": "content-monetization",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
@@ -1183,11 +1057,205 @@
                 "featureImage": ""
             },
             "category": "Core Tools",
+            "categorySlug": "core-tools",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
                 "WP_SOLUTION_CREATOR"
+            ]
+        },
+        {
+            "id": "8f2ee7f7-e230-4587-a8b6-b222cfd5d0e6",
+            "type": "plugin",
+            "name": "Points & Rewards",
+            "description": "Reward customer loyalty with an effective points program.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_woocommerce_points_and_rewards"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-points-and-rewards",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-points-and-rewards-premium\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/points-rewards.svg",
+                "featureImage": ""
+            },
+            "category": "Customer Engagement",
+            "categorySlug": "customer-engagement",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE"
+            ]
+        },
+        {
+            "id": "91fe7536-b081-4b4f-b65d-2d47fe8b0624",
+            "type": "plugin",
+            "name": "SMS Notifications",
+            "description": "You and your customer can stay updated on all order activity via SMS.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith-wc-sms-notifications"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-sms-notifications",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-sms-notifications-premium\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/sms-notifications.svg",
+                "featureImage": ""
+            },
+            "category": "Store Operations",
+            "categorySlug": "store-operations",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE"
+            ]
+        },
+        {
+            "id": "ad68e506-8c2b-4c0f-a9e3-16623d00041e",
+            "type": "plugin",
+            "name": "Bookings & Appointments",
+            "description": "Manage renting or booking of services and items.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/edit.php?post_type=yith_booking&yith-plugin-fw-panel-skip-redirect=1"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-booking",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-booking-premium\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/bookings-appointments.svg",
+                "featureImage": ""
+            },
+            "category": "Sales & Checkout",
+            "categorySlug": "sales-checkout",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE"
+            ]
+        },
+        {
+            "id": "b0cc72fe-8794-4345-b31a-c82598211732",
+            "type": "plugin",
+            "name": "Store Locator",
+            "description": "Enable a store locator on your website to help customers find you easily.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/edit.php?post_type=yith_sl_store"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-store-locator-for-wordpress",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-store-locator-for-wordpress\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/store-locator.svg",
+                "featureImage": ""
+            },
+            "category": "Store Operations",
+            "categorySlug": "store-operations",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE"
+            ]
+        },
+        {
+            "id": "b2975e80-e719-45ee-8c53-caacebb6f10d",
+            "type": "plugin",
+            "name": "Affiliate Program Premium",
+            "description": "Grant your affiliates earnings each time someone purchases from their link.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_wcaf_panel"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-affiliates",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-affiliates-premium\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/affiliate-programs.svg",
+                "featureImage": ""
+            },
+            "category": "Content Monetization",
+            "categorySlug": "content-monetization",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE",
+                "WP_SOLUTION_CREATOR"
+            ]
+        },
+        {
+            "id": "cbd192f2-49e0-4e17-99f0-7aa7f8c9c64c",
+            "type": "plugin",
+            "name": "Product Catalog Mode",
+            "description": "Encourage customers to contact you for pricing or additional information.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_wc_catalog_mode_panel"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-catalog-mode",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-catalog-mode-premium\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-catalog-mode.svg",
+                "featureImage": ""
+            },
+            "category": "Product Management",
+            "categorySlug": "product-management",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE"
             ]
         },
         {
@@ -1215,11 +1283,44 @@
                 "featureImage": ""
             },
             "category": "Search Engine Optimization",
+            "categorySlug": "search-engine-optimization",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
                 "WP_SOLUTION_CREATOR"
+            ]
+        },
+        {
+            "id": "ed4bfb96-5df9-4aa4-9832-49556e179229",
+            "type": "plugin",
+            "name": "Customize My Account Page",
+            "description": "Add videos, files, discount codes, and more to your customers account page.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https:\/\/yithemes.com\/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}\/wp-admin\/admin.php?page=yith_wcmap_panel"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-customize-myaccount-page",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-customize-myaccount-page\/init.php",
+            "image": {
+                "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/customize-my-account-page.svg",
+                "featureImage": ""
+            },
+            "category": "Customer Engagement",
+            "categorySlug": "customer-engagement",
+            "priority": null,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE"
             ]
         },
         {
@@ -1240,13 +1341,14 @@
             "plsProviderName": null,
             "plsSlug": null,
             "download": null,
-            "slug": "cant-be-empty",
-            "basename": "cant-be-empty",
+            "slug": "",
+            "basename": "",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/wonderblocks.png",
                 "featureImage": ""
             },
             "category": "Core Tools",
+            "categorySlug": "core-tools",
             "priority": null,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
