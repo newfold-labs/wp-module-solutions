@@ -23,7 +23,7 @@ class Solutions {
 	 *
 	 * @var EntitlementsApi
 	 */
-	static protected $entitlements_api;
+	protected static $entitlements_api;
 
 	/**
 	 * Constructor for the Solutions class.
@@ -171,9 +171,11 @@ class Solutions {
 
 	/**
 	 * Enqueue assets and set locals.
+	 * 
+	 * @param string $hook The current admin page.
 	 */
 	public static function enqueue_admin_assets( $hook ) {
-		if ( $hook !== 'toplevel_page_solutions' ) {
+		if ( 'toplevel_page_solutions' !== $hook ) {
 			return;
 		}
 
@@ -197,12 +199,15 @@ class Solutions {
 			$assets_info['version']
 		);
 
-		$solutions_data = json_decode( json_encode( self::$entitlements_api->get_items()->data ), true );
+		$solutions_data = json_decode( wp_json_encode( self::$entitlements_api->get_items()->data ), true );
 
-		$solutions_data['entitlements'] = array_map( function ( $entitlement ) {
-			$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
-			return $entitlement;
-		}, $solutions_data['entitlements'] );
+		$solutions_data['entitlements'] = array_map (
+			function ( $entitlement ) {
+				$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
+				return $entitlement;
+			},
+			$solutions_data['entitlements']
+		);
 
 		\wp_localize_script(
 			'solutions-react',
