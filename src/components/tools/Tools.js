@@ -35,6 +35,11 @@ const toolsIcons = {
 	'WonderCart': WonderCartIcon
 };
 
+const wideCards = [
+	'20085485-7185-40fd-89e4-14dbb690aea2', // Advanced Review
+	'ad68e506-8c2b-4c0f-a9e3-16623d00041e', // Booking & Appointments
+]
+
 function layoutTools( tools ) {
 	const layout = [];
 	let rowSpaces = 3;
@@ -48,13 +53,13 @@ function layoutTools( tools ) {
 
 	while ( tools.length ) {
 
-		if ( tools[ 0 ]?.wide ) {
+		if ( wideCards.includes( tools[ 0 ]?.id ) ) {
 			if ( rowSpaces > 1 ) {
 				row.push( tools.shift() );
 				rowSpaces -= 2;
 			} else {
 				for ( let i = 0; i < tools.length; i++ ) {
-					if ( ! tools[ i ]?.wide ) {
+					if ( ! wideCards.includes( tools[ i ]?.id ) ) {
 						row.push( ...tools.splice( i, 1 ) );
 						rowSpaces -= 1;
 						break;
@@ -89,7 +94,7 @@ export const Tools = () => {
 		} );
 
 	if ( 'all' !== category ) {
-		tools = tools.filter( tool => tool.category === category );
+		tools = tools.filter( tool => tool?.categorySlug === category );
 	}
 
 	if ( search ) {
@@ -112,7 +117,7 @@ export const Tools = () => {
 								href={ tool.cta?.url.replace( '{siteUrl}', NewfoldSolutions.siteUrl ) }
 								icon={ toolsIcons[ tool?.name ] }
 								smallIcon={ ! toolsIcons[ tool?.name ] ? tool.image.primaryImage : null }
-								wide={ tool?.wide }
+								wide={ wideCards.includes( tool?.id ) }
 								premium={ tool?.premium }
 								popular={ tool?.popular }
 								key={ tool?.name }

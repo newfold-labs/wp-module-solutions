@@ -187,7 +187,6 @@ class Solutions {
 		$solutions_data = json_decode( json_encode( self::$entitlements_api->get_items()->data ), true );
 
 		$solutions_data['entitlements'] = array_map( function ( $entitlement ) {
-			'yith-woocommerce-booking-premium/init.php' === $entitlement['basename'] && var_log( is_plugin_active( $entitlement['basename'] ) );
 			$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
 			return $entitlement;
 		}, $solutions_data['entitlements'] );

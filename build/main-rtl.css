@@ -3870,6 +3870,45 @@
 .nfd-solutions-tool-card:hover .nfd-svg-rotate--5deg {
 			transform : rotate(5deg);
 		}
+.nfd-solutions-tool-card:hover .nfd-svg-bounce {
+			transform-origin : center center;
+			animation        : nfd-solutions-bounce .5s;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-2 {
+			animation-delay : .2s !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-4 {
+			animation-delay : .4s !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-6 {
+			animation-delay : .6s !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-grow-x {
+			animation : ease-out nfd-solutions-grow-x .7s forwards;
+		}
+.nfd-solutions-tool-card:hover .nfd-solutions-one-click-checkout-icon .nfd-svg-bounce {
+			transform-origin : 40% 60%;
+		}
+.nfd-solutions-tool-card:hover .nfd-solutions-advanced-review-icon .nfd-svg-grow-x {
+				transform        : scaleX(0);
+				transform-origin : 84.7% 0;
+			}
+@keyframes nfd-solutions-bounce {
+	0%, 100% {
+		transform : scale(1);
+	}
+	50% {
+		transform : scale(1.1);
+	}
+}
+@keyframes nfd-solutions-grow-x {
+	0% {
+		transform : scaleX(0);
+	}
+	100% {
+		transform : scaleX(1);
+	}
+}
 .nfd-solutions-badge {
 	--bg-color       : var(--nfd-solutions-bh-blue);
 	padding          : .1rem .6rem;
