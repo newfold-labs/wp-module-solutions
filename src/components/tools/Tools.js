@@ -1,44 +1,12 @@
 import { EmptyTools } from './EmptyTools';
 import { Tool } from './tool';
 import { useFilter } from './../../contexts/FilterContext';
-import {
-	AdvancedReviewIcon,
-	BookingIcon,
-	EmailTemplatesIcon,
-	GiftCardsIcon,
-	MembershipIcon,
-	OneClickCheckoutIcon,
-	ProductAddonsIcon,
-	SenseiIcon,
-	SocialLoginIcon,
-	SubscriptionIcon,
-	WishlistIcon,
-	WonderCartIcon,
-	YoastPremiumIcon,
-	YoastSeoIcon,
-} from './../icons';
-
-const toolsIcons = {
-	'Memberships': MembershipIcon,
-	'Subscriptions': SubscriptionIcon,
-	'Social Login': SocialLoginIcon,
-	'Yoast SEO': YoastSeoIcon,
-	'Yoast WooCommerce SEO': YoastPremiumIcon,
-	'Advanced Reviews': AdvancedReviewIcon,
-	'Bookings & Appointments': BookingIcon,
-	'Custom Email Templates': EmailTemplatesIcon,
-	'Gift Cards': GiftCardsIcon,
-	'One-Click Checkout': OneClickCheckoutIcon,
-	'Product Add-Ons & Extra Options': ProductAddonsIcon,
-	'Sensei': SenseiIcon,
-	'Wishlists': WishlistIcon,
-	'WonderCart': WonderCartIcon
-};
+import { getTools } from '../../utils';
 
 const wideCards = [
 	'20085485-7185-40fd-89e4-14dbb690aea2', // Advanced Review
 	'ad68e506-8c2b-4c0f-a9e3-16623d00041e', // Booking & Appointments
-]
+];
 
 function layoutTools( tools ) {
 	const layout = [];
@@ -52,7 +20,6 @@ function layoutTools( tools ) {
 	};
 
 	while ( tools.length ) {
-
 		if ( wideCards.includes( tools[ 0 ]?.id ) ) {
 			if ( rowSpaces > 1 ) {
 				row.push( tools.shift() );
@@ -82,52 +49,50 @@ function layoutTools( tools ) {
 
 export const Tools = () => {
 	const { category, search } = useFilter();
-	let tools = NewfoldSolutions.entitlements
-		//.filter( tool => Object.keys( toolsIcons ).includes( tool.name ) )
-		.sort( ( a, b ) => {
-			const aHasIcon = Object.keys( toolsIcons ).includes( a.name );
-			const bHasIcon = Object.keys( toolsIcons ).includes( b.name );
-
-			if ( aHasIcon && ! bHasIcon ) return -1;
-			if ( ! aHasIcon && bHasIcon ) return 1;
-			return 0;
-		} );
+	let tools = getTools( { category, search } );
 
 	if ( 'all' !== category ) {
-		tools = tools.filter( tool => tool?.categorySlug === category );
+		tools = tools.filter( ( tool ) => tool?.categorySlug === category );
 	}
 
 	if ( search ) {
-		tools = tools.filter( tool => tool?.name?.toLowerCase().includes( search.toLowerCase() ) || tool?.plsSlug?.toLowerCase().includes( search.toLowerCase() ) );
+		tools = tools.filter(
+			( tool ) =>
+				tool?.name?.toLowerCase().includes( search.toLowerCase() ) ||
+				tool?.plsSlug?.toLowerCase().includes( search.toLowerCase() )
+		);
 	}
 
 	tools = layoutTools( [ ...tools ] );
 
-	return <>
-		{ ! tools.length && <EmptyTools/> }
-		{
-			!! tools.length &&
-			<div className="nfd-solutions-tools nfd-grid nfd-gap-4">
-				{
-					tools.map(
-						tool =>
-							<Tool
-								name={ tool?.name }
-								description={ tool.description }
-								href={ tool.cta?.url.replace( '{siteUrl}', NewfoldSolutions.siteUrl ) }
-								icon={ toolsIcons[ tool?.name ] }
-								smallIcon={ ! toolsIcons[ tool?.name ] ? tool.image.primaryImage : null }
-								wide={ wideCards.includes( tool?.id ) }
-								premium={ tool?.premium }
-								popular={ tool?.popular }
-								key={ tool?.name }
-								isActive={ tool?.isActive }
-								plsProvider={ tool?.plsProviderName }
-								plsSlug={ tool?.plsSlug }
-							/>
-					)
-				}
-			</div>
-		}
-	</>;
-}
+	return (
+		<>
+			{ ! tools.length && <EmptyTools /> }
+			{ !! tools.length && (
+				<div className="nfd-solutions-tools nfd-grid nfd-gap-4">
+					{ tools.map( ( tool ) => (
+						<Tool
+							name={ tool?.name }
+							category={ tool.category }
+							description={ tool.description }
+							href={ tool.cta?.url.replace(
+								'{siteUrl}',
+								NewfoldSolutions.siteUrl
+							) }
+							featureIcon={ tool?.image?.featureImage }
+							smallIcon={ tool?.image?.primaryImage }
+							wide={ tool?.wide }
+							premium={ tool?.premium }
+							popular={ tool?.popular }
+							key={ tool?.name }
+							isActive={ tool?.isActive }
+							plsProvider={ tool?.plsProviderName }
+							plsSlug={ tool?.plsSlug }
+							ctbId={ tool?.ctbId }
+						/>
+					) ) }
+				</div>
+			) }
+		</>
+	);
+};

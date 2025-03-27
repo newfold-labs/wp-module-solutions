@@ -16263,22 +16263,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Badge: () => (/* binding */ Badge)
 /* harmony export */ });
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 /**
  * Badge component
  *
- * @param label {string}
- * @param icon {JSX.Element | null}
- * @param rounded {boolean}
- * @param className {string}
- * @param props
+ * @param label      {string}
+ * @param icon       {JSX.Element | null}
+ * @param rounded    {boolean}
+ * @param className  {string}
+ * @param props      {object}
  */
-
 const Badge = ({
   label,
   icon: Icon = null,
@@ -16290,11 +16290,10 @@ const Badge = ({
     'nfd-solutions-badge--with-icon': !!Icon,
     'nfd-solutions-badge--rounded': rounded
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(classes),
-    ...props,
-    children: [Icon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Icon, {}), label]
-  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(classes),
+    ...props
+  }, Icon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Icon, null), label);
 };
 
 /***/ }),
@@ -16327,31 +16326,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   BrandLogo: () => (/* binding */ BrandLogo)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 const BrandLogo = ({
   width,
   height,
   ...props
 }) => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     viewBox: "0 0 116.8 19.3",
     xmlns: "http://www.w3.org/2000/svg",
     width: width,
     height: height,
-    ...props,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-      fill: "#3575d3",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        d: "m0 0h5.3v5.3h-5.3zm6.8 0h5.3v5.3h-5.3zm6.9 0h5.3v5.3h-5.3zm-13.7 6.8h5.3v5.3h-5.3zm6.8 0h5.3v5.3h-5.3zm6.9 0h5.3v5.3h-5.3zm-13.7 6.9h5.3v5.3h-5.3zm6.8 0h5.3v5.3h-5.3z"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        d: "m13.7 13.7h5.3v5.3h-5.3z"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        d: "m29.8 8.2c1.1-1 2.5-1.5 4-1.5 2.7 0 5.3 1.8 5.3 6.3s-2.9 6.3-6.1 6.3c-1.6 0-3.2-.4-4.6-1.3v-18h1.4zm0 9.1c1 .5 2.1.8 3.2.8 2.5 0 4.8-1.5 4.8-5.1 0-3.2-1.8-5.1-4.1-5.1-1.5.1-2.9.8-3.9 1.9zm11.7 1.7v-19h1.3v19zm5.8-4.7c0 2.9 1.4 3.7 2.8 3.7 1.8-.1 3.3-1.1 4.2-2.7v-8.4h1.4v12.2h-1.4v-2.4c-1 1.5-2.8 2.5-4.6 2.5-1.9 0-3.8-1.1-3.8-4.8v-7.5h1.4zm21.4 3.9c-1.3.7-2.8 1.1-4.3 1-4.1-.1-6.2-3.4-6.1-6.8 0-3.2 2.5-5.8 5.6-5.8h.4c3.3.1 5.5 2.7 5.1 6.6h-9.8c0 2.6 2.1 4.7 4.7 4.8h.1c1.3 0 2.6-.3 3.8-.9zm-.5-6.1c.1-2.2-1.6-4.1-3.8-4.2h-.2c-2.4-.1-4.4 1.8-4.5 4.2zm5.6-2.9c1-1.6 2.6-2.5 4.5-2.6 2.4 0 3.9 1.8 3.9 4.6v7.8h-1.3v-7.6c0-2.6-1.4-3.6-2.8-3.6-1.8.2-3.3 1.2-4.2 2.7v8.5h-1.3v-19h1.4c-.2 0-.2 9.2-.2 9.2zm22.3 3.7c0 4-2.7 6.3-5.9 6.3-3.5 0-5.9-2.8-5.9-6.3-.2-3.3 2.3-6.1 5.6-6.3h.3c3.2.1 5.9 2.4 5.9 6.3zm-10.3 0c0 2.7 1.6 5 4.5 5s4.5-2.4 4.5-5-1.7-5-4.5-5-4.5 2.3-4.5 5zm13.4 4c1 .6 2.1 1 3.2 1 1.3 0 2.9-.5 2.8-1.8 0-1.1-1.2-2-3-2.7-2.1-.8-3.9-1.6-3.9-3.5s1.8-3.3 4.2-3.3c1.2 0 2.3.3 3.4.9l-.5 1.1c-.9-.5-1.8-.7-2.8-.7-2 0-2.9 1-2.9 2 0 1.3 1.5 1.8 3.4 2.6 2.9 1.1 3.6 2.5 3.6 3.6 0 1.9-1.8 3.1-4.2 3.1-1.4 0-2.7-.4-3.9-1.1zm16.4-10v1.1h-4v6.7c0 2 .8 3.2 2.6 3.3.8 0 1.6-.1 2.3-.5l.4 1.2c-.9.3-1.8.5-2.7.5-2.2 0-3.9-1.3-3.9-4.5v-6.7h-2.3v-1.1h2.2v-4.1h1.4v4.1z"
-      })]
-    })
-  });
+    ...props
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("g", {
+    fill: "#3575d3"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "m0 0h5.3v5.3h-5.3zm6.8 0h5.3v5.3h-5.3zm6.9 0h5.3v5.3h-5.3zm-13.7 6.8h5.3v5.3h-5.3zm6.8 0h5.3v5.3h-5.3zm6.9 0h5.3v5.3h-5.3zm-13.7 6.9h5.3v5.3h-5.3zm6.8 0h5.3v5.3h-5.3z"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "m13.7 13.7h5.3v5.3h-5.3z"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "m29.8 8.2c1.1-1 2.5-1.5 4-1.5 2.7 0 5.3 1.8 5.3 6.3s-2.9 6.3-6.1 6.3c-1.6 0-3.2-.4-4.6-1.3v-18h1.4zm0 9.1c1 .5 2.1.8 3.2.8 2.5 0 4.8-1.5 4.8-5.1 0-3.2-1.8-5.1-4.1-5.1-1.5.1-2.9.8-3.9 1.9zm11.7 1.7v-19h1.3v19zm5.8-4.7c0 2.9 1.4 3.7 2.8 3.7 1.8-.1 3.3-1.1 4.2-2.7v-8.4h1.4v12.2h-1.4v-2.4c-1 1.5-2.8 2.5-4.6 2.5-1.9 0-3.8-1.1-3.8-4.8v-7.5h1.4zm21.4 3.9c-1.3.7-2.8 1.1-4.3 1-4.1-.1-6.2-3.4-6.1-6.8 0-3.2 2.5-5.8 5.6-5.8h.4c3.3.1 5.5 2.7 5.1 6.6h-9.8c0 2.6 2.1 4.7 4.7 4.8h.1c1.3 0 2.6-.3 3.8-.9zm-.5-6.1c.1-2.2-1.6-4.1-3.8-4.2h-.2c-2.4-.1-4.4 1.8-4.5 4.2zm5.6-2.9c1-1.6 2.6-2.5 4.5-2.6 2.4 0 3.9 1.8 3.9 4.6v7.8h-1.3v-7.6c0-2.6-1.4-3.6-2.8-3.6-1.8.2-3.3 1.2-4.2 2.7v8.5h-1.3v-19h1.4c-.2 0-.2 9.2-.2 9.2zm22.3 3.7c0 4-2.7 6.3-5.9 6.3-3.5 0-5.9-2.8-5.9-6.3-.2-3.3 2.3-6.1 5.6-6.3h.3c3.2.1 5.9 2.4 5.9 6.3zm-10.3 0c0 2.7 1.6 5 4.5 5s4.5-2.4 4.5-5-1.7-5-4.5-5-4.5 2.3-4.5 5zm13.4 4c1 .6 2.1 1 3.2 1 1.3 0 2.9-.5 2.8-1.8 0-1.1-1.2-2-3-2.7-2.1-.8-3.9-1.6-3.9-3.5s1.8-3.3 4.2-3.3c1.2 0 2.3.3 3.4.9l-.5 1.1c-.9-.5-1.8-.7-2.8-.7-2 0-2.9 1-2.9 2 0 1.3 1.5 1.8 3.4 2.6 2.9 1.1 3.6 2.5 3.6 3.6 0 1.9-1.8 3.1-4.2 3.1-1.4 0-2.7-.4-3.9-1.1zm16.4-10v1.1h-4v6.7c0 2 .8 3.2 2.6 3.3.8 0 1.6-.1 2.3-.5l.4 1.2c-.9.3-1.8.5-2.7.5-2.2 0-3.9-1.3-3.9-4.5v-6.7h-2.3v-1.1h2.2v-4.1h1.4v4.1z"
+  })));
 };
 
 /***/ }),
@@ -16384,31 +16381,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Header: () => (/* binding */ Header)
 /* harmony export */ });
-/* harmony import */ var _brand_logo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../brand-logo */ "./src/components/brand-logo/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _brand_logo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../brand-logo */ "./src/components/brand-logo/index.js");
 /* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/title/index.js");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
 
 const Header = () => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "nfd-solutions-app-header nfd-flex nfd-flex-col nfd-gap-y-4 nfd-mb-8",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_brand_logo__WEBPACK_IMPORTED_MODULE_0__.BrandLogo, {
-      width: '140px',
-      className: "nfd-mb-8"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Premium tools available in your Commerce solution', 'wp-module-solutions')
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
-      children: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.', 'wp-module-solutions'), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-        href: '#',
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Learn more about our Solutions', 'wp-module-solutions')
-      })]
-    })]
-  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "nfd-solutions-app-header nfd-flex nfd-flex-col nfd-gap-y-4 nfd-mb-8"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_brand_logo__WEBPACK_IMPORTED_MODULE_1__.BrandLogo, {
+    width: '140px',
+    className: "nfd-mb-8"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_3__["default"], null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Premium tools available in your Commerce solution', 'wp-module-solutions')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.', 'wp-module-solutions'), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: '#'
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Learn more about our Solutions', 'wp-module-solutions'))));
 };
 
 /***/ }),
@@ -16430,2585 +16421,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components/icons/AdvancedReviewIcon.jsx":
-/*!*****************************************************!*\
-  !*** ./src/components/icons/AdvancedReviewIcon.jsx ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "311",
-  height: "220",
-  fill: "none",
-  viewBox: "0 0 311 220",
-  className: "nfd-solutions-advanced-review-icon",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter0_d_1651_988)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "206",
-      height: "119",
-      x: "6",
-      y: "1",
-      fill: "#fff",
-      rx: "5"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#A8ABB2",
-    d: "M24.353 27.1a2.9 2.9 0 0 1-1.272-.267 2.27 2.27 0 0 1-.891-.739 1.96 1.96 0 0 1-.348-1.072h1.278q.036.447.387.731.352.28.845.28.387 0 .69-.177.301-.178.475-.493.174-.316.17-.721a1.46 1.46 0 0 0-.173-.732 1.3 1.3 0 0 0-.487-.5 1.36 1.36 0 0 0-.71-.185 1.7 1.7 0 0 0-.643.12q-.315.125-.5.327l-1.19-.195.38-3.75h4.219v1.1h-3.129l-.21 1.93h.043q.203-.239.572-.395.369-.16.81-.16.66 0 1.178.313.519.309.817.852.299.543.298 1.243 0 .72-.333 1.285a2.36 2.36 0 0 1-.92.885q-.586.32-1.357.32"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#D9D9D9",
-    fillOpacity: "0.5",
-    d: "M47.371 19h146.171v7H47.371z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    className: "nfd-svg-grow-x",
-    fill: "#D58743",
-    d: "M47.371 19h122.985v7H47.371z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#D9D9D9",
-    fillOpacity: "0.5",
-    d: "M47.371 38h146.171v7H47.371zM47.371 57h146.171v7H47.371zM47.371 77h146.171v7H47.371zM47.371 96h146.171v7H47.371z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    className: "nfd-svg-grow-x nfd-svg-delay-2",
-    fill: "#D58743",
-    d: "M47.371 38h107.864v7H47.371z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    className: "nfd-svg-grow-x nfd-svg-delay-4",
-    fill: "#D58743",
-    d: "M47.371 57h87.703v7H47.371z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    className: "nfd-svg-grow-x nfd-svg-delay-6",
-    fill: "#D58743",
-    d: "M47.371 77h29.234v7H47.371z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#fff",
-    d: "M66.062 110.819a.9.9 0 0 0-.366-.668q-.323-.238-.877-.238-.377 0-.636.107a.9.9 0 0 0-.398.288.7.7 0 0 0-.134.419.6.6 0 0 0 .081.34.84.84 0 0 0 .252.253q.16.103.37.181.21.074.447.128l.653.156q.477.107.874.284.398.177.689.437t.451.61q.164.353.167.807-.003.668-.341 1.157-.333.487-.966.757-.628.266-1.516.266-.881 0-1.534-.27a2.25 2.25 0 0 1-1.016-.799q-.362-.532-.38-1.317h1.488q.025.365.21.61.188.242.5.366.317.121.714.121.39 0 .678-.114.292-.113.451-.316a.73.73 0 0 0 .16-.465.6.6 0 0 0-.145-.412 1.1 1.1 0 0 0-.42-.284 4.3 4.3 0 0 0-.67-.213l-.793-.199q-.92-.224-1.452-.699-.533-.477-.53-1.282a1.9 1.9 0 0 1 .352-1.155q.36-.494.984-.77.625-.277 1.42-.277.81 0 1.414.277.608.276.945.77t.347 1.144zm4.145-2.092V116h-1.538v-7.273zm6.087 2.351a1.6 1.6 0 0 0-.21-.458q-.135-.203-.33-.341a1.4 1.4 0 0 0-.44-.217 1.9 1.9 0 0 0-.543-.074q-.557 0-.98.277-.42.277-.654.806-.234.525-.234 1.286 0 .76.23 1.292.233.533.654.813.423.277.998.277.522 0 .892-.184.373-.189.568-.529.198-.341.198-.807l.313.047h-1.875v-1.158h3.043v.916q0 .959-.405 1.648-.404.686-1.115 1.058-.71.369-1.626.369-1.022 0-1.797-.451a3.13 3.13 0 0 1-1.207-1.289q-.43-.837-.43-1.988 0-.884.256-1.577a3.4 3.4 0 0 1 .724-1.179 3.1 3.1 0 0 1 1.083-.735 3.5 3.5 0 0 1 1.34-.252q.616 0 1.15.181.533.177.944.504.415.327.678.778.263.447.338.987zm8.868-2.351V116h-1.328l-3.164-4.577h-.053V116h-1.538v-7.273h1.35l3.139 4.574h.064v-4.574zm5.763 0h1.538v4.723q0 .797-.38 1.392-.377.597-1.055.931-.678.33-1.58.33-.906 0-1.584-.33a2.54 2.54 0 0 1-1.055-.931q-.376-.596-.376-1.392v-4.723h1.537v4.592q0 .415.182.739.185.323.518.507.334.185.778.185.447 0 .778-.185.334-.185.514-.507.186-.324.185-.739zM93.728 116v-7.273h2.87q.825 0 1.409.316.582.313.888.87.309.555.309 1.279t-.313 1.278-.905.863q-.59.309-1.428.309H94.73v-1.232h1.58q.444 0 .732-.153.291-.156.433-.43.146-.276.146-.635a1.3 1.3 0 0 0-.146-.632.97.97 0 0 0-.433-.423q-.29-.153-.739-.153h-1.037V116zm8.512-6.005v-1.268h5.973v1.268h-2.227V116h-1.52v-6.005zm13.308 2.369q0 1.189-.451 2.024a3.14 3.14 0 0 1-1.222 1.275 3.45 3.45 0 0 1-1.733.436q-.969 0-1.74-.44a3.12 3.12 0 0 1-1.218-1.275q-.447-.835-.447-2.02 0-1.19.447-2.025.447-.834 1.218-1.271a3.45 3.45 0 0 1 1.74-.44q.962 0 1.733.44a3.1 3.1 0 0 1 1.222 1.271q.45.835.451 2.025m-1.559 0q0-.77-.231-1.3-.228-.529-.643-.803a1.73 1.73 0 0 0-.973-.273q-.557 0-.973.273-.415.274-.646.803-.227.53-.227 1.3t.227 1.299q.23.53.646.803t.973.273q.558 0 .973-.273t.643-.803q.231-.529.231-1.299m5.012 3.636v-7.273h2.87q.824 0 1.406.295.586.291.891.827.309.533.309 1.254 0 .724-.312 1.246a2.03 2.03 0 0 1-.906.796q-.59.277-1.428.277h-1.921v-1.236h1.673q.44 0 .731-.121a.87.87 0 0 0 .434-.362q.145-.242.145-.6 0-.362-.145-.611a.9.9 0 0 0-.437-.376q-.291-.132-.735-.132h-1.037V116zm3.928-3.31 1.807 3.31h-1.697l-1.769-3.31zm2.635 3.31v-7.273h4.9v1.268h-3.363v1.733h3.111v1.268h-3.111v1.736h3.378V116zm7.376 0h-1.647l2.51-7.273h1.982l2.507 7.273h-1.648l-1.822-5.611h-.056zm-.103-2.859h3.892v1.201h-3.892zm8.908 2.859h-2.578v-7.273h2.6q1.097 0 1.889.437.792.433 1.218 1.247.43.813.43 1.946 0 1.136-.43 1.953a2.96 2.96 0 0 1-1.225 1.253q-.796.437-1.904.437m-1.04-1.317h.976q.682 0 1.147-.242.469-.245.704-.756.238-.516.238-1.328 0-.807-.238-1.318a1.55 1.55 0 0 0-.7-.753q-.465-.241-1.147-.241h-.98z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#0F172A",
-    fillRule: "evenodd",
-    d: "M37.268 18.586a.523.523 0 0 0-.962 0l-1.015 2.421-2.635.21a.516.516 0 0 0-.298.908l2.008 1.705-.614 2.55c-.107.448.383.802.78.562l2.255-1.367 2.255 1.367c.396.24.887-.114.78-.561l-.614-2.55 2.007-1.706a.516.516 0 0 0-.297-.909l-2.635-.209z",
-    clipRule: "evenodd",
-    opacity: "0.36"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#A8ABB2",
-    d: "M21.693 44.65v-1.047l3.086-4.876h.873v1.492h-.533l-2.077 3.291v.057h4.308v1.083zm3.47 1.35v-1.67l.013-.468v-5.135h1.243V46z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#0F172A",
-    fillRule: "evenodd",
-    d: "M37.268 37.586a.523.523 0 0 0-.962 0l-1.015 2.421-2.635.21a.516.516 0 0 0-.298.907l2.008 1.706-.614 2.55c-.107.448.383.802.78.562l2.255-1.367 2.255 1.367c.396.24.887-.114.78-.561l-.614-2.55 2.007-1.707a.516.516 0 0 0-.297-.907l-2.635-.21z",
-    clipRule: "evenodd",
-    opacity: "0.36"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#A8ABB2",
-    d: "M24.434 65.1q-.767 0-1.364-.263a2.3 2.3 0 0 1-.937-.732 1.9 1.9 0 0 1-.366-1.083h1.335a.9.9 0 0 0 .196.515q.177.217.472.337.296.12.66.121.392 0 .693-.135.302-.138.472-.383a.95.95 0 0 0 .167-.565.98.98 0 0 0-.17-.582 1.14 1.14 0 0 0-.505-.395 2 2 0 0 0-.788-.142h-.643v-1.015h.643q.38 0 .664-.132.288-.13.451-.369a.95.95 0 0 0 .16-.558.97.97 0 0 0-.139-.536.94.94 0 0 0-.394-.358 1.3 1.3 0 0 0-.593-.128q-.333 0-.618.12-.284.122-.458.345a.87.87 0 0 0-.184.526H21.92q.015-.611.351-1.073.341-.465.91-.724a3 3 0 0 1 1.274-.263q.729 0 1.265.273.54.27.834.728.295.459.295 1.012.003.615-.362 1.03a1.7 1.7 0 0 1-.952.544v.056q.767.106 1.175.569.412.458.409 1.14 0 .61-.348 1.093-.345.48-.952.753-.603.273-1.385.274"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#0F172A",
-    fillRule: "evenodd",
-    d: "M37.268 56.586a.523.523 0 0 0-.962 0l-1.015 2.421-2.635.21a.516.516 0 0 0-.298.907l2.008 1.706-.614 2.55c-.107.448.383.802.78.562l2.255-1.367 2.255 1.367c.396.24.887-.114.78-.561l-.614-2.55 2.007-1.707a.516.516 0 0 0-.297-.907l-2.635-.21z",
-    clipRule: "evenodd",
-    opacity: "0.36"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#A8ABB2",
-    d: "M21.824 84v-.952l2.525-2.475q.362-.365.604-.65.24-.284.362-.55.12-.267.12-.568 0-.345-.156-.59a1.04 1.04 0 0 0-.43-.383 1.4 1.4 0 0 0-.62-.135q-.36 0-.63.149-.27.146-.419.415-.144.27-.145.643H21.78q0-.692.316-1.204.316-.511.87-.791.558-.282 1.279-.281.732 0 1.285.273.555.274.86.75.309.476.309 1.086 0 .409-.157.803-.156.395-.55.873-.39.48-1.097 1.162l-1.254 1.275v.05h3.168V84z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#0F172A",
-    fillRule: "evenodd",
-    d: "M37.268 75.586a.523.523 0 0 0-.962 0l-1.015 2.421-2.635.21a.516.516 0 0 0-.298.907l2.008 1.706-.614 2.55c-.107.448.383.802.78.562l2.255-1.367 2.255 1.367c.396.24.887-.114.78-.561l-.614-2.55 2.007-1.707a.516.516 0 0 0-.297-.907l-2.635-.21z",
-    clipRule: "evenodd",
-    opacity: "0.36"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#A8ABB2",
-    d: "M25.782 94.727V102h-1.317v-5.991h-.043l-1.701 1.087v-1.208l1.808-1.16z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#0F172A",
-    fillRule: "evenodd",
-    d: "M37.268 93.586a.523.523 0 0 0-.962 0l-1.015 2.421-2.635.21a.516.516 0 0 0-.298.907l2.008 1.706-.614 2.551c-.107.447.383.801.78.561l2.255-1.367 2.255 1.367c.396.24.887-.114.78-.561l-.614-2.55 2.007-1.707a.516.516 0 0 0-.297-.907l-2.635-.21z",
-    clipRule: "evenodd",
-    opacity: "0.36"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter1_d_1651_988)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "179",
-      height: "140",
-      x: "124",
-      y: "71",
-      fill: "#fff",
-      rx: "5"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#D58743",
-    fillRule: "evenodd",
-    d: "M153.087 175.884c-.324-.772-1.427-.772-1.75 0l-1.846 4.401-4.79.381c-.84.067-1.181 1.107-.541 1.651l3.65 3.102-1.115 4.637c-.196.813.696 1.456 1.415 1.02l4.102-2.485 4.101 2.485c.719.436 1.611-.207 1.416-1.02l-1.115-4.637 3.649-3.102c.641-.544.3-1.584-.54-1.651l-4.791-.381zM174.257 175.884c-.324-.772-1.427-.772-1.75 0l-1.846 4.401-4.79.381c-.841.067-1.181 1.107-.541 1.651l3.65 3.102-1.115 4.637c-.196.813.696 1.456 1.415 1.02l4.102-2.485 4.101 2.485c.719.436 1.611-.207 1.416-1.02l-1.115-4.637 3.649-3.102c.641-.544.3-1.584-.54-1.651l-4.791-.381zM195.427 175.884c-.324-.772-1.427-.772-1.75 0l-1.846 4.401-4.79.381c-.841.067-1.181 1.107-.541 1.651l3.65 3.102-1.115 4.637c-.196.813.696 1.456 1.415 1.02l4.102-2.485 4.101 2.485c.719.436 1.611-.207 1.416-1.02l-1.116-4.637 3.65-3.102c.64-.544.3-1.584-.54-1.651l-4.791-.381zM216.594 175.884c-.323-.772-1.426-.772-1.749 0l-1.846 4.401-4.79.381c-.841.067-1.181 1.107-.541 1.651l3.65 3.102-1.115 4.637c-.196.813.696 1.456 1.415 1.02l4.102-2.485 4.101 2.485c.719.436 1.611-.207 1.416-1.02l-1.116-4.637 3.65-3.102c.64-.544.3-1.584-.54-1.651l-4.791-.381z",
-    clipRule: "evenodd"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#D58743",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M235.445 175.916a.474.474 0 0 1 .873 0l1.786 4.259a.47.47 0 0 0 .399.287l4.635.369a.468.468 0 0 1 .27.823l-3.532 3.002a.46.46 0 0 0-.152.464l1.079 4.488a.472.472 0 0 1-.706.509l-3.969-2.405a.48.48 0 0 0-.493 0l-3.968 2.405c-.359.217-.804-.104-.706-.509l1.079-4.488a.47.47 0 0 0-.152-.464l-3.532-3.002a.467.467 0 0 1 .269-.823l4.636-.369a.47.47 0 0 0 .399-.287z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#000",
-    d: "M149.06 101.586q0 .937-.762 1.641a2.5 2.5 0 0 1-1.773.703q-1.611 0-2.475-1.07t-.864-2.959q0-1.757 1.479-3.545a9.74 9.74 0 0 1 3.589-2.71l.644 1.04q-1.655.807-2.592 1.875-.938 1.07-1.084 2.593h.82q.908 0 1.479.205.572.206.923.572.337.351.469.776.147.424.147.879m7.221 0q0 .937-.761 1.641a2.5 2.5 0 0 1-1.773.703q-1.61 0-2.476-1.07-.864-1.07-.864-2.959 0-1.757 1.48-3.545a9.74 9.74 0 0 1 3.589-2.71l.644 1.04q-1.655.807-2.593 1.875-.937 1.07-1.084 2.593h.821q.907 0 1.479.205.572.206.923.572.337.351.469.776.146.424.146.879"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#ADA4A4",
-    fillOpacity: "0.5",
-    d: "M142.131 127h146.171v4H142.131zM142.131 116h146.171v4H142.131z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#080808",
-    fillOpacity: "0.5",
-    d: "M169.35 91h118.953v4H169.35zM169.35 100h118.953v4H169.35z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#ADA4A4",
-    fillOpacity: "0.5",
-    d: "M142.131 139h146.171v4H142.131zM142.131 151h146.171v4H142.131z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_988",
-      width: "213.2",
-      height: "126.2",
-      x: "0.4",
-      y: "0.4",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        radius: "1",
-        result: "effect1_dropShadow_1651_988"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dx: "-2",
-        dy: "3"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "2.3"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.893057 0 0 0 0 0.845663 0 0 0 0 0.826149 0 0 0 1 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_988"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_988",
-        result: "shape"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter1_d_1651_988",
-      width: "194.2",
-      height: "155.2",
-      x: "116.4",
-      y: "64.4",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "3.8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.930252 0 0 0 0 0.91737 0 0 0 0 0.912066 0 0 0 1 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_988"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_988",
-        result: "shape"
-      })]
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/BookingIcon.jsx":
-/*!**********************************************!*\
-  !*** ./src/components/icons/BookingIcon.jsx ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "297",
-  height: "245",
-  fill: "none",
-  viewBox: "0 0 297 245",
-  className: "nfd-solutions-booking-icon",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    className: "nfd-svg-rotate--5deg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-      filter: "url(#filter0_d_1651_1362)",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-        width: "162",
-        height: "192",
-        x: "15",
-        y: "17",
-        fill: "#fff",
-        rx: "6"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#555",
-      d: "M39.246 49.273V36.545h.815v12.728zm2.162-8.527q-.06-.6-.512-.934-.451-.333-1.228-.333-.527 0-.89.149-.363.144-.556.403a.97.97 0 0 0-.19.586.84.84 0 0 0 .115.477q.13.204.353.353.225.145.517.254.293.105.627.179l.914.219q.666.15 1.223.397.557.249.965.612t.631.855a2.7 2.7 0 0 1 .234 1.129q-.005.934-.477 1.62-.468.68-1.353 1.06-.88.372-2.123.372-1.233 0-2.147-.378-.91-.378-1.422-1.118-.508-.745-.532-1.845h2.083q.034.513.293.855.264.339.701.512.442.17 1 .17.545 0 .95-.16.406-.159.63-.442t.224-.651a.85.85 0 0 0-.204-.577q-.199-.233-.586-.398a6 6 0 0 0-.94-.298l-1.109-.279q-1.287-.312-2.033-.979-.746-.666-.74-1.795-.006-.925.492-1.615.501-.69 1.377-1.08.875-.387 1.988-.387 1.134 0 1.979.388.85.387 1.322 1.079.473.69.488 1.6zm7.355 7.393q-1.114 0-1.984-.383-.866-.388-1.367-1.063a2.67 2.67 0 0 1-.512-1.572h2.167q.02.373.244.657a1.5 1.5 0 0 0 .606.432q.379.154.85.154.494 0 .87-.174.379-.174.592-.482.214-.308.214-.71a1.2 1.2 0 0 0-.229-.722 1.46 1.46 0 0 0-.646-.497 2.5 2.5 0 0 0-.994-.179h-.95v-1.58h.95q.487 0 .86-.17.378-.169.586-.467.21-.303.21-.706a1.22 1.22 0 0 0-.692-1.129 1.65 1.65 0 0 0-.755-.164q-.438 0-.8.16a1.4 1.4 0 0 0-.583.442 1.17 1.17 0 0 0-.233.676h-2.064q.015-.88.503-1.551a3.26 3.26 0 0 1 1.312-1.05q.83-.381 1.874-.382 1.054 0 1.845.383t1.228 1.034q.442.646.437 1.452.005.855-.532 1.426-.531.573-1.387.726v.08q1.125.144 1.71.78.592.632.587 1.581a2.5 2.5 0 0 1-.502 1.547q-.502.675-1.387 1.063t-2.028.388m9.457.085q-1.282-.005-2.208-.632-.92-.626-1.416-1.814-.493-1.188-.488-2.859 0-1.665.492-2.839.498-1.173 1.417-1.785.925-.615 2.203-.616 1.278 0 2.197.616.925.617 1.422 1.79.498 1.17.492 2.834 0 1.676-.497 2.864-.492 1.188-1.412 1.814t-2.202.627m0-1.785q.875 0 1.397-.88t.517-2.64q0-1.158-.239-1.929-.234-.771-.666-1.158a1.45 1.45 0 0 0-1.01-.388q-.87 0-1.391.87-.522.87-.527 2.605 0 1.173.233 1.959.24.78.672 1.173a1.47 1.47 0 0 0 1.014.388m6.494 1.69q-.492 0-.845-.348a1.16 1.16 0 0 1-.348-.845q0-.487.348-.835.353-.348.845-.348.478 0 .835.348.358.348.358.835 0 .329-.169.602-.164.269-.432.432a1.14 1.14 0 0 1-.592.16m6.494.095q-1.282-.005-2.207-.632-.92-.626-1.417-1.814-.492-1.188-.487-2.859 0-1.665.492-2.839.496-1.173 1.417-1.785.924-.615 2.202-.616 1.278 0 2.198.616.924.617 1.421 1.79.498 1.17.493 2.834 0 1.676-.498 2.864-.492 1.188-1.412 1.814t-2.202.627m0-1.785q.875 0 1.397-.88t.517-2.64q0-1.158-.239-1.929-.233-.771-.666-1.158a1.45 1.45 0 0 0-1.009-.388q-.87 0-1.392.87t-.527 2.605q0 1.173.234 1.959.239.78.67 1.173a1.47 1.47 0 0 0 1.015.388m9.639 1.785q-1.282-.005-2.208-.632-.92-.626-1.416-1.814-.493-1.188-.488-2.859 0-1.665.493-2.839.496-1.173 1.416-1.785.925-.615 2.203-.616 1.278 0 2.197.616.925.617 1.422 1.79.498 1.17.492 2.834 0 1.676-.497 2.864-.492 1.188-1.412 1.814t-2.202.627m0-1.785q.875 0 1.397-.88t.517-2.64q0-1.158-.239-1.929-.234-.771-.666-1.158a1.45 1.45 0 0 0-1.01-.388q-.87 0-1.391.87-.522.87-.527 2.605 0 1.173.233 1.959.24.78.672 1.173a1.47 1.47 0 0 0 1.014.388"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#717171",
-      d: "M38.247 82h-1.804v-5.09h1.82q.767 0 1.322.305.554.303.852.872.3.57.3 1.363 0 .795-.3 1.367a2.07 2.07 0 0 1-.857.877q-.558.306-1.333.306m-.728-.922h.683q.478 0 .803-.17.33-.17.492-.529.167-.36.167-.93 0-.564-.166-.922a1.08 1.08 0 0 0-.49-.527q-.326-.168-.803-.169h-.686zm4.607.922h-1.154l1.758-5.09h1.387L45.872 82h-1.154l-1.275-3.928h-.04zm-.072-2.001h2.724v.84h-2.724zm3.614-2.203v-.887h4.182v.887H48.29V82h-1.064v-4.204zM50.539 82v-5.09h3.43v.886h-2.354v1.214h2.178v.887h-2.178v1.216h2.364V82zm7.048-3.627a.63.63 0 0 0-.256-.467q-.225-.167-.614-.167-.264 0-.445.075a.63.63 0 0 0-.278.201.5.5 0 0 0-.095.294.4.4 0 0 0 .057.238.6.6 0 0 0 .177.177q.111.072.258.126.147.052.314.09l.457.11q.333.074.611.198.279.125.483.306t.315.427q.115.247.117.565a1.4 1.4 0 0 1-.238.81 1.5 1.5 0 0 1-.676.53q-.441.186-1.062.186a2.8 2.8 0 0 1-1.074-.189 1.57 1.57 0 0 1-.71-.56q-.254-.372-.267-.921h1.042q.017.256.147.427a.8.8 0 0 0 .35.256q.22.085.5.085.273 0 .474-.08a.73.73 0 0 0 .316-.221.5.5 0 0 0 .112-.326.42.42 0 0 0-.102-.288.8.8 0 0 0-.293-.199 3 3 0 0 0-.47-.149l-.554-.14q-.645-.156-1.017-.489-.373-.333-.37-.897-.003-.463.246-.808.251-.345.688-.54a2.4 2.4 0 0 1 .995-.194q.566 0 .989.194.425.195.661.54t.244.8zM36.443 123v-5.091h2.008q.579 0 .987.221a1.5 1.5 0 0 1 .621.609q.217.388.217.895t-.22.895-.633.604q-.412.216-1 .216h-1.28v-.862h1.107q.31 0 .512-.107a.7.7 0 0 0 .303-.301.94.94 0 0 0 .102-.445.9.9 0 0 0-.102-.442.7.7 0 0 0-.303-.296 1.1 1.1 0 0 0-.517-.107h-.726V123zm4.532 0v-5.091h3.43v.888h-2.354v1.213h2.178v.887H42.05v1.216h2.364V123zm8.964-2.545q0 .833-.316 1.416a2.2 2.2 0 0 1-.855.893q-.54.306-1.213.306-.678 0-1.218-.309a2.2 2.2 0 0 1-.852-.892q-.315-.584-.314-1.414 0-.834.314-1.417.313-.585.852-.89.54-.309 1.218-.309.675 0 1.213.309.543.305.855.89.316.583.316 1.417m-1.091 0q0-.54-.162-.91a1.23 1.23 0 0 0-.45-.562 1.2 1.2 0 0 0-.68-.191q-.391 0-.682.191a1.25 1.25 0 0 0-.452.562q-.16.37-.16.91 0 .539.16.909.16.371.452.562.291.192.681.192t.681-.192.45-.562q.162-.37.162-.909M50.736 123v-5.091h2.009q.579 0 .987.221a1.5 1.5 0 0 1 .621.609q.216.388.216.895t-.218.895-.634.604q-.412.216-1 .216h-1.28v-.862h1.107q.31 0 .512-.107a.7.7 0 0 0 .303-.301.94.94 0 0 0 .102-.445.9.9 0 0 0-.102-.442.68.68 0 0 0-.303-.296 1.1 1.1 0 0 0-.517-.107h-.726V123zm4.533 0v-5.091h1.076v4.204h2.183V123zm3.971 0v-5.091h3.43v.888h-2.353v1.213h2.177v.887h-2.177v1.216h2.364V123z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#121212",
-      d: "m38.474 56 1.127 1.922 2.176.478-1.48 1.666.219 2.218-2.042-.893-2.042.893.218-2.218-1.48-1.666 2.177-.478zM47.737 56l1.127 1.922 2.177.478-1.48 1.666.218 2.218-2.042-.893-2.042.893.218-2.218-1.48-1.666 2.177-.478zM57 56l1.127 1.922 2.177.478-1.48 1.666.218 2.218L57 61.391l-2.042.893.218-2.218-1.48-1.666 2.177-.478zM66.263 56l1.127 1.922 2.177.478-1.48 1.666.218 2.218-2.042-.893-2.042.893.218-2.218-1.48-1.666 2.177-.478z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      stroke: "#9D9D9D",
-      d: "m75.526 56 1.127 1.922 2.177.478-1.48 1.666.218 2.218-2.042-.893-2.041.893.218-2.218-1.48-1.666 2.176-.478z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "120",
-      height: "18",
-      x: "35.5",
-      y: "87.5",
-      fill: "#fff",
-      stroke: "#EDEDED",
-      rx: "0.5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      stroke: "#EDEDED",
-      d: "M35.5 128.5h120v18h-120z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "120",
-      height: "28",
-      x: "36",
-      y: "158",
-      fill: "#49A3B3",
-      rx: "3"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "M54.569 175v-6.545h2.62q.723 0 1.206.214.482.214.725.594.243.378.243.869 0 .384-.154.675a1.3 1.3 0 0 1-.421.473q-.266.182-.608.259v.064q.375.015.7.211.33.195.534.546.205.348.205.831 0 .52-.26.93-.255.406-.757.642-.5.237-1.237.237zm1.384-1.131h1.128q.579 0 .844-.221a.74.74 0 0 0 .265-.594.9.9 0 0 0-.131-.48.9.9 0 0 0-.374-.326 1.3 1.3 0 0 0-.572-.118h-1.16zm0-2.675h1.026q.285 0 .505-.1a.84.84 0 0 0 .351-.287.75.75 0 0 0 .131-.444.72.72 0 0 0-.252-.573q-.25-.216-.71-.217h-1.051zm10.581.533q0 1.07-.406 1.822a2.8 2.8 0 0 1-1.1 1.147 3.1 3.1 0 0 1-1.559.393 3.1 3.1 0 0 1-1.566-.396 2.8 2.8 0 0 1-1.096-1.147q-.403-.751-.403-1.819 0-1.071.403-1.821a2.8 2.8 0 0 1 1.096-1.145 3.1 3.1 0 0 1 1.566-.396 3.1 3.1 0 0 1 1.56.396q.695.393 1.1 1.145.405.75.405 1.821m-1.403 0q0-.693-.208-1.169a1.6 1.6 0 0 0-.578-.723 1.56 1.56 0 0 0-.876-.246q-.501 0-.876.246-.374.246-.581.723-.205.476-.205 1.169t.205 1.17q.207.476.581.722t.876.246.876-.246.578-.722q.208-.476.208-1.17m8.443 0q0 1.07-.406 1.822a2.8 2.8 0 0 1-1.1 1.147 3.1 3.1 0 0 1-1.559.393 3.1 3.1 0 0 1-1.566-.396 2.8 2.8 0 0 1-1.096-1.147q-.403-.751-.403-1.819 0-1.071.403-1.821a2.8 2.8 0 0 1 1.096-1.145 3.1 3.1 0 0 1 1.566-.396q.866 0 1.56.396.695.393 1.1 1.145.405.75.405 1.821m-1.403 0q0-.693-.208-1.169a1.6 1.6 0 0 0-.578-.723 1.56 1.56 0 0 0-.876-.246q-.502 0-.876.246t-.581.723q-.205.476-.205 1.169t.205 1.17q.207.476.581.722t.876.246.876-.246.578-.722q.208-.476.208-1.17M74.599 175v-6.545h1.384v2.886h.086l2.356-2.886h1.659l-2.43 2.93L80.113 175h-1.655l-1.793-2.691-.681.831V175zm13.763-6.545V175h-1.195l-2.848-4.12h-.048V175h-1.384v-6.545h1.215l2.825 4.116h.058v-4.116zm7.158 3.272q0 1.07-.406 1.822a2.8 2.8 0 0 1-1.099 1.147 3.1 3.1 0 0 1-1.56.393 3.1 3.1 0 0 1-1.566-.396 2.8 2.8 0 0 1-1.096-1.147q-.402-.751-.403-1.819 0-1.071.403-1.821a2.8 2.8 0 0 1 1.096-1.145 3.1 3.1 0 0 1 1.566-.396q.867 0 1.56.396.697.393 1.1 1.145.405.75.405 1.821m-1.403 0q0-.693-.208-1.169a1.6 1.6 0 0 0-.578-.723 1.56 1.56 0 0 0-.876-.246q-.501 0-.875.246-.375.246-.582.723-.204.476-.205 1.169 0 .694.205 1.17.207.476.582.722.373.246.875.246t.876-.246.578-.722q.208-.476.208-1.17M97.773 175l-1.873-6.545h1.512l1.083 4.547h.054l1.196-4.547h1.294l1.192 4.557h.058l1.083-4.557h1.512L103.011 175h-1.349l-1.246-4.279h-.051L99.121 175z"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    className: "nfd-svg-rotate-5deg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-      filter: "url(#filter1_d_1651_1362)",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-        width: "169.532",
-        height: "156.356",
-        x: "106",
-        y: "69",
-        fill: "#fff",
-        rx: "6"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#313131",
-      d: "M123.134 105.174h1.332l1.408 3.434h.06l1.407-3.434h1.333v5.111h-1.048v-3.326h-.043l-1.322 3.301h-.714l-1.323-3.314h-.042v3.339h-1.048zM145.778 106.065v-.891h4.197v.891h-1.565v4.22h-1.068v-4.22zM168.204 110.285l-1.462-5.111h1.18l.846 3.551h.043l.933-3.551h1.011l.931 3.559h.045l.846-3.559h1.18l-1.462 5.111h-1.054l-.973-3.341h-.04l-.97 3.341zM190.576 106.065v-.891h4.198v.891h-1.565v4.22h-1.068v-4.22zM211.853 110.285v-5.111h3.384v.891h-2.304v1.218h2.079v.891h-2.079v2.111zM234.828 106.644a.63.63 0 0 0-.257-.469q-.226-.167-.616-.167a1.2 1.2 0 0 0-.447.075.62.62 0 0 0-.279.202.5.5 0 0 0-.095.294.43.43 0 0 0 .057.24.6.6 0 0 0 .178.177q.112.073.259.127.147.052.315.09l.459.11q.334.075.614.2.279.124.484.307.204.181.317.429.114.246.117.566a1.4 1.4 0 0 1-.24.814 1.5 1.5 0 0 1-.678.531q-.442.187-1.066.187-.62 0-1.078-.189a1.6 1.6 0 0 1-.714-.562q-.254-.374-.267-.926h1.046a.8.8 0 0 0 .147.43.8.8 0 0 0 .352.257q.222.084.502.085.274 0 .476-.08a.74.74 0 0 0 .317-.222.5.5 0 0 0 .112-.327.43.43 0 0 0-.102-.29.8.8 0 0 0-.294-.199 3 3 0 0 0-.472-.15l-.557-.14q-.646-.158-1.02-.491-.375-.335-.372-.901-.002-.465.247-.811.252-.347.691-.542.44-.195.998-.195.57 0 .994.195.426.195.663.542t.245.803zM255.91 106.644a.63.63 0 0 0-.257-.469q-.227-.167-.616-.167-.266 0-.447.075a.63.63 0 0 0-.28.202.5.5 0 0 0-.094.294.4.4 0 0 0 .057.24.6.6 0 0 0 .177.177q.113.073.26.127.147.052.314.09l.459.11q.335.075.614.2.28.124.484.307.205.181.317.429.115.246.118.566a1.4 1.4 0 0 1-.24.814 1.5 1.5 0 0 1-.679.531q-.441.187-1.065.187-.62 0-1.078-.189a1.6 1.6 0 0 1-.714-.562q-.255-.374-.267-.926h1.046q.017.258.147.43a.8.8 0 0 0 .352.257q.222.084.501.085.275 0 .477-.08a.75.75 0 0 0 .317-.222.5.5 0 0 0 .112-.327.43.43 0 0 0-.102-.29.8.8 0 0 0-.295-.199 3 3 0 0 0-.471-.15l-.557-.14q-.646-.158-1.021-.491-.374-.335-.371-.901-.003-.465.247-.811.252-.347.691-.542t.998-.195q.57 0 .993.195.427.195.664.542t.245.803z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "15",
-      height: "14",
-      x: "184",
-      y: "135",
-      fill: "#49A3B3",
-      rx: "3"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#898989",
-      d: "M254.453 122.742v5.111h-1.081v-4.085h-.03l-1.17.733v-.958l1.265-.801zM122.225 144.542v-.778l1.82-1.685q.231-.224.389-.404.16-.18.242-.352a.9.9 0 0 0 .082-.377.7.7 0 0 0-.102-.386.67.67 0 0 0-.279-.252.9.9 0 0 0-.402-.09.83.83 0 0 0-.409.095.64.64 0 0 0-.27.272.9.9 0 0 0-.095.421h-1.025q0-.5.227-.871.227-.369.636-.571a2.1 2.1 0 0 1 .943-.202q.55 0 .956.194.41.194.636.534.228.343.227.784 0 .29-.114.572a2.4 2.4 0 0 1-.402.626 9 9 0 0 1-.816.821l-.746.731v.035h2.146v.883zM146.953 144.612q-.56 0-.996-.192a1.7 1.7 0 0 1-.686-.534 1.35 1.35 0 0 1-.257-.788h1.088a.57.57 0 0 0 .122.329.76.76 0 0 0 .305.217q.189.077.426.077.248 0 .437-.087a.7.7 0 0 0 .297-.242.6.6 0 0 0 .107-.357.6.6 0 0 0-.114-.362.74.74 0 0 0-.325-.249 1.3 1.3 0 0 0-.499-.09h-.477v-.794h.477q.245 0 .432-.084a.7.7 0 0 0 .294-.235.6.6 0 0 0 .105-.354.61.61 0 0 0-.347-.567.8.8 0 0 0-.379-.082 1 1 0 0 0-.402.08.7.7 0 0 0-.292.222.6.6 0 0 0-.117.339h-1.036q.007-.441.252-.778.245-.338.659-.527.417-.192.941-.192.529 0 .926.192t.616.519q.222.324.22.729.001.43-.267.716-.267.287-.697.364v.04q.565.072.859.392.297.317.294.794.003.436-.252.776-.252.339-.696.534a2.5 2.5 0 0 1-1.018.194M166.068 143.644v-.851l2.134-3.361h.734v1.177h-.435l-1.345 2.129v.04h3.032v.866zm2.453.898v-1.158l.02-.376v-3.576h1.013v5.11z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "M191.729 144.612q-.53 0-.943-.194a1.64 1.64 0 0 1-.654-.537 1.4 1.4 0 0 1-.252-.784h1.048a.64.64 0 0 0 .25.482.86.86 0 0 0 .551.185.9.9 0 0 0 .449-.113.8.8 0 0 0 .307-.316.96.96 0 0 0 .112-.47.96.96 0 0 0-.114-.474.8.8 0 0 0-.312-.319.9.9 0 0 0-.457-.117q-.224 0-.437.092a.8.8 0 0 0-.327.252l-.96-.172.242-2.695h3.124v.883h-2.233l-.133 1.28h.03a1 1 0 0 1 .407-.314q.272-.125.609-.125.462 0 .823.217.362.217.572.597.21.376.207.868a1.684 1.684 0 0 1-.911 1.547 2.1 2.1 0 0 1-.998.227"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#898989",
-      d: "M212.906 144.612a2.3 2.3 0 0 1-.762-.132 1.7 1.7 0 0 1-.653-.422 2 2 0 0 1-.459-.773q-.168-.482-.168-1.183a4.3 4.3 0 0 1 .148-1.151q.147-.509.419-.863a1.84 1.84 0 0 1 .656-.539q.382-.187.856-.187.512 0 .903.199a1.67 1.67 0 0 1 .919 1.298h-1.066a.7.7 0 0 0-.262-.419.8.8 0 0 0-.494-.152.83.83 0 0 0-.759.434q-.256.434-.262 1.18h.035q.115-.226.31-.387.197-.162.446-.247.253-.087.532-.087.454 0 .809.215.354.212.559.584.204.37.204.851 0 .518-.242.923-.24.404-.671.634a2.1 2.1 0 0 1-.998.224m-.005-.848a.84.84 0 0 0 .756-.444.94.94 0 0 0 .112-.46.9.9 0 0 0-.112-.456.827.827 0 0 0-.749-.442.85.85 0 0 0-.808.554.935.935 0 0 0 .044.799.9.9 0 0 0 .31.327q.196.122.447.122M231.35 144.542l2.118-4.192v-.035H231v-.883h3.586v.896l-2.121 4.214zM254.136 144.612a2.6 2.6 0 0 1-1.026-.187 1.7 1.7 0 0 1-.701-.516 1.17 1.17 0 0 1-.255-.742q0-.32.145-.586.147-.27.399-.447a1.3 1.3 0 0 1 .564-.229v-.035a1.1 1.1 0 0 1-.664-.397 1.15 1.15 0 0 1-.254-.736q0-.397.232-.706.232-.312.636-.49.407-.179.924-.179.516 0 .92.179.408.18.639.492.232.31.235.704a1.14 1.14 0 0 1-.26.736q-.257.315-.658.397v.035q.306.05.556.229.252.177.399.447a1.2 1.2 0 0 1-.105 1.328q-.254.326-.703.516a2.6 2.6 0 0 1-1.023.187m0-.793q.257 0 .449-.093a.73.73 0 0 0 .299-.259.7.7 0 0 0 .11-.384.7.7 0 0 0-.112-.392.8.8 0 0 0-.305-.27.95.95 0 0 0-.441-.1.96.96 0 0 0-.442.1.77.77 0 0 0-.307.27.7.7 0 0 0-.11.392q0 .216.107.384.108.165.302.259.195.093.45.093m0-2.284a.8.8 0 0 0 .381-.087.65.65 0 0 0 .357-.599.638.638 0 0 0-.354-.586.8.8 0 0 0-.384-.088.8.8 0 0 0-.385.088.65.65 0 0 0-.262.237.66.66 0 0 0-.092.349.652.652 0 0 0 .357.599.8.8 0 0 0 .382.087M124.075 156.052q.393 0 .758.132.368.132.654.422.29.29.457.768.17.477.172 1.171 0 .651-.147 1.163a2.6 2.6 0 0 1-.417.866 1.8 1.8 0 0 1-.656.544 2 2 0 0 1-.859.184q-.511 0-.903-.197a1.7 1.7 0 0 1-.632-.541 1.7 1.7 0 0 1-.287-.774h1.066a.73.73 0 0 0 .262.434.8.8 0 0 0 .494.152.83.83 0 0 0 .759-.434q.26-.436.262-1.195h-.035q-.115.225-.31.387a1.4 1.4 0 0 1-.446.247 1.6 1.6 0 0 1-.532.087q-.452 0-.806-.212a1.5 1.5 0 0 1-.559-.584 1.74 1.74 0 0 1-.204-.848 1.73 1.73 0 0 1 .237-.916q.239-.402.668-.629a2.1 2.1 0 0 1 1.004-.227m.007.848a.85.85 0 0 0-.759.442.9.9 0 0 0-.109.452q0 .252.109.454a.9.9 0 0 0 .305.319q.195.117.444.117.187 0 .347-.069a.9.9 0 0 0 .277-.193.91.91 0 0 0 .14-1.075.87.87 0 0 0-.31-.324.8.8 0 0 0-.444-.123M148.125 161.345q-.645-.003-1.108-.317-.462-.315-.712-.911-.246-.597-.244-1.435 0-.835.247-1.425.249-.589.711-.896.464-.309 1.106-.309.64 0 1.103.309.464.31.713.899.25.587.247 1.422 0 .841-.249 1.437-.247.597-.709.911t-1.105.315m0-.896q.438 0 .701-.442.262-.441.259-1.325 0-.582-.119-.968-.118-.387-.335-.582a.73.73 0 0 0-.506-.194q-.436 0-.699.436t-.265 1.308q0 .589.118.983.12.392.337.589.216.195.509.195M144.906 156.122v5.11h-1.08v-4.085h-.03l-1.171.734v-.958l1.266-.801zM171.004 156.122v5.11h-1.08v-4.085h-.03l-1.17.734v-.958l1.265-.801zM167.566 156.122v5.11h-1.08v-4.085h-.03l-1.171.734v-.958l1.266-.801zM190.686 161.232v-.778l1.819-1.685q.233-.224.39-.404.16-.18.242-.352a.9.9 0 0 0 .082-.377.676.676 0 0 0-.382-.638.9.9 0 0 0-.402-.09.84.84 0 0 0-.409.095.65.65 0 0 0-.269.272.9.9 0 0 0-.095.421h-1.026q0-.5.227-.871.228-.369.637-.571t.943-.202q.549 0 .956.194.409.194.636.534.227.343.227.784 0 .29-.115.571a2.4 2.4 0 0 1-.401.627 9 9 0 0 1-.816.821l-.747.731v.035h2.146v.883zM189.471 156.122v5.11h-1.08v-4.085h-.03l-1.17.734v-.958l1.265-.801zM216.271 161.302a2.45 2.45 0 0 1-.995-.192 1.7 1.7 0 0 1-.686-.534 1.34 1.34 0 0 1-.257-.789h1.088a.56.56 0 0 0 .122.33.76.76 0 0 0 .304.217q.19.077.427.077.247 0 .437-.087a.7.7 0 0 0 .297-.242.6.6 0 0 0 .107-.357.6.6 0 0 0-.115-.362.74.74 0 0 0-.324-.249 1.3 1.3 0 0 0-.499-.09h-.477v-.794h.477q.245 0 .431-.085a.7.7 0 0 0 .295-.234.6.6 0 0 0 .105-.354.6.6 0 0 0-.093-.337.6.6 0 0 0-.254-.23.8.8 0 0 0-.38-.082 1 1 0 0 0-.401.08.7.7 0 0 0-.292.222.6.6 0 0 0-.118.339h-1.035q.007-.441.252-.779.245-.337.659-.526.417-.192.94-.192.53 0 .926.192.397.192.617.519.222.324.219.729a1 1 0 0 1-.267.716q-.267.287-.696.364v.04q.564.072.858.392.297.317.295.793.003.437-.252.777-.252.339-.696.534a2.5 2.5 0 0 1-1.019.194M213.168 156.122v5.11h-1.081v-4.085h-.03l-1.17.734v-.958l1.265-.801zM233.63 160.334v-.851l2.134-3.361h.733v1.177h-.434l-1.345 2.129v.04h3.032v.866zm2.453.898v-1.158l.02-.376v-3.576h1.013v5.11zM232.493 156.122v5.11h-1.081v-4.085h-.03l-1.17.734v-.958l1.265-.801zM254.899 161.302q-.529 0-.944-.194a1.64 1.64 0 0 1-.653-.537 1.37 1.37 0 0 1-.252-.784h1.048a.64.64 0 0 0 .249.482.86.86 0 0 0 .552.185.9.9 0 0 0 .449-.113.8.8 0 0 0 .307-.317.95.95 0 0 0 .112-.469.95.95 0 0 0-.115-.474.8.8 0 0 0-.312-.319.9.9 0 0 0-.456-.118q-.225 0-.437.093a.8.8 0 0 0-.327.252l-.961-.172.242-2.695h3.125v.883h-2.234l-.132 1.28h.03a1 1 0 0 1 .407-.314q.272-.125.609-.125.461 0 .823.217.362.218.572.596.209.377.207.869.002.516-.24.918a1.7 1.7 0 0 1-.671.629 2.1 2.1 0 0 1-.998.227M251.817 156.122v5.11h-1.08v-4.085h-.03l-1.17.734v-.958l1.265-.801zM127.53 177.992a2.2 2.2 0 0 1-.943-.195 1.65 1.65 0 0 1-.654-.537 1.4 1.4 0 0 1-.252-.783h1.048a.64.64 0 0 0 .25.481.85.85 0 0 0 .551.185q.255 0 .449-.112a.8.8 0 0 0 .307-.317.96.96 0 0 0 .113-.469.96.96 0 0 0-.115-.474.8.8 0 0 0-.312-.32.9.9 0 0 0-.457-.117 1.1 1.1 0 0 0-.436.092.8.8 0 0 0-.327.252l-.961-.172.242-2.695h3.124v.883h-2.233l-.132 1.281h.03a1 1 0 0 1 .406-.315q.273-.125.609-.125.462 0 .824.218.361.216.571.596.21.377.207.868.003.517-.239.919a1.7 1.7 0 0 1-.672.629 2.1 2.1 0 0 1-.998.227M124.449 172.811v5.111h-1.081v-4.085h-.03l-1.17.733v-.958l1.265-.801zM147.092 177.922l2.118-4.193v-.035h-2.468v-.883h3.586v.896l-2.121 4.215zM145.675 172.811v5.111h-1.081v-4.085h-.03l-1.17.733v-.958l1.265-.801zM170.083 177.992q-.576 0-1.025-.187a1.7 1.7 0 0 1-.701-.517 1.17 1.17 0 0 1-.255-.741q0-.32.145-.587.147-.269.399-.446a1.3 1.3 0 0 1 .564-.23v-.035a1.1 1.1 0 0 1-.664-.397 1.14 1.14 0 0 1-.254-.736q0-.396.232-.706.233-.312.636-.489.407-.18.923-.18.517 0 .921.18.406.18.639.491.232.31.235.704a1.14 1.14 0 0 1-.26.736q-.257.315-.659.397v.035q.307.05.557.23.252.177.399.446.15.267.152.587a1.18 1.18 0 0 1-.257.741q-.254.327-.703.517a2.65 2.65 0 0 1-1.024.187m0-.794q.258 0 .45-.092a.73.73 0 0 0 .299-.26.7.7 0 0 0 .11-.384.7.7 0 0 0-.112-.392.8.8 0 0 0-.305-.269.94.94 0 0 0-.442-.1.95.95 0 0 0-.441.1.77.77 0 0 0-.307.269.7.7 0 0 0-.11.392q0 .218.107.384a.74.74 0 0 0 .302.26q.195.092.449.092m0-2.283a.8.8 0 0 0 .382-.088.65.65 0 0 0 .357-.598.64.64 0 0 0-.354-.587.8.8 0 0 0-.385-.087.8.8 0 0 0-.384.087.65.65 0 0 0-.262.237.66.66 0 0 0-.092.35.645.645 0 0 0 .357.598.8.8 0 0 0 .381.088M166.962 172.811v5.111h-1.08v-4.085h-.03l-1.171.733v-.958l1.266-.801zM191.99 172.741q.393 0 .758.132.368.133.654.422.29.29.457.769.17.477.172 1.17 0 .651-.147 1.163a2.6 2.6 0 0 1-.417.866q-.273.357-.656.544a2 2 0 0 1-.859.185q-.511 0-.903-.197a1.7 1.7 0 0 1-.632-.542 1.7 1.7 0 0 1-.287-.774h1.066a.73.73 0 0 0 .262.435.8.8 0 0 0 .494.152.83.83 0 0 0 .759-.434q.26-.437.262-1.196h-.035q-.115.225-.31.387a1.4 1.4 0 0 1-.446.247 1.6 1.6 0 0 1-.532.088q-.452 0-.806-.213a1.5 1.5 0 0 1-.559-.584 1.73 1.73 0 0 1-.205-.848 1.74 1.74 0 0 1 .238-.916q.239-.401.668-.629a2.1 2.1 0 0 1 1.004-.227m.007.849a.85.85 0 0 0-.449.119.9.9 0 0 0-.31.322.9.9 0 0 0-.109.452q0 .252.109.454.113.2.305.32.195.117.444.117a.85.85 0 0 0 .624-.262.92.92 0 0 0 .254-.631.9.9 0 0 0-.114-.445.9.9 0 0 0-.31-.324.8.8 0 0 0-.444-.122M188.926 172.811v5.111h-1.081v-4.085h-.03l-1.17.733v-.958l1.265-.801zM217.374 178.034q-.643-.002-1.108-.317-.46-.314-.711-.911-.247-.596-.244-1.435 0-.836.247-1.424.249-.59.711-.896.464-.31 1.105-.31.642 0 1.103.31.465.309.714.898.25.587.247 1.422 0 .841-.249 1.438-.247.596-.709.911-.462.314-1.106.314m0-.896q.44 0 .702-.441.261-.442.259-1.326 0-.58-.12-.968-.117-.387-.334-.581a.73.73 0 0 0-.507-.195q-.437 0-.698.437-.262.437-.265 1.307 0 .59.117.984.12.391.337.589a.74.74 0 0 0 .509.194M210.944 177.922v-.779l1.819-1.684q.232-.225.39-.404.16-.18.242-.352a.9.9 0 0 0 .082-.377.7.7 0 0 0-.102-.387.67.67 0 0 0-.28-.252.9.9 0 0 0-.401-.09.85.85 0 0 0-.41.095.65.65 0 0 0-.269.272.9.9 0 0 0-.095.422h-1.026q0-.502.227-.871.228-.37.637-.572t.943-.202q.55 0 .956.195.41.192.636.534.228.342.227.783 0 .29-.115.572a2.4 2.4 0 0 1-.401.626 9 9 0 0 1-.816.821l-.746.731v.035h2.146v.884zM236.919 172.811v5.111h-1.081v-4.085h-.03l-1.17.733v-.958l1.265-.801zM230.269 177.922v-.779l1.819-1.684q.233-.225.39-.404.16-.18.242-.352a.9.9 0 0 0 .082-.377.7.7 0 0 0-.102-.387.67.67 0 0 0-.28-.252.9.9 0 0 0-.402-.09.85.85 0 0 0-.409.095.65.65 0 0 0-.269.272.9.9 0 0 0-.095.422h-1.026q0-.502.227-.871.228-.37.637-.572t.943-.202q.55 0 .956.195.41.192.636.534t.227.783q0 .29-.115.572a2.4 2.4 0 0 1-.401.626 9 9 0 0 1-.816.821l-.747.731v.035h2.147v.884zM254.02 177.922v-.779l1.82-1.684a8 8 0 0 0 .389-.404q.16-.18.242-.352a.9.9 0 0 0 .082-.377.7.7 0 0 0-.102-.387.67.67 0 0 0-.279-.252.9.9 0 0 0-.402-.09.85.85 0 0 0-.41.095.65.65 0 0 0-.269.272.9.9 0 0 0-.095.422h-1.025q0-.502.227-.871.227-.37.636-.572t.943-.202q.55 0 .956.195.41.192.636.534t.227.783q0 .29-.114.572a2.4 2.4 0 0 1-.402.626 9 9 0 0 1-.816.821l-.746.731v.035h2.146v.884zM249.594 177.922v-.779l1.819-1.684q.233-.225.39-.404.16-.18.242-.352a.9.9 0 0 0 .082-.377.676.676 0 0 0-.382-.639.9.9 0 0 0-.402-.09.85.85 0 0 0-.409.095.65.65 0 0 0-.269.272.9.9 0 0 0-.095.422h-1.026q0-.502.227-.871.228-.37.637-.572a2.1 2.1 0 0 1 .943-.202q.549 0 .956.195.409.192.636.534t.227.783q0 .29-.115.572a2.4 2.4 0 0 1-.402.626 9 9 0 0 1-.816.821l-.746.731v.035h2.146v.884zM128.541 194.682q-.56 0-.996-.193a1.7 1.7 0 0 1-.686-.534 1.34 1.34 0 0 1-.257-.788h1.088a.57.57 0 0 0 .122.329.75.75 0 0 0 .305.217q.189.078.426.078.248 0 .437-.088a.7.7 0 0 0 .297-.242.6.6 0 0 0 .107-.357.6.6 0 0 0-.114-.361.73.73 0 0 0-.325-.25 1.3 1.3 0 0 0-.499-.09h-.477v-.793h.477q.244 0 .432-.085a.7.7 0 0 0 .294-.235.6.6 0 0 0 .105-.354.62.62 0 0 0-.347-.567.995.995 0 0 0-.781-.002.7.7 0 0 0-.292.222.6.6 0 0 0-.117.339h-1.036q.007-.442.252-.778.245-.337.659-.527.416-.192.941-.192.529 0 .926.192t.616.519q.222.326.22.729.001.43-.267.716-.267.287-.697.365v.039q.564.073.859.392.297.317.294.794.003.437-.252.776-.252.339-.696.534t-1.018.195M122.225 194.612v-.779l1.82-1.684q.231-.225.389-.405a1.6 1.6 0 0 0 .242-.351.9.9 0 0 0 .082-.377.7.7 0 0 0-.102-.387.67.67 0 0 0-.279-.252.9.9 0 0 0-.402-.09.84.84 0 0 0-.409.095.65.65 0 0 0-.27.272.9.9 0 0 0-.095.422h-1.025q0-.502.227-.871.227-.37.636-.572t.943-.202q.55 0 .956.195.41.192.636.534.228.342.227.783 0 .29-.114.572a2.4 2.4 0 0 1-.402.626 9 9 0 0 1-.816.821l-.746.731v.035h2.146v.884zM146.96 193.713v-.851l2.133-3.361h.734v1.178h-.434l-1.345 2.128v.04h3.032v.866zm2.453.899v-1.158l.02-.377v-3.576h1.013v5.111zM142.72 194.612v-.779l1.82-1.684q.231-.225.389-.405a1.6 1.6 0 0 0 .242-.351.9.9 0 0 0 .082-.377.7.7 0 0 0-.102-.387.66.66 0 0 0-.28-.252.9.9 0 0 0-.401-.09.85.85 0 0 0-.41.095.65.65 0 0 0-.269.272.9.9 0 0 0-.095.422h-1.026q0-.502.228-.871.227-.37.636-.572t.943-.202q.55 0 .956.195.41.192.636.534t.227.783q0 .29-.114.572a2.4 2.4 0 0 1-.402.626 9 9 0 0 1-.816.821l-.746.731v.035h2.146v.884zM171.035 194.682q-.53 0-.943-.195a1.64 1.64 0 0 1-.654-.537 1.4 1.4 0 0 1-.252-.783h1.048a.64.64 0 0 0 .25.481.85.85 0 0 0 .551.185q.255 0 .449-.112a.8.8 0 0 0 .307-.317.96.96 0 0 0 .113-.469.96.96 0 0 0-.115-.474.8.8 0 0 0-.312-.32.9.9 0 0 0-.457-.117q-.224 0-.437.092a.8.8 0 0 0-.326.252l-.961-.172.242-2.695h3.124v.883h-2.233l-.132 1.281h.029a1 1 0 0 1 .407-.315q.273-.125.609-.125.462 0 .824.217.361.218.571.597.21.377.207.868.003.517-.239.919a1.7 1.7 0 0 1-.672.628 2.1 2.1 0 0 1-.998.228M164.742 194.612v-.779l1.819-1.684q.232-.225.39-.405a1.6 1.6 0 0 0 .242-.351.9.9 0 0 0 .082-.377.7.7 0 0 0-.102-.387.67.67 0 0 0-.28-.252.9.9 0 0 0-.401-.09.85.85 0 0 0-.41.095.65.65 0 0 0-.269.272.9.9 0 0 0-.095.422h-1.026q0-.502.227-.871.228-.37.637-.572t.943-.202q.55 0 .956.195.41.192.636.534.228.342.227.783 0 .29-.115.572a2.4 2.4 0 0 1-.401.626 9 9 0 0 1-.816.821l-.746.731v.035h2.146v.884zM193.035 194.682a2.3 2.3 0 0 1-.761-.133 1.7 1.7 0 0 1-.654-.421 2.05 2.05 0 0 1-.459-.774q-.167-.481-.167-1.183a4.2 4.2 0 0 1 .147-1.15q.147-.51.419-.864.274-.354.657-.539.38-.187.856-.187.512 0 .903.2.392.197.629.536.239.34.289.761h-1.065a.72.72 0 0 0-.262-.419.8.8 0 0 0-.494-.152.83.83 0 0 0-.759.434q-.257.435-.262 1.181h.035q.115-.228.309-.387.198-.162.447-.247.252-.088.532-.088a1.53 1.53 0 0 1 1.367.799q.205.371.205.851 0 .52-.242.923-.24.405-.672.634a2.1 2.1 0 0 1-.998.225m-.005-.849a.85.85 0 0 0 .756-.444.94.94 0 0 0 .113-.459.9.9 0 0 0-.113-.457.83.83 0 0 0-.748-.442.9.9 0 0 0-.347.07.88.88 0 0 0-.462.484.9.9 0 0 0-.067.347.9.9 0 0 0 .112.452q.116.204.309.327a.84.84 0 0 0 .447.122M186.647 194.612v-.779l1.82-1.684q.231-.225.389-.405a1.6 1.6 0 0 0 .242-.351.9.9 0 0 0 .082-.377.7.7 0 0 0-.102-.387.66.66 0 0 0-.28-.252.9.9 0 0 0-.401-.09.85.85 0 0 0-.41.095.65.65 0 0 0-.269.272.9.9 0 0 0-.095.422h-1.026q0-.502.228-.871.226-.37.636-.572t.943-.202q.55 0 .956.195.41.192.636.534t.227.783q0 .29-.114.572a2.4 2.4 0 0 1-.402.626 9 9 0 0 1-.816.821l-.746.731v.035h2.146v.884zM215.573 194.612l2.118-4.193v-.035h-2.468v-.883h3.586v.896l-2.121 4.215zM210.944 194.612v-.779l1.819-1.684q.232-.225.39-.405a1.6 1.6 0 0 0 .242-.351.9.9 0 0 0 .082-.377.7.7 0 0 0-.102-.387.67.67 0 0 0-.28-.252.9.9 0 0 0-.401-.09.85.85 0 0 0-.41.095.65.65 0 0 0-.269.272.9.9 0 0 0-.095.422h-1.026q0-.502.227-.871.228-.37.637-.572t.943-.202q.55 0 .956.195.41.192.636.534.228.342.227.783 0 .29-.115.572a2.4 2.4 0 0 1-.401.626 9 9 0 0 1-.816.821l-.747.731v.035h2.147v.884zM236.602 194.682q-.576 0-1.026-.188a1.7 1.7 0 0 1-.701-.516 1.17 1.17 0 0 1-.255-.741q0-.32.145-.587.147-.269.399-.446a1.3 1.3 0 0 1 .564-.23v-.035a1.138 1.138 0 0 1-.918-1.133q0-.397.232-.706.232-.312.637-.489.407-.18.923-.18t.921.18q.406.18.639.491.231.31.234.704a1.14 1.14 0 0 1-.259.736q-.257.315-.659.397v.035q.307.05.556.23.252.177.4.446.149.267.152.587a1.2 1.2 0 0 1-.257.741q-.255.327-.704.516a2.6 2.6 0 0 1-1.023.188m0-.794q.257 0 .449-.092a.74.74 0 0 0 .3-.26.7.7 0 0 0 .109-.384.7.7 0 0 0-.112-.392.76.76 0 0 0-.304-.269.94.94 0 0 0-.442-.1.95.95 0 0 0-.442.1.76.76 0 0 0-.307.269.7.7 0 0 0-.11.392.69.69 0 0 0 .41.644q.194.092.449.092m0-2.283q.214 0 .382-.088a.67.67 0 0 0 .262-.242.67.67 0 0 0 .095-.357.64.64 0 0 0-.355-.586.8.8 0 0 0-.384-.087.8.8 0 0 0-.384.087.65.65 0 0 0-.262.237.65.65 0 0 0-.093.349.67.67 0 0 0 .095.357.66.66 0 0 0 .262.242.8.8 0 0 0 .382.088M230.269 194.612v-.779l1.819-1.684q.233-.225.39-.405a1.6 1.6 0 0 0 .242-.351.9.9 0 0 0 .082-.377.676.676 0 0 0-.382-.639.9.9 0 0 0-.402-.09.85.85 0 0 0-.409.095.65.65 0 0 0-.269.272.9.9 0 0 0-.095.422h-1.026q0-.502.227-.871.228-.37.637-.572a2.1 2.1 0 0 1 .943-.202q.548 0 .956.195.409.192.636.534t.227.783q0 .29-.115.572a2.4 2.4 0 0 1-.402.626 9 9 0 0 1-.816.821l-.746.731v.035h2.146v.884zM255.87 189.431q.393 0 .758.132.368.133.654.422.29.29.457.769.17.477.172 1.17 0 .651-.147 1.163a2.6 2.6 0 0 1-.417.866q-.272.357-.656.544a2 2 0 0 1-.859.185q-.512 0-.903-.198a1.7 1.7 0 0 1-.632-.541 1.7 1.7 0 0 1-.287-.774h1.066a.73.73 0 0 0 .262.435.8.8 0 0 0 .494.152.83.83 0 0 0 .759-.434q.26-.437.262-1.196h-.035q-.115.225-.31.387a1.4 1.4 0 0 1-.446.247 1.6 1.6 0 0 1-.532.087q-.452 0-.806-.212a1.5 1.5 0 0 1-.559-.584 1.73 1.73 0 0 1-.205-.848 1.74 1.74 0 0 1 .238-.916q.239-.401.668-.629a2.1 2.1 0 0 1 1.004-.227m.007.849a.85.85 0 0 0-.449.119.9.9 0 0 0-.31.322.9.9 0 0 0-.109.452q0 .252.109.454.113.2.305.32.195.117.444.117a.85.85 0 0 0 .624-.262.92.92 0 0 0 .254-.631.9.9 0 0 0-.114-.445.9.9 0 0 0-.31-.324.8.8 0 0 0-.444-.122M249.594 194.612v-.779l1.819-1.684q.233-.225.389-.405.16-.18.242-.351a.9.9 0 0 0 .083-.377.7.7 0 0 0-.103-.387.67.67 0 0 0-.279-.252.9.9 0 0 0-.402-.09.85.85 0 0 0-.409.095.66.66 0 0 0-.27.272.9.9 0 0 0-.094.422h-1.026q0-.502.227-.871.227-.37.636-.572t.944-.202q.549 0 .955.195.41.192.637.534t.227.783q0 .29-.115.572a2.4 2.4 0 0 1-.402.626 9 9 0 0 1-.816.821l-.746.731v.035h2.146v.884zM128.862 211.413q-.645-.002-1.108-.316-.462-.315-.712-.911-.246-.597-.244-1.435 0-.835.247-1.425.249-.589.711-.896.464-.309 1.106-.309.641 0 1.102.309.465.31.714.898.25.587.247 1.423 0 .84-.249 1.437-.247.596-.709.911t-1.105.314m0-.895q.438 0 .701-.442t.259-1.325q0-.582-.12-.968-.117-.387-.334-.582a.73.73 0 0 0-.506-.195q-.438 0-.699.437-.262.436-.265 1.308 0 .588.118.983.12.392.336.589a.74.74 0 0 0 .51.195M124.115 211.371q-.56 0-.996-.192a1.7 1.7 0 0 1-.686-.534 1.34 1.34 0 0 1-.257-.789h1.088a.56.56 0 0 0 .122.33.76.76 0 0 0 .304.217q.19.077.427.077.247 0 .437-.087a.7.7 0 0 0 .297-.242.6.6 0 0 0 .107-.357.6.6 0 0 0-.115-.362.73.73 0 0 0-.324-.249 1.3 1.3 0 0 0-.499-.09h-.477v-.794h.477q.245 0 .431-.085a.7.7 0 0 0 .295-.234.6.6 0 0 0 .105-.355.61.61 0 0 0-.347-.566.8.8 0 0 0-.38-.082 1 1 0 0 0-.401.079.7.7 0 0 0-.292.223.6.6 0 0 0-.118.339h-1.035q.007-.442.252-.779t.659-.526q.417-.192.94-.192.53 0 .926.192.397.192.617.519.222.324.219.728a1 1 0 0 1-.267.717q-.267.286-.696.364v.04q.564.072.858.392.297.317.295.793.003.437-.252.776-.252.34-.696.534-.445.195-1.018.195"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#313131",
-      d: "M206.525 91.838v-4.312h1.159v.752h.045q.119-.401.396-.606.279-.208.64-.208a2 2 0 0 1 .377.043v1.06a2.105 2.105 0 0 0-.506-.065.95.95 0 0 0-.471.116.84.84 0 0 0-.326.315.9.9 0 0 0-.118.466v2.44zM203.765 91.923q-.665 0-1.145-.27a1.85 1.85 0 0 1-.736-.769q-.258-.5-.258-1.182 0-.666.258-1.168.259-.502.728-.783.471-.28 1.106-.28.426 0 .794.137a1.77 1.77 0 0 1 1.078 1.092q.155.41.155.96v.329h-3.642v-.742h2.516a.9.9 0 0 0-.112-.457.8.8 0 0 0-.312-.312.9.9 0 0 0-.458-.115.9.9 0 0 0-.483.126.9.9 0 0 0-.325.334.94.94 0 0 0-.121.464v.704q0 .32.118.553a.86.86 0 0 0 .34.36q.219.126.519.126.2 0 .365-.056a.8.8 0 0 0 .284-.169.74.74 0 0 0 .179-.275l1.106.073a1.5 1.5 0 0 1-.345.697q-.258.294-.668.46a2.5 2.5 0 0 1-.941.163M196.797 91.838v-5.75h1.196v2.163h.036q.079-.175.228-.354.151-.183.393-.303.244-.124.606-.124.472 0 .87.247.4.245.638.739.238.49.238 1.232 0 .722-.233 1.218-.23.495-.629.75a1.6 1.6 0 0 1-.887.253q-.348 0-.592-.116a1.2 1.2 0 0 1-.396-.289 1.5 1.5 0 0 1-.236-.356h-.053v.69zm1.17-2.156q0 .385.107.671.106.287.309.447a.78.78 0 0 0 .491.157q.293 0 .494-.16a1 1 0 0 0 .306-.45q.107-.288.107-.665 0-.374-.104-.657a1 1 0 0 0-.306-.443.78.78 0 0 0-.497-.16.8.8 0 0 0-.494.154.97.97 0 0 0-.306.438 1.9 1.9 0 0 0-.107.668M189.563 91.839v-4.313h1.14v.761h.051q.135-.38.449-.598.315-.219.752-.219.444 0 .756.222.311.219.415.595h.045q.132-.37.477-.592.348-.225.823-.225.603 0 .98.385.379.382.379 1.084v2.9h-1.194v-2.665q0-.36-.191-.539a.67.67 0 0 0-.477-.18q-.325 0-.508.208-.183.206-.182.542v2.633h-1.16V89.15q0-.318-.182-.505a.63.63 0 0 0-.475-.188.66.66 0 0 0-.359.1.7.7 0 0 0-.25.279.9.9 0 0 0-.093.415v2.588zM186.804 91.923q-.666 0-1.146-.27a1.84 1.84 0 0 1-.735-.769q-.258-.5-.258-1.182 0-.666.258-1.168t.727-.783q.471-.28 1.106-.28.427 0 .795.137.37.134.645.407.279.272.433.685.154.41.154.96v.329h-3.641v-.742h2.515a.9.9 0 0 0-.112-.457.8.8 0 0 0-.312-.312.9.9 0 0 0-.457-.115.9.9 0 0 0-.483.126.9.9 0 0 0-.326.334.95.95 0 0 0-.121.464v.704q0 .32.118.553a.87.87 0 0 0 .34.36q.219.126.519.126.2 0 .365-.056a.739.739 0 0 0 .464-.444l1.106.073a1.5 1.5 0 0 1-.346.697q-.258.294-.668.46a2.5 2.5 0 0 1-.94.163M182.147 91.923q-.663 0-1.14-.281a1.9 1.9 0 0 1-.73-.786 2.55 2.55 0 0 1-.252-1.157q0-.662.255-1.162.258-.502.733-.783.474-.284 1.128-.284.565 0 .989.205.423.206.671.576.246.37.272.87h-1.129a.88.88 0 0 0-.252-.52.72.72 0 0 0-.531-.199.8.8 0 0 0-.486.152.97.97 0 0 0-.32.435q-.115.286-.115.693 0 .414.112.702a1 1 0 0 0 .323.441.8.8 0 0 0 .486.152.8.8 0 0 0 .368-.085.7.7 0 0 0 .272-.244.9.9 0 0 0 .143-.39h1.129a1.77 1.77 0 0 1-.27.87 1.63 1.63 0 0 1-.659.584q-.421.21-.997.21M177.439 91.923q-.665 0-1.145-.27a1.84 1.84 0 0 1-.736-.769q-.258-.5-.258-1.182 0-.666.258-1.168a1.9 1.9 0 0 1 .727-.783q.472-.28 1.106-.28.428 0 .795.137.37.134.645.407.279.272.433.685.154.41.154.96v.329h-3.641v-.742h2.515a.9.9 0 0 0-.112-.457.8.8 0 0 0-.311-.312.9.9 0 0 0-.458-.115.9.9 0 0 0-.483.126.9.9 0 0 0-.326.334.95.95 0 0 0-.12.464v.704q0 .32.118.553.12.233.339.36t.52.126q.199 0 .365-.056a.727.727 0 0 0 .463-.444l1.106.073a1.5 1.5 0 0 1-.345.697q-.259.294-.669.46a2.5 2.5 0 0 1-.94.163M171.783 91.838h-2.038v-5.75h2.055q.867 0 1.493.346.627.342.963.986.34.642.34 1.538 0 .899-.34 1.544a2.33 2.33 0 0 1-.968.991q-.63.345-1.505.345m-.823-1.041h.772q.54 0 .907-.191.37-.194.556-.598.188-.406.188-1.05 0-.638-.188-1.041a1.22 1.22 0 0 0-.553-.596q-.368-.19-.907-.19h-.775z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#858585",
-      strokeLinejoin: "round",
-      d: "m253.572 86.568 3.074 2.635-3.074 2.635m-126.93-5.27-3.074 2.635 3.074 2.635"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1362",
-      width: "198",
-      height: "228",
-      x: "0",
-      y: "0",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "2",
-        result: "effect1_dropShadow_1651_1362"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dx: "3",
-        dy: "1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.663347 0 0 0 0 0.684163 0 0 0 0 0.913139 0 0 0 0.16 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1362"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1362",
-        result: "shape"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter1_d_1651_1362",
-      width: "205.532",
-      height: "192.356",
-      x: "91",
-      y: "52",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "2",
-        result: "effect1_dropShadow_1651_1362"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dx: "3",
-        dy: "1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.663347 0 0 0 0 0.684163 0 0 0 0 0.913139 0 0 0 0.16 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1362"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1362",
-        result: "shape"
-      })]
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/EmailTemplatesIcon.jsx":
-/*!*****************************************************!*\
-  !*** ./src/components/icons/EmailTemplatesIcon.jsx ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "244",
-  height: "130",
-  fill: "none",
-  viewBox: "0 0 244 130",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    opacity: "0.7",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-      filter: "url(#filter0_d_1651_1265)",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-        width: "234",
-        height: "107",
-        x: "5",
-        y: "6",
-        fill: "#FCFCFC",
-        rx: "5"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#E2EAFF",
-      d: "M23 58h203v4H23zM23 48h203v4H23zM23 78h203v4H23zM23 68h203v4H23zM23 98h203v4H23zM23 88h203v4H23z"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    clipPath: "url(#clip0_1651_1265)",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "M175.451 122.501 67.5 122.406l.05-72.116 53.763-36.79 54.188 36.885z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#000",
-      d: "m175.451 123-107.952-.095a.5.5 0 0 1-.499-.5l.05-72.116c0-.165.08-.32.22-.41l53.758-36.794a.5.5 0 0 1 .564 0l54.188 36.884c.135.095.22.25.22.415l-.05 72.116a.493.493 0 0 1-.499.5m-107.452-1.094 106.952.095.05-71.352-53.688-36.545-53.264 36.45z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "m77.416 72.653 44.087 14.92 44.083-14.92V20.568h-88.17z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#E2EAFF",
-      d: "M121.503 88.324a.8.8 0 0 1-.24-.04L77.175 73.363a.75.75 0 0 1-.509-.71V20.568c0-.415.335-.75.75-.75h88.174c.414 0 .749.335.749.75v52.085c0 .32-.205.605-.51.71l-44.087 14.92a.8.8 0 0 1-.239.04m-43.339-16.21 43.339 14.67 43.338-14.67V21.317H78.164z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#E2EAFF",
-      d: "M85.834 48.247h38.75v-5.98h-38.75zM85.833 36.118h26.048v-5.98H85.833z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#000",
-      d: "M127.854 76.844h-17.29a.5.5 0 0 1-.5-.5c0-.274.225-.499.5-.499h17.29a.5.5 0 0 1 0 1M127.889 68.497h-28.48a.5.5 0 0 1-.499-.5.5.5 0 0 1 .5-.499h28.479a.5.5 0 0 1 0 1M144.899 68.497h-10.695a.5.5 0 0 1-.499-.5c0-.274.225-.499.499-.499h10.695c.275 0 .5.225.5.5 0 .274-.225.5-.5.5M106.863 60.155H86.742a.5.5 0 0 1-.5-.5.5.5 0 0 1 .5-.499h20.121c.274 0 .499.225.499.5s-.225.5-.499.5M157.301 60.155h-39.104a.5.5 0 0 1-.5-.5c0-.274.225-.499.5-.499h39.104a.5.5 0 0 1 0 1"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "M175.451 122.501 67.5 122.406l.05-72.116 53.709 36.18 54.242-36.085z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#000",
-      d: "m175.451 123-107.952-.095a.5.5 0 0 1-.499-.499l.05-72.116c0-.185.1-.355.265-.44a.51.51 0 0 1 .514.025l53.434 35.99 53.963-35.9c.155-.1.35-.11.514-.025a.49.49 0 0 1 .265.44l-.05 72.116a.493.493 0 0 1-.499.499zm-107.452-1.094 106.952.095.05-70.682-53.464 35.57a.51.51 0 0 1-.554 0L68.049 51.23z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#000",
-      d: "M171.776 120.677a.5.5 0 0 1-.28-.084l-47.502-31.965a.499.499 0 1 1 .559-.83l47.503 31.965a.5.5 0 0 1-.28.914M71.803 120.248a.503.503 0 0 1-.285-.915L117.2 88.128a.5.5 0 0 1 .694.13c.154.23.095.54-.13.694l-45.68 31.211a.5.5 0 0 1-.28.085"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#B8CBFD",
-      d: "M156.977 27.746H133.38c-.816 0-1.478.662-1.478 1.479v17.923c0 .816.662 1.478 1.478 1.478h23.597c.816 0 1.478-.662 1.478-1.478V29.225c0-.817-.662-1.479-1.478-1.479"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    clipPath: "url(#clip1_1651_1265)",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "m165.064 22.441 1.048-.659 3.687.838 1.283-2.432a3.5 3.5 0 1 1 3.231 5.13l-2.748.106-.838 3.688-1.047.66-1.319-2.095-11.825 7.446a2.11 2.11 0 0 1-1.594.272 2.11 2.11 0 0 0-1.594.272l-1.354.853-.659-1.047 1.354-.853c.474-.298.81-.773.934-1.32.124-.546.461-1.02.935-1.319l11.825-7.445z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#0F172A",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeWidth: "1.2",
-      d: "m168.361 27.677 1.319 2.094 1.047-.659.838-3.688 2.748-.105a3.5 3.5 0 1 0-3.231-5.13l-1.283 2.431-3.687-.838-1.048.66 1.319 2.094m1.978 3.141-11.825 7.446a2.11 2.11 0 0 1-1.594.272 2.11 2.11 0 0 0-1.594.272l-1.354.853-.659-1.047 1.354-.853c.474-.298.81-.773.934-1.32.124-.546.461-1.02.935-1.319l11.825-7.445m1.978 3.141-1.978-3.141"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
-    cx: "64",
-    cy: "104",
-    r: "26",
-    fill: "#D7EBFF"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#000",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.2",
-    d: "M68.66 104.674h9.368c.887 0 1.606.711 1.606 1.589v10.785c0 .878-.72 1.589-1.606 1.589H64.786a1.6 1.6 0 0 1-1.606-1.589v-7.356M74.08 92.022v8.729M69.332 93.437v-1.51h9.499v1.51M72.123 100.751h3.918M50.191 110.786h9.28M50.191 113.786h9.28M50.191 116.789h9.28"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#000",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.2",
-    d: "M65.737 89.363H48.594a1.22 1.22 0 0 0-1.227 1.213v16.086c0 .67.55 1.214 1.227 1.214h17.143a1.22 1.22 0 0 0 1.227-1.214V90.576c0-.67-.55-1.213-1.227-1.213"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#000",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.2",
-    d: "m53.424 103.58 5.7-7.558 5.701 7.558M55.79 98.267l-1.052-1.174-5.234 6.487M62.894 95.762c.88 0 1.595-.709 1.595-1.582s-.714-1.582-1.595-1.582-1.595.708-1.595 1.582c0 .873.714 1.581 1.595 1.581"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("clipPath", {
-      id: "clip0_1651_1265",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        fill: "#fff",
-        d: "M67 13h109v110H67z"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("clipPath", {
-      id: "clip1_1651_1265",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        fill: "#fff",
-        d: "m154.205 11 27.304 6.205-6.206 27.304L148 38.304z"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1265",
-      width: "244",
-      height: "117",
-      x: "0",
-      y: "0",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "5",
-        result: "effect1_dropShadow_1651_1265"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "-1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.13 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1265"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1265",
-        result: "shape"
-      })]
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/GiftCardsIcon.jsx":
-/*!************************************************!*\
-  !*** ./src/components/icons/GiftCardsIcon.jsx ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "185",
-  height: "110",
-  fill: "none",
-  viewBox: "0 0 185 110",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter0_d_1651_1314)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "175",
-      height: "100",
-      x: "5",
-      y: "6",
-      fill: "#fff",
-      rx: "5"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-    width: "73",
-    height: "85",
-    x: "12",
-    y: "12",
-    fill: "#EBEBEB",
-    rx: "5"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    stroke: "#ACACAC",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    clipPath: "url(#clip0_1651_1314)",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      d: "M67.354 37.523H27.646c-2.273 0-4.116 1.819-4.116 4.064v27.826c0 2.245 1.843 4.064 4.116 4.064h39.708c2.273 0 4.116-1.819 4.116-4.064V41.587c0-2.245-1.843-4.064-4.116-4.064M71.47 51.883H52.408M27.51 51.883h-3.98M52.143 62.365h12.631M52.143 66.29h12.631M39.96 73.474v-15.28M39.96 47.838V37.523"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      d: "M32.542 61.656a13.54 13.54 0 0 0 6.124-6.696l1.293-3.077 1.292 3.077a13.54 13.54 0 0 0 6.124 6.696M46.051 56.07c2.342 0 4.238-1.874 4.238-4.187s-1.896-4.187-4.238-4.187c-2.341 0-6.092 4.187-6.092 4.187s3.751 4.186 6.092 4.186M33.867 56.07c-2.341 0-4.237-1.874-4.237-4.187s1.896-4.187 4.237-4.187 6.092 4.187 6.092 4.187-3.75 4.186-6.092 4.186"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#000",
-    d: "M99.784 51.455V36.909h.932v14.546zm2.688-9.892q-.08-.745-.671-1.16-.585-.414-1.523-.414-.659 0-1.13.199-.472.198-.722.54a1.3 1.3 0 0 0-.255.778q0 .363.164.63.17.267.46.455.291.181.642.307.352.124.711.21l1.091.273q.658.153 1.267.414.613.262 1.096.66.49.398.773.96t.284 1.318q0 1.023-.523 1.801-.522.773-1.511 1.21-.983.432-2.381.432-1.358 0-2.358-.42-.993-.42-1.556-1.228-.557-.807-.603-1.965h2.074q.045.608.375 1.01.33.404.858.603.534.2 1.193.199.688 0 1.205-.205.522-.21.818-.58a1.4 1.4 0 0 0 .301-.874q-.006-.455-.267-.75-.26-.3-.733-.5a7 7 0 0 0-1.091-.364l-1.324-.34q-1.437-.37-2.272-1.12-.83-.755-.83-2.006 0-1.028.557-1.8.562-.774 1.528-1.2.966-.431 2.188-.431 1.239 0 2.17.431.938.426 1.472 1.188.534.755.551 1.739zm8.686-3.2V50h-2.108v-9.585h-.068l-2.722 1.738v-1.931l2.892-1.858zm7.255 11.859q-1.403 0-2.409-.71-1-.717-1.54-2.063-.534-1.353-.534-3.256.006-1.903.54-3.238.54-1.341 1.54-2.046 1.006-.704 2.403-.704t2.404.704q1.005.705 1.54 2.046.539 1.34.539 3.238 0 1.91-.539 3.262-.535 1.346-1.54 2.056-1 .71-2.404.71m0-1.779q1.091 0 1.722-1.074.636-1.08.636-3.176 0-1.386-.289-2.33-.29-.942-.819-1.42a1.8 1.8 0 0 0-1.25-.483q-1.085 0-1.716 1.08-.63 1.074-.636 3.153-.006 1.393.278 2.341.29.95.819 1.432a1.8 1.8 0 0 0 1.255.477m10.672 1.779q-1.402 0-2.409-.71-1-.717-1.54-2.063-.534-1.353-.534-3.256.006-1.903.54-3.238.54-1.341 1.54-2.046 1.005-.704 2.403-.704t2.404.704q1.005.705 1.539 2.046.54 1.34.54 3.238 0 1.91-.54 3.262-.534 1.346-1.539 2.056-1 .71-2.404.71m0-1.779q1.091 0 1.722-1.074.636-1.08.636-3.176 0-1.386-.29-2.33-.289-.942-.818-1.42a1.8 1.8 0 0 0-1.25-.483q-1.085 0-1.716 1.08-.63 1.074-.636 3.153-.006 1.393.278 2.341.29.95.819 1.432.528.477 1.255.477M101.437 23.532a2.9 2.9 0 0 0-.36-.752 2.3 2.3 0 0 0-.531-.573 2.2 2.2 0 0 0-.706-.364 2.8 2.8 0 0 0-.863-.125q-.8 0-1.44.41-.643.412-1.016 1.206-.37.788-.37 1.934 0 1.149.374 1.944.374.793 1.025 1.204t1.482.411q.771 0 1.343-.314.578-.313.891-.886.32-.577.319-1.357l.369.07h-2.705v-1.178h3.716v1.076q0 1.19-.508 2.068a3.46 3.46 0 0 1-1.394 1.348q-.886.475-2.031.475-1.284 0-2.253-.59-.965-.592-1.505-1.676-.54-1.09-.54-2.586 0-1.13.314-2.03.314-.901.882-1.529a3.85 3.85 0 0 1 1.343-.965 4.2 4.2 0 0 1 1.694-.337q.767 0 1.427.226.665.226 1.182.642a3.65 3.65 0 0 1 1.325 2.248zM105.11 30v-7.09h1.38V30zm.697-8.185a.88.88 0 0 1-.619-.24.78.78 0 0 1-.254-.582q0-.34.254-.581a.87.87 0 0 1 .619-.245q.36 0 .614.245.258.24.258.581a.78.78 0 0 1-.258.582.86.86 0 0 1-.614.24m5.915 1.094v1.108h-4.008v-1.108zM108.813 30v-7.913q0-.664.291-1.103.291-.443.771-.66.48-.222 1.043-.222.415 0 .711.07.295.064.439.12l-.323 1.117a7 7 0 0 0-.25-.065 1.4 1.4 0 0 0-.369-.041q-.503 0-.72.249-.213.249-.213.72V30zm7.643-7.09v1.107h-3.874v-1.108zm-2.835-1.7h1.381v6.708q0 .402.12.605.12.198.309.272.194.07.42.07.167 0 .291-.024.125-.022.194-.037l.249 1.14q-.12.047-.342.093a2.7 2.7 0 0 1-.554.055 2.4 2.4 0 0 1-1.015-.194 1.74 1.74 0 0 1-.762-.627q-.291-.425-.291-1.067zm15.765 2.41h-1.44a2.2 2.2 0 0 0-.863-1.408 2.4 2.4 0 0 0-.734-.37 2.9 2.9 0 0 0-.854-.124q-.817 0-1.464.41-.641.412-1.015 1.206-.37.794-.37 1.939 0 1.155.37 1.948.373.795 1.02 1.2.647.406 1.454.406.448 0 .85-.12.405-.124.734-.364.327-.24.554-.587.23-.35.318-.803l1.44.005a3.9 3.9 0 0 1-.447 1.283q-.328.582-.845 1.006-.513.42-1.173.651t-1.44.231q-1.228 0-2.188-.581-.96-.587-1.515-1.676-.549-1.09-.549-2.6 0-1.514.554-2.598.554-1.09 1.514-1.671.96-.587 2.184-.587.752 0 1.403.217.656.213 1.178.628.52.412.863 1.006.341.591.461 1.353m3.66 6.537a2.9 2.9 0 0 1-1.219-.25 2.05 2.05 0 0 1-.863-.733q-.314-.48-.314-1.178 0-.6.231-.987.231-.389.623-.614.393-.227.877-.342a9 9 0 0 1 .988-.175l1.034-.12q.397-.051.577-.162t.181-.36v-.033q0-.604-.342-.937-.337-.332-1.007-.332-.696 0-1.098.31-.397.304-.55.678l-1.297-.296a2.5 2.5 0 0 1 .674-1.043 2.7 2.7 0 0 1 1.03-.582 4 4 0 0 1 1.223-.184q.424 0 .9.101.48.098.896.36.42.264.688.753.267.485.267 1.26V30h-1.348v-.97h-.055a2 2 0 0 1-.402.527 2.1 2.1 0 0 1-.687.43q-.421.17-1.007.17m.3-1.108q.573 0 .979-.226a1.6 1.6 0 0 0 .623-.591 1.53 1.53 0 0 0 .217-.79v-.914q-.074.075-.286.139a5 5 0 0 1-.476.106l-.521.079-.425.055q-.401.05-.734.17-.328.12-.526.347-.195.222-.194.59 0 .514.378.777.379.258.965.258m5.038.951v-7.09h1.334v1.125h.074q.194-.572.683-.9.495-.332 1.117-.332a6 6 0 0 1 .587.032v1.32a3 3 0 0 0-.296-.05 3 3 0 0 0-.424-.033 1.8 1.8 0 0 0-.873.208 1.55 1.55 0 0 0-.822 1.39V30zm7.39.139a2.75 2.75 0 0 1-1.533-.44q-.67-.442-1.052-1.26-.38-.82-.379-1.97 0-1.15.383-1.967.388-.818 1.062-1.251.674-.434 1.528-.434.66 0 1.062.221.406.217.628.508.225.291.351.513h.083v-3.514h1.38V30h-1.348v-1.103h-.115q-.126.226-.361.517a2 2 0 0 1-.637.508q-.405.216-1.052.216m.304-1.178q.596 0 1.007-.314.415-.318.628-.881.217-.564.217-1.311 0-.74-.213-1.293a1.9 1.9 0 0 0-.623-.863q-.41-.31-1.016-.31-.622 0-1.038.323-.415.324-.628.882a3.6 3.6 0 0 0-.208 1.26q0 .71.213 1.28.211.567.627.9.42.327 1.034.327"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-    width: "76",
-    height: "21",
-    x: "95.5",
-    y: "73.5",
-    fill: "#353535",
-    stroke: "#272727",
-    rx: "2.5"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#fff",
-    d: "M126.05 87v-6.546h2.621q.723 0 1.205.215.483.213.725.594.243.377.243.87 0 .383-.153.674-.153.288-.422.473a1.7 1.7 0 0 1-.607.259v.064q.373.015.7.21.328.195.534.547.204.349.204.831 0 .52-.259.93-.255.406-.757.642-.502.237-1.237.237zm1.384-1.131h1.128q.579 0 .844-.22a.74.74 0 0 0 .265-.595.87.87 0 0 0-.131-.48.9.9 0 0 0-.374-.326 1.3 1.3 0 0 0-.572-.118h-1.16zm0-2.675h1.026q.285 0 .505-.1a.85.85 0 0 0 .352-.287.75.75 0 0 0 .131-.444.72.72 0 0 0-.253-.573q-.249-.217-.709-.217h-1.052zm8.61-2.74h1.383v4.251q0 .716-.342 1.253a2.3 2.3 0 0 1-.949.838q-.61.297-1.422.297-.815 0-1.425-.297a2.3 2.3 0 0 1-.95-.838q-.338-.537-.338-1.253v-4.25h1.383v4.132q0 .374.163.665.167.29.467.457.3.165.7.166.403 0 .7-.166.3-.166.463-.457.167-.291.167-.665zm2.138 0h1.551l1.492 2.82h.064l1.493-2.82h1.55l-2.388 4.232V87h-1.374v-2.314z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#EBEBEB",
-    d: "M95 56h77v3H95zM95 62h77v3H95z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("clipPath", {
-      id: "clip0_1651_1314",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        fill: "#fff",
-        d: "M23 37h49v37H23z"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1314",
-      width: "185",
-      height: "110",
-      x: "0",
-      y: "0",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "5",
-        result: "effect1_dropShadow_1651_1314"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "-1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.13 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1314"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1314",
-        result: "shape"
-      })]
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/MembershipIcon.jsx":
-/*!*************************************************!*\
-  !*** ./src/components/icons/MembershipIcon.jsx ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "243",
-  height: "141",
-  fill: "none",
-  viewBox: "0 0 243 141",
-  style: {
-    paddingTop: '3%'
-  },
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    opacity: "0.54",
-    className: "nfd-svg-rotate--5deg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-      filter: "url(#filter0_d_1651_1076)",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-        width: "155",
-        height: "118",
-        x: "5",
-        y: "1",
-        fill: "#fff",
-        rx: "5"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#D9D9D9",
-      fillOpacity: "0.5",
-      d: "M21 26h123v4H21zM21 15h123v4H21zM21 38h123v4H21zM21 50h123v4H21zM21 62h123v4H21z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "123",
-      height: "25",
-      x: "21",
-      y: "79",
-      fill: "#699CB5",
-      rx: "5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "M39.577 89.819a.9.9 0 0 0-.365-.668q-.324-.237-.878-.238-.375 0-.635.107a.9.9 0 0 0-.398.288.7.7 0 0 0-.135.419.6.6 0 0 0 .082.34.85.85 0 0 0 .252.253q.16.103.37.18.209.075.447.129l.653.156q.476.106.874.284.398.177.689.437.291.258.45.61.164.353.168.807-.004.667-.341 1.157-.334.487-.966.757-.63.266-1.517.266-.88 0-1.534-.27a2.25 2.25 0 0 1-1.015-.799q-.362-.532-.38-1.317h1.488q.024.365.21.61.188.241.5.366.316.12.714.12.39 0 .678-.113a1.04 1.04 0 0 0 .45-.316.73.73 0 0 0 .16-.465q0-.244-.145-.412a1.1 1.1 0 0 0-.419-.284 4 4 0 0 0-.671-.213l-.792-.199q-.92-.224-1.452-.7-.533-.475-.53-1.282-.003-.66.352-1.154.36-.493.984-.77t1.42-.277q.81 0 1.413.277.608.276.945.77t.348 1.144zm4.145-2.092V95h-1.537v-7.273zm6.088 2.351a1.6 1.6 0 0 0-.21-.458q-.135-.203-.33-.34a1.4 1.4 0 0 0-.44-.218 1.9 1.9 0 0 0-.543-.074q-.558 0-.98.277-.42.277-.654.806-.234.525-.234 1.285t.23 1.293.654.813q.422.277.998.277.522 0 .891-.184.373-.189.568-.53.2-.34.2-.806l.312.047h-1.875v-1.158h3.043v.916q0 .96-.405 1.648a2.76 2.76 0 0 1-1.115 1.058q-.71.37-1.626.37-1.023 0-1.797-.452a3.13 3.13 0 0 1-1.208-1.289q-.43-.837-.43-1.988 0-.885.256-1.577.26-.696.725-1.179t1.083-.735a3.5 3.5 0 0 1 1.339-.252q.618 0 1.15.18.532.179.945.505.416.327.678.778.263.447.338.987zm8.868-2.35V95H57.35l-3.164-4.577h-.053V95h-1.538v-7.273h1.35l3.139 4.574h.063v-4.574zm5.763 0h1.537v4.722q0 .796-.38 1.392a2.54 2.54 0 0 1-1.054.93q-.68.33-1.58.331-.906 0-1.584-.33a2.54 2.54 0 0 1-1.055-.93q-.377-.597-.377-1.393v-4.723h1.538v4.592q0 .415.181.739.184.322.519.507.333.185.777.185.448 0 .778-.185.334-.184.515-.507.185-.323.185-.74zM67.243 95v-7.273h2.87q.826 0 1.41.316.582.314.887.87.31.555.31 1.279 0 .725-.313 1.278-.313.555-.906.863-.59.309-1.427.309h-1.83V91.41h1.581q.444 0 .732-.153.29-.156.433-.43.145-.276.145-.635 0-.362-.145-.632a.97.97 0 0 0-.433-.423q-.291-.153-.739-.153h-1.037V95zm8.513-6.005v-1.268h5.972v1.268h-2.226V95h-1.52v-6.005zm13.307 2.369q0 1.189-.45 2.024a3.13 3.13 0 0 1-1.222 1.275 3.45 3.45 0 0 1-1.733.436 3.44 3.44 0 0 1-1.74-.44 3.13 3.13 0 0 1-1.218-1.275q-.448-.835-.448-2.02 0-1.19.448-2.025a3.1 3.1 0 0 1 1.218-1.27 3.44 3.44 0 0 1 1.74-.441q.962 0 1.733.44.774.437 1.221 1.272.451.834.451 2.024m-1.559 0q0-.77-.23-1.3-.228-.529-.643-.803a1.73 1.73 0 0 0-.973-.273 1.73 1.73 0 0 0-.973.273q-.416.274-.647.803-.227.53-.227 1.3t.227 1.3q.231.529.647.802.415.273.973.273.557 0 .973-.273t.643-.803q.23-.529.23-1.3M92.517 95v-7.273h2.87q.822 0 1.405.295.586.291.892.827.309.532.309 1.254 0 .724-.313 1.246-.312.519-.905.796-.59.277-1.428.277h-1.921v-1.236h1.672q.441 0 .732-.12a.87.87 0 0 0 .433-.363q.146-.24.146-.6a1.2 1.2 0 0 0-.146-.61.9.9 0 0 0-.437-.377q-.291-.132-.735-.132h-1.036V95zm3.927-3.31L98.252 95h-1.697l-1.769-3.31zM99.08 95v-7.273h4.901v1.268h-3.363v1.733h3.111v1.268h-3.111v1.736h3.377V95zm7.377 0h-1.648l2.511-7.273h1.981L111.808 95h-1.648l-1.822-5.61h-.057zm-.103-2.859h3.892v1.2h-3.892zM115.261 95h-2.578v-7.273h2.599q1.098 0 1.89.437.79.433 1.218 1.246.429.814.429 1.947 0 1.136-.429 1.953a2.96 2.96 0 0 1-1.226 1.253q-.795.437-1.903.437m-1.04-1.317h.976q.682 0 1.147-.242.47-.244.703-.756.238-.515.238-1.329 0-.806-.238-1.317a1.54 1.54 0 0 0-.699-.753q-.466-.24-1.147-.241h-.98zM57 22h40v40H57z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#B6B6B6",
-      fillRule: "evenodd",
-      d: "M77.5 26.45a6.525 6.525 0 0 0-6.525 6.525v5.075h-.725a2.9 2.9 0 0 0-2.9 2.9v8.7a2.9 2.9 0 0 0 2.9 2.9h14.5a2.9 2.9 0 0 0 2.9-2.9v-8.7a2.9 2.9 0 0 0-2.9-2.9h-.725v-5.075A6.525 6.525 0 0 0 77.5 26.45m4.35 11.6v-5.075a4.35 4.35 0 0 0-8.7 0v5.075z",
-      clipRule: "evenodd"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    filter: "url(#filter1_d_1651_1076)",
-    className: "nfd-svg-rotate-5deg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "134",
-      height: "106",
-      x: "104",
-      y: "26",
-      fill: "#fff",
-      rx: "5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#7F7F7F",
-      d: "M131.279 110.417a.74.74 0 0 0-.284-.547q-.25-.198-.713-.198-.307 0-.512.08a.66.66 0 0 0-.306.221.53.53 0 0 0-.106.316.47.47 0 0 0 .058.259.6.6 0 0 0 .191.198q.129.082.307.147.18.064.403.112l.562.128q.486.105.857.281.374.176.626.419.256.243.387.559t.134.71q-.003.62-.313 1.064t-.892.681q-.578.236-1.396.236-.822 0-1.432-.246a2 2 0 0 1-.949-.748q-.339-.501-.349-1.269h1.515a1 1 0 0 0 .17.528q.15.21.412.319.265.11.614.109.32 0 .543-.086a.8.8 0 0 0 .348-.24.57.57 0 0 0 .125-.352.48.48 0 0 0-.115-.316.9.9 0 0 0-.345-.23 3.6 3.6 0 0 0-.588-.182l-.684-.16q-.85-.195-1.339-.63-.489-.438-.486-1.182-.004-.608.326-1.065.329-.457.911-.712.581-.256 1.326-.256.76 0 1.32.259.563.255.872.719t.317 1.074zm3.985-1.962V115h-1.582v-6.545zm5.289 2.138a1.1 1.1 0 0 0-.16-.355 1 1 0 0 0-.259-.265 1.1 1.1 0 0 0-.351-.163 1.5 1.5 0 0 0-.435-.058q-.476 0-.824.23a1.48 1.48 0 0 0-.534.671q-.189.438-.189 1.065 0 .628.182 1.074.183.444.528.677t.837.233q.435 0 .735-.14.304-.144.46-.406t.157-.617l.294.035h-1.592v-1.154h2.823v.867q0 .879-.374 1.505a2.5 2.5 0 0 1-1.023.962q-.649.335-1.493.335-.936 0-1.646-.405a2.8 2.8 0 0 1-1.105-1.157q-.397-.755-.397-1.79 0-.805.24-1.429.24-.626.668-1.061.432-.435.997-.658a3.3 3.3 0 0 1 1.224-.224q.569 0 1.058.163.492.163.869.46.381.297.617.707.237.409.294.898zm8.175-2.138V115h-1.343l-2.604-3.778h-.042V115h-1.582v-6.545h1.362l2.576 3.771h.054v-3.771zm4.954 0h1.579v4.221q0 .732-.348 1.276-.348.54-.972.837-.623.294-1.448.294-.834 0-1.457-.294a2.3 2.3 0 0 1-.968-.837q-.346-.544-.346-1.276v-4.221h1.582v4.084q0 .339.147.604.151.265.419.416.269.15.623.15.356 0 .62-.15a1.1 1.1 0 0 0 .419-.416q.15-.265.15-.604zm2.571 6.545v-6.545h2.704q.735 0 1.268.287.537.285.828.796.291.508.291 1.183 0 .676-.297 1.185a2 2 0 0 1-.841.783q-.547.279-1.297.278h-1.669v-1.246h1.375q.357 0 .597-.125a.86.86 0 0 0 .368-.348q.124-.227.124-.527a1.05 1.05 0 0 0-.124-.525.84.84 0 0 0-.368-.345 1.3 1.3 0 0 0-.597-.121h-.78V115zm7.59-5.261v-1.284h5.533v1.284h-1.985V115h-1.56v-5.261zm12.184 1.988q0 1.08-.415 1.832-.415.75-1.125 1.141-.706.39-1.585.389a3.2 3.2 0 0 1-1.589-.393 2.86 2.86 0 0 1-1.122-1.141q-.412-.75-.412-1.828 0-1.08.412-1.831a2.84 2.84 0 0 1 1.122-1.141 3.23 3.23 0 0 1 1.589-.39q.879 0 1.585.39.71.39 1.125 1.141t.415 1.831m-1.617 0q0-.639-.182-1.08a1.4 1.4 0 0 0-.518-.668 1.4 1.4 0 0 0-.808-.227 1.4 1.4 0 0 0-.809.227 1.43 1.43 0 0 0-.521.668q-.179.441-.179 1.08t.179 1.081q.182.44.521.667t.809.227q.472 0 .808-.227a1.4 1.4 0 0 0 .518-.667q.182-.442.182-1.081m6.044 3.273-1.905-6.545h1.748l.988 4.289h.054l1.128-4.289h1.426l1.128 4.298h.054l.991-4.298h1.745L185.909 115h-1.524l-1.179-3.969h-.052L181.975 115zm8.715 0h-1.701l2.209-6.545h2.106l2.208 6.545h-1.7l-1.537-4.896h-.051zm-.227-2.576h3.554v1.202h-3.554zm4.723-2.685v-1.284h5.532v1.284h-1.985V115h-1.56v-5.261zm11.947 1.087h-1.598a1.4 1.4 0 0 0-.131-.444 1.08 1.08 0 0 0-.649-.553 1.5 1.5 0 0 0-.489-.077q-.476 0-.821.233a1.5 1.5 0 0 0-.527.675q-.183.441-.183 1.067 0 .652.186 1.093.188.438.527.662.342.22.809.22.261 0 .476-.067a1.1 1.1 0 0 0 .38-.195 1.1 1.1 0 0 0 .272-.316q.108-.189.15-.425l1.598.009q-.042.435-.252.857a2.8 2.8 0 0 1-.572.77q-.365.346-.889.55a3.3 3.3 0 0 1-1.195.204q-.889 0-1.592-.389a2.8 2.8 0 0 1-1.106-1.145q-.406-.75-.406-1.828 0-1.08.413-1.831a2.8 2.8 0 0 1 1.115-1.141q.703-.39 1.576-.39.594 0 1.099.166.505.163.889.48.383.312.623.77.24.457.297 1.045m.905 4.174v-6.545h1.582v2.627h2.58v-2.627h1.578V115h-1.578v-2.63h-2.58V115z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "98",
-      height: "59",
-      x: "121",
-      y: "38",
-      fill: "#EBEBEB",
-      rx: "5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#A7A7A7",
-      fillRule: "evenodd",
-      d: "M155.916 67.318c0-6.502 5.271-11.773 11.773-11.773s11.773 5.27 11.773 11.773c0 6.502-5.271 11.773-11.773 11.773s-11.773-5.27-11.773-11.773m16.935-1.187a1.358 1.358 0 0 1 0 2.375l-6.765 3.758a1.358 1.358 0 0 1-2.018-1.187V63.56a1.358 1.358 0 0 1 2.018-1.188z",
-      clipRule: "evenodd"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1076",
-      width: "165",
-      height: "128",
-      x: "0",
-      y: "0",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "1",
-        result: "effect1_dropShadow_1651_1076"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.37 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1076"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1076",
-        result: "shape"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter1_d_1651_1076",
-      width: "144",
-      height: "116",
-      x: "99",
-      y: "25",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "1",
-        result: "effect1_dropShadow_1651_1076"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.37 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1076"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1076",
-        result: "shape"
-      })]
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/OneClickCheckoutIcon.jsx":
-/*!*******************************************************!*\
-  !*** ./src/components/icons/OneClickCheckoutIcon.jsx ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "215",
-  height: "112",
-  fill: "none",
-  viewBox: "0 0 215 112",
-  className: "nfd-solutions-one-click-checkout-icon",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter0_d_1651_1336)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "M210 96.465c0 3.321-2.358 6.535-5.885 6.535H11.385C7.858 103 5 99.786 5 96.465V7.014C5 3.693 7.858 1 11.385 1h192.729C207.642 1 210 3.693 210 7.014z"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#EBEBEB",
-    d: "M19 20.571a5 5 0 0 1 5-5h56a5 5 0 0 1 5 5v62.857a5 5 0 0 1-5 5H24a5 5 0 0 1-5-5z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#DADADA",
-    d: "M95 17.653h96v3.122H95zm0 7.286h96v3.122H95zm0 7.285h65v3.123H95z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#666",
-    d: "M97.875 53.544V44.93h.551v8.614zm1.463-5.77a.85.85 0 0 0-.346-.633q-.307-.225-.832-.225-.356 0-.602.1a.85.85 0 0 0-.377.273.66.66 0 0 0-.127.397.57.57 0 0 0 .077.323.8.8 0 0 0 .239.239q.15.097.35.172.198.07.424.12l.619.149q.45.1.828.269.376.168.652.414t.428.578q.154.333.158.764-.004.633-.323 1.097-.317.46-.915.717-.596.252-1.437.252-.835 0-1.454-.255a2.13 2.13 0 0 1-.962-.758q-.344-.504-.36-1.248h1.41q.023.346.198.579.179.229.475.346.3.115.676.115.37 0 .643-.108a1 1 0 0 0 .427-.3.7.7 0 0 0 .151-.44.57.57 0 0 0-.138-.39 1.05 1.05 0 0 0-.397-.27 4 4 0 0 0-.636-.202l-.75-.188q-.871-.212-1.376-.663-.505-.45-.502-1.214a1.8 1.8 0 0 1 .334-1.094q.34-.468.932-.73a3.3 3.3 0 0 1 1.346-.263q.766 0 1.339.263.575.262.895.73t.329 1.084zm7.621-1.982v6.89h-1.457v-5.507h-.04l-1.578.989v-1.292l1.706-1.08zm4.155 6.985q-.714 0-1.272-.263a2.2 2.2 0 0 1-.882-.723 1.86 1.86 0 0 1-.339-1.057h1.413a.86.86 0 0 0 .336.65q.314.249.744.249.343 0 .606-.152.266-.154.413-.427.152-.276.152-.633 0-.363-.155-.639a1.1 1.1 0 0 0-.421-.43 1.23 1.23 0 0 0-.615-.159q-.303 0-.589.125a1.06 1.06 0 0 0-.441.34l-1.295-.232.326-3.634h4.213v1.19h-3.012l-.178 1.727h.04q.181-.256.549-.424.366-.168.821-.168.623 0 1.11.292.487.294.771.805.282.508.279 1.17.003.698-.323 1.239a2.3 2.3 0 0 1-.905.848q-.58.306-1.346.306m4.939-1.037-.037.37a5 5 0 0 1-.168.886 9 9 0 0 1-.256.804q-.13.36-.212.565h-.928l.138-.555q.087-.353.165-.794.077-.441.097-.899l.017-.377zm3.661-6.043q.532 0 1.023.179.495.178.882.568.39.39.615 1.037.23.642.232 1.578 0 .878-.198 1.568-.195.686-.562 1.167-.366.482-.885.734a2.6 2.6 0 0 1-1.157.249q-.69 0-1.218-.266a2.3 2.3 0 0 1-.852-.73 2.3 2.3 0 0 1-.387-1.043h1.437a.98.98 0 0 0 .353.585q.27.206.667.206.672 0 1.023-.586.35-.588.353-1.612h-.047a1.7 1.7 0 0 1-.417.522 2 2 0 0 1-.603.333 2.2 2.2 0 0 1-.716.118q-.61 0-1.087-.286a2.05 2.05 0 0 1-.754-.788 2.33 2.33 0 0 1-.276-1.144 2.34 2.34 0 0 1 .32-1.234 2.25 2.25 0 0 1 .902-.848q.582-.31 1.352-.307m.01 1.144a1.14 1.14 0 0 0-1.023.596q-.151.273-.148.609 0 .34.148.612.151.27.411.431.262.158.599.158a1.15 1.15 0 0 0 .841-.353 1.22 1.22 0 0 0 .343-.851 1.24 1.24 0 0 0-.155-.6 1.2 1.2 0 0 0-.417-.437 1.1 1.1 0 0 0-.599-.165m6.245-1.144q.532 0 1.023.179.495.178.882.568.39.39.615 1.037.229.642.233 1.578 0 .878-.199 1.568-.195.686-.562 1.167-.366.482-.885.734a2.6 2.6 0 0 1-1.157.249q-.69 0-1.218-.266a2.3 2.3 0 0 1-.852-.73 2.3 2.3 0 0 1-.387-1.043h1.437a.98.98 0 0 0 .353.585q.27.206.667.206.672 0 1.023-.586.35-.588.353-1.612h-.047a1.65 1.65 0 0 1-.417.522 2 2 0 0 1-.603.333 2.2 2.2 0 0 1-.716.118q-.61 0-1.087-.286a2.05 2.05 0 0 1-.754-.788 2.33 2.33 0 0 1-.276-1.144 2.34 2.34 0 0 1 .32-1.234 2.25 2.25 0 0 1 .902-.848q.582-.31 1.352-.307m.01 1.144a1.14 1.14 0 0 0-1.023.596q-.151.273-.148.609 0 .34.148.612.151.27.411.431.262.158.599.158a1.16 1.16 0 0 0 1.093-.74q.091-.218.091-.464a1.24 1.24 0 0 0-.155-.6 1.2 1.2 0 0 0-.417-.437 1.1 1.1 0 0 0-.599-.165"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    className: "nfd-svg-bounce",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#61A1B1",
-      d: "M196 83.224c0 .828-.316 1.623-.879 2.208a2.94 2.94 0 0 1-2.121.915H98a2.94 2.94 0 0 1-2.121-.915A3.2 3.2 0 0 1 95 83.224v-13.53c0-.828.316-1.623.879-2.208A2.94 2.94 0 0 1 98 66.57h95a2.94 2.94 0 0 1 2.121.915c.563.585.879 1.38.879 2.208z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "M114.123 73.131v5.818h-1.23V74.3h-.034l-1.333.835v-1.091l1.441-.912zm4.113 2.429v.96h-2.654v-.96zm6.187-.392h-1.244a1.2 1.2 0 0 0-.139-.429 1.1 1.1 0 0 0-.27-.324 1.2 1.2 0 0 0-.381-.204 1.5 1.5 0 0 0-.463-.071q-.451 0-.787.224a1.44 1.44 0 0 0-.52.648q-.184.423-.184 1.028 0 .622.184 1.046.188.423.523.639a1.4 1.4 0 0 0 .776.216q.246 0 .457-.066.213-.065.378-.19.165-.127.273-.31.11-.182.153-.414l1.244.005a2.2 2.2 0 0 1-.241.773 2.34 2.34 0 0 1-1.281 1.122q-.444.168-1.003.168-.779 0-1.392-.352a2.5 2.5 0 0 1-.966-1.02q-.353-.667-.353-1.617 0-.951.358-1.62.359-.666.972-1.016a2.7 2.7 0 0 1 1.381-.352q.505 0 .937.141.435.143.77.415.335.27.546.662t.272.898m2.07-2.037v5.818h-1.21v-5.818zm.969 5.818v-4.363h1.211v4.363zm.608-4.926a.66.66 0 0 1-.463-.179.58.58 0 0 1-.19-.435q0-.25.19-.428a.65.65 0 0 1 .463-.182q.27 0 .461.181.192.18.193.43a.58.58 0 0 1-.193.434.65.65 0 0 1-.461.18m3.544 5.011q-.67 0-1.154-.284a1.9 1.9 0 0 1-.738-.795 2.6 2.6 0 0 1-.256-1.17q0-.671.258-1.177.262-.508.742-.792.48-.288 1.142-.287.571 0 1 .207t.679.582.275.881h-1.142a.88.88 0 0 0-.255-.525.73.73 0 0 0-.537-.202.8.8 0 0 0-.492.153 1 1 0 0 0-.324.44 1.9 1.9 0 0 0-.116.702q0 .419.114.71a1 1 0 0 0 .326.447q.21.153.492.153a.8.8 0 0 0 .372-.085.7.7 0 0 0 .276-.247.95.95 0 0 0 .144-.395h1.142a1.8 1.8 0 0 1-.272.88 1.65 1.65 0 0 1-.668.591q-.426.213-1.008.213m3.82-1.34.003-1.452h.176l1.398-1.656h1.389l-1.878 2.193h-.287zm-1.097 1.255v-5.818h1.211v5.818zm2.728 0-1.284-1.9.806-.856 1.895 2.756zm8.936-3.781h-1.244a1.2 1.2 0 0 0-.139-.429 1.1 1.1 0 0 0-.27-.324 1.2 1.2 0 0 0-.381-.204 1.5 1.5 0 0 0-.463-.071q-.451 0-.787.224a1.44 1.44 0 0 0-.52.648q-.184.423-.184 1.028 0 .622.184 1.046.188.423.523.639t.776.216q.247 0 .457-.066.213-.065.378-.19.165-.127.273-.31.111-.182.153-.414l1.244.005a2.322 2.322 0 0 1-.755 1.435q-.321.29-.767.46-.444.168-1.003.168-.779 0-1.392-.352a2.5 2.5 0 0 1-.966-1.02q-.352-.667-.352-1.617 0-.951.358-1.62.357-.666.971-1.016a2.7 2.7 0 0 1 1.381-.352q.505 0 .937.141.435.143.77.415.336.27.546.662.213.392.272.898m2.07 1.258v2.523h-1.21v-5.818h1.176v2.225h.051q.148-.387.477-.606.33-.22.827-.221.454 0 .793.199.34.195.528.565.19.366.188.878v2.778h-1.211v-2.562q.003-.404-.204-.628-.205-.225-.574-.225a.9.9 0 0 0-.438.106.74.74 0 0 0-.295.306 1.04 1.04 0 0 0-.108.48m5.771 2.608q-.674 0-1.16-.272a1.87 1.87 0 0 1-.744-.779q-.261-.506-.261-1.196 0-.674.261-1.181.262-.51.736-.793.477-.285 1.119-.284.432 0 .804.139a1.79 1.79 0 0 1 1.091 1.105q.156.415.156.972v.332h-3.684v-.75h2.545a.94.94 0 0 0-.113-.463.8.8 0 0 0-.316-.315.9.9 0 0 0-.463-.117.93.93 0 0 0-.488.128.9.9 0 0 0-.33.338.95.95 0 0 0-.122.469v.713q0 .323.119.56a.88.88 0 0 0 .344.363q.222.128.525.128.202 0 .37-.057a.8.8 0 0 0 .287-.17.75.75 0 0 0 .182-.279l1.119.074a1.5 1.5 0 0 1-.35.705 1.75 1.75 0 0 1-.676.466q-.412.165-.951.164m4.764 0q-.67 0-1.154-.284a1.9 1.9 0 0 1-.738-.795 2.6 2.6 0 0 1-.256-1.17q0-.671.259-1.177.261-.508.741-.792.48-.288 1.142-.287.571 0 1 .207t.679.582.276.881h-1.142a.9.9 0 0 0-.256-.525.73.73 0 0 0-.537-.202.8.8 0 0 0-.491.153.97.97 0 0 0-.324.44 1.9 1.9 0 0 0-.117.702q0 .419.114.71a.98.98 0 0 0 .327.447.8.8 0 0 0 .491.153.8.8 0 0 0 .372-.085.7.7 0 0 0 .276-.247.95.95 0 0 0 .145-.395h1.142q-.029.5-.273.88a1.65 1.65 0 0 1-.668.591q-.426.213-1.008.213m3.82-1.34.003-1.452h.176l1.398-1.656h1.389l-1.878 2.193h-.287zm-1.096 1.255v-5.818h1.21v5.818zm2.727 0-1.284-1.9.807-.856 1.894 2.756zm3.721.085q-.663 0-1.145-.28a1.93 1.93 0 0 1-.742-.79 2.55 2.55 0 0 1-.261-1.18q0-.675.261-1.181.262-.51.742-.79.482-.285 1.145-.284.662 0 1.142.284.483.28.744.79.261.505.261 1.181 0 .67-.261 1.18-.261.505-.744.79-.48.28-1.142.28m.005-.937a.75.75 0 0 0 .503-.17 1.05 1.05 0 0 0 .304-.472q.105-.298.105-.68 0-.38-.105-.678a1.05 1.05 0 0 0-.304-.472.74.74 0 0 0-.503-.173.77.77 0 0 0-.511.173q-.204.174-.31.472a2.1 2.1 0 0 0-.102.679q0 .38.102.679.106.298.31.472.207.17.511.17m5.728-1.006v-2.505h1.21v4.363h-1.162v-.792h-.046a1.3 1.3 0 0 1-.491.616q-.341.233-.832.233a1.47 1.47 0 0 1-.77-.199 1.37 1.37 0 0 1-.52-.565 1.96 1.96 0 0 1-.188-.878v-2.778h1.211v2.562q.002.387.207.61.204.225.548.225a.9.9 0 0 0 .409-.1.8.8 0 0 0 .307-.3.9.9 0 0 0 .117-.492m4.499-2.505v.909h-2.628v-.91zm-2.031-1.046h1.21v4.068q0 .168.051.262a.28.28 0 0 0 .142.127.6.6 0 0 0 .216.037q.086 0 .17-.014l.131-.025.19.9q-.09.03-.255.066a2 2 0 0 1-.401.048 1.8 1.8 0 0 1-.767-.117 1.07 1.07 0 0 1-.508-.414q-.183-.282-.179-.71z"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#ACACAC",
-    strokeMiterlimit: "10",
-    strokeWidth: "1.5",
-    d: "M69.039 42.567a13.2 13.2 0 0 0-8.1-5.83L57.864 36a5.94 5.94 0 0 1-5.554 3.85c-2.54 0-4.703-1.599-5.555-3.85l-3.075.738a13.2 13.2 0 0 0-8.1 5.83L33 46.687l6.586 4.556 2.427-4.037h.106V65.12h20.386V47.209h.105l2.427 4.037 6.586-4.556-2.582-4.12z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("defs", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1336",
-      width: "215",
-      height: "112",
-      x: "0",
-      y: "0",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "1",
-        result: "effect1_dropShadow_1651_1336"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.37 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1336"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1336",
-        result: "shape"
-      })]
-    })
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/ProductAddonsIcon.jsx":
-/*!****************************************************!*\
-  !*** ./src/components/icons/ProductAddonsIcon.jsx ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "228",
-  height: "120",
-  fill: "none",
-  viewBox: "0 0 228 120",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter0_d_1651_1345)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "M223 105.728c0 2.679-2.358 5.272-5.885 5.272H11.385C7.858 111 5 108.407 5 105.728V5.852C5 3.172 7.858 1 11.385 1h205.729C220.642 1 223 3.172 223 5.852z"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#EBEBEB",
-    d: "M103.011 14.166h39.355v4.255h-39.355z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#B3B3B3",
-    d: "M112.583 36.37h28.187v2.127h-28.187zm49.992 0h28.187v2.127h-28.187z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#61A1B1",
-    strokeLinejoin: "round",
-    strokeMiterlimit: "10",
-    d: "M147.5 46.437c0 .587-.476 1.063-1.063 1.063h-41.874a1.06 1.06 0 0 1-1.063-1.063V27.563c0-.587.476-1.063 1.063-1.063h41.873c.587 0 1.063.477 1.063 1.063v18.874z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#E6E6E6",
-    strokeLinejoin: "round",
-    strokeMiterlimit: "10",
-    d: "M198.5 46.437c0 .587-.476 1.063-1.063 1.063h-41.873a1.06 1.06 0 0 1-1.063-1.063V27.563c0-.587.476-1.063 1.063-1.063h41.873c.587 0 1.063.477 1.063 1.063z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#61A1B1",
-    d: "M143.828 33.178a5.85 5.85 0 1 0 0-11.7 5.85 5.85 0 0 0 0 11.7"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#fff",
-    strokeMiterlimit: "10",
-    d: "m141.169 26.717 2.128 1.808 3.085-3.297"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#EBEBEB",
-    d: "M103.011 61.221h39.355v4.255h-39.355z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#B3B3B3",
-    d: "M116.838 75.979h28.187v2.127h-28.187z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#fff",
-    stroke: "#61A1B1",
-    strokeMiterlimit: "10",
-    d: "M107.177 81.433a4.344 4.344 0 1 0 0-8.688 4.344 4.344 0 0 0 0 8.688Z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#B3B3B3",
-    d: "M116.838 89.807h28.187v2.127h-28.187z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#fff",
-    stroke: "#E6E6E6",
-    strokeMiterlimit: "10",
-    d: "M107.177 95.26a4.344 4.344 0 1 0 0-8.688 4.344 4.344 0 0 0 0 8.688Z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#61A1B1",
-    d: "M107.177 79.837a2.748 2.748 0 1 0 0-5.496 2.748 2.748 0 0 0 0 5.496"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#EBEBEB",
-    d: "M19 20a5 5 0 0 1 5-5h60a5 5 0 0 1 5 5v71a5 5 0 0 1-5 5H24a5 5 0 0 1-5-5z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#B3B3B3",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeMiterlimit: "10",
-    strokeWidth: "1.5",
-    d: "M35.33 61.798V41.732a1.74 1.74 0 0 1 .505-1.225A1.72 1.72 0 0 1 37.05 40H70.95c.95 0 1.721.775 1.721 1.732v20.066m2.313 2.798-.616 1.938c-.135.426-.4.797-.76 1.06-.357.264-.79.406-1.233.406H35.626c-.444 0-.876-.142-1.234-.406a2.1 2.1 0 0 1-.76-1.06l-.615-1.938a.903.903 0 0 1 .881-1.082h15.255c.497 0 .899.405.899.907a.9.9 0 0 0 .9.903h6.096a.9.9 0 0 0 .898-.903c0-.502.403-.907.9-.907H74.1c.567 0 .993.522.883 1.082"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("defs", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1345",
-      width: "228",
-      height: "120",
-      x: "0",
-      y: "0",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "1",
-        result: "effect1_dropShadow_1651_1345"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.37 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1345"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1345",
-        result: "shape"
-      })]
-    })
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/SenseiIcon.jsx":
-/*!*********************************************!*\
-  !*** ./src/components/icons/SenseiIcon.jsx ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "246",
-  height: "127",
-  fill: "none",
-  viewBox: "0 0 246 127",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    opacity: "0.5",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-      filter: "url(#filter0_d_1651_1185)",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-        width: "196.982",
-        height: "75.421",
-        x: "5",
-        y: "6",
-        fill: "#fff",
-        rx: "5"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#B5B5B5",
-      d: "M69.347 22.298v8.048h-1.702v-6.433h-.047l-1.843 1.155V23.56l1.993-1.261zM61.925 22.298v8.048h-1.47l-3.5-5.065h-.06v5.065h-1.701v-8.048h1.493l3.474 5.062h.07v-5.062zM53.933 26.322q0 1.317-.499 2.24a3.46 3.46 0 0 1-1.352 1.411q-.852.483-1.918.483-1.073 0-1.925-.487a3.47 3.47 0 0 1-1.348-1.41q-.495-.924-.495-2.237 0-1.316.495-2.24t1.348-1.407q.852-.487 1.925-.487 1.065 0 1.918.487a3.43 3.43 0 0 1 1.352 1.407q.5.924.5 2.24m-1.725 0q0-.853-.255-1.438-.252-.586-.712-.888a1.9 1.9 0 0 0-1.077-.303q-.616 0-1.076.303-.46.302-.715.888-.252.586-.252 1.438 0 .853.252 1.439.255.585.715.888.46.302 1.076.302t1.077-.302.712-.889q.255-.586.255-1.438M43.652 24.613a1 1 0 0 0-.405-.74q-.358-.262-.97-.262-.418 0-.704.117a1 1 0 0 0-.44.319q-.15.204-.15.463a.66.66 0 0 0 .09.378q.103.16.28.279.177.114.408.2.232.082.496.142l.723.173q.526.117.966.314t.763.483q.322.288.499.676.18.39.185.892-.004.74-.378 1.281-.369.539-1.069.838-.695.294-1.678.294-.975 0-1.697-.298-.72-.3-1.124-.885-.402-.59-.42-1.458h1.646q.027.406.232.676.208.267.554.405.35.135.79.134.432 0 .75-.126.322-.125.5-.35a.8.8 0 0 0 .176-.515.67.67 0 0 0-.16-.455 1.2 1.2 0 0 0-.465-.315 5 5 0 0 0-.742-.236l-.877-.22q-1.017-.247-1.607-.774-.59-.526-.585-1.418a2.1 2.1 0 0 1 .389-1.278 2.6 2.6 0 0 1 1.088-.853q.691-.306 1.572-.306.896 0 1.564.306.672.308 1.046.853.373.546.385 1.266zM36.4 24.613a1 1 0 0 0-.405-.74q-.357-.262-.97-.262-.416 0-.704.117a1 1 0 0 0-.44.319q-.15.204-.15.463a.66.66 0 0 0 .091.378q.102.16.28.279.175.114.408.2.232.082.495.142l.723.173a5 5 0 0 1 .967.314q.44.197.762.483.323.288.5.676.18.39.184.892-.003.74-.377 1.281-.37.539-1.07.838-.694.294-1.677.294-.975 0-1.698-.298-.72-.3-1.124-.885-.4-.59-.42-1.458h1.646q.028.406.232.676.21.267.554.405.35.135.79.134.433 0 .75-.126.324-.125.5-.35a.8.8 0 0 0 .177-.515.67.67 0 0 0-.161-.455 1.2 1.2 0 0 0-.464-.315 5 5 0 0 0-.743-.236l-.876-.22q-1.019-.247-1.608-.774-.59-.526-.585-1.418a2.1 2.1 0 0 1 .389-1.278 2.6 2.6 0 0 1 1.089-.853q.691-.306 1.571-.306.897 0 1.565.306.672.308 1.045.853.373.546.385 1.266zM25.258 30.346v-8.048h5.423V23.7H26.96v1.918h3.442v1.402H26.96v1.922h3.737v1.403zM18.98 30.346v-8.048h1.7v6.645h3.451v1.403z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#EBEBEB",
-      d: "M18.31 37.056h69.21v1.775H18.31zM18.31 42.379h69.21v1.775H18.31zM18.31 47.704h69.21v1.775H18.31zM18.31 53.027h69.21v1.775H18.31zM18.31 58.351h69.21v1.775H18.31z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "85.181",
-      height: "54.126",
-      x: "103",
-      y: "16",
-      fill: "#EBEBEB",
-      rx: "5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "silver",
-      fillRule: "evenodd",
-      d: "M134.547 42.269c0-6.31 5.115-11.424 11.425-11.424 6.309 0 11.424 5.115 11.424 11.424 0 6.31-5.115 11.424-11.424 11.424-6.31 0-11.425-5.115-11.425-11.424m16.432-1.152a1.318 1.318 0 0 1 0 2.304l-6.565 3.647a1.318 1.318 0 0 1-1.958-1.152v-7.294c0-1.005 1.08-1.64 1.958-1.153z",
-      clipRule: "evenodd"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter1_d_1651_1185)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "216",
-      height: "86",
-      x: "25",
-      y: "37",
-      fill: "#fff",
-      rx: "5"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#B5B5B5",
-    d: "M90.554 63.257q-.834 0-1.486-.307a2.6 2.6 0 0 1-1.03-.845 2.17 2.17 0 0 1-.396-1.234h1.65q.028.468.393.758.365.291.869.291.4 0 .707-.177.31-.18.483-.499a1.5 1.5 0 0 0 .177-.738q0-.424-.18-.747a1.3 1.3 0 0 0-.492-.503q-.315-.18-.719-.185-.354 0-.688.146-.33.145-.514.397l-1.514-.272.382-4.244h4.92v1.391h-3.517l-.209 2.016h.047q.213-.298.641-.495.428-.196.959-.196.727 0 1.297.342.57.34.9.939.33.593.326 1.367a2.7 2.7 0 0 1-.377 1.447 2.66 2.66 0 0 1-1.058.99q-.675.357-1.571.358M83.694 55.098v8.049h-1.47l-3.501-5.066h-.06v5.066h-1.7v-8.049h1.493l3.474 5.062H82v-5.062zM75.702 59.123q0 1.316-.5 2.24a3.46 3.46 0 0 1-1.351 1.41q-.853.483-1.918.484-1.073 0-1.926-.488a3.47 3.47 0 0 1-1.348-1.41q-.495-.924-.495-2.236 0-1.317.495-2.24.496-.924 1.348-1.407.853-.488 1.926-.488 1.065 0 1.918.488a3.43 3.43 0 0 1 1.352 1.407q.498.923.499 2.24m-1.725 0q0-.853-.256-1.439-.252-.585-.711-.888a1.9 1.9 0 0 0-1.077-.303q-.616 0-1.077.303t-.715.888q-.252.585-.252 1.439 0 .852.252 1.438.256.585.715.888.46.303 1.077.303t1.077-.303.711-.888q.255-.585.255-1.438M65.42 57.413a1 1 0 0 0-.404-.739q-.358-.263-.971-.263-.416 0-.704.118a1 1 0 0 0-.44.318q-.15.203-.15.464a.66.66 0 0 0 .091.377q.102.16.28.28.175.113.408.2.233.082.495.141l.723.173a5 5 0 0 1 .967.314q.44.196.762.484.323.285.5.676.18.388.184.892-.003.739-.377 1.28-.37.54-1.069.838-.696.294-1.678.295-.975 0-1.698-.3-.72-.297-1.124-.883-.4-.59-.42-1.458h1.646q.028.405.232.676.21.267.554.404a2.2 2.2 0 0 0 .79.134q.433 0 .75-.126.323-.126.5-.35a.8.8 0 0 0 .177-.514.67.67 0 0 0-.161-.456 1.2 1.2 0 0 0-.464-.314 5 5 0 0 0-.743-.236l-.876-.22q-1.018-.248-1.607-.775-.59-.526-.586-1.418a2.1 2.1 0 0 1 .39-1.277 2.6 2.6 0 0 1 1.088-.853q.69-.307 1.572-.307.895 0 1.564.307.672.306 1.045.853t.385 1.265zM58.169 57.413a1 1 0 0 0-.405-.739q-.358-.263-.97-.263-.417 0-.704.118a1 1 0 0 0-.44.318q-.15.203-.15.464a.66.66 0 0 0 .09.377q.103.16.28.28.177.113.408.2.232.082.496.141l.723.173q.526.117.966.314.44.196.763.484.322.285.499.676.18.388.185.892-.004.739-.378 1.28-.369.54-1.069.838-.695.294-1.678.295-.975 0-1.697-.3-.72-.297-1.124-.883-.401-.59-.42-1.458h1.646q.028.405.232.676.208.267.554.404a2.2 2.2 0 0 0 .79.134q.432 0 .75-.126.323-.126.5-.35a.8.8 0 0 0 .176-.514.67.67 0 0 0-.16-.456 1.2 1.2 0 0 0-.465-.314 5 5 0 0 0-.742-.236l-.877-.22q-1.017-.248-1.607-.775-.59-.526-.586-1.418a2.1 2.1 0 0 1 .39-1.277 2.6 2.6 0 0 1 1.088-.853q.691-.307 1.572-.307.896 0 1.564.307.672.306 1.045.853.374.546.386 1.265zM47.027 63.147v-8.049h5.423v1.403h-3.722v1.918h3.443v1.403h-3.443v1.921h3.737v1.404zM40.748 63.147v-8.049h1.701v6.645h3.45v1.404z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#EBEBEB",
-    d: "M40.178 72.418h78.93v2.024h-78.93zM40.178 78.489h78.93v2.024h-78.93zM40.178 84.561h78.93v2.024h-78.93zM40.178 90.632h78.93v2.024h-78.93zM40.178 96.704h78.93v2.024h-78.93z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-    width: "97.145",
-    height: "61.728",
-    x: "130",
-    y: "49",
-    fill: "#EBEBEB",
-    rx: "5"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#6A85CE",
-    fillRule: "evenodd",
-    d: "M167.533 80.338c0-7.195 5.833-13.028 13.029-13.028s13.029 5.833 13.029 13.028-5.834 13.029-13.029 13.029-13.029-5.833-13.029-13.029m18.741-1.314a1.503 1.503 0 0 1 0 2.628l-7.486 4.16a1.504 1.504 0 0 1-2.234-1.314v-8.32a1.504 1.504 0 0 1 2.234-1.313z",
-    clipRule: "evenodd"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1185",
-      width: "206.982",
-      height: "85.421",
-      x: "0",
-      y: "0",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "5",
-        result: "effect1_dropShadow_1651_1185"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "-1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.13 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1185"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1185",
-        result: "shape"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter1_d_1651_1185",
-      width: "226",
-      height: "96",
-      x: "20",
-      y: "31",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "5",
-        result: "effect1_dropShadow_1651_1185"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "-1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.13 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1185"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1185",
-        result: "shape"
-      })]
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/SocialLoginIcon.jsx":
-/*!**************************************************!*\
-  !*** ./src/components/icons/SocialLoginIcon.jsx ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "232",
-  height: "120",
-  fill: "none",
-  viewBox: "0 0 232 120",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter0_d_1651_1098)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "M5 7.4C5 3.864 7.24 1 10.003 1h211.994C224.76 1 227 3.865 227 7.4V102.6c0 3.534-2.24 6.399-5.003 6.399H10.003C7.24 109 5 106.135 5 102.601z"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#B5B5B5",
-    fillRule: "evenodd",
-    d: "M196.5 26.19h-161c-5.247 0-9.5 5.064-9.5 11.31s4.253 11.31 9.5 11.31h161c5.247 0 9.5-5.064 9.5-11.31s-4.253-11.31-9.5-11.31M35.5 25C29.701 25 25 30.596 25 37.5S29.701 50 35.5 50h161c5.799 0 10.5-5.596 10.5-12.5S202.299 25 196.5 25z",
-    clipRule: "evenodd"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#B5B5B5",
-    fillRule: "evenodd",
-    d: "M196.5 26.19h-161c-5.247 0-9.5 5.064-9.5 11.31s4.253 11.31 9.5 11.31h161c5.247 0 9.5-5.064 9.5-11.31s-4.253-11.31-9.5-11.31M35.5 25C29.701 25 25 30.596 25 37.5S29.701 50 35.5 50h161c5.799 0 10.5-5.596 10.5-12.5S202.299 25 196.5 25z",
-    clipRule: "evenodd"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#B5B5B5",
-    fillRule: "evenodd",
-    d: "M196.5 26.19h-161c-5.247 0-9.5 5.064-9.5 11.31s4.253 11.31 9.5 11.31h161c5.247 0 9.5-5.064 9.5-11.31s-4.253-11.31-9.5-11.31M35.5 25C29.701 25 25 30.596 25 37.5S29.701 50 35.5 50h161c5.799 0 10.5-5.596 10.5-12.5S202.299 25 196.5 25z",
-    clipRule: "evenodd"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#3575D3",
-    d: "M25 71.5C25 64.596 29.701 59 35.5 59h161c5.799 0 10.5 5.596 10.5 12.5S202.299 84 196.5 84h-161C29.701 84 25 78.404 25 71.5"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#fff",
-    d: "m41.524 71.887.37-2.25h-2.15v-.796c0-1.189.417-1.646 1.496-1.646.335 0 .605.01.76.028v-2.04c-.294-.092-1.014-.183-1.43-.183-2.2 0-3.213 1.162-3.213 3.668v.97H36v2.25h1.357v4.895a5.9 5.9 0 0 0 2.387.163v-5.059z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    clipPath: "url(#clip0_1651_1098)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#A3A3A3",
-      d: "m44.703 36.075-.06-.257h-5.584v2.364h3.336c-.346 1.644-1.954 2.51-3.266 2.51-.956 0-1.962-.402-2.629-1.048a3.75 3.75 0 0 1-1.12-2.648c0-.996.448-1.991 1.099-2.646.65-.655 1.634-1.022 2.611-1.022 1.12 0 1.922.595 2.222.866l1.679-1.67C42.498 32.09 41.145 31 39.036 31c-1.627 0-3.187.623-4.328 1.76C33.583 33.88 33 35.498 33 37s.551 3.04 1.642 4.168C35.807 42.37 37.458 43 39.157 43c1.547 0 3.012-.606 4.057-1.705 1.027-1.082 1.558-2.58 1.558-4.15a7 7 0 0 0-.07-1.07"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    clipPath: "url(#clip1_1651_1098)",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#2B2B2B",
-      fillRule: "evenodd",
-      d: "M175.882 89.45a.67.67 0 0 1-.303.905l-4.644 2.311a.69.69 0 0 1-.92-.297.67.67 0 0 1 .302-.906l4.645-2.311a.69.69 0 0 1 .92.297M201.688 76.596a.67.67 0 0 1-.302.906l-4.645 2.314a.69.69 0 0 1-.92-.298.67.67 0 0 1 .302-.906l4.645-2.314a.69.69 0 0 1 .92.298M191.335 67.937c.36.116.556.496.439.85l-1.608 4.854a.686.686 0 0 1-.863.432.67.67 0 0 1-.438-.85l1.607-4.854a.687.687 0 0 1 .863-.432M177.767 68.974a.69.69 0 0 1 .922.291l2.372 4.55a.67.67 0 0 1-.296.908.69.69 0 0 1-.922-.292l-2.372-4.55a.67.67 0 0 1 .296-.907M168.94 79.096a.687.687 0 0 1 .862-.434l4.961 1.579c.36.115.557.495.441.849a.687.687 0 0 1-.862.434l-4.961-1.579a.67.67 0 0 1-.441-.849",
-      clipRule: "evenodd"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "m183.641 80.238 29.768 20.533-12.74.503 6.937 13.334-9.644 4.813-6.94-13.334-7.907 9.794z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#2B2B2B",
-      fillRule: "evenodd",
-      d: "M183.329 79.637a.69.69 0 0 1 .704.048l29.769 20.534a.67.67 0 0 1 .264.742.68.68 0 0 1-.629.484l-11.671.461 6.45 12.395c.083.16.098.345.041.516a.68.68 0 0 1-.341.393l-9.644 4.813a.69.69 0 0 1-.919-.294l-6.456-12.404-7.246 8.976a.69.69 0 0 1-.766.215.675.675 0 0 1-.455-.645l.526-35.643a.67.67 0 0 1 .373-.59m.978 1.883-.478 32.394 6.657-8.246a.69.69 0 0 1 1.145.112l6.63 12.737 8.422-4.204-6.623-12.731a.67.67 0 0 1 .018-.648.69.69 0 0 1 .563-.333l10.714-.424z",
-      clipRule: "evenodd"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#7F7F7F",
-    d: "M68.727 41v-6.545h1.582v5.26h2.723V41zm11.047-3.273q0 1.08-.416 1.832a2.83 2.83 0 0 1-1.125 1.14q-.705.39-1.585.39a3.2 3.2 0 0 1-1.588-.393 2.86 2.86 0 0 1-1.122-1.14q-.412-.751-.412-1.829 0-1.08.412-1.831.415-.75 1.122-1.141.706-.39 1.588-.39.88 0 1.585.39.71.39 1.125 1.141.416.75.416 1.831m-1.617 0q0-.639-.182-1.08a1.4 1.4 0 0 0-.518-.668 1.4 1.4 0 0 0-.809-.227 1.4 1.4 0 0 0-.808.227q-.34.227-.521.668-.18.441-.18 1.08 0 .64.18 1.08.182.442.52.668.339.228.81.227.471 0 .808-.227.338-.225.518-.668.182-.441.182-1.08m6.836-1.134a1.2 1.2 0 0 0-.16-.355 1 1 0 0 0-.259-.265 1.1 1.1 0 0 0-.351-.163 1.6 1.6 0 0 0-.435-.058q-.475 0-.825.23-.344.23-.533.671-.189.438-.189 1.065 0 .63.182 1.073.183.445.528.678t.837.233q.435 0 .735-.14.304-.144.46-.406a1.2 1.2 0 0 0 .157-.617l.294.035h-1.592V37.42h2.823v.867q0 .878-.374 1.505a2.5 2.5 0 0 1-1.023.962q-.649.336-1.493.336-.936 0-1.646-.406a2.8 2.8 0 0 1-1.106-1.157q-.396-.755-.396-1.79 0-.805.24-1.429.24-.626.668-1.06.432-.435.997-.66.57-.223 1.224-.223.57 0 1.058.163.492.163.87.46.38.297.616.707.237.408.294.898zm4.186-2.139V41h-1.582v-6.545zm6.564 0V41H94.4l-2.604-3.778h-.042V41h-1.582v-6.545h1.362l2.576 3.77h.054v-3.77zM100.24 41l-1.904-6.545h1.748l.987 4.289h.055l1.128-4.29h1.425l1.129 4.3h.054l.991-4.3h1.745L105.696 41h-1.524l-1.18-3.97h-.051L101.762 41zm9.593-6.545V41h-1.582v-6.545zm.779 1.284v-1.284h5.533v1.284h-1.985V41h-1.56v-5.26zM116.917 41v-6.545h1.582v2.627h2.579v-2.627h1.579V41h-1.579v-2.63h-2.579V41zm12.962-4.407a1.2 1.2 0 0 0-.16-.355 1 1 0 0 0-.259-.265 1.1 1.1 0 0 0-.352-.163 1.6 1.6 0 0 0-.434-.058q-.477 0-.825.23-.345.23-.533.671-.189.438-.189 1.065 0 .63.182 1.073.183.445.527.678.346.233.838.233.435 0 .735-.14.303-.144.46-.406t.157-.617l.294.035h-1.592V37.42h2.822v.867q0 .878-.374 1.505a2.5 2.5 0 0 1-1.022.962q-.649.336-1.493.336-.936 0-1.646-.406a2.8 2.8 0 0 1-1.106-1.157q-.396-.755-.396-1.79 0-.805.24-1.429.239-.626.668-1.06.431-.435.997-.66.569-.223 1.224-.223.569 0 1.058.163.492.163.869.46.38.297.617.707.237.408.294.898zm8.782 1.134q0 1.08-.416 1.832a2.83 2.83 0 0 1-1.125 1.14q-.706.39-1.585.39a3.2 3.2 0 0 1-1.589-.393 2.87 2.87 0 0 1-1.121-1.14q-.413-.751-.413-1.829 0-1.08.413-1.831a2.84 2.84 0 0 1 1.121-1.141 3.23 3.23 0 0 1 1.589-.39q.879 0 1.585.39.71.39 1.125 1.141.416.75.416 1.831m-1.618 0q0-.639-.182-1.08a1.4 1.4 0 0 0-.518-.668 1.4 1.4 0 0 0-.808-.227q-.47 0-.809.227a1.44 1.44 0 0 0-.521.668q-.179.441-.179 1.08 0 .64.179 1.08.183.442.521.668.34.228.809.227.473 0 .808-.227.34-.225.518-.668.183-.441.182-1.08m8.719 0q0 1.08-.415 1.832a2.83 2.83 0 0 1-1.125 1.14q-.707.39-1.586.39a3.2 3.2 0 0 1-1.588-.393 2.86 2.86 0 0 1-1.122-1.14q-.412-.751-.412-1.829 0-1.08.412-1.831.416-.75 1.122-1.141.706-.39 1.588-.39.88 0 1.586.39.71.39 1.125 1.141.415.75.415 1.831m-1.617 0q0-.639-.182-1.08a1.4 1.4 0 0 0-.518-.668 1.4 1.4 0 0 0-.809-.227q-.47 0-.808.227-.34.227-.521.668-.179.441-.179 1.08 0 .64.179 1.08.182.442.521.668.339.228.808.227.474 0 .809-.227a1.4 1.4 0 0 0 .518-.668q.182-.441.182-1.08m6.836-1.134a1.1 1.1 0 0 0-.16-.355 1 1 0 0 0-.258-.265 1.1 1.1 0 0 0-.352-.163 1.6 1.6 0 0 0-.435-.058 1.46 1.46 0 0 0-.824.23q-.345.23-.534.671-.189.438-.189 1.065 0 .63.183 1.073.182.445.527.678t.837.233q.435 0 .735-.14.304-.144.461-.406.156-.262.156-.617l.294.035h-1.591V37.42h2.822v.867q0 .878-.374 1.505a2.5 2.5 0 0 1-1.023.962q-.649.336-1.492.336-.937 0-1.646-.406a2.8 2.8 0 0 1-1.106-1.157q-.396-.755-.396-1.79 0-.805.239-1.429.24-.626.668-1.06.432-.435.997-.66.57-.223 1.224-.223.57 0 1.058.163.492.163.87.46.38.297.616.707.237.408.294.898zM153.585 41v-6.545h1.582v5.26h2.723V41zm5.124 0v-6.545h4.564v1.284h-2.982v1.343h2.749v1.288h-2.749v1.345h2.982V41z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#fff",
-    d: "M68.727 74v-6.546h1.582v5.261h2.723V74zm11.047-3.273q0 1.08-.416 1.832a2.83 2.83 0 0 1-1.125 1.14q-.705.39-1.585.39a3.2 3.2 0 0 1-1.588-.393 2.86 2.86 0 0 1-1.122-1.14q-.412-.751-.412-1.829 0-1.08.412-1.831.415-.75 1.122-1.141.706-.39 1.588-.39.88 0 1.585.39.71.39 1.125 1.141.416.75.416 1.831m-1.617 0q0-.639-.182-1.08a1.4 1.4 0 0 0-.518-.668 1.4 1.4 0 0 0-.809-.227 1.4 1.4 0 0 0-.808.227q-.34.227-.521.668-.18.441-.18 1.08t.18 1.08q.182.442.52.668.339.228.81.227.471 0 .808-.227.338-.226.518-.667.182-.442.182-1.08m6.836-1.134a1.2 1.2 0 0 0-.16-.355 1 1 0 0 0-.259-.265 1.1 1.1 0 0 0-.351-.163 1.6 1.6 0 0 0-.435-.058q-.475 0-.825.23-.344.23-.533.671-.189.438-.189 1.065 0 .63.182 1.073.183.445.528.678t.837.233q.435 0 .735-.14.304-.144.46-.406a1.2 1.2 0 0 0 .157-.617l.294.035h-1.592v-1.153h2.823v.866q0 .878-.374 1.505a2.5 2.5 0 0 1-1.023.962q-.649.335-1.493.335-.936 0-1.646-.405a2.8 2.8 0 0 1-1.106-1.157q-.396-.755-.396-1.79 0-.805.24-1.429.24-.626.668-1.06.432-.435.997-.66.57-.222 1.224-.223.57 0 1.058.163.492.163.87.46.38.297.616.707.237.409.294.898zm4.186-2.139V74h-1.582v-6.546zm6.564 0V74H94.4l-2.604-3.778h-.042V74h-1.582v-6.546h1.362l2.576 3.772h.054v-3.772zM100.24 74l-1.904-6.546h1.748l.987 4.29h.055l1.128-4.29h1.425l1.129 4.3h.054l.991-4.3h1.745L105.696 74h-1.524l-1.18-3.97h-.051L101.762 74zm9.593-6.546V74h-1.582v-6.546zm.779 1.285v-1.285h5.533v1.285h-1.985V74h-1.56v-5.26zM116.917 74v-6.546h1.582v2.628h2.579v-2.627h1.579V74h-1.579v-2.63h-2.579V74zm12.962-4.407a1.2 1.2 0 0 0-.16-.355 1 1 0 0 0-.259-.265 1.1 1.1 0 0 0-.352-.163 1.6 1.6 0 0 0-.434-.058q-.477 0-.825.23-.345.23-.533.671-.189.438-.189 1.065 0 .63.182 1.073.183.445.527.678.346.234.838.233.435 0 .735-.14.303-.144.46-.406t.157-.617l.294.035h-1.592v-1.153h2.822v.866q0 .878-.374 1.505a2.5 2.5 0 0 1-1.022.962q-.649.335-1.493.335-.936 0-1.646-.405a2.8 2.8 0 0 1-1.106-1.157q-.396-.755-.396-1.79 0-.805.24-1.429.239-.626.668-1.06.431-.435.997-.66.569-.222 1.224-.223.569 0 1.058.163.492.163.869.46.38.297.617.707.237.409.294.898zm8.782 1.134q0 1.08-.416 1.832a2.83 2.83 0 0 1-1.125 1.14q-.706.39-1.585.39a3.2 3.2 0 0 1-1.589-.393 2.87 2.87 0 0 1-1.121-1.14q-.413-.751-.413-1.829 0-1.08.413-1.831a2.84 2.84 0 0 1 1.121-1.141 3.23 3.23 0 0 1 1.589-.39q.879 0 1.585.39.71.39 1.125 1.141.416.75.416 1.831m-1.618 0q0-.639-.182-1.08a1.4 1.4 0 0 0-.518-.668 1.4 1.4 0 0 0-.808-.227q-.47 0-.809.227a1.44 1.44 0 0 0-.521.668q-.179.441-.179 1.08t.179 1.08q.183.442.521.668.34.228.809.227.473 0 .808-.227.34-.226.518-.667.183-.442.182-1.08m8.719 0q0 1.08-.415 1.832a2.83 2.83 0 0 1-1.125 1.14q-.707.39-1.586.39a3.2 3.2 0 0 1-1.588-.393 2.86 2.86 0 0 1-1.122-1.14q-.412-.751-.412-1.829 0-1.08.412-1.831.416-.75 1.122-1.141.706-.39 1.588-.39.88 0 1.586.39.71.39 1.125 1.141.415.75.415 1.831m-1.617 0q0-.639-.182-1.08a1.4 1.4 0 0 0-.518-.668 1.4 1.4 0 0 0-.809-.227q-.47 0-.808.227-.34.227-.521.668-.179.441-.179 1.08t.179 1.08q.182.442.521.668.339.228.808.227.474 0 .809-.227a1.4 1.4 0 0 0 .518-.667q.182-.442.182-1.08m6.836-1.134a1.1 1.1 0 0 0-.16-.355 1 1 0 0 0-.258-.265 1.1 1.1 0 0 0-.352-.163 1.6 1.6 0 0 0-.435-.058 1.46 1.46 0 0 0-.824.23q-.345.23-.534.671-.189.438-.189 1.065 0 .63.183 1.073.182.445.527.678t.837.233q.435 0 .735-.14.304-.144.461-.406.156-.262.156-.617l.294.035h-1.591v-1.153h2.822v.866q0 .878-.374 1.505a2.5 2.5 0 0 1-1.023.962q-.649.335-1.492.335-.937 0-1.646-.405a2.8 2.8 0 0 1-1.106-1.157q-.396-.755-.396-1.79 0-.805.239-1.429.24-.626.668-1.06.432-.435.997-.66.57-.222 1.224-.223.57 0 1.058.163.492.163.87.46.38.297.616.707.237.409.294.898zM153.585 74v-6.546h1.582v5.261h2.723V74zm5.124 0v-6.546h4.564v1.285h-2.982v1.343h2.749v1.288h-2.749v1.345h2.982V74z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("clipPath", {
-      id: "clip0_1651_1098",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        fill: "#fff",
-        d: "M33 31h12v12H33z"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("clipPath", {
-      id: "clip1_1651_1098",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        fill: "#fff",
-        d: "M169 68h45v52h-45z"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1098",
-      width: "232",
-      height: "118",
-      x: "0",
-      y: "0",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "1",
-        result: "effect1_dropShadow_1651_1098"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.37 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1098"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1098",
-        result: "shape"
-      })]
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/SubscriptionIcon.jsx":
-/*!***************************************************!*\
-  !*** ./src/components/icons/SubscriptionIcon.jsx ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "257",
-  height: "141",
-  fill: "none",
-  style: {
-    paddingTop: '3%'
-  },
-  viewBox: "0 0 257 141",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    className: "nfd-svg-rotate--5deg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-      filter: "url(#filter0_d_1651_1025)",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-        width: "217",
-        height: "105",
-        x: "5",
-        y: "1",
-        fill: "#fff",
-        rx: "5"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "94",
-      height: "20",
-      x: "107.5",
-      y: "63.5",
-      fill: "#353535",
-      stroke: "#272727",
-      rx: "4.5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "M132.12 71.337a.81.81 0 0 0-.33-.6q-.29-.216-.789-.215-.338 0-.572.096a.8.8 0 0 0-.358.259.62.62 0 0 0-.121.377q-.007.176.073.307a.8.8 0 0 0 .227.227q.144.092.332.163.189.067.403.115l.588.14q.429.096.786.256.359.16.62.393.262.234.406.55.147.316.151.725a1.8 1.8 0 0 1-.307 1.042q-.3.439-.87.681-.566.24-1.364.24-.793 0-1.381-.243a2 2 0 0 1-.914-.72q-.325-.478-.342-1.185h1.339q.023.33.189.55.17.217.45.329.285.109.643.109.351 0 .61-.103a.94.94 0 0 0 .406-.284.66.66 0 0 0 .144-.419.55.55 0 0 0-.131-.37 1 1 0 0 0-.377-.256 4 4 0 0 0-.604-.192l-.713-.179q-.828-.201-1.307-.63-.48-.428-.476-1.153a1.7 1.7 0 0 1 .316-1.04q.323-.443.885-.693t1.279-.249q.728 0 1.272.25.546.249.85.693.303.445.313 1.029zm6.389-1.883h1.384v4.251q0 .716-.342 1.253a2.3 2.3 0 0 1-.949.838q-.61.297-1.422.297-.816 0-1.426-.297-.61-.3-.949-.838-.339-.537-.339-1.253v-4.25h1.384v4.132q0 .374.163.665.167.29.467.457.3.165.7.166.403 0 .7-.166.3-.166.463-.457.166-.291.166-.665zM141.032 76v-6.546h2.621q.722 0 1.204.215.483.213.726.594.243.377.243.87 0 .383-.154.674-.153.288-.421.473-.266.182-.608.259v.064q.375.015.7.21.33.195.534.547.204.349.204.831 0 .52-.258.93-.256.406-.758.642-.502.237-1.237.237zm1.384-1.131h1.128q.579 0 .844-.22a.74.74 0 0 0 .265-.595.9.9 0 0 0-.131-.48.9.9 0 0 0-.374-.326 1.3 1.3 0 0 0-.572-.118h-1.16zm0-2.675h1.026q.284 0 .505-.1a.84.84 0 0 0 .351-.287.75.75 0 0 0 .131-.444.72.72 0 0 0-.252-.573q-.25-.217-.71-.217h-1.051zm8.117-.857a.81.81 0 0 0-.329-.6q-.29-.216-.79-.215-.339 0-.572.096a.8.8 0 0 0-.358.259.62.62 0 0 0-.121.377q-.007.176.073.307a.8.8 0 0 0 .227.227q.144.092.332.163.189.067.403.115l.588.14q.429.096.786.256.359.16.62.393.263.234.406.55.147.316.151.725a1.8 1.8 0 0 1-.307 1.042q-.3.439-.87.681-.566.24-1.364.24-.793 0-1.381-.243a2 2 0 0 1-.914-.72q-.325-.478-.342-1.185h1.339q.023.33.189.55.17.217.45.329.285.109.643.109.351 0 .61-.103a.94.94 0 0 0 .406-.284.66.66 0 0 0 .144-.419.55.55 0 0 0-.131-.37 1 1 0 0 0-.377-.256 4 4 0 0 0-.604-.192l-.713-.179q-.828-.201-1.307-.63-.48-.428-.476-1.153a1.7 1.7 0 0 1 .316-1.04q.322-.443.885-.693t1.279-.249q.729 0 1.272.25.546.249.85.693.303.445.313 1.029zm8.122.41h-1.4a1.4 1.4 0 0 0-.157-.484 1.2 1.2 0 0 0-.303-.364 1.4 1.4 0 0 0-.429-.23 1.6 1.6 0 0 0-.521-.08q-.508 0-.885.253a1.6 1.6 0 0 0-.585.728q-.208.476-.208 1.157 0 .7.208 1.176.212.477.588.72.378.242.873.242.278 0 .514-.073.24-.074.425-.214.186-.144.307-.349a1.4 1.4 0 0 0 .173-.466l1.4.006q-.055.45-.272.87a2.63 2.63 0 0 1-1.441 1.262 3.2 3.2 0 0 1-1.129.189 3.1 3.1 0 0 1-1.566-.397 2.8 2.8 0 0 1-1.086-1.147q-.397-.75-.397-1.819 0-1.07.403-1.822a2.8 2.8 0 0 1 1.093-1.144q.69-.396 1.553-.396.57 0 1.055.16.49.16.866.466.377.304.614.745.24.44.307 1.01m.992 4.253v-6.546h2.582q.742 0 1.266.266.528.261.802.745.279.48.278 1.128 0 .651-.281 1.121a1.8 1.8 0 0 1-.815.716q-.53.25-1.285.25h-1.729v-1.113h1.506q.396 0 .658-.108a.78.78 0 0 0 .39-.326q.13-.218.131-.54 0-.326-.131-.55a.8.8 0 0 0-.393-.339 1.6 1.6 0 0 0-.662-.118h-.933V76zm3.535-2.979L164.809 76h-1.528l-1.592-2.979zm3.755-3.567V76h-1.384v-6.546zM168.076 76v-6.546h2.62q.723 0 1.205.215.483.213.726.594.243.377.243.87 0 .383-.154.674-.153.288-.422.473a1.7 1.7 0 0 1-.607.259v.064q.375.015.7.21.33.195.534.547.204.349.204.831 0 .52-.258.93-.256.406-.758.642-.501.237-1.237.237zm1.384-1.131h1.128q.578 0 .844-.22a.74.74 0 0 0 .265-.595.9.9 0 0 0-.131-.48.9.9 0 0 0-.374-.326 1.3 1.3 0 0 0-.572-.118h-1.16zm0-2.675h1.026q.283 0 .505-.1a.84.84 0 0 0 .351-.287.75.75 0 0 0 .131-.444.72.72 0 0 0-.252-.573q-.25-.217-.71-.217h-1.051zM174.026 76v-6.546h4.41v1.142h-3.026v1.56h2.8v1.14h-2.8v1.563h3.039V76z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#000",
-      d: "M112.588 53.09V42.183h.699V53.09zm2.016-7.418a1.17 1.17 0 0 0-.503-.87q-.439-.31-1.142-.31-.494 0-.848.149-.354.15-.541.404a.99.99 0 0 0-.069 1.057q.129.2.346.341.217.137.481.23.264.094.533.158l.818.204q.494.115.95.312.46.195.823.494.366.298.579.72.213.421.213.989 0 .767-.392 1.35-.392.58-1.133.908-.738.324-1.786.324-1.018 0-1.768-.315a2.64 2.64 0 0 1-1.168-.92q-.417-.606-.452-1.475h1.556q.034.456.281.758.247.303.644.452.4.15.894.15.516 0 .904-.154a1.47 1.47 0 0 0 .614-.435q.221-.28.225-.656a.83.83 0 0 0-.2-.563 1.5 1.5 0 0 0-.55-.375 5 5 0 0 0-.818-.272l-.993-.256q-1.078-.278-1.704-.84-.622-.566-.622-1.504 0-.771.417-1.35a2.76 2.76 0 0 1 1.146-.9q.724-.324 1.641-.324.929 0 1.628.324.704.32 1.104.89.4.568.413 1.305zm5.994-2.519q.627.005 1.219.222.597.213 1.074.699.477.48.759 1.291.28.81.281 2.003.004 1.125-.239 2.011-.239.883-.686 1.492a3 3 0 0 1-1.078.929q-.632.32-1.419.32-.827 0-1.466-.325a2.75 2.75 0 0 1-1.509-2.173h1.556q.118.52.486.827.37.302.933.302.907 0 1.398-.788.49-.789.49-2.19h-.06q-.209.375-.541.647a2.5 2.5 0 0 1-.754.414 2.7 2.7 0 0 1-.887.145 2.64 2.64 0 0 1-1.38-.367 2.7 2.7 0 0 1-.968-1.006q-.354-.639-.358-1.461 0-.852.392-1.53a2.84 2.84 0 0 1 1.104-1.074q.708-.396 1.653-.388m.005 1.279q-.46 0-.831.226-.367.221-.58.605a1.73 1.73 0 0 0-.209.848q.005.464.209.844.209.379.567.6.362.222.827.222a1.57 1.57 0 0 0 1.163-.499q.226-.24.349-.54.129-.304.124-.64a1.66 1.66 0 0 0-.213-.827 1.65 1.65 0 0 0-.575-.61 1.5 1.5 0 0 0-.831-.23m7.777-1.279q.626.005 1.218.222.597.213 1.074.699.477.48.759 1.291.28.81.281 2.003.004 1.125-.239 2.011-.238.883-.686 1.492a3 3 0 0 1-1.078.929q-.63.32-1.419.32-.827 0-1.466-.325a2.76 2.76 0 0 1-1.027-.886 2.8 2.8 0 0 1-.481-1.287h1.555q.12.52.486.827.37.302.933.302.907 0 1.398-.788.49-.789.49-2.19h-.06q-.208.375-.541.647a2.5 2.5 0 0 1-.754.414 2.7 2.7 0 0 1-.887.145 2.64 2.64 0 0 1-1.38-.367 2.7 2.7 0 0 1-.968-1.006 3 3 0 0 1-.358-1.461q0-.852.393-1.53a2.85 2.85 0 0 1 1.103-1.074q.708-.396 1.654-.388m.004 1.279q-.46 0-.831.226-.367.221-.58.605a1.73 1.73 0 0 0-.208.848q.004.464.208.844.21.379.567.6.362.222.827.222a1.57 1.57 0 0 0 1.163-.499q.226-.24.35-.54.127-.304.123-.64a1.66 1.66 0 0 0-.213-.827 1.65 1.65 0 0 0-.575-.61 1.5 1.5 0 0 0-.831-.23m11.303-1.568-2.812 10.449h-1.351l2.812-10.45zm.985 9.136v-6.545h1.474v1.112h.077q.204-.563.677-.878.474-.32 1.129-.32.666 0 1.121.324.46.32.648.874h.068q.217-.546.733-.87.52-.328 1.232-.328.903 0 1.474.571t.571 1.666V52h-1.547v-4.155q0-.61-.324-.89a1.16 1.16 0 0 0-.792-.286q-.559 0-.874.35-.31.345-.311.899V52h-1.513v-4.219q0-.507-.307-.81-.302-.302-.792-.302-.332 0-.605.17a1.2 1.2 0 0 0-.435.474 1.5 1.5 0 0 0-.162.707V52zm13.624.128q-.959 0-1.662-.422a2.87 2.87 0 0 1-1.091-1.18q-.383-.759-.383-1.773t.383-1.777a2.86 2.86 0 0 1 1.091-1.185q.703-.422 1.662-.422t1.662.422 1.087 1.185q.388.762.388 1.777t-.388 1.773q-.384.758-1.087 1.18t-1.662.422m.009-1.236q.52 0 .869-.286.35-.29.52-.775.174-.486.175-1.082 0-.601-.175-1.087a1.7 1.7 0 0 0-.52-.78q-.35-.29-.869-.29-.533 0-.887.29a1.75 1.75 0 0 0-.524.78q-.17.486-.17 1.087 0 .596.17 1.082.175.486.524.775.354.286.887.286m5.979-2.727V52h-1.542v-6.545h1.474v1.112h.077q.226-.55.72-.874.499-.324 1.232-.324.677 0 1.18.29.507.29.784.84.282.549.277 1.333V52h-1.542v-3.929q0-.656-.341-1.027-.337-.37-.934-.37-.404 0-.72.178a1.24 1.24 0 0 0-.49.507q-.175.333-.175.806m9.039-2.71v1.193h-3.763v-1.194zm-2.834-1.569h1.543v6.145q0 .312.093.477a.5.5 0 0 0 .256.222 1 1 0 0 0 .349.06q.145 0 .265-.021.124-.022.187-.039l.26 1.206q-.123.043-.354.094-.225.051-.554.06a2.5 2.5 0 0 1-1.044-.175 1.63 1.63 0 0 1-.737-.605q-.268-.41-.264-1.023zm5.807 4.279V52h-1.542v-8.727h1.508v3.294h.077q.23-.554.711-.874.486-.324 1.236-.324.682 0 1.189.286.507.285.784.835.281.55.281 1.342V52h-1.542v-3.929q0-.66-.341-1.027-.336-.37-.946-.37-.41 0-.733.178a1.25 1.25 0 0 0-.503.507q-.179.333-.179.806"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#B4B4B4",
-      fillOpacity: "0.5",
-      d: "M107 18h94v3h-94zM107 25h94v3h-94zM107 32h49v3h-49z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "69",
-      height: "67",
-      x: "23",
-      y: "20",
-      fill: "#EBEBEB",
-      rx: "5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#848484",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeOpacity: "0.6",
-      strokeWidth: "1.5",
-      d: "M42 42v17.476l15.39 6.977 15.39-6.977V42.001M66.647 59.032l3.188-1.447"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#848484",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeOpacity: "0.6",
-      strokeWidth: "1.5",
-      d: "M63.162 46.374v.002l-5.772 2.625L42 42 57.39 35l15.39 7-7.981 3.63"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#848484",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeOpacity: "0.6",
-      strokeWidth: "1.5",
-      d: "m42 42 15.39-7 15.39 7M57.39 49.096v17.068"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#848484",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeOpacity: "0.6",
-      strokeWidth: "1.5",
-      d: "m53.393 38.432 13.615 6.193v4.64l-3.846 1.75v-4.64L49.545 40.18"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    className: "nfd-svg-rotate-5deg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-      filter: "url(#filter1_d_1651_1025)",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-        width: "217",
-        height: "105",
-        x: "35",
-        y: "27",
-        fill: "#fff",
-        rx: "5"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "94",
-      height: "20",
-      x: "137.5",
-      y: "89.5",
-      fill: "#353535",
-      stroke: "#272727",
-      rx: "4.5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#fff",
-      d: "M205.042 103v-6.545h4.411v1.14h-3.027v1.56h2.8v1.141h-2.8v1.563h3.039V103zM199.092 103v-6.545h2.621q.722 0 1.204.214.483.213.726.594.243.377.243.87 0 .383-.154.674a1.3 1.3 0 0 1-.421.473q-.266.182-.608.259v.064q.375.015.7.21.33.195.534.547.204.348.205.831 0 .52-.259.93a1.75 1.75 0 0 1-.758.643q-.501.236-1.237.236zm1.384-1.131h1.128q.579 0 .844-.221a.74.74 0 0 0 .265-.594.9.9 0 0 0-.131-.48.9.9 0 0 0-.374-.326 1.3 1.3 0 0 0-.572-.118h-1.16zm0-2.675h1.026q.284 0 .505-.1a.84.84 0 0 0 .351-.287.75.75 0 0 0 .131-.444.72.72 0 0 0-.252-.573q-.25-.217-.71-.217h-1.051zM197.953 96.455V103h-1.384v-6.545zM190.663 103v-6.545h2.583q.741 0 1.265.265.528.262.802.745.278.48.278 1.128 0 .651-.281 1.121-.28.468-.815.716-.53.25-1.285.25h-1.729v-1.113h1.506q.396 0 .658-.108a.78.78 0 0 0 .39-.326q.13-.218.131-.54 0-.326-.131-.55a.8.8 0 0 0-.393-.339 1.6 1.6 0 0 0-.662-.118h-.933V103zm3.535-2.979 1.627 2.979h-1.528l-1.592-2.979zM189.671 98.746h-1.4a1.4 1.4 0 0 0-.157-.482 1.2 1.2 0 0 0-.303-.365 1.4 1.4 0 0 0-.429-.23 1.6 1.6 0 0 0-.521-.08q-.507 0-.885.253a1.6 1.6 0 0 0-.585.728q-.207.477-.207 1.158 0 .699.207 1.176a1.6 1.6 0 0 0 .588.719q.378.243.873.243.278 0 .514-.074.24-.073.426-.214.184-.144.306-.348.125-.205.173-.467l1.4.006a2.604 2.604 0 0 1-.85 1.614q-.362.326-.863.518a3.2 3.2 0 0 1-1.128.189 3.1 3.1 0 0 1-1.567-.397 2.8 2.8 0 0 1-1.086-1.147q-.396-.751-.396-1.819 0-1.07.402-1.821.403-.751 1.093-1.145.69-.396 1.554-.396.568 0 1.054.16.49.16.866.467.377.303.614.744.24.441.307 1.01M181.549 98.337a.81.81 0 0 0-.329-.6q-.29-.215-.79-.215-.338 0-.572.096a.8.8 0 0 0-.358.259.62.62 0 0 0-.121.377q-.006.176.073.307a.8.8 0 0 0 .227.227q.144.093.333.163.188.067.402.115l.588.14q.429.097.787.256.357.16.62.393.262.234.406.55.147.317.15.726a1.8 1.8 0 0 1-.307 1.041q-.3.438-.869.681-.566.24-1.365.24-.793 0-1.381-.243a2.03 2.03 0 0 1-.914-.719q-.326-.48-.342-1.186h1.339q.023.33.189.55.17.217.451.329.284.108.642.109.351 0 .61-.103a.94.94 0 0 0 .406-.284.66.66 0 0 0 .144-.419.54.54 0 0 0-.131-.37 1 1 0 0 0-.377-.256 4 4 0 0 0-.604-.192l-.713-.179q-.827-.201-1.307-.63-.48-.428-.476-1.153a1.7 1.7 0 0 1 .316-1.039q.322-.444.885-.694t1.279-.249q.729 0 1.272.25.546.249.85.693.303.445.313 1.03zM172.048 103v-6.545h2.621q.722 0 1.205.214.482.213.725.594.243.377.243.87 0 .383-.153.674-.154.288-.422.473-.266.182-.608.259v.064q.375.015.7.21.33.195.534.547.205.348.205.831 0 .52-.259.93a1.75 1.75 0 0 1-.758.643q-.501.236-1.237.236zm1.384-1.131h1.128q.579 0 .844-.221a.74.74 0 0 0 .265-.594.9.9 0 0 0-.131-.48.9.9 0 0 0-.374-.326 1.3 1.3 0 0 0-.572-.118h-1.16zm0-2.675h1.026q.284 0 .505-.1a.84.84 0 0 0 .351-.287.75.75 0 0 0 .131-.444.72.72 0 0 0-.252-.573q-.25-.217-.71-.217h-1.051zM169.525 96.455h1.384v4.25q0 .716-.342 1.253a2.3 2.3 0 0 1-.949.837q-.61.298-1.422.298-.815 0-1.426-.298a2.3 2.3 0 0 1-.949-.837q-.339-.537-.339-1.253v-4.25h1.384v4.132q0 .374.163.665.167.29.467.457.3.166.7.166.403 0 .7-.166.3-.166.463-.457.166-.291.166-.665zM163.136 98.337a.81.81 0 0 0-.329-.6q-.29-.215-.79-.215-.339 0-.572.096a.8.8 0 0 0-.358.259.62.62 0 0 0-.121.377q-.007.176.073.307a.8.8 0 0 0 .227.227q.144.093.333.163.188.067.402.115l.588.14q.429.097.787.256.357.16.62.393.262.234.405.55.148.317.151.726a1.8 1.8 0 0 1-.307 1.041q-.3.438-.869.681-.567.24-1.365.24-.793 0-1.381-.243a2.03 2.03 0 0 1-.914-.719q-.326-.48-.342-1.186h1.339q.023.33.189.55.17.217.45.329.285.108.643.109.351 0 .61-.103a.94.94 0 0 0 .406-.284.66.66 0 0 0 .144-.419.54.54 0 0 0-.131-.37 1 1 0 0 0-.377-.256 4 4 0 0 0-.604-.192l-.713-.179q-.828-.201-1.307-.63-.48-.428-.476-1.153a1.7 1.7 0 0 1 .316-1.039q.322-.444.885-.694t1.279-.249q.729 0 1.272.25.547.249.85.693.303.445.313 1.03z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#000",
-      d: "M202.296 74.165V78h-1.542v-8.728h1.508v3.294h.077q.23-.553.711-.873.486-.324 1.236-.324.682 0 1.189.286.507.285.784.835.282.55.282 1.342V78h-1.543v-3.93q0-.66-.341-1.026-.336-.37-.946-.371-.41 0-.733.179a1.25 1.25 0 0 0-.503.507q-.179.332-.179.806M199.323 71.454v1.194h-3.763v-1.194zm-2.834-1.568h1.543v6.145q0 .311.093.477a.5.5 0 0 0 .256.222 1 1 0 0 0 .349.06q.145 0 .265-.022.124-.021.187-.038l.26 1.206q-.123.043-.354.094-.225.051-.554.06a2.5 2.5 0 0 1-1.044-.175 1.63 1.63 0 0 1-.737-.606q-.268-.408-.264-1.022zM190.284 74.165V78h-1.542v-6.546h1.474v1.113h.077q.227-.55.72-.874.499-.324 1.232-.324.677 0 1.18.29.507.29.784.84.282.549.277 1.333V78h-1.542v-3.93q0-.656-.341-1.026-.337-.37-.934-.37-.404 0-.72.178-.31.175-.49.507-.175.332-.175.806M184.296 78.128q-.959 0-1.662-.422a2.87 2.87 0 0 1-1.091-1.18q-.383-.759-.383-1.773 0-1.015.383-1.777a2.87 2.87 0 0 1 1.091-1.185q.703-.422 1.662-.422t1.662.422 1.087 1.185q.388.762.388 1.777t-.388 1.772q-.384.76-1.087 1.18-.703.423-1.662.423m.009-1.236q.52 0 .869-.286.35-.29.52-.775.175-.486.175-1.083 0-.6-.175-1.086a1.7 1.7 0 0 0-.52-.78q-.35-.29-.869-.29-.533 0-.887.29a1.75 1.75 0 0 0-.524.78q-.17.486-.17 1.086 0 .597.17 1.083.175.486.524.775.354.285.887.286M170.672 78v-6.546h1.474v1.113h.077q.204-.563.677-.878.474-.32 1.129-.32.666 0 1.121.324.46.32.648.874h.068q.217-.546.733-.87.52-.328 1.232-.328.903 0 1.474.571.571.57.571 1.666V78h-1.547v-4.155q0-.61-.324-.89a1.16 1.16 0 0 0-.792-.286q-.559 0-.874.35-.31.346-.311.898V78h-1.513V73.78q0-.507-.307-.81-.302-.302-.792-.302-.332 0-.605.17a1.2 1.2 0 0 0-.435.473 1.5 1.5 0 0 0-.162.708V78zM169.687 68.863l-2.812 10.45h-1.351l2.812-10.45zM158.38 69.153q.626.004 1.218.222.597.213 1.074.698.477.483.759 1.292.28.81.281 2.003.004 1.125-.239 2.01-.238.883-.686 1.492a3 3 0 0 1-1.078.93q-.63.319-1.419.319-.827 0-1.466-.324a2.76 2.76 0 0 1-1.027-.886 2.8 2.8 0 0 1-.481-1.287h1.555q.12.52.486.826.37.303.933.303.907 0 1.398-.788.49-.789.49-2.19h-.06q-.208.374-.541.647a2.5 2.5 0 0 1-.754.413 2.7 2.7 0 0 1-.887.145 2.64 2.64 0 0 1-1.38-.366 2.7 2.7 0 0 1-.968-1.006 3 3 0 0 1-.358-1.462q0-.852.393-1.53a2.85 2.85 0 0 1 1.103-1.073q.708-.397 1.654-.388m.004 1.278q-.46 0-.831.226-.366.222-.58.605a1.73 1.73 0 0 0-.208.848q.004.465.208.844.21.38.567.601.362.222.827.222a1.57 1.57 0 0 0 1.163-.499q.226-.24.35-.541.127-.303.123-.64a1.66 1.66 0 0 0-.213-.826 1.65 1.65 0 0 0-.575-.61 1.5 1.5 0 0 0-.831-.23M150.598 69.153q.627.004 1.219.222.597.213 1.074.698.477.483.759 1.292.28.81.281 2.003.004 1.125-.239 2.01-.239.883-.686 1.492a3 3 0 0 1-1.078.93q-.632.319-1.419.319-.827 0-1.466-.324a2.75 2.75 0 0 1-1.509-2.173h1.556q.119.52.486.826.37.303.933.303.907 0 1.398-.788.49-.789.49-2.19h-.06q-.209.374-.541.647a2.5 2.5 0 0 1-.754.413 2.7 2.7 0 0 1-.887.145 2.64 2.64 0 0 1-1.38-.366 2.7 2.7 0 0 1-.968-1.006q-.354-.639-.358-1.462 0-.852.392-1.53a2.84 2.84 0 0 1 1.104-1.073q.708-.397 1.653-.388m.005 1.278q-.46 0-.831.226-.367.222-.58.605a1.73 1.73 0 0 0-.209.848q.005.465.209.844.209.38.567.601.362.222.827.222a1.57 1.57 0 0 0 1.163-.499q.226-.24.349-.541.129-.303.124-.64a1.66 1.66 0 0 0-.213-.826 1.65 1.65 0 0 0-.575-.61 1.5 1.5 0 0 0-.831-.23M142.588 79.09V68.183h.699V79.09zm2.016-7.418a1.17 1.17 0 0 0-.503-.87q-.439-.31-1.142-.31-.495 0-.848.148-.354.15-.541.405a.99.99 0 0 0-.069 1.057q.129.2.346.341.217.136.481.23t.533.158l.818.204q.495.115.95.311.46.197.823.495.366.298.579.72.213.421.213.988 0 .768-.392 1.351-.392.58-1.133.908-.738.324-1.786.324-1.018 0-1.768-.315a2.64 2.64 0 0 1-1.168-.92q-.417-.606-.452-1.475h1.556q.034.456.281.758t.644.452q.4.15.894.15.516 0 .904-.154a1.47 1.47 0 0 0 .614-.435q.221-.28.225-.656a.83.83 0 0 0-.2-.563 1.5 1.5 0 0 0-.55-.375 5 5 0 0 0-.818-.273l-.993-.255q-1.078-.278-1.704-.84-.622-.566-.622-1.504 0-.771.417-1.35a2.76 2.76 0 0 1 1.147-.9q.723-.324 1.64-.324.929 0 1.628.324.703.32 1.104.89.4.568.413 1.305z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#B4B4B4",
-      fillOpacity: "0.5",
-      d: "M137 44h94v3h-94zM137 51h94v3h-94zM137 58h49v3h-49z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "69",
-      height: "67",
-      x: "53",
-      y: "46",
-      fill: "#EBEBEB",
-      rx: "5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#848484",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeOpacity: "0.6",
-      strokeWidth: "1.5",
-      d: "M72 68v17.476l15.39 6.977 15.39-6.977V68.001M96.647 85.032l3.188-1.447"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#848484",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeOpacity: "0.6",
-      strokeWidth: "1.5",
-      d: "M93.162 72.374v.002l-5.772 2.625L72 68 87.39 61l15.39 7-7.981 3.63"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#848484",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeOpacity: "0.6",
-      strokeWidth: "1.5",
-      d: "m72 68 15.39-7 15.39 7M87.39 75.096v17.068"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#848484",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeOpacity: "0.6",
-      strokeWidth: "1.5",
-      d: "m83.393 64.432 13.615 6.193v4.64l-3.846 1.75v-4.64L79.545 66.18"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1025",
-      width: "227",
-      height: "115",
-      x: "0",
-      y: "0",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "1",
-        result: "effect1_dropShadow_1651_1025"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.37 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1025"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1025",
-        result: "shape"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter1_d_1651_1025",
-      width: "227",
-      height: "115",
-      x: "30",
-      y: "26",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "1",
-        result: "effect1_dropShadow_1651_1025"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.37 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1025"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1025",
-        result: "shape"
-      })]
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/WishlistIcon.jsx":
-/*!***********************************************!*\
-  !*** ./src/components/icons/WishlistIcon.jsx ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "248",
-  height: "135",
-  fill: "none",
-  viewBox: "0 0 248 135",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    opacity: "0.5",
-    className: "nfd-svg-rotate--5deg",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-      filter: "url(#filter0_d_1651_1151)",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-        width: "175",
-        height: "88",
-        x: "5",
-        y: "1",
-        fill: "#fff",
-        rx: "5"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#EBEBEB",
-      d: "M86.38 19.576h78.839v2.516H86.38zM86.38 25.447h78.839v2.516H86.38zM86.38 31.076h78.839v2.516H86.38zM86.38 36.947h78.839v2.516H86.38zM86.38 42.575h78.727v2.654H86.38zM86.38 48.767h41.097v2.516H86.38zM86.38 59.382h40.69v13.269H86.38z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "57.871",
-      height: "56.194",
-      x: "20.038",
-      y: "16.038",
-      fill: "#EBEBEB",
-      rx: "5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#ACACAC",
-      strokeMiterlimit: "10",
-      strokeWidth: "1.5",
-      d: "M68.039 36.567a13.2 13.2 0 0 0-8.1-5.83L56.864 30a5.94 5.94 0 0 1-5.554 3.85c-2.54 0-4.703-1.599-5.555-3.85l-3.075.738a13.2 13.2 0 0 0-8.1 5.83L32 40.687l6.586 4.556 2.427-4.037h.106V59.12h20.386V41.209h.105l2.427 4.037 6.586-4.556-2.582-4.12z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "#949494",
-      d: "m72.42 25.374-.005-.002-.015-.009-.058-.032-.21-.12a17.631 17.631 0 0 1-2.972-2.22c-1.612-1.503-3.319-3.734-3.319-6.483 0-2.05 1.725-3.676 3.808-3.676 1.225 0 2.321.56 3.02 1.436a3.85 3.85 0 0 1 3.02-1.437c2.082 0 3.808 1.627 3.808 3.677 0 2.749-1.708 4.98-3.319 6.482a17.6 17.6 0 0 1-3.183 2.341l-.057.032-.016.009-.005.002-.002.001a.53.53 0 0 1-.493 0z"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter1_d_1651_1151)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "182.875",
-      height: "91.438",
-      x: "60",
-      y: "34",
-      fill: "#fff",
-      rx: "5"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#EBEBEB",
-    d: "M144.658 53.324h82.014v2.617h-82.014zM144.658 59.432h82.014v2.617h-82.014zM144.658 65.287h82.014v2.617h-82.014zM144.658 71.394h82.014v2.617h-82.014zM144.658 77.249h81.897v2.761h-81.897zM144.658 83.69h42.752v2.617h-42.752zM144.658 94.733h42.329v13.803h-42.329z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-    width: "60.202",
-    height: "58.457",
-    x: "75.643",
-    y: "49.643",
-    fill: "#EBEBEB",
-    rx: "5"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    className: "nfd-svg-bounce",
-    fill: "#6A85CE",
-    d: "m129.768 60.79-.005-.003-.019-.01-.067-.038q-.088-.048-.246-.14a20.574 20.574 0 0 1-3.472-2.594c-1.883-1.755-3.877-4.362-3.877-7.574 0-2.395 2.016-4.295 4.449-4.295a4.5 4.5 0 0 1 3.528 1.679 4.5 4.5 0 0 1 3.528-1.679c2.433 0 4.449 1.9 4.449 4.295 0 3.212-1.995 5.819-3.877 7.573a20.6 20.6 0 0 1-3.473 2.594q-.158.093-.246.142l-.067.037-.018.01-.006.002-.002.002a.61.61 0 0 1-.576 0z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#ACACAC",
-    strokeMiterlimit: "10",
-    strokeWidth: "1.5",
-    d: "M109.246 67.677c2.516 5.884 8.118 8.367 16.543 3.939.658-.345 1.452.117 1.452.855v14.156c0 1.538-1.262 2.786-2.817 2.786H85.939c-1.555 0-2.817-1.248-2.817-2.786V84.52c0-5.829 5.51-6.411 9.235-7.754a7.3 7.3 0 0 0 2.658-1.676c3.778-3.746 7.74-6.241 12.292-8.174.741-.315 1.623.03 1.937.762zM127.15 84.519H83.122"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#ACACAC",
-    strokeMiterlimit: "10",
-    strokeWidth: "1.5",
-    d: "M127.195 79.56h-9.434c-2.769 0-5.012 2.221-5.012 4.957h.419M104.3 68.505l2.188 3.596M100.578 70.893l2.187 3.594M96.856 73.444l1.808 2.976"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1151",
-      width: "185",
-      height: "98",
-      x: "0",
-      y: "0",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "1",
-        result: "effect1_dropShadow_1651_1151"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.37 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1151"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1151",
-        result: "shape"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter1_d_1651_1151",
-      width: "192.875",
-      height: "101.438",
-      x: "55",
-      y: "33",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "1",
-        result: "effect1_dropShadow_1651_1151"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.37 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1151"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1151",
-        result: "shape"
-      })]
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/WonderCartIcon.jsx":
-/*!*************************************************!*\
-  !*** ./src/components/icons/WonderCartIcon.jsx ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: "235",
-  height: "127",
-  fill: "none",
-  viewBox: "0 0 235 127",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    opacity: "0.5",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-      filter: "url(#filter0_d_1651_1228)",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-        width: "149.994",
-        height: "90.319",
-        x: "5",
-        y: "13",
-        fill: "#fff",
-        rx: "5"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "52.417",
-      height: "75.804",
-      x: "13.064",
-      y: "19.451",
-      fill: "#EBEBEB",
-      rx: "5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-      stroke: "#4C4C4E",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeWidth: "1.5",
-      opacity: "0.5",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        d: "M40.363 78.334h-7.178V85h7.178zM33.185 78.333c-1.637-.405-2.797-1.49-2.956-2.766L26.903 49h19.741l-3.327 26.568c-.16 1.276-1.32 2.36-2.954 2.765M46.312 51.667H27.235M41.26 55.667h-8.973M39.466 58.334h-5.384"
-      })
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter1_d_1651_1228)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "186",
-      height: "117",
-      x: "44",
-      y: "6",
-      fill: "#fff",
-      rx: "5"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-    width: "65",
-    height: "99",
-    x: "54",
-    y: "14",
-    fill: "#EBEBEB",
-    rx: "5"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#949494",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M92.257 48.074H80.095v6.043h12.162zM101.378 42.03h-4.645c-.945 0-1.876.218-2.72.64l-1.487.739a6.1 6.1 0 0 1-2.72.638h-9.713v-4.03h9.713c.945 0 1.875-.218 2.72-.64l1.486-.738a6.1 6.1 0 0 1 2.72-.639h4.646v4.031M83.135 44.045v4.03M89.216 44.045v4.03M90.23 54.117a5.59 5.59 0 0 0 3.845 5.302c3.15 1.044 5.276 3.974 5.276 7.274v23.681a2.02 2.02 0 0 1-2.027 2.015H75.027A2.02 2.02 0 0 1 73 90.374V66.693a7.67 7.67 0 0 1 5.276-7.274 5.59 5.59 0 0 0 3.846-5.302"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#949494",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M94.284 66.204H78.068v22.158h16.216zM78.068 71.24h16.216M82.122 77.283h8.108M83.135 82.318h6.081"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#EBEBEB",
-    d: "M129 30h91v3h-91z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#BEBEBE",
-    d: "M129.506 22v-5.818h1.23v2.4h2.497v-2.4h1.227V22h-1.227v-2.403h-2.497V22zm11.315-2.91q0 .953-.361 1.62a2.5 2.5 0 0 1-.977 1.02 2.76 2.76 0 0 1-1.386.35q-.775 0-1.392-.353a2.5 2.5 0 0 1-.975-1.02q-.358-.667-.358-1.616 0-.952.358-1.62.359-.668.975-1.017a2.76 2.76 0 0 1 1.392-.352q.77 0 1.386.352.62.35.977 1.018.361.667.361 1.619m-1.247 0q0-.616-.185-1.039a1.4 1.4 0 0 0-.514-.642 1.4 1.4 0 0 0-.778-.219q-.446 0-.779.22-.332.218-.517.641-.182.423-.182 1.04 0 .616.182 1.04.185.423.517.642.333.218.779.218.445 0 .778-.218.333-.219.514-.642.185-.424.185-1.04m7.025-2.908V22h-1.063l-2.531-3.662h-.043V22h-1.23v-5.818h1.08l2.511 3.659h.051v-3.66zM147.615 22v-5.818h3.921v1.014h-2.691v1.386h2.489v1.015h-2.489v1.389h2.702V22zm4.558-5.818h1.377l1.327 2.506h.057l1.327-2.506h1.377l-2.122 3.761V22h-1.221v-2.057zm11.145 1.673a.72.72 0 0 0-.292-.534q-.26-.19-.702-.19-.301 0-.509.085a.7.7 0 0 0-.318.23.55.55 0 0 0-.108.335.47.47 0 0 0 .066.273.7.7 0 0 0 .201.202q.128.082.296.145.167.06.358.102l.522.125q.381.085.699.227t.551.35q.234.207.361.488.13.282.134.645a1.6 1.6 0 0 1-.273.926q-.267.39-.773.605-.502.213-1.213.213-.705 0-1.227-.216a1.8 1.8 0 0 1-.813-.639q-.29-.426-.304-1.054h1.191a.9.9 0 0 0 .167.489.93.93 0 0 0 .401.293q.253.096.571.096.312 0 .543-.09a.83.83 0 0 0 .36-.254.58.58 0 0 0 .128-.372q0-.195-.116-.33a.9.9 0 0 0-.335-.227 3.4 3.4 0 0 0-.537-.17l-.634-.16q-.735-.178-1.162-.559-.426-.38-.423-1.025-.003-.529.281-.924.287-.394.787-.616a2.8 2.8 0 0 1 1.136-.222q.648 0 1.131.222.486.222.756.616.27.396.278.915zm7.433 1.236q0 .951-.361 1.62a2.5 2.5 0 0 1-.977 1.02q-.616.348-1.387.348-.775 0-1.392-.352a2.5 2.5 0 0 1-.974-1.02q-.358-.667-.358-1.616 0-.952.358-1.62.357-.668.974-1.017a2.76 2.76 0 0 1 1.392-.352q.77 0 1.387.352.619.35.977 1.018.36.667.361 1.619m-1.247 0q0-.617-.185-1.04a1.4 1.4 0 0 0-.514-.642 1.4 1.4 0 0 0-.779-.219q-.446 0-.778.22a1.4 1.4 0 0 0-.517.641q-.182.423-.182 1.04 0 .616.182 1.04.184.423.517.642.332.218.778.218.447 0 .779-.218.332-.219.514-.642.185-.424.185-1.04M172.337 22h-1.319l2.009-5.818h1.585L176.618 22H175.3l-1.458-4.489h-.045zm-.083-2.287h3.114v.96h-3.114zM177.318 22v-5.818h2.296q.662 0 1.127.253.467.249.711.696.246.443.247 1.022 0 .58-.25 1.023a1.72 1.72 0 0 1-.725.69q-.471.248-1.142.248h-1.463v-.986h1.265q.354 0 .585-.122a.8.8 0 0 0 .346-.344q.117-.221.117-.509 0-.29-.117-.505a.77.77 0 0 0-.346-.338 1.3 1.3 0 0 0-.591-.122h-.83V22z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#EBEBEB",
-    d: "M129 37h91v3h-91zM129 44h91v3h-91z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#FDF4B1",
-    d: "M129 51h91v33h-91z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#EBEBEB",
-    d: "M129 89h91v3h-91z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#000",
-    d: "M156.495 65v-6.545h2.73q.735 0 1.23.207.5.209.748.582.252.374.253.866 0 .375-.157.668a1.4 1.4 0 0 1-.431.483 1.7 1.7 0 0 1-.636.268v.064q.396.02.731.214.339.195.544.543.204.345.204.819 0 .527-.268.943a1.83 1.83 0 0 1-.777.651q-.508.237-1.233.237zm1.582-1.275h.978q.515 0 .758-.195a.65.65 0 0 0 .246-.544.8.8 0 0 0-.118-.434.76.76 0 0 0-.336-.285 1.2 1.2 0 0 0-.521-.102h-1.007zm0-2.58h.876q.26 0 .46-.086a.67.67 0 0 0 .429-.642.63.63 0 0 0-.234-.518q-.233-.188-.629-.188h-.902zm8.355-2.69h1.579v4.221q0 .732-.349 1.276-.348.54-.971.837-.624.294-1.448.294-.834 0-1.457-.294a2.3 2.3 0 0 1-.969-.837q-.345-.543-.345-1.276v-4.221h1.582v4.084q0 .339.147.604.15.266.419.416.268.15.623.15.354 0 .62-.15.268-.15.419-.416.15-.265.15-.604zm2.244 0h1.768l1.384 2.739h.057l1.384-2.74h1.767l-2.394 4.36V65h-1.572v-2.186zm11.971 0V65h-1.579v-5.069h-.038l-1.464.895v-1.368l1.614-1.003z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#B40000",
-    d: "M160.791 72.593a1.2 1.2 0 0 0-.16-.355 1 1 0 0 0-.259-.265 1.1 1.1 0 0 0-.351-.163 1.6 1.6 0 0 0-.435-.058q-.476 0-.825.23-.345.23-.533.671-.189.438-.189 1.065 0 .63.182 1.073.182.445.528.678.345.234.837.233.435 0 .735-.14.303-.144.46-.406t.157-.617l.294.035h-1.592v-1.153h2.822v.866q0 .878-.374 1.505a2.5 2.5 0 0 1-1.022.962q-.649.335-1.493.335-.936 0-1.646-.405a2.8 2.8 0 0 1-1.106-1.157q-.396-.755-.396-1.79 0-.805.24-1.429a3 3 0 0 1 .668-1.06q.431-.435.997-.66.569-.222 1.224-.223.569 0 1.058.163.492.163.869.46.38.297.617.707.237.409.294.898zM163.395 77v-6.546h4.564v1.285h-2.982v1.343h2.748v1.288h-2.748v1.345h2.982V77zm5.34-5.26v-1.285h5.533v1.284h-1.985V77h-1.56v-5.26zm11.253-1.285V77h-1.579v-5.069h-.038l-1.464.895v-1.368l1.614-1.004zM183.381 77v-6.546h4.468v1.285h-2.886v1.343h2.602v1.288h-2.602V77zm5.265 0v-6.546h2.704q.735 0 1.268.266.537.261.828.754.291.49.291 1.16 0 .681-.297 1.157a1.9 1.9 0 0 1-.844.722q-.546.247-1.294.247h-1.71v-1.247h1.416q.357 0 .597-.093a.75.75 0 0 0 .368-.287.9.9 0 0 0 .124-.499.93.93 0 0 0-.124-.502.75.75 0 0 0-.368-.3 1.5 1.5 0 0 0-.597-.102h-.78V77zm3.685-2.992 1.63 2.992h-1.726l-1.598-2.992zM194.605 77v-6.546h4.564v1.285h-2.982v1.343h2.748v1.288h-2.748v1.345h2.982V77zm5.554 0v-6.546h4.564v1.285h-2.982v1.343h2.749v1.288h-2.749v1.345h2.982V77z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    clipPath: "url(#clip0_1651_1228)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#000",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      d: "m145.619 68.338-4.297-2.312m-3.056-1.18 2.81 9.36 1.818-1.447 2.313.207 1.818-1.447 2.314.206-2.811-9.36c-.183-.61-.784-1-1.412-.888a28 28 0 0 0-6.162 1.85 1.25 1.25 0 0 0-.688 1.519m6.072.724-.004.002.001.004.004-.002zm-.207.062a.217.217 0 0 0 .269.145.215.215 0 0 0 .144-.269.216.216 0 0 0-.413.124m-1.528 3.161-.004.002.002.004.004-.002zm-.206.062a.215.215 0 1 0 .413-.124.215.215 0 0 0-.413.124"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#EBEBEB",
-    d: "M129 99h42.329v13.803H129z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("circle", {
-    cx: "44.5",
-    cy: "33.5",
-    r: "20.5",
-    fill: "#6A85CE"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    clipPath: "url(#clip1_1651_1228)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      stroke: "#fff",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeWidth: "1.5",
-      d: "m41.424 35.236 7.472-4.02m5.315-2.052L49.324 45.44l-3.16-2.515-4.024.358-3.16-2.515-4.023.358 4.887-16.275c.319-1.06 1.364-1.738 2.455-1.544a48.5 48.5 0 0 1 10.714 3.217c1.017.44 1.516 1.58 1.198 2.641m-10.559 1.26.007.002-.002.007-.007-.002zm.36.108a.375.375 0 1 1-.72-.216.375.375 0 0 1 .72.216m2.656 5.496.007.002-.002.007-.007-.002zm.36.108a.375.375 0 1 1-.72-.216.375.375 0 0 1 .72.216"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("clipPath", {
-      id: "clip0_1651_1228",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        fill: "#fff",
-        d: "M148.22 59 135 62.97l3.97 13.22 13.22-3.97z"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("clipPath", {
-      id: "clip1_1651_1228",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        fill: "#fff",
-        d: "m36.902 19 22.986 6.902-6.902 22.986L30 41.986z"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1228",
-      width: "159.994",
-      height: "100.319",
-      x: "0",
-      y: "7",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "5",
-        result: "effect1_dropShadow_1651_1228"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "-1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.13 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1228"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1228",
-        result: "shape"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter1_d_1651_1228",
-      width: "194.6",
-      height: "125.6",
-      x: "39.7",
-      y: "0.7",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "3",
-        result: "effect1_dropShadow_1651_1228"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "-1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "0.65"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.13 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1228"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1228",
-        result: "shape"
-      })]
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/YoastPremiumIcon.jsx":
-/*!***************************************************!*\
-  !*** ./src/components/icons/YoastPremiumIcon.jsx ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  xmlnsXlink: "http://www.w3.org/1999/xlink",
-  width: "250",
-  height: "127",
-  fill: "none",
-  viewBox: "0 0 250 127",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter0_d_1651_1134)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "234",
-      height: "111",
-      x: "8",
-      y: "9",
-      fill: "#fff",
-      rx: "5"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "url(#pattern0_1651_1134)",
-    d: "M97 22h50v17H97z",
-    opacity: "0.67"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-    width: "203",
-    height: "23",
-    x: "23",
-    y: "82",
-    fill: "#DDA93B",
-    rx: "10"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    filter: "url(#filter1_d_1651_1134)",
-    shapeRendering: "crispEdges",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "203",
-      height: "22",
-      x: "23",
-      y: "50",
-      fill: "#fff",
-      fillOpacity: "0.5",
-      rx: "5"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "204",
-      height: "23",
-      x: "22.5",
-      y: "49.5",
-      stroke: "#D5AD46",
-      rx: "5.5"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#C58224",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M37.175 55.187a.352.352 0 0 1 .65 0l1.328 3.194c.05.122.165.205.297.216l3.449.276a.352.352 0 0 1 .2.618l-2.627 2.25a.35.35 0 0 0-.114.35l.803 3.365a.352.352 0 0 1-.525.381l-2.953-1.803a.35.35 0 0 0-.366 0l-2.953 1.803a.352.352 0 0 1-.525-.381l.803-3.366a.35.35 0 0 0-.114-.348l-2.627-2.251a.352.352 0 0 1 .2-.618l3.45-.276a.35.35 0 0 0 .296-.216z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#F8F9FA",
-    stroke: "#2B2B2B",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M221.669 67.15c-9.533-9.533-24.986-9.533-34.519 0s-9.533 24.989 0 34.522 24.986 9.533 34.519 0 9.533-24.989 0-34.522"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#fff",
-    d: "m225.814 97.817.105-.105 14.728 14.745-7.212 7.188-14.728-14.741.058-.058"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#2B2B2B",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "m225.814 97.817.105-.105 14.728 14.745-7.212 7.188-14.728-14.741.058-.058"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    clipPath: "url(#clip0_1651_1134)",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "url(#paint0_linear_1651_1134)",
-      d: "M200.526 76.252h-5.23l5.116 13.136a4.2 4.2 0 0 1 0 3.062c-.452 1.15-1.212 2.378-3.384 2.67l-.322.044h-1.01a4.585 4.585 0 0 1-4.572-4.564V77.774a4.584 4.584 0 0 1 4.572-4.574h11.652l-4.132 11.478z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "url(#paint1_linear_1651_1134)",
-      d: "M216.71 77.774v17.39h-12.422a26 26 0 0 0 1.922-4.294l6.572-17.622a4.6 4.6 0 0 1 3.928 4.526"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "url(#paint2_linear_1651_1134)",
-      d: "m213.492 69.15-8.004 21.45c-.678 1.896-1.364 3.4-2.096 4.558a10 10 0 0 1-1.358 1.744c-1.24 1.246-2.7 1.868-4.57 1.942v-3.016a5.1 5.1 0 0 0 1.8-.664c1.038-.648 1.542-1.6 1.87-2.434a4.97 4.97 0 0 0 0-3.62l-4.714-12.092h3.544l3.2 10.048 6.458-17.916z"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#fff",
-    d: "M88.759 98v-8.727h3.443q.993 0 1.692.379.697.375 1.065 1.044.37.665.37 1.534 0 .87-.374 1.534-.376.665-1.087 1.036-.708.37-1.713.37H89.96v-1.478h1.897q.532 0 .877-.183.35-.188.52-.516.175-.333.175-.763 0-.435-.175-.758a1.17 1.17 0 0 0-.52-.507q-.35-.184-.886-.184h-1.244V98zm8.13 0v-8.727h3.442q.989 0 1.688.353.703.35 1.069.993.37.64.371 1.505 0 .87-.375 1.495a2.43 2.43 0 0 1-1.087.955q-.707.333-1.713.332h-2.305v-1.483h2.007q.528 0 .878-.145.35-.144.52-.434.175-.29.175-.72 0-.435-.175-.733a1.08 1.08 0 0 0-.524-.452q-.35-.158-.882-.158h-1.245V98zm4.712-3.972L103.77 98h-2.037l-2.122-3.972zM105.123 98v-8.727h5.881v1.521h-4.036v2.08h3.733v1.52h-3.733v2.085h4.053V98zm7.708-8.727h2.275l2.404 5.863h.102l2.403-5.863h2.276V98h-1.79v-5.68h-.072l-2.259 5.637h-1.219l-2.258-5.659h-.073V98h-1.789zm13.185 0V98h-1.845v-8.727zm7.269 0h1.845v5.667q0 .956-.456 1.67-.452.717-1.265 1.117-.814.396-1.897.397-1.087 0-1.9-.397a3.05 3.05 0 0 1-1.266-1.116q-.452-.716-.452-1.67v-5.668h1.846v5.51q0 .498.217.886.222.388.622.61.4.22.933.221.537 0 .934-.222.4-.22.617-.609.222-.388.222-.886zm3.723 0h2.276l2.403 5.863h.103l2.403-5.863h2.276V98h-1.79v-5.68h-.073l-2.258 5.637h-1.219l-2.258-5.659h-.073V98h-1.79zM78.616 88.504a.415.415 0 0 0-.222-.459.426.426 0 0 0-.505.094l-4.781 5.278a.41.41 0 0 0-.071.448c.068.15.218.246.385.246h3.697l-.735 3.385c-.04.185.051.373.222.459.17.085.378.047.505-.094l4.781-5.278a.41.41 0 0 0 .071-.448.42.42 0 0 0-.385-.246h-3.697z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#000",
-    d: "M50.22 57.727h1.488l1.78 3.218h.07l1.78-3.218h1.487l-2.645 4.56V65h-1.314v-2.713zm8.845 7.38q-.798 0-1.385-.352a2.4 2.4 0 0 1-.909-.984q-.32-.631-.32-1.477 0-.845.32-1.48.324-.637.91-.988.585-.351 1.384-.352.8 0 1.385.352.586.351.906.987.323.636.323 1.481t-.323 1.477q-.32.633-.906.984-.585.352-1.385.352m.007-1.03q.434 0 .725-.238.29-.242.433-.646.146-.405.146-.902 0-.501-.146-.906a1.43 1.43 0 0 0-.433-.65 1.1 1.1 0 0 0-.725-.241q-.444 0-.738.241-.292.242-.437.65-.142.405-.142.906 0 .496.142.902.145.405.437.646.294.238.738.238m7.174-1.371v-3.16h1.286V65h-1.246v-.97h-.057a1.64 1.64 0 0 1-.608.75q-.418.291-1.033.291-.535 0-.948-.238a1.65 1.65 0 0 1-.64-.7q-.23-.461-.23-1.114v-3.474h1.285v3.275q0 .518.284.824.285.305.746.305.285 0 .55-.139a1.1 1.1 0 0 0 .437-.412q.174-.276.174-.692M68.854 65v-5.455H70.1v.91h.057a1.36 1.36 0 0 1 1.346-.988q.106 0 .238.011.135.007.224.025v1.182a1.4 1.4 0 0 0-.26-.05 2.4 2.4 0 0 0-.337-.024 1.3 1.3 0 0 0-.632.153q-.277.148-.437.415a1.17 1.17 0 0 0-.16.614V65zm10.454-5.273a.97.97 0 0 0-.419-.725q-.364-.26-.951-.26-.412 0-.707.125a1.05 1.05 0 0 0-.451.338.82.82 0 0 0-.057.88.94.94 0 0 0 .288.284q.18.114.401.192.22.078.444.132l.682.17q.411.096.792.26.383.162.685.411.306.249.483.6.178.353.178.824 0 .64-.327 1.126-.327.483-.945.756-.614.27-1.488.27-.848 0-1.473-.263a2.2 2.2 0 0 1-.973-.767q-.348-.504-.377-1.228h1.296q.029.38.235.632t.536.376q.333.124.746.124.429 0 .753-.128a1.2 1.2 0 0 0 .51-.362.87.87 0 0 0 .19-.547.7.7 0 0 0-.168-.468 1.2 1.2 0 0 0-.458-.313 4.4 4.4 0 0 0-.682-.227l-.827-.213q-.9-.23-1.42-.7-.519-.472-.519-1.253 0-.643.348-1.126a2.3 2.3 0 0 1 .955-.75q.604-.27 1.367-.27.775 0 1.357.27.585.267.92.743.333.472.344 1.087zM81.793 65v-5.455h1.286V65zm.647-6.229a.75.75 0 0 1-.526-.202.65.65 0 0 1-.22-.494q0-.29.22-.493a.74.74 0 0 1 .526-.206q.308 0 .525.206.22.203.22.493a.65.65 0 0 1-.22.494.74.74 0 0 1-.525.202m4.685.774v.995h-3.136v-.995zm-2.362-1.306h1.285v5.12q0 .26.079.398.081.135.213.185.13.05.29.05.122 0 .221-.018.103-.018.156-.032l.217 1.005q-.103.035-.295.078a2.4 2.4 0 0 1-.462.05q-.482.013-.87-.146a1.35 1.35 0 0 1-.614-.504q-.223-.342-.22-.853zm5.793 6.868q-.821 0-1.417-.341a2.3 2.3 0 0 1-.913-.973q-.32-.633-.32-1.488 0-.842.32-1.478.323-.639.902-.994.58-.359 1.36-.359.505 0 .952.164.45.16.795.497.349.337.547.86.2.518.2 1.235v.394H88.51v-.866h3.239a1.4 1.4 0 0 0-.16-.657 1.16 1.16 0 0 0-.437-.458 1.23 1.23 0 0 0-.646-.167q-.395 0-.692.192a1.3 1.3 0 0 0-.466.497 1.4 1.4 0 0 0-.166.67v.757q0 .477.174.817.174.338.486.519.312.177.731.177.282 0 .508-.078a1.1 1.1 0 0 0 .394-.238 1 1 0 0 0 .253-.387l1.2.135a1.9 1.9 0 0 1-.433.83q-.316.353-.81.548-.495.192-1.13.191"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("linearGradient", {
-      id: "paint0_linear_1651_1134",
-      x1: "199.236",
-      x2: "199.236",
-      y1: "95.164",
-      y2: "73.202",
-      gradientUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        stopColor: "#570732"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.02",
-        stopColor: "#5D0936"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.16",
-        stopColor: "#771549"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.3",
-        stopColor: "#8B1D58"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.47",
-        stopColor: "#992362"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.67",
-        stopColor: "#A12768"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "1",
-        stopColor: "#A4286A"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("linearGradient", {
-      id: "paint1_linear_1651_1134",
-      x1: "210.498",
-      x2: "210.498",
-      y1: "95.164",
-      y2: "73.248",
-      gradientUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        stopColor: "#570732"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.02",
-        stopColor: "#5D0936"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.16",
-        stopColor: "#771549"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.3",
-        stopColor: "#8B1D58"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.47",
-        stopColor: "#992362"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.67",
-        stopColor: "#A12768"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "1",
-        stopColor: "#A4286A"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("linearGradient", {
-      id: "paint2_linear_1651_1134",
-      x1: "204.956",
-      x2: "204.956",
-      y1: "69.15",
-      y2: "98.85",
-      gradientUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        stopColor: "#77B227"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.47",
-        stopColor: "#75B027"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.64",
-        stopColor: "#6EAB27"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.75",
-        stopColor: "#63A027"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.85",
-        stopColor: "#529228"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.93",
-        stopColor: "#3C8028"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "1",
-        stopColor: "#246B29"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1134",
-      width: "248.8",
-      height: "125.8",
-      x: "0.6",
-      y: "0.6",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "5",
-        result: "effect1_dropShadow_1651_1134"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "-1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "1.2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.13 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1134"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1134",
-        result: "shape"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter1_d_1651_1134",
-      width: "218.2",
-      height: "37.2",
-      x: "14.4",
-      y: "42.4",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        radius: "1",
-        result: "effect1_dropShadow_1651_1134"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dx: "-1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "3.8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.978141 0 0 0 0 0.875727 0 0 0 0 0.754366 0 0 0 0.41 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1134"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1134",
-        result: "shape"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("clipPath", {
-      id: "clip0_1651_1134",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        fill: "#fff",
-        d: "M189 69h30v30h-30z"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("pattern", {
-      id: "pattern0_1651_1134",
-      width: "1",
-      height: "1",
-      patternContentUnits: "objectBoundingBox",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("use", {
-        xlinkHref: "#image0_1651_1134",
-        transform: "scale(.004 .01176)"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("image", {
-      xlinkHref: "data:image/png;base64,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",
-      id: "image0_1651_1134",
-      width: "250",
-      height: "85",
-      preserveAspectRatio: "none"
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/YoastSeoIcon.jsx":
-/*!***********************************************!*\
-  !*** ./src/components/icons/YoastSeoIcon.jsx ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  xmlnsXlink: "http://www.w3.org/1999/xlink",
-  width: "250",
-  height: "127",
-  fill: "none",
-  viewBox: "0 0 250 127",
-  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter0_d_1651_1117)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "234",
-      height: "111",
-      x: "8",
-      y: "9",
-      fill: "#fff",
-      rx: "5"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "url(#pattern0_1651_1117)",
-    d: "M97 22h50v17H97z",
-    opacity: "0.67"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#ADA4A4",
-    fillOpacity: "0.5",
-    d: "M23 92h203v4H23zM23 102h203v4H23zM23 82h203v4H23z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("g", {
-    filter: "url(#filter1_d_1651_1117)",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
-      width: "203",
-      height: "22",
-      x: "23",
-      y: "50",
-      fill: "#fff",
-      fillOpacity: "0.5",
-      rx: "5",
-      shapeRendering: "crispEdges"
-    })
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#8F2B63",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M37.175 55.187a.352.352 0 0 1 .65 0l1.328 3.194c.05.122.165.205.297.216l3.449.276a.352.352 0 0 1 .2.618l-2.627 2.25a.35.35 0 0 0-.114.35l.803 3.365a.352.352 0 0 1-.525.381l-2.953-1.803a.35.35 0 0 0-.366 0l-2.953 1.803a.352.352 0 0 1-.525-.381l.803-3.366a.35.35 0 0 0-.114-.348l-2.627-2.251a.352.352 0 0 1 .2-.618l3.45-.276a.35.35 0 0 0 .296-.216z"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#F8F9FA",
-    stroke: "#2B2B2B",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "M221.669 67.15c-9.533-9.533-24.986-9.533-34.519 0s-9.533 24.989 0 34.522 24.986 9.533 34.519 0 9.533-24.989 0-34.522"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#fff",
-    d: "m225.814 97.817.105-.105 14.728 14.745-7.212 7.188-14.728-14.741.058-.058"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    stroke: "#2B2B2B",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "1.5",
-    d: "m225.814 97.817.105-.105 14.728 14.745-7.212 7.188-14.728-14.741.058-.058"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
-    clipPath: "url(#clip0_1651_1117)",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "url(#paint0_linear_1651_1117)",
-      d: "M200.526 76.252h-5.23l5.116 13.136a4.2 4.2 0 0 1 0 3.062c-.452 1.15-1.212 2.378-3.384 2.67l-.322.044h-1.01a4.585 4.585 0 0 1-4.572-4.564V77.774a4.584 4.584 0 0 1 4.572-4.574h11.652l-4.132 11.478z"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "url(#paint1_linear_1651_1117)",
-      d: "M216.71 77.774v17.39h-12.422a26 26 0 0 0 1.922-4.294l6.572-17.622a4.6 4.6 0 0 1 3.928 4.526"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      fill: "url(#paint2_linear_1651_1117)",
-      d: "m213.492 69.15-8.004 21.45c-.678 1.896-1.364 3.4-2.096 4.558a10 10 0 0 1-1.358 1.744c-1.24 1.246-2.7 1.868-4.57 1.942v-3.016a5.1 5.1 0 0 0 1.8-.664c1.038-.648 1.542-1.6 1.87-2.434a4.97 4.97 0 0 0 0-3.62l-4.714-12.092h3.544l3.2 10.048 6.458-17.916z"
-    })]
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    fill: "#000",
-    d: "M50.22 56.727h1.488l1.78 3.218h.07l1.78-3.218h1.487l-2.645 4.56V64h-1.314v-2.713zm8.845 7.38q-.798 0-1.385-.352a2.4 2.4 0 0 1-.909-.984q-.32-.631-.32-1.477 0-.845.32-1.48.324-.637.91-.988.585-.351 1.384-.352.8 0 1.385.352.586.351.906.987.323.636.323 1.481t-.323 1.477q-.32.633-.906.984-.585.351-1.385.351m.007-1.03q.434 0 .725-.238.29-.242.433-.646.146-.405.146-.902 0-.501-.146-.906a1.43 1.43 0 0 0-.433-.65 1.1 1.1 0 0 0-.725-.241q-.444 0-.738.241-.292.242-.437.65-.142.405-.142.906 0 .496.142.902.145.405.437.646.294.238.738.238m7.174-1.371v-3.16h1.286V64h-1.246v-.97h-.057a1.64 1.64 0 0 1-.608.75q-.418.291-1.033.291-.535 0-.948-.238a1.65 1.65 0 0 1-.64-.7q-.23-.461-.23-1.114v-3.474h1.285v3.275q0 .518.284.824.285.305.746.305.285 0 .55-.139a1.1 1.1 0 0 0 .437-.412q.174-.276.174-.692M68.854 64v-5.455H70.1v.91h.057a1.36 1.36 0 0 1 1.346-.988q.106 0 .238.011.135.007.224.025v1.182a1.4 1.4 0 0 0-.26-.05 2.4 2.4 0 0 0-.337-.024 1.3 1.3 0 0 0-.632.153q-.277.148-.437.415a1.17 1.17 0 0 0-.16.614V64zm10.454-5.273a.97.97 0 0 0-.419-.725q-.364-.26-.951-.26-.412 0-.707.125a1.05 1.05 0 0 0-.451.338.82.82 0 0 0-.057.88.94.94 0 0 0 .288.284q.18.114.401.192.22.078.444.132l.682.17q.411.096.792.26.383.162.685.411.306.249.483.6.178.353.178.824 0 .64-.327 1.126-.327.483-.945.756-.614.27-1.488.27-.848 0-1.473-.263a2.2 2.2 0 0 1-.973-.767q-.348-.504-.377-1.228h1.296q.029.38.235.632t.536.376q.333.124.746.124.429 0 .753-.128a1.2 1.2 0 0 0 .51-.362.87.87 0 0 0 .19-.547.7.7 0 0 0-.168-.468 1.2 1.2 0 0 0-.458-.313 4.4 4.4 0 0 0-.682-.227l-.827-.213q-.9-.23-1.42-.7-.519-.472-.519-1.253 0-.643.348-1.126a2.3 2.3 0 0 1 .955-.75q.604-.27 1.367-.27.775 0 1.357.27.585.267.92.743.333.472.344 1.087zM81.793 64v-5.455h1.286V64zm.647-6.229a.75.75 0 0 1-.526-.202.65.65 0 0 1-.22-.494q0-.29.22-.493a.74.74 0 0 1 .526-.206q.308 0 .525.206.22.203.22.493a.65.65 0 0 1-.22.494.74.74 0 0 1-.525.202m4.685.774v.995h-3.136v-.995zm-2.362-1.306h1.285v5.12q0 .26.079.398.081.135.213.185.13.05.29.05.122 0 .221-.018.103-.018.156-.032l.217 1.005q-.103.035-.295.078a2.4 2.4 0 0 1-.462.05q-.482.013-.87-.146a1.35 1.35 0 0 1-.614-.504q-.223-.342-.22-.853zm5.793 6.868q-.821 0-1.417-.341a2.3 2.3 0 0 1-.913-.973q-.32-.633-.32-1.488 0-.842.32-1.478.323-.639.902-.994.58-.359 1.36-.359.505 0 .952.164.45.16.795.497.349.337.547.86.2.518.2 1.235v.394H88.51v-.866h3.239a1.4 1.4 0 0 0-.16-.657 1.16 1.16 0 0 0-.437-.458 1.23 1.23 0 0 0-.646-.167q-.395 0-.692.192a1.3 1.3 0 0 0-.466.497 1.4 1.4 0 0 0-.166.67v.757q0 .477.174.817.174.338.486.519.312.177.731.177.282 0 .508-.078a1.1 1.1 0 0 0 .394-.238 1 1 0 0 0 .253-.387l1.2.135a1.9 1.9 0 0 1-.433.83q-.316.353-.81.548-.495.192-1.13.191"
-  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("defs", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("linearGradient", {
-      id: "paint0_linear_1651_1117",
-      x1: "199.236",
-      x2: "199.236",
-      y1: "95.164",
-      y2: "73.202",
-      gradientUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        stopColor: "#570732"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.02",
-        stopColor: "#5D0936"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.16",
-        stopColor: "#771549"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.3",
-        stopColor: "#8B1D58"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.47",
-        stopColor: "#992362"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.67",
-        stopColor: "#A12768"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "1",
-        stopColor: "#A4286A"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("linearGradient", {
-      id: "paint1_linear_1651_1117",
-      x1: "210.498",
-      x2: "210.498",
-      y1: "95.164",
-      y2: "73.248",
-      gradientUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        stopColor: "#570732"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.02",
-        stopColor: "#5D0936"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.16",
-        stopColor: "#771549"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.3",
-        stopColor: "#8B1D58"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.47",
-        stopColor: "#992362"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.67",
-        stopColor: "#A12768"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "1",
-        stopColor: "#A4286A"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("linearGradient", {
-      id: "paint2_linear_1651_1117",
-      x1: "204.956",
-      x2: "204.956",
-      y1: "69.15",
-      y2: "98.85",
-      gradientUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        stopColor: "#77B227"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.47",
-        stopColor: "#75B027"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.64",
-        stopColor: "#6EAB27"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.75",
-        stopColor: "#63A027"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.85",
-        stopColor: "#529228"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "0.93",
-        stopColor: "#3C8028"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("stop", {
-        offset: "1",
-        stopColor: "#246B29"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter0_d_1651_1117",
-      width: "248.8",
-      height: "125.8",
-      x: "0.6",
-      y: "0.6",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        operator: "dilate",
-        radius: "5",
-        result: "effect1_dropShadow_1651_1117"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dy: "-1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "1.2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.760077 0 0 0 0 0.858475 0 0 0 0 0.932274 0 0 0 0.13 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1117"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1117",
-        result: "shape"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("filter", {
-      id: "filter1_d_1651_1117",
-      width: "216.2",
-      height: "35.2",
-      x: "15.4",
-      y: "43.4",
-      colorInterpolationFilters: "sRGB",
-      filterUnits: "userSpaceOnUse",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feFlood", {
-        floodOpacity: "0",
-        result: "BackgroundImageFix"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        in: "SourceAlpha",
-        result: "hardAlpha",
-        values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feMorphology", {
-        in: "SourceAlpha",
-        radius: "1",
-        result: "effect1_dropShadow_1651_1117"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feOffset", {
-        dx: "-1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feGaussianBlur", {
-        stdDeviation: "3.8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feComposite", {
-        in2: "hardAlpha",
-        operator: "out"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feColorMatrix", {
-        values: "0 0 0 0 0.389697 0 0 0 0 0.569484 0 0 0 0 0.80459 0 0 0 0.41 0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in2: "BackgroundImageFix",
-        result: "effect1_dropShadow_1651_1117"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("feBlend", {
-        in: "SourceGraphic",
-        in2: "effect1_dropShadow_1651_1117",
-        result: "shape"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("clipPath", {
-      id: "clip0_1651_1117",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-        fill: "#fff",
-        d: "M189 69h30v30h-30z"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("pattern", {
-      id: "pattern0_1651_1117",
-      width: "1",
-      height: "1",
-      patternContentUnits: "objectBoundingBox",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("use", {
-        xlinkHref: "#image0_1651_1117",
-        transform: "scale(.004 .01176)"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("image", {
-      xlinkHref: "data:image/png;base64,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",
-      id: "image0_1651_1117",
-      width: "250",
-      height: "85",
-      preserveAspectRatio: "none"
-    })]
-  })]
-}));
-
-/***/ }),
-
-/***/ "./src/components/icons/index.js":
-/*!***************************************!*\
-  !*** ./src/components/icons/index.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AdvancedReviewIcon: () => (/* reexport safe */ _AdvancedReviewIcon__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   BookingIcon: () => (/* reexport safe */ _BookingIcon__WEBPACK_IMPORTED_MODULE_1__["default"]),
-/* harmony export */   EmailTemplatesIcon: () => (/* reexport safe */ _EmailTemplatesIcon__WEBPACK_IMPORTED_MODULE_2__["default"]),
-/* harmony export */   GiftCardsIcon: () => (/* reexport safe */ _GiftCardsIcon__WEBPACK_IMPORTED_MODULE_3__["default"]),
-/* harmony export */   MembershipIcon: () => (/* reexport safe */ _MembershipIcon__WEBPACK_IMPORTED_MODULE_4__["default"]),
-/* harmony export */   OneClickCheckoutIcon: () => (/* reexport safe */ _OneClickCheckoutIcon__WEBPACK_IMPORTED_MODULE_5__["default"]),
-/* harmony export */   ProductAddonsIcon: () => (/* reexport safe */ _ProductAddonsIcon__WEBPACK_IMPORTED_MODULE_6__["default"]),
-/* harmony export */   SenseiIcon: () => (/* reexport safe */ _SenseiIcon__WEBPACK_IMPORTED_MODULE_7__["default"]),
-/* harmony export */   SocialLoginIcon: () => (/* reexport safe */ _SocialLoginIcon__WEBPACK_IMPORTED_MODULE_8__["default"]),
-/* harmony export */   SubscriptionIcon: () => (/* reexport safe */ _SubscriptionIcon__WEBPACK_IMPORTED_MODULE_9__["default"]),
-/* harmony export */   WishlistIcon: () => (/* reexport safe */ _WishlistIcon__WEBPACK_IMPORTED_MODULE_10__["default"]),
-/* harmony export */   WonderCartIcon: () => (/* reexport safe */ _WonderCartIcon__WEBPACK_IMPORTED_MODULE_11__["default"]),
-/* harmony export */   YoastPremiumIcon: () => (/* reexport safe */ _YoastPremiumIcon__WEBPACK_IMPORTED_MODULE_12__["default"]),
-/* harmony export */   YoastSeoIcon: () => (/* reexport safe */ _YoastSeoIcon__WEBPACK_IMPORTED_MODULE_13__["default"])
-/* harmony export */ });
-/* harmony import */ var _AdvancedReviewIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdvancedReviewIcon */ "./src/components/icons/AdvancedReviewIcon.jsx");
-/* harmony import */ var _BookingIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BookingIcon */ "./src/components/icons/BookingIcon.jsx");
-/* harmony import */ var _EmailTemplatesIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EmailTemplatesIcon */ "./src/components/icons/EmailTemplatesIcon.jsx");
-/* harmony import */ var _GiftCardsIcon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GiftCardsIcon */ "./src/components/icons/GiftCardsIcon.jsx");
-/* harmony import */ var _MembershipIcon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./MembershipIcon */ "./src/components/icons/MembershipIcon.jsx");
-/* harmony import */ var _OneClickCheckoutIcon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./OneClickCheckoutIcon */ "./src/components/icons/OneClickCheckoutIcon.jsx");
-/* harmony import */ var _ProductAddonsIcon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ProductAddonsIcon */ "./src/components/icons/ProductAddonsIcon.jsx");
-/* harmony import */ var _SenseiIcon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./SenseiIcon */ "./src/components/icons/SenseiIcon.jsx");
-/* harmony import */ var _SocialLoginIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SocialLoginIcon */ "./src/components/icons/SocialLoginIcon.jsx");
-/* harmony import */ var _SubscriptionIcon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./SubscriptionIcon */ "./src/components/icons/SubscriptionIcon.jsx");
-/* harmony import */ var _WishlistIcon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./WishlistIcon */ "./src/components/icons/WishlistIcon.jsx");
-/* harmony import */ var _WonderCartIcon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./WonderCartIcon */ "./src/components/icons/WonderCartIcon.jsx");
-/* harmony import */ var _YoastPremiumIcon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./YoastPremiumIcon */ "./src/components/icons/YoastPremiumIcon.jsx");
-/* harmony import */ var _YoastSeoIcon__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./YoastSeoIcon */ "./src/components/icons/YoastSeoIcon.jsx");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***/ }),
-
 /***/ "./src/components/sidebar/Sidebar.js":
 /*!*******************************************!*\
   !*** ./src/components/sidebar/Sidebar.js ***!
@@ -19020,16 +16432,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Sidebar: () => (/* binding */ Sidebar)
 /* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/sidebar-navigation/index.js");
 /* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/title/index.js");
 /* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/text-input/index.js");
 /* harmony import */ var _heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @heroicons/react/24/outline */ "./node_modules/@heroicons/react/24/outline/esm/FireIcon.js");
 /* harmony import */ var _heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @heroicons/react/24/outline */ "./node_modules/@heroicons/react/24/outline/esm/StarIcon.js");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../contexts/FilterContext */ "./src/contexts/FilterContext.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../contexts/FilterContext */ "./src/contexts/FilterContext.js");
 
 
 
@@ -19039,7 +16451,7 @@ const Sidebar = () => {
   const {
     search,
     setSearch
-  } = (0,_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_1__.useFilter)();
+  } = (0,_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_2__.useFilter)();
   const categories = [];
   NewfoldSolutions.categories.map(cat => {
     const {
@@ -19059,56 +16471,50 @@ const Sidebar = () => {
   const {
     category,
     setCategory
-  } = (0,_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_1__.useFilter)();
+  } = (0,_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_2__.useFilter)();
   const staticCategories = [{
     id: 'popular',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Most popular', 'wp-module-solutions'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Most popular', 'wp-module-solutions'),
     icon: _heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     id: 'premium',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Premium Tools', 'wp-module-solutions'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Premium Tools', 'wp-module-solutions'),
     icon: _heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_4__["default"]
   }];
   const mergedCats = [{
     id: 'all',
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('All', 'wp-module-solutions')
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('All', 'wp-module-solutions')
   }, ...categories, ...staticCategories];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("aside", {
-    className: 'nfd-solutions-sidebar',
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      activePath: category,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"].Sidebar, {
-        className: "nfd-w-[300px]",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "nfd-solutions-search nfd-flex nfd-flex-col nfd-gap-4 nfd-mb-8",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
-            as: "h4",
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Search', 'wp-module-solutions')
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__["default"], {
-            value: search,
-            onChange: e => {
-              setSearch(e.target.value);
-            }
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"].MenuItem, {
-          label: "Categories",
-          defaultOpen: true,
-          className: 'nfd-hidden',
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
-            as: "h4",
-            className: "nfd-solutions-categories-title nfd-mb-4",
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Categories', 'wp-module-solutions')
-          }), mergedCats.map(cat => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"].SubmenuItem, {
-            pathProp: "id",
-            id: cat.id,
-            label: cat.label + (cat?.count ? ` (${cat.count})` : ''),
-            icon: cat.icon,
-            onClick: () => setCategory(cat.id)
-          }, cat.id))]
-        })]
-      })
-    })
-  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("aside", {
+    className: 'nfd-solutions-sidebar'
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    activePath: category
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"].Sidebar, {
+    className: "nfd-w-[300px]"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "nfd-solutions-search nfd-flex nfd-flex-col nfd-gap-4 nfd-mb-8"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    as: "h4"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Search', 'wp-module-solutions')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    value: search,
+    onChange: e => {
+      setSearch(e.target.value);
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"].MenuItem, {
+    label: "Categories",
+    defaultOpen: true,
+    className: 'nfd-hidden'
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    as: "h4",
+    className: "nfd-solutions-categories-title nfd-mb-4"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Categories', 'wp-module-solutions')), mergedCats.map(cat => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"].SubmenuItem, {
+    pathProp: "id",
+    id: cat.id,
+    label: cat.label + (cat?.count ? ` (${cat.count})` : ''),
+    key: cat.id,
+    icon: cat.icon,
+    onClick: () => setCategory(cat.id)
+  }))))));
 };
 
 /***/ }),
@@ -19141,29 +16547,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   EmptyTools: () => (/* binding */ EmptyTools)
 /* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @heroicons/react/24/outline */ "./node_modules/@heroicons/react/24/outline/esm/MagnifyingGlassIcon.js");
 /* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/title/index.js");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
 
 const EmptyTools = () => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "nfd-solutions-tools--empty nfd-flex nfd-flex-col nfd-items-center nfd-justify-center nfd-gap-5 nfd-max-w-3xl nfd-h-full nfd--mt-12",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      className: 'nfd-solutions-tools--empty__icon',
-      width: 150
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      as: "h2",
-      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('No matching tools', 'wp-module-solutions')
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Check the spelling or try another keyword', 'wp-module-solutions')
-    })]
-  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "nfd-solutions-tools--empty nfd-flex nfd-flex-col nfd-items-center nfd-justify-center nfd-gap-5 nfd-max-w-3xl nfd-h-full nfd--mt-12"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    className: 'nfd-solutions-tools--empty__icon',
+    width: 150
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    as: "h2"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('No matching tools', 'wp-module-solutions')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Check the spelling or try another keyword', 'wp-module-solutions')));
 };
 
 /***/ }),
@@ -19179,33 +16581,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Tools: () => (/* binding */ Tools)
 /* harmony export */ });
-/* harmony import */ var _EmptyTools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EmptyTools */ "./src/components/tools/EmptyTools.js");
-/* harmony import */ var _tool__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tool */ "./src/components/tools/tool/index.js");
-/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../contexts/FilterContext */ "./src/contexts/FilterContext.js");
-/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../icons */ "./src/components/icons/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _EmptyTools__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EmptyTools */ "./src/components/tools/EmptyTools.js");
+/* harmony import */ var _tool__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tool */ "./src/components/tools/tool/index.js");
+/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../contexts/FilterContext */ "./src/contexts/FilterContext.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils */ "./src/utils/index.js");
 
 
 
 
 
-const toolsIcons = {
-  'Memberships': _icons__WEBPACK_IMPORTED_MODULE_3__.MembershipIcon,
-  'Subscriptions': _icons__WEBPACK_IMPORTED_MODULE_3__.SubscriptionIcon,
-  'Social Login': _icons__WEBPACK_IMPORTED_MODULE_3__.SocialLoginIcon,
-  'Yoast SEO': _icons__WEBPACK_IMPORTED_MODULE_3__.YoastSeoIcon,
-  'Yoast WooCommerce SEO': _icons__WEBPACK_IMPORTED_MODULE_3__.YoastPremiumIcon,
-  'Advanced Reviews': _icons__WEBPACK_IMPORTED_MODULE_3__.AdvancedReviewIcon,
-  'Bookings & Appointments': _icons__WEBPACK_IMPORTED_MODULE_3__.BookingIcon,
-  'Custom Email Templates': _icons__WEBPACK_IMPORTED_MODULE_3__.EmailTemplatesIcon,
-  'Gift Cards': _icons__WEBPACK_IMPORTED_MODULE_3__.GiftCardsIcon,
-  'One-Click Checkout': _icons__WEBPACK_IMPORTED_MODULE_3__.OneClickCheckoutIcon,
-  'Product Add-Ons & Extra Options': _icons__WEBPACK_IMPORTED_MODULE_3__.ProductAddonsIcon,
-  'Sensei': _icons__WEBPACK_IMPORTED_MODULE_3__.SenseiIcon,
-  'Wishlists': _icons__WEBPACK_IMPORTED_MODULE_3__.WishlistIcon,
-  'WonderCart': _icons__WEBPACK_IMPORTED_MODULE_3__.WonderCartIcon
-};
 const wideCards = ['20085485-7185-40fd-89e4-14dbb690aea2',
 // Advanced Review
 'ad68e506-8c2b-4c0f-a9e3-16623d00041e' // Booking & Appointments
@@ -19249,15 +16635,10 @@ const Tools = () => {
   const {
     category,
     search
-  } = (0,_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_2__.useFilter)();
-  let tools = NewfoldSolutions.entitlements
-  //.filter( tool => Object.keys( toolsIcons ).includes( tool.name ) )
-  .sort((a, b) => {
-    const aHasIcon = Object.keys(toolsIcons).includes(a.name);
-    const bHasIcon = Object.keys(toolsIcons).includes(b.name);
-    if (aHasIcon && !bHasIcon) return -1;
-    if (!aHasIcon && bHasIcon) return 1;
-    return 0;
+  } = (0,_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_3__.useFilter)();
+  let tools = (0,_utils__WEBPACK_IMPORTED_MODULE_4__.getTools)({
+    category,
+    search
   });
   if ('all' !== category) {
     tools = tools.filter(tool => tool?.categorySlug === category);
@@ -19266,24 +16647,24 @@ const Tools = () => {
     tools = tools.filter(tool => tool?.name?.toLowerCase().includes(search.toLowerCase()) || tool?.plsSlug?.toLowerCase().includes(search.toLowerCase()));
   }
   tools = layoutTools([...tools]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [!tools.length && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_EmptyTools__WEBPACK_IMPORTED_MODULE_0__.EmptyTools, {}), !!tools.length && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "nfd-solutions-tools nfd-grid nfd-gap-4",
-      children: tools.map(tool => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tool__WEBPACK_IMPORTED_MODULE_1__.Tool, {
-        name: tool?.name,
-        description: tool.description,
-        href: tool.cta?.url.replace('{siteUrl}', NewfoldSolutions.siteUrl),
-        icon: toolsIcons[tool?.name],
-        smallIcon: !toolsIcons[tool?.name] ? tool.image.primaryImage : null,
-        wide: wideCards.includes(tool?.id),
-        premium: tool?.premium,
-        popular: tool?.popular,
-        isActive: tool?.isActive,
-        plsProvider: tool?.plsProviderName,
-        plsSlug: tool?.plsSlug
-      }, tool?.name))
-    })]
-  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !tools.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_EmptyTools__WEBPACK_IMPORTED_MODULE_1__.EmptyTools, null), !!tools.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "nfd-solutions-tools nfd-grid nfd-gap-4"
+  }, tools.map(tool => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_tool__WEBPACK_IMPORTED_MODULE_2__.Tool, {
+    name: tool?.name,
+    category: tool.category,
+    description: tool.description,
+    href: tool.cta?.url.replace('{siteUrl}', NewfoldSolutions.siteUrl),
+    featureIcon: tool?.image?.featureImage,
+    smallIcon: tool?.image?.primaryImage,
+    wide: tool?.wide,
+    premium: tool?.premium,
+    popular: tool?.popular,
+    key: tool?.name,
+    isActive: tool?.isActive,
+    plsProvider: tool?.plsProviderName,
+    plsSlug: tool?.plsSlug,
+    ctbId: tool?.ctbId
+  }))));
 };
 
 /***/ }),
@@ -19316,31 +16697,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Tool: () => (/* binding */ Tool)
 /* harmony export */ });
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/card/index.js");
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/title/index.js");
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/button/index.js");
-/* harmony import */ var _badge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../badge */ "./src/components/badge/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _heroicons_react_20_solid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @heroicons/react/20/solid */ "./node_modules/@heroicons/react/20/solid/esm/FireIcon.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/card/index.js");
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/title/index.js");
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/button/index.js");
+/* harmony import */ var _badge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../badge */ "./src/components/badge/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _heroicons_react_20_solid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @heroicons/react/20/solid */ "./node_modules/@heroicons/react/20/solid/esm/FireIcon.js");
+/* harmony import */ var react_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/dist/react-svg.esm.js");
 
 
 
 
 
 
-const PopularBadge = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_badge__WEBPACK_IMPORTED_MODULE_1__.Badge, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Popular', 'wp-module-solutions'),
-  icon: _heroicons_react_20_solid__WEBPACK_IMPORTED_MODULE_4__["default"],
+
+const PopularBadge = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_badge__WEBPACK_IMPORTED_MODULE_2__.Badge, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Popular', 'wp-module-solutions'),
+  icon: _heroicons_react_20_solid__WEBPACK_IMPORTED_MODULE_5__["default"],
   rounded: true,
   className: 'nfd-mb-2 nfd-solutions-badge--popular'
 });
-const PremiumBadge = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_badge__WEBPACK_IMPORTED_MODULE_1__.Badge, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Premium', 'wp-module-solutions'),
+const PremiumBadge = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_badge__WEBPACK_IMPORTED_MODULE_2__.Badge, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Premium', 'wp-module-solutions'),
   rounded: true,
   className: 'nfd-mb-2 nfd-solutions-badge--premium'
 });
@@ -19351,59 +16734,51 @@ const Tool = ({
   popular = false,
   wide = false,
   href = '',
-  icon: Icon = null,
+  featureIcon = null,
   smallIcon = null,
   plsSlug,
   plsProvider,
-  isActive
+  isActive,
+  ctbId
 }) => {
   const classes = ['nfd-solutions-tool-card', 'nfd-bg-white', 'nfd-justify-end', 'nfd-solutions-tool-card-' + plsSlug, {
-    'nfd-solutions-tool-card--with-icon': Icon,
+    'nfd-solutions-tool-card--with-icon': featureIcon,
     'nfd-solutions-tool-card--with-small-icon': smallIcon,
     'nfd-solutions-tool-card--wide': wide,
     'nfd-solutions-tool-card--premium': premium
   }];
-  const Header = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: Icon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"].Header, {
-      className: "nfd-solutions-tool-card__header nfd-bg-inherit nfd-bg-transparent",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Icon, {})
-    })
-  });
-  const Content = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"].Content, {
-    children: [!!smallIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-      className: "nfd-solutions-card__small-icon",
-      src: smallIcon
-    }), (premium || popular) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "nfd-solutions-card-badges nfd-flex nfd-gap-1",
-      children: [premium && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PremiumBadge, {}), popular && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PopularBadge, {})]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      as: 'h4',
-      className: "nfd-solutions-card-title",
-      children: name
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-      className: "nfd-solutions-card-description",
-      children: description
-    })]
-  });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes),
-    children: [wide && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "nfd-solutions-tool-card--wide-body nfd-flex nfd-gap-4 nfd-items-end",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Content, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Header, {})]
-    }), !wide && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Content, {})]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"].Footer, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        as: 'a',
-        href: href,
-        "data-nfd-installer-pls-slug": !isActive ? plsSlug : null,
-        "data-nfd-installer-pls-provider": !isActive ? plsProvider : null,
-        "data-nfd-installer-plugin-activate": isActive,
-        "data-nfd-installer-plugin-name": !isActive ? name : null,
-        children: premium ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get it', 'wp-module-solutions') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Manage', 'wp-module-solutions')
-      })
-    })]
-  });
+  const Header = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, featureIcon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"].Header, {
+    className: "nfd-solutions-tool-card__header nfd-bg-inherit nfd-bg-transparent"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_svg__WEBPACK_IMPORTED_MODULE_4__.ReactSVG, {
+    alt: name,
+    className: "nfd-solutions-card__feature-icon",
+    src: featureIcon
+  })));
+  const Content = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"].Content, null, !featureIcon && !!smallIcon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    alt: name,
+    className: "nfd-solutions-card__small-icon",
+    src: smallIcon
+  }), (premium || popular) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "nfd-solutions-card-badges nfd-flex nfd-gap-1"
+  }, premium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(PremiumBadge, null), popular && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(PopularBadge, null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    as: 'h4',
+    className: "nfd-solutions-card-title"
+  }, name), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "nfd-solutions-card-description"
+  }, description));
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(classes)
+  }, wide && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "nfd-solutions-tool-card--wide-body nfd-flex nfd-gap-4 nfd-items-end"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Content, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Header, null)), !wide && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Header, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Content, null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"].Footer, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    as: 'a',
+    href: href,
+    "data-nfd-installer-pls-slug": !isActive && !ctbId ? plsSlug : null,
+    "data-nfd-installer-pls-provider": !isActive && !ctbId ? plsProvider : null,
+    "data-nfd-installer-plugin-activate": isActive && !ctbId,
+    "data-nfd-installer-plugin-name": !isActive && !ctbId ? name : null,
+    "data-ctb-id": ctbId
+  }, premium ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Get it', 'wp-module-solutions') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Manage', 'wp-module-solutions'))));
 };
 
 /***/ }),
@@ -19437,23 +16812,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   FilterProvider: () => (/* binding */ FilterProvider),
 /* harmony export */   useFilter: () => (/* binding */ useFilter)
 /* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
-const FilterContext = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createContext)();
+const FilterContext = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createContext)();
 const FilterProvider = ({
   children
 }) => {
   const params = new URLSearchParams(window.location.search);
   const initialCategory = params.get('category');
   const initialSearch = params.get('s');
-  const [category, setCategory] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(initialCategory || 'all');
-  const [search, setSearch] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(initialSearch || '');
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+  const [category, setCategory] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(initialCategory || 'all');
+  const [search, setSearch] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(initialSearch || '');
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
     const paramsToUpdate = {
@@ -19470,17 +16845,16 @@ const FilterProvider = ({
     const newUrl = `${url.pathname}?${params.toString()}`;
     window.history.replaceState({}, '', newUrl);
   }, [search, category]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FilterContext.Provider, {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(FilterContext.Provider, {
     value: {
       category,
       setCategory,
       search,
       setSearch
-    },
-    children: children
-  });
+    }
+  }, children);
 };
-const useFilter = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useContext)(FilterContext);
+const useFilter = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useContext)(FilterContext);
 
 /***/ }),
 
@@ -19493,6 +16867,100 @@ const useFilter = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useCo
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/utils/index.js":
+/*!****************************!*\
+  !*** ./src/utils/index.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getTools: () => (/* binding */ getTools)
+/* harmony export */ });
+function layoutTools(tools) {
+  const layout = [];
+  let rowSpaces = 3;
+  let row = [];
+  const pushRow = () => {
+    layout.push(...row);
+    row = [];
+    rowSpaces = 3;
+  };
+  while (tools.length) {
+    if (tools[0]?.wide) {
+      if (rowSpaces > 1) {
+        row.push(tools.shift());
+        rowSpaces -= 2;
+      } else {
+        for (let i = 0; i < tools.length; i++) {
+          if (!tools[i]?.wide) {
+            row.push(...tools.splice(i, 1));
+            rowSpaces -= 1;
+            break;
+          }
+        }
+        pushRow();
+      }
+    } else if (rowSpaces > 0) {
+      row.push(tools.shift());
+      rowSpaces -= 1;
+    }
+    if (!rowSpaces) {
+      pushRow();
+    }
+  }
+  pushRow();
+  return layout;
+}
+function sortTools(ent1, ent2) {
+  if (ent1?.image?.featureImage && !ent2?.image?.featureImage) {
+    return -1;
+  }
+  if (!ent1?.image?.featureImage && ent2?.image?.featureImage) {
+    return 1;
+  }
+  const categoriesPriority = Object.fromEntries(NewfoldSolutions.categories.map(cat => [cat.slug, cat.priority]));
+  if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) {
+    return -1;
+  }
+  if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) {
+    return 1;
+  }
+  return 0;
+}
+const getTools = ({
+  includePremium = true,
+  sortForLayout = true,
+  sortByPriority = true,
+  search = null,
+  category = 'all'
+}) => {
+  let tools = NewfoldSolutions.entitlements;
+  if (includePremium) {
+    tools = [...tools, ...NewfoldSolutions.premium.map(tool => {
+      tool.premium = true;
+      return tool;
+    })];
+  }
+  if (sortByPriority) {
+    tools.sort(sortTools);
+  }
+  if ('all' !== category) {
+    tools = tools.filter(tool => tool?.categorySlug === category);
+  }
+  if (search) {
+    tools = tools.filter(tool => tool?.name?.toLowerCase().includes(search.toLowerCase()) || tool?.plsSlug?.toLowerCase().includes(search.toLowerCase()));
+  }
+  if (sortForLayout) {
+    tools = layoutTools([...tools]);
+  }
+  return tools;
+};
 
 
 /***/ }),
@@ -19560,17 +17028,6 @@ module.exports = window["React"];
 
 "use strict";
 module.exports = window["ReactDOM"];
-
-/***/ }),
-
-/***/ "react/jsx-runtime":
-/*!**********************************!*\
-  !*** external "ReactJSXRuntime" ***!
-  \**********************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = window["ReactJSXRuntime"];
 
 /***/ })
 
@@ -19680,22 +17137,20 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _tailwind_pcss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tailwind.pcss */ "./src/tailwind.pcss");
-/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/dom-ready */ "@wordpress/dom-ready");
-/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/root/index.js");
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/page/index.js");
-/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/header */ "./src/components/header/index.js");
-/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contexts/FilterContext */ "./src/contexts/FilterContext.js");
-/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/sidebar */ "./src/components/sidebar/index.js");
-/* harmony import */ var _components_tools__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/tools */ "./src/components/tools/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-K6CSEXPM.mjs");
-/* harmony import */ var react_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/dist/react-svg.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__);
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tailwind_pcss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tailwind.pcss */ "./src/tailwind.pcss");
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/dom-ready */ "@wordpress/dom-ready");
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/root/index.js");
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/page/index.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/header */ "./src/components/header/index.js");
+/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./contexts/FilterContext */ "./src/contexts/FilterContext.js");
+/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/sidebar */ "./src/components/sidebar/index.js");
+/* harmony import */ var _components_tools__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/tools */ "./src/components/tools/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-K6CSEXPM.mjs");
 
 
 
@@ -19708,32 +17163,23 @@ __webpack_require__.r(__webpack_exports__);
 
 const WP_SOLUTIONS_PAGE_ROOT_ELEMENT = 'nfd-solutions-app';
 const App = () => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.HashRouter, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_4__.FilterProvider, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_11__["default"], {
-          className: "nfd-solutions-app-container nfd-page min-[783px]:nfd-p-8 min-[783px]:nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_header__WEBPACK_IMPORTED_MODULE_3__.Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "nfd-flex nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_sidebar__WEBPACK_IMPORTED_MODULE_5__.Sidebar, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("main", {
-              className: "nfd-w-full",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_tools__WEBPACK_IMPORTED_MODULE_6__.Tools, {})
-            })]
-          })]
-        })
-      })
-    })
-  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__["default"], null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.HashRouter, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_5__.FilterProvider, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    className: "nfd-solutions-app-container nfd-page min-[783px]:nfd-p-8 min-[783px]:nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_header__WEBPACK_IMPORTED_MODULE_4__.Header, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "nfd-flex nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_sidebar__WEBPACK_IMPORTED_MODULE_6__.Sidebar, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("main", {
+    className: "nfd-w-full"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_tools__WEBPACK_IMPORTED_MODULE_7__.Tools, null)))))));
 };
 const SolutionsPageRender = () => {
   const DOM_ELEMENT = document.getElementById(WP_SOLUTIONS_PAGE_ROOT_ELEMENT);
   if (null !== DOM_ELEMENT) {
-    if ('undefined' !== typeof _wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createRoot) {
-      (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createRoot)(DOM_ELEMENT).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(App, {}));
+    if ('undefined' !== typeof _wordpress_element__WEBPACK_IMPORTED_MODULE_3__.createRoot) {
+      (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.createRoot)(DOM_ELEMENT).render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(App, null));
     }
   }
 };
-_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1___default()(SolutionsPageRender);
+_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2___default()(SolutionsPageRender);
 })();
 
 /******/ })()
