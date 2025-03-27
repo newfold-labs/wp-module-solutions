@@ -104,12 +104,16 @@ export const Tool = ( {
 				<Button
 					as={ 'a' }
 					href={ href }
-					data-nfd-installer-pls-slug={ ! isActive ? plsSlug : null }
-					data-nfd-installer-pls-provider={
-						! isActive ? plsProvider : null
+					data-nfd-installer-pls-slug={
+						! isActive && ! ctbId ? plsSlug : null
 					}
-					data-nfd-installer-plugin-activate={ isActive }
-					data-nfd-installer-plugin-name={ ! isActive ? name : null }
+					data-nfd-installer-pls-provider={
+						! isActive && ! ctbId ? plsProvider : null
+					}
+					data-nfd-installer-plugin-activate={ isActive && ! ctbId }
+					data-nfd-installer-plugin-name={
+						! isActive && ! ctbId ? name : null
+					}
 					data-ctb-id={ ctbId }
 				>
 					{ premium
