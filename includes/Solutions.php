@@ -45,6 +45,10 @@ class Solutions {
 		add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
 		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
 		add_action( 'admin_menu', array( __CLASS__, 'add_solutions_page' ) );
+		
+		add_filter( 'install_plugins_tabs', array( $this , 'add_brand_solutions_tab' ), 99 );
+		add_filter( 'install_plugins_nfd_solutions', array ( $this, 'render_nfd_solutions_tab' )  );
+		
 	}
 
 	/**
@@ -160,9 +164,9 @@ class Solutions {
 	 * Enqueue assets and set locals.
 	 */
 	public static function enqueue_admin_assets( $hook ) {
-		if ( $hook !== 'toplevel_page_solutions' ) {
+		/*if ( $hook !== 'toplevel_page_solutions' ) {
 			return;
-		}
+		}*/
 
 		$assets_info = include NFD_SOLUTIONS_DIR . '/build/bundle.asset.php';
 
@@ -263,5 +267,24 @@ class Solutions {
 			'wp-module-solutions',
 			NFD_SOLUTIONS_DIR . '/languages'
 		);
+	}
+	
+	/**
+	 * Add "Brand solution" tab to plugins install tabs.
+	 *
+	 * @param array $tabs Collection of tabs.
+	 *
+	 * @return array
+	 */
+	public function add_brand_solutions_tab ( $tabs ) {
+		$name = $this->container->plugin()->brand;
+		$solutions_tab = array( 'nfd_solutions' => ucfirst( $name ) .' '. __('Solutions', 'wp-module-solutions' ) );
+		
+		return array_merge( $solutions_tab, $tabs );
+	}
+	
+	public function render_nfd_solutions_tab()
+	{
+		echo '<div id="nfd-solutions-app"></div>';
 	}
 }
