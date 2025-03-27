@@ -171,7 +171,7 @@ class Solutions {
 
 	/**
 	 * Enqueue assets and set locals.
-	 * 
+	 *
 	 * @param string $hook The current admin page.
 	 */
 	public static function enqueue_admin_assets( $hook ) {
@@ -201,7 +201,7 @@ class Solutions {
 
 		$solutions_data = json_decode( wp_json_encode( self::$entitlements_api->get_items()->data ), true );
 
-		$solutions_data['entitlements'] = array_map (
+		$solutions_data['entitlements'] = array_map(
 			function ( $entitlement ) {
 				$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
 				return $entitlement;

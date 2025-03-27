@@ -16273,11 +16273,11 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Badge component
  *
- * @param label {string}
- * @param icon {JSX.Element | null}
- * @param rounded {boolean}
- * @param className {string}
- * @param props
+ * @param label      {string}
+ * @param icon       {JSX.Element | null}
+ * @param rounded    {boolean}
+ * @param className  {string}
+ * @param props      {object}
  */
 const Badge = ({
   label,
@@ -16773,10 +16773,10 @@ const Tool = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Content, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Header, null)), !wide && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Header, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Content, null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"].Footer, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__["default"], {
     as: 'a',
     href: href,
-    "data-nfd-installer-pls-slug": !isActive ? plsSlug : null,
-    "data-nfd-installer-pls-provider": !isActive ? plsProvider : null,
-    "data-nfd-installer-plugin-activate": isActive,
-    "data-nfd-installer-plugin-name": !isActive ? name : null,
+    "data-nfd-installer-pls-slug": !isActive && !ctbId ? plsSlug : null,
+    "data-nfd-installer-pls-provider": !isActive && !ctbId ? plsProvider : null,
+    "data-nfd-installer-plugin-activate": isActive && !ctbId,
+    "data-nfd-installer-plugin-name": !isActive && !ctbId ? name : null,
     "data-ctb-id": ctbId
   }, premium ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Get it', 'wp-module-solutions') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Manage', 'wp-module-solutions'))));
 };
@@ -16918,11 +16918,19 @@ function layoutTools(tools) {
   return layout;
 }
 function sortTools(ent1, ent2) {
-  if (ent1?.image?.featureImage && !ent2?.image?.featureImage) return -1;
-  if (!ent1?.image?.featureImage && ent2?.image?.featureImage) return 1;
+  if (ent1?.image?.featureImage && !ent2?.image?.featureImage) {
+    return -1;
+  }
+  if (!ent1?.image?.featureImage && ent2?.image?.featureImage) {
+    return 1;
+  }
   const categoriesPriority = Object.fromEntries(NewfoldSolutions.categories.map(cat => [cat.slug, cat.priority]));
-  if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) return -1;
-  if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) return 1;
+  if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) {
+    return -1;
+  }
+  if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) {
+    return 1;
+  }
   return 0;
 }
 const getTools = ({

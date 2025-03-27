@@ -23,19 +23,19 @@ const PremiumBadge = () => (
 );
 
 export const Tool = ( {
-						  name,
-						  description = '',
-						  premium = false,
-						  popular = false,
-						  wide = false,
-						  href = '',
-						  featureIcon = null,
-						  smallIcon = null,
-						  plsSlug,
-						  plsProvider,
-						  isActive,
-						  ctbId,
-					  } ) => {
+	name,
+	description = '',
+	premium = false,
+	popular = false,
+	wide = false,
+	href = '',
+	featureIcon = null,
+	smallIcon = null,
+	plsSlug,
+	plsProvider,
+	isActive,
+	ctbId,
+} ) => {
 	const classes = [
 		'nfd-solutions-tool-card',
 		'nfd-bg-white',
@@ -71,10 +71,10 @@ export const Tool = ( {
 					src={ smallIcon }
 				/>
 			) }
-			{ (premium || popular) && (
+			{ ( premium || popular ) && (
 				<div className="nfd-solutions-card-badges nfd-flex nfd-gap-1">
-					{ premium && <PremiumBadge/> }
-					{ popular && <PopularBadge/> }
+					{ premium && <PremiumBadge /> }
+					{ popular && <PopularBadge /> }
 				</div>
 			) }
 			<Title as={ 'h4' } className="nfd-solutions-card-title">
@@ -90,14 +90,14 @@ export const Tool = ( {
 		<Card className={ classNames( classes ) }>
 			{ wide && (
 				<div className="nfd-solutions-tool-card--wide-body nfd-flex nfd-gap-4 nfd-items-end">
-					<Content/>
-					<Header/>
+					<Content />
+					<Header />
 				</div>
 			) }
 			{ ! wide && (
 				<>
-					<Header/>
-					<Content/>
+					<Header />
+					<Content />
 				</>
 			) }
 			<Card.Footer>

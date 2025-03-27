@@ -1,4 +1,8 @@
-import { SidebarNavigation, Title, TextInput } from '@newfold/ui-component-library';
+import {
+	SidebarNavigation,
+	Title,
+	TextInput,
+} from '@newfold/ui-component-library';
 import { FireIcon, HeartIcon, StarIcon } from '@heroicons/react/24/outline';
 import { __ } from '@wordpress/i18n';
 import { useFilter } from '../../contexts/FilterContext';
@@ -6,12 +10,12 @@ import { useFilter } from '../../contexts/FilterContext';
 export const Sidebar = () => {
 	const { search, setSearch } = useFilter();
 	const categories = [];
-	NewfoldSolutions.categories.map( cat => {
+	NewfoldSolutions.categories.map( ( cat ) => {
 		const { slug: id, name: label, priority, count } = cat;
 		categories.push( { id, label, priority, count } );
 	} );
 
-	categories.sort( ( a, b ) => (a.priority > b.priority ? -1 : 1) )
+	categories.sort( ( a, b ) => ( a.priority > b.priority ? -1 : 1 ) );
 
 	const { category, setCategory } = useFilter();
 
@@ -19,22 +23,22 @@ export const Sidebar = () => {
 		{
 			id: 'popular',
 			label: __( 'Most popular', 'wp-module-solutions' ),
-			icon: FireIcon
+			icon: FireIcon,
 		},
 		{
 			id: 'premium',
 			label: __( 'Premium Tools', 'wp-module-solutions' ),
-			icon: StarIcon
-		}
+			icon: StarIcon,
+		},
 	];
 
 	const mergedCats = [
 		{
 			id: 'all',
-			label: __( 'All', 'wp-module-solutions' )
+			label: __( 'All', 'wp-module-solutions' ),
 		},
 		...categories,
-		...staticCategories
+		...staticCategories,
 	];
 
 	return (
@@ -45,27 +49,40 @@ export const Sidebar = () => {
 						<Title as="h4">
 							{ __( 'Search', 'wp-module-solutions' ) }
 						</Title>
-						<TextInput value={ search } onChange={ ( e ) => {
-							setSearch( e.target.value )
-						} }/>
+						<TextInput
+							value={ search }
+							onChange={ ( e ) => {
+								setSearch( e.target.value );
+							} }
+						/>
 					</div>
-					<SidebarNavigation.MenuItem label="Categories" defaultOpen={ true } className={ 'nfd-hidden' }>
-						<Title as="h4" className="nfd-solutions-categories-title nfd-mb-4">
+					<SidebarNavigation.MenuItem
+						label="Categories"
+						defaultOpen={ true }
+						className={ 'nfd-hidden' }
+					>
+						<Title
+							as="h4"
+							className="nfd-solutions-categories-title nfd-mb-4"
+						>
 							{ __( 'Categories', 'wp-module-solutions' ) }
 						</Title>
-						{ mergedCats.map( cat =>
+						{ mergedCats.map( ( cat ) => (
 							<SidebarNavigation.SubmenuItem
 								pathProp="id"
 								id={ cat.id }
-								label={ cat.label + (cat?.count ? ` (${ cat.count })` : '') }
+								label={
+									cat.label +
+									( cat?.count ? ` (${ cat.count })` : '' )
+								}
 								key={ cat.id }
 								icon={ cat.icon }
 								onClick={ () => setCategory( cat.id ) }
 							/>
-						) }
+						) ) }
 					</SidebarNavigation.MenuItem>
 				</SidebarNavigation.Sidebar>
 			</SidebarNavigation>
 		</aside>
 	);
-}
+};

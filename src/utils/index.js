@@ -38,37 +38,50 @@ function layoutTools( tools ) {
 }
 
 function sortTools( ent1, ent2 ) {
-	if ( ent1?.image?.featureImage && ! ent2?.image?.featureImage ) return -1;
-	if ( ! ent1?.image?.featureImage && ent2?.image?.featureImage ) return 1;
+	if ( ent1?.image?.featureImage && ! ent2?.image?.featureImage ) {
+		return -1;
+	}
+	if ( ! ent1?.image?.featureImage && ent2?.image?.featureImage ) {
+		return 1;
+	}
 
 	const categoriesPriority = Object.fromEntries(
-		NewfoldSolutions.categories.map( cat => ([ cat.slug, cat.priority ]) )
+		NewfoldSolutions.categories.map( ( cat ) => [ cat.slug, cat.priority ] )
 	);
 
-	if ( categoriesPriority[ ent1.categorySlug ] > categoriesPriority[ ent2.categorySlug ] ) return -1;
-	if ( categoriesPriority[ ent1.categorySlug ] > categoriesPriority[ ent2.categorySlug ] ) return 1;
+	if (
+		categoriesPriority[ ent1.categorySlug ] >
+		categoriesPriority[ ent2.categorySlug ]
+	) {
+		return -1;
+	}
+	if (
+		categoriesPriority[ ent1.categorySlug ] >
+		categoriesPriority[ ent2.categorySlug ]
+	) {
+		return 1;
+	}
 
 	return 0;
 }
 
 const getTools = ( {
-					   includePremium = true,
-					   sortForLayout = true,
-					   sortByPriority = true,
-					   search = null,
-					   category = 'all'
-				   } ) => {
-
+	includePremium = true,
+	sortForLayout = true,
+	sortByPriority = true,
+	search = null,
+	category = 'all',
+} ) => {
 	let tools = NewfoldSolutions.entitlements;
 
 	if ( includePremium ) {
 		tools = [
 			...tools,
-			...NewfoldSolutions.premium.map( tool => {
-				tool.premium = true
+			...NewfoldSolutions.premium.map( ( tool ) => {
+				tool.premium = true;
 
 				return tool;
-			} )
+			} ),
 		];
 	}
 
@@ -90,9 +103,8 @@ const getTools = ( {
 
 	if ( sortForLayout ) {
 		tools = layoutTools( [ ...tools ] );
-
 	}
-	return tools
-}
+	return tools;
+};
 
 export { getTools };
