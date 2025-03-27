@@ -4,6 +4,7 @@ import { Badge } from './../../badge';
 import classNames from 'classnames';
 
 import { FireIcon } from '@heroicons/react/20/solid';
+import { ReactSVG } from 'react-svg';
 
 const PopularBadge = () => (
 	<Badge
@@ -22,19 +23,19 @@ const PremiumBadge = () => (
 );
 
 export const Tool = ( {
-	name,
-	description = '',
-	premium = false,
-	popular = false,
-	wide = false,
-	href = '',
-	featureIcon = null,
-	smallIcon = null,
-	plsSlug,
-	plsProvider,
-	isActive,
-	ctbId,
-} ) => {
+						  name,
+						  description = '',
+						  premium = false,
+						  popular = false,
+						  wide = false,
+						  href = '',
+						  featureIcon = null,
+						  smallIcon = null,
+						  plsSlug,
+						  plsProvider,
+						  isActive,
+						  ctbId,
+					  } ) => {
 	const classes = [
 		'nfd-solutions-tool-card',
 		'nfd-bg-white',
@@ -52,7 +53,7 @@ export const Tool = ( {
 		<>
 			{ featureIcon && (
 				<Card.Header className="nfd-solutions-tool-card__header nfd-bg-inherit nfd-bg-transparent">
-					<img
+					<ReactSVG
 						alt={ name }
 						className="nfd-solutions-card__feature-icon"
 						src={ featureIcon }
@@ -63,17 +64,17 @@ export const Tool = ( {
 	);
 	const Content = () => (
 		<Card.Content>
-			{ !! smallIcon && (
+			{ ! featureIcon && !! smallIcon && (
 				<img
 					alt={ name }
 					className="nfd-solutions-card__small-icon"
 					src={ smallIcon }
 				/>
 			) }
-			{ ( premium || popular ) && (
+			{ (premium || popular) && (
 				<div className="nfd-solutions-card-badges nfd-flex nfd-gap-1">
-					{ premium && <PremiumBadge /> }
-					{ popular && <PopularBadge /> }
+					{ premium && <PremiumBadge/> }
+					{ popular && <PopularBadge/> }
 				</div>
 			) }
 			<Title as={ 'h4' } className="nfd-solutions-card-title">
@@ -89,14 +90,14 @@ export const Tool = ( {
 		<Card className={ classNames( classes ) }>
 			{ wide && (
 				<div className="nfd-solutions-tool-card--wide-body nfd-flex nfd-gap-4 nfd-items-end">
-					<Content />
-					<Header />
+					<Content/>
+					<Header/>
 				</div>
 			) }
 			{ ! wide && (
 				<>
-					<Header />
-					<Content />
+					<Header/>
+					<Content/>
 				</>
 			) }
 			<Card.Footer>

@@ -7,7 +7,7 @@ export const Sidebar = () => {
 	const { search, setSearch } = useFilter();
 	const categories = [];
 	NewfoldSolutions.categories.map( cat => {
-		const { id, name: label, priority, count } = cat;
+		const { slug: id, name: label, priority, count } = cat;
 		categories.push( { id, label, priority, count } );
 	} );
 
