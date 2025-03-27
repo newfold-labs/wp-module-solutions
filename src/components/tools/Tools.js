@@ -89,6 +89,7 @@ export const Tools = () => {
 							plsProvider={ tool?.plsProviderName }
 							plsSlug={ tool?.plsSlug }
 							ctbId={ tool?.ctbId }
+							ctbHref={ tool?.ctbHref }
 						/>
 					) ) }
 				</div>

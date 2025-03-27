@@ -16663,7 +16663,8 @@ const Tools = () => {
     isActive: tool?.isActive,
     plsProvider: tool?.plsProviderName,
     plsSlug: tool?.plsSlug,
-    ctbId: tool?.ctbId
+    ctbId: tool?.ctbId,
+    ctbHref: tool?.ctbHref
   }))));
 };
 
@@ -16739,7 +16740,8 @@ const Tool = ({
   plsSlug,
   plsProvider,
   isActive,
-  ctbId
+  ctbId,
+  ctbHref
 }) => {
   const classes = ['nfd-solutions-tool-card', 'nfd-bg-white', 'nfd-justify-end', 'nfd-solutions-tool-card-' + plsSlug, {
     'nfd-solutions-tool-card--with-icon': featureIcon,
@@ -16772,7 +16774,7 @@ const Tool = ({
     className: "nfd-solutions-tool-card--wide-body nfd-flex nfd-gap-4 nfd-items-end"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Content, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Header, null)), !wide && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Header, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Content, null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"].Footer, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__["default"], {
     as: 'a',
-    href: href,
+    href: ctbId ? ctbHref : href,
     "data-nfd-installer-pls-slug": !isActive && !ctbId ? plsSlug : null,
     "data-nfd-installer-pls-provider": !isActive && !ctbId ? plsProvider : null,
     "data-nfd-installer-plugin-activate": isActive && !ctbId,

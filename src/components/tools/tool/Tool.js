@@ -35,6 +35,7 @@ export const Tool = ( {
 	plsProvider,
 	isActive,
 	ctbId,
+	ctbHref,
 } ) => {
 	const classes = [
 		'nfd-solutions-tool-card',
@@ -103,7 +104,7 @@ export const Tool = ( {
 			<Card.Footer>
 				<Button
 					as={ 'a' }
-					href={ href }
+					href={ ctbId ? ctbHref : href }
 					data-nfd-installer-pls-slug={
 						! isActive && ! ctbId ? plsSlug : null
 					}
