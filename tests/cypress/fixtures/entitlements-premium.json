@@ -162,7 +162,7 @@
             "basename": "yith-woocommerce-advanced-product-options-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-add-ons-extra-options.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/product-addons.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-advanced-product-options.svg"
             },
             "category": "Product Management",
             "categorySlug": "product-management",
@@ -224,7 +224,7 @@
             "basename": "yith-woocommerce-gift-cards-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/gift-cards.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/gift-card.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-gift-cards.svg"
             },
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",
@@ -484,7 +484,7 @@
             "basename": "yith-woocommerce-social-login-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/social-login.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/social-login.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-social-login.svg"
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
@@ -610,7 +610,7 @@
             "basename": "yith-woocommerce-wishlist-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/wishlists.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/wishlist.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-wishlist.svg"
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
@@ -643,7 +643,7 @@
             "basename": "wonder-cart\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/wondercart.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/wondercart.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/wonder-cart.svg"
             },
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",
@@ -679,7 +679,7 @@
             "basename": "wordpress-seo\/wp-seo.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-premium.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yoast-seo.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yoast.svg"
             },
             "category": "Search Engine Optimization",
             "categorySlug": "search-engine-optimization",
@@ -712,7 +712,7 @@
             "basename": "yith-woocommerce-advanced-reviews-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/advanced-reviews.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/advanced-reviews.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-advanced-reviews.svg"
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
@@ -744,7 +744,7 @@
             "basename": "yith-woocommerce-email-templates-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/custom-email-templates.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/email-templates.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-email-templates.svg"
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
@@ -841,7 +841,7 @@
             "basename": "sensei-lms\/sensei-lms.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/sensei-lms.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/sensei.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/sensei-lms.svg"
             },
             "category": "Content Monetization",
             "categorySlug": "content-monetization",
@@ -1038,7 +1038,7 @@
             "basename": "yith-woocommerce-membership-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/memberships.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/membership.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-membership.svg"
             },
             "category": "Content Monetization",
             "categorySlug": "content-monetization",
@@ -1168,7 +1168,7 @@
             "basename": "yith-woocommerce-booking-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/bookings-appointments.svg",
-                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/booking.svg"
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-booking.svg"
             },
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",

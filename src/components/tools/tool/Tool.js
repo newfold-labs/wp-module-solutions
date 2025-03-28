@@ -43,8 +43,8 @@ export const Tool = ( {
 		'nfd-justify-end',
 		'nfd-solutions-tool-card-' + plsSlug,
 		{
-			'nfd-solutions-tool-card--with-icon': featureIcon,
-			'nfd-solutions-tool-card--with-small-icon': smallIcon,
+			'nfd-solutions-tool-card--with-featured-icon': featureIcon,
+			'nfd-solutions-tool-card--with-small-icon': ! featureIcon && smallIcon,
 			'nfd-solutions-tool-card--wide': wide,
 			'nfd-solutions-tool-card--premium': premium,
 		},

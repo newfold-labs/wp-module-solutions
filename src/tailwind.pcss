@@ -48,6 +48,10 @@
 		--background-color : #F7EEDE;
 		--primary-color    : #D17D3D !important;
 
+		svg .nfd-svg-current-color {
+			color : #FBF2E7 !important;
+		}
+
 		.nfd-button {
 			--tw-ring-color : rgba(209, 125, 61, var(--tw-ring-opacity)) !important;
 		}
@@ -69,7 +73,7 @@
 		@apply nfd-pt-1;
 	}
 
-	&.nfd-solutions-tool-card--with-icon {
+	&.nfd-solutions-tool-card--with-featured-icon {
 		background : linear-gradient(var(--background-color), #FFF);
 
 		&:before {
@@ -94,11 +98,11 @@
 			height : 100%;
 		}
 
-		.nfd-solutions-booking-icon {
+		.nfd-yith-woocommerce-booking-icon {
 			transform : scale(1.15) translateX(-20px);
 		}
 
-		.nfd-solutions-advanced-review-icon {
+		.nfd-yith-woocommerce-advanced-reviews-icon {
 			transform : scale(1.15) translateX(-40px);
 		}
 	}
@@ -118,7 +122,7 @@
 		}
 	}
 
-	&.nfd-solutions-tool-card--with-small-icon:nth-child(1) {
+	&.nfd-solutions-tool-card--with-featured-icon + .nfd-solutions-tool-card--with-small-icon {
 		grid-column-start : 1 !important;
 	}
 
@@ -161,8 +165,14 @@
 	}
 
 	.nfd-svg-rotate-5deg,
-	.nfd-svg-rotate--5deg {
-		transform        : rotate(0deg);
+	.nfd-svg-rotate--5deg,
+	.nfd-svg-rotate--40deg,
+	.nfd-svg-translate-x,
+	.nfd-svg-translate--x,
+	.nfd-svg-translate-y,
+	.nfd-svg-translate--y,
+	.nfd-svg-scale,
+	.nfd-svg-scale-l {
 		transform-origin : center center;
 		transition       : .4s;
 	}
@@ -174,6 +184,22 @@
 			opacity : 1;
 		}
 
+		.nfd-svg-translate--x {
+			transform : translateX(-5%);
+		}
+
+		.nfd-svg-translate-x {
+			transform : translateX(5%);
+		}
+
+		.nfd-svg-translate--y {
+			transform : translateY(-5%);
+		}
+
+		.nfd-svg-translate-y {
+			transform : translateY(5%);
+		}
+
 		.nfd-svg-rotate-5deg {
 			transform : rotate(5deg);
 		}
@@ -182,9 +208,26 @@
 			transform : rotate(-5deg);
 		}
 
+		.nfd-svg-rotate--40deg {
+			transform : rotate(-40deg);
+		}
+
+		.nfd-svg-scale {
+			transform : scale(1.1);
+		}
+
+		.nfd-svg-scale-l {
+			transform : scale(1.2);
+		}
+
 		.nfd-svg-bounce {
 			transform-origin : center center;
 			animation        : nfd-solutions-bounce .5s;
+		}
+
+		.nfd-svg-bounce-xl {
+			transform-origin : center center;
+			animation        : nfd-solutions-bounce-xl .5s;
 		}
 
 		.nfd-svg-delay-2 {
@@ -203,11 +246,7 @@
 			animation : ease-out nfd-solutions-grow-x .7s forwards;
 		}
 
-		.nfd-solutions-one-click-checkout-icon .nfd-svg-bounce {
-			transform-origin : 60% 60%;
-		}
-
-		.nfd-solutions-advanced-review-icon {
+		.nfd-yith-woocommerce-advanced-reviews-icon {
 			.nfd-svg-grow-x {
 				transform        : scaleX(0);
 				transform-origin : 15.3% 0;
@@ -222,6 +261,15 @@
 	}
 	50% {
 		transform : scale(1.1);
+	}
+}
+
+@keyframes nfd-solutions-bounce-xl {
+	0%, 100% {
+		transform : scale(1);
+	}
+	50% {
+		transform : scale(1.3);
 	}
 }
 
@@ -269,3 +317,4 @@
 		--bg-color : #5C4ED9;
 	}
 }
+
