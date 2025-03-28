@@ -48,6 +48,8 @@ class Solutions {
 		
 		add_filter( 'install_plugins_tabs', array( $this , 'add_brand_solutions_tab' ), 99 );
 		add_filter( 'install_plugins_nfd_solutions', array ( $this, 'render_nfd_solutions_tab' )  );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_solutions_assets' ) );
+		
 	}
 
 	/**
@@ -179,7 +181,7 @@ class Solutions {
 	 * @param string $hook The current admin page.
 	 */
 	public static function enqueue_admin_assets( $hook ) {
-
+		
 		if ( 'toplevel_page_solutions' !== $hook ) {
 			return;
 		}
@@ -304,6 +306,60 @@ class Solutions {
 	
 	public function render_nfd_solutions_tab()
 	{
-		echo '<div id="nfd-solutions-app"></div>';
+		echo '<div id="nfd-add-new-app"></div>';
+	}
+	/**
+	 * Enqueue assets and set locals for brand solutions on add plugins section.
+	 *
+	 * @param string $hook The current admin page.
+	 */
+	public function enqueue_admin_solutions_assets( $hook ) {
+		if ( 'plugin-install.php' !== $hook ) {
+			return;
+		}
+		
+		$assets_info = include NFD_SOLUTIONS_DIR . '/build/addnew/bundle.asset.php';
+		
+		
+		\wp_enqueue_script(
+			'solutions-react',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/bundle.js',
+			array_merge(
+				$assets_info['dependencies'],
+				array( 'nfd-installer' ),
+			),
+			$assets_info['version'],
+			true
+		);
+		
+		\wp_enqueue_style(
+			'solutions-react-style',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/main.css',
+			array( 'nfd-installer' ),
+			$assets_info['version']
+		);
+		
+		$solutions_data = json_decode( wp_json_encode( self::$entitlements_api->get_items()->data ), true );
+		
+		$solutions_data['entitlements'] = array_map(
+			function ( $entitlement ) {
+				$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
+				return $entitlement;
+			},
+			$solutions_data['entitlements']
+		);
+		
+		\wp_localize_script(
+			'solutions-react',
+			'NewfoldSolutions',
+			array_merge(
+				$solutions_data,
+				array(
+					'siteUrl' => get_site_url(),
+				)
+			)
+		);
+		
+		
 	}
 }
