@@ -3,13 +3,19 @@ import classNames from 'classnames';
 /**
  * Badge component
  *
- * @param label {string}
- * @param icon {JSX.Element | null}
- * @param rounded {boolean}
- * @param className {string}
- * @param props
+ * @param label      {string}
+ * @param icon       {JSX.Element | null}
+ * @param rounded    {boolean}
+ * @param className  {string}
+ * @param props      {object}
  */
-export const Badge = ( { label, icon: Icon = null, rounded = false, className = '', ...props } ) => {
+export const Badge = ( {
+	label,
+	icon: Icon = null,
+	rounded = false,
+	className = '',
+	...props
+} ) => {
 	const classes = [
 		className,
 		'nfd-solutions-badge',
@@ -19,8 +25,10 @@ export const Badge = ( { label, icon: Icon = null, rounded = false, className = 
 		},
 	];
 
-	return <span className={ classNames( classes ) } { ...props }>
-	{ Icon && <Icon/> }
-		{ label }
-</span>;
-}
+	return (
+		<span className={ classNames( classes ) } { ...props }>
+			{ Icon && <Icon /> }
+			{ label }
+		</span>
+	);
+};

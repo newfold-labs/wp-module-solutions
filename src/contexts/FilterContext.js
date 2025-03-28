@@ -1,8 +1,12 @@
-import { createContext, useContext, useState, useEffect } from '@wordpress/element';
+import {
+	createContext,
+	useContext,
+	useState,
+	useEffect,
+} from '@wordpress/element';
 import { useNavigate } from 'react-router-dom';
 
 const FilterContext = createContext();
-
 
 export const FilterProvider = ( { children } ) => {
 	const params = new URLSearchParams( window.location.search );
@@ -11,31 +15,31 @@ export const FilterProvider = ( { children } ) => {
 	const [ category, setCategory ] = useState( initialCategory || 'all' );
 	const [ search, setSearch ] = useState( initialSearch || '' );
 
-	useEffect(		() => {
-			const url = new URL( window.location.href );
-			const params = new URLSearchParams( url.search );
+	useEffect( () => {
+		const url = new URL( window.location.href );
+		const params = new URLSearchParams( url.search );
 
-			const paramsToUpdate = {
-				s: search,
-				category,
-			};
+		const paramsToUpdate = {
+			s: search,
+			category,
+		};
 
-			Object.keys( paramsToUpdate ).map(
-				key => {
-					if ( paramsToUpdate[ key ] ) {
-						params.set( key, paramsToUpdate[ key ] );
-					} else {
-						params.delete( key );
-					}
-				}
-			);
+		Object.keys( paramsToUpdate ).map( ( key ) => {
+			if ( paramsToUpdate[ key ] ) {
+				params.set( key, paramsToUpdate[ key ] );
+			} else {
+				params.delete( key );
+			}
+		} );
 
-			const newUrl = `${ url.pathname }?${ params.toString() }`;
-			window.history.replaceState( {}, '', newUrl );
-		}, [ search, category ] );
+		const newUrl = `${ url.pathname }?${ params.toString() }`;
+		window.history.replaceState( {}, '', newUrl );
+	}, [ search, category ] );
 
 	return (
-		<FilterContext.Provider value={ { category, setCategory, search, setSearch } }>
+		<FilterContext.Provider
+			value={ { category, setCategory, search, setSearch } }
+		>
 			{ children }
 		</FilterContext.Provider>
 	);
