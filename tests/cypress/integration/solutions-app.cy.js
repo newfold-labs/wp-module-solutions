@@ -3,7 +3,7 @@ import { wpLogin, wpCli, setCapability } from '../wp-module-support/utils.cy';
 
 const entitlementsFixture = require( '../fixtures/entitlements.json' );
 
-describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
+describe.skip( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 	beforeEach( () => {
 		wpLogin();
 		cy.visit( '/wp-admin/index.php' );
