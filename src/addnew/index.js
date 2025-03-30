@@ -1,4 +1,5 @@
 import '../tailwind.pcss';
+import './components/utils/plugins.css'
 
 import domReady from '@wordpress/dom-ready';
 import { createRoot } from '@wordpress/element';
@@ -6,6 +7,7 @@ import { Root, Page } from '@newfold/ui-component-library';
 import { Section } from './components/section';
 import { FilterProvider } from '../contexts/FilterContext';
 import { Tools } from '../components/tools';
+import { Plugins } from "./components/plugins";
 import { HashRouter as Router } from 'react-router-dom';
 import {__} from "@wordpress/i18n";
 
@@ -32,7 +34,7 @@ const App = () => {
                         <div
                             className="nfd-flex nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0">
                             <main className="nfd-w-full">
-                                <Tools/>
+                                <Plugins/>
                             </main>
                         </div>
                     </Page>

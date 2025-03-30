@@ -1,6 +1,3 @@
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./src/tailwind.pcss ***!
-  \*******************************************************************************************************************************************************************************************************/
 /* Import main CSS including all components. */
 /**
  * Tailwind CSS preflight, but scoped to the Yoast root class.
@@ -3337,6 +3334,15 @@
 .nfd-w-full {
 		width: 100% !important;
 }
+.nfd-w-\[500px\] {
+		width: 500px !important;
+}
+.nfd-w-\[400px\] {
+		width: 400px !important;
+}
+.nfd-w-\[400\] {
+		width: 400 !important;
+}
 .nfd-min-w-0 {
 		min-width: 0px !important;
 }
@@ -4046,5 +4052,31 @@
 		}
 }
 
+.ndf-solution-empty {
+    width: 100%;
+    margin: 0 auto;
+    background: red;
+    text-align: center;
+}
 
-/*# sourceMappingURL=main.css.map*/
+.nfd-solutions-plugins {
+    grid-template-columns : repeat(auto-fit, minmax(550px, 1fr)) !important;
+    max-width             : calc(550px * 3 + 2rem);
+}
+
+/*Card*/
+
+.nfd-tools-card-plugin .nfd-card {
+    border-radius: 0;
+}
+
+.nfd-card .nfd-tools-plugin-card-icon {
+    width: 120px;
+    height: 120px;
+    left: 0;
+    top: 0;
+}
+
+.nfd-card .ndf-tools-plugin-content-section {
+    gap:20px
+}
