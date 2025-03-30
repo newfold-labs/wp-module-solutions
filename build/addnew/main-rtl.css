@@ -3334,15 +3334,6 @@
 .nfd-w-full {
 		width: 100% !important;
 }
-.nfd-w-\[500px\] {
-		width: 500px !important;
-}
-.nfd-w-\[400px\] {
-		width: 400px !important;
-}
-.nfd-w-\[400\] {
-		width: 400 !important;
-}
 .nfd-min-w-0 {
 		min-width: 0px !important;
 }
@@ -4068,6 +4059,15 @@
 
 .nfd-tools-card-plugin .nfd-card {
     border-radius: 0;
+    padding: 0px;
+}
+
+.nfd-tools-card-plugin .nfd-card .nfd-card__content, .nfd-tools-card-plugin .nfd-card .nfd-card__footer  {
+    padding: 1.5rem;
+}
+
+.nfd-tools-card-plugin .nfd-card__footer {
+    background-color: #F6F6F6;
 }
 
 .nfd-card .nfd-tools-plugin-card-icon {
@@ -4079,4 +4079,44 @@
 
 .nfd-card .ndf-tools-plugin-content-section {
     gap:20px
+}
+
+/* Card plugin title premium  */
+
+.nfd-tools-plugin-card-description {
+    max-width: 250px;
+}
+
+.nfd-tools-card-plugin .nfd-tools-plugin-card-title .nfd-title {
+    padding-top:10px;
+    padding-left:5px;
+}
+
+/*Card lock icon*/
+
+.nfd-tools-plugin-card-premium-icon {
+    width:20px;
+    height:20px;
+    background: #FBEFBC;
+    border: 1px solid #FDE68D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.nfd-tools-plugin-card-premium-icon svg {
+    max-width: 10px;
+    color: #CE8C09;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+/*card button*/
+
+.ndf-tools-plugin-card-button a {
+    top: 0px;
+    left:0px;
+    position:absolute;
+    margin: 1.5rem;
+    min-width:100px;
 }
