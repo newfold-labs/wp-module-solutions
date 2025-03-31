@@ -1,7 +1,8 @@
 const getPlugins = ( {
                        includePremium = true,
+                        includeEntitlements = true,
                    } ) => {
-    let tools = NewfoldSolutions.entitlements;
+    let tools = ( includeEntitlements ) ? NewfoldSolutions.entitlements : [];
 
     if ( includePremium ) {
         tools = [
@@ -16,4 +17,24 @@ const getPlugins = ( {
     return tools;
 };
 
-export { getPlugins };
+const getPlan = () => {
+
+    let plan = {
+        'name' : 'Solutions',
+        'sku' : ''
+    }
+    let planType = NewfoldSolutions?.solution;
+    planType = 'WP_SOLUTION_COMMERCE';
+    const currentSolution = NewfoldSolutions?.solutions.find( solution => solution?.sku === planType );
+
+    if ( currentSolution ) {
+        plan.sku = currentSolution.sku;
+        plan.name = currentSolution.name;
+    }
+
+
+
+
+    return plan;
+};
+export { getPlugins, getPlan };

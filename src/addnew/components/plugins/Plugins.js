@@ -1,36 +1,11 @@
-import { getPlugins } from "../utils";
-import { Plugin } from "./plugin";
-import { EmptyPlugins} from "./EmptyPlugins";
+import {Commerce} from "./plans/Commerce";
+import {Creator} from "./plans/Creator";
 
-export const Plugins = () => {
-    let plugins = getPlugins({});
+export const Plugins = ( {plan} ) => {
     return (
         <>
-            { ! plugins && <EmptyPlugins /> }
-            { !! plugins.length && (
-                <div className="nfd-solutions-plugins nfd-grid nfd-gap-4">
-                    { plugins.map( ( plugin ) => (
-                        <Plugin
-                            name={ plugin?.name }
-                            category={ plugin.category }
-                            description={ plugin.description }
-                            href={ plugin.cta?.url.replace(
-                                '{siteUrl}',
-                                NewfoldSolutions.siteUrl
-                            ) }
-                            icon={ plugin?.image?.primaryImage }
-                            premium={ plugin?.premium }
-                            popular={ plugin?.popular }
-                            key={ plugin?.name }
-                            isActive={ plugin?.isActive }
-                            plsProvider={ plugin?.plsProviderName }
-                            plsSlug={ plugin?.plsSlug }
-                            ctbId={ plugin?.ctbId }
-                            ctbHref={ plugin?.ctbHref }
-                        />
-                    ) ) }
-                </div>
-            ) }
+            { !!plan && 'WP_SOLUTION_COMMERCE' === plan.sku && <Commerce plan={plan}/>  }
+            { !!plan && 'WP_SOLUTION_CREATOR' === plan.sku && <Creator plan={plan}/>  }
         </>
     );
 };

@@ -1,10 +1,8 @@
 import { Title } from '@newfold/ui-component-library';
 import classNames from 'classnames';
-import { Card } from "@newfold/ui-component-library";
 import { Badge } from "../../../../components/badge";
 import {__} from "@wordpress/i18n";
 import { LockClosedIcon } from "@heroicons/react/20/solid";
-import { Button } from "@newfold/ui-component-library";
 
 const PremiumBadge = () => (
     <Badge
@@ -18,7 +16,7 @@ export const Plugin = ({
         name,
         description = '',
         premium = false,
-        popular = false,
+        displayAsPremiun = false,
         href = '',
         icon = null,
         plsSlug,
@@ -29,75 +27,75 @@ export const Plugin = ({
 }) => {
 
     let classes = [
-        'nfd-tools-card-plugin',
-        'nfd-tools-card-plugin-' + plsSlug,
+        'plugin-card',
+        'nfd-plugin-card',
+        'plugin-card-' + plsSlug,
         {
-            'nfd-tools-card-plugin--premium' : premium,
-            'nfd-tools-card-plugin--icon'    : icon,
-            'ndf-tools-card-plugin--popular' : popular,
+            'nfd-plugin-card-premium' : premium && displayAsPremiun,
+            'nfd-plugin-card--icon'    : icon,
         },
-        'ndf-flex',
-        'nfd-width-500'
     ]
 
     return (
         <div className={ classNames( classes ) } >
-            <Card>
-                <Card.Content className="nfd-flex ndf-tools-plugin-content-section">
-                    { !!icon && (
-                        <img
-                            alt={ name }
-                            className="nfd-tools-plugin-card-icon"
-                            src={ icon }
-                        />
-                    ) }
-                    <div className="ndf-tools-plugin-content-title">
-                        {  !! premium  && (
+            <div className="plugin-card-top">
+                <div className="name column-name">
+                    <Title as="h3">
+                        {!!premium && (
                             <div className="nfd-tools-card-badges nfd-flex nfd-gap-1">
-                                { premium && <PremiumBadge /> }
+                                {premium && <PremiumBadge/>}
                             </div>
-                        ) }
-                        <div className="nfd-tools-plugin-card-title nfd-flex">
-                            <Title as={ 'h4' }>
-                                { name }
-                            </Title>
-                            { !! premium && (
-                                    <span className="nfd-tools-plugin-card-premium-icon">
-                                       <LockClosedIcon />
-                                    </span>
+                        )}
+                        <div className="nfd-tools-plugin-card-title">
+                            <span>{name}</span>
+                            {!!premium && !!displayAsPremiun &&  (
+                                <span className="nfd-tools-plugin-card-premium-icon">
+                                   <LockClosedIcon/>
+                                </span>
                             )}
                         </div>
-                        <p className="nfd-tools-plugin-card-description">
-                            { description }
-                        </p>
-
-                    </div>
-                    <div className="ndf-tools-plugin-card-button">
-                        <Button
-                            as={ 'a' }
-                            href={ ctbId ? ctbHref : href }
-                            data-nfd-installer-pls-slug={
-                                ! isActive && ! ctbId ? plsSlug : null
-                            }
-                            data-nfd-installer-pls-provider={
-                                ! isActive && ! ctbId ? plsProvider : null
-                            }
-                            data-nfd-installer-plugin-activate={ isActive && ! ctbId }
-                            data-nfd-installer-plugin-name={
-                                ! isActive && ! ctbId ? name : null
-                            }
-                            data-ctb-id={ ctbId }
-                        >
-                            { premium
-                                ? __( 'Get it', 'wp-module-solutions' )
-                                : __( 'Install now', 'wp-module-solutions' ) }
-                        </Button>
-                    </div>
-                </Card.Content>
-                <Card.Footer>
-                    This is Card footer!
-                </Card.Footer>
-            </Card>
+                        {!!icon && (
+                            <div className="nfd-plugin-card-thumbnail">
+                                <img
+                                    alt={name}
+                                    className="plugin-icon"
+                                    src={icon}
+                                />
+                            </div>
+                        )}
+                    </Title>
+                </div>
+                <div className="action-links">
+                        <ul className="plugin-action-buttons">
+                            <li className="install-now button">
+                                <a
+                                    href={ctbId ? ctbHref : href}
+                                    data-nfd-installer-pls-slug={
+                                        !isActive && !ctbId ? plsSlug : null
+                                    }
+                                    data-nfd-installer-pls-provider= {
+                                        !isActive && !ctbId ? plsProvider : null
+                                    }
+                                    data-nfd-installer-plugin-activate={isActive && !ctbId}
+                                    data-nfd-installer-plugin-name={
+                                        !isActive && !ctbId ? name : null
+                                    }
+                                    data-ctb-id={ctbId}
+                                >
+                                    {premium && displayAsPremiun
+                                        ? __('Get it', 'wp-module-solutions')
+                                        : __('Install now', 'wp-module-solutions')}
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+                <div className="desc column-description">
+                    {!!description && <p>{ description }</p>}
+                </div>
+            </div>
+            <div className="plugin-card-bottom">
+                <p>This is the bottom</p>
+            </div>
         </div>
     );
 };
