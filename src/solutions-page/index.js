@@ -19,7 +19,7 @@ const App = () => {
 		<Root>
 			<Router>
 				<FilterProvider>
-					<Page className="nfd-solutions-app-container nfd-page min-[783px]:nfd-p-8 min-[783px]:nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0">
+					<Page className="nfd-solutions-app-container nfd-page nfd-py-8 nfd-my-0 nfd-max-w-full">
 						<Header />
 						<Content />
 					</Page>
