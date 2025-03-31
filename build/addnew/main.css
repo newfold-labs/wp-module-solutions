@@ -4090,6 +4090,13 @@ svg#ndf-tools-plugin-bluehost-brand {
     text-align: center;
 }
 
+.nfd-plugin-card .nfd-plugin-card-premium-button:hover {
+    background-color: #F79143;
+    color: #FFFFFF;
+    border-color: #F79143;
+
+}
+
 /*Card Premium section*/
 
 .nfd-plugin-card-premium .plugin-card-top {
