@@ -33,8 +33,8 @@
 }
 
 .nfd-solutions-tools {
-	grid-template-columns : repeat(auto-fit, minmax(350px, 1fr)) !important;
-	max-width             : calc(350px * 3 + 2rem);
+	grid-template-columns : repeat(auto-fit, minmax(320px, 1fr)) !important;
+	max-width             : calc(320px * 3 + 2rem);
 }
 
 .nfd-solutions-tool-card {
@@ -63,6 +63,11 @@
 
 	.nfd-solutions-card-description {
 		@apply nfd-pt-4 nfd-block;
+	}
+
+	.nfd-card__content,
+	.nfd-card__footer {
+		margin-top : 0 !important;
 	}
 
 	.nfd-solutions-card-badges + .nfd-solutions-card-title {
