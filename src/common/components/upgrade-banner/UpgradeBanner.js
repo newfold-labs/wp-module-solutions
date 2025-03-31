@@ -46,11 +46,11 @@ export const UpgradeBanner = ( { className = '', ...props } ) => {
 					) }
 				</span>
 				<Button
-					size="large"
-					className="nfd-solutions-upgrade-banner__button"
 					as="a"
+					className="nfd-solutions-upgrade-banner__button"
+					data-ctb-id="5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
 					href="https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY"
-					ctb-id="5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
+					size="large"
 				>
 					{ __( 'Discover Now', 'wp-module-solutions' ) }
 				</Button>

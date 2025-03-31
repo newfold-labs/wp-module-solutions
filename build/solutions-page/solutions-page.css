@@ -3750,7 +3750,6 @@ body.bluehost_page_solutions {
 }
 .nfd-solutions-app-container .nfd-page-content.nfd-page-content--no-solution {
 			max-height : 100vh;
-			overflow   : hidden;
 		}
 .nfd-solutions-sidebar ul {
 		margin : 0 !important;
