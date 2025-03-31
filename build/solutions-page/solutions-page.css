@@ -3763,17 +3763,12 @@ body.bluehost_page_solutions {
 .nfd-solutions-sidebar ul li:nth-last-child(3) {
 				padding-bottom : 2rem !important;
 			}
-.nfd-solutions-tools {
-	width : -moz-fit-content;
-	width : fit-content;
-}
 .nfd-solutions-tool-card {
 	--background-color : #ECF4FA;
 	--primary-color    : var(--nfd-solutions-bh-blue);
 
 	position           : relative;
 	transition         : .3s !important;
-	max-width          : 320px;
 }
 .nfd-solutions-tool-card.nfd-solutions-tool-card--premium {
 		--background-color : #F7EEDE;
@@ -4069,6 +4064,11 @@ body.bluehost_page_solutions {
 		}
 		.xl\:nfd-mt-0 {
 				margin-top: 0px !important;
+		}
+}
+@media (min-width: 1520px) {
+		.min-\[1520px\]\:nfd-grid-cols-4 {
+				grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 		}
 }
 
