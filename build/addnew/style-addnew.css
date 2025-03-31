@@ -1,0 +1,37 @@
+.nfd-solutions-badge {
+	--bg-color       : var(--nfd-solutions-bh-blue);
+	padding          : .1rem .6rem;
+	font-size        : .6rem;
+	background-color : var(--bg-color);
+	color            : white;
+	border-radius    : .2rem;
+	align-items      : center;
+	display          : flex;
+	justify-content  : center;
+	width            : -moz-fit-content;
+	width            : fit-content;
+	gap              : .3rem;
+	font-weight      : bold;
+}
+
+	.nfd-solutions-badge.nfd-solutions-badge--rounded {
+		border-radius : 1rem;
+	}
+
+	.nfd-solutions-badge.nfd-solutions-badge--with-icon {
+		padding : .1rem .6rem .1rem .2rem;
+	}
+
+	.nfd-solutions-badge svg {
+		width      : .8rem;
+		max-height : .8rem;
+	}
+
+	.nfd-solutions-badge.nfd-solutions-badge--premium {
+		--bg-color : #D17D3D;
+	}
+
+	.nfd-solutions-badge.nfd-solutions-badge--popular {
+		--bg-color : #5C4ED9;
+	}
+

@@ -1,4 +1,4 @@
-import '../tailwind.pcss';
+import '../solutions-page/tailwind.pcss';
 import './components/utils/plugins.css'
 
 import domReady from '@wordpress/dom-ready';

@@ -1,6 +1,7 @@
 import { Title } from '@newfold/ui-component-library';
 import classNames from 'classnames';
-import { Badge } from "../../../../components/badge";
+import { Badge } from "../../../../common/components/badge";
+
 import {__} from "@wordpress/i18n";
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 

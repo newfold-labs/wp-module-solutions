@@ -339,8 +339,14 @@ class Solutions {
 		);
 		
 		\wp_enqueue_style(
-			'solutions-react-style',
-			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/main.css',
+			'solutions-add-new-style',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/style-addnew.css',
+			array( 'nfd-installer' ),
+			$assets_info['version']
+		);
+		\wp_enqueue_style(
+			'solutions-add-new',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/addnew.css',
 			array( 'nfd-installer' ),
 			$assets_info['version']
 		);
