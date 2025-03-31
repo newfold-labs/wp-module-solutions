@@ -71,7 +71,6 @@ export const Tools = () => {
 			{ !! tools.length && (
 				<div className="nfd-solutions-tools nfd-grid nfd-gap-4">
 					{ tools.map( ( tool ) => (
-
 						<Tool
 							name={ tool?.name }
 							category={ tool.category }

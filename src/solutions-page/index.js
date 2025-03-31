@@ -8,6 +8,9 @@ import { FilterProvider } from './contexts/FilterContext';
 import { Sidebar } from './components/sidebar';
 import { Tools } from './components/tools';
 import { HashRouter as Router } from 'react-router-dom';
+import {UpgradeBanner} from 'common/components/upgrade-banner';
+import {Content} from './components/content';
+
 
 const WP_SOLUTIONS_PAGE_ROOT_ELEMENT = 'nfd-solutions-app';
 
@@ -18,12 +21,7 @@ const App = () => {
 				<FilterProvider>
 					<Page className="nfd-solutions-app-container nfd-page min-[783px]:nfd-p-8 min-[783px]:nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0">
 						<Header />
-						<div className="nfd-flex nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0">
-							<Sidebar />
-							<main className="nfd-w-full">
-								<Tools />
-							</main>
-						</div>
+						<Content />
 					</Page>
 				</FilterProvider>
 			</Router>

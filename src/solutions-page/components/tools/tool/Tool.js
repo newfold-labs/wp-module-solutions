@@ -1,10 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import { Card, Title, Button } from '@newfold/ui-component-library';
-import { Badge } from './../../badge';
+import { Badge } from 'common/components/badge';
 import classNames from 'classnames';
 
 import { FireIcon } from '@heroicons/react/20/solid';
 import { ReactSVG } from 'react-svg';
+import { getActiveSolution } from 'common/utils';
 
 const PopularBadge = () => (
 	<Badge
@@ -23,30 +24,31 @@ const PremiumBadge = () => (
 );
 
 export const Tool = ( {
-	name,
-	description = '',
-	premium = false,
-	popular = false,
-	wide = false,
-	href = '',
-	featureIcon = null,
-	smallIcon = null,
-	plsSlug,
-	plsProvider,
-	isActive,
-	ctbId,
-	ctbHref,
-} ) => {
+						  name,
+						  description = '',
+						  premium = false,
+						  popular = false,
+						  wide = false,
+						  href = '',
+						  featureIcon = null,
+						  smallIcon = null,
+						  plsSlug,
+						  plsProvider,
+						  isActive,
+						  ctbId,
+						  ctbHref,
+					  } ) => {
+	const premiumStyle = premium && !! getActiveSolution();
 	const classes = [
 		'nfd-solutions-tool-card',
 		'nfd-bg-white',
 		'nfd-justify-end',
 		'nfd-solutions-tool-card-' + plsSlug,
 		{
-			'nfd-solutions-tool-card--with-icon': featureIcon,
-			'nfd-solutions-tool-card--with-small-icon': smallIcon,
+			'nfd-solutions-tool-card--with-featured-icon': featureIcon,
+			'nfd-solutions-tool-card--with-small-icon': ! featureIcon && smallIcon,
 			'nfd-solutions-tool-card--wide': wide,
-			'nfd-solutions-tool-card--premium': premium,
+			'nfd-solutions-tool-card--premium': premiumStyle,
 		},
 	];
 
@@ -57,7 +59,7 @@ export const Tool = ( {
 					<ReactSVG
 						alt={ name }
 						className="nfd-solutions-card__feature-icon"
-						src={ featureIcon }
+						src={ featureIcon + '?nocache' }
 					/>
 				</Card.Header>
 			) }
@@ -72,10 +74,10 @@ export const Tool = ( {
 					src={ smallIcon }
 				/>
 			) }
-			{ ( premium || popular ) && (
+			{ (premiumStyle || popular) && (
 				<div className="nfd-solutions-card-badges nfd-flex nfd-gap-1">
-					{ premium && <PremiumBadge /> }
-					{ popular && <PopularBadge /> }
+					{ premiumStyle && <PremiumBadge/> }
+					{ popular && <PopularBadge/> }
 				</div>
 			) }
 			<Title as={ 'h4' } className="nfd-solutions-card-title">
@@ -91,17 +93,17 @@ export const Tool = ( {
 		<Card className={ classNames( classes ) }>
 			{ wide && (
 				<div className="nfd-solutions-tool-card--wide-body nfd-flex nfd-gap-4 nfd-items-end">
-					<Content />
-					<Header />
+					<Content/>
+					<Header/>
 				</div>
 			) }
 			{ ! wide && (
 				<>
-					<Header />
-					<Content />
+					<Header/>
+					<Content/>
 				</>
 			) }
-			<Card.Footer>
+			<Card.Footer className={ premiumStyle ? 'nfd-flex nfd-justify-end' : '' }>
 				<Button
 					as={ 'a' }
 					href={ ctbId ? ctbHref : href }
@@ -117,7 +119,7 @@ export const Tool = ( {
 					}
 					data-ctb-id={ ctbId }
 				>
-					{ premium
+					{ premiumStyle
 						? __( 'Get it', 'wp-module-solutions' )
 						: __( 'Manage', 'wp-module-solutions' ) }
 				</Button>

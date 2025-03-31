@@ -1,19 +1,47 @@
 const path = require( 'path' );
 const { merge } = require( 'webpack-merge' );
 const wpScriptsConfig = require( '@wordpress/scripts/config/webpack.config' );
-
-const webConfig = merge({
-	entry: path.resolve( __dirname, './src/index.js' ),
-	output: {
-		path: path.resolve( __dirname, './build' ),
-		filename: 'bundle.js',
-	}
-}, {
-    entry: path.resolve(__dirname, './src/addnew/index.js'),
-    output: {
-        path: path.resolve(__dirname, './build/addnew'),
-        filename: 'bundle.js',
-    }
-});
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
 module.exports = merge( wpScriptsConfig, webConfig );
+const apps = [
+	'solutions-page',
+    'addnew'
+]
+
+const alias = {
+	common: path.resolve( __dirname, './src/common' ),
+}
+
+module.exports = apps.map( app => merge(
+	wpScriptsConfig,
+	{
+		entry: { [ app ]: path.resolve( __dirname, `./src/${ app }/index.js` ) },
+		output: {
+			path: path.resolve( __dirname, `./build/${ app }` ),
+			filename: 'bundle.js',
+		},
+		resolve: {
+			alias,
+		},
+		module: {
+			rules: [
+				{
+					test: /\.css$/,
+					include: [
+						path.resolve( __dirname, `src/${ app }/*.css` ),
+					],
+					use: [
+						MiniCssExtractPlugin.loader,
+						'css-loader'
+					],
+				},
+			],
+		},
+		plugins: [
+			new MiniCssExtractPlugin( {
+				filename: '[name].css',
+			} ),
+		],
+	}
+) );
