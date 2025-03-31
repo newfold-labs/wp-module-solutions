@@ -24,7 +24,7 @@ export const Tools = () => {
 		<>
 			{ ! tools.length && <EmptyTools/> }
 			{ !! tools.length && (
-				<div className="nfd-solutions-tools nfd-grid nfd-gap-4">
+				<div className="nfd-solutions-tools nfd-grid nfd-gap-4 nfd-grid-cols-2 min-[1200px]:nfd-grid-cols-3">
 					{ tools.map( ( tool ) => (
 						<Tool
 							name={ tool?.name }
