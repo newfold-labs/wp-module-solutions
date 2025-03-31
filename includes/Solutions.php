@@ -43,7 +43,6 @@ class Solutions {
 		\add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
 		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
 		\add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
-		\add_action( 'admin_menu', array( __CLASS__, 'add_solutions_page' ) );
 	}
 
 	/**
@@ -134,30 +133,15 @@ class Solutions {
 	 * @param array $subnav The nav array.
 	 * @return array The filtered nav array
 	 */
-	public function add_nfd_subnav( $subnav ) {
-		$brand       = $this->container->get( 'plugin' )['id'];
-		$performance = array(
-			'route'    => 'solutions',
+	public static function add_nfd_subnav( $subnav ) {
+		$solutions = array(
 			'title'    => __( 'Solutions', 'wp-module-solutions' ),
+			'route'    => 'solutions',
 			'priority' => 10,
+			'callback' => array( __CLASS__, 'render_solutions_page' ),
 		);
-		array_push( $subnav, $performance );
+		array_push( $subnav, $solutions );
 		return $subnav;
-	}
-
-	/**
-	 * Add "Solutions" page to admin menu.
-	 */
-	public static function add_solutions_page() {
-		\add_menu_page(
-			__( 'Solutions', 'wp-module-solutions' ),
-			__( 'Solutions', 'wp-module-solutions' ),
-			'manage_options',
-			'solutions',
-			array( __CLASS__, 'render_solutions_page' ),
-			'dashicons-lightbulb',
-			-1
-		);
 	}
 
 	/**
@@ -171,11 +155,9 @@ class Solutions {
 
 	/**
 	 * Enqueue assets and set locals.
-	 *
-	 * @param string $hook The current admin page.
 	 */
-	public static function enqueue_admin_assets( $hook ) {
-		if ( 'toplevel_page_solutions' !== $hook ) {
+	public static function enqueue_admin_assets() {
+		if ( isset( $screen->id ) && false !== strpos( $screen->id, 'solutions' ) ) {
 			return;
 		}
 
