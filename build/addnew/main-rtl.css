@@ -4043,19 +4043,29 @@
 		}
 }
 
+svg#ndf-tools-plugin-bluehost-brand {
+    vertical-align: text-top;
+    margin-left: 2px;
+}
+
 .plugin-install-tab-nfd_solutions .search-plugins {
     display:none;
 }
+
 .plugin-install-nfd_solutions .current {
     border-bottom: 4px solid #196BDE6B;
 }
+
 /*Card*/
+
 .nfd-plugin-card {
     gap:80px;
 }
+
 .nfd-tools-plugin-card-title {
     display:inline-flex;
 }
+
 .nfd-tools-plugin-card-premium-icon {
     width:20px;
     height:20px;
@@ -4066,10 +4076,13 @@
     align-items: center;
     margin-right: 5px;
 }
+
 .nfd-plugin-card-premium .plugin-card-top {
     background: linear-gradient(to bottom, #F7EEDE, #FFFFFF);
 }
+
 /*Card lock icon*/
+
 .nfd-tools-plugin-card-premium-icon svg {
     max-width: 10px;
     color: #CE8C09;

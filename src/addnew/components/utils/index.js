@@ -32,9 +32,6 @@ const getPlan = () => {
         plan.name = currentSolution.name;
     }
 
-
-
-
     return plan;
 };
 export { getPlugins, getPlan };
