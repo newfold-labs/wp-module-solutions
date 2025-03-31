@@ -107,10 +107,10 @@ class EntitlementsApi {
 
 		// If there is no Hiive connection, bail.
 		if ( ! HiiveConnection::is_connected() ) {
-			if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
-				// for debugging - use a local json file rather than hiive entitlement endpoint response
-				return new WP_REST_Response( json_decode( file_get_contents( NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/entitlements-premium.json' ) ), 218 );
-			}
+			// if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
+			// 	// for debugging - use a local json file rather than hiive entitlement endpoint response
+			// 	return new WP_REST_Response( json_decode( file_get_contents( NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/entitlements-premium.json' ) ), 218 );
+			// }
 			return new WP_REST_Response( array( 'message' => 'Not allowed to load entitlements from server.' ), 403 );
 		}
 
