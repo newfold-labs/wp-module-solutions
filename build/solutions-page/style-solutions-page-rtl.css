@@ -101,3 +101,26 @@
 .nfd-solutions-upgrade-banner > .nfd-solutions-upgrade-banner__button:hover {
   background-color: var(--primary-color-hover);
 }
+.nfd-solutions-upgrade-banner__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.nfd-solutions-upgrade-banner__overlay:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-color: var(--color-canvas);
+}
+.nfd-solutions-upgrade-banner__overlay:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+  z-index: 10;
+  background: linear-gradient(rgba(241, 245, 249, 0), #f1f5f9);
+}

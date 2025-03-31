@@ -22,7 +22,8 @@ export const UpgradeBanner = ( {
 		'nfd-solutions-upgrade-banner',
 	];
 
-	return (
+	return (<>
+		<span className="nfd-solutions-upgrade-banner__overlay"/>
 		<div className={ classNames( classes ) } { ...props }>
 			<span className="nfd-solutions-upgrade-banner__lock-icon">
 				<LockClosedIcon/>
@@ -40,5 +41,5 @@ export const UpgradeBanner = ( {
 				{ __( 'Discover Now', 'wp-module-solutions' ) }
 			</Button>
 		</div>
-	);
+	</>);
 };

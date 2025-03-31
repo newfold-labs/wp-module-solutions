@@ -108,7 +108,7 @@ const getTools = ( {
 };
 
 const getActiveSolution = () => {
-	return NewfoldSolutions?.solution;
+	return NewfoldSolutions?.solutions.find( solution => solution?.sku === NewfoldSolutions?.solution );
 };
 
 export {
