@@ -1,0 +1,94 @@
+.nfd-solutions-upgrade-banner {
+	--primary-color       : #ad671d;
+	--secondary-color     : #e1c963;
+	--tertiary-color      : #fbefbc;
+	--primary-color-hover : #985610;
+
+	position              : absolute;
+	top                   : 50%;
+	left                  : 50%;
+	transform             : translate(-50%, -50%);
+	width                 : 80%;
+	background            : rgba(255, 255, 255, 95%);
+	z-index               : 999;
+	padding               : 3rem 2rem 2rem;
+	border-radius         : 10px;
+	border                : 1px solid var(--secondary-color);
+	box-shadow            : 0 0 0 10px white, 0 0 10px 10px #78a0e00d;
+	max-width             : 900px;
+	min-width             : 300px;
+	display               : flex;
+	flex-direction        : column;
+	align-items           : center;
+	justify-content       : center;
+	gap                   : 20px;
+	text-align            : center;
+
+	& > &__lock-icon {
+		position      : absolute;
+		top           : 0;
+		transform     : translateY(-50%);
+		padding       : 12px;
+		border-radius : 50px;
+		background    : var(--tertiary-color);
+		border        : 1px solif var(--tertiary-color);
+
+		svg {
+			width : 32px;
+			color : var(--primary-color);
+		}
+	}
+
+	& > &__title {
+		font-family : Bitter serif;
+		color       : var(--primary-color);
+		font-size   : 1.4rem;
+		font-weight : bold;
+		font-style  : italic;
+	}
+
+	& > &__title--secondary {
+		font-weight : bold;
+	}
+
+	& > &__description {
+		max-width : 380px;
+	}
+
+	& > &__button {
+		--tw-ring-color  : rgba(173, 103, 29, var(--tw-ring-opacity)) !important;
+		font-weight      : bold;
+		background-color : var(--primary-color);
+		white-space      : nowrap;
+
+		&:hover {
+			background-color : var(--primary-color-hover);
+		}
+	}
+}
+
+.nfd-solutions-upgrade-banner__overlay {
+	position : absolute;
+	width    : 100%;
+	height   : 100%;
+	z-index  : 10;
+
+	&:before {
+		content          : "";
+		position         : absolute;
+		width            : 100%;
+		height           : 100%;
+		opacity          : .6;
+		background-color : var(--color-canvas);
+	}
+
+	&:after {
+		content    : "";
+		position   : absolute;
+		width      : 100%;
+		height     : 200px;
+		bottom     : 0;
+		z-index    : 10;
+		background : linear-gradient(#f1f5f900, #f1f5f9);
+	}
+}
