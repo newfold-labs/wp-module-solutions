@@ -4066,6 +4066,18 @@ svg#ndf-tools-plugin-bluehost-brand {
     display:inline-flex;
 }
 
+.nfd-plugin-card-thumbnail.plugin-icon {
+    background: #F6F6F6;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+}
+
+.nfd-plugin-card-thumbnail .nfd-plugin-icon {
+    width: 80px;
+    height: 80px;
+}
+
 .nfd-plugin-card .button a {
     text-decoration:none;
 }

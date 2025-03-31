@@ -62,10 +62,10 @@ export const Plugin = ({
                             )}
                         </div>
                         {!!icon && (
-                            <div className="nfd-plugin-card-thumbnail">
+                            <div className="nfd-plugin-card-thumbnail plugin-icon">
                                 <img
                                     alt={name}
-                                    className="plugin-icon"
+                                    className="nfd-plugin-icon"
                                     src={icon}
                                 />
                             </div>
@@ -100,9 +100,6 @@ export const Plugin = ({
                 <div className="desc column-description">
                     {!!description && <p>{ description }</p>}
                 </div>
-            </div>
-            <div className="plugin-card-bottom">
-                <p>This is the bottom</p>
             </div>
         </div>
     );
