@@ -36,19 +36,26 @@ export const Plugin = ({
         },
     ]
 
+    let buttonClass = [
+        'button',
+        {
+            'nfd-plugin-card-premium-button' : premium && displayAsPremiun
+        }
+    ]
+
     return (
         <div className={ classNames( classes ) } >
             <div className="plugin-card-top">
                 <div className="name column-name">
                     <Title as="h3">
-                        {!!premium && (
+                        { !! premium && !! displayAsPremiun && (
                             <div className="nfd-tools-card-badges nfd-flex nfd-gap-1">
-                                {premium && <PremiumBadge/>}
+                                { !! premium && <PremiumBadge/>}
                             </div>
                         )}
                         <div className="nfd-tools-plugin-card-title">
                             <span>{name}</span>
-                            {!!premium && !!displayAsPremiun &&  (
+                            {!! premium && !! displayAsPremiun &&  (
                                 <span className="nfd-tools-plugin-card-premium-icon">
                                    <LockClosedIcon/>
                                 </span>
@@ -67,8 +74,9 @@ export const Plugin = ({
                 </div>
                 <div className="action-links">
                         <ul className="plugin-action-buttons">
-                            <li className="install-now button">
+                            <li className="">
                                 <a
+                                    className={ classNames( buttonClass ) }
                                     href={ctbId ? ctbHref : href}
                                     data-nfd-installer-pls-slug={
                                         !isActive && !ctbId ? plsSlug : null
@@ -82,7 +90,7 @@ export const Plugin = ({
                                     }
                                     data-ctb-id={ctbId}
                                 >
-                                    {premium && displayAsPremiun
+                                    { !! premium && !! displayAsPremiun
                                         ? __('Get it', 'wp-module-solutions')
                                         : __('Install now', 'wp-module-solutions')}
                                 </a>

@@ -24,7 +24,7 @@ const getPlan = () => {
         'sku' : ''
     }
     let planType = NewfoldSolutions?.solution;
-    planType = 'WP_SOLUTION_COMMERCE';
+    planType = '';
     const currentSolution = NewfoldSolutions?.solutions.find( solution => solution?.sku === planType );
 
     if ( currentSolution ) {
