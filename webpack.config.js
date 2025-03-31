@@ -3,20 +3,19 @@ const { merge } = require( 'webpack-merge' );
 const wpScriptsConfig = require( '@wordpress/scripts/config/webpack.config' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
-const apps = [
-	'solutions-page',
-]
+const apps = [ 'solutions-page' ];
 
 const alias = {
 	common: path.resolve( __dirname, './src/common' ),
-}
+};
 
-module.exports = apps.map( app => merge(
-	wpScriptsConfig,
-	{
-		entry: { [ app ]: path.resolve( __dirname, `./src/${ app }/index.js` ) },
+module.exports = apps.map( ( app ) =>
+	merge( wpScriptsConfig, {
+		entry: {
+			[ app ]: path.resolve( __dirname, `./src/${ app }/index.js` ),
+		},
 		output: {
-			path: path.resolve( __dirname, `./build/${ app }` ),
+			path: path.resolve( __dirname, `build/${ app }/` ),
 			filename: 'bundle.js',
 		},
 		resolve: {
@@ -29,10 +28,7 @@ module.exports = apps.map( app => merge(
 					include: [
 						path.resolve( __dirname, `src/${ app }/*.css` ),
 					],
-					use: [
-						MiniCssExtractPlugin.loader,
-						'css-loader'
-					],
+					use: [ MiniCssExtractPlugin.loader, 'css-loader' ],
 				},
 			],
 		},
@@ -41,5 +37,5 @@ module.exports = apps.map( app => merge(
 				filename: '[name].css',
 			} ),
 		],
-	}
-) );
+	} )
+);
