@@ -164,7 +164,7 @@ class Solutions {
 		$assets_info = include NFD_SOLUTIONS_DIR . '/build/solutions-page/bundle.asset.php';
 
 		\wp_enqueue_script(
-			'solutions-react',
+			'solutions-page',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/bundle.js',
 			array_merge(
 				$assets_info['dependencies'],
@@ -189,16 +189,18 @@ class Solutions {
 
 		$solutions_data = json_decode( wp_json_encode( self::$entitlements_api->get_items()->data ), true );
 
-		$solutions_data['entitlements'] = array_map(
-			function ( $entitlement ) {
-				$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
-				return $entitlement;
-			},
-			$solutions_data['entitlements']
-		);
+		if ( array_key_exists('entitlements', $solutions_data ) ) {
+			$solutions_data['entitlements'] = array_map(
+				function ( $entitlement ) {
+					$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
+					return $entitlement;
+				},
+				$solutions_data['entitlements']
+			);
+		}
 
 		\wp_localize_script(
-			'solutions-react',
+			'solutions-page',
 			'NewfoldSolutions',
 			array_merge(
 				$solutions_data,

@@ -24,20 +24,20 @@ const PremiumBadge = () => (
 );
 
 export const Tool = ( {
-						  name,
-						  description = '',
-						  premium = false,
-						  popular = false,
-						  wide = false,
-						  href = '',
-						  featureIcon = null,
-						  smallIcon = null,
-						  plsSlug,
-						  plsProvider,
-						  isActive,
-						  ctbId,
-						  ctbHref,
-					  } ) => {
+	name,
+	description = '',
+	premium = false,
+	popular = false,
+	wide = false,
+	href = '',
+	featureIcon = null,
+	smallIcon = null,
+	plsSlug,
+	plsProvider,
+	isActive,
+	ctbId,
+	ctbHref,
+} ) => {
 	const premiumStyle = premium && !! getActiveSolution();
 	const classes = [
 		'nfd-solutions-tool-card',
@@ -46,7 +46,8 @@ export const Tool = ( {
 		'nfd-solutions-tool-card-' + plsSlug,
 		{
 			'nfd-solutions-tool-card--with-featured-icon': featureIcon,
-			'nfd-solutions-tool-card--with-small-icon': ! featureIcon && smallIcon,
+			'nfd-solutions-tool-card--with-small-icon':
+				! featureIcon && smallIcon,
 			'nfd-solutions-tool-card--wide': wide,
 			'nfd-solutions-tool-card--premium': premiumStyle,
 		},
@@ -74,10 +75,10 @@ export const Tool = ( {
 					src={ smallIcon }
 				/>
 			) }
-			{ (premiumStyle || popular) && (
+			{ ( premiumStyle || popular ) && (
 				<div className="nfd-solutions-card-badges nfd-flex nfd-gap-1">
-					{ !! premiumStyle && <PremiumBadge/> }
-					{ !! popular && <PopularBadge/> }
+					{ !! premiumStyle && <PremiumBadge /> }
+					{ !! popular && <PopularBadge /> }
 				</div>
 			) }
 			<Title as={ 'h4' } className="nfd-solutions-card-title">
@@ -93,17 +94,19 @@ export const Tool = ( {
 		<Card className={ classNames( classes ) }>
 			{ wide && (
 				<div className="nfd-solutions-tool-card--wide-body nfd-flex nfd-gap-4 nfd-items-end">
-					<Content/>
-					<Header/>
+					<Content />
+					<Header />
 				</div>
 			) }
 			{ ! wide && (
 				<>
-					<Header/>
-					<Content/>
+					<Header />
+					<Content />
 				</>
 			) }
-			<Card.Footer className={ premiumStyle ? 'nfd-flex nfd-justify-end' : '' }>
+			<Card.Footer
+				className={ premiumStyle ? 'nfd-flex nfd-justify-end' : '' }
+			>
 				<Button
 					as={ 'a' }
 					href={ ctbId ? ctbHref : href }

@@ -9,18 +9,18 @@ export const Content = () => {
 
 	const classes = classNames(
 		'nfd-page-content',
-		'nfd-flex nfd-relative nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0',
+		'nfd-flex nfd-relative nfd-gap-6 nfd-max-w-full nfd-my-0 nfd-flex-col md:nfd-flex-row',
 		{
-			'nfd-page-content--no-solution': ! hasSolution
+			'nfd-page-content--no-solution': ! hasSolution,
 		}
 	);
 
 	return (
 		<div className={ classes }>
-			{ ! hasSolution && <UpgradeBanner/> }
-			<Sidebar/>
+			{ ! hasSolution && <UpgradeBanner /> }
+			<Sidebar />
 			<main className="nfd-w-full">
-				<Tools/>
+				<Tools />
 			</main>
 		</div>
 	);

@@ -19,7 +19,6 @@ body.bluehost_page_solutions {
 	.nfd-page-content {
 		&.nfd-page-content--no-solution {
 			max-height : 100vh;
-			overflow   : hidden;
 		}
 	}
 }
@@ -43,19 +42,12 @@ body.bluehost_page_solutions {
 	}
 }
 
-.nfd-solutions-tools {
-	grid-template-columns : repeat(auto-fit, minmax(320px, 1fr)) !important;
-	max-width             : min(100%, calc(320px * 3 + 2rem));
-	width                 : fit-content;
-}
-
 .nfd-solutions-tool-card {
 	--background-color : #ECF4FA;
 	--primary-color    : var(--nfd-solutions-bh-blue);
 
 	position           : relative;
 	transition         : .3s !important;
-	max-width          : 320px;
 
 	&.nfd-solutions-tool-card--premium {
 		--background-color : #F7EEDE;
@@ -111,7 +103,6 @@ body.bluehost_page_solutions {
 
 	&.nfd-solutions-tool-card--wide {
 		@apply nfd-col-span-2;
-		max-width : calc(640px + 1rem);
 
 		.nfd-card__header {
 			height : 100%;

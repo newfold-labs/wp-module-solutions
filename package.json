@@ -5,8 +5,9 @@
   "private": true,
   "author": "arati bhandare",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "watch": "webpack --watch --config webpack.config.js"
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "watch": "npm run start"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
