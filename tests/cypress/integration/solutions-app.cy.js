@@ -1,7 +1,7 @@
 // <reference types="Cypress" />
 import { wpLogin, wpCli, setCapability } from '../wp-module-support/utils.cy';
 
-const entitlementsFixture = require( '../fixtures/entitlements.json' );
+const entitlementsFixture = require( '../fixtures/entitlements-premium.json' );
 
 describe.skip( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 	beforeEach( () => {
