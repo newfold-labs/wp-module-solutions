@@ -9,6 +9,10 @@
 	--nfd-solutions-bh-blue : #336AD7;
 }
 
+body.bluehost_page_solutions {
+	background : var(--color-canvas);
+}
+
 .nfd-solutions-app-container {
 	margin-right : 20px;
 
@@ -16,26 +20,6 @@
 		&.nfd-page-content--no-solution {
 			max-height : 100vh;
 			overflow   : hidden;
-
-			&:before {
-				content          : '';
-				position         : absolute;
-				width            : 100%;
-				height           : 100%;
-				z-index          : 10;
-				background-color : #f0f0f1;
-				opacity          : .6;
-			}
-
-			&:after {
-				content    : '';
-				position   : absolute;
-				width      : 100%;
-				height     : 200px;
-				bottom     : 0;
-				z-index    : 10;
-				background : linear-gradient(#f0f0f100, #f0f0f1);
-			}
 		}
 	}
 }

@@ -5,10 +5,7 @@ import { createRoot } from '@wordpress/element';
 import { Root, Page } from '@newfold/ui-component-library';
 import { Header } from './components/header';
 import { FilterProvider } from './contexts/FilterContext';
-import { Sidebar } from './components/sidebar';
-import { Tools } from './components/tools';
 import { HashRouter as Router } from 'react-router-dom';
-import {UpgradeBanner} from 'common/components/upgrade-banner';
 import {Content} from './components/content';
 
 

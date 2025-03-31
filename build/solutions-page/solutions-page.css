@@ -3738,6 +3738,9 @@
 :root {
 	--nfd-solutions-bh-blue : #336AD7;
 }
+body.bluehost_page_solutions {
+	background : var(--color-canvas);
+}
 .nfd-solutions-app-container {
 	margin-right : 20px;
 }
@@ -3745,24 +3748,6 @@
 			max-height : 100vh;
 			overflow   : hidden;
 		}
-.nfd-solutions-app-container .nfd-page-content.nfd-page-content--no-solution:before {
-				content          : '';
-				position         : absolute;
-				width            : 100%;
-				height           : 100%;
-				z-index          : 10;
-				background-color : #f0f0f1;
-				opacity          : .6;
-			}
-.nfd-solutions-app-container .nfd-page-content.nfd-page-content--no-solution:after {
-				content    : '';
-				position   : absolute;
-				width      : 100%;
-				height     : 200px;
-				bottom     : 0;
-				z-index    : 10;
-				background : linear-gradient(#f0f0f100, #f0f0f1);
-			}
 .nfd-solutions-sidebar ul {
 		margin : 0 !important;
 	}
