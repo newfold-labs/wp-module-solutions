@@ -16485,6 +16485,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getActiveSolution: () => (/* binding */ getActiveSolution),
 /* harmony export */   getTools: () => (/* binding */ getTools)
 /* harmony export */ });
+const popularTools = ['ad68e506-8c2b-4c0f-a9e3-16623d00041e',
+// Booking & Appointments
+'20085485-7185-40fd-89e4-14dbb690aea2',
+// Advanced Review
+'d561ecd7-678b-4a19-ad34-385894bea07a' // Wishlist
+];
 function layoutTools(tools) {
   const layout = [];
   let rowSpaces = 3;
@@ -16548,13 +16554,26 @@ const getTools = ({
     tools = [...tools, ...NewfoldSolutions.premium.map(tool => {
       tool.premium = true;
       return tool;
-    })];
+    })].map(tool => {
+      if (popularTools.includes(tool.id)) {
+        tool.popular = true;
+      }
+      return tool;
+    });
   }
   if (sortByPriority) {
     tools.sort(sortTools);
   }
   if ('all' !== category) {
-    tools = tools.filter(tool => tool?.categorySlug === category);
+    tools = tools.filter(tool => {
+      if ('premium' === category) {
+        return tool.premium;
+      }
+      if ('popular' === category) {
+        return tool.popular;
+      }
+      return tool?.categorySlug === category;
+    });
   }
   if (search) {
     tools = tools.filter(tool => tool?.name?.toLowerCase().includes(search.toLowerCase()) || tool?.plsSlug?.toLowerCase().includes(search.toLowerCase()));
@@ -17072,7 +17091,7 @@ const Tool = ({
       src: smallIcon
     }), (premiumStyle || popular) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "nfd-solutions-card-badges nfd-flex nfd-gap-1",
-      children: [premiumStyle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(PremiumBadge, {}), popular && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(PopularBadge, {})]
+      children: [!!premiumStyle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(PremiumBadge, {}), !!popular && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(PopularBadge, {})]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__["default"], {
       as: 'h4',
       className: "nfd-solutions-card-title",
@@ -17219,7 +17238,7 @@ const App = () => {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.HashRouter, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_4__.FilterProvider, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_9__["default"], {
-          className: "nfd-solutions-app-container nfd-page min-[783px]:nfd-p-8 min-[783px]:nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0",
+          className: "nfd-solutions-app-container nfd-page nfd-py-8 nfd-my-0 nfd-max-w-full",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_header__WEBPACK_IMPORTED_MODULE_3__.Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_content__WEBPACK_IMPORTED_MODULE_5__.Content, {})]
         })
       })

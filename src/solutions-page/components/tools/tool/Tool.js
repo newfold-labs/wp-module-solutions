@@ -76,8 +76,8 @@ export const Tool = ( {
 			) }
 			{ (premiumStyle || popular) && (
 				<div className="nfd-solutions-card-badges nfd-flex nfd-gap-1">
-					{ premiumStyle && <PremiumBadge/> }
-					{ popular && <PopularBadge/> }
+					{ !! premiumStyle && <PremiumBadge/> }
+					{ !! popular && <PopularBadge/> }
 				</div>
 			) }
 			<Title as={ 'h4' } className="nfd-solutions-card-title">

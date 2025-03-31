@@ -3579,6 +3579,10 @@
 		padding-top: 1.5rem !important;
 		padding-bottom: 1.5rem !important;
 }
+.nfd-py-8 {
+		padding-top: 2rem !important;
+		padding-bottom: 2rem !important;
+}
 .nfd-pb-1 {
 		padding-bottom: 0.25rem !important;
 }
@@ -3761,7 +3765,9 @@ body.bluehost_page_solutions {
 			}
 .nfd-solutions-tools {
 	grid-template-columns : repeat(auto-fit, minmax(320px, 1fr)) !important;
-	max-width             : calc(320px * 3 + 2rem);
+	max-width             : min(100%, calc(320px * 3 + 2rem));
+	width                 : -moz-fit-content;
+	width                 : fit-content;
 }
 .nfd-solutions-tool-card {
 	--background-color : #ECF4FA;
@@ -3769,6 +3775,7 @@ body.bluehost_page_solutions {
 
 	position           : relative;
 	transition         : .3s !important;
+	max-width          : 320px;
 }
 .nfd-solutions-tool-card.nfd-solutions-tool-card--premium {
 		--background-color : #F7EEDE;
@@ -3817,6 +3824,7 @@ body.bluehost_page_solutions {
 		}
 .nfd-solutions-tool-card.nfd-solutions-tool-card--wide {
 		grid-column: span 2 / span 2;
+		max-width : calc(640px + 1rem);
 }
 .nfd-solutions-tool-card.nfd-solutions-tool-card--wide .nfd-card__header {
 			height : 100%;
@@ -4045,14 +4053,6 @@ body.bluehost_page_solutions {
 				--tw-scale-x: .95 !important;
 				--tw-scale-y: .95 !important;
 				transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-		}
-}
-@media (min-width: 783px) {
-		.min-\[783px\]\:nfd-max-w-full {
-				max-width: 100% !important;
-		}
-		.min-\[783px\]\:nfd-p-8 {
-				padding: 2rem !important;
 		}
 }
 @media (min-width: 1280px) {
