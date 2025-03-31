@@ -1,10 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import { Card, Title, Button } from '@newfold/ui-component-library';
-import { Badge } from './../../badge';
+import { Badge } from 'common/components/badge';
 import classNames from 'classnames';
 
 import { FireIcon } from '@heroicons/react/20/solid';
 import { ReactSVG } from 'react-svg';
+import { getActiveSolution } from 'common/utils';
 
 const PopularBadge = () => (
 	<Badge
@@ -37,6 +38,7 @@ export const Tool = ( {
 						  ctbId,
 						  ctbHref,
 					  } ) => {
+	const premiumStyle = premium && !! getActiveSolution();
 	const classes = [
 		'nfd-solutions-tool-card',
 		'nfd-bg-white',
@@ -46,7 +48,7 @@ export const Tool = ( {
 			'nfd-solutions-tool-card--with-featured-icon': featureIcon,
 			'nfd-solutions-tool-card--with-small-icon': ! featureIcon && smallIcon,
 			'nfd-solutions-tool-card--wide': wide,
-			'nfd-solutions-tool-card--premium': premium,
+			'nfd-solutions-tool-card--premium': premiumStyle,
 		},
 	];
 
@@ -57,7 +59,7 @@ export const Tool = ( {
 					<ReactSVG
 						alt={ name }
 						className="nfd-solutions-card__feature-icon"
-						src={ featureIcon }
+						src={ featureIcon + '?nocache' }
 					/>
 				</Card.Header>
 			) }
@@ -72,9 +74,9 @@ export const Tool = ( {
 					src={ smallIcon }
 				/>
 			) }
-			{ (premium || popular) && (
+			{ (premiumStyle || popular) && (
 				<div className="nfd-solutions-card-badges nfd-flex nfd-gap-1">
-					{ premium && <PremiumBadge/> }
+					{ premiumStyle && <PremiumBadge/> }
 					{ popular && <PopularBadge/> }
 				</div>
 			) }
@@ -101,7 +103,7 @@ export const Tool = ( {
 					<Content/>
 				</>
 			) }
-			<Card.Footer className={ premium ? 'nfd-flex nfd-justify-end' : '' }>
+			<Card.Footer className={ premiumStyle ? 'nfd-flex nfd-justify-end' : '' }>
 				<Button
 					as={ 'a' }
 					href={ ctbId ? ctbHref : href }
@@ -117,7 +119,7 @@ export const Tool = ( {
 					}
 					data-ctb-id={ ctbId }
 				>
-					{ premium
+					{ premiumStyle
 						? __( 'Get it', 'wp-module-solutions' )
 						: __( 'Manage', 'wp-module-solutions' ) }
 				</Button>

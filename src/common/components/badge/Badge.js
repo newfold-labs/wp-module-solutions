@@ -1,3 +1,4 @@
+import './style.css';
 import classNames from 'classnames';
 
 /**
@@ -10,12 +11,12 @@ import classNames from 'classnames';
  * @param props      {object}
  */
 export const Badge = ( {
-	label,
-	icon: Icon = null,
-	rounded = false,
-	className = '',
-	...props
-} ) => {
+						   label,
+						   icon: Icon = null,
+						   rounded = false,
+						   className = '',
+						   ...props
+					   } ) => {
 	const classes = [
 		className,
 		'nfd-solutions-badge',
@@ -27,7 +28,7 @@ export const Badge = ( {
 
 	return (
 		<span className={ classNames( classes ) } { ...props }>
-			{ Icon && <Icon /> }
+			{ Icon && <Icon/> }
 			{ label }
 		</span>
 	);

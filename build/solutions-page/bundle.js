@@ -1112,6 +1112,45 @@ const ForwardRef = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(S
 
 /***/ }),
 
+/***/ "./node_modules/@heroicons/react/24/solid/esm/LockClosedIcon.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@heroicons/react/24/solid/esm/LockClosedIcon.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+
+function LockClosedIcon({
+  title,
+  titleId,
+  ...props
+}, svgRef) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24",
+    fill: "currentColor",
+    "aria-hidden": "true",
+    "data-slot": "icon",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("title", {
+    id: titleId
+  }, title) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fillRule: "evenodd",
+    d: "M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z",
+    clipRule: "evenodd"
+  }));
+}
+const ForwardRef = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(LockClosedIcon);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ForwardRef);
+
+/***/ }),
+
 /***/ "./node_modules/@newfold/ui-component-library/components/card/index.js":
 /*!*****************************************************************************!*\
   !*** ./node_modules/@newfold/ui-component-library/components/card/index.js ***!
@@ -16252,10 +16291,10 @@ function raceSignal(promise, signal) {
 
 /***/ }),
 
-/***/ "./src/solutions-page/components/badge/Badge.js":
-/*!******************************************************!*\
-  !*** ./src/solutions-page/components/badge/Badge.js ***!
-  \******************************************************/
+/***/ "./src/common/components/badge/Badge.js":
+/*!**********************************************!*\
+  !*** ./src/common/components/badge/Badge.js ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16263,10 +16302,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Badge: () => (/* binding */ Badge)
 /* harmony export */ });
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/common/components/badge/style.css");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 /**
@@ -16290,19 +16331,19 @@ const Badge = ({
     'nfd-solutions-badge--with-icon': !!Icon,
     'nfd-solutions-badge--rounded': rounded
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(classes),
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(classes),
     ...props,
-    children: [Icon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Icon, {}), label]
+    children: [Icon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Icon, {}), label]
   });
 };
 
 /***/ }),
 
-/***/ "./src/solutions-page/components/badge/index.js":
-/*!******************************************************!*\
-  !*** ./src/solutions-page/components/badge/index.js ***!
-  \******************************************************/
+/***/ "./src/common/components/badge/index.js":
+/*!**********************************************!*\
+  !*** ./src/common/components/badge/index.js ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16310,8 +16351,218 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Badge: () => (/* reexport safe */ _Badge__WEBPACK_IMPORTED_MODULE_0__.Badge)
 /* harmony export */ });
-/* harmony import */ var _Badge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Badge */ "./src/solutions-page/components/badge/Badge.js");
+/* harmony import */ var _Badge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Badge */ "./src/common/components/badge/Badge.js");
 
+
+
+/***/ }),
+
+/***/ "./src/common/components/badge/style.css":
+/*!***********************************************!*\
+  !*** ./src/common/components/badge/style.css ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/common/components/upgrade-banner/UpgradeBanner.js":
+/*!***************************************************************!*\
+  !*** ./src/common/components/upgrade-banner/UpgradeBanner.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   UpgradeBanner: () => (/* binding */ UpgradeBanner)
+/* harmony export */ });
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ "./src/common/components/upgrade-banner/style.scss");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _heroicons_react_24_solid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @heroicons/react/24/solid */ "./node_modules/@heroicons/react/24/solid/esm/LockClosedIcon.js");
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/title/index.js");
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/button/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+
+/**
+ * Badge component
+ *
+ * @param label      {string}
+ * @param icon       {JSX.Element | null}
+ * @param rounded    {boolean}
+ * @param className  {string}
+ * @param props      {object}
+ */
+
+const UpgradeBanner = ({
+  className = '',
+  ...props
+}) => {
+  const classes = [className, 'nfd-solutions-upgrade-banner'];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(classes),
+    ...props,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+      className: "nfd-solutions-upgrade-banner__lock-icon",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_heroicons_react_24_solid__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      as: "h2",
+      className: "nfd-solutions-upgrade-banner__title",
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Upgrade to unlock all features', 'wp-module-solutions')
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      as: "h4",
+      className: "nfd-solutions-upgrade-banner__title--secondary",
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Advanced Solutions to build any kind of site, store or blog', 'wp-module-solutions')
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+      className: "nfd-solutions-upgrade-banner__description",
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.', 'wp-module-solutions')
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      size: "large",
+      className: "nfd-solutions-upgrade-banner__button",
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Discover Now', 'wp-module-solutions')
+    })]
+  });
+};
+
+/***/ }),
+
+/***/ "./src/common/components/upgrade-banner/index.js":
+/*!*******************************************************!*\
+  !*** ./src/common/components/upgrade-banner/index.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   UpgradeBanner: () => (/* reexport safe */ _UpgradeBanner__WEBPACK_IMPORTED_MODULE_0__.UpgradeBanner)
+/* harmony export */ });
+/* harmony import */ var _UpgradeBanner__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UpgradeBanner */ "./src/common/components/upgrade-banner/UpgradeBanner.js");
+
+
+
+/***/ }),
+
+/***/ "./src/common/components/upgrade-banner/style.scss":
+/*!*********************************************************!*\
+  !*** ./src/common/components/upgrade-banner/style.scss ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/common/utils/index.js":
+/*!***********************************!*\
+  !*** ./src/common/utils/index.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getActiveSolution: () => (/* binding */ getActiveSolution),
+/* harmony export */   getTools: () => (/* binding */ getTools)
+/* harmony export */ });
+function layoutTools(tools) {
+  const layout = [];
+  let rowSpaces = 3;
+  let row = [];
+  const pushRow = () => {
+    layout.push(...row);
+    row = [];
+    rowSpaces = 3;
+  };
+  while (tools.length) {
+    if (tools[0]?.wide) {
+      if (rowSpaces > 1) {
+        row.push(tools.shift());
+        rowSpaces -= 2;
+      } else {
+        for (let i = 0; i < tools.length; i++) {
+          if (!tools[i]?.wide) {
+            row.push(...tools.splice(i, 1));
+            rowSpaces -= 1;
+            break;
+          }
+        }
+        pushRow();
+      }
+    } else if (rowSpaces > 0) {
+      row.push(tools.shift());
+      rowSpaces -= 1;
+    }
+    if (!rowSpaces) {
+      pushRow();
+    }
+  }
+  pushRow();
+  return layout;
+}
+function sortTools(ent1, ent2) {
+  if (ent1?.image?.featureImage && !ent2?.image?.featureImage) {
+    return -1;
+  }
+  if (!ent1?.image?.featureImage && ent2?.image?.featureImage) {
+    return 1;
+  }
+  const categoriesPriority = Object.fromEntries(NewfoldSolutions.categories.map(cat => [cat.slug, cat.priority]));
+  if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) {
+    return -1;
+  }
+  if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) {
+    return 1;
+  }
+  return 0;
+}
+const getTools = ({
+  includePremium = true,
+  sortForLayout = true,
+  sortByPriority = true,
+  search = null,
+  category = 'all'
+}) => {
+  let tools = NewfoldSolutions.entitlements;
+  if (includePremium) {
+    tools = [...tools, ...NewfoldSolutions.premium.map(tool => {
+      tool.premium = true;
+      return tool;
+    })];
+  }
+  if (sortByPriority) {
+    tools.sort(sortTools);
+  }
+  if ('all' !== category) {
+    tools = tools.filter(tool => tool?.categorySlug === category);
+  }
+  if (search) {
+    tools = tools.filter(tool => tool?.name?.toLowerCase().includes(search.toLowerCase()) || tool?.plsSlug?.toLowerCase().includes(search.toLowerCase()));
+  }
+  if (sortForLayout) {
+    tools = layoutTools([...tools]);
+  }
+  return tools;
+};
+const getActiveSolution = () => {
+  return NewfoldSolutions?.solution;
+};
 
 
 /***/ }),
@@ -16368,6 +16619,64 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   BrandLogo: () => (/* reexport safe */ _BrandLogo__WEBPACK_IMPORTED_MODULE_0__.BrandLogo)
 /* harmony export */ });
 /* harmony import */ var _BrandLogo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BrandLogo */ "./src/solutions-page/components/brand-logo/BrandLogo.js");
+
+
+
+/***/ }),
+
+/***/ "./src/solutions-page/components/content/Content.js":
+/*!**********************************************************!*\
+  !*** ./src/solutions-page/components/content/Content.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Content: () => (/* binding */ Content)
+/* harmony export */ });
+/* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sidebar */ "./src/solutions-page/components/sidebar/index.js");
+/* harmony import */ var _tools__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tools */ "./src/solutions-page/components/tools/index.js");
+/* harmony import */ var common_components_upgrade_banner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! common/components/upgrade-banner */ "./src/common/components/upgrade-banner/index.js");
+/* harmony import */ var common_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! common/utils */ "./src/common/utils/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+const Content = () => {
+  const solution = (0,common_utils__WEBPACK_IMPORTED_MODULE_3__.getActiveSolution)();
+  const classes = classnames__WEBPACK_IMPORTED_MODULE_4___default()('nfd-page-content', 'nfd-flex nfd-relative nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0', {
+    'nfd-page-content--no-solution': !solution
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    className: classes,
+    children: [!solution && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(common_components_upgrade_banner__WEBPACK_IMPORTED_MODULE_2__.UpgradeBanner, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_sidebar__WEBPACK_IMPORTED_MODULE_0__.Sidebar, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("main", {
+      className: "nfd-w-full",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tools__WEBPACK_IMPORTED_MODULE_1__.Tools, {})
+    })]
+  });
+};
+
+/***/ }),
+
+/***/ "./src/solutions-page/components/content/index.js":
+/*!********************************************************!*\
+  !*** ./src/solutions-page/components/content/index.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Content: () => (/* reexport safe */ _Content__WEBPACK_IMPORTED_MODULE_0__.Content)
+/* harmony export */ });
+/* harmony import */ var _Content__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Content */ "./src/solutions-page/components/content/Content.js");
 
 
 
@@ -16603,8 +16912,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _EmptyTools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EmptyTools */ "./src/solutions-page/components/tools/EmptyTools.js");
 /* harmony import */ var _tool__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tool */ "./src/solutions-page/components/tools/tool/index.js");
-/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../contexts/FilterContext */ "./src/solutions-page/contexts/FilterContext.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils */ "./src/solutions-page/utils/index.js");
+/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../contexts/FilterContext */ "./src/solutions-page/contexts/FilterContext.js");
+/* harmony import */ var common_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! common/utils */ "./src/common/utils/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 
@@ -16621,7 +16930,7 @@ const Tools = () => {
     category,
     search
   } = (0,_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_2__.useFilter)();
-  let tools = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getTools)({
+  let tools = (0,common_utils__WEBPACK_IMPORTED_MODULE_3__.getTools)({
     category,
     search
   });
@@ -16686,16 +16995,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/card/index.js");
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/title/index.js");
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/button/index.js");
-/* harmony import */ var _badge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../badge */ "./src/solutions-page/components/badge/index.js");
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/card/index.js");
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/title/index.js");
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/button/index.js");
+/* harmony import */ var common_components_badge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! common/components/badge */ "./src/common/components/badge/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _heroicons_react_20_solid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @heroicons/react/20/solid */ "./node_modules/@heroicons/react/20/solid/esm/FireIcon.js");
+/* harmony import */ var _heroicons_react_20_solid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @heroicons/react/20/solid */ "./node_modules/@heroicons/react/20/solid/esm/FireIcon.js");
 /* harmony import */ var react_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-svg */ "./node_modules/react-svg/dist/react-svg.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var common_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! common/utils */ "./src/common/utils/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -16703,13 +17013,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const PopularBadge = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_badge__WEBPACK_IMPORTED_MODULE_1__.Badge, {
+
+const PopularBadge = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(common_components_badge__WEBPACK_IMPORTED_MODULE_1__.Badge, {
   label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Popular', 'wp-module-solutions'),
-  icon: _heroicons_react_20_solid__WEBPACK_IMPORTED_MODULE_5__["default"],
+  icon: _heroicons_react_20_solid__WEBPACK_IMPORTED_MODULE_6__["default"],
   rounded: true,
   className: 'nfd-mb-2 nfd-solutions-badge--popular'
 });
-const PremiumBadge = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_badge__WEBPACK_IMPORTED_MODULE_1__.Badge, {
+const PremiumBadge = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(common_components_badge__WEBPACK_IMPORTED_MODULE_1__.Badge, {
   label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Premium', 'wp-module-solutions'),
   rounded: true,
   className: 'nfd-mb-2 nfd-solutions-badge--premium'
@@ -16729,49 +17040,50 @@ const Tool = ({
   ctbId,
   ctbHref
 }) => {
+  const premiumStyle = premium && !!(0,common_utils__WEBPACK_IMPORTED_MODULE_4__.getActiveSolution)();
   const classes = ['nfd-solutions-tool-card', 'nfd-bg-white', 'nfd-justify-end', 'nfd-solutions-tool-card-' + plsSlug, {
     'nfd-solutions-tool-card--with-featured-icon': featureIcon,
     'nfd-solutions-tool-card--with-small-icon': !featureIcon && smallIcon,
     'nfd-solutions-tool-card--wide': wide,
-    'nfd-solutions-tool-card--premium': premium
+    'nfd-solutions-tool-card--premium': premiumStyle
   }];
-  const Header = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: featureIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"].Header, {
+  const Header = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: featureIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__["default"].Header, {
       className: "nfd-solutions-tool-card__header nfd-bg-inherit nfd-bg-transparent",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_svg__WEBPACK_IMPORTED_MODULE_3__.ReactSVG, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_svg__WEBPACK_IMPORTED_MODULE_3__.ReactSVG, {
         alt: name,
         className: "nfd-solutions-card__feature-icon",
-        src: featureIcon
+        src: featureIcon + '?nocache'
       })
     })
   });
-  const Content = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"].Content, {
-    children: [!featureIcon && !!smallIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+  const Content = () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__["default"].Content, {
+    children: [!featureIcon && !!smallIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
       alt: name,
       className: "nfd-solutions-card__small-icon",
       src: smallIcon
-    }), (premium || popular) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    }), (premiumStyle || popular) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "nfd-solutions-card-badges nfd-flex nfd-gap-1",
-      children: [premium && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(PremiumBadge, {}), popular && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(PopularBadge, {})]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      children: [premiumStyle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(PremiumBadge, {}), popular && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(PopularBadge, {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__["default"], {
       as: 'h4',
       className: "nfd-solutions-card-title",
       children: name
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
       className: "nfd-solutions-card-description",
       children: description
     })]
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes),
-    children: [wide && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: [wide && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "nfd-solutions-tool-card--wide-body nfd-flex nfd-gap-4 nfd-items-end",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Content, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Header, {})]
-    }), !wide && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Content, {})]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"].Footer, {
-      className: premium ? 'nfd-flex nfd-justify-end' : '',
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Content, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Header, {})]
+    }), !wide && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Content, {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__["default"].Footer, {
+      className: premiumStyle ? 'nfd-flex nfd-justify-end' : '',
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_9__["default"], {
         as: 'a',
         href: ctbId ? ctbHref : href,
         "data-nfd-installer-pls-slug": !isActive && !ctbId ? plsSlug : null,
@@ -16779,7 +17091,7 @@ const Tool = ({
         "data-nfd-installer-plugin-activate": isActive && !ctbId,
         "data-nfd-installer-plugin-name": !isActive && !ctbId ? name : null,
         "data-ctb-id": ctbId,
-        children: premium ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get it', 'wp-module-solutions') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Manage', 'wp-module-solutions')
+        children: premiumStyle ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Get it', 'wp-module-solutions') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Manage', 'wp-module-solutions')
       })
     })]
   });
@@ -16863,6 +17175,67 @@ const useFilter = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useCo
 
 /***/ }),
 
+/***/ "./src/solutions-page/index.js":
+/*!*************************************!*\
+  !*** ./src/solutions-page/index.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _tailwind_pcss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tailwind.pcss */ "./src/solutions-page/tailwind.pcss");
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/dom-ready */ "@wordpress/dom-ready");
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/root/index.js");
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/page/index.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/header */ "./src/solutions-page/components/header/index.js");
+/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contexts/FilterContext */ "./src/solutions-page/contexts/FilterContext.js");
+/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/sidebar */ "./src/solutions-page/components/sidebar/index.js");
+/* harmony import */ var _components_tools__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/tools */ "./src/solutions-page/components/tools/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-K6CSEXPM.mjs");
+/* harmony import */ var common_components_upgrade_banner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! common/components/upgrade-banner */ "./src/common/components/upgrade-banner/index.js");
+/* harmony import */ var _components_content__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/content */ "./src/solutions-page/components/content/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__);
+
+
+
+
+
+
+
+
+
+
+
+
+const WP_SOLUTIONS_PAGE_ROOT_ELEMENT = 'nfd-solutions-app';
+const App = () => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.HashRouter, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_4__.FilterProvider, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_12__["default"], {
+          className: "nfd-solutions-app-container nfd-page min-[783px]:nfd-p-8 min-[783px]:nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_header__WEBPACK_IMPORTED_MODULE_3__.Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_content__WEBPACK_IMPORTED_MODULE_8__.Content, {})]
+        })
+      })
+    })
+  });
+};
+const SolutionsPageRender = () => {
+  const DOM_ELEMENT = document.getElementById(WP_SOLUTIONS_PAGE_ROOT_ELEMENT);
+  if (null !== DOM_ELEMENT) {
+    if ('undefined' !== typeof _wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createRoot) {
+      (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createRoot)(DOM_ELEMENT).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(App, {}));
+    }
+  }
+};
+_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1___default()(SolutionsPageRender);
+
+/***/ }),
+
 /***/ "./src/solutions-page/tailwind.pcss":
 /*!******************************************!*\
   !*** ./src/solutions-page/tailwind.pcss ***!
@@ -16872,103 +17245,6 @@ const useFilter = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useCo
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./src/solutions-page/utils/index.js":
-/*!*******************************************!*\
-  !*** ./src/solutions-page/utils/index.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getTools: () => (/* binding */ getTools)
-/* harmony export */ });
-function layoutTools(tools) {
-  const layout = [];
-  let rowSpaces = 3;
-  let row = [];
-  const pushRow = () => {
-    layout.push(...row);
-    row = [];
-    rowSpaces = 3;
-  };
-  while (tools.length) {
-    if (tools[0]?.wide) {
-      if (rowSpaces > 1) {
-        row.push(tools.shift());
-        rowSpaces -= 2;
-      } else {
-        for (let i = 0; i < tools.length; i++) {
-          if (!tools[i]?.wide) {
-            row.push(...tools.splice(i, 1));
-            rowSpaces -= 1;
-            break;
-          }
-        }
-        pushRow();
-      }
-    } else if (rowSpaces > 0) {
-      row.push(tools.shift());
-      rowSpaces -= 1;
-    }
-    if (!rowSpaces) {
-      pushRow();
-    }
-  }
-  pushRow();
-  return layout;
-}
-function sortTools(ent1, ent2) {
-  if (ent1?.image?.featureImage && !ent2?.image?.featureImage) {
-    return -1;
-  }
-  if (!ent1?.image?.featureImage && ent2?.image?.featureImage) {
-    return 1;
-  }
-  const categoriesPriority = Object.fromEntries(NewfoldSolutions.categories.map(cat => [cat.slug, cat.priority]));
-  if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) {
-    return -1;
-  }
-  if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) {
-    return 1;
-  }
-  return 0;
-}
-const getTools = ({
-  includePremium = true,
-  sortForLayout = true,
-  sortByPriority = true,
-  search = null,
-  category = 'all'
-}) => {
-  let tools = NewfoldSolutions.entitlements;
-  if (includePremium) {
-    tools = [...tools, ...NewfoldSolutions.premium.map(tool => {
-      tool.premium = true;
-      return tool;
-    })];
-  }
-  if (sortByPriority) {
-    tools.sort(sortTools);
-  }
-  if ('all' !== category) {
-    tools = tools.filter(tool => tool?.categorySlug === category);
-  }
-  if (search) {
-    tools = tools.filter(tool => tool?.name?.toLowerCase().includes(search.toLowerCase()) || tool?.plsSlug?.toLowerCase().includes(search.toLowerCase()));
-  }
-  if (sortForLayout) {
-    tools = layoutTools([...tools]);
-  }
-  return tools;
-};
-const getActivePlan = () => {
-  return NewfoldSolutions?.solution;
-};
 
 
 /***/ }),
@@ -17076,7 +17352,42 @@ module.exports = window["ReactJSXRuntime"];
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -17147,69 +17458,68 @@ module.exports = window["ReactJSXRuntime"];
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"solutions-page": 0,
+/******/ 			"./style-solutions-page": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunk_newfold_labs_wp_module_solutions"] = globalThis["webpackChunk_newfold_labs_wp_module_solutions"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
-(() => {
-"use strict";
-/*!*************************************!*\
-  !*** ./src/solutions-page/index.js ***!
-  \*************************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _tailwind_pcss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tailwind.pcss */ "./src/solutions-page/tailwind.pcss");
-/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/dom-ready */ "@wordpress/dom-ready");
-/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/root/index.js");
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/page/index.js");
-/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/header */ "./src/solutions-page/components/header/index.js");
-/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contexts/FilterContext */ "./src/solutions-page/contexts/FilterContext.js");
-/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/sidebar */ "./src/solutions-page/components/sidebar/index.js");
-/* harmony import */ var _components_tools__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/tools */ "./src/solutions-page/components/tools/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-K6CSEXPM.mjs");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
-
-
-
-
-
-
-
-
-
-
-const WP_SOLUTIONS_PAGE_ROOT_ELEMENT = 'nfd-solutions-app';
-const App = () => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.HashRouter, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_contexts_FilterContext__WEBPACK_IMPORTED_MODULE_4__.FilterProvider, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          className: "nfd-solutions-app-container nfd-page min-[783px]:nfd-p-8 min-[783px]:nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_header__WEBPACK_IMPORTED_MODULE_3__.Header, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "nfd-flex nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_sidebar__WEBPACK_IMPORTED_MODULE_5__.Sidebar, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("main", {
-              className: "nfd-w-full",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_tools__WEBPACK_IMPORTED_MODULE_6__.Tools, {})
-            })]
-          })]
-        })
-      })
-    })
-  });
-};
-const SolutionsPageRender = () => {
-  const DOM_ELEMENT = document.getElementById(WP_SOLUTIONS_PAGE_ROOT_ELEMENT);
-  if (null !== DOM_ELEMENT) {
-    if ('undefined' !== typeof _wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createRoot) {
-      (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createRoot)(DOM_ELEMENT).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(App, {}));
-    }
-  }
-};
-_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1___default()(SolutionsPageRender);
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-solutions-page"], () => (__webpack_require__("./src/solutions-page/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=bundle.js.map

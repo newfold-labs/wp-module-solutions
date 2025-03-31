@@ -107,8 +107,11 @@ const getTools = ( {
 	return tools;
 };
 
-const getActivePlan = () => {
+const getActiveSolution = () => {
 	return NewfoldSolutions?.solution;
 };
 
-export { getTools };
+export {
+	getTools,
+	getActiveSolution
+};

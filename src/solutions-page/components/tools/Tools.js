@@ -1,7 +1,7 @@
 import { EmptyTools } from './EmptyTools';
 import { Tool } from './tool';
-import { useFilter } from './../../contexts/FilterContext';
-import { getTools } from '../../utils';
+import { useFilter } from '../../contexts/FilterContext';
+import { getTools } from 'common/utils';
 
 const wideCards = [
 	'20085485-7185-40fd-89e4-14dbb690aea2', // Advanced Review

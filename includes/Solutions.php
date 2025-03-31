@@ -199,6 +199,12 @@ class Solutions {
 			$assets_info['version']
 		);
 
+		\wp_enqueue_style(
+			'solutions-page-style-common',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/style-solutions-page.css',
+			$assets_info['version']
+		);
+
 		$solutions_data = json_decode( wp_json_encode( self::$entitlements_api->get_items()->data ), true );
 
 		$solutions_data['entitlements'] = array_map(
