@@ -7,24 +7,24 @@ export const Header = () => {
 	const currentSolution = getActiveSolution();
 	return (
 		<div className="nfd-solutions-app-header nfd-flex nfd-flex-col nfd-gap-y-4 nfd-mb-8">
-			<BrandLogo width={ '140px' } className="nfd-mb-8"/>
+			<BrandLogo width={ '140px' } className="nfd-mb-8" />
 			<Title>
-				{
-					currentSolution ?
-						__(
+				{ currentSolution
+					? __(
 							'Premium tools available in your {plan_name} solution',
 							'wp-module-solutions'
-						).replace( '{plan_name}', currentSolution.name )
-						:
-						__( 'Premium tools available in our Solutions Bundles', 'wp-module-solutions' )
-				}
+					  ).replace( '{plan_name}', currentSolution.name )
+					: __(
+							'Premium tools available in our Solutions Bundles',
+							'wp-module-solutions'
+					  ) }
 			</Title>
 			<p>
 				{ __(
 					'Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.',
 					'wp-module-solutions'
 				) }
-				<br/>
+				<br />
 				<a
 					href="https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin"
 					target="_blank"

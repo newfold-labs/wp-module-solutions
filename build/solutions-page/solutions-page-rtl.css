@@ -3817,7 +3817,6 @@ body.bluehost_page_solutions {
 		}
 .nfd-solutions-tool-card.nfd-solutions-tool-card--wide {
 		grid-column: span 2 / span 2;
-		max-width : calc(640px + 1rem);
 }
 .nfd-solutions-tool-card.nfd-solutions-tool-card--wide .nfd-card__header {
 			height : 100%;
