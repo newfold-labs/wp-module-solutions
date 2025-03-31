@@ -66,12 +66,12 @@ function sortTools( ent1, ent2 ) {
 }
 
 const getTools = ( {
-	includePremium = true,
-	sortForLayout = true,
-	sortByPriority = true,
-	search = null,
-	category = 'all',
-} ) => {
+					   includePremium = true,
+					   sortForLayout = true,
+					   sortByPriority = true,
+					   search = null,
+					   category = 'all',
+				   } ) => {
 	let tools = NewfoldSolutions.entitlements;
 
 	if ( includePremium ) {
@@ -105,6 +105,10 @@ const getTools = ( {
 		tools = layoutTools( [ ...tools ] );
 	}
 	return tools;
+};
+
+const getActivePlan = () => {
+	return NewfoldSolutions?.solution;
 };
 
 export { getTools };

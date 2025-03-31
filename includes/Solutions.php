@@ -179,11 +179,11 @@ class Solutions {
 			return;
 		}
 
-		$assets_info = include NFD_SOLUTIONS_DIR . '/build/bundle.asset.php';
+		$assets_info = include NFD_SOLUTIONS_DIR . '/build/solutions-page/bundle.asset.php';
 
 		\wp_enqueue_script(
 			'solutions-react',
-			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/bundle.js',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/bundle.js',
 			array_merge(
 				$assets_info['dependencies'],
 				array( 'nfd-installer' ),
@@ -193,8 +193,8 @@ class Solutions {
 		);
 
 		\wp_enqueue_style(
-			'solutions-react-style',
-			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/main.css',
+			'solutions-page-style',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/solutions-page.css',
 			array( 'nfd-installer' ),
 			$assets_info['version']
 		);

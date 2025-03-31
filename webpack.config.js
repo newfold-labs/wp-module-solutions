@@ -2,12 +2,17 @@ const path = require( 'path' );
 const { merge } = require( 'webpack-merge' );
 const wpScriptsConfig = require( '@wordpress/scripts/config/webpack.config' );
 
-const webConfig = {
-	entry: path.resolve( __dirname, './src/index.js' ),
-	output: {
-		path: path.resolve( __dirname, './build' ),
-		filename: 'bundle.js',
-	}
-};
+const apps = [
+	'solutions-page',
+]
 
-module.exports = merge( wpScriptsConfig, webConfig );
+module.exports = apps.map( app => merge(
+	wpScriptsConfig,
+	{
+		entry: { [ app ]: path.resolve( __dirname, `./src/${ app }/index.js` ) },
+		output: {
+			path: path.resolve( __dirname, `./build/${ app }` ),
+			filename: 'bundle.js',
+		}
+	}
+) );

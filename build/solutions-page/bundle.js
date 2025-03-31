@@ -16252,10 +16252,10 @@ function raceSignal(promise, signal) {
 
 /***/ }),
 
-/***/ "./src/components/badge/Badge.js":
-/*!***************************************!*\
-  !*** ./src/components/badge/Badge.js ***!
-  \***************************************/
+/***/ "./src/solutions-page/components/badge/Badge.js":
+/*!******************************************************!*\
+  !*** ./src/solutions-page/components/badge/Badge.js ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16299,10 +16299,10 @@ const Badge = ({
 
 /***/ }),
 
-/***/ "./src/components/badge/index.js":
-/*!***************************************!*\
-  !*** ./src/components/badge/index.js ***!
-  \***************************************/
+/***/ "./src/solutions-page/components/badge/index.js":
+/*!******************************************************!*\
+  !*** ./src/solutions-page/components/badge/index.js ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16310,16 +16310,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Badge: () => (/* reexport safe */ _Badge__WEBPACK_IMPORTED_MODULE_0__.Badge)
 /* harmony export */ });
-/* harmony import */ var _Badge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Badge */ "./src/components/badge/Badge.js");
+/* harmony import */ var _Badge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Badge */ "./src/solutions-page/components/badge/Badge.js");
 
 
 
 /***/ }),
 
-/***/ "./src/components/brand-logo/BrandLogo.js":
-/*!************************************************!*\
-  !*** ./src/components/brand-logo/BrandLogo.js ***!
-  \************************************************/
+/***/ "./src/solutions-page/components/brand-logo/BrandLogo.js":
+/*!***************************************************************!*\
+  !*** ./src/solutions-page/components/brand-logo/BrandLogo.js ***!
+  \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16356,10 +16356,10 @@ const BrandLogo = ({
 
 /***/ }),
 
-/***/ "./src/components/brand-logo/index.js":
-/*!********************************************!*\
-  !*** ./src/components/brand-logo/index.js ***!
-  \********************************************/
+/***/ "./src/solutions-page/components/brand-logo/index.js":
+/*!***********************************************************!*\
+  !*** ./src/solutions-page/components/brand-logo/index.js ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16367,16 +16367,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   BrandLogo: () => (/* reexport safe */ _BrandLogo__WEBPACK_IMPORTED_MODULE_0__.BrandLogo)
 /* harmony export */ });
-/* harmony import */ var _BrandLogo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BrandLogo */ "./src/components/brand-logo/BrandLogo.js");
+/* harmony import */ var _BrandLogo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BrandLogo */ "./src/solutions-page/components/brand-logo/BrandLogo.js");
 
 
 
 /***/ }),
 
-/***/ "./src/components/header/Header.js":
-/*!*****************************************!*\
-  !*** ./src/components/header/Header.js ***!
-  \*****************************************/
+/***/ "./src/solutions-page/components/header/Header.js":
+/*!********************************************************!*\
+  !*** ./src/solutions-page/components/header/Header.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16384,7 +16384,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Header: () => (/* binding */ Header)
 /* harmony export */ });
-/* harmony import */ var _brand_logo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../brand-logo */ "./src/components/brand-logo/index.js");
+/* harmony import */ var _brand_logo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../brand-logo */ "./src/solutions-page/components/brand-logo/index.js");
 /* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/title/index.js");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
@@ -16414,10 +16414,10 @@ const Header = () => {
 
 /***/ }),
 
-/***/ "./src/components/header/index.js":
-/*!****************************************!*\
-  !*** ./src/components/header/index.js ***!
-  \****************************************/
+/***/ "./src/solutions-page/components/header/index.js":
+/*!*******************************************************!*\
+  !*** ./src/solutions-page/components/header/index.js ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16425,16 +16425,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Header: () => (/* reexport safe */ _Header__WEBPACK_IMPORTED_MODULE_0__.Header)
 /* harmony export */ });
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Header */ "./src/components/header/Header.js");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Header */ "./src/solutions-page/components/header/Header.js");
 
 
 
 /***/ }),
 
-/***/ "./src/components/sidebar/Sidebar.js":
-/*!*******************************************!*\
-  !*** ./src/components/sidebar/Sidebar.js ***!
-  \*******************************************/
+/***/ "./src/solutions-page/components/sidebar/Sidebar.js":
+/*!**********************************************************!*\
+  !*** ./src/solutions-page/components/sidebar/Sidebar.js ***!
+  \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16449,7 +16449,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _heroicons_react_24_outline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @heroicons/react/24/outline */ "./node_modules/@heroicons/react/24/outline/esm/StarIcon.js");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../contexts/FilterContext */ "./src/contexts/FilterContext.js");
+/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../contexts/FilterContext */ "./src/solutions-page/contexts/FilterContext.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 
@@ -16535,10 +16535,10 @@ const Sidebar = () => {
 
 /***/ }),
 
-/***/ "./src/components/sidebar/index.js":
-/*!*****************************************!*\
-  !*** ./src/components/sidebar/index.js ***!
-  \*****************************************/
+/***/ "./src/solutions-page/components/sidebar/index.js":
+/*!********************************************************!*\
+  !*** ./src/solutions-page/components/sidebar/index.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16546,16 +16546,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Sidebar: () => (/* reexport safe */ _Sidebar__WEBPACK_IMPORTED_MODULE_0__.Sidebar)
 /* harmony export */ });
-/* harmony import */ var _Sidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Sidebar */ "./src/components/sidebar/Sidebar.js");
+/* harmony import */ var _Sidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Sidebar */ "./src/solutions-page/components/sidebar/Sidebar.js");
 
 
 
 /***/ }),
 
-/***/ "./src/components/tools/EmptyTools.js":
-/*!********************************************!*\
-  !*** ./src/components/tools/EmptyTools.js ***!
-  \********************************************/
+/***/ "./src/solutions-page/components/tools/EmptyTools.js":
+/*!***********************************************************!*\
+  !*** ./src/solutions-page/components/tools/EmptyTools.js ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16590,10 +16590,10 @@ const EmptyTools = () => {
 
 /***/ }),
 
-/***/ "./src/components/tools/Tools.js":
-/*!***************************************!*\
-  !*** ./src/components/tools/Tools.js ***!
-  \***************************************/
+/***/ "./src/solutions-page/components/tools/Tools.js":
+/*!******************************************************!*\
+  !*** ./src/solutions-page/components/tools/Tools.js ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16601,10 +16601,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Tools: () => (/* binding */ Tools)
 /* harmony export */ });
-/* harmony import */ var _EmptyTools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EmptyTools */ "./src/components/tools/EmptyTools.js");
-/* harmony import */ var _tool__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tool */ "./src/components/tools/tool/index.js");
-/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../contexts/FilterContext */ "./src/contexts/FilterContext.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils */ "./src/utils/index.js");
+/* harmony import */ var _EmptyTools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EmptyTools */ "./src/solutions-page/components/tools/EmptyTools.js");
+/* harmony import */ var _tool__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tool */ "./src/solutions-page/components/tools/tool/index.js");
+/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../contexts/FilterContext */ "./src/solutions-page/contexts/FilterContext.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils */ "./src/solutions-page/utils/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 
@@ -16656,10 +16656,10 @@ const Tools = () => {
 
 /***/ }),
 
-/***/ "./src/components/tools/index.js":
-/*!***************************************!*\
-  !*** ./src/components/tools/index.js ***!
-  \***************************************/
+/***/ "./src/solutions-page/components/tools/index.js":
+/*!******************************************************!*\
+  !*** ./src/solutions-page/components/tools/index.js ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16667,16 +16667,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Tools: () => (/* reexport safe */ _Tools__WEBPACK_IMPORTED_MODULE_0__.Tools)
 /* harmony export */ });
-/* harmony import */ var _Tools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tools */ "./src/components/tools/Tools.js");
+/* harmony import */ var _Tools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tools */ "./src/solutions-page/components/tools/Tools.js");
 
 
 
 /***/ }),
 
-/***/ "./src/components/tools/tool/Tool.js":
-/*!*******************************************!*\
-  !*** ./src/components/tools/tool/Tool.js ***!
-  \*******************************************/
+/***/ "./src/solutions-page/components/tools/tool/Tool.js":
+/*!**********************************************************!*\
+  !*** ./src/solutions-page/components/tools/tool/Tool.js ***!
+  \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16689,7 +16689,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/card/index.js");
 /* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/title/index.js");
 /* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/elements/button/index.js");
-/* harmony import */ var _badge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../badge */ "./src/components/badge/index.js");
+/* harmony import */ var _badge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../badge */ "./src/solutions-page/components/badge/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _heroicons_react_20_solid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @heroicons/react/20/solid */ "./node_modules/@heroicons/react/20/solid/esm/FireIcon.js");
@@ -16787,10 +16787,10 @@ const Tool = ({
 
 /***/ }),
 
-/***/ "./src/components/tools/tool/index.js":
-/*!********************************************!*\
-  !*** ./src/components/tools/tool/index.js ***!
-  \********************************************/
+/***/ "./src/solutions-page/components/tools/tool/index.js":
+/*!***********************************************************!*\
+  !*** ./src/solutions-page/components/tools/tool/index.js ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16798,16 +16798,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Tool: () => (/* reexport safe */ _Tool__WEBPACK_IMPORTED_MODULE_0__.Tool)
 /* harmony export */ });
-/* harmony import */ var _Tool__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tool */ "./src/components/tools/tool/Tool.js");
+/* harmony import */ var _Tool__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tool */ "./src/solutions-page/components/tools/tool/Tool.js");
 
 
 
 /***/ }),
 
-/***/ "./src/contexts/FilterContext.js":
-/*!***************************************!*\
-  !*** ./src/contexts/FilterContext.js ***!
-  \***************************************/
+/***/ "./src/solutions-page/contexts/FilterContext.js":
+/*!******************************************************!*\
+  !*** ./src/solutions-page/contexts/FilterContext.js ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16863,10 +16863,10 @@ const useFilter = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useCo
 
 /***/ }),
 
-/***/ "./src/tailwind.pcss":
-/*!***************************!*\
-  !*** ./src/tailwind.pcss ***!
-  \***************************/
+/***/ "./src/solutions-page/tailwind.pcss":
+/*!******************************************!*\
+  !*** ./src/solutions-page/tailwind.pcss ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16876,10 +16876,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/utils/index.js":
-/*!****************************!*\
-  !*** ./src/utils/index.js ***!
-  \****************************/
+/***/ "./src/solutions-page/utils/index.js":
+/*!*******************************************!*\
+  !*** ./src/solutions-page/utils/index.js ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16965,6 +16965,9 @@ const getTools = ({
     tools = layoutTools([...tools]);
   }
   return tools;
+};
+const getActivePlan = () => {
+  return NewfoldSolutions?.solution;
 };
 
 
@@ -17149,21 +17152,21 @@ var __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/*!*************************************!*\
+  !*** ./src/solutions-page/index.js ***!
+  \*************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _tailwind_pcss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tailwind.pcss */ "./src/tailwind.pcss");
+/* harmony import */ var _tailwind_pcss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tailwind.pcss */ "./src/solutions-page/tailwind.pcss");
 /* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/dom-ready */ "@wordpress/dom-ready");
 /* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/root/index.js");
 /* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/page/index.js");
-/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/header */ "./src/components/header/index.js");
-/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contexts/FilterContext */ "./src/contexts/FilterContext.js");
-/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/sidebar */ "./src/components/sidebar/index.js");
-/* harmony import */ var _components_tools__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/tools */ "./src/components/tools/index.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/header */ "./src/solutions-page/components/header/index.js");
+/* harmony import */ var _contexts_FilterContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contexts/FilterContext */ "./src/solutions-page/contexts/FilterContext.js");
+/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/sidebar */ "./src/solutions-page/components/sidebar/index.js");
+/* harmony import */ var _components_tools__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/tools */ "./src/solutions-page/components/tools/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/development/chunk-K6CSEXPM.mjs");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
