@@ -35,7 +35,6 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 			.contains( 'h2', 'Upgrade' )
 			.scrollIntoView()
 			.should( 'be.visible' );
-
 	} );
 
 	// test entitlement button case states
