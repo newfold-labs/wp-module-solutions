@@ -189,7 +189,7 @@ class Solutions {
 
 		$solutions_data = json_decode( wp_json_encode( self::$entitlements_api->get_items()->data ), true );
 
-		if ( array_key_exists('entitlements', $solutions_data ) ) {
+		if ( array_key_exists( 'entitlements', $solutions_data ) ) {
 			$solutions_data['entitlements'] = array_map(
 				function ( $entitlement ) {
 					$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
@@ -204,9 +204,6 @@ class Solutions {
 			'NewfoldSolutions',
 			array_merge(
 				$solutions_data,
-				array(
-					'siteUrl' => get_site_url(),
-				)
 			)
 		);
 	}
