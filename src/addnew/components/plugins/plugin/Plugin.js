@@ -23,6 +23,7 @@ export const Plugin = ({
         plsSlug,
         plsProvider,
         isActive,
+        isBlock = false,
         ctbId,
         ctbHref,
 }) => {
@@ -75,19 +76,19 @@ export const Plugin = ({
                 </div>
                 <div className="action-links">
                         <ul className="plugin-action-buttons">
-                            <li className="">
+                            <li>
                                 <a
                                     className={ classNames( buttonClass ) }
-                                    href={ctbId ? ctbHref : href}
+                                    href={ !isBlock ? ( ctbId ? ctbHref : href ) : null }
                                     data-nfd-installer-pls-slug={
-                                        !isActive && !ctbId ? plsSlug : null
+                                        !isBlock && !isActive && !ctbId ? plsSlug : null
                                     }
                                     data-nfd-installer-pls-provider= {
-                                        !isActive && !ctbId ? plsProvider : null
+                                        !isBlock && !isActive && !ctbId ? plsProvider : null
                                     }
                                     data-nfd-installer-plugin-activate={isActive && !ctbId}
                                     data-nfd-installer-plugin-name={
-                                        !isActive && !ctbId ? name : null
+                                        !isBlock && !isActive && !ctbId ? name : null
                                     }
                                     data-ctb-id={ctbId}
                                 >

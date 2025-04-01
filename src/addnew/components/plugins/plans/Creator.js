@@ -12,64 +12,87 @@ export const Creator = ( { plan } ) => {
     return (
         <>
             <Section title={title}>
-                { __('Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.', 'wp-module-solutions') }
-                <a href="#">{__('Learn more about our Solutions','wp-module-solutions') + ' ->'}</a>
+                {__('Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.', 'wp-module-solutions')}
+                <a
+                    href="https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    {__(
+                        'Learn more about our Solutions',
+                        'wp-module-solutions'
+                    )}
+                </a>
             </Section>
-            { !! entitlements.length && (
-                <div id="the-list">
-                    { entitlements.map( ( plugin ) => (
-                        <Plugin
-                            name={ plugin?.name }
-                            category={ plugin.category }
-                            description={ plugin.description }
-                            href={ plugin.cta?.url.replace(
-                                '{siteUrl}',
-                                NewfoldSolutions.siteUrl
-                            ) }
-                            icon={ plugin?.image?.primaryImage }
-                            premium={ plugin?.premium }
-                            popular={ plugin?.popular }
-                            key={ plugin?.name }
-                            isActive={ plugin?.isActive }
-                            plsProvider={ plugin?.plsProviderName }
-                            plsSlug={ plugin?.plsSlug }
-                            ctbId={ plugin?.ctbId }
-                            ctbHref={ plugin?.ctbHref }
-                        />
-                    ) ) }
+            {!!entitlements.length && (
+                <div className="nfd-plugins-card-list">
+
+                    <div id="the-list">
+                        {entitlements.map((plugin) => (
+                            <Plugin
+                                name={plugin?.name}
+                                category={plugin.category}
+                                description={plugin.description}
+                                href={plugin.cta?.url.replace(
+                                    '{siteUrl}',
+                                    NewfoldSolutions.siteUrl
+                                )}
+                                icon={plugin?.image?.primaryImage}
+                                premium={plugin?.premium}
+                                popular={plugin?.popular}
+                                key={plugin?.name}
+                                isActive={plugin?.isActive}
+                                plsProvider={plugin?.plsProviderName}
+                                plsSlug={plugin?.plsSlug}
+                                ctbId={plugin?.ctbId}
+                                ctbHref={plugin?.ctbHref}
+                            />
+                        ))}
+                    </div>
                 </div>
             ) }
             <Section title={titleUpgrade}>
                 <span>{__('Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience.', 'wp-module-solutions')}</span>
                 <span>
-                    <strong> {__('No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit — packed with everything you need at an unbeatable price!', 'wp-module-solutions')} </strong>
-                    <a href="#">{__('Learn more about our Solutions', 'wp-module-solutions') + ' ->'}</a></span>
+            <strong> {__('No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit — packed with everything you need at an unbeatable price!', 'wp-module-solutions')} </strong>
+             <a
+                 href="https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin"
+                 target="_blank"
+                 rel="noreferrer"
+             >
+					{__(
+                        'Learn more about our Solutions',
+                        'wp-module-solutions'
+                    )}
+				</a></span>
             </Section>
             {!!premium.length && (
-                <div id="the-list">
-                    <UpgradeBanner />
-                    {premium.map( ( plugin ) => (
-                        <Plugin
-                            name={ plugin?.name }
-                            category={ plugin.category }
-                            description={ plugin.description }
-                            href={ plugin.cta?.url.replace(
-                                '{siteUrl}',
-                                NewfoldSolutions.siteUrl
-                            ) }
-                            icon={ plugin?.image?.primaryImage }
-                            premium={ plugin?.premium }
-                            popular={ plugin?.popular }
-                            key={ plugin?.name }
-                            isActive={ plugin?.isActive }
-                            plsProvider={ plugin?.plsProviderName }
-                            plsSlug={ plugin?.plsSlug }
-                            ctbId={ plugin?.ctbId }
-                            ctbHref={ plugin?.ctbHref }
-                        />
-                    ) ) }
+                <div className="nfd-plugins-card-list">
+                    <UpgradeBanner/>
+                    <div id="the-list">
+                        {premium.map((plugin) => (
+                            <Plugin
+                                name={plugin?.name}
+                                category={plugin.category}
+                                description={plugin.description}
+                                href={plugin.cta?.url.replace(
+                                    '{siteUrl}',
+                                    NewfoldSolutions.siteUrl
+                                )}
+                                icon={plugin?.image?.primaryImage}
+                                premium={plugin?.premium}
+                                popular={plugin?.popular}
+                                key={plugin?.name}
+                                isActive={plugin?.isActive}
+                                plsProvider={plugin?.plsProviderName}
+                                plsSlug={plugin?.plsSlug}
+                                ctbId={plugin?.ctbId}
+                                ctbHref={plugin?.ctbHref}
+                            />
+                        ))}
+                    </div>
                 </div>
-            ) }
+            )}
         </>
     );
 };

@@ -1703,29 +1703,34 @@ __webpack_require__.r(__webpack_exports__);
 const Commerce = ({
   plan
 }) => {
-  let plugins = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.getPlugins)({});
+  let plugins = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.getPlugins)({
+    sortByPlan: true
+  });
   let title = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Premium tools available in your Commerce Solution', 'wp-module-solutions');
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_section__WEBPACK_IMPORTED_MODULE_3__.Section, {
       title: title,
       children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience.', 'wp-module-solutions')
     }), !!plugins.length && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      id: "the-list",
-      children: plugins.map(plugin => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_plugin__WEBPACK_IMPORTED_MODULE_1__.Plugin, {
-        name: plugin?.name,
-        category: plugin.category,
-        description: plugin.description,
-        href: plugin.cta?.url.replace('{siteUrl}', NewfoldSolutions.siteUrl),
-        icon: plugin?.image?.primaryImage,
-        premium: plugin?.premium,
-        displayAsPremiun: true,
-        popular: plugin?.popular,
-        isActive: plugin?.isActive,
-        plsProvider: plugin?.plsProviderName,
-        plsSlug: plugin?.plsSlug,
-        ctbId: plugin?.ctbId,
-        ctbHref: plugin?.ctbHref
-      }, plugin?.name))
+      className: "nfd-plugins-card-list",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        id: "the-list",
+        children: plugins.map(plugin => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_plugin__WEBPACK_IMPORTED_MODULE_1__.Plugin, {
+          name: plugin?.name,
+          category: plugin.category,
+          description: plugin.description,
+          href: plugin.cta?.url.replace('{siteUrl}', NewfoldSolutions.siteUrl),
+          icon: plugin?.image?.primaryImage,
+          premium: plugin?.premium,
+          displayAsPremiun: true,
+          popular: plugin?.popular,
+          isActive: plugin?.isActive,
+          plsProvider: plugin?.plsProviderName,
+          plsSlug: plugin?.plsSlug,
+          ctbId: plugin?.ctbId,
+          ctbHref: plugin?.ctbHref
+        }, plugin?.name))
+      })
     })]
   });
 };
@@ -1772,25 +1777,30 @@ const Creator = ({
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_section__WEBPACK_IMPORTED_MODULE_3__.Section, {
       title: title,
       children: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.', 'wp-module-solutions'), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-        href: "#",
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Learn more about our Solutions', 'wp-module-solutions') + ' ->'
+        href: "https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin",
+        target: "_blank",
+        rel: "noreferrer",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Learn more about our Solutions', 'wp-module-solutions')
       })]
     }), !!entitlements.length && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      id: "the-list",
-      children: entitlements.map(plugin => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_plugin__WEBPACK_IMPORTED_MODULE_1__.Plugin, {
-        name: plugin?.name,
-        category: plugin.category,
-        description: plugin.description,
-        href: plugin.cta?.url.replace('{siteUrl}', NewfoldSolutions.siteUrl),
-        icon: plugin?.image?.primaryImage,
-        premium: plugin?.premium,
-        popular: plugin?.popular,
-        isActive: plugin?.isActive,
-        plsProvider: plugin?.plsProviderName,
-        plsSlug: plugin?.plsSlug,
-        ctbId: plugin?.ctbId,
-        ctbHref: plugin?.ctbHref
-      }, plugin?.name))
+      className: "nfd-plugins-card-list",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        id: "the-list",
+        children: entitlements.map(plugin => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_plugin__WEBPACK_IMPORTED_MODULE_1__.Plugin, {
+          name: plugin?.name,
+          category: plugin.category,
+          description: plugin.description,
+          href: plugin.cta?.url.replace('{siteUrl}', NewfoldSolutions.siteUrl),
+          icon: plugin?.image?.primaryImage,
+          premium: plugin?.premium,
+          popular: plugin?.popular,
+          isActive: plugin?.isActive,
+          plsProvider: plugin?.plsProviderName,
+          plsSlug: plugin?.plsSlug,
+          ctbId: plugin?.ctbId,
+          ctbHref: plugin?.ctbHref
+        }, plugin?.name))
+      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_section__WEBPACK_IMPORTED_MODULE_3__.Section, {
       title: titleUpgrade,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
@@ -1799,26 +1809,31 @@ const Creator = ({
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("strong", {
           children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit — packed with everything you need at an unbeatable price!', 'wp-module-solutions'), " "]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-          href: "#",
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Learn more about our Solutions', 'wp-module-solutions') + ' ->'
+          href: "https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin",
+          target: "_blank",
+          rel: "noreferrer",
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Learn more about our Solutions', 'wp-module-solutions')
         })]
       })]
     }), !!premium.length && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      id: "the-list",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_components_upgrade_banner__WEBPACK_IMPORTED_MODULE_4__.UpgradeBanner, {}), premium.map(plugin => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_plugin__WEBPACK_IMPORTED_MODULE_1__.Plugin, {
-        name: plugin?.name,
-        category: plugin.category,
-        description: plugin.description,
-        href: plugin.cta?.url.replace('{siteUrl}', NewfoldSolutions.siteUrl),
-        icon: plugin?.image?.primaryImage,
-        premium: plugin?.premium,
-        popular: plugin?.popular,
-        isActive: plugin?.isActive,
-        plsProvider: plugin?.plsProviderName,
-        plsSlug: plugin?.plsSlug,
-        ctbId: plugin?.ctbId,
-        ctbHref: plugin?.ctbHref
-      }, plugin?.name))]
+      className: "nfd-plugins-card-list",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_components_upgrade_banner__WEBPACK_IMPORTED_MODULE_4__.UpgradeBanner, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        id: "the-list",
+        children: premium.map(plugin => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_plugin__WEBPACK_IMPORTED_MODULE_1__.Plugin, {
+          name: plugin?.name,
+          category: plugin.category,
+          description: plugin.description,
+          href: plugin.cta?.url.replace('{siteUrl}', NewfoldSolutions.siteUrl),
+          icon: plugin?.image?.primaryImage,
+          premium: plugin?.premium,
+          popular: plugin?.popular,
+          isActive: plugin?.isActive,
+          plsProvider: plugin?.plsProviderName,
+          plsSlug: plugin?.plsSlug,
+          ctbId: plugin?.ctbId,
+          ctbHref: plugin?.ctbHref
+        }, plugin?.name))
+      })]
     })]
   });
 };
@@ -1859,25 +1874,31 @@ const NoSolution = ({
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_section__WEBPACK_IMPORTED_MODULE_3__.Section, {
       title: title,
       children: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.', 'wp-module-solutions'), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-        href: "#",
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Learn more about our Solutions', 'wp-module-solutions') + ' ->'
+        href: "https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin",
+        target: "_blank",
+        rel: "noreferrer",
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Learn more about our Solutions', 'wp-module-solutions')
       })]
     }), !!plugins.length && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      id: "the-list",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_components_upgrade_banner__WEBPACK_IMPORTED_MODULE_4__.UpgradeBanner, {}), plugins.map(plugin => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_plugin__WEBPACK_IMPORTED_MODULE_1__.Plugin, {
-        name: plugin?.name,
-        category: plugin.category,
-        description: plugin.description,
-        href: plugin.cta?.url.replace('{siteUrl}', NewfoldSolutions.siteUrl),
-        icon: plugin?.image?.primaryImage,
-        premium: plugin?.premium,
-        popular: plugin?.popular,
-        isActive: plugin?.isActive,
-        plsProvider: plugin?.plsProviderName,
-        plsSlug: plugin?.plsSlug,
-        ctbId: plugin?.ctbId,
-        ctbHref: plugin?.ctbHref
-      }, plugin?.name))]
+      className: "nfd-plugins-card-list",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_components_upgrade_banner__WEBPACK_IMPORTED_MODULE_4__.UpgradeBanner, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        id: "the-list",
+        children: plugins.map(plugin => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_plugin__WEBPACK_IMPORTED_MODULE_1__.Plugin, {
+          name: plugin?.name,
+          category: plugin.category,
+          description: plugin.description,
+          href: plugin.cta?.url.replace('{siteUrl}', NewfoldSolutions.siteUrl),
+          icon: plugin?.image?.primaryImage,
+          premium: plugin?.premium,
+          popular: plugin?.popular,
+          isActive: plugin?.isActive,
+          plsProvider: plugin?.plsProviderName,
+          plsSlug: plugin?.plsSlug,
+          ctbId: plugin?.ctbId,
+          isBlock: true,
+          ctbHref: plugin?.ctbHref
+        }, plugin?.name))
+      })]
     })]
   });
 };
@@ -1925,6 +1946,7 @@ const Plugin = ({
   plsSlug,
   plsProvider,
   isActive,
+  isBlock = false,
   ctbId,
   ctbHref
 }) => {
@@ -1968,14 +1990,13 @@ const Plugin = ({
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
           className: "plugin-action-buttons",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-            className: "",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
               className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(buttonClass),
-              href: ctbId ? ctbHref : href,
-              "data-nfd-installer-pls-slug": !isActive && !ctbId ? plsSlug : null,
-              "data-nfd-installer-pls-provider": !isActive && !ctbId ? plsProvider : null,
+              href: !isBlock ? ctbId ? ctbHref : href : null,
+              "data-nfd-installer-pls-slug": !isBlock && !isActive && !ctbId ? plsSlug : null,
+              "data-nfd-installer-pls-provider": !isBlock && !isActive && !ctbId ? plsProvider : null,
               "data-nfd-installer-plugin-activate": isActive && !ctbId,
-              "data-nfd-installer-plugin-name": !isActive && !ctbId ? name : null,
+              "data-nfd-installer-plugin-name": !isBlock && !isActive && !ctbId ? name : null,
               "data-ctb-id": ctbId,
               children: !!premium && !!displayAsPremiun ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Get it', 'wp-module-solutions') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Install now', 'wp-module-solutions')
             })
@@ -2069,18 +2090,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getPlan: () => (/* binding */ getPlan),
 /* harmony export */   getPlugins: () => (/* binding */ getPlugins)
 /* harmony export */ });
+function sortPlugins(plugins) {
+  const plans = {
+    'WP_SOLUTION_COMMERCE': [{
+      'id': 'bb65fce0-24b6-4714-8d5d-3a693f428df4',
+      'position': 2
+    }]
+  };
+  let plan = getPlan().sku;
+  if (plans[plan]) {
+    let pluginsOrder = plans[plan];
+    pluginsOrder.forEach(plugin => {
+      const index = plugins.findIndex(item => item.id === plugin.id);
+      if (index !== -1) {
+        const [element] = plugins.splice(index, 1);
+        plugins.splice(plugin.position, 0, element);
+      }
+    });
+  }
+  return plugins;
+}
 const getPlugins = ({
   includePremium = true,
-  includeEntitlements = true
+  includeEntitlements = true,
+  sortByPlan = false
 }) => {
-  let tools = includeEntitlements ? NewfoldSolutions.entitlements : [];
+  let plugins = includeEntitlements ? NewfoldSolutions.entitlements : [];
   if (includePremium) {
-    tools = [...tools, ...NewfoldSolutions.premium.map(tool => {
-      tool.premium = true;
-      return tool;
+    plugins = [...plugins, ...NewfoldSolutions.premium.map(plugin => {
+      plugin.premium = true;
+      return plugin;
     })];
   }
-  return tools;
+  if (sortByPlan) {
+    plugins = sortPlugins(plugins);
+  }
+  return plugins;
 };
 const getPlan = () => {
   let plan = {
@@ -2088,7 +2133,7 @@ const getPlan = () => {
     'sku': ''
   };
   let planType = NewfoldSolutions?.solution;
-  planType = '';
+  planType = 'WP_SOLUTION_COMMERCE';
   const currentSolution = NewfoldSolutions?.solutions.find(solution => solution?.sku === planType);
   if (currentSolution) {
     plan.sku = currentSolution.sku;
@@ -2121,18 +2166,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _solutions_page_tailwind_pcss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../solutions-page/tailwind.pcss */ "./src/solutions-page/tailwind.pcss");
-/* harmony import */ var _components_utils_plugins_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/utils/plugins.css */ "./src/addnew/components/utils/plugins.css");
-/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/dom-ready */ "@wordpress/dom-ready");
-/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/page/index.js");
-/* harmony import */ var _components_plugins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/plugins */ "./src/addnew/components/plugins/index.js");
-/* harmony import */ var _components_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/utils */ "./src/addnew/components/utils/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
-
+/* harmony import */ var _components_utils_plugins_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/utils/plugins.css */ "./src/addnew/components/utils/plugins.css");
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/dom-ready */ "@wordpress/dom-ready");
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @newfold/ui-component-library */ "./node_modules/@newfold/ui-component-library/components/page/index.js");
+/* harmony import */ var _components_plugins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/plugins */ "./src/addnew/components/plugins/index.js");
+/* harmony import */ var _components_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/utils */ "./src/addnew/components/utils/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -2142,11 +2185,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const WP_SOLUTIONS_PAGE_ROOT_ELEMENT = 'nfd-add-new-app';
 const App = () => {
-  let plan = (0,_components_utils__WEBPACK_IMPORTED_MODULE_5__.getPlan)();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  let plan = (0,_components_utils__WEBPACK_IMPORTED_MODULE_4__.getPlan)();
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
       className: "nfd-solutions-app-container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_plugins__WEBPACK_IMPORTED_MODULE_4__.Plugins, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_plugins__WEBPACK_IMPORTED_MODULE_3__.Plugins, {
         plan: plan
       })
     })
@@ -2155,7 +2198,7 @@ const App = () => {
 const SolutionsPageRender = () => {
   const DOM_ELEMENT = document.getElementById(WP_SOLUTIONS_PAGE_ROOT_ELEMENT);
   if (null !== DOM_ELEMENT) {
-    if ('undefined' !== typeof _wordpress_element__WEBPACK_IMPORTED_MODULE_3__.createRoot) {
+    if ('undefined' !== typeof _wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createRoot) {
       let icon = `<svg id="ndf-tools-plugin-bluehost-brand" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                       d="M16 4.46067V0H11.5302V4.46067H16ZM16 5.76933V10.2307H11.5302V5.76933H16ZM4.46778 16V11.5387H0V16H4.46778ZM10.2339 11.5387V16H5.76409V11.5387H10.2339ZM16 11.5387V16H11.5302V11.5387H16ZM10.2339 10.2307V5.76933H5.76409V10.2307H10.2339ZM4.46778 5.76933V10.2307H0V5.76933H4.46778ZM10.2305 0V4.46067H5.76409V0H10.2305ZM4.46778 4.46067V0H0V4.46067H4.46778Z"
@@ -2165,11 +2208,11 @@ const SolutionsPageRender = () => {
       if (filterPremiumLink) {
         filterPremiumLink.innerHTML = icon + filterPremiumLink.innerHTML;
       }
-      (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.createRoot)(DOM_ELEMENT).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(App, {}));
+      (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createRoot)(DOM_ELEMENT).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(App, {}));
     }
   }
 };
-_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2___default()(SolutionsPageRender);
+_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1___default()(SolutionsPageRender);
 
 /***/ }),
 
@@ -2350,19 +2393,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************!*\
   !*** ./src/common/components/upgrade-banner/style.scss ***!
   \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./src/solutions-page/tailwind.pcss":
-/*!******************************************!*\
-  !*** ./src/solutions-page/tailwind.pcss ***!
-  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";

@@ -10,7 +10,11 @@ svg#ndf-tools-plugin-bluehost-brand {
     border-bottom: 4px solid #196BDE6B;
 }
 
-.nfd-solutions-app-container #the-list {
+.nfd-app-section {
+    margin-top: 10px;
+}
+
+.nfd-solutions-app-container .nfd-plugins-card-list {
     position:relative;
 }
 
@@ -72,3 +76,9 @@ svg#ndf-tools-plugin-bluehost-brand {
 
 
 /*Banner*/
+.nfd-solutions-app-container .nfd-solutions-upgrade-banner__overlay:before {
+    background-color: #FFFFFF;
+}
+.nfd-solutions-app-container .nfd-solutions-upgrade-banner {
+    top: 25%;
+}
