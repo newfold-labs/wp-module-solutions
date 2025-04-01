@@ -1,6 +1,6 @@
 svg#ndf-tools-plugin-bluehost-brand {
     vertical-align: text-top;
-    margin-right: 2px;
+    margin-right: 5px;
 }
 
 .plugin-install-tab-nfd_solutions .search-plugins {
@@ -22,8 +22,14 @@ svg#ndf-tools-plugin-bluehost-brand {
 .nfd-plugin-card {
     gap:80px;
 }
+.nfd-plugin-card .plugin-card-top {
+    min-height: 180px;
+}
 .nfd-tools-plugin-card-title {
     display:inline-flex;
+}
+.nfd-tools-plugin-card-description {
+    margin-top: 20px;
 }
 .nfd-plugin-card-thumbnail.plugin-icon {
     background: #F6F6F6;
@@ -39,6 +45,8 @@ svg#ndf-tools-plugin-bluehost-brand {
     text-decoration:none;
 }
 
+/*Card Premium section*/
+
 .nfd-plugin-card .nfd-plugin-card-premium-button {
     background-color: #D17D3D;
     border-color: #D17D3D;
@@ -53,7 +61,6 @@ svg#ndf-tools-plugin-bluehost-brand {
 
 }
 
-/*Card Premium section*/
 .nfd-plugin-card-premium .plugin-card-top {
     background: linear-gradient(to bottom, #F7EEDE, #FFFFFF);
 }

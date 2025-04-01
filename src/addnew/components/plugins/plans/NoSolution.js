@@ -25,7 +25,12 @@ export const NoSolution = ( { plan } ) => {
             {
                 !!plugins.length && (
                     <div className="nfd-plugins-card-list">
-                        <UpgradeBanner/>
+                        <UpgradeBanner secondaryTitle={__('The #1 Bundle of Commerce Tools','wp-module-solutions')}>
+                            <p>
+                                {__('A solution designed to help shop owners to boost their online sales with a massive bundle \n' +
+                                    'of premium tools (value $3,500)','wp-module-solutions')}
+                            </p>
+                        </UpgradeBanner>
                         <div id="the-list">
                             {plugins.map((plugin) => (
                                 <Plugin

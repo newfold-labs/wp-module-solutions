@@ -49,7 +49,7 @@ export const Plugin = ({
         <div className={ classNames( classes ) } >
             <div className="plugin-card-top">
                 <div className="name column-name">
-                    <Title as="h3">
+                    <Title as="h2">
                         { !! premium && !! displayAsPremiun && (
                             <div className="nfd-tools-card-badges nfd-flex nfd-gap-1">
                                 { !! premium && <PremiumBadge/>}
@@ -99,7 +99,7 @@ export const Plugin = ({
                             </li>
                         </ul>
                 </div>
-                <div className="desc column-description">
+                <div className="desc column-description nfd-tools-plugin-card-description">
                     {!!description && <p>{ description }</p>}
                 </div>
             </div>
