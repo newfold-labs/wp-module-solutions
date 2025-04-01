@@ -4,15 +4,20 @@ const popularTools = [
 	'd561ecd7-678b-4a19-ad34-385894bea07a', // Wishlist
 ];
 
-function layoutTools( tools ) {
+const wideCards = [
+	'20085485-7185-40fd-89e4-14dbb690aea2', // Advanced Review
+	'ad68e506-8c2b-4c0f-a9e3-16623d00041e', // Booking & Appointments
+];
+
+function layoutTools( tools, columns ) {
 	const layout = [];
-	let rowSpaces = 3;
+	let rowSpaces = columns;
 	let row = [];
 
 	const pushRow = () => {
 		layout.push( ...row );
 		row = [];
-		rowSpaces = 3;
+		rowSpaces = columns;
 	};
 
 	while ( tools.length ) {
@@ -77,6 +82,7 @@ const getTools = ( {
 					   sortByPriority = true,
 					   search = null,
 					   category = 'all',
+					   columns = 3
 				   } ) => {
 	let tools = NewfoldSolutions.entitlements;
 
@@ -96,6 +102,14 @@ const getTools = ( {
 			return tool;
 		} );
 	}
+
+	tools.map( tool => {
+		if ( wideCards.includes( tool.id ) ) {
+			tool.wide = true;
+		}
+
+		return tool;
+	} )
 
 	if ( sortByPriority ) {
 		tools.sort( sortTools );
@@ -123,7 +137,7 @@ const getTools = ( {
 	}
 
 	if ( sortForLayout ) {
-		tools = layoutTools( [ ...tools ] );
+		tools = layoutTools( [ ...tools ], columns );
 	}
 	return tools;
 };
