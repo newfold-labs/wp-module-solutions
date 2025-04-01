@@ -209,9 +209,6 @@ class Solutions {
 			'NewfoldSolutions',
 			array_merge(
 				$solutions_data,
-				array(
-					'siteUrl' => get_site_url(),
-				)
 			)
 		);
 	}

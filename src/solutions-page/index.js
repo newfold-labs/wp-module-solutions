@@ -6,8 +6,7 @@ import { Root, Page } from '@newfold/ui-component-library';
 import { Header } from './components/header';
 import { FilterProvider } from './contexts/FilterContext';
 import { HashRouter as Router } from 'react-router-dom';
-import {Content} from './components/content';
-
+import { Content } from './components/content';
 
 const WP_SOLUTIONS_PAGE_ROOT_ELEMENT = 'nfd-solutions-app';
 
@@ -16,7 +15,7 @@ const App = () => {
 		<Root>
 			<Router>
 				<FilterProvider>
-					<Page className="nfd-solutions-app-container nfd-page nfd-py-8 nfd-my-0 nfd-max-w-full">
+					<Page className="nfd-solutions-app-container nfd-page min-[783px]:nfd-p-8 min-[783px]:nfd-flex nfd-gap-6 nfd-my-0">
 						<Header />
 						<Content />
 					</Page>

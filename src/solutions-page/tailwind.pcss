@@ -11,15 +11,27 @@
 
 body.bluehost_page_solutions {
 	background : var(--color-canvas);
+
+	#wpcontent {
+		padding-left: 0 !important;
+	}
 }
 
 .nfd-solutions-app-container {
-	margin-right : 20px;
+	margin-right: 20px;
+	max-width: 1660px;
 
 	.nfd-page-content {
 		&.nfd-page-content--no-solution {
 			max-height : 100vh;
+			overflow   : hidden;
 		}
+	}
+}
+
+.nfd-solutions-tools--empty {
+	a {
+		color : var(--nfd-solutions-bh-blue) !important;
 	}
 }
 

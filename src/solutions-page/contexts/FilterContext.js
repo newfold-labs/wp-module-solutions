@@ -4,7 +4,6 @@ import {
 	useState,
 	useEffect,
 } from '@wordpress/element';
-import { useNavigate } from 'react-router-dom';
 
 const FilterContext = createContext();
 
@@ -14,6 +13,11 @@ export const FilterProvider = ( { children } ) => {
 	const initialSearch = params.get( 's' );
 	const [ category, setCategory ] = useState( initialCategory || 'all' );
 	const [ search, setSearch ] = useState( initialSearch || '' );
+
+	const updateSearch = ( s ) => {
+		setCategory( 'all' );
+		setSearch( s );
+	}
 
 	useEffect( () => {
 		const url = new URL( window.location.href );
@@ -38,7 +42,7 @@ export const FilterProvider = ( { children } ) => {
 
 	return (
 		<FilterContext.Provider
-			value={ { category, setCategory, search, setSearch } }
+			value={ { category, setCategory, search, setSearch, updateSearch } }
 		>
 			{ children }
 		</FilterContext.Provider>
