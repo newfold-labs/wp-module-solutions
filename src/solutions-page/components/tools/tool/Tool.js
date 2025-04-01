@@ -38,6 +38,7 @@ export const Tool = ( {
 	ctbId,
 	ctbHref,
 } ) => {
+	const hasActiveSolution = !! getActiveSolution();
 	const premiumStyle = premium && !! getActiveSolution();
 	const classes = [
 		'nfd-solutions-tool-card',
@@ -104,29 +105,32 @@ export const Tool = ( {
 					<Content />
 				</>
 			) }
-			<Card.Footer
-				className={ premiumStyle ? 'nfd-flex nfd-justify-end' : '' }
-			>
-				<Button
-					as={ 'a' }
-					href={ ctbId ? ctbHref : href }
-					data-nfd-installer-pls-slug={
-						! isActive && ! ctbId ? plsSlug : null
-					}
-					data-nfd-installer-pls-provider={
-						! isActive && ! ctbId ? plsProvider : null
-					}
-					data-nfd-installer-plugin-activate={ isActive && ! ctbId }
-					data-nfd-installer-plugin-name={
-						! isActive && ! ctbId ? name : null
-					}
-					data-ctb-id={ ctbId }
+			{
+				!! hasActiveSolution &&
+				<Card.Footer
+					className={ premiumStyle ? 'nfd-flex nfd-justify-end' : '' }
 				>
-					{ premiumStyle
-						? __( 'Get it', 'wp-module-solutions' )
-						: __( 'Manage', 'wp-module-solutions' ) }
-				</Button>
-			</Card.Footer>
+					<Button
+						as={ 'a' }
+						href={ ctbId ? ctbHref : href }
+						data-nfd-installer-pls-slug={
+							! isActive && ! ctbId ? plsSlug : null
+						}
+						data-nfd-installer-pls-provider={
+							! isActive && ! ctbId ? plsProvider : null
+						}
+						data-nfd-installer-plugin-activate={ isActive && ! ctbId }
+						data-nfd-installer-plugin-name={
+							! isActive && ! ctbId ? name : null
+						}
+						data-ctb-id={ ctbId }
+					>
+						{ premiumStyle
+							? __( 'Get it', 'wp-module-solutions' )
+							: __( 'Manage', 'wp-module-solutions' ) }
+					</Button>
+				</Card.Footer>
+			}
 		</Card>
 	);
 };
