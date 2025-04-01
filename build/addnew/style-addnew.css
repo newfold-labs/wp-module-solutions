@@ -1,0 +1,38 @@
+.nfd-solutions-badge {
+	--bg-color       : var(--nfd-solutions-bh-blue);
+	padding          : .1rem .6rem;
+	font-size        : .6rem;
+	background-color : var(--bg-color);
+	color            : white;
+	border-radius    : .2rem;
+	align-items      : center;
+	display          : flex;
+	justify-content  : center;
+	width            : -moz-fit-content;
+	width            : fit-content;
+	gap              : .3rem;
+	font-weight      : bold;
+}
+
+	.nfd-solutions-badge.nfd-solutions-badge--rounded {
+		border-radius : 1rem;
+	}
+
+	.nfd-solutions-badge.nfd-solutions-badge--with-icon {
+		padding : .1rem .6rem .1rem .2rem;
+	}
+
+	.nfd-solutions-badge svg {
+		width      : .8rem;
+		max-height : .8rem;
+	}
+
+	.nfd-solutions-badge.nfd-solutions-badge--premium {
+		--bg-color : #D17D3D;
+	}
+
+	.nfd-solutions-badge.nfd-solutions-badge--popular {
+		--bg-color : #5C4ED9;
+	}
+
+.nfd-solutions-upgrade-banner{--primary-color: #ad671d;--secondary-color: #e1c963;--tertiary-color: #fbefbc;--primary-color-hover: #985610;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:80%;background:hsla(0,0%,100%,.95);z-index:999;padding:3rem 2rem 2rem;border-radius:10px;border:1px solid var(--secondary-color);box-shadow:0 0 0 10px #fff,0 0 10px 10px rgba(120,160,224,.0509803922);max-width:900px;min-width:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center}.nfd-solutions-upgrade-banner>.nfd-solutions-upgrade-banner__lock-icon{position:absolute;top:0;transform:translateY(-50%);padding:12px;border-radius:50px;background:var(--tertiary-color);border:1px solif var(--tertiary-color)}.nfd-solutions-upgrade-banner>.nfd-solutions-upgrade-banner__lock-icon svg{width:32px;color:var(--primary-color)}.nfd-solutions-upgrade-banner>.nfd-solutions-upgrade-banner__title{font-family:Bitter serif;color:var(--primary-color);font-size:1.4rem;font-weight:bold;font-style:italic}.nfd-solutions-upgrade-banner>.nfd-solutions-upgrade-banner__title--secondary{font-weight:bold}.nfd-solutions-upgrade-banner>.nfd-solutions-upgrade-banner__content{max-width:380px}.nfd-solutions-upgrade-banner>.nfd-solutions-upgrade-banner__button{--tw-ring-color: rgba(173, 103, 29, var(--tw-ring-opacity)) !important;font-weight:bold;background-color:var(--primary-color);white-space:nowrap}.nfd-solutions-upgrade-banner>.nfd-solutions-upgrade-banner__button:hover{background-color:var(--primary-color-hover)}.nfd-solutions-upgrade-banner__overlay{position:absolute;width:100%;height:100%;z-index:10}.nfd-solutions-upgrade-banner__overlay:before{content:"";position:absolute;width:100%;height:100%;opacity:.6;background-color:var(--color-canvas)}.nfd-solutions-upgrade-banner__overlay:after{content:"";position:absolute;width:100%;height:200px;bottom:0;z-index:10;background:linear-gradient(rgba(241, 245, 249, 0), #f1f5f9)}
