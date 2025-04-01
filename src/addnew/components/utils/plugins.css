@@ -10,6 +10,10 @@ svg#ndf-tools-plugin-bluehost-brand {
     border-bottom: 4px solid #196BDE6B;
 }
 
+.nfd-solutions-app-container #the-list {
+    position:relative;
+}
+
 /*Card*/
 .nfd-plugin-card {
     gap:80px;
@@ -65,3 +69,6 @@ svg#ndf-tools-plugin-bluehost-brand {
     margin: 0 auto;
     vertical-align: middle;
 }
+
+
+/*Banner*/

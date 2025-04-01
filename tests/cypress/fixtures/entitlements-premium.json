@@ -615,6 +615,7 @@
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
             "priority": 0,
+            "popular": 1,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ],
@@ -717,6 +718,7 @@
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
             "priority": 0,
+            "popular": 1,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"
@@ -1173,6 +1175,7 @@
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",
             "priority": 0,
+            "popular": 1,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"

@@ -1,3 +1,6 @@
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./src/solutions-page/tailwind.pcss ***!
+  \**********************************************************************************************************************************************************************************************************************/
 /* Import main CSS including all components. */
 /**
  * Tailwind CSS preflight, but scoped to the Yoast root class.
@@ -3337,6 +3340,9 @@
 .nfd-min-w-0 {
 		min-width: 0px !important;
 }
+.nfd-min-w-60 {
+		min-width: 15rem !important;
+}
 .nfd-min-w-full {
 		min-width: 100% !important;
 }
@@ -3415,6 +3421,9 @@
 }
 .nfd-list-disc {
 		list-style-type: disc !important;
+}
+.nfd-grid-cols-2 {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 }
 .nfd-flex-col {
 		flex-direction: column !important;
@@ -3576,6 +3585,10 @@
 		padding-top: 1.5rem !important;
 		padding-bottom: 1.5rem !important;
 }
+.nfd-py-8 {
+		padding-top: 2rem !important;
+		padding-bottom: 2rem !important;
+}
 .nfd-pb-1 {
 		padding-bottom: 0.25rem !important;
 }
@@ -3735,31 +3748,15 @@
 :root {
 	--nfd-solutions-bh-blue : #336AD7;
 }
+body.bluehost_page_solutions {
+	background : var(--color-canvas);
+}
 .nfd-solutions-app-container {
 	margin-left : 20px;
 }
 .nfd-solutions-app-container .nfd-page-content.nfd-page-content--no-solution {
 			max-height : 100vh;
-			overflow   : hidden;
 		}
-.nfd-solutions-app-container .nfd-page-content.nfd-page-content--no-solution:before {
-				content          : '';
-				position         : absolute;
-				width            : 100%;
-				height           : 100%;
-				z-index          : 10;
-				background-color : #f0f0f1;
-				opacity          : .6;
-			}
-.nfd-solutions-app-container .nfd-page-content.nfd-page-content--no-solution:after {
-				content    : '';
-				position   : absolute;
-				width      : 100%;
-				height     : 200px;
-				bottom     : 0;
-				z-index    : 10;
-				background : linear-gradient(#f0f0f100, #f0f0f1);
-			}
 .nfd-solutions-sidebar ul {
 		margin : 0 !important;
 	}
@@ -3771,10 +3768,6 @@
 .nfd-solutions-sidebar ul li:nth-last-child(3) {
 				padding-bottom : 2rem !important;
 			}
-.nfd-solutions-tools {
-	grid-template-columns : repeat(auto-fit, minmax(320px, 1fr)) !important;
-	max-width             : calc(320px * 3 + 2rem);
-}
 .nfd-solutions-tool-card {
 	--background-color : #ECF4FA;
 	--primary-color    : var(--nfd-solutions-bh-blue);
@@ -4059,12 +4052,14 @@
 				transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 		}
 }
-@media (min-width: 783px) {
-		.min-\[783px\]\:nfd-max-w-full {
-				max-width: 100% !important;
+@media (min-width: 768px) {
+		.md\:nfd-flex-row {
+				flex-direction: row !important;
 		}
-		.min-\[783px\]\:nfd-p-8 {
-				padding: 2rem !important;
+}
+@media (min-width: 1200px) {
+		.min-\[1200px\]\:nfd-grid-cols-3 {
+				grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
 		}
 }
 @media (min-width: 1280px) {
@@ -4074,13 +4069,10 @@
 		.xl\:nfd-mt-0 {
 				margin-top: 0px !important;
 		}
-		.xl\:nfd-max-w-screen-xl {
-				max-width: 1280px !important;
-		}
 }
-@media (min-width: 1536px) {
-		.\32xl\:nfd-max-w-screen-2xl {
-				max-width: 1536px !important;
+@media (min-width: 1520px) {
+		.min-\[1520px\]\:nfd-grid-cols-4 {
+				grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 		}
 }
 

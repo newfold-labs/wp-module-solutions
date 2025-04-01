@@ -27,12 +27,12 @@
         }
     },
     "require-dev": {
-        "newfold-labs/wp-php-standards": "^1.2",
+        "newfold-labs/wp-php-standards": "^1.2.5",
         "wp-cli/i18n-command": "^2.6.3"
     },
     "require": {
         "newfold-labs/wp-module-data": "^2.6.11",
-        "newfold-labs/wp-module-loader": "^1.0.10"
+        "newfold-labs/wp-module-loader": "^1.0.12"
     },
     "config": {
         "allow-plugins": {

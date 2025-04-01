@@ -44,7 +44,6 @@ class Solutions {
 		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
 
 		\add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
-		\add_action( 'admin_menu', array( __CLASS__, 'add_solutions_page' ) );
 		
 		add_filter( 'install_plugins_tabs', array( $this , 'add_brand_solutions_tab' ), 99 );
 		add_filter( 'install_plugins_nfd_solutions', array ( $this, 'render_nfd_solutions_tab' )  );
@@ -140,30 +139,15 @@ class Solutions {
 	 * @param array $subnav The nav array.
 	 * @return array The filtered nav array
 	 */
-	public function add_nfd_subnav( $subnav ) {
-		$brand       = $this->container->get( 'plugin' )['id'];
-		$performance = array(
-			'route'    => 'solutions',
+	public static function add_nfd_subnav( $subnav ) {
+		$solutions = array(
 			'title'    => __( 'Solutions', 'wp-module-solutions' ),
+			'route'    => 'solutions',
 			'priority' => 10,
+			'callback' => array( __CLASS__, 'render_solutions_page' ),
 		);
-		array_push( $subnav, $performance );
+		array_push( $subnav, $solutions );
 		return $subnav;
-	}
-
-	/**
-	 * Add "Solutions" page to admin menu.
-	 */
-	public static function add_solutions_page() {
-		\add_menu_page(
-			__( 'Solutions', 'wp-module-solutions' ),
-			__( 'Solutions', 'wp-module-solutions' ),
-			'manage_options',
-			'solutions',
-			array( __CLASS__, 'render_solutions_page' ),
-			'dashicons-lightbulb',
-			-1
-		);
 	}
 
 	/**
@@ -177,19 +161,16 @@ class Solutions {
 
 	/**
 	 * Enqueue assets and set locals.
-	 *
-	 * @param string $hook The current admin page.
 	 */
-	public static function enqueue_admin_assets( $hook ) {
-		
-		if ( 'toplevel_page_solutions' !== $hook ) {
+	public static function enqueue_admin_assets() {
+		if ( isset( $screen->id ) && false !== strpos( $screen->id, 'solutions' ) ) {
 			return;
 		}
 
 		$assets_info = include NFD_SOLUTIONS_DIR . '/build/solutions-page/bundle.asset.php';
 
 		\wp_enqueue_script(
-			'solutions-react',
+			'solutions-page',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/bundle.js',
 			array_merge(
 				$assets_info['dependencies'],
@@ -214,16 +195,18 @@ class Solutions {
 
 		$solutions_data = json_decode( wp_json_encode( self::$entitlements_api->get_items()->data ), true );
 
-		$solutions_data['entitlements'] = array_map(
-			function ( $entitlement ) {
-				$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
-				return $entitlement;
-			},
-			$solutions_data['entitlements']
-		);
+		if ( array_key_exists('entitlements', $solutions_data ) ) {
+			$solutions_data['entitlements'] = array_map(
+				function ( $entitlement ) {
+					$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
+					return $entitlement;
+				},
+				$solutions_data['entitlements']
+			);
+		}
 
 		\wp_localize_script(
-			'solutions-react',
+			'solutions-page',
 			'NewfoldSolutions',
 			array_merge(
 				$solutions_data,

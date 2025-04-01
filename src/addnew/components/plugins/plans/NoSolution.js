@@ -2,6 +2,7 @@ import {getPlugins} from "../../utils";
 import {Plugin} from "../plugin";
 import {__} from "@wordpress/i18n";
 import {Section} from "../../section";
+import {UpgradeBanner} from "../../../../common/components/upgrade-banner";
 
 export const NoSolution = ( { plan } ) => {
     let plugins = getPlugins({});
@@ -15,6 +16,7 @@ export const NoSolution = ( { plan } ) => {
     {
         !!plugins.length && (
             <div id="the-list">
+                <UpgradeBanner />
                 {plugins.map((plugin ) => (
                         <Plugin
                             name={ plugin?.name }

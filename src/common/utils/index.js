@@ -1,3 +1,9 @@
+const popularTools = [
+	'ad68e506-8c2b-4c0f-a9e3-16623d00041e', // Booking & Appointments
+	'20085485-7185-40fd-89e4-14dbb690aea2', // Advanced Review
+	'd561ecd7-678b-4a19-ad34-385894bea07a', // Wishlist
+];
+
 function layoutTools( tools ) {
 	const layout = [];
 	let rowSpaces = 3;
@@ -82,7 +88,13 @@ const getTools = ( {
 
 				return tool;
 			} ),
-		];
+		].map( tool => {
+			if ( popularTools.includes( tool.id ) ) {
+				tool.popular = true;
+			}
+
+			return tool;
+		} );
 	}
 
 	if ( sortByPriority ) {
@@ -90,7 +102,16 @@ const getTools = ( {
 	}
 
 	if ( 'all' !== category ) {
-		tools = tools.filter( ( tool ) => tool?.categorySlug === category );
+		tools = tools.filter( ( tool ) => {
+			if ( 'premium' === category ) {
+				return tool.premium;
+			}
+			if ( 'popular' === category ) {
+				return tool.popular;
+			}
+
+			return tool?.categorySlug === category
+		} );
 	}
 
 	if ( search ) {
@@ -108,7 +129,7 @@ const getTools = ( {
 };
 
 const getActiveSolution = () => {
-	return NewfoldSolutions?.solution;
+	return NewfoldSolutions?.solutions.find( solution => solution?.sku === NewfoldSolutions?.solution );
 };
 
 export {

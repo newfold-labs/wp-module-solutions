@@ -44,7 +44,8 @@ export const Sidebar = () => {
 	return (
 		<aside className={ 'nfd-solutions-sidebar' }>
 			<SidebarNavigation activePath={ category }>
-				<SidebarNavigation.Sidebar className="nfd-w-[300px] bg-red-600">
+
+				<SidebarNavigation.Sidebar className="nfd-min-w-60">
 					<div className="nfd-solutions-search nfd-flex nfd-flex-col nfd-gap-4 nfd-mb-8">
 						<Title as="h4">
 							{ __( 'Search', 'wp-module-solutions' ) }
