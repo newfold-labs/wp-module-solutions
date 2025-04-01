@@ -18,18 +18,17 @@ export const Content = () => {
 
 	return (
 		<div className={ classes }>
-			{
-				! hasSolution &&
+			{ ! hasSolution && (
 				<UpgradeBanner>
 					{ __(
 						'Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.',
 						'wp-module-solutions'
 					) }
 				</UpgradeBanner>
-			}
-			<Sidebar/>
+			) }
+			<Sidebar />
 			<main className="nfd-w-full">
-				<Tools/>
+				<Tools />
 			</main>
 		</div>
 	);

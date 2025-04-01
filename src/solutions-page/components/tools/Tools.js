@@ -38,10 +38,8 @@ export const Tools = () => {
 							name={ tool?.name }
 							category={ tool.category }
 							description={ tool.description }
-							href={ tool.cta?.url.replace(
-								'{siteUrl}',
-								NewfoldSolutions.siteUrl
-							) }
+							ctaUrl={ tool.cta?.url }
+							ctaLabel={ tool.cta?.text }
 							featureIcon={ tool?.image?.featureImage }
 							smallIcon={ tool?.image?.primaryImage }
 							wide={ tool?.wide }

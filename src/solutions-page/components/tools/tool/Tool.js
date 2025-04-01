@@ -23,18 +23,27 @@ const PremiumBadge = () => (
 	/>
 );
 
+// Render CTA url - replace the {siteUrl} placeholder in the URL
+const renderCTAUrl = ( url ) => {
+	if ( ! window.NewfoldRuntime || ! window.NewfoldRuntime.siteUrl ) {
+		return url.replace( '{siteUrl}', '' ); // fallback to site relative url if no siteUrl is found
+	}
+	return url.replace( '{siteUrl}', window.NewfoldRuntime.siteUrl );
+};
+
 export const Tool = ( {
 	name,
 	description = '',
 	premium = false,
 	popular = false,
 	wide = false,
-	href = '',
 	featureIcon = null,
 	smallIcon = null,
 	plsSlug,
 	plsProvider,
 	isActive,
+	ctaUrl,
+	ctaLabel,
 	ctbId,
 	ctbHref,
 } ) => {
@@ -105,32 +114,33 @@ export const Tool = ( {
 					<Content />
 				</>
 			) }
-			{
-				!! hasActiveSolution &&
+			{ !! hasActiveSolution && (
 				<Card.Footer
 					className={ premiumStyle ? 'nfd-flex nfd-justify-end' : '' }
 				>
 					<Button
 						as={ 'a' }
-						href={ ctbId ? ctbHref : href }
-						data-nfd-installer-pls-slug={
-							! isActive && ! ctbId ? plsSlug : null
+						data-ctb-id={ ctbId }
+						data-nfd-installer-plugin-activate={
+							! ctbId ? 'true' : null
+						}
+						data-nfd-installer-plugin-name={
+							! isActive && ! ctbId ? name : null
 						}
 						data-nfd-installer-pls-provider={
 							! isActive && ! ctbId ? plsProvider : null
 						}
-						data-nfd-installer-plugin-activate={ isActive && ! ctbId }
-						data-nfd-installer-plugin-name={
-							! isActive && ! ctbId ? name : null
+						data-nfd-installer-pls-slug={
+							! isActive && ! ctbId ? plsSlug : null
 						}
-						data-ctb-id={ ctbId }
+						href={ ctbId ? ctbHref : renderCTAUrl( ctaUrl ) }
 					>
 						{ premiumStyle
 							? __( 'Get it', 'wp-module-solutions' )
-							: __( 'Manage', 'wp-module-solutions' ) }
+							: ctaLabel }
 					</Button>
 				</Card.Footer>
-			}
+			) }
 		</Card>
 	);
 };

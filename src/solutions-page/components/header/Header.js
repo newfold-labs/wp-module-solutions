@@ -7,7 +7,7 @@ export const Header = () => {
 	const currentSolution = getActiveSolution();
 	return (
 		<div className="nfd-solutions-app-header nfd-flex nfd-flex-col nfd-gap-y-4 nfd-mb-8">
-			<BrandLogo width={ '140px' } className="nfd-mb-8" />
+			<BrandLogo width={ '160px' } className="nfd-mb-6" />
 			<Title>
 				{ currentSolution
 					? __(
