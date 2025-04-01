@@ -4,15 +4,15 @@ import { __ } from '@wordpress/i18n';
 import { Section } from '../../section';
 import { UpgradeBanner } from '../../../../common/components/upgrade-banner';
 
-export const Creator = ( { plan } ) => {
+export const Service = ( { plan } ) => {
 	const entitlements = getPlugins( { includePremium: false } );
 	const premium = getPlugins( { includeEntitlements: false } );
 	const title = __(
-		'Premium tools available in your Creator Solution',
+		'Premium tools available in your Services Solution',
 		'wp-module-solutions'
 	);
 	const titleUpgrade = __(
-		'Upgrade to save & unlock 30 advanced tools',
+		'Upgrade to save & unlock more advanced tools',
 		'wp-module-solutions'
 	);
 	return (

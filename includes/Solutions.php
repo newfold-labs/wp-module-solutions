@@ -345,7 +345,7 @@ class Solutions {
 		}
 
 		\wp_localize_script(
-			'solutions-page',
+			'solutions-add-new-tools',
 			'NewfoldSolutions',
 			array_merge(
 				$solutions_data,
