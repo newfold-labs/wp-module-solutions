@@ -44,11 +44,10 @@ class Solutions {
 		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
 
 		\add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
-		
-		add_filter( 'install_plugins_tabs', array( $this , 'add_brand_solutions_tab' ), 99 );
-		add_filter( 'install_plugins_nfd_solutions', array ( $this, 'render_nfd_solutions_tab' )  );
+
+		add_filter( 'install_plugins_tabs', array( $this, 'add_brand_solutions_tab' ), 99 );
+		add_filter( 'install_plugins_nfd_solutions', array( $this, 'render_nfd_solutions_tab' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_solutions_assets' ) );
-		
 	}
 
 	/**
@@ -195,7 +194,7 @@ class Solutions {
 
 		$solutions_data = json_decode( wp_json_encode( self::$entitlements_api->get_items()->data ), true );
 
-		if ( array_key_exists('entitlements', $solutions_data ) ) {
+		if ( array_key_exists( 'entitlements', $solutions_data ) ) {
 			$solutions_data['entitlements'] = array_map(
 				function ( $entitlement ) {
 					$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
@@ -278,7 +277,7 @@ class Solutions {
 			NFD_SOLUTIONS_DIR . '/languages'
 		);
 	}
-	
+
 	/**
 	 * Add "Brand solution" tab to plugins install tabs.
 	 *
@@ -286,15 +285,18 @@ class Solutions {
 	 *
 	 * @return array
 	 */
-	public function add_brand_solutions_tab ( $tabs ) {
-		$name = $this->container->plugin()->brand;
-		$solutions_tab = array( 'nfd_solutions' => ucfirst( $name ) .' '. __('Solutions', 'wp-module-solutions' ) );
-		
+	public function add_brand_solutions_tab( $tabs ) {
+		$name          = $this->container->plugin()->brand;
+		$solutions_tab = array( 'nfd_solutions' => ucfirst( $name ) . ' ' . __( 'Solutions', 'wp-module-solutions' ) );
+
 		return array_merge( $solutions_tab, $tabs );
 	}
-	
-	public function render_nfd_solutions_tab()
-	{
+	/**
+	 * Render solutions section on "Add new" plugins section.
+	 *
+	 * @return void
+	 */
+	public function render_nfd_solutions_tab() {
 		echo '<div id="nfd-add-new-app"></div>';
 	}
 	/**
@@ -306,10 +308,9 @@ class Solutions {
 		if ( 'plugin-install.php' !== $hook ) {
 			return;
 		}
-		
+
 		$assets_info = include NFD_SOLUTIONS_DIR . '/build/addnew/bundle.asset.php';
-		
-		
+
 		\wp_enqueue_script(
 			'solutions-react',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/bundle.js',
@@ -320,7 +321,7 @@ class Solutions {
 			$assets_info['version'],
 			true
 		);
-		
+
 		\wp_enqueue_style(
 			'solutions-add-new-style',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/style-addnew.css',
@@ -333,10 +334,10 @@ class Solutions {
 			array( 'nfd-installer' ),
 			$assets_info['version']
 		);
-		
+
 		$solutions_data = json_decode( wp_json_encode( self::$entitlements_api->get_items()->data ), true );
-		
-		if ( array_key_exists('entitlements', $solutions_data ) ) {
+
+		if ( array_key_exists( 'entitlements', $solutions_data ) ) {
 			$solutions_data['entitlements'] = array_map(
 				function ( $entitlement ) {
 					$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
@@ -345,7 +346,7 @@ class Solutions {
 				$solutions_data['entitlements']
 			);
 		}
-		
+
 		\wp_localize_script(
 			'solutions-page',
 			'NewfoldSolutions',
@@ -356,7 +357,5 @@ class Solutions {
 				)
 			)
 		);
-		
-		
 	}
 }
