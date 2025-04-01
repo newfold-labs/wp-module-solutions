@@ -7,14 +7,13 @@ import { Button, Title } from '@newfold/ui-component-library';
 /**
  * Badge component
  *
- * @param label           {string}
- * @param icon            {JSX.Element | null}
- * @param rounded         {boolean}
- * @param label.className
+ * @param title           {string}
+ * @param secondaryTitle  {string}
+ * @param children        {JSX.Element | null}
  * @param className       {string}
  * @param props           {object}
  */
-export const UpgradeBanner = ( { className = '', children, title, secondTitle, ...props } ) => {
+export const UpgradeBanner = ( { className = '', children, title, secondaryTitle, ...props } ) => {
 	const classes = [ className, 'nfd-solutions-upgrade-banner' ];
 
 	return (
@@ -38,7 +37,7 @@ export const UpgradeBanner = ( { className = '', children, title, secondTitle, .
 					className="nfd-solutions-upgrade-banner__title--secondary"
 				>
 					{
-						secondTitle ||
+						secondaryTitle ||
 						__(
 							'Advanced Solutions to build any kind of site, store or blog',
 							'wp-module-solutions'
