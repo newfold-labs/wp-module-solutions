@@ -1,3 +1,6 @@
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./src/solutions-page/tailwind.pcss ***!
+  \**********************************************************************************************************************************************************************************************************************/
 /* Import main CSS including all components. */
 /**
  * Tailwind CSS preflight, but scoped to the Yoast root class.
@@ -3340,9 +3343,6 @@
 .nfd-min-w-full {
 		min-width: 100% !important;
 }
-.nfd-max-w-3xl {
-		max-width: 48rem !important;
-}
 .nfd-max-w-full {
 		max-width: 100% !important;
 }
@@ -3409,6 +3409,9 @@
 }
 .nfd-animate-spin {
 		animation: nfd-spin 1s linear infinite !important;
+}
+.nfd-cursor-pointer {
+		cursor: pointer !important;
 }
 .nfd-cursor-wait {
 		cursor: wait !important;
@@ -3751,6 +3754,9 @@ body.bluehost_page_solutions {
 .nfd-solutions-app-container .nfd-page-content.nfd-page-content--no-solution {
 			max-height : 100vh;
 		}
+.nfd-solutions-tools--empty a {
+		color : var(--nfd-solutions-bh-blue) !important;
+	}
 .nfd-solutions-sidebar ul {
 		margin : 0 !important;
 	}
@@ -3981,6 +3987,9 @@ body.bluehost_page_solutions {
 		--tw-bg-opacity: 1 !important;
 		background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1)) !important;
 }
+.visited\:nfd-text-inherit:visited {
+		color: inherit !important;
+}
 .hover\:nfd-bg-slate-50:hover {
 		--tw-bg-opacity: 1 !important;
 		background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1)) !important;
@@ -4070,3 +4079,5 @@ body.bluehost_page_solutions {
 		}
 }
 
+
+/*# sourceMappingURL=solutions-page.css.map*/
