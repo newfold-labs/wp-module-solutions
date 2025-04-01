@@ -36,18 +36,16 @@ class Solutions {
 		self::$entitlements_api = new EntitlementsApi( $hiive );
 		// We're trying to avoid adding more stuff to this.
 		$this->container = $container;
-		\add_filter( 'install_plugins_tabs', array( __CLASS__, 'add_my_plugins_and_tools_tab' ) );
-		\add_action( 'admin_head-plugin-install.php', array( __CLASS__, 'my_plugins_and_tools_tab_enqueue_assets' ) );
-		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_admin_assets' ) );
+		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'solutions_page_assets' ) );
 		\add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
-		\add_action( 'admin_menu', array( __CLASS__, 'add_plugins_and_tools_menu_link' ) );
+		\add_action( 'admin_menu', array( __CLASS__, 'add_plugins_solutions_menu_link' ) );
 		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
 
 		\add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
 
-		add_filter( 'install_plugins_tabs', array( $this, 'add_brand_solutions_tab' ), 99 );
-		add_filter( 'install_plugins_nfd_solutions', array( $this, 'render_nfd_solutions_tab' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_solutions_assets' ) );
+		\add_filter( 'install_plugins_tabs', array( $this, 'add_brand_solutions_tab' ), 99 );
+		\add_filter( 'install_plugins_nfd_solutions', array( $this, 'render_nfd_solutions_tab' ) );
+		\add_action( 'admin_enqueue_scripts', array( $this, 'plugins_solutions_tab_assets' ) );
 	}
 
 	/**
@@ -73,28 +71,6 @@ class Solutions {
 	}
 
 	/**
-	 * Load WP dependencies into the page.
-	 */
-	public function register_assets() {
-		$asset_file = NFD_SOLUTIONS_BUILD_DIR . 'index.asset.php';
-		if ( file_exists( $asset_file ) ) {
-			$asset = require $asset_file;
-			\wp_register_script(
-				'nfd-solutions-dependency',
-				NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/index.js',
-				array_merge( $asset['dependencies'], array() ),
-				$asset['version']
-			);
-			I18nService::load_js_translations(
-				'wp-module-solutions',
-				'nfd-solutions-dependency',
-				NFD_SOLUTIONS_DIR . '/languages'
-			);
-			\wp_enqueue_script( 'nfd-solutions-dependency' );
-		}
-	}
-
-	/**
 	 * Initialize the Entitilement API Controller.
 	 */
 	public function init_entitilements_apis(): void {
@@ -102,34 +78,18 @@ class Solutions {
 	}
 
 	/**
-	 * Add "My Plugins & tools" tab to plugins install tabs.
-	 *
-	 * @param array $tabs Collection of tabs.
-	 *
-	 * @return array
-	 */
-	public static function add_my_plugins_and_tools_tab( array $tabs ) {
-		$capability = new SiteCapabilities();
-		if ( $capability->get( 'hasSolution' ) ) {
-			$tabs['nfd_my_plugins_and_tools'] = __( 'My Plugins & Tools', 'wp-module-solutions' );
-		}
-		return $tabs;
-	}
-
-	/**
 	 * Add "Plugins && tools" sub-link to admin menu.
 	 */
-	public static function add_plugins_and_tools_menu_link() {
-		$capability = new SiteCapabilities();
-		if ( $capability->get( 'hasSolution' ) ) {
-			\add_submenu_page(
-				'plugins.php',
-				'nfd_my_plugins_and_tools',
-				'My Plugins & Tools',
-				'manage_options',
-				'plugin-install.php?tab=nfd_my_plugins_and_tools'
-			);
-		}
+	public static function add_plugins_solutions_menu_link() {
+		\add_submenu_page(
+			'plugins.php',
+			'My Solution',
+			'My Solution',
+			'manage_options',
+			'plugin-install.php?tab=nfd_solutions',
+			null,
+			3,
+		);
 	}
 
 	/**
@@ -161,7 +121,7 @@ class Solutions {
 	/**
 	 * Enqueue assets and set locals.
 	 */
-	public static function enqueue_admin_assets() {
+	public static function solutions_page_assets() {
 		if ( isset( $screen->id ) && false !== strpos( $screen->id, 'solutions' ) ) {
 			return;
 		}
@@ -301,7 +261,7 @@ class Solutions {
 	 *
 	 * @param string $hook The current admin page.
 	 */
-	public function enqueue_admin_solutions_assets( $hook ) {
+	public function plugins_solutions_tab_assets( $hook ) {
 		if ( 'plugin-install.php' !== $hook ) {
 			return;
 		}
