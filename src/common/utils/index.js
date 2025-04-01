@@ -77,13 +77,13 @@ function sortTools( ent1, ent2 ) {
 }
 
 const getTools = ( {
-					   includePremium = true,
-					   sortForLayout = true,
-					   sortByPriority = true,
-					   search = null,
-					   category = 'all',
-					   columns = 3
-				   } ) => {
+	includePremium = true,
+	sortForLayout = true,
+	sortByPriority = true,
+	search = null,
+	category = 'all',
+	columns = 3,
+} ) => {
 	let tools = NewfoldSolutions.entitlements;
 
 	if ( includePremium ) {
@@ -94,7 +94,7 @@ const getTools = ( {
 
 				return tool;
 			} ),
-		].map( tool => {
+		].map( ( tool ) => {
 			if ( popularTools.includes( tool.id ) ) {
 				tool.popular = true;
 			}
@@ -103,13 +103,13 @@ const getTools = ( {
 		} );
 	}
 
-	tools.map( tool => {
+	tools.map( ( tool ) => {
 		if ( wideCards.includes( tool.id ) ) {
 			tool.wide = true;
 		}
 
 		return tool;
-	} )
+	} );
 
 	if ( sortByPriority ) {
 		tools.sort( sortTools );
@@ -124,7 +124,7 @@ const getTools = ( {
 				return tool.popular;
 			}
 
-			return tool?.categorySlug === category
+			return tool?.categorySlug === category;
 		} );
 	}
 
@@ -143,10 +143,20 @@ const getTools = ( {
 };
 
 const getActiveSolution = () => {
-	return NewfoldSolutions?.solutions.find( solution => solution?.sku === NewfoldSolutions?.solution );
+	return NewfoldSolutions?.solutions.find(
+		( solution ) => solution?.sku === NewfoldSolutions?.solution
+	);
 };
 
-export {
-	getTools,
-	getActiveSolution
+// Render CTA url - replace the {siteUrl} placeholder in the URL
+const renderCTAUrl = ( url ) => {
+	if ( typeof url === 'string' || url instanceof String ) {
+		if ( ! window.NewfoldRuntime || ! window.NewfoldRuntime.siteUrl ) {
+			return url.replace( '{siteUrl}', '' ); // fallback to site relative url if no siteUrl is found
+		}
+		return url.replace( '{siteUrl}', window.NewfoldRuntime.siteUrl );
+	}
+	return url;
 };
+
+export { getTools, getActiveSolution, renderCTAUrl };

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import { FireIcon } from '@heroicons/react/20/solid';
 import { ReactSVG } from 'react-svg';
-import { getActiveSolution } from 'common/utils';
+import { getActiveSolution, renderCTAUrl } from 'common/utils';
 
 const PopularBadge = () => (
 	<Badge
@@ -22,14 +22,6 @@ const PremiumBadge = () => (
 		className={ 'nfd-mb-2 nfd-solutions-badge--premium' }
 	/>
 );
-
-// Render CTA url - replace the {siteUrl} placeholder in the URL
-const renderCTAUrl = ( url ) => {
-	if ( ! window.NewfoldRuntime || ! window.NewfoldRuntime.siteUrl ) {
-		return url.replace( '{siteUrl}', '' ); // fallback to site relative url if no siteUrl is found
-	}
-	return url.replace( '{siteUrl}', window.NewfoldRuntime.siteUrl );
-};
 
 export const Tool = ( {
 	name,

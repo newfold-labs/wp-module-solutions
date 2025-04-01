@@ -25,10 +25,6 @@ export const Commerce = ( { plan } ) => {
 								name={ plugin?.name }
 								category={ plugin.category }
 								description={ plugin.description }
-								href={ plugin.cta?.url.replace(
-									'{siteUrl}',
-									NewfoldSolutions.siteUrl
-								) }
 								icon={ plugin?.image?.primaryImage }
 								premium={ plugin?.premium }
 								displayAsPremiun={ true }
@@ -39,6 +35,8 @@ export const Commerce = ( { plan } ) => {
 								plsSlug={ plugin?.plsSlug }
 								ctbId={ plugin?.ctbId }
 								ctbHref={ plugin?.ctbHref }
+								ctaUrl={ plugin?.cta?.url }
+								ctaLabel={ plugin?.cta?.text }
 							/>
 						) ) }
 					</div>

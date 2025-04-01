@@ -50,10 +50,6 @@ export const NoSolution = ( { plan } ) => {
 								name={ plugin?.name }
 								category={ plugin.category }
 								description={ plugin.description }
-								href={ plugin.cta?.url.replace(
-									'{siteUrl}',
-									NewfoldSolutions.siteUrl
-								) }
 								icon={ plugin?.image?.primaryImage }
 								premium={ plugin?.premium }
 								popular={ plugin?.popular }
@@ -62,8 +58,10 @@ export const NoSolution = ( { plan } ) => {
 								plsProvider={ plugin?.plsProviderName }
 								plsSlug={ plugin?.plsSlug }
 								ctbId={ plugin?.ctbId }
-								isBlock={ true }
 								ctbHref={ plugin?.ctbHref }
+								ctaUrl={ plugin?.cta?.url }
+								ctaLabel={ plugin?.cta?.text }
+								isBlock={ true }
 							/>
 						) ) }
 					</div>
