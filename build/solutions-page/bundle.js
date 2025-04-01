@@ -16410,6 +16410,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const UpgradeBanner = ({
   className = '',
+  children,
+  title,
+  secondTitle,
   ...props
 }) => {
   const classes = [className, 'nfd-solutions-upgrade-banner'];
@@ -16425,14 +16428,14 @@ const UpgradeBanner = ({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"], {
         as: "h2",
         className: "nfd-solutions-upgrade-banner__title",
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Upgrade to unlock all features', 'wp-module-solutions')
+        children: title || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Upgrade to unlock all features', 'wp-module-solutions')
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_5__["default"], {
         as: "h4",
         className: "nfd-solutions-upgrade-banner__title--secondary",
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Advanced Solutions to build any kind of site, store or blog', 'wp-module-solutions')
+        children: secondTitle || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Advanced Solutions to build any kind of site, store or blog', 'wp-module-solutions')
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        className: "nfd-solutions-upgrade-banner__description",
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.', 'wp-module-solutions')
+        className: "nfd-solutions-upgrade-banner__content",
+        children: children
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_newfold_ui_component_library__WEBPACK_IMPORTED_MODULE_6__["default"], {
         as: "a",
         className: "nfd-solutions-upgrade-banner__button",
@@ -16668,8 +16671,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var common_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! common/utils */ "./src/common/utils/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 
@@ -16681,11 +16687,13 @@ const Content = () => {
   const classes = classnames__WEBPACK_IMPORTED_MODULE_4___default()('nfd-page-content', 'nfd-flex nfd-relative nfd-gap-6 nfd-max-w-full nfd-my-0 nfd-flex-col md:nfd-flex-row', {
     'nfd-page-content--no-solution': !hasSolution
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     className: classes,
-    children: [!hasSolution && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(common_components_upgrade_banner__WEBPACK_IMPORTED_MODULE_2__.UpgradeBanner, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_sidebar__WEBPACK_IMPORTED_MODULE_0__.Sidebar, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("main", {
+    children: [!hasSolution && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(common_components_upgrade_banner__WEBPACK_IMPORTED_MODULE_2__.UpgradeBanner, {
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.', 'wp-module-solutions')
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_sidebar__WEBPACK_IMPORTED_MODULE_0__.Sidebar, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("main", {
       className: "nfd-w-full",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tools__WEBPACK_IMPORTED_MODULE_1__.Tools, {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_tools__WEBPACK_IMPORTED_MODULE_1__.Tools, {})
     })]
   });
 };

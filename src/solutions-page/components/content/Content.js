@@ -3,6 +3,7 @@ import { Tools } from '../tools';
 import { UpgradeBanner } from 'common/components/upgrade-banner';
 import { getActiveSolution } from 'common/utils';
 import classNames from 'classnames';
+import { __ } from '@wordpress/i18n';
 
 export const Content = () => {
 	const hasSolution = !! getActiveSolution();
@@ -17,10 +18,18 @@ export const Content = () => {
 
 	return (
 		<div className={ classes }>
-			{ ! hasSolution && <UpgradeBanner /> }
-			<Sidebar />
+			{
+				! hasSolution &&
+				<UpgradeBanner>
+					{ __(
+						'Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.',
+						'wp-module-solutions'
+					) }
+				</UpgradeBanner>
+			}
+			<Sidebar/>
 			<main className="nfd-w-full">
-				<Tools />
+				<Tools/>
 			</main>
 		</div>
 	);

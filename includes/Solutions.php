@@ -357,8 +357,7 @@ class Solutions {
 				)
 			)
 		);
-		
-		
+
 		$script = "
         document.addEventListener('DOMContentLoaded', function() {
             let icon = `<svg id='ndf-tools-plugin-bluehost-brand' width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -372,7 +371,7 @@ class Solutions {
             }
         });
     ";
-		
-		wp_add_inline_script('solutions-add-new-tools', $script);
+
+		wp_add_inline_script( 'solutions-add-new-tools', $script );
 	}
 }
