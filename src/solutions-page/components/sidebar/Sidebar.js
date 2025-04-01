@@ -8,7 +8,7 @@ import { __ } from '@wordpress/i18n';
 import { useFilter } from '../../contexts/FilterContext';
 
 export const Sidebar = () => {
-	const { search, setSearch } = useFilter();
+	const { search, updateSearch } = useFilter();
 	const categories = [];
 	NewfoldSolutions.categories.map( ( cat ) => {
 		const { slug: id, name: label, priority, count } = cat;
@@ -52,7 +52,7 @@ export const Sidebar = () => {
 						<TextInput
 							value={ search }
 							onChange={ ( e ) => {
-								setSearch( e.target.value );
+								updateSearch( e.target.value );
 							} }
 						/>
 					</div>
