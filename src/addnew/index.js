@@ -13,7 +13,7 @@ const App = () => {
 	return (
 		<>
 			<Root>
-				<Page className="nfd-solutions-app-container">
+				<Page className="nfd-my-solutions-app-container">
 					<Plugins plan={ plan } />
 				</Page>
 			</Root>

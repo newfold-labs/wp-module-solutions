@@ -78,7 +78,7 @@ class Solutions {
 	}
 
 	/**
-	 * Add "Plugins && tools" sub-link to admin menu.
+	 * Add "My Solution" sub-link to admin plugins menu.
 	 */
 	public static function add_plugins_solutions_menu_link() {
 		\add_submenu_page(
