@@ -11,11 +11,17 @@ svg#ndf-tools-plugin-bluehost-brand {
     border-bottom: 4px solid #196BDE6B;
 }
 
+.nfd-root .nfd-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .nfd-app-section {
     margin-top: 10px;
 }
 
-.nfd-solutions-app-container .nfd-plugins-card-list {
+.nfd-my-solutions-app-container .nfd-plugins-card-list {
     position:relative;
 }
 
@@ -94,10 +100,10 @@ svg#ndf-tools-plugin-bluehost-brand {
 
 /*Banner*/
 
-.nfd-solutions-app-container .nfd-solutions-upgrade-banner__overlay:before {
+.nfd-my-solutions-app-container .nfd-solutions-upgrade-banner__overlay:before {
     background-color: #FFFFFF;
 }
 
-.nfd-solutions-app-container .nfd-solutions-upgrade-banner {
+.nfd-my-solutions-app-container .nfd-solutions-upgrade-banner {
     top: 25%;
 }
