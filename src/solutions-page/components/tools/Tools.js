@@ -3,6 +3,7 @@ import { Tool } from './tool';
 import { useFilter } from '../../contexts/FilterContext';
 import { getTools } from 'common/utils';
 import { useRef, useEffect, useState } from '@wordpress/element';
+import { useViewportMatch } from '@wordpress/compose';
 
 export const Tools = () => {
 	const grid = useRef();
@@ -32,7 +33,7 @@ export const Tools = () => {
 		<>
 			{ ! tools.length && <EmptyTools/> }
 			{ !! tools.length && (
-				<div className="nfd-solutions-tools nfd-grid nfd-gap-4 nfd-grid-cols-2 min-[1200px]:nfd-grid-cols-3 min-[1520px]:nfd-grid-cols-4" ref={ grid }>
+				<div className="nfd-solutions-tools nfd-grid nfd-gap-4 nfd-grid-cols-1 min-[520px]:nfd-grid-cols-2 min-[1200px]:nfd-grid-cols-3 min-[1520px]:nfd-grid-cols-4" ref={ grid }>
 					{ tools.map( ( tool ) => (
 						<Tool
 							name={ tool?.name }

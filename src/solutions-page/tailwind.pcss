@@ -13,19 +13,23 @@ body.bluehost_page_solutions {
 	background : var(--color-canvas);
 
 	#wpcontent {
-		padding-left: 0 !important;
+		padding-left : 0 !important;
 	}
 }
 
 .nfd-solutions-app-container {
-	margin-right: 20px;
-	max-width: 1660px;
+	margin-right : 20px;
+	max-width    : 1660px;
 
 	.nfd-page-content {
 		&.nfd-page-content--no-solution {
 			max-height : 100vh;
 			overflow   : hidden;
 		}
+	}
+
+	&--mobile {
+		padding : 2rem !important;
 	}
 }
 
@@ -50,6 +54,22 @@ body.bluehost_page_solutions {
 			&:nth-last-child(3) {
 				padding-bottom : 2rem !important;
 			}
+		}
+	}
+}
+
+.nfd-solutions-category-selector {
+	ul li:nth-last-child(2) {
+		margin-top  : 1rem;
+
+		&:before {
+			content    : '';
+			position   : absolute;
+			top        : -.5rem;
+			left       : .75rem;
+			width      : calc(100% - 1.5rem);
+			height     : 1px;
+			border-top : 1px solid #DCDCDC;
 		}
 	}
 }
@@ -114,8 +134,6 @@ body.bluehost_page_solutions {
 	}
 
 	&.nfd-solutions-tool-card--wide {
-		@apply nfd-col-span-2;
-
 		.nfd-card__header {
 			height : 100%;
 		}

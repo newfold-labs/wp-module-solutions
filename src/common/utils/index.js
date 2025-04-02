@@ -10,6 +10,10 @@ const wideCards = [
 ];
 
 function layoutTools( tools, columns ) {
+	if ( 1 >= columns ) {
+		return tools;
+	}
+
 	const layout = [];
 	let rowSpaces = columns;
 	let row = [];
@@ -77,13 +81,13 @@ function sortTools( ent1, ent2 ) {
 }
 
 const getTools = ( {
-	includePremium = true,
-	sortForLayout = true,
-	sortByPriority = true,
-	search = null,
-	category = 'all',
-	columns = 3,
-} ) => {
+					   includePremium = true,
+					   sortForLayout = true,
+					   sortByPriority = true,
+					   search = null,
+					   category = 'all',
+					   columns = 3,
+				   } ) => {
 	let tools = NewfoldSolutions.entitlements;
 
 	if ( includePremium ) {
@@ -136,9 +140,10 @@ const getTools = ( {
 		);
 	}
 
-	if ( sortForLayout ) {
+	if ( sortForLayout && columns > 1 ) {
 		tools = layoutTools( [ ...tools ], columns );
 	}
+
 	return tools;
 };
 

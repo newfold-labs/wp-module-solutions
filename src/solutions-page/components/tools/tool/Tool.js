@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import { FireIcon } from '@heroicons/react/20/solid';
 import { ReactSVG } from 'react-svg';
 import { getActiveSolution, renderCTAUrl } from 'common/utils';
+import { useViewportMatch } from '@wordpress/compose';
 
 const PopularBadge = () => (
 	<Badge
@@ -39,6 +40,7 @@ export const Tool = ( {
 	ctbId,
 	ctbHref,
 } ) => {
+	const isLargeViewport = useViewportMatch( 'medium' );
 	const hasActiveSolution = !! getActiveSolution();
 	const premiumStyle = premium && !! getActiveSolution();
 	const classes = [
@@ -51,7 +53,9 @@ export const Tool = ( {
 			'nfd-solutions-tool-card--with-small-icon':
 				! featureIcon && smallIcon,
 			'nfd-solutions-tool-card--wide': wide,
+			'nfd-col-span-1': wide && isLargeViewport,
 			'nfd-solutions-tool-card--premium': premiumStyle,
+			'min-[520px]:nfd-col-span-2 ': wide,
 		},
 	];
 
