@@ -118,15 +118,16 @@ class Solutions {
 		);
 
 		\wp_register_style(
-			'solutions-page-style',
-			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/solutions-page.css',
-			array( 'nfd-installer' ),
+			'solutions-page-style-common',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/style-solutions-page.css',
+			null,
 			$asset['version']
 		);
 
 		\wp_register_style(
-			'solutions-page-style-common',
-			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/style-solutions-page.css',
+			'solutions-page-style',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/solutions-page.css',
+			array( 'nfd-installer', 'solutions-page-style-common' ),
 			$asset['version']
 		);
 
@@ -135,8 +136,7 @@ class Solutions {
 		if ( isset( $screen->id ) && false !== strpos( $screen->id, 'solution' ) ) {
 			\wp_enqueue_script( 'solutions-page' );
 			\wp_enqueue_style( 'solutions-page-style' );
-			\wp_enqueue_style( 'solutions-page-style-common' );
-			
+
 			$solutions_data = json_decode( \wp_json_encode( self::$entitlements_api->get_items()->data ), true );
 
 			if ( array_key_exists( 'entitlements', $solutions_data ) ) {
@@ -225,15 +225,16 @@ class Solutions {
 		);
 
 		\wp_register_style(
-			'solutions-add-new-style',
-			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/style-addnew.css',
-			array( 'nfd-installer' ),
-			$asset['version']
-		);
-		\wp_register_style(
 			'solutions-add-new',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/addnew.css',
-			array( 'nfd-installer' ),
+			null,
+			$asset['version']
+		);
+
+		\wp_register_style(
+			'solutions-add-new-style',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/style-addnew.css',
+			array( 'nfd-installer', 'solutions-add-new' ),
 			$asset['version']
 		);
 
@@ -241,7 +242,6 @@ class Solutions {
 		if ( 'plugin-install.php' === $hook ) {
 			\wp_enqueue_script( 'solutions-add-new-tools' );
 			\wp_enqueue_style( 'solutions-add-new-style' );
-			\wp_enqueue_style( 'solutions-add-new' );
 
 			$solutions_data = json_decode( \wp_json_encode( self::$entitlements_api->get_items()->data ), true );
 
