@@ -36,38 +36,15 @@ class Solutions {
 		self::$entitlements_api = new EntitlementsApi( $hiive );
 		// We're trying to avoid adding more stuff to this.
 		$this->container = $container;
-		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'solutions_page_assets' ) );
 		\add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 		\add_action( 'admin_menu', array( __CLASS__, 'add_plugins_solutions_menu_link' ) );
 		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
+		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'solutions_page_assets' ) );
+		\add_action( 'admin_enqueue_scripts', array( $this, 'addnew_plugins_solutions_assets' ) );
 
 		\add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
-
-		\add_filter( 'install_plugins_tabs', array( $this, 'add_brand_solutions_tab' ), 99 );
+		\add_filter( 'install_plugins_tabs', array( $this, 'addnew_brand_solutions_tab' ), 99 );
 		\add_filter( 'install_plugins_nfd_solutions', array( $this, 'render_nfd_solutions_tab' ) );
-		\add_action( 'admin_enqueue_scripts', array( $this, 'plugins_solutions_tab_assets' ) );
-	}
-
-	/**
-	 * Loads the textdomain for the module. This applies only to PHP strings.
-	 *
-	 * @return boolean
-	 */
-	public static function load_php_textdomain() {
-		return I18nService::load_php_translations(
-			'wp-module-solutions',
-			NFD_SOLUTIONS_PLUGIN_DIRNAME . '/vendor/newfold-labs/wp-module-solutions/languages'
-		);
-	}
-
-	/**
-	 * Load the textdomains for the module.
-	 */
-	public function register_textdomains() {
-		$module_lang_dir = $this->container->plugin()->dir . 'vendor/newfold-labs/wp-module-solutions/languages';
-		\load_script_textdomain( 'nfd-solutions-dependency', 'wp-module-solutions', $module_lang_dir );
-		$current_language = get_locale();
-		\load_textdomain( 'wp-module-solutions', $module_lang_dir . '/wp-module-solutions-' . $current_language . '.mo' );
 	}
 
 	/**
@@ -129,7 +106,7 @@ class Solutions {
 			return;
 		}
 
-		wp_register_script(
+		\wp_register_script(
 			'solutions-page',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/bundle.js',
 			array_merge(
@@ -140,27 +117,27 @@ class Solutions {
 			true
 		);
 
-		wp_register_style(
+		\wp_register_style(
 			'solutions-page-style',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/solutions-page.css',
 			array( 'nfd-installer' ),
 			$asset['version']
 		);
 
-		wp_register_style(
+		\wp_register_style(
 			'solutions-page-style-common',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page/style-solutions-page.css',
 			$asset['version']
 		);
 
 		// Only enqueue on solutions page
-		$screen = get_current_screen();
+		$screen = \get_current_screen();
 		if ( isset( $screen->id ) && false !== strpos( $screen->id, 'solution' ) ) {
-			wp_enqueue_script( 'solutions-page' );
-			wp_enqueue_style( 'solutions-page-style' );
-			wp_enqueue_style( 'solutions-page-style-common' );
+			\wp_enqueue_script( 'solutions-page' );
+			\wp_enqueue_style( 'solutions-page-style' );
+			\wp_enqueue_style( 'solutions-page-style-common' );
 			
-			$solutions_data = json_decode( wp_json_encode( self::$entitlements_api->get_items()->data ), true );
+			$solutions_data = json_decode( \wp_json_encode( self::$entitlements_api->get_items()->data ), true );
 
 			if ( array_key_exists( 'entitlements', $solutions_data ) ) {
 				$solutions_data['entitlements'] = array_map(
@@ -188,7 +165,6 @@ class Solutions {
 	 * @return void
 	 */
 	public static function load_text_domain() {
-
 		\load_plugin_textdomain(
 			'wp-module-solutions',
 			false,
@@ -209,12 +185,12 @@ class Solutions {
 	 *
 	 * @return array
 	 */
-	public function add_brand_solutions_tab( $tabs ) {
+	public function addnew_brand_solutions_tab( $tabs ) {
 		$name          = $this->container->plugin()->brand;
 		$solutions_tab = array( 'nfd_solutions' => ucfirst( $name ) . ' ' . __( 'Solutions', 'wp-module-solutions' ) );
-
 		return array_merge( $solutions_tab, $tabs );
 	}
+
 	/**
 	 * Render solutions section on "Add new" plugins section.
 	 *
@@ -223,19 +199,20 @@ class Solutions {
 	public function render_nfd_solutions_tab() {
 		echo '<div id="nfd-add-new-app"></div>';
 	}
+
 	/**
 	 * Enqueue assets and set locals for brand solutions on add plugins section.
 	 *
 	 * @param string $hook The current admin page.
 	 */
-	public function plugins_solutions_tab_assets( $hook ) {
+	public function addnew_plugins_solutions_assets( $hook ) {
 		$asset_file = NFD_SOLUTIONS_DIR . '/build/addnew/bundle.asset.php';
 		if ( is_readable( $asset_file ) ) {
 			$asset = include_once $asset_file;
 		} else {
 			return;
 		}
-		
+
 		\wp_register_script(
 			'solutions-add-new-tools',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/bundle.js',
@@ -260,14 +237,13 @@ class Solutions {
 			$asset['version']
 		);
 
-		// Only enqueue on solutions page
-		$screen = get_current_screen();
+		// Only enqueue on plugin install page
 		if ( 'plugin-install.php' === $hook ) {
-			wp_enqueue_script( 'solutions-add-new-tools' );
-			wp_enqueue_style( 'solutions-add-new-style' );
-			wp_enqueue_style( 'solutions-add-new' );
+			\wp_enqueue_script( 'solutions-add-new-tools' );
+			\wp_enqueue_style( 'solutions-add-new-style' );
+			\wp_enqueue_style( 'solutions-add-new' );
 
-			$solutions_data = json_decode( wp_json_encode( self::$entitlements_api->get_items()->data ), true );
+			$solutions_data = json_decode( \wp_json_encode( self::$entitlements_api->get_items()->data ), true );
 
 			if ( array_key_exists( 'entitlements', $solutions_data ) ) {
 				$solutions_data['entitlements'] = array_map(
@@ -304,7 +280,7 @@ class Solutions {
 			});
 		";
 
-			wp_add_inline_script( 'solutions-add-new-tools', $script );
+			\wp_add_inline_script( 'solutions-add-new-tools', $script );
 		}
 	}
 }
