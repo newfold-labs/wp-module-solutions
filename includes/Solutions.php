@@ -229,13 +229,13 @@ class Solutions {
 	 * @param string $hook The current admin page.
 	 */
 	public function plugins_solutions_tab_assets( $hook ) {
-
 		$asset_file = NFD_SOLUTIONS_DIR . '/build/addnew/bundle.asset.php';
 		if ( is_readable( $asset_file ) ) {
 			$asset = include_once $asset_file;
 		} else {
 			return;
 		}
+		
 		\wp_register_script(
 			'solutions-add-new-tools',
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/addnew/bundle.js',
