@@ -22,39 +22,37 @@ export const Tools = () => {
 		return () => {
 			window.removeEventListener( 'resize', calculateTools );
 		};
-	}, [tools] );
+	}, [ tools ] );
 
 	useEffect( () => {
 		calculateTools();
-	}, [category, search] );
+	}, [ category, search ] );
 
 	return (
 		<>
 			{ ! tools.length && <EmptyTools/> }
-			{ !! tools.length && (
-				<div className="nfd-solutions-tools nfd-grid nfd-gap-4 nfd-grid-cols-2 min-[1200px]:nfd-grid-cols-3 min-[1520px]:nfd-grid-cols-4" ref={ grid }>
-					{ tools.map( ( tool ) => (
-						<Tool
-							name={ tool?.name }
-							category={ tool.category }
-							description={ tool.description }
-							ctaUrl={ tool.cta?.url }
-							ctaLabel={ tool.cta?.text }
-							featureIcon={ tool?.image?.featureImage }
-							smallIcon={ tool?.image?.primaryImage }
-							wide={ tool?.wide }
-							premium={ tool?.premium }
-							popular={ tool?.popular }
-							key={ tool?.name }
-							isActive={ tool?.isActive }
-							plsProvider={ tool?.plsProviderName }
-							plsSlug={ tool?.plsSlug }
-							ctbId={ tool?.ctbId }
-							ctbHref={ tool?.ctbHref }
-						/>
-					) ) }
-				</div>
-			) }
+			<div className="nfd-solutions-tools nfd-grid nfd-gap-4 nfd-grid-cols-2 min-[1200px]:nfd-grid-cols-3 min-[1520px]:nfd-grid-cols-4" ref={ grid }>
+				{ tools.map( ( tool ) => (
+					<Tool
+						name={ tool?.name }
+						category={ tool.category }
+						description={ tool.description }
+						ctaUrl={ tool.cta?.url }
+						ctaLabel={ tool.cta?.text }
+						featureIcon={ tool?.image?.featureImage }
+						smallIcon={ tool?.image?.primaryImage }
+						wide={ tool?.wide }
+						premium={ tool?.premium }
+						popular={ tool?.popular }
+						key={ tool?.name }
+						isActive={ tool?.isActive }
+						plsProvider={ tool?.plsProviderName }
+						plsSlug={ tool?.plsSlug }
+						ctbId={ tool?.ctbId }
+						ctbHref={ tool?.ctbHref }
+					/>
+				) ) }
+			</div>
 		</>
 	);
 };
