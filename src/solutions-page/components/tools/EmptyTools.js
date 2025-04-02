@@ -8,9 +8,12 @@ export const EmptyTools = () => {
 
 	return (
 		<div className="nfd-solutions-tools--empty nfd-flex nfd-flex-col nfd-items-center nfd-justify-center nfd-gap-5 nfd-h-full nfd--mt-12">
-			<EmptySearchIcon className={ 'nfd-solutions-tools--empty__icon' }/>
+			<EmptySearchIcon className={ 'nfd-solutions-tools--empty__icon' } />
 			<Title as="h2">
-				{ __( 'No matching tools for \'{search}\'', 'wp-module-solutions' ).replace( '{search}', search ) }
+				{ __(
+					"No matching tools for '{search}'",
+					'wp-module-solutions'
+				).replace( '{search}', search ) }
 			</Title>
 			<p>
 				{ __(
@@ -18,7 +21,13 @@ export const EmptyTools = () => {
 					'wp-module-solutions'
 				) }
 			</p>
-			<a className={'nfd-solutions-tools--empty__return-to-list nfd-cursor-pointer visited:nfd-text-inherit'} onClick={ () => updateSearch( '' ) }>
+			<a
+				className={
+					'nfd-solutions-tools--empty__return-to-list nfd-cursor-pointer visited:nfd-text-inherit'
+				}
+				onClick={ () => updateSearch( null ) }
+				href="#"
+			>
 				{ __( 'Return to the tools list', 'wp-module-solutions' ) }
 			</a>
 		</div>

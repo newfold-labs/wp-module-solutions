@@ -81,13 +81,13 @@ function sortTools( ent1, ent2 ) {
 }
 
 const getTools = ( {
-					   includePremium = true,
-					   sortForLayout = true,
-					   sortByPriority = true,
-					   search = null,
-					   category = 'all',
-					   columns = 3,
-				   } ) => {
+	includePremium = true,
+	sortForLayout = true,
+	sortByPriority = true,
+	search = null,
+	category = 'all',
+	columns = 3,
+} ) => {
 	let tools = NewfoldSolutions.entitlements;
 
 	if ( includePremium ) {
