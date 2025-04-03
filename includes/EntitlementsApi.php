@@ -105,12 +105,13 @@ class EntitlementsApi {
 	 */
 	public function get_items() {
 
-		// If there is no Hiive connection, bail.
 		// TODO: update response to be available without connection and return solutions categories and premium
+		// If there is no Hiive connection, bail.
 		if ( ! HiiveConnection::is_connected() ) {
-			if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG && 'localhost' === $_SERVER['SERVER_NAME'] ) {
+			$allowed_solutions = array( 'commerce', 'service', 'creator', 'none' );
+			if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG && 'local' === wp_get_environment_type() && in_array( $_GET['solution'], $allowed_solutions ) ) {
 				// Use a json fixture rather than hiive entitlement endpoint response - for local dev and cypress tests
-				return new WP_REST_Response( json_decode( file_get_contents( NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/entitlements-premium.json' ) ), 218 );
+				return new WP_REST_Response( json_decode( file_get_contents( NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/' . $_GET['solution'] . '.json' ) ), 218 );
 			}
 			// If no connection, give an empty response.
 			return new WP_REST_Response(
