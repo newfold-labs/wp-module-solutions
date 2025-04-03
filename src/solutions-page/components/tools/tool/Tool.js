@@ -130,6 +130,7 @@ export const Tool = ( {
 							! isActive && ! ctbId ? plsSlug : null
 						}
 						href={ ctbId ? ctbHref : renderCTAUrl( ctaUrl ) }
+						target={ ctbId ? "_blank" : null }
 					>
 						{ premiumStyle
 							? __( 'Get it', 'wp-module-solutions' )
