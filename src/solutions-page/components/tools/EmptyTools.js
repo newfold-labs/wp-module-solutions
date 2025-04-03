@@ -1,4 +1,4 @@
-import { EmptySearchIcon } from 'common/components/icons';
+import { EmptySearchIcon } from 'common/components/Icons';
 import { Title } from '@newfold/ui-component-library';
 import { __ } from '@wordpress/i18n';
 import { useFilter } from '../../contexts/FilterContext';
