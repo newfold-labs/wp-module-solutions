@@ -23,7 +23,7 @@ const getCategories = () => {
 	const staticCategories = [
 		{
 			id: 'popular',
-			label: __( 'Most popular', 'wp-module-solutions' ),
+			label: __( 'Most Popular', 'wp-module-solutions' ),
 			icon: FireIcon,
 		},
 		{
