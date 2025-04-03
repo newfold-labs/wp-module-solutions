@@ -10,7 +10,7 @@ export const Content = () => {
 
 	const classes = classNames(
 		'nfd-page-content',
-		'nfd-flex nfd-relative nfd-gap-6 nfd-max-w-full nfd-my-0 nfd-flex-col md:nfd-flex-row',
+		'nfd-flex nfd-relative nfd-gap-6 nfd-max-w-full nfd-my-0 nfd-flex-col min-[782px]:nfd-flex-row',
 		{
 			'nfd-page-content--no-solution': ! hasSolution,
 		}

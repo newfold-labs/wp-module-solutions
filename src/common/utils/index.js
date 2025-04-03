@@ -10,6 +10,10 @@ const wideCards = [
 ];
 
 function layoutTools( tools, columns ) {
+	if ( 1 >= columns ) {
+		return tools;
+	}
+
 	const layout = [];
 	let rowSpaces = columns;
 	let row = [];
@@ -136,9 +140,10 @@ const getTools = ( {
 		);
 	}
 
-	if ( sortForLayout ) {
+	if ( sortForLayout && columns > 1 ) {
 		tools = layoutTools( [ ...tools ], columns );
 	}
+
 	return tools;
 };
 
