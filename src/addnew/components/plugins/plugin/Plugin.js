@@ -1,4 +1,5 @@
 import { Title, Button } from '@newfold/ui-component-library';
+import { cleanForSlug } from '@wordpress/url';
 import classNames from 'classnames';
 import { Badge } from '../../../../common/components/badge';
 import { renderCTAUrl } from '../../../../common/utils';
@@ -27,11 +28,12 @@ export const Plugin = ( {
 	ctbHref,
 	ctaUrl,
 	ctaLabel,
+	download,
 } ) => {
 	const classes = [
 		'plugin-card',
 		'nfd-plugin-card',
-		'plugin-card-' + plsSlug,
+		'plugin-card-' + cleanForSlug( name ),
 		{
 			'nfd-plugin-card-premium': premium && displayAsPremiun,
 			'nfd-plugin-card--icon': icon,
@@ -79,6 +81,7 @@ export const Plugin = ( {
 						<li>
 							<a
 								className={ classNames( buttonClass ) }
+								data-is-active={ isActive ? true : null }
 								data-ctb-id={ ctbId }
 								data-nfd-installer-plugin-activate={
 									! isBlock && ! ctbId ? 'true' : null
@@ -96,6 +99,11 @@ export const Plugin = ( {
 								data-nfd-installer-pls-provider={
 									! isBlock && ! isActive && ! ctbId
 										? plsProvider
+										: null
+								}
+								data-nfd-installer-download-url={
+									! isBlock && ! isActive && ! ctbId
+										? download
 										: null
 								}
 								href={
