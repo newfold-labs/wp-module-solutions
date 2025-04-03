@@ -81,8 +81,13 @@ export const Plugin = ( {
 						<li>
 							<a
 								className={ classNames( buttonClass ) }
-								data-is-active={ isActive ? true : null }
 								data-ctb-id={ ctbId }
+								data-is-active={ isActive ? true : null }
+								data-nfd-installer-download-url={
+									! isBlock && ! isActive && ! ctbId
+										? download
+										: null
+								}
 								data-nfd-installer-plugin-activate={
 									! isBlock && ! ctbId ? 'true' : null
 								}
@@ -91,19 +96,14 @@ export const Plugin = ( {
 										? name
 										: null
 								}
-								data-nfd-installer-pls-slug={
-									! isBlock && ! isActive && ! ctbId
-										? plsSlug
-										: null
-								}
 								data-nfd-installer-pls-provider={
 									! isBlock && ! isActive && ! ctbId
 										? plsProvider
 										: null
 								}
-								data-nfd-installer-download-url={
+								data-nfd-installer-pls-slug={
 									! isBlock && ! isActive && ! ctbId
-										? download
+										? plsSlug
 										: null
 								}
 								href={

@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { Card, Title, Button } from '@newfold/ui-component-library';
 import { Badge } from 'common/components/badge';
 import classNames from 'classnames';
-
+import { cleanForSlug } from '@wordpress/url';
 import { FireIcon } from '@heroicons/react/20/solid';
 import { ReactSVG } from 'react-svg';
 import { getActiveSolution, renderCTAUrl } from 'common/utils';
@@ -39,15 +39,16 @@ export const Tool = ( {
 	ctaLabel,
 	ctbId,
 	ctbHref,
+	download,
 } ) => {
 	const isLargeViewport = useViewportMatch( 'medium' );
 	const hasActiveSolution = !! getActiveSolution();
 	const premiumStyle = premium && !! getActiveSolution();
 	const classes = [
 		'nfd-solutions-tool-card',
+		'nfd-solutions-tool-card-' + cleanForSlug( name ),
 		'nfd-bg-white',
 		'nfd-justify-end',
-		'nfd-solutions-tool-card-' + plsSlug,
 		{
 			'nfd-solutions-tool-card--with-featured-icon': featureIcon,
 			'nfd-solutions-tool-card--with-small-icon':
@@ -117,6 +118,10 @@ export const Tool = ( {
 					<Button
 						as={ 'a' }
 						data-ctb-id={ ctbId }
+						data-is-active={ isActive ? true : null }
+						data-nfd-installer-download-url={
+							! isActive && ! ctbId ? download : null
+						}
 						data-nfd-installer-plugin-activate={
 							! ctbId ? 'true' : null
 						}
@@ -130,7 +135,7 @@ export const Tool = ( {
 							! isActive && ! ctbId ? plsSlug : null
 						}
 						href={ ctbId ? ctbHref : renderCTAUrl( ctaUrl ) }
-						target={ ctbId ? "_blank" : null }
+						target={ ctbId ? '_blank' : null }
 					>
 						{ premiumStyle
 							? __( 'Get it', 'wp-module-solutions' )
