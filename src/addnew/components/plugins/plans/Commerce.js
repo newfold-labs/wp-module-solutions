@@ -33,6 +33,7 @@ export const Commerce = ( { plan } ) => {
 								isActive={ plugin?.isActive }
 								plsProvider={ plugin?.plsProviderName }
 								plsSlug={ plugin?.plsSlug }
+								download={ plugin?.download }
 								ctbId={ plugin?.ctbId }
 								ctbHref={ plugin?.ctbHref }
 								ctaUrl={ plugin?.cta?.url }

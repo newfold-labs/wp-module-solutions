@@ -52,6 +52,7 @@ export const Creator = ( { plan } ) => {
 								ctbHref={ plugin?.ctbHref }
 								ctaUrl={ plugin?.cta?.url }
 								ctaLabel={ plugin?.cta?.text }
+								download={ plugin?.download }
 							/>
 						) ) }
 					</div>
@@ -110,13 +111,6 @@ export const Creator = ( { plan } ) => {
 								premium={ plugin?.premium }
 								popular={ plugin?.popular }
 								key={ plugin?.name }
-								isActive={ plugin?.isActive }
-								plsProvider={ plugin?.plsProviderName }
-								plsSlug={ plugin?.plsSlug }
-								ctbId={ plugin?.ctbId }
-								ctbHref={ plugin?.ctbHref }
-								ctaUrl={ plugin?.cta?.url }
-								ctaLabel={ plugin?.cta?.text }
 								displayAsPremiun={ true }
 								isBlock={ true }
 							/>

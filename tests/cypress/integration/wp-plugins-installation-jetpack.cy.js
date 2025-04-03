@@ -20,62 +20,27 @@ describe(
 		} );
 
 		after( () => {
-			wpCli( `transient delete nfd_site_capabilities` );
 			// uninstall jetpack plugin
 			wpCli( `plugin uninstall jetpack --deactivate`, false );
 		} );
 
 		// test free Jetpack plugin install functions
 		it( 'Jetpack plugin installs properly', () => {
-			// Set hasSolution:true in capabilities
-			setCapability( { hasSolution: true } );
-
-			// entitlements intercept
-			cy.intercept(
-				{
-					method: 'GET',
-					url: /newfold-solutions(\/|%2F)v1(\/|%2F)entitlements/,
-				},
-				{
-					body: entitlementsFixture,
-					delay: 100,
-				}
-			).as( 'getEntitlements' );
-
-			// load plugin install page
-			cy.visit( '/wp-admin/plugin-install.php' );
-
-			cy.window().then( ( win ) => {
-				cy.log(
-					`NewfoldRuntime.capabilities.hasSolution: ${ win.NewfoldRuntime.capabilities.hasSolution }`
-				);
-			} );
-
-			// check that my plugins and tools tab displays when capabilities.hasSolution is true
-			cy.get(
-				'#adminmenu a[href="plugin-install.php?tab=nfd_my_plugins_and_tools"]'
-			)
-				.should( 'be.visible' )
-				.click();
-
-			cy.wait( '@getEntitlements' );
-
-			cy.get( '.plugin-install-nfd_my_plugins_and_tools' ).should(
-				'be.visible'
+			cy.visit(
+				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=commerce'
 			);
 
-			cy.get( '.nfd-solutions-availble-list' ).should( 'exist' );
+			cy.get( '.nfd-plugins-card-list' ).should( 'exist' );
 
 			// jetpack is listed
-			cy.get( '.nfd-solutions-availble-list' )
-				.contains( 'h3', 'Jetpack' )
+			cy.get( '.plugin-card-jetpack' )
+				.contains( 'h2', 'Jetpack' )
 				.scrollIntoView()
 				.should( 'be.visible' );
 
 			// jetpack button has proper installer attributes
 			/*
 		<button
-			title="Install Plugin"
 			class="nfd-solutions-availble-list-item-button"
 			data-nfd-installer-pls-provider="null"
 			data-nfd-installer-plugin-activate="true"
@@ -86,42 +51,37 @@ describe(
 			Manage
 		</button> 
 		 */
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
-				'have.attr',
-				'title',
-				'Install Plugin'
-			);
-			cy.get( '.nfd-solutions-jetpack-button' )
+			cy.get( '.plugin-card-jetpack .button' )
 				.should( 'have.attr', 'href' )
 				.then( ( href ) => {
 					expect( href.includes( 'my-jetpack' ) ).to.be.true;
 				} );
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
+			cy.get( '.plugin-card-jetpack .button' ).should(
 				'have.attr',
 				'data-nfd-installer-plugin-name',
 				'Jetpack'
 			);
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
+			cy.get( '.plugin-card-jetpack .button' ).should(
 				'have.attr',
 				'data-nfd-installer-download-url',
 				'https://downloads.wordpress.org/plugin/jetpack.latest-stable.zip'
 			);
-			cy.get( '.nfd-solutions-jetpack-button' )
-				.should( 'have.attr', 'data-nfd-installer-plugin-url' )
+			cy.get( '.plugin-card-jetpack .button' )
+				.should( 'have.attr', 'href' )
 				.then( ( href ) => {
 					expect( href.includes( 'my-jetpack' ) ).to.be.true;
 				} );
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
+			cy.get( '.plugin-card-jetpack .button' ).should(
 				'not.have.attr',
 				'data-nfd-installer-pls-slug'
 			);
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
+			cy.get( '.plugin-card-jetpack .button' ).should(
 				'not.have.attr',
 				'data-nfd-installer-pls-provider'
 			);
 
 			// install jetpack
-			cy.get( '.nfd-solutions-jetpack-button' ).click();
+			cy.get( '.plugin-card-jetpack .button' ).click();
 
 			// verify install modal opens
 			cy.get( '.nfd-installer-modal__content' ).should( 'be.visible' );
@@ -151,69 +111,62 @@ describe(
 				.should( 'be.visible' );
 
 			// check button attributes for active plugin
-			cy.get(
-				'#adminmenu a[href="plugin-install.php?tab=nfd_my_plugins_and_tools"]'
-			)
-				.should( 'be.visible' )
-				.click();
+			cy.visit(
+				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=commerce'
+			);
+
 			// jetpack is listed
-			cy.get( '.nfd-solutions-availble-list' )
-				.contains( 'h3', 'Jetpack' )
+			cy.get( '.plugin-card-jetpack' )
+				.contains( 'h2', 'Jetpack' )
 				.scrollIntoView()
 				.should( 'be.visible' );
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
-				'not.have.attr',
-				'data-nfd-installer-plugin-name'
+
+			cy.get( '.plugin-card-jetpack .button' ).should(
+				'have.attr',
+				'data-is-active'
 			);
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
+			cy.get( '.plugin-card-jetpack .button' ).should(
 				'not.have.attr',
 				'data-nfd-installer-plugin-url'
 			);
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
-				'have.attr',
-				'title',
-				'Manage Plugin'
-			);
-			cy.get( '.nfd-solutions-jetpack-button' )
+			cy.get( '.plugin-card-jetpack .button' )
 				.should( 'have.attr', 'href' )
 				.then( ( href ) => {
 					expect( href.includes( 'my-jetpack' ) ).to.be.true;
 				} );
+			cy.get( '.plugin-card-jetpack .button' ).click();
+			// verify redirect occurred
+			cy.url().should( 'contain', 'jetpack' );
+
 			// deactivate plugin
 			cy.visit( '/wp-admin/plugins.php' );
 			cy.get( 'a#deactivate-jetpack' ).click();
-			// attributes match expectations for installed and inactive plugin
-			cy.get(
-				'#adminmenu a[href="plugin-install.php?tab=nfd_my_plugins_and_tools"]'
-			)
-				.should( 'be.visible' )
-				.click();
 
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
-				'have.attr',
-				'title',
-				'Activate Plugin'
+			// attributes match expectations for installed and inactive plugin
+			cy.visit(
+				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=commerce'
 			);
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
+
+			cy.get( '.plugin-card-jetpack .button' ).should(
 				'have.attr',
 				'data-nfd-installer-plugin-name',
 				'Jetpack'
 			);
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
+			cy.get( '.plugin-card-jetpack .button' ).should(
 				'have.attr',
 				'data-nfd-installer-download-url',
 				'https://downloads.wordpress.org/plugin/jetpack.latest-stable.zip'
 			);
-			cy.get( '.nfd-solutions-jetpack-button' )
-				.should( 'have.attr', 'data-nfd-installer-plugin-url' )
+			cy.get( '.plugin-card-jetpack .button' )
+				.should( 'have.attr', 'href' )
 				.then( ( href ) => {
 					expect( href.includes( 'my-jetpack' ) ).to.be.true;
 				} );
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
+			cy.get( '.plugin-card-jetpack .button' ).should(
 				'not.have.attr',
 				'data-nfd-installer-pls-slug'
 			);
-			cy.get( '.nfd-solutions-jetpack-button' ).should(
+			cy.get( '.plugin-card-jetpack .button' ).should(
 				'not.have.attr',
 				'data-nfd-installer-pls-provider'
 			);
