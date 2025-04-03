@@ -56,7 +56,7 @@ export const Tools = () => {
 						plsSlug={ tool?.plsSlug }
 						ctbId={ tool?.ctbId }
 						ctbHref={ tool?.ctbHref }
-						download={ plugin?.download }
+						download={ tool?.download }
 					/>
 				) ) }
 			</div>
