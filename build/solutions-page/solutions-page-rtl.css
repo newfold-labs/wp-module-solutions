@@ -3772,6 +3772,9 @@ body.bluehost_page_solutions #wpcontent {
 .nfd-solutions-sidebar ul li:nth-last-child(3) {
 				padding-bottom : 2rem !important;
 			}
+.nfd-solutions-sidebar ul li a {
+				cursor: pointer;
+			}
 .nfd-solutions-category-selector ul li:nth-last-child(2) {
 		margin-top  : 1rem;
 	}
