@@ -63,7 +63,7 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 	} );
 
 	// test solution=creator for entitlements and premium
-	it( 'Solutions page displays tools with proper button atts for those with creator solution', () => {
+	it( 'Creator solutions page displays tools with proper button atts', () => {
 		cy.visit( '/wp-admin/admin.php?page=solutions&solution=creator' );
 
 		cy.get( '#nfd-solutions-app' )
@@ -135,11 +135,336 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 		cy.get(
 			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
 		).should( 'have.attr', 'target', '_blank' );
+
+		// test premium tool has ctb atts
+		// Yoast Premium is listed
+		cy.get( '.nfd-solutions-tool-card-yoast-premium' )
+			.contains( 'h4', 'Yoast Premium' )
+			.scrollIntoView()
+			.should( 'be.visible' );
+
+		// test premium tool listed with only ctb attributes
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-plugin-activate'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-plugin-name'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-pls-slug'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-pls-provider'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' )
+			.should( 'have.attr', 'href' )
+			.then( ( href ) => {
+				expect( href.includes( 'yoast' ) ).to.be.true;
+			} );
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-download-url'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'have.attr',
+			'data-ctb-id',
+			'57d6a568-783c-45e2-a388-847cff155897'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'have.attr',
+			'target',
+			'_blank'
+		);
 	} );
 
-	// test entitlement button case states
-	// 1. plugin already installed and active
-	// 2. plugin already installed but not active
-	// 3. free plugin not installed, needs appropriate installer attributes
-	// 4. premium plugin not installed, needs appropriate pls attributes
+	// test solution=service for entitlements and premium
+	it( 'Service solutions page displays tools with proper button atts', () => {
+		cy.visit( '/wp-admin/admin.php?page=solutions&solution=service' );
+
+		cy.get( '#nfd-solutions-app' )
+			.contains( 'h1', 'Services solution' )
+			.scrollIntoView()
+			.should( 'be.visible' );
+
+		// Yoast SEO listed as downloadable plugin
+		cy.get( '.nfd-solutions-tool-card-yoast-seo' )
+			.contains( 'h4', 'Yoast SEO' )
+			.scrollIntoView()
+			.should( 'be.visible' );
+		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
+			'have.attr',
+			'data-nfd-installer-download-url',
+			'https://downloads.wordpress.org/plugin/wordpress-seo.latest-stable.zip'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
+			'have.attr',
+			'data-nfd-installer-plugin-activate',
+			'true'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
+			'have.attr',
+			'data-nfd-installer-plugin-name',
+			'Yoast SEO'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' )
+			.should( 'have.attr', 'href' )
+			.then( ( href ) => {
+				expect( href.includes( 'wpseo_dashboard' ) ).to.be.true;
+			} );
+
+		// Advanced Reviews is listed
+		cy.get( '.nfd-solutions-tool-card-advanced-reviews' )
+			.contains( 'h4', 'Advanced Reviews' )
+			.scrollIntoView()
+			.should( 'be.visible' );
+
+		// test entitlement included in solution with PLS attributes
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should( 'have.attr', 'data-nfd-installer-plugin-activate', 'true' );
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should(
+			'have.attr',
+			'data-nfd-installer-plugin-name',
+			'Advanced Reviews'
+		);
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should( 'have.attr', 'data-nfd-installer-pls-provider', 'yith' );
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should(
+			'have.attr',
+			'data-nfd-installer-pls-slug',
+			'yith-woocommerce-advanced-reviews'
+		);
+		cy.get( '.nfd-solutions-tool-card-advanced-reviews .nfd-button' )
+			.should( 'have.attr', 'href' )
+			.then( ( href ) => {
+				expect( href.includes( 'yith_ywar_panel' ) ).to.be.true;
+			} );
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should( 'not.have.attr', 'data-nfd-installer-download-url' );
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should( 'not.have.attr', 'data-ctb-id' );
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should( 'not.have.attr', 'target' );
+
+		// test premium tool has ctb atts
+		// Yoast Premium is listed
+		cy.get( '.nfd-solutions-tool-card-yoast-premium' )
+			.contains( 'h4', 'Yoast Premium' )
+			.scrollIntoView()
+			.should( 'be.visible' );
+
+		// test premium tool listed with only ctb attributes
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-plugin-activate'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-plugin-name'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-pls-slug'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-pls-provider'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' )
+			.should( 'have.attr', 'href' )
+			.then( ( href ) => {
+				expect( href.includes( 'yoast' ) ).to.be.true;
+			} );
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-download-url'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'have.attr',
+			'data-ctb-id',
+			'57d6a568-783c-45e2-a388-847cff155897'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'have.attr',
+			'target',
+			'_blank'
+		);
+	} );
+
+	// test solution=commerce for entitlements and premium
+	it( 'Commerce solutions page displays tools with proper button atts', () => {
+		cy.visit( '/wp-admin/admin.php?page=solutions&solution=commerce' );
+
+		cy.get( '#nfd-solutions-app' )
+			.contains( 'h1', 'Commerce solution' )
+			.scrollIntoView()
+			.should( 'be.visible' );
+
+		// Yoast SEO listed as downloadable plugin
+		cy.get( '.nfd-solutions-tool-card-yoast-seo' )
+			.contains( 'h4', 'Yoast SEO' )
+			.scrollIntoView()
+			.should( 'be.visible' );
+		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
+			'have.attr',
+			'data-nfd-installer-download-url',
+			'https://downloads.wordpress.org/plugin/wordpress-seo.latest-stable.zip'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
+			'have.attr',
+			'data-nfd-installer-plugin-activate',
+			'true'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
+			'have.attr',
+			'data-nfd-installer-plugin-name',
+			'Yoast SEO'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' )
+			.should( 'have.attr', 'href' )
+			.then( ( href ) => {
+				expect( href.includes( 'wpseo_dashboard' ) ).to.be.true;
+			} );
+
+		// Advanced Reviews is listed
+		cy.get( '.nfd-solutions-tool-card-advanced-reviews' )
+			.contains( 'h4', 'Advanced Reviews' )
+			.scrollIntoView()
+			.should( 'be.visible' );
+
+		// test entitlement included in solution with PLS attributes
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should( 'have.attr', 'data-nfd-installer-plugin-activate', 'true' );
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should(
+			'have.attr',
+			'data-nfd-installer-plugin-name',
+			'Advanced Reviews'
+		);
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should( 'have.attr', 'data-nfd-installer-pls-provider', 'yith' );
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should(
+			'have.attr',
+			'data-nfd-installer-pls-slug',
+			'yith-woocommerce-advanced-reviews'
+		);
+		cy.get( '.nfd-solutions-tool-card-advanced-reviews .nfd-button' )
+			.should( 'have.attr', 'href' )
+			.then( ( href ) => {
+				expect( href.includes( 'yith_ywar_panel' ) ).to.be.true;
+			} );
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should( 'not.have.attr', 'data-nfd-installer-download-url' );
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should( 'not.have.attr', 'data-ctb-id' );
+		cy.get(
+			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
+		).should( 'not.have.attr', 'target' );
+
+		// Bookings Apointments is listed
+		cy.get( '.nfd-solutions-tool-card-bookings-appointments' )
+			.contains( 'h4', 'Bookings' )
+			.scrollIntoView()
+			.should( 'be.visible' );
+
+		// test entitlement included in solution with PLS attributes
+		cy.get(
+			'.nfd-solutions-tool-card-bookings-appointments .nfd-button'
+		).should( 'have.attr', 'data-nfd-installer-plugin-activate', 'true' );
+		cy.get(
+			'.nfd-solutions-tool-card-bookings-appointments .nfd-button'
+		).should(
+			'have.attr',
+			'data-nfd-installer-plugin-name',
+			'Bookings & Appointments'
+		);
+		cy.get(
+			'.nfd-solutions-tool-card-bookings-appointments .nfd-button'
+		).should( 'have.attr', 'data-nfd-installer-pls-provider', 'yith' );
+		cy.get(
+			'.nfd-solutions-tool-card-bookings-appointments .nfd-button'
+		).should(
+			'have.attr',
+			'data-nfd-installer-pls-slug',
+			'yith-woocommerce-booking'
+		);
+		cy.get( '.nfd-solutions-tool-card-bookings-appointments .nfd-button' )
+			.should( 'have.attr', 'href' )
+			.then( ( href ) => {
+				expect( href.includes( 'yith_booking' ) ).to.be.true;
+			} );
+		cy.get(
+			'.nfd-solutions-tool-card-bookings-appointments .nfd-button'
+		).should( 'not.have.attr', 'data-nfd-installer-download-url' );
+		cy.get(
+			'.nfd-solutions-tool-card-bookings-appointments .nfd-button'
+		).should( 'not.have.attr', 'data-ctb-id' );
+		cy.get(
+			'.nfd-solutions-tool-card-bookings-appointments .nfd-button'
+		).should( 'not.have.attr', 'target' );
+
+		// test premium tool has ctb atts
+		// Yoast Premium is listed
+		cy.get( '.nfd-solutions-tool-card-yoast-premium' )
+			.contains( 'h4', 'Yoast Premium' )
+			.scrollIntoView()
+			.should( 'be.visible' );
+
+		// test premium tool listed with only ctb attributes
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-plugin-activate'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-plugin-name'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-pls-slug'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-pls-provider'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' )
+			.should( 'have.attr', 'href' )
+			.then( ( href ) => {
+				expect( href.includes( 'yoast' ) ).to.be.true;
+			} );
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'not.have.attr',
+			'data-nfd-installer-download-url'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'have.attr',
+			'data-ctb-id',
+			'57d6a568-783c-45e2-a388-847cff155897'
+		);
+		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
+			'have.attr',
+			'target',
+			'_blank'
+		);
+	} );
+
 } );
