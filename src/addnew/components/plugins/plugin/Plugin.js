@@ -78,7 +78,6 @@ export const Plugin = ( {
 					<ul className="plugin-action-buttons">
 						<li>
 							<a
-								// as={ 'a' }
 								className={ classNames( buttonClass ) }
 								data-ctb-id={ ctbId }
 								data-nfd-installer-plugin-activate={
@@ -105,6 +104,13 @@ export const Plugin = ( {
 											? ctbHref
 											: renderCTAUrl( ctaUrl )
 										: '#'
+								}
+								target={
+									! isBlock
+										? ctbId
+											? "_blank"
+											: null
+										: null
 								}
 							>
 								{ !! premium && !! displayAsPremiun
