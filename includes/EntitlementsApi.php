@@ -111,10 +111,9 @@ class EntitlementsApi {
 			// TODO: update response to be available without connection and return solutions categories and premium
 			// If there is no Hiive connection, bail.
 			if ( ! HiiveConnection::is_connected() ) {
-				
 				// If no connection, give an empty response.
-				return apply_filters( 
-					'nfd_solutions_no_connection_response', 
+				return apply_filters(
+					'nfd_solutions_no_connection_response',
 					new WP_REST_Response(
 						array(
 							'message'      => 'Not allowed to load entitlements from server.',
