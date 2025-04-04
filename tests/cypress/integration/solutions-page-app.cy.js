@@ -1,9 +1,7 @@
 // <reference types="Cypress" />
-import { wpLogin, setCapability } from '../wp-module-support/utils.cy';
+import { wpLogin } from '../wp-module-support/utils.cy';
 
-const entitlementsFixture = require( '../fixtures/entitlements-premium.json' );
-
-describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
+describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 	beforeEach( () => {
 		wpLogin();
 		cy.visit( '/wp-admin/index.php' );
@@ -12,13 +10,6 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 	// test not connected to hiive will not have a solution
 	it( 'Solutions page displays upgrade for those with no solution', () => {
 		cy.visit( '/wp-admin/admin.php?page=solutions' );
-
-		cy.window().then( ( win ) => {
-			cy.log(
-				`NewfoldRuntime.capabilities.hasSolution: ${ win.NewfoldRuntime.capabilities.hasSolution }`
-			);
-			cy.log( `NewFold solution: ${ win.NewfoldSolutions.solution }` );
-		} );
 
 		cy.get( '#nfd-solutions-app' )
 			.contains( 'h1', 'Premium tools available in our Solutions' )
@@ -466,5 +457,4 @@ describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
 			'_blank'
 		);
 	} );
-
 } );

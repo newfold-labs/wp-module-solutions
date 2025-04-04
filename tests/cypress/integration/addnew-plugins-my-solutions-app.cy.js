@@ -1,8 +1,8 @@
 // <reference types="Cypress" />
-import { wpLogin, wpCli } from '../wp-module-support/utils.cy';
+import { wpLogin } from '../wp-module-support/utils.cy';
 
 describe(
-	'My Solution under Plugins > Add new',
+	'My Solutions on Plugin Install Page',
 	{ testIsolation: true },
 	() => {
 		beforeEach( () => {
