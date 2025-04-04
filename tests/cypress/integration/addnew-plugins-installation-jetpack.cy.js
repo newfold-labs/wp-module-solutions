@@ -1,5 +1,5 @@
 // <reference types="Cypress" />
-import { wpLogin, wpCli } from '../wp-module-support/utils.cy';
+import { wpLogin, wpCli, setSolution } from '../wp-module-support/utils.cy';
 
 describe(
 	'My Solutions on Plugin Install Page - Jetpack Plugin',
@@ -18,6 +18,7 @@ describe(
 
 		// test free Jetpack plugin install functions
 		it( 'Jetpack plugin installs properly', () => {
+			setSolution( 'commerce' );
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=commerce'
 			);
