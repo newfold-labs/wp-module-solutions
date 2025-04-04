@@ -104,7 +104,6 @@ class EntitlementsApi {
 	 * @return \WP_REST_Response|\WP_Error Response object on success, or WP_Error object on failure.
 	 */
 	public function get_items() {
-		
 		$entitlements = get_transient( self::TRANSIENT );
 
 		if ( false === $entitlements ) {
