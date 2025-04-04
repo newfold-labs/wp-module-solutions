@@ -111,10 +111,10 @@ class EntitlementsApi {
 			$allowed_solutions = array( 'commerce', 'service', 'creator', 'none' );
 			if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG && 'local' === wp_get_environment_type() && in_array( $_GET['solution'], $allowed_solutions ) ) {
 				$fixture = NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/' . $_GET['solution'] . '.json';
-				// if ( is_readable( $fixture ) ) {
+				if ( file_exists( $fixture ) ) {
 					// Use a json fixture rather than hiive entitlement endpoint response - for local dev and cypress tests
 					return new WP_REST_Response( json_decode( file_get_contents( $fixture ) ), 218 );
-				// }
+				}
 			}
 			// If no connection, give an empty response.
 			return new WP_REST_Response(
