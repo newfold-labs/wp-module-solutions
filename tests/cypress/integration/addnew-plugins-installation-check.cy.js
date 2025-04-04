@@ -7,6 +7,7 @@ describe(
 	() => {
 		beforeEach( () => {
 			wpLogin();
+			wpCli( 'config set WP_ENVIRONMENT_TYPE "local"' );
 			cy.visit( '/wp-admin/index.php' );
 		} );
 
@@ -14,6 +15,11 @@ describe(
 		// cannot fully test pls install here because the site is not hiive registered
 		// and the pls endpoint requires a site and user with solution add-on
 		it( 'PLS plugin has proper attributes', () => {
+			cy.window().then( ( win ) => {
+				cy.log( `NewfoldSolutions: ${ win.NewfoldSolutions }` );
+				cy.log( `WP_ENVIRONMENT_TYPE: ${ win.NewfoldSolutions.environment }` );
+			} );
+
 			// load plugin install page
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=commerce'
