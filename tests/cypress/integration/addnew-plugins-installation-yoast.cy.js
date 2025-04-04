@@ -1,5 +1,10 @@
 // <reference types="Cypress" />
-import { wpLogin, wpCli, setSolution } from '../wp-module-support/utils.cy';
+import {
+	wpLogin,
+	wpCli,
+	setSolution,
+	clearSolutionTransient,
+} from '../wp-module-support/utils.cy';
 
 describe(
 	'My Solutions on Plugin Install Page - Yoast Check',
@@ -14,6 +19,7 @@ describe(
 		after( () => {
 			// uninstall yoast plugins
 			wpCli( `plugin uninstall wordpress-seo --deactivate`, false );
+			clearSolutionTransient();
 		} );
 
 		// test free Yoast SEO plugin install functions

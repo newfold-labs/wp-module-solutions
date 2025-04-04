@@ -1,5 +1,9 @@
 // <reference types="Cypress" />
-import { wpLogin, setSolution } from '../wp-module-support/utils.cy';
+import {
+	wpLogin,
+	setSolution,
+	clearSolutionTransient,
+} from '../wp-module-support/utils.cy';
 
 describe(
 	'My Solutions on Plugin Install Page - Entitlements Check',
@@ -8,6 +12,11 @@ describe(
 		beforeEach( () => {
 			wpLogin();
 			cy.visit( '/wp-admin/index.php' );
+		} );
+
+		after( () => {
+			// clear solution transient
+			clearSolutionTransient();
 		} );
 
 		// check a pls plugin has correct attributes on button

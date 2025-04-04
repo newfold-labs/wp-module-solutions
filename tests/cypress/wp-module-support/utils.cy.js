@@ -94,3 +94,11 @@ export const setSolution = ( solution, expiration = 3600 ) => {
 	// manually set expiration for the transients
 	wpCli( `option update _transient_timeout_newfold_solutions ${ expiry }` );
 };
+
+/**
+ * Clear solution transient
+ */
+export const clearSolutionTransient = () => {
+	wpCli( `option delete _transient_newfold_solutions` );
+	wpCli( `option delete _transient_timeout_newfold_solutions` );
+}

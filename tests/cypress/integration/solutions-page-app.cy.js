@@ -1,10 +1,19 @@
 // <reference types="Cypress" />
-import { wpLogin } from '../wp-module-support/utils.cy';
+import {
+	wpLogin,
+	setSolution,
+	clearSolutionTransient,
+} from '../wp-module-support/utils.cy';
 
 describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 	beforeEach( () => {
 		wpLogin();
 		cy.visit( '/wp-admin/index.php' );
+	} );
+
+	after( () => {
+		// clear solution transient
+		clearSolutionTransient();
 	} );
 
 	// test not connected to hiive will not have a solution

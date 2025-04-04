@@ -1,5 +1,9 @@
 // <reference types="Cypress" />
-import { wpLogin } from '../wp-module-support/utils.cy';
+import {
+	wpLogin,
+	setSolution,
+	clearSolutionTransient,
+} from '../wp-module-support/utils.cy';
 
 describe(
 	'My Solutions on Plugin Install Page',
@@ -8,6 +12,11 @@ describe(
 		beforeEach( () => {
 			wpLogin();
 			cy.visit( '/wp-admin/index.php' );
+		} );
+
+		after( () => {
+			// clear solution transient
+			clearSolutionTransient();
 		} );
 
 		it( 'The Bluehost brand logo is showed on Bluehost solutions tab', () => {
