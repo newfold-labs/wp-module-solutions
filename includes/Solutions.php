@@ -197,31 +197,6 @@ class Solutions {
 	 * @return void
 	 */
 	public function render_nfd_solutions_tab() {
-		echo '<style>
-			.solutions-debug-info {
-				background-color: #f9f9f9;
-				border: 1px solid #ccc;
-				padding: 10px;
-				margin-top: 20px;
-				width: 100%;
-			}
-			.solutions-debug-info td {
-				padding: 5px;
-				border-bottom: 1px solid #ccc;
-			}
-			.solutions-debug-info tr:nth-child(even) {
-				background-color: #f1f1f1;
-			}
-		</style>
-		<table class="solutions-debug-info">
-			<tr><td>WP_DEBUG: </td><td>' . WP_DEBUG . '</td></tr>
-			<tr><td>WP_ENVIRONMENT_TYPE: </td><td>' . wp_get_environment_type() . '</td></tr>
-			<tr><td>NFD_SOLUTIONS_DIR: </td><td>' . NFD_SOLUTIONS_DIR . '</td></tr>
-			<tr><td>Solution Query Param: </td><td>' . $_GET['solution'] . '</td></tr>
-			<tr><td>Fixture path: </td><td>' . NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/commerce.json' . '</td></tr>
-			<tr><td>Fixture is_readable: </td><td>' . is_readable( NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/commerce.json' ) . '</td></tr>
-			<tr><td>Fixture file_exists: </td><td>' . file_exists( NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/commerce.json' ) . '</td></tr>
-		</table>';
 		echo '<div id="nfd-add-new-app"></div>';
 	}
 
