@@ -112,20 +112,16 @@ class EntitlementsApi {
 			// If there is no Hiive connection, bail.
 			if ( ! HiiveConnection::is_connected() ) {
 				// If no connection, give an empty response.
-				return apply_filters(
-					'nfd_solutions_no_connection_response',
-					new WP_REST_Response(
-						array(
-							'message'      => 'Not allowed to load entitlements from server.',
-							'solution'     => null,
-							'categories'   => array(),
-							'solutions'    => array(),
-							'entitlements' => array(),
-							'premium'      => array(),
-						),
-						200
+				return new WP_REST_Response(
+					array(
+						'message'      => 'Not allowed to load entitlements from server.',
+						'solution'     => null,
+						'categories'   => array(),
+						'solutions'    => array(),
+						'entitlements' => array(),
+						'premium'      => array(),
 					),
-					NFD_SOLUTIONS_DIR
+					200
 				);
 			}
 
