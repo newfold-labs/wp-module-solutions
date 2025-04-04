@@ -1,9 +1,7 @@
 // <reference types="Cypress" />
-import { wpLogin, setCapability } from '../wp-module-support/utils.cy';
+import { wpLogin } from '../wp-module-support/utils.cy';
 
-const entitlementsFixture = require( '../fixtures/entitlements-premium.json' );
-
-describe( 'My Plugins and Tools in Plugin App', { testIsolation: true }, () => {
+describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 	beforeEach( () => {
 		wpLogin();
 		cy.visit( '/wp-admin/index.php' );

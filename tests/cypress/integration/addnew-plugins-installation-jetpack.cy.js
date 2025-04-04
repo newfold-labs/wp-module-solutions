@@ -1,16 +1,8 @@
 // <reference types="Cypress" />
-import { wpLogin, wpCli, setCapability } from '../wp-module-support/utils.cy';
-
-const entitlementsFixture = require( '../fixtures/entitlements.json' );
-
-// test each entitlement button case state
-// 1. plugin already installed and active
-// 2. plugin already installed but not active
-// 3. free plugin not installed, needs appropriate installer attributes
-// 4. premium plugin not installed, needs appropriate pls attributes
+import { wpLogin, wpCli } from '../wp-module-support/utils.cy';
 
 describe(
-	'My Plugins and Tools in Plugin App - Jetpack',
+	'My Solutions on Plugin Install Page - Jetpack Plugin',
 	{ testIsolation: true },
 	() => {
 		beforeEach( () => {
@@ -39,18 +31,6 @@ describe(
 				.should( 'be.visible' );
 
 			// jetpack button has proper installer attributes
-			/*
-		<button
-			class="nfd-solutions-availble-list-item-button"
-			data-nfd-installer-pls-provider="null"
-			data-nfd-installer-plugin-activate="true"
-			data-nfd-installer-plugin-name="Jetpack"
-			data-nfd-installer-download-url="https://downloads.wordpress.org/plugin/jetpack.latest-stable.zip"
-			data-nfd-installer-plugin-url="/wp-admin/admin.php?page=my-jetpack"
-		>
-			Manage
-		</button> 
-		 */
 			cy.get( '.plugin-card-jetpack .button' )
 				.should( 'have.attr', 'href' )
 				.then( ( href ) => {
