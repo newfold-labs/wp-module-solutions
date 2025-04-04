@@ -1,9 +1,10 @@
 // <reference types="Cypress" />
-import { wpLogin } from '../wp-module-support/utils.cy';
+import { wpLogin, wpCli } from '../wp-module-support/utils.cy';
 
 describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 	beforeEach( () => {
 		wpLogin();
+		wpCli( 'config set WP_ENVIRONMENT_TYPE "local"' );
 		cy.visit( '/wp-admin/index.php' );
 	} );
 
