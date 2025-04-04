@@ -120,7 +120,6 @@ class EntitlementsApi {
 			return new WP_REST_Response(
 				array(
 					'message'      => 'Not allowed to load entitlements from server.',
-					'environment'  => wp_get_environment_type(),
 					'solution'     => null,
 					'categories'   => array(),
 					'solutions'    => array(),

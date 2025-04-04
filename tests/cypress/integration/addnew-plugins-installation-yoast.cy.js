@@ -224,7 +224,6 @@ describe(
 				.then( ( href ) => {
 					expect( href.includes( 'wpseo_dashboard' ) ).to.be.true;
 				} );
-
 		} );
 	}
 );

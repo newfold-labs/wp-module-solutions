@@ -197,7 +197,6 @@ class Solutions {
 	 * @return void
 	 */
 	public function render_nfd_solutions_tab() {
-		echo '<h1>Environment Type: ' . wp_get_environment_type() . '</h1>';
 		echo '<div id="nfd-add-new-app"></div>';
 	}
 
