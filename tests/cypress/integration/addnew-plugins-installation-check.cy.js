@@ -1,5 +1,9 @@
 // <reference types="Cypress" />
-import { wpLogin } from '../wp-module-support/utils.cy';
+import {
+	wpLogin,
+	setSolution,
+	clearSolutionTransient,
+} from '../wp-module-support/utils.cy';
 
 describe(
 	'My Solutions on Plugin Install Page - Entitlements Check',
@@ -10,10 +14,16 @@ describe(
 			cy.visit( '/wp-admin/index.php' );
 		} );
 
+		after( () => {
+			// clear solution transient
+			clearSolutionTransient();
+		} );
+
 		// check a pls plugin has correct attributes on button
 		// cannot fully test pls install here because the site is not hiive registered
 		// and the pls endpoint requires a site and user with solution add-on
 		it( 'PLS plugin has proper attributes', () => {
+			setSolution( 'commerce' );
 			// load plugin install page
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=commerce'
@@ -74,6 +84,7 @@ describe(
 
 		// test premium entitlement button in upgrade solution section for solution upgrade cta
 		it( 'Advanced Reviews as premium upgrade for creator', () => {
+			setSolution( 'creator' );
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=creator'
 			);

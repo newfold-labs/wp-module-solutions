@@ -1,10 +1,19 @@
 // <reference types="Cypress" />
-import { wpLogin } from '../wp-module-support/utils.cy';
+import {
+	wpLogin,
+	setSolution,
+	clearSolutionTransient,
+} from '../wp-module-support/utils.cy';
 
 describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 	beforeEach( () => {
 		wpLogin();
 		cy.visit( '/wp-admin/index.php' );
+	} );
+
+	after( () => {
+		// clear solution transient
+		clearSolutionTransient();
 	} );
 
 	// test not connected to hiive will not have a solution
@@ -24,6 +33,7 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 
 	// test solution=none for ctb atts
 	it( 'Solutions page displays upgrade with CTB atts for those with no solution', () => {
+		setSolution( 'none' );
 		cy.visit( '/wp-admin/admin.php?page=solutions&solution=none' );
 
 		cy.get( '#nfd-solutions-app' )
@@ -55,6 +65,7 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 
 	// test solution=creator for entitlements and premium
 	it( 'Creator solutions page displays tools with proper button atts', () => {
+		setSolution( 'creator' );
 		cy.visit( '/wp-admin/admin.php?page=solutions&solution=creator' );
 
 		cy.get( '#nfd-solutions-app' )
@@ -174,6 +185,7 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 
 	// test solution=service for entitlements and premium
 	it( 'Service solutions page displays tools with proper button atts', () => {
+		setSolution( 'service' );
 		cy.visit( '/wp-admin/admin.php?page=solutions&solution=service' );
 
 		cy.get( '#nfd-solutions-app' )
@@ -296,6 +308,7 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 
 	// test solution=commerce for entitlements and premium
 	it( 'Commerce solutions page displays tools with proper button atts', () => {
+		setSolution( 'commerce' );
 		cy.visit( '/wp-admin/admin.php?page=solutions&solution=commerce' );
 
 		cy.get( '#nfd-solutions-app' )

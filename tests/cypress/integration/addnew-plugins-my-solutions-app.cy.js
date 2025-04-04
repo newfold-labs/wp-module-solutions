@@ -1,5 +1,9 @@
 // <reference types="Cypress" />
-import { wpLogin } from '../wp-module-support/utils.cy';
+import {
+	wpLogin,
+	setSolution,
+	clearSolutionTransient,
+} from '../wp-module-support/utils.cy';
 
 describe(
 	'My Solutions on Plugin Install Page',
@@ -10,7 +14,13 @@ describe(
 			cy.visit( '/wp-admin/index.php' );
 		} );
 
+		after( () => {
+			// clear solution transient
+			clearSolutionTransient();
+		} );
+
 		it( 'The Bluehost brand logo is showed on Bluehost solutions tab', () => {
+			setSolution( 'none' );
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=none'
 			);
@@ -29,6 +39,7 @@ describe(
 		} );
 
 		it( 'My Solution page is rendered with no solution', () => {
+			setSolution( 'none' );
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=none'
 			);
@@ -45,6 +56,7 @@ describe(
 				.should( 'be.visible' );
 		} );
 		it( 'My Solution page is rendered with Commerce solution', () => {
+			setSolution( 'commerce' );
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=commerce'
 			);
@@ -61,6 +73,7 @@ describe(
 				.should( 'be.visible' );
 		} );
 		it( 'My Solution page is rendered with Creator solution', () => {
+			setSolution( 'creator' );
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=creator'
 			);
@@ -82,6 +95,7 @@ describe(
 				.should( 'be.visible' );
 		} );
 		it( 'My Solution page is rendered with Service solution', () => {
+			setSolution( 'service' );
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=service'
 			);

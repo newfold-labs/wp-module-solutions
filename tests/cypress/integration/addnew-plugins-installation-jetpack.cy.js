@@ -1,5 +1,10 @@
 // <reference types="Cypress" />
-import { wpLogin, wpCli } from '../wp-module-support/utils.cy';
+import {
+	wpLogin,
+	wpCli,
+	setSolution,
+	clearSolutionTransient,
+} from '../wp-module-support/utils.cy';
 
 describe(
 	'My Solutions on Plugin Install Page - Jetpack Plugin',
@@ -14,10 +19,12 @@ describe(
 		after( () => {
 			// uninstall jetpack plugin
 			wpCli( `plugin uninstall jetpack --deactivate`, false );
+			clearSolutionTransient();
 		} );
 
 		// test free Jetpack plugin install functions
 		it( 'Jetpack plugin installs properly', () => {
+			setSolution( 'commerce' );
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=commerce'
 			);

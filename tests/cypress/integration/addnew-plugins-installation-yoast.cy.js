@@ -1,5 +1,10 @@
 // <reference types="Cypress" />
-import { wpLogin, wpCli } from '../wp-module-support/utils.cy';
+import {
+	wpLogin,
+	wpCli,
+	setSolution,
+	clearSolutionTransient,
+} from '../wp-module-support/utils.cy';
 
 describe(
 	'My Solutions on Plugin Install Page - Yoast Check',
@@ -14,10 +19,12 @@ describe(
 		after( () => {
 			// uninstall yoast plugins
 			wpCli( `plugin uninstall wordpress-seo --deactivate`, false );
+			clearSolutionTransient();
 		} );
 
 		// test free Yoast SEO plugin install functions
 		it( 'Yoast SEO plugin installs properly', () => {
+			setSolution( 'creator' );
 			// verify yoast is not installed
 			cy.visit( '/wp-admin/plugins.php' );
 
@@ -126,6 +133,7 @@ describe(
 
 		// test premium Yoast premium plugin ctb attributes
 		it( 'Yoast Premium plugin has CTB attributes', () => {
+			setSolution( 'commerce' );
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=commerce'
 			);
@@ -180,6 +188,7 @@ describe(
 		} );
 
 		it( 'Yoast SEO available for creator', () => {
+			setSolution( 'creator' );
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=creator'
 			);
