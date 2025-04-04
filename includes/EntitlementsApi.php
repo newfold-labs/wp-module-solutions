@@ -112,6 +112,7 @@ class EntitlementsApi {
 			// If there is no Hiive connection, bail.
 			if ( ! HiiveConnection::is_connected() ) {
 				// Use a json fixture rather than hiive entitlement endpoint response - for local dev only
+
 				/*
 				$allowed_solutions = array( 'commerce', 'service', 'creator', 'none' );
 				if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG && 'local' === wp_get_environment_type() && in_array( $_GET['solution'], $allowed_solutions ) ) {
