@@ -220,6 +220,7 @@ class Solutions {
 			<tr><td>Solution Query Param: </td><td>' . $_GET['solution'] . '</td></tr>
 			<tr><td>Fixture path: </td><td>' . NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/commerce.json' . '</td></tr>
 			<tr><td>Fixture is_readable: </td><td>' . is_readable( NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/commerce.json' ) . '</td></tr>
+			<tr><td>Fixture file_exists: </td><td>' . file_exists( NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/commerce.json' ) . '</td></tr>
 		</table>';
 		echo '<div id="nfd-add-new-app"></div>';
 	}
