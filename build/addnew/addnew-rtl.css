@@ -1,3 +1,6 @@
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/addnew/components/utils/plugins.css ***!
+  \*****************************************************************************************************************************************************************************************************************************/
 /* Import main CSS including all components. */
 /**
  * Tailwind CSS preflight, but scoped to the Yoast root class.
@@ -3741,9 +3744,6 @@
 svg#ndf-tools-plugin-bluehost-brand {
     vertical-align: text-top;
     margin-left: 5px;
-}
-.plugin-install-tab-nfd_solutions .search-plugins {
-    display:none;
 }
 .plugin-install-nfd_solutions .current {
     border-bottom: 4px solid #196BDE6B;
