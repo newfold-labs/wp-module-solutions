@@ -379,7 +379,7 @@
             "basename": "yith-woocommerce-pdf-invoice-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/pdf-invoices.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-pdf-invoice.svg"
             },
             "category": "Store Operations",
             "categorySlug": "store-operations",
@@ -411,7 +411,7 @@
             "basename": "yith-woocommerce-request-a-quote-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/request-a-quote.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-request-a-quote.svg"
             },
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",
@@ -505,7 +505,7 @@
             "basename": "jetpack\/jetpack.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/jetpack.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/jetpack.svg"
             },
             "category": "Store Operations",
             "categorySlug": "store-operations",
@@ -602,7 +602,7 @@
             "basename": "wpseo-local\/local-seo.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-local-seo.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yoast-seo-local.svg"
             },
             "category": "Search Engine Optimization",
             "categorySlug": "search-engine-optimization",
@@ -634,7 +634,7 @@
             "basename": "wpseo-news\/wpseo-news.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-news-seo.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yoast-seo-news.svg"
             },
             "category": "Search Engine Optimization",
             "categorySlug": "search-engine-optimization",
@@ -667,7 +667,7 @@
             "basename": "yith-woocommerce-compare-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-comparison.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-compare.svg"
             },
             "category": "Product Management",
             "categorySlug": "product-management",
@@ -698,7 +698,7 @@
             "basename": "wpseo-woocommerce\/wpseo-woocommerce.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-woocommerce-seo.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yoast-seo-woocommerce.svg"
             },
             "category": "Search Engine Optimization",
             "categorySlug": "search-engine-optimization",
@@ -793,7 +793,7 @@
             "basename": "creative-mail-by-constant-contact\/creative-mail-plugin.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/creativemail-email-marketing.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/creative-mail-plugin.svg"
             },
             "category": "Content Monetization",
             "categorySlug": "content-monetization",
@@ -826,7 +826,7 @@
             "basename": "yith-woocommerce-ajax-search-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-search.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-ajax-search.svg"
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
@@ -857,7 +857,7 @@
             "basename": "yith-woocommerce-tab-manager-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/pdp-tab-manager.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-tab-manager.svg"
             },
             "category": "Product Management",
             "categorySlug": "product-management",
@@ -888,7 +888,7 @@
             "basename": "ecomdash-wordpress-plugin\/ecomdash-plugin.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/ecomdash.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/ecomdash-plugin.svg"
             },
             "category": "Store Operations",
             "categorySlug": "store-operations",
@@ -952,7 +952,7 @@
             "basename": "jetpack\/jetpack.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/jetpack-forms.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/jetpack-forms.svg"
             },
             "category": "Core Tools",
             "categorySlug": "core-tools",
@@ -985,7 +985,7 @@
             "basename": "yith-woocommerce-points-and-rewards-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/points-rewards.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-points-and-rewards.svg"
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
@@ -1017,7 +1017,7 @@
             "basename": "yith-woocommerce-sms-notifications-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/sms-notifications.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-sms-notifications.svg"
             },
             "category": "Store Operations",
             "categorySlug": "store-operations",
@@ -1081,7 +1081,7 @@
             "basename": "yith-store-locator-for-wordpress\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/store-locator.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-store-locator-for-wordpress.svg"
             },
             "category": "Store Operations",
             "categorySlug": "store-operations",
@@ -1113,7 +1113,7 @@
             "basename": "yith-woocommerce-ajax-product-filter-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/product-filters.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-ajax-navigation.svg"
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
@@ -1144,7 +1144,7 @@
             "basename": "yith-woocommerce-affiliates-premium\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/affiliate-programs.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-affiliates.svg"
             },
             "category": "Content Monetization",
             "categorySlug": "content-monetization",
@@ -1240,7 +1240,7 @@
             "basename": "wpseo-video\/video-seo.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/yoast-video-seo.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yoast-seo-video.svg"
             },
             "category": "Search Engine Optimization",
             "categorySlug": "search-engine-optimization",
@@ -1304,7 +1304,7 @@
             "basename": "yith-woocommerce-customize-myaccount-page\/init.php",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/customize-my-account-page.svg",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/yith-woocommerce-customize-myaccount-page.svg"
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
@@ -1336,7 +1336,7 @@
             "basename": "",
             "image": {
                 "primaryImage": "https:\/\/cdn.hiive.space\/solutions\/entitlements\/wonderblocks.png",
-                "featureImage": ""
+                "featureImage": "https:\/\/cdn.hiive.space\/solutions\/feature\/wonderblocks.svg"
             },
             "category": "Core Tools",
             "categorySlug": "core-tools",
