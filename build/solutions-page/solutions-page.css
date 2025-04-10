@@ -3764,10 +3764,11 @@ body.bluehost_page_solutions #wpcontent {
 }
 .nfd-solutions-app-container .nfd-page-content.nfd-page-content--no-solution {
 			max-height : 100vh;
+			min-height : 450px;
 			overflow   : hidden;
 		}
 .nfd-solutions-app-container .nfd-page-content .nfd-solutions-upgrade-banner {
-			top : 30%;
+			top : min(50%, 300px);
 		}
 .nfd-solutions-app-container--mobile {
 		padding : 2rem !important;
@@ -3807,10 +3808,13 @@ body.bluehost_page_solutions #wpcontent {
 
 	position           : relative;
 	transition         : .3s !important;
+	border-color       : #C3C4C7;
 }
 .nfd-solutions-tool-card.nfd-solutions-tool-card--premium {
 		--background-color : #F7EEDE;
 		--primary-color    : #D17D3D !important;
+
+		border-color       : #E6C264;
 	}
 .nfd-solutions-tool-card.nfd-solutions-tool-card--premium svg .nfd-svg-current-color {
 			color : #FBF2E7 !important;

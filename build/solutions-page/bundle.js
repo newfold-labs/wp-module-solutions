@@ -18097,7 +18097,7 @@ const Tools = () => {
   }, [category, search]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [!tools.length && !!search && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_EmptyTools__WEBPACK_IMPORTED_MODULE_0__.EmptyTools, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      className: "nfd-solutions-tools nfd-grid nfd-gap-4 nfd-grid-cols-1 min-[520px]:nfd-grid-cols-2 min-[1200px]:nfd-grid-cols-3 min-[1520px]:nfd-grid-cols-4",
+      className: "nfd-solutions-tools nfd-grid nfd-gap-6 nfd-grid-cols-1 min-[520px]:nfd-grid-cols-2 min-[1200px]:nfd-grid-cols-3 min-[1520px]:nfd-grid-cols-4",
       ref: grid,
       children: [' ', tools.map(tool => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tool__WEBPACK_IMPORTED_MODULE_1__.Tool, {
         name: tool?.name,
@@ -18115,8 +18115,7 @@ const Tools = () => {
         plsSlug: tool?.plsSlug,
         ctbId: tool?.ctbId,
         ctbHref: tool?.ctbHref,
-        download: tool?.download,
-        slug: tool?.slug
+        download: tool?.download
       }, tool?.name))]
     })]
   });

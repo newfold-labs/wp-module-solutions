@@ -34,11 +34,12 @@ body.bluehost_page_solutions {
 	.nfd-page-content {
 		&.nfd-page-content--no-solution {
 			max-height : 100vh;
+			min-height : 450px;
 			overflow   : hidden;
 		}
 
 		.nfd-solutions-upgrade-banner {
-			top : 30%;
+			top : min(50%, 300px);
 		}
 	}
 
@@ -99,10 +100,13 @@ body.bluehost_page_solutions {
 
 	position           : relative;
 	transition         : .3s !important;
+	border-color       : #C3C4C7;
 
 	&.nfd-solutions-tool-card--premium {
 		--background-color : #F7EEDE;
 		--primary-color    : #D17D3D !important;
+
+		border-color       : #E6C264;
 
 		svg .nfd-svg-current-color {
 			color : #FBF2E7 !important;
