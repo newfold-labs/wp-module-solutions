@@ -81,13 +81,13 @@ function sortTools( ent1, ent2 ) {
 }
 
 const getTools = ( {
-	includePremium = true,
-	sortForLayout = true,
-	sortByPriority = true,
-	search = null,
-	category = 'all',
-	columns = 3,
-} ) => {
+					   includePremium = true,
+					   sortForLayout = true,
+					   sortByPriority = true,
+					   search = null,
+					   category = 'all',
+					   columns = 3,
+				   } ) => {
 	let tools = NewfoldSolutions.entitlements;
 
 	if ( includePremium ) {
@@ -152,6 +152,11 @@ const getActiveSolution = () => {
 		( solution ) => solution?.sku === NewfoldSolutions?.solution
 	);
 };
+const getSolution = solutionSku => {
+	return NewfoldSolutions?.solutions.find(
+		( solution ) => solution?.sku === solutionSku
+	);
+};
 
 // Render CTA url - replace the {siteUrl} placeholder in the URL
 const renderCTAUrl = ( url ) => {
@@ -164,4 +169,4 @@ const renderCTAUrl = ( url ) => {
 	return url;
 };
 
-export { getTools, getActiveSolution, renderCTAUrl };
+export { getTools, getActiveSolution, renderCTAUrl, getSolution };

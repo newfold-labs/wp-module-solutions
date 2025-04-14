@@ -1,3 +1,6 @@
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./src/solutions-page/tailwind.pcss ***!
+  \**********************************************************************************************************************************************************************************************************************/
 /* Import main CSS including all components. */
 /**
  * Tailwind CSS preflight, but scoped to the Yoast root class.
@@ -3331,6 +3334,9 @@
 .nfd-w-8 {
 		width: 2rem !important;
 }
+.nfd-w-\[24px\] {
+		width: 24px !important;
+}
 .nfd-w-full {
 		width: 100% !important;
 }
@@ -3505,6 +3511,13 @@
 .nfd-rounded-none {
 		border-radius: 0px !important;
 }
+.nfd-rounded-xl {
+		border-radius: 0.75rem !important;
+}
+.nfd-rounded-l {
+		border-top-right-radius: 0.25rem !important;
+		border-bottom-right-radius: 0.25rem !important;
+}
 .nfd-border-b {
 		border-bottom-width: 1px !important;
 }
@@ -3549,6 +3562,9 @@
 		--tw-bg-opacity: 1 !important;
 		background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)) !important;
 }
+.nfd-bg-\[--primary-color\] {
+		background-color: var(--primary-color) !important;
+}
 .nfd-bg-opacity-75 {
 		--tw-bg-opacity: 0.75 !important;
 }
@@ -3591,6 +3607,12 @@
 .nfd-pt-1 {
 		padding-top: 0.25rem !important;
 }
+.nfd-pb-4 {
+		padding-bottom: 1rem !important;
+}
+.nfd-pt-3 {
+		padding-top: 0.75rem !important;
+}
 .nfd-text-left {
 		text-align: right !important;
 }
@@ -3614,6 +3636,12 @@
 }
 .nfd-font-semibold {
 		font-weight: 600 !important;
+}
+.nfd-font-bold {
+		font-weight: 700 !important;
+}
+.nfd-text-\[--nfd-primary-color\] {
+		color: var(--nfd-primary-color) !important;
 }
 .nfd-text-primary-500 {
 		--tw-text-opacity: 1 !important;
@@ -3646,6 +3674,12 @@
 .nfd-text-white {
 		--tw-text-opacity: 1 !important;
 		color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
+}
+.nfd-text-\[--primary-color\] {
+		color: var(--primary-color) !important;
+}
+.nfd-underline {
+		text-decoration-line: underline !important;
 }
 .nfd-no-underline {
 		text-decoration-line: none !important;
