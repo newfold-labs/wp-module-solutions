@@ -17511,7 +17511,10 @@ const wideCards = ['20085485-7185-40fd-89e4-14dbb690aea2',
 // Advanced Review
 'ad68e506-8c2b-4c0f-a9e3-16623d00041e' // Booking & Appointments
 ];
-function layoutTools(tools, columns) {
+const upgradeCardData = {
+  id: 'upgrade-card'
+};
+function layoutTools(tools, columns, hasUpgradeCard) {
   if (1 >= columns) {
     return tools;
   }
@@ -17519,10 +17522,16 @@ function layoutTools(tools, columns) {
   let rowSpaces = columns;
   let row = [];
   const pushRow = () => {
+    if (!layout.length && hasUpgradeCard) {
+      row.push(upgradeCardData);
+    }
     layout.push(...row);
     row = [];
     rowSpaces = columns;
   };
+  if (hasUpgradeCard) {
+    rowSpaces--;
+  }
   while (tools.length) {
     if (tools[0]?.wide) {
       if (rowSpaces > 1) {
@@ -17556,6 +17565,9 @@ function sortTools(ent1, ent2) {
   if (!ent1?.image?.featureImage && ent2?.image?.featureImage) {
     return 1;
   }
+  if (ent1?.priority !== ent2?.priority) {
+    return ent1?.priority > ent2?.priority ? -1 : 1;
+  }
   const categoriesPriority = Object.fromEntries(NewfoldSolutions.categories.map(cat => [cat.slug, cat.priority]));
   if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) {
     return -1;
@@ -17569,6 +17581,7 @@ const getTools = ({
   includePremium = true,
   sortForLayout = true,
   sortByPriority = true,
+  hasUpgradeCard = false,
   search = null,
   category = 'all',
   columns = 3
@@ -17608,8 +17621,12 @@ const getTools = ({
   if (search) {
     tools = tools.filter(tool => tool?.name?.toLowerCase().includes(search.toLowerCase()) || tool?.plsSlug?.toLowerCase().includes(search.toLowerCase()));
   }
-  if (sortForLayout && columns > 1) {
-    tools = layoutTools([...tools], columns);
+  if (sortForLayout) {
+    if (columns > 1) {
+      tools = layoutTools([...tools], columns, hasUpgradeCard);
+    } else {
+      tools.splice(2, 0, upgradeCardData);
+    }
   }
   return tools;
 };
@@ -18127,7 +18144,8 @@ const Tools = () => {
       setTools((0,common_utils__WEBPACK_IMPORTED_MODULE_4__.getTools)({
         category,
         search,
-        columns
+        columns,
+        hasUpgradeCard: true
       }));
     }
   };
@@ -18141,27 +18159,31 @@ const Tools = () => {
     calculateTools();
   }, [category, search]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: [!tools.length && !!search && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_EmptyTools__WEBPACK_IMPORTED_MODULE_0__.EmptyTools, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    children: [!tools.length && !!search && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_EmptyTools__WEBPACK_IMPORTED_MODULE_0__.EmptyTools, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "nfd-solutions-tools nfd-grid nfd-gap-4 nfd-grid-cols-1 min-[520px]:nfd-grid-cols-2 min-[1200px]:nfd-grid-cols-3 min-[1520px]:nfd-grid-cols-4",
       ref: grid,
-      children: ['WP_SOLUTION_CREATOR' === NewfoldSolutions.solution && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_upgrade_card__WEBPACK_IMPORTED_MODULE_2__.UpgradeCard, {}), tools.map(tool => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_tool__WEBPACK_IMPORTED_MODULE_1__.Tool, {
-        name: tool?.name,
-        category: tool.category,
-        description: tool.description,
-        ctaUrl: tool.cta?.url,
-        ctaLabel: tool.cta?.text,
-        featureIcon: tool?.image?.featureImage,
-        smallIcon: tool?.image?.primaryImage,
-        wide: tool?.wide,
-        premium: tool?.premium,
-        popular: tool?.popular,
-        isActive: tool?.isActive,
-        plsProvider: tool?.plsProviderName,
-        plsSlug: tool?.plsSlug,
-        ctbId: tool?.ctbId,
-        ctbHref: tool?.ctbHref,
-        download: tool?.download
-      }, tool?.name))]
+      children: tools.map(tool => {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+          children: tool?.id === 'upgrade-card' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_upgrade_card__WEBPACK_IMPORTED_MODULE_2__.UpgradeCard, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_tool__WEBPACK_IMPORTED_MODULE_1__.Tool, {
+            name: tool?.name,
+            category: tool.category,
+            description: tool.description,
+            ctaUrl: tool.cta?.url,
+            ctaLabel: tool.cta?.text,
+            featureIcon: tool?.image?.featureImage,
+            smallIcon: tool?.image?.primaryImage,
+            wide: tool?.wide,
+            premium: tool?.premium,
+            popular: tool?.popular,
+            isActive: tool?.isActive,
+            plsProvider: tool?.plsProviderName,
+            plsSlug: tool?.plsSlug,
+            ctbId: tool?.ctbId,
+            ctbHref: tool?.ctbHref,
+            download: tool?.download
+          }, tool?.name)
+        });
+      })
     })]
   });
 };

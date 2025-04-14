@@ -2600,7 +2600,10 @@ const wideCards = ['20085485-7185-40fd-89e4-14dbb690aea2',
 // Advanced Review
 'ad68e506-8c2b-4c0f-a9e3-16623d00041e' // Booking & Appointments
 ];
-function layoutTools(tools, columns) {
+const upgradeCardData = {
+  id: 'upgrade-card'
+};
+function layoutTools(tools, columns, hasUpgradeCard) {
   if (1 >= columns) {
     return tools;
   }
@@ -2608,10 +2611,16 @@ function layoutTools(tools, columns) {
   let rowSpaces = columns;
   let row = [];
   const pushRow = () => {
+    if (!layout.length && hasUpgradeCard) {
+      row.push(upgradeCardData);
+    }
     layout.push(...row);
     row = [];
     rowSpaces = columns;
   };
+  if (hasUpgradeCard) {
+    rowSpaces--;
+  }
   while (tools.length) {
     if (tools[0]?.wide) {
       if (rowSpaces > 1) {
@@ -2645,6 +2654,9 @@ function sortTools(ent1, ent2) {
   if (!ent1?.image?.featureImage && ent2?.image?.featureImage) {
     return 1;
   }
+  if (ent1?.priority !== ent2?.priority) {
+    return ent1?.priority > ent2?.priority ? -1 : 1;
+  }
   const categoriesPriority = Object.fromEntries(NewfoldSolutions.categories.map(cat => [cat.slug, cat.priority]));
   if (categoriesPriority[ent1.categorySlug] > categoriesPriority[ent2.categorySlug]) {
     return -1;
@@ -2658,6 +2670,7 @@ const getTools = ({
   includePremium = true,
   sortForLayout = true,
   sortByPriority = true,
+  hasUpgradeCard = false,
   search = null,
   category = 'all',
   columns = 3
@@ -2697,8 +2710,12 @@ const getTools = ({
   if (search) {
     tools = tools.filter(tool => tool?.name?.toLowerCase().includes(search.toLowerCase()) || tool?.plsSlug?.toLowerCase().includes(search.toLowerCase()));
   }
-  if (sortForLayout && columns > 1) {
-    tools = layoutTools([...tools], columns);
+  if (sortForLayout) {
+    if (columns > 1) {
+      tools = layoutTools([...tools], columns, hasUpgradeCard);
+    } else {
+      tools.splice(2, 0, upgradeCardData);
+    }
   }
   return tools;
 };

@@ -3511,13 +3511,6 @@
 .nfd-rounded-none {
 		border-radius: 0px !important;
 }
-.nfd-rounded-xl {
-		border-radius: 0.75rem !important;
-}
-.nfd-rounded-l {
-		border-top-right-radius: 0.25rem !important;
-		border-bottom-right-radius: 0.25rem !important;
-}
 .nfd-border-b {
 		border-bottom-width: 1px !important;
 }
@@ -3535,6 +3528,9 @@
 .nfd-border-r-slate-200 {
 		--tw-border-opacity: 1 !important;
 		border-left-color: rgb(226 232 240 / var(--tw-border-opacity, 1)) !important;
+}
+.nfd-bg-\[--primary-color\] {
+		background-color: var(--primary-color) !important;
 }
 .nfd-bg-inherit {
 		background-color: inherit !important;
@@ -3561,9 +3557,6 @@
 .nfd-bg-white {
 		--tw-bg-opacity: 1 !important;
 		background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)) !important;
-}
-.nfd-bg-\[--primary-color\] {
-		background-color: var(--primary-color) !important;
 }
 .nfd-bg-opacity-75 {
 		--tw-bg-opacity: 0.75 !important;
@@ -3601,14 +3594,14 @@
 .nfd-pb-1 {
 		padding-bottom: 0.25rem !important;
 }
+.nfd-pb-4 {
+		padding-bottom: 1rem !important;
+}
 .nfd-pb-8 {
 		padding-bottom: 2rem !important;
 }
 .nfd-pt-1 {
 		padding-top: 0.25rem !important;
-}
-.nfd-pb-4 {
-		padding-bottom: 1rem !important;
 }
 .nfd-pt-3 {
 		padding-top: 0.75rem !important;
@@ -3631,17 +3624,17 @@
 .nfd-text-sm {
 		font-size: .8125rem !important;
 }
+.nfd-font-bold {
+		font-weight: 700 !important;
+}
 .nfd-font-medium {
 		font-weight: 500 !important;
 }
 .nfd-font-semibold {
 		font-weight: 600 !important;
 }
-.nfd-font-bold {
-		font-weight: 700 !important;
-}
-.nfd-text-\[--nfd-primary-color\] {
-		color: var(--nfd-primary-color) !important;
+.nfd-text-\[--primary-color\] {
+		color: var(--primary-color) !important;
 }
 .nfd-text-primary-500 {
 		--tw-text-opacity: 1 !important;
@@ -3674,9 +3667,6 @@
 .nfd-text-white {
 		--tw-text-opacity: 1 !important;
 		color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
-}
-.nfd-text-\[--primary-color\] {
-		color: var(--primary-color) !important;
 }
 .nfd-underline {
 		text-decoration-line: underline !important;
