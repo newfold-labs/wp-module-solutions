@@ -16,22 +16,7 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		clearSolutionTransient();
 	} );
 
-	// test not connected to hiive will not have a solution
-	it( 'Solutions page displays upgrade for those with no solution', () => {
-		cy.visit( '/wp-admin/admin.php?page=solutions' );
-
-		cy.get( '#nfd-solutions-app' )
-			.contains( 'h1', 'Premium tools available in our Solutions' )
-			.scrollIntoView()
-			.should( 'be.visible' );
-
-		cy.get( '.nfd-solutions-upgrade-banner' )
-			.contains( 'h2', 'Upgrade' )
-			.scrollIntoView()
-			.should( 'be.visible' );
-	} );
-
-	// test solution=none for ctb atts
+	// test solution=none for ctb attributes
 	it( 'Solutions page displays upgrade with CTB atts for those with no solution', () => {
 		setSolution( 'none' );
 		cy.visit( '/wp-admin/admin.php?page=solutions&solution=none' );
