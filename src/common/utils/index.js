@@ -9,7 +9,11 @@ const wideCards = [
 	'ad68e506-8c2b-4c0f-a9e3-16623d00041e', // Booking & Appointments
 ];
 
-function layoutTools( tools, columns ) {
+const upgradeCardData = {
+	id: 'upgrade-card'
+};
+
+function layoutTools( tools, columns, hasUpgradeCard ) {
 	if ( 1 >= columns ) {
 		return tools;
 	}
@@ -19,10 +23,18 @@ function layoutTools( tools, columns ) {
 	let row = [];
 
 	const pushRow = () => {
+		if ( ! layout.length && hasUpgradeCard ) {
+			row.push( upgradeCardData );
+		}
+
 		layout.push( ...row );
 		row = [];
 		rowSpaces = columns;
 	};
+
+	if ( hasUpgradeCard ) {
+		rowSpaces--;
+	}
 
 	while ( tools.length ) {
 		if ( tools[ 0 ]?.wide ) {
@@ -60,6 +72,10 @@ function sortTools( ent1, ent2 ) {
 		return 1;
 	}
 
+	if ( ent1?.priority !== ent2?.priority ) {
+		return ent1?.priority > ent2?.priority ? -1 : 1;
+	}
+
 	const categoriesPriority = Object.fromEntries(
 		NewfoldSolutions.categories.map( ( cat ) => [ cat.slug, cat.priority ] )
 	);
@@ -81,13 +97,14 @@ function sortTools( ent1, ent2 ) {
 }
 
 const getTools = ( {
-	includePremium = true,
-	sortForLayout = true,
-	sortByPriority = true,
-	search = null,
-	category = 'all',
-	columns = 3,
-} ) => {
+					   includePremium = true,
+					   sortForLayout = true,
+					   sortByPriority = true,
+					   hasUpgradeCard = false,
+					   search = null,
+					   category = 'all',
+					   columns = 3,
+				   } ) => {
 	let tools = NewfoldSolutions.entitlements;
 
 	if ( includePremium ) {
@@ -140,8 +157,12 @@ const getTools = ( {
 		);
 	}
 
-	if ( sortForLayout && columns > 1 ) {
-		tools = layoutTools( [ ...tools ], columns );
+	if ( sortForLayout ) {
+		if ( columns > 1 ) {
+			tools = layoutTools( [ ...tools ], columns, hasUpgradeCard );
+		} else {
+			tools.splice( 2, 0, upgradeCardData );
+		}
 	}
 
 	return tools;
@@ -150,6 +171,11 @@ const getTools = ( {
 const getActiveSolution = () => {
 	return NewfoldSolutions?.solutions.find(
 		( solution ) => solution?.sku === NewfoldSolutions?.solution
+	);
+};
+const getSolution = solutionSku => {
+	return NewfoldSolutions?.solutions.find(
+		( solution ) => solution?.sku === solutionSku
 	);
 };
 
@@ -164,4 +190,4 @@ const renderCTAUrl = ( url ) => {
 	return url;
 };
 
-export { getTools, getActiveSolution, renderCTAUrl };
+export { getTools, getActiveSolution, renderCTAUrl, getSolution };

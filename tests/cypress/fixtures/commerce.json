@@ -133,7 +133,7 @@
             },
             "category": "Product Management",
             "categorySlug": "product-management",
-            "priority": null,
+            "priority": 0,
             "solutions": []
         },
         {
@@ -162,7 +162,7 @@
             },
             "category": "Content Monetization",
             "categorySlug": "content-monetization",
-            "priority": null,
+            "priority": 0,
             "solutions": []
         },
         {
@@ -220,7 +220,7 @@
             },
             "category": "Search Engine Optimization",
             "categorySlug": "search-engine-optimization",
-            "priority": 0,
+            "priority": 175,
             "solutions": [],
             "ctbId": "57d6a568-783c-45e2-a388-847cff155897",
             "ctbHref": "https:\/\/yoast.com\/?yst-add-to-cart=2811749&utm_source=wp-marketplace&utm_medium=brand-plugin"
@@ -287,7 +287,7 @@
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
-            "priority": 0,
+            "priority": 180,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"
@@ -319,7 +319,7 @@
             },
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",
-            "priority": null,
+            "priority": 0,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -350,7 +350,7 @@
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
-            "priority": 0,
+            "priority": 160,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
@@ -383,7 +383,7 @@
             },
             "category": "Store Operations",
             "categorySlug": "store-operations",
-            "priority": null,
+            "priority": 120,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"
@@ -415,7 +415,7 @@
             },
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",
-            "priority": null,
+            "priority": 105,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"
@@ -447,7 +447,7 @@
             },
             "category": "Product Management",
             "categorySlug": "product-management",
-            "priority": 0,
+            "priority": 165,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -478,7 +478,7 @@
             },
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",
-            "priority": 0,
+            "priority": 100,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -509,7 +509,7 @@
             },
             "category": "Store Operations",
             "categorySlug": "store-operations",
-            "priority": null,
+            "priority": 0,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -540,7 +540,7 @@
             },
             "category": "Content Monetization",
             "categorySlug": "content-monetization",
-            "priority": 0,
+            "priority": 150,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
@@ -573,7 +573,7 @@
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
-            "priority": null,
+            "priority": 170,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
@@ -606,7 +606,7 @@
             },
             "category": "Search Engine Optimization",
             "categorySlug": "search-engine-optimization",
-            "priority": null,
+            "priority": 155,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"
@@ -638,7 +638,7 @@
             },
             "category": "Search Engine Optimization",
             "categorySlug": "search-engine-optimization",
-            "priority": null,
+            "priority": 145,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
@@ -671,7 +671,7 @@
             },
             "category": "Product Management",
             "categorySlug": "product-management",
-            "priority": null,
+            "priority": 125,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -702,7 +702,7 @@
             },
             "category": "Search Engine Optimization",
             "categorySlug": "search-engine-optimization",
-            "priority": null,
+            "priority": 0,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -733,7 +733,7 @@
             },
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",
-            "priority": 0,
+            "priority": 140,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -764,7 +764,7 @@
             },
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",
-            "priority": 0,
+            "priority": 185,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
@@ -797,7 +797,7 @@
             },
             "category": "Content Monetization",
             "categorySlug": "content-monetization",
-            "priority": null,
+            "priority": 0,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
@@ -830,7 +830,7 @@
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
-            "priority": null,
+            "priority": 80,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -861,7 +861,7 @@
             },
             "category": "Product Management",
             "categorySlug": "product-management",
-            "priority": null,
+            "priority": 75,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -892,7 +892,7 @@
             },
             "category": "Store Operations",
             "categorySlug": "store-operations",
-            "priority": null,
+            "priority": 115,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -923,7 +923,7 @@
             },
             "category": "Content Monetization",
             "categorySlug": "content-monetization",
-            "priority": 0,
+            "priority": 190,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
@@ -956,7 +956,7 @@
             },
             "category": "Core Tools",
             "categorySlug": "core-tools",
-            "priority": null,
+            "priority": 0,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
@@ -989,7 +989,7 @@
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
-            "priority": null,
+            "priority": 85,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"
@@ -1021,7 +1021,7 @@
             },
             "category": "Store Operations",
             "categorySlug": "store-operations",
-            "priority": null,
+            "priority": 95,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"
@@ -1053,7 +1053,7 @@
             },
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",
-            "priority": 0,
+            "priority": 195,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"
@@ -1085,7 +1085,7 @@
             },
             "category": "Store Operations",
             "categorySlug": "store-operations",
-            "priority": null,
+            "priority": 90,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"
@@ -1117,7 +1117,7 @@
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
-            "priority": null,
+            "priority": 70,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -1148,7 +1148,7 @@
             },
             "category": "Content Monetization",
             "categorySlug": "content-monetization",
-            "priority": null,
+            "priority": 0,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
@@ -1181,7 +1181,7 @@
             },
             "category": "Product Management",
             "categorySlug": "product-management",
-            "priority": null,
+            "priority": 135,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"
@@ -1213,7 +1213,7 @@
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
-            "priority": 0,
+            "priority": 200,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -1244,7 +1244,7 @@
             },
             "category": "Search Engine Optimization",
             "categorySlug": "search-engine-optimization",
-            "priority": null,
+            "priority": 0,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
@@ -1277,7 +1277,7 @@
             },
             "category": "Sales & Checkout",
             "categorySlug": "sales-checkout",
-            "priority": 0,
+            "priority": 130,
             "solutions": [
                 "WP_SOLUTION_COMMERCE"
             ]
@@ -1308,7 +1308,7 @@
             },
             "category": "Customer Engagement",
             "categorySlug": "customer-engagement",
-            "priority": null,
+            "priority": 110,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE"
@@ -1340,7 +1340,7 @@
             },
             "category": "Core Tools",
             "categorySlug": "core-tools",
-            "priority": null,
+            "priority": 0,
             "solutions": [
                 "WP_SOLUTION_COMMERCE",
                 "WP_SOLUTION_SERVICE",
