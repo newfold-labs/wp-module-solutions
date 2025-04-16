@@ -3331,6 +3331,9 @@
 .nfd-w-8 {
 		width: 2rem !important;
 }
+.nfd-w-\[24px\] {
+		width: 24px !important;
+}
 .nfd-w-full {
 		width: 100% !important;
 }
@@ -3523,6 +3526,9 @@
 		--tw-border-opacity: 1 !important;
 		border-left-color: rgb(226 232 240 / var(--tw-border-opacity, 1)) !important;
 }
+.nfd-bg-\[--primary-color\] {
+		background-color: var(--primary-color) !important;
+}
 .nfd-bg-inherit {
 		background-color: inherit !important;
 }
@@ -3585,11 +3591,17 @@
 .nfd-pb-1 {
 		padding-bottom: 0.25rem !important;
 }
+.nfd-pb-4 {
+		padding-bottom: 1rem !important;
+}
 .nfd-pb-8 {
 		padding-bottom: 2rem !important;
 }
 .nfd-pt-1 {
 		padding-top: 0.25rem !important;
+}
+.nfd-pt-3 {
+		padding-top: 0.75rem !important;
 }
 .nfd-text-left {
 		text-align: right !important;
@@ -3609,11 +3621,17 @@
 .nfd-text-sm {
 		font-size: .8125rem !important;
 }
+.nfd-font-bold {
+		font-weight: 700 !important;
+}
 .nfd-font-medium {
 		font-weight: 500 !important;
 }
 .nfd-font-semibold {
 		font-weight: 600 !important;
+}
+.nfd-text-\[--primary-color\] {
+		color: var(--primary-color) !important;
 }
 .nfd-text-primary-500 {
 		--tw-text-opacity: 1 !important;
@@ -3646,6 +3664,9 @@
 .nfd-text-white {
 		--tw-text-opacity: 1 !important;
 		color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
+}
+.nfd-underline {
+		text-decoration-line: underline !important;
 }
 .nfd-no-underline {
 		text-decoration-line: none !important;
