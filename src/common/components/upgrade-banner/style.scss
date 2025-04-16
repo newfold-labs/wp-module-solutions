@@ -13,7 +13,7 @@
 	z-index               : 999;
 	padding               : 3rem 2rem 2rem;
 	border-radius         : 10px;
-	border                : 1px solid var(--secondary-color);
+	border                : 1px solid var(--secondary-color) !important;
 	box-shadow            : 0 0 0 10px white, 0 0 10px 10px #78a0e00d;
 	max-width             : 900px;
 	min-width             : 300px;
@@ -31,7 +31,7 @@
 		padding       : 12px;
 		border-radius : 50px;
 		background    : var(--tertiary-color);
-		border        : 1px solif var(--tertiary-color);
+		border        : 1px solid var(--secondary-color) !important;
 
 		svg {
 			width : 32px;
@@ -40,11 +40,9 @@
 	}
 
 	& > &__title {
-		font-family : Bitter serif;
-		color       : var(--primary-color);
-		font-size   : 1.4rem;
-		font-weight : bold;
-		font-style  : italic;
+		color       : var(--primary-color) !important;
+		font-size   : 1.4rem !important;
+		font-weight : bold !important;
 	}
 
 	& > &__title--secondary {
@@ -57,12 +55,12 @@
 
 	& > &__button {
 		--tw-ring-color  : rgba(173, 103, 29, var(--tw-ring-opacity)) !important;
-		font-weight      : bold;
-		background-color : var(--primary-color);
-		white-space      : nowrap;
+		font-weight      : bold !important;
+		background-color : var(--primary-color) !important;
+		white-space      : nowrap !important;
 
 		&:hover {
-			background-color : var(--primary-color-hover);
+			background-color : var(--primary-color-hover) !important;
 		}
 	}
 }

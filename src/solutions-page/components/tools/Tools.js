@@ -36,7 +36,7 @@ export const Tools = () => {
 		<>
 			{ ! tools.length && !! search && <EmptyTools/> }
 			<div
-				className="nfd-solutions-tools nfd-grid nfd-gap-4 nfd-grid-cols-1 min-[520px]:nfd-grid-cols-2 min-[1200px]:nfd-grid-cols-3 min-[1520px]:nfd-grid-cols-4"
+				className="nfd-solutions-tools nfd-grid nfd-gap-6 nfd-grid-cols-1 min-[520px]:nfd-grid-cols-2 min-[1200px]:nfd-grid-cols-3 min-[1520px]:nfd-grid-cols-4"
 				ref={ grid }
 			>
 				{ tools.map( ( tool ) => {
