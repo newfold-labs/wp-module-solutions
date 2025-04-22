@@ -3768,13 +3768,25 @@ body.bluehost_page_solutions {
 body.bluehost_page_solutions #wpcontent {
 		padding-right : 0 !important;
 	}
+.nfd-solutions-app-header a, .nfd-solutions-app-header a:visited {
+		--tw-text-opacity: 1;
+		color: rgb(25 107 222 / var(--tw-text-opacity, 1));
+}
+.nfd-solutions-app-header a:hover, .nfd-solutions-app-header a:visited:hover {
+		--tw-text-opacity: 1;
+		color: rgb(23 95 198 / var(--tw-text-opacity, 1));
+}
 .nfd-solutions-app-container {
 	margin-left : 20px;
 	max-width    : 1660px;
 }
 .nfd-solutions-app-container .nfd-page-content.nfd-page-content--no-solution {
 			max-height : 100vh;
+			min-height : 450px;
 			overflow   : hidden;
+		}
+.nfd-solutions-app-container .nfd-page-content .nfd-solutions-upgrade-banner {
+			top : min(50%, 300px);
 		}
 .nfd-solutions-app-container--mobile {
 		padding : 2rem !important;
@@ -3794,10 +3806,10 @@ body.bluehost_page_solutions #wpcontent {
 				padding-bottom : 2rem !important;
 			}
 .nfd-solutions-sidebar ul li a {
-				cursor: pointer;
+				cursor : pointer;
 			}
 .nfd-solutions-category-selector ul li:nth-last-child(2) {
-		margin-top  : 1rem;
+		margin-top : 1rem;
 	}
 .nfd-solutions-category-selector ul li:nth-last-child(2):before {
 			content    : '';
@@ -3814,10 +3826,13 @@ body.bluehost_page_solutions #wpcontent {
 
 	position           : relative;
 	transition         : .3s !important;
+	border-color       : #C3C4C7;
 }
 .nfd-solutions-tool-card.nfd-solutions-tool-card--premium {
 		--background-color : #F7EEDE;
 		--primary-color    : #D17D3D !important;
+
+		border-color       : #E6C264;
 	}
 .nfd-solutions-tool-card.nfd-solutions-tool-card--premium svg .nfd-svg-current-color {
 			color : #FBF2E7 !important;
@@ -3826,23 +3841,23 @@ body.bluehost_page_solutions #wpcontent {
 			--tw-ring-color : rgba(209, 125, 61, var(--tw-ring-opacity)) !important;
 		}
 .nfd-solutions-tool-card .nfd-solutions-card-title {
-		margin-bottom: 1rem;
+		margin-bottom: 0.25rem;
 		margin-top: 0.5rem;
 }
 .nfd-solutions-tool-card .nfd-solutions-card-description {
 		display: block;
-		padding-top: 1rem;
+		padding-top: 0.5rem;
 }
 .nfd-solutions-tool-card .nfd-card__content,
 	.nfd-solutions-tool-card .nfd-card__footer {
 		margin-top : 0 !important;
 	}
 .nfd-solutions-tool-card .nfd-solutions-card-badges + .nfd-solutions-card-title {
-		margin-bottom: 1rem;
+		margin-bottom: 0.25rem;
 		margin-top: 0.25rem;
 }
 .nfd-solutions-tool-card .nfd-solutions-card-badges + .nfd-solutions-card-title + .nfd-solutions-card-description {
-		padding-top: 0.25rem;
+		padding-top: 0.5rem;
 }
 .nfd-solutions-tool-card.nfd-solutions-tool-card--with-featured-icon {
 		background : linear-gradient(var(--background-color), #FFF);
@@ -3867,7 +3882,7 @@ body.bluehost_page_solutions #wpcontent {
 			width : 50%;
 		}
 .nfd-solutions-tool-card.nfd-solutions-tool-card--wide .nfd-card__content .nfd-solutions-card-description {
-				padding   : 1rem 0 0 1rem;
+				padding   : .5rem 0 0 1rem;
 				text-wrap : balance;
 			}
 .nfd-solutions-tool-card.nfd-solutions-tool-card--wide .nfd-yith-woocommerce-booking-icon {
@@ -3888,6 +3903,9 @@ body.bluehost_page_solutions #wpcontent {
 			width         : 36px;
 			-o-object-fit    : contain;
 			   object-fit    : contain;
+		}
+.nfd-solutions-tool-card.nfd-solutions-tool-card--with-small-icon .nfd-solutions-card-title {
+			padding-left : 3.3rem;
 		}
 .nfd-solutions-tool-card.nfd-solutions-tool-card--with-featured-icon + .nfd-solutions-tool-card--with-small-icon {
 		grid-column-start : 1 !important;
@@ -3925,7 +3943,10 @@ body.bluehost_page_solutions #wpcontent {
 			}
 .nfd-solutions-tool-card .nfd-svg-rotate-5deg,
 	.nfd-solutions-tool-card .nfd-svg-rotate--5deg,
+	.nfd-solutions-tool-card .nfd-svg-rotate-40deg,
 	.nfd-solutions-tool-card .nfd-svg-rotate--40deg,
+	.nfd-solutions-tool-card .nfd-svg-rotate-15deg,
+	.nfd-solutions-tool-card .nfd-svg-rotate--15deg,
 	.nfd-solutions-tool-card .nfd-svg-translate-x,
 	.nfd-solutions-tool-card .nfd-svg-translate--x,
 	.nfd-solutions-tool-card .nfd-svg-translate-y,
@@ -3962,6 +3983,15 @@ body.bluehost_page_solutions #wpcontent {
 .nfd-solutions-tool-card:hover .nfd-svg-rotate--40deg {
 			transform : rotate(40deg);
 		}
+.nfd-solutions-tool-card:hover .nfd-svg-rotate-40deg {
+			transform : rotate(-40deg);
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-rotate-15deg {
+			transform : rotate(-15deg);
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-rotate--15deg {
+			transform : rotate(15deg);
+		}
 .nfd-solutions-tool-card:hover .nfd-svg-scale {
 			transform : scale(1.1);
 		}
@@ -3972,25 +4002,100 @@ body.bluehost_page_solutions #wpcontent {
 			transform-origin : center center;
 			animation        : nfd-solutions-bounce .5s;
 		}
+.nfd-solutions-tool-card:hover .nfd-svg-bounce-s {
+			transform-origin : center center;
+			animation        : nfd-solutions-bounce-s .5s;
+		}
 .nfd-solutions-tool-card:hover .nfd-svg-bounce-xl {
 			transform-origin : center center;
 			animation        : nfd-solutions-bounce-xl .5s;
 		}
+/* Delay classes from 1 to 15 */
+.nfd-solutions-tool-card:hover .nfd-svg-delay-1 {
+			animation-delay : 100ms !important;
+		}
 .nfd-solutions-tool-card:hover .nfd-svg-delay-2 {
-			animation-delay : .2s !important;
+			animation-delay : 200ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-3 {
+			animation-delay : 300ms !important;
 		}
 .nfd-solutions-tool-card:hover .nfd-svg-delay-4 {
-			animation-delay : .4s !important;
+			animation-delay : 400ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-5 {
+			animation-delay : 500ms !important;
 		}
 .nfd-solutions-tool-card:hover .nfd-svg-delay-6 {
-			animation-delay : .6s !important;
+			animation-delay : 600ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-7 {
+			animation-delay : 700ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-8 {
+			animation-delay : 800ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-9 {
+			animation-delay : 900ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-10 {
+			animation-delay : 1000ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-11 {
+			animation-delay : 1100ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-12 {
+			animation-delay : 1200ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-13 {
+			animation-delay : 1300ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-14 {
+			animation-delay : 1400ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-delay-15 {
+			animation-delay : 1500ms !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-transition-delay-1 {
+			transition-delay : .1s !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-transition-delay-2 {
+			transition-delay : .2s !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-transition-delay-3 {
+			transition-delay : .3s !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-transition-delay-4 {
+			transition-delay : .4s !important;
+		}
+.nfd-solutions-tool-card:hover .nfd-svg-transition-delay-6 {
+			transition-delay : .6s !important;
 		}
 .nfd-solutions-tool-card:hover .nfd-svg-grow-x {
 			animation : ease-out nfd-solutions-grow-x .7s forwards;
 		}
+.nfd-solutions-tool-card:hover .nfd-svg-fade-in {
+			opacity   : 0;
+			animation : ease-out nfd-solutions-fade-in .5s forwards;
+		}
 .nfd-solutions-tool-card:hover .nfd-yith-woocommerce-advanced-reviews-icon .nfd-svg-grow-x {
 				transform        : scaleX(0);
 				transform-origin : 84.7% 0;
+			}
+.nfd-solutions-tool-card:hover .nfd-yith-woocommerce-compare-icon .nfd-solutions-compare-cursor {
+				animation : 5s nfd-solutions-compare-cursor infinite;
+			}
+.nfd-solutions-tool-card:hover .nfd-yith-woocommerce-compare-icon .nfd-solutions-compare-card {
+				animation : 5s nfd-solutions-compare-card infinite;
+			}
+.nfd-solutions-tool-card:hover .nfd-yith-woocommerce-compare-icon .nfd-solutions-compare-card-b {
+					animation-delay : 1.7s;
+				}
+.nfd-solutions-tool-card:hover .nfd-yith-woocommerce-ajax-navigation-icon .nfd-solutions-ajax-navigation-slider-bar {
+				animation : ease-in-out 2s nfd-solutions-ajax-navigation-slider-bar;
+			}
+.nfd-solutions-tool-card:hover .nfd-yith-woocommerce-ajax-navigation-icon .nfd-solutions-ajax-navigation-slider-handle {
+				animation : ease-in-out 2s nfd-solutions-ajax-navigation-slider-handle;
 			}
 @keyframes nfd-solutions-bounce {
 	0%, 100% {
@@ -3998,6 +4103,14 @@ body.bluehost_page_solutions #wpcontent {
 	}
 	50% {
 		transform : scale(1.1);
+	}
+}
+@keyframes nfd-solutions-bounce-s {
+	0%, 100% {
+		transform : scale(1);
+	}
+	50% {
+		transform : scale(1.05);
 	}
 }
 @keyframes nfd-solutions-bounce-xl {
@@ -4014,6 +4127,55 @@ body.bluehost_page_solutions #wpcontent {
 	}
 	100% {
 		transform : scaleX(1);
+	}
+}
+@keyframes nfd-solutions-fade-in {
+	0% {
+		opacity : 0;
+	}
+	100% {
+		opacity : 1;
+	}
+}
+@keyframes nfd-solutions-compare-cursor {
+	10%, 29% {
+		transform : translate(30%, 10%);
+	}
+	48%, 67% {
+		transform : translate(-20%, 20%);
+	}
+	0%, 82% {
+		transform : translate(0, 0);
+	}
+}
+@keyframes nfd-solutions-compare-card {
+	6%, 35% {
+		transform : scale(1.1);
+	}
+	0%, 2%, 43% {
+		transform : scale(1);
+	}
+}
+@keyframes nfd-solutions-ajax-navigation-slider-bar {
+	30% {
+		transform : scaleX(.3);
+	}
+	60% {
+		transform : scaleX(1.1);
+	}
+	80% {
+		transform : scaleX(1);
+	}
+}
+@keyframes nfd-solutions-ajax-navigation-slider-handle {
+	30% {
+		transform : translateX(10%);
+	}
+	60% {
+		transform : translateX(-3%);
+	}
+	80% {
+		transform : translateX(0);
 	}
 }
 .odd\:nfd-bg-white:nth-child(odd) {

@@ -68,7 +68,7 @@ export const Tool = ( {
 					<ReactSVG
 						alt={ name }
 						className="nfd-solutions-card__feature-icon"
-						src={ featureIcon + '?nocache' }
+						src={ featureIcon }
 					/>
 				</Card.Header>
 			) }
