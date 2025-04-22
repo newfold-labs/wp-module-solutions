@@ -59,6 +59,7 @@ export const Tools = () => {
 										key={ tool?.name }
 										isActive={ tool?.isActive }
 										plsProvider={ tool?.plsProviderName }
+										basename={ tool?.basename }
 										plsSlug={ tool?.plsSlug }
 										ctbId={ tool?.ctbId }
 										ctbHref={ tool?.ctbHref }
