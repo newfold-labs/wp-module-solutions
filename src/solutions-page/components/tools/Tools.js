@@ -16,7 +16,9 @@ export const Tools = () => {
 			const columns = window
 				.getComputedStyle( grid.current )
 				[ 'grid-template-columns' ].split( ' ' ).length;
-			setTools( getTools( { category, search, columns, hasUpgradeCard } ) );
+			setTools(
+				getTools( { category, search, columns, hasUpgradeCard } )
+			);
 		}
 	};
 
@@ -34,40 +36,41 @@ export const Tools = () => {
 
 	return (
 		<>
-			{ ! tools.length && !! search && <EmptyTools/> }
+			{ ! tools.length && !! search && <EmptyTools /> }
 			<div
 				className="nfd-solutions-tools nfd-grid nfd-gap-6 nfd-grid-cols-1 min-[520px]:nfd-grid-cols-2 min-[1200px]:nfd-grid-cols-3 min-[1520px]:nfd-grid-cols-4"
 				ref={ grid }
 			>
 				{ tools.map( ( tool ) => {
-						return <>
-							{
-								tool?.id === 'upgrade-card' ?
-									<UpgradeCard/>
-									:
-									<Tool
-										name={ tool?.name }
-										category={ tool.category }
-										description={ tool.description }
-										ctaUrl={ tool.cta?.url }
-										ctaLabel={ tool.cta?.text }
-										featureIcon={ tool?.image?.featureImage }
-										smallIcon={ tool?.image?.primaryImage }
-										wide={ tool?.wide }
-										premium={ tool?.premium }
-										popular={ tool?.popular }
-										key={ tool?.name }
-										isActive={ tool?.isActive }
-										plsProvider={ tool?.plsProviderName }
-										plsSlug={ tool?.plsSlug }
-										ctbId={ tool?.ctbId }
-										ctbHref={ tool?.ctbHref }
-										download={ tool?.download }
-									/>
-							}
-						</>;
-					}
-				) }
+					return (
+						<>
+							{ tool?.id === 'upgrade-card' ? (
+								<UpgradeCard />
+							) : (
+								<Tool
+									name={ tool?.name }
+									category={ tool.category }
+									description={ tool.description }
+									ctaUrl={ tool.cta?.url }
+									ctaLabel={ tool.cta?.text }
+									featureIcon={ tool?.image?.featureImage }
+									smallIcon={ tool?.image?.primaryImage }
+									wide={ tool?.wide }
+									premium={ tool?.premium }
+									popular={ tool?.popular }
+									key={ tool?.name }
+									isActive={ tool?.isActive }
+									plsProvider={ tool?.plsProviderName }
+									basename={ tool?.basename }
+									plsSlug={ tool?.plsSlug }
+									ctbId={ tool?.ctbId }
+									ctbHref={ tool?.ctbHref }
+									download={ tool?.download }
+								/>
+							) }
+						</>
+					);
+				} ) }
 			</div>
 		</>
 	);
