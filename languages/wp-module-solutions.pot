@@ -44,7 +44,7 @@ msgstr ""
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page/bundle.js:3
-msgid "Advanced Solutions to build any kind of site, store or blog"
+msgid "eCommerce Add-Ons to build any kind of site, store or blog"
 msgstr ""
 
 #: build/addnew/bundle.js:1

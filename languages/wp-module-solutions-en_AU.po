@@ -73,11 +73,6 @@ msgstr ""
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page/bundle.js:3
-msgid "Advanced Solutions to build any kind of site, store or blog"
-msgstr ""
-
-#: build/addnew/bundle.js:1
-#: build/solutions-page/bundle.js:3
 msgid "Discover Now"
 msgstr ""
 
@@ -218,4 +213,9 @@ msgstr ""
 
 #: build/solutions-page/bundle.js:3
 msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
+msgstr ""
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "eCommerce Add-Ons to build any kind of site, store or blog"
 msgstr ""
