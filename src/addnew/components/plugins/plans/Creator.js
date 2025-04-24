@@ -1,15 +1,18 @@
 import { getPlugins } from '../../utils';
 import { Plugin } from '../plugin';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { Section } from '../../section';
 import { UpgradeBanner } from '../../../../common/components/upgrade-banner';
+import { getActiveSolution } from 'common/utils';
 
 export const Creator = ( { plan } ) => {
 	const entitlements = getPlugins( { includePremium: false } );
 	const premium = getPlugins( { includeEntitlements: false } );
-	const title = __(
-		'Premium tools available in your Creator Solution',
-		'wp-module-solutions'
+	const currentSolution = getActiveSolution();
+	const title = sprintf(
+		/* translators: %s: Add-on Name */
+		__( 'Powerful Plugins Included in your %s', 'wp-module-solutions' ),
+		currentSolution.name
 	);
 	const titleUpgrade = __(
 		'Upgrade to save & unlock 30 advanced tools',
@@ -28,7 +31,7 @@ export const Creator = ( { plan } ) => {
 					rel="noreferrer"
 				>
 					{ __(
-						'Learn more about our Solutions',
+						'Learn more about our eCommerce Add-Ons',
 						'wp-module-solutions'
 					) }
 				</a>
@@ -80,7 +83,7 @@ export const Creator = ( { plan } ) => {
 						rel="noreferrer"
 					>
 						{ __(
-							'Learn more about our Solutions',
+							'Learn more about our eCommerce Add-Ons',
 							'wp-module-solutions'
 						) }
 					</a>
@@ -96,8 +99,7 @@ export const Creator = ( { plan } ) => {
 					>
 						<p>
 							{ __(
-								'A solution designed to help shop owners to boost their online sales with a massive bundle \n' +
-									'of premium tools (value $3,500)',
+								'A solution designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)',
 								'wp-module-solutions'
 							) }
 						</p>

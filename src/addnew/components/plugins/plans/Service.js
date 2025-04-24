@@ -1,15 +1,18 @@
 import { getPlugins } from '../../utils';
 import { Plugin } from '../plugin';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { Section } from '../../section';
 import { UpgradeBanner } from '../../../../common/components/upgrade-banner';
+import { getActiveSolution } from 'common/utils';
 
 export const Service = ( { plan } ) => {
 	const entitlements = getPlugins( { includePremium: false } );
 	const premium = getPlugins( { includeEntitlements: false } );
-	const title = __(
-		'Premium tools available in your Services Solution',
-		'wp-module-solutions'
+	const currentSolution = getActiveSolution();
+	const title = sprintf(
+		/* translators: %s: Add-on Name */
+		__( 'Powerful Plugins Included in your %s', 'wp-module-solutions' ),
+		currentSolution.name
 	);
 	const titleUpgrade = __(
 		'Upgrade to save & unlock more advanced tools',
@@ -28,7 +31,7 @@ export const Service = ( { plan } ) => {
 					rel="noreferrer"
 				>
 					{ __(
-						'Learn more about our Solutions',
+						'Learn more about our eCommerce Add-Ons',
 						'wp-module-solutions'
 					) }
 				</a>
@@ -68,11 +71,10 @@ export const Service = ( { plan } ) => {
 				</span>
 				<span>
 					<strong>
-						{ ' ' }
 						{ __(
 							'No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit — packed with everything you need at an unbeatable price!',
 							'wp-module-solutions'
-						) }{ ' ' }
+						) }
 					</strong>
 					<a
 						href="https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin"
@@ -80,7 +82,7 @@ export const Service = ( { plan } ) => {
 						rel="noreferrer"
 					>
 						{ __(
-							'Learn more about our Solutions',
+							'Learn more about our eCommerce Add-Ons',
 							'wp-module-solutions'
 						) }
 					</a>
@@ -96,8 +98,7 @@ export const Service = ( { plan } ) => {
 					>
 						<p>
 							{ __(
-								'A solution designed to help shop owners to boost their online sales with a massive bundle \n' +
-									'of premium tools (value $3,500)',
+								'Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)',
 								'wp-module-solutions'
 							) }
 						</p>
