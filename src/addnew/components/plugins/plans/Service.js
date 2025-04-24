@@ -53,6 +53,7 @@ export const Service = ( { plan } ) => {
 								ctaUrl={ plugin?.cta?.url }
 								ctaLabel={ plugin?.cta?.text }
 								download={ plugin?.download }
+								basename={ plugin?.basename }
 							/>
 						) ) }
 					</div>

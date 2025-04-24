@@ -29,6 +29,7 @@ export const Plugin = ( {
 	ctaUrl,
 	ctaLabel,
 	download,
+	basename,
 } ) => {
 	const classes = [
 		'plugin-card',
@@ -88,8 +89,10 @@ export const Plugin = ( {
 										? download
 										: null
 								}
-								data-nfd-installer-plugin-activate={
-									! isBlock && ! ctbId ? 'true' : null
+								data-nfd-installer-plugin-basename={
+									! isBlock && ! isActive && ! ctbId
+										? basename
+										: null
 								}
 								data-nfd-installer-plugin-name={
 									! isBlock && ! isActive && ! ctbId
@@ -116,7 +119,7 @@ export const Plugin = ( {
 								target={
 									! isBlock
 										? ctbId
-											? "_blank"
+											? '_blank'
 											: null
 										: null
 								}

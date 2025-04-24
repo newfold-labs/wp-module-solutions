@@ -53,6 +53,7 @@ export const Creator = ( { plan } ) => {
 								ctaUrl={ plugin?.cta?.url }
 								ctaLabel={ plugin?.cta?.text }
 								download={ plugin?.download }
+								basename={ plugin?.basename }
 							/>
 						) ) }
 					</div>
