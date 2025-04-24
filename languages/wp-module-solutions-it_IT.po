@@ -69,17 +69,17 @@ msgstr "Aggiungi un nuovo plugin"
 #: build/addnew/bundle.js:1
 #: build/solutions-page/bundle.js:3
 msgid "Get it"
-msgstr ""
+msgstr "Ottienilo"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page/bundle.js:3
 msgid "Upgrade to unlock all features"
-msgstr ""
+msgstr "Aggiorna per sbloccare tutte le funzionalità"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page/bundle.js:3
 msgid "Discover Now"
-msgstr ""
+msgstr "Scopri Ora"
 
 #. translators: %s: Add-on Name
 #: build/addnew/bundle.js:2
@@ -87,140 +87,140 @@ msgstr ""
 #: build/addnew/bundle.js:4
 #: build/solutions-page/bundle.js:2
 msgid "Powerful Plugins Included in your %s"
-msgstr ""
+msgstr "Potenti Plugin Inclusi nel tuo %s"
 
 #: build/addnew/bundle.js:2
 msgid "Upgrade to save & unlock 30 advanced tools"
-msgstr ""
+msgstr "Aggiorna per risparmiare e sbloccare 30 strumenti avanzati"
 
 #: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
 #: build/addnew/bundle.js:4
 #: build/solutions-page/bundle.js:2
 msgid "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience."
-msgstr ""
+msgstr "Scopri l'elenco completo delle funzionalità avanzate fornite dal tuo provider di hosting Bluehost, progettate per offrire un valore impareggiabile e migliorare la tua esperienza online."
 
 #: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
 #: build/addnew/bundle.js:4
 msgid "Learn more about our eCommerce Add-Ons"
-msgstr ""
+msgstr "Scopri di più sui nostri Add-On per eCommerce"
 
 #: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
 #: build/addnew/bundle.js:4
 msgid "Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience."
-msgstr ""
+msgstr "Potenzia il tuo negozio online con strumenti potenti progettati per aumentare le vendite, semplificare i pagamenti, gestire l'inventario e migliorare l'esperienza del cliente."
 
 #: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
 msgid "No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit — packed with everything you need at an unbeatable price!"
-msgstr ""
+msgstr "Non importa cosa vendi o come gestisci il tuo negozio, questo è il toolkit e-commerce definitivo — con tutto ciò di cui hai bisogno a un prezzo imbattibile!"
 
 #: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
 #: build/addnew/bundle.js:4
 #: build/solutions-page/bundle.js:3
 msgid "The #1 Bundle of Commerce Tools"
-msgstr ""
+msgstr "Il Bundle #1 di Strumenti per il Commercio"
 
 #: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
 #: build/addnew/bundle.js:4
 msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)"
-msgstr ""
+msgstr "Add-on progettati per aiutare i proprietari dei negozi ad aumentare le loro vendite online con un enorme pacchetto di strumenti premium (valore 3.200 €)"
 
 #: build/addnew/bundle.js:3
 msgid "Upgrade to save & unlock more advanced tools"
-msgstr ""
+msgstr "Aggiorna per risparmiare e sbloccare più strumenti avanzati"
 
 #: build/addnew/bundle.js:4
 msgid "Premium tools available in our eCommerce Add-Ons"
-msgstr ""
+msgstr "Strumenti premium disponibili nei nostri Add-On per eCommerce"
 
 #: build/solutions-page/bundle.js:2
 msgid "Premium tools available in eCommerce Add-Ons"
-msgstr ""
+msgstr "Strumenti premium disponibili negli Add-On per eCommerce"
 
 #: build/solutions-page/bundle.js:2
 msgid "Learn more about eCommerce Add-Ons"
-msgstr ""
+msgstr "Scopri di più sugli Add-On per eCommerce"
 
 #: build/solutions-page/bundle.js:2
 msgid "Most Popular"
-msgstr ""
+msgstr "Più Popolari"
 
 #: build/solutions-page/bundle.js:2
 msgid "Premium Tools"
-msgstr ""
+msgstr "Strumenti Premium"
 
 #: build/solutions-page/bundle.js:2
 msgid "All"
-msgstr ""
+msgstr "Tutti"
 
 #: build/solutions-page/bundle.js:2
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
 #: build/solutions-page/bundle.js:2
 msgid "Categories"
-msgstr ""
+msgstr "Categorie"
 
 #. translators: %s: Search term
 #: build/solutions-page/bundle.js:3
 msgid "No matching tools for '%s'"
-msgstr ""
+msgstr "Nessuno strumento corrispondente per '%s'"
 
 #: build/solutions-page/bundle.js:3
 msgid "Check the spelling or try another keyword"
-msgstr ""
+msgstr "Controlla l'ortografia o prova un'altra parola chiave"
 
 #: build/solutions-page/bundle.js:3
 msgid "Return to the tools list"
-msgstr ""
+msgstr "Torna alla lista degli strumenti"
 
 #: build/solutions-page/bundle.js:3
 msgid "Popular"
-msgstr ""
+msgstr "Popolari"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page/bundle.js:3
 msgid "Premium"
-msgstr ""
+msgstr "Premium"
 
 #: build/solutions-page/bundle.js:3
 msgid "Upgrade to Save"
-msgstr ""
+msgstr "Aggiorna per Risparmiare"
 
 #: build/solutions-page/bundle.js:3
 msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools"
-msgstr ""
+msgstr "Add-On progettati per aiutare i proprietari di negozi a incrementare le vendite online con un enorme bundle di strumenti premium"
 
 #: build/solutions-page/bundle.js:3
 msgid "Some features included:"
-msgstr ""
+msgstr "Alcune funzionalità incluse:"
 
 #: build/solutions-page/bundle.js:3
 msgid "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc."
-msgstr ""
+msgstr "Boost Recensioni, Prenotazioni e Appuntamenti, Social Login, Filtri Prodotti, ecc."
 
 #: build/solutions-page/bundle.js:3
 msgid "Bundle of 30 features for a value of $3,500"
-msgstr ""
+msgstr "Pacchetto di 30 funzionalità per un valore di 3.200 €"
 
 #: build/solutions-page/bundle.js:3
 msgid "/month"
-msgstr ""
+msgstr "/mese"
 
 #: build/solutions-page/bundle.js:3
 msgid "Discover"
-msgstr ""
+msgstr "Scopri"
 
 #: build/solutions-page/bundle.js:3
 msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
-msgstr ""
+msgstr "Inizia con un piano adatto ai tuoi obiettivi e sblocca fino a 3.200 € in plugin premium Bluehost e Yoast."
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page/bundle.js:3
 msgid "Add-Ons to build any kind of site, store or blog"
-msgstr ""
+msgstr "Add-On per costruire qualsiasi tipo di sito, negozio o blog"
