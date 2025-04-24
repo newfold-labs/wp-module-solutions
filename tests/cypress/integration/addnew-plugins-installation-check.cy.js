@@ -42,8 +42,8 @@ describe(
 			// test entitlement included in solution with PLS attributes
 			cy.get( '.plugin-card-advanced-reviews .button' ).should(
 				'have.attr',
-				'data-nfd-installer-plugin-activate',
-				'true'
+				'data-nfd-installer-plugin-basename',
+				'yith-woocommerce-advanced-reviews-premium/init.php'
 			);
 			cy.get( '.plugin-card-advanced-reviews .button' ).should(
 				'have.attr',
@@ -147,7 +147,7 @@ describe(
 			cy.get( '.plugin-card-advanced-reviews .button' ).should(
 				'have.attr',
 				'href',
-				'#'
+				'#null'
 			);
 			cy.get( '.plugin-card-advanced-reviews .button' ).should(
 				'not.have.attr',

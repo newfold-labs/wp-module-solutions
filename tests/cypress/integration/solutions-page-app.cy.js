@@ -20,8 +20,8 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 	it( 'Solutions page displays upgrade for those with no solution', () => {
 		cy.visit( '/wp-admin/admin.php?page=solutions' );
 
-		cy.get( '#nfd-solutions-app' )
-			.contains( 'h1', 'Premium tools available in our Solutions' )
+		cy.get( '#nfd-solutions-app h1' )
+			.contains( 'Premium tools available' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 
@@ -36,8 +36,8 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		setSolution( 'none' );
 		cy.visit( '/wp-admin/admin.php?page=solutions&solution=none' );
 
-		cy.get( '#nfd-solutions-app' )
-			.contains( 'h1', 'Premium tools available in our Solutions' )
+		cy.get( '#nfd-solutions-app h1' )
+			.contains( 'Premium tools available' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 
@@ -68,8 +68,8 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		setSolution( 'creator' );
 		cy.visit( '/wp-admin/admin.php?page=solutions&solution=creator' );
 
-		cy.get( '#nfd-solutions-app' )
-			.contains( 'h1', 'Content Creator' )
+		cy.get( '#nfd-solutions-app h1' )
+			.contains( 'Powerful Plugins Included' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 
@@ -85,8 +85,8 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		);
 		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
 			'have.attr',
-			'data-nfd-installer-plugin-activate',
-			'true'
+			'data-nfd-installer-plugin-basename',
+			'wordpress-seo/wp-seo.php'
 		);
 		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
 			'have.attr',
@@ -108,7 +108,7 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		// test entitlement included in solution with PLS attributes
 		cy.get(
 			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
-		).should( 'not.have.attr', 'data-nfd-installer-plugin-activate' );
+		).should( 'not.have.attr', 'data-nfd-installer-plugin-basename' );
 		cy.get(
 			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
 		).should( 'not.have.attr', 'data-nfd-installer-plugin-name' );
@@ -148,7 +148,7 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		// test premium tool listed with only ctb attributes
 		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
 			'not.have.attr',
-			'data-nfd-installer-plugin-activate'
+			'data-nfd-installer-plugin-basename'
 		);
 		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
 			'not.have.attr',
@@ -188,8 +188,8 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		setSolution( 'service' );
 		cy.visit( '/wp-admin/admin.php?page=solutions&solution=service' );
 
-		cy.get( '#nfd-solutions-app' )
-			.contains( 'h1', 'Services solution' )
+		cy.get( '#nfd-solutions-app h1' )
+			.contains( 'Powerful Plugins Included' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 
@@ -205,8 +205,8 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		);
 		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
 			'have.attr',
-			'data-nfd-installer-plugin-activate',
-			'true'
+			'data-nfd-installer-plugin-basename',
+			'wordpress-seo/wp-seo.php'
 		);
 		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
 			'have.attr',
@@ -228,7 +228,11 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		// test entitlement included in solution with PLS attributes
 		cy.get(
 			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
-		).should( 'have.attr', 'data-nfd-installer-plugin-activate', 'true' );
+		).should(
+			'have.attr',
+			'data-nfd-installer-plugin-basename',
+			'yith-woocommerce-advanced-reviews-premium/init.php'
+		);
 		cy.get(
 			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
 		).should(
@@ -271,7 +275,7 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		// test premium tool listed with only ctb attributes
 		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
 			'not.have.attr',
-			'data-nfd-installer-plugin-activate'
+			'data-nfd-installer-plugin-basename'
 		);
 		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
 			'not.have.attr',
@@ -311,8 +315,8 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		setSolution( 'commerce' );
 		cy.visit( '/wp-admin/admin.php?page=solutions&solution=commerce' );
 
-		cy.get( '#nfd-solutions-app' )
-			.contains( 'h1', 'Commerce solution' )
+		cy.get( '#nfd-solutions-app h1' )
+			.contains( 'Powerful Plugins Included' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 
@@ -328,8 +332,8 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		);
 		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
 			'have.attr',
-			'data-nfd-installer-plugin-activate',
-			'true'
+			'data-nfd-installer-plugin-basename',
+			'wordpress-seo/wp-seo.php'
 		);
 		cy.get( '.nfd-solutions-tool-card-yoast-seo .nfd-button' ).should(
 			'have.attr',
@@ -351,7 +355,11 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		// test entitlement included in solution with PLS attributes
 		cy.get(
 			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
-		).should( 'have.attr', 'data-nfd-installer-plugin-activate', 'true' );
+		).should(
+			'have.attr',
+			'data-nfd-installer-plugin-basename',
+			'yith-woocommerce-advanced-reviews-premium/init.php'
+		);
 		cy.get(
 			'.nfd-solutions-tool-card-advanced-reviews .nfd-button'
 		).should(
@@ -393,7 +401,11 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		// test entitlement included in solution with PLS attributes
 		cy.get(
 			'.nfd-solutions-tool-card-bookings-appointments .nfd-button'
-		).should( 'have.attr', 'data-nfd-installer-plugin-activate', 'true' );
+		).should(
+			'have.attr',
+			'data-nfd-installer-plugin-basename',
+			'yith-woocommerce-booking-premium/init.php'
+		);
 		cy.get(
 			'.nfd-solutions-tool-card-bookings-appointments .nfd-button'
 		).should(
@@ -436,7 +448,7 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 		// test premium tool listed with only ctb attributes
 		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
 			'not.have.attr',
-			'data-nfd-installer-plugin-activate'
+			'data-nfd-installer-plugin-basename'
 		);
 		cy.get( '.nfd-solutions-tool-card-yoast-premium .nfd-button' ).should(
 			'not.have.attr',
