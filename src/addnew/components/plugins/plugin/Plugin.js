@@ -114,7 +114,7 @@ export const Plugin = ( {
 										? ctbId
 											? ctbHref
 											: renderCTAUrl( ctaUrl )
-										: '#'
+										: '#null'
 								}
 								target={
 									! isBlock

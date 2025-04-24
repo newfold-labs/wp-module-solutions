@@ -19,26 +19,49 @@ export const UpgradeCard = () => {
 		<Card className={ classNames( classes ) }>
 			<Card.Content>
 				<div className="nfd-upgrade-card__badge nfd-flex nfd-items-center nfd-gap-2 nfd-text-[--primary-color]">
-					<span className={ 'nfd-w-[24px] nfd-bg-[--primary-color] nfd-rounded-lg nfd-p-1' }>
-					<BoltIcon className={ 'nfd-text-white' }/>
+					<span
+						className={
+							'nfd-w-[24px] nfd-bg-[--primary-color] nfd-rounded-lg nfd-p-1'
+						}
+					>
+						<BoltIcon className={ 'nfd-text-white' } />
 					</span>
 					{ __( 'Upgrade to Save', 'wp-module-solutions' ) }
 				</div>
 				<Title as="h2" className="nfd-font-bold nfd-pt-3 nfd-pb-4">
-					{ __( 'The #1 Bundle of Commerce Tools', 'wp-module-solutions' ) }
+					{ __(
+						'The #1 Bundle of Commerce Tools',
+						'wp-module-solutions'
+					) }
 				</Title>
 				<p className="nfd-flex nfd-flex-col nfd-gap-2">
 					<span>
-						{ __( 'A solution designed to help shop owners to boost their online sales with a massive bundle of premium tools', 'wp-module-solutions' ) }
+						{ __(
+							'Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools',
+							'wp-module-solutions'
+						) }
 					</span>
 					<span className="nfd-flex nfd-flex-col">
-						<span className={ 'nfd-font-bold nfd-text-[--primary-color]' }>
-							{ __( 'Some features included:', 'wp-module-solutions' ) }
+						<span
+							className={
+								'nfd-font-bold nfd-text-[--primary-color]'
+							}
+						>
+							{ __(
+								'Some features included:',
+								'wp-module-solutions'
+							) }
 						</span>
-						{ __( 'Boost Reviews, Booking & Appointments, Social Login, Product filters, etc.', 'wp-module-solutions' ) }
+						{ __(
+							'Boost Reviews, Booking & Appointments, Social Login, Product filters, etc.',
+							'wp-module-solutions'
+						) }
 						<span className={ 'nfd-font-bold nfd-underline' }>
-						{ __( 'Bundle of 30 features for a value of $3,500', 'wp-module-solutions' ) }
-					</span>
+							{ __(
+								'Bundle of 30 features for a value of $3,500',
+								'wp-module-solutions'
+							) }
+						</span>
 					</span>
 				</p>
 			</Card.Content>
@@ -51,13 +74,10 @@ export const UpgradeCard = () => {
 					</span>
 					{ __( '/month', 'wp-module-solutions' ) }
 				</div>
-				<Button
-					as={ 'a' }
-				>
+				<Button as={ 'a' }>
 					{ __( 'Discover', 'wp-module-solutions' ) }
 				</Button>
 			</Card.Footer>
 		</Card>
 	);
-
 };
