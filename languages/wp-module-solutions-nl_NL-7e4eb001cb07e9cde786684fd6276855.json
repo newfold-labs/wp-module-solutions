@@ -1,0 +1,96 @@
+{
+    "translation-revision-date": "2025-02-19 14:32",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "build\/solutions-page\/bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Get it": [
+                "Verkrijgen"
+            ],
+            "Upgrade to unlock all features": [
+                "Upgrade om alle functies te ontgrendelen"
+            ],
+            "Discover Now": [
+                "Ontdek nu"
+            ],
+            "Powerful Plugins Included in your %s": [
+                "Krachtige plugins inbegrepen bij je %s"
+            ],
+            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
+                "Ontdek de complete lijst met geavanceerde functies van je hostingprovider Bluehost, ontworpen om onge\u00ebvenaarde waarde te leveren en je online ervaring te verbeteren."
+            ],
+            "The #1 Bundle of Commerce Tools": [
+                "Het #1 pakket van commerci\u00eble tools"
+            ],
+            "Premium tools available in eCommerce Add-Ons": [
+                "Premium tools beschikbaar in eCommerce Add-Ons"
+            ],
+            "Learn more about eCommerce Add-Ons": [
+                "Meer informatie over eCommerce Add-Ons"
+            ],
+            "Most Popular": [
+                "Meest populair"
+            ],
+            "Premium Tools": [
+                "Premium Tools"
+            ],
+            "All": [
+                "Alles"
+            ],
+            "Search": [
+                "Zoeken"
+            ],
+            "Categories": [
+                "Categorie\u00ebn"
+            ],
+            "No matching tools for '%s'": [
+                "Geen overeenkomende tools voor '%s'"
+            ],
+            "Check the spelling or try another keyword": [
+                "Controleer de spelling of probeer een ander zoekwoord"
+            ],
+            "Return to the tools list": [
+                "Terug naar de toolslijst"
+            ],
+            "Popular": [
+                "Populair"
+            ],
+            "Premium": [
+                "Premie"
+            ],
+            "Upgrade to Save": [
+                "Upgrade om te besparen"
+            ],
+            "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools": [
+                "Add-ons ontworpen om winkeleigenaren te helpen hun online verkoop te verhogen met een groot pakket premium tools"
+            ],
+            "Some features included:": [
+                "Enkele inbegrepen functies:"
+            ],
+            "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc.": [
+                "Boost Reviews, Boekingen & Afspraken, Social Login, Productfilters, etc."
+            ],
+            "Bundle of 30 features for a value of $3,500": [
+                "Pakket van 30 functies met een waarde van \u20ac3.200"
+            ],
+            "\/month": [
+                "\/maand"
+            ],
+            "Discover": [
+                "Ontdekken"
+            ],
+            "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
+                "Begin met een plan dat bij je doelen past en ontgrendel tot \u20ac3.200 aan premium Bluehost- en Yoast-plugins."
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Add-ons om elk type website, winkel of blog te bouwen"
+            ]
+        }
+    }
+}

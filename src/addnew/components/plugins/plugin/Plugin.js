@@ -8,7 +8,7 @@ import { LockClosedIcon } from '@heroicons/react/20/solid';
 
 const PremiumBadge = () => (
 	<Badge
-		label={ __( 'PREMIUM', 'wp-module-solutions' ) }
+		label={ __( 'Premium', 'wp-module-solutions' ) }
 		rounded={ true }
 		className={ 'nfd-mb-2 nfd-solutions-badge--premium' }
 	/>
@@ -29,6 +29,7 @@ export const Plugin = ( {
 	ctaUrl,
 	ctaLabel,
 	download,
+	basename,
 } ) => {
 	const classes = [
 		'plugin-card',
@@ -88,8 +89,10 @@ export const Plugin = ( {
 										? download
 										: null
 								}
-								data-nfd-installer-plugin-activate={
-									! isBlock && ! ctbId ? 'true' : null
+								data-nfd-installer-plugin-basename={
+									! isBlock && ! isActive && ! ctbId
+										? basename
+										: null
 								}
 								data-nfd-installer-plugin-name={
 									! isBlock && ! isActive && ! ctbId
@@ -111,12 +114,12 @@ export const Plugin = ( {
 										? ctbId
 											? ctbHref
 											: renderCTAUrl( ctaUrl )
-										: '#'
+										: '#null'
 								}
 								target={
 									! isBlock
 										? ctbId
-											? "_blank"
+											? '_blank'
 											: null
 										: null
 								}

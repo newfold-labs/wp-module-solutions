@@ -19,7 +19,7 @@ describe(
 			clearSolutionTransient();
 		} );
 
-		it( 'The Bluehost brand logo is showed on Bluehost solutions tab', () => {
+		it( 'The Bluehost brand logo is shown on Bluehost solutions tab', () => {
 			setSolution( 'none' );
 			cy.visit(
 				'/wp-admin/plugin-install.php?tab=nfd_solutions&solution=none'
@@ -50,11 +50,12 @@ describe(
 				);
 			} );
 
-			cy.get( '#nfd-add-new-app' )
-				.contains( 'h1', 'Premium tools available in our Solutions' )
+			cy.get( '#nfd-add-new-app h1' )
+				.contains( 'Premium tools available' )
 				.scrollIntoView()
 				.should( 'be.visible' );
 		} );
+
 		it( 'My Solution page is rendered with Commerce solution', () => {
 			setSolution( 'commerce' );
 			cy.visit(
@@ -67,11 +68,12 @@ describe(
 				);
 			} );
 
-			cy.get( '#nfd-add-new-app' )
-				.contains( 'h1', 'Premium tools available in your Commerce' )
+			cy.get( '#nfd-add-new-app h1' )
+				.contains( 'Powerful Plugins Included' )
 				.scrollIntoView()
 				.should( 'be.visible' );
 		} );
+
 		it( 'My Solution page is rendered with Creator solution', () => {
 			setSolution( 'creator' );
 			cy.visit(
@@ -84,8 +86,8 @@ describe(
 				);
 			} );
 
-			cy.get( '#nfd-add-new-app' )
-				.contains( 'h1', 'Premium tools available in your Creator' )
+			cy.get( '#nfd-add-new-app h1' )
+				.contains( 'Powerful Plugins Included' )
 				.scrollIntoView()
 				.should( 'be.visible' );
 
@@ -94,6 +96,7 @@ describe(
 				.scrollIntoView()
 				.should( 'be.visible' );
 		} );
+
 		it( 'My Solution page is rendered with Service solution', () => {
 			setSolution( 'service' );
 			cy.visit(
@@ -106,8 +109,8 @@ describe(
 				);
 			} );
 
-			cy.get( '#nfd-add-new-app' )
-				.contains( 'h1', 'Premium tools available in your Service' )
+			cy.get( '#nfd-add-new-app h1' )
+				.contains( 'Powerful Plugins Included' )
 				.scrollIntoView()
 				.should( 'be.visible' );
 

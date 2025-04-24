@@ -13,21 +13,177 @@ msgstr ""
 "X-Domain: wp-module-solutions\n"
 
 #: bootstrap.php:15
+#: includes/Solutions.php:80
+#: includes/Solutions.php:190
 #: components/entitlements/index.js:8
 msgid "Solutions"
 msgstr ""
 
-#: includes/EntitlementsApi.php:163
+#: includes/EntitlementsApi.php:171
 msgid "Activated the plugin successfully!"
 msgstr ""
 
-#: includes/EntitlementsApi.php:170
+#: includes/EntitlementsApi.php:178
 msgid "Please send valid plugin"
 msgstr ""
 
-#: includes/Solutions.php:102
-#: components/entitlements/index.js:25
-msgid "My Plugins & Tools"
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "Premium"
+msgstr ""
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "Get it"
+msgstr ""
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "Upgrade to unlock all features"
+msgstr ""
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "Add-Ons to build any kind of site, store or blog"
+msgstr ""
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "Discover Now"
+msgstr ""
+
+#. translators: %s: Add-on Name
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+#: build/solutions-page/bundle.js:2
+msgid "Powerful Plugins Included in your %s"
+msgstr ""
+
+#: build/addnew/bundle.js:2
+msgid "Upgrade to save & unlock 30 advanced tools"
+msgstr ""
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+#: build/solutions-page/bundle.js:2
+msgid "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience."
+msgstr ""
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+msgid "Learn more about our eCommerce Add-Ons"
+msgstr ""
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+msgid "Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience."
+msgstr ""
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+msgid "No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit — packed with everything you need at an unbeatable price!"
+msgstr ""
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+#: build/solutions-page/bundle.js:3
+msgid "The #1 Bundle of Commerce Tools"
+msgstr ""
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)"
+msgstr ""
+
+#: build/addnew/bundle.js:3
+msgid "Upgrade to save & unlock more advanced tools"
+msgstr ""
+
+#: build/addnew/bundle.js:4
+msgid "Premium tools available in our eCommerce Add-Ons"
+msgstr ""
+
+#: build/solutions-page/bundle.js:2
+msgid "Premium tools available in eCommerce Add-Ons"
+msgstr ""
+
+#: build/solutions-page/bundle.js:2
+msgid "Learn more about eCommerce Add-Ons"
+msgstr ""
+
+#: build/solutions-page/bundle.js:2
+msgid "Most Popular"
+msgstr ""
+
+#: build/solutions-page/bundle.js:2
+msgid "Premium Tools"
+msgstr ""
+
+#: build/solutions-page/bundle.js:2
+msgid "All"
+msgstr ""
+
+#: build/solutions-page/bundle.js:2
+msgid "Search"
+msgstr ""
+
+#: build/solutions-page/bundle.js:2
+msgid "Categories"
+msgstr ""
+
+#. translators: %s: Search term
+#: build/solutions-page/bundle.js:3
+msgid "No matching tools for '%s'"
+msgstr ""
+
+#: build/solutions-page/bundle.js:3
+msgid "Check the spelling or try another keyword"
+msgstr ""
+
+#: build/solutions-page/bundle.js:3
+msgid "Return to the tools list"
+msgstr ""
+
+#: build/solutions-page/bundle.js:3
+msgid "Popular"
+msgstr ""
+
+#: build/solutions-page/bundle.js:3
+msgid "Upgrade to Save"
+msgstr ""
+
+#: build/solutions-page/bundle.js:3
+msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools"
+msgstr ""
+
+#: build/solutions-page/bundle.js:3
+msgid "Some features included:"
+msgstr ""
+
+#: build/solutions-page/bundle.js:3
+msgid "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc."
+msgstr ""
+
+#: build/solutions-page/bundle.js:3
+msgid "Bundle of 30 features for a value of $3,500"
+msgstr ""
+
+#: build/solutions-page/bundle.js:3
+msgid "/month"
+msgstr ""
+
+#: build/solutions-page/bundle.js:3
+msgid "Discover"
+msgstr ""
+
+#: build/solutions-page/bundle.js:3
+msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
 msgstr ""
 
 #: components/entitlements/index.js:9
@@ -56,4 +212,8 @@ msgstr ""
 
 #: components/entitlements/index.js:24
 msgid "Add a New Plugin"
+msgstr ""
+
+#: components/entitlements/index.js:25
+msgid "My Plugins & Tools"
 msgstr ""

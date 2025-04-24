@@ -1,13 +1,16 @@
 import { getPlugins } from '../../utils';
 import { Plugin } from '../plugin';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { Section } from '../../section';
+import { getActiveSolution } from 'common/utils';
 
 export const Commerce = ( { plan } ) => {
 	const plugins = getPlugins( { sortByPlan: true } );
-	const title = __(
-		'Premium tools available in your Commerce Solution',
-		'wp-module-solutions'
+	const currentSolution = getActiveSolution();
+	const title = sprintf(
+		/* translators: %s: Add-on Name */
+		__( 'Powerful Plugins Included in your %s', 'wp-module-solutions' ),
+		currentSolution.name
 	);
 	return (
 		<>
@@ -34,6 +37,7 @@ export const Commerce = ( { plan } ) => {
 								plsProvider={ plugin?.plsProviderName }
 								plsSlug={ plugin?.plsSlug }
 								download={ plugin?.download }
+								basename={ plugin?.basename }
 								ctbId={ plugin?.ctbId }
 								ctbHref={ plugin?.ctbHref }
 								ctaUrl={ plugin?.cta?.url }

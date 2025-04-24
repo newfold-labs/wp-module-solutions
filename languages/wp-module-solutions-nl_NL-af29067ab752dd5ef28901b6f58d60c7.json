@@ -1,0 +1,60 @@
+{
+    "translation-revision-date": "2025-02-19 14:32",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "build\/addnew\/bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Get it": [
+                "Verkrijgen"
+            ],
+            "Upgrade to unlock all features": [
+                "Upgrade om alle functies te ontgrendelen"
+            ],
+            "Discover Now": [
+                "Ontdek nu"
+            ],
+            "Powerful Plugins Included in your %s": [
+                "Krachtige plugins inbegrepen bij je %s"
+            ],
+            "Upgrade to save & unlock 30 advanced tools": [
+                "Upgrade om 30 geavanceerde tools te ontgrendelen en te besparen"
+            ],
+            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
+                "Ontdek de complete lijst met geavanceerde functies van je hostingprovider Bluehost, ontworpen om onge\u00ebvenaarde waarde te leveren en je online ervaring te verbeteren."
+            ],
+            "Learn more about our eCommerce Add-Ons": [
+                "Meer informatie over onze eCommerce Add-Ons"
+            ],
+            "Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience.": [
+                "Geef je online winkel een boost met krachtige tools die zijn ontworpen om de verkoop te verhogen, betalingen te stroomlijnen, voorraad te beheren en de klantervaring te verbeteren."
+            ],
+            "No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit \u2014 packed with everything you need at an unbeatable price!": [
+                "Ongeacht wat je verkoopt of hoe je je winkel runt, dit is de ultieme e-commerce toolkit \u2014 met alles wat je nodig hebt voor een onverslaanbare prijs!"
+            ],
+            "The #1 Bundle of Commerce Tools": [
+                "Het #1 pakket van commerci\u00eble tools"
+            ],
+            "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)": [
+                "Add-ons ontworpen om winkeleigenaren te helpen hun online verkoop te verhogen met een groot pakket premium tools (waarde \u20ac3.200)"
+            ],
+            "Upgrade to save & unlock more advanced tools": [
+                "Upgrade om te besparen en meer geavanceerde tools te ontgrendelen"
+            ],
+            "Premium tools available in our eCommerce Add-Ons": [
+                "Premium tools beschikbaar in onze eCommerce Add-Ons"
+            ],
+            "Premium": [
+                "Premie"
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Add-ons om elk type website, winkel of blog te bouwen"
+            ]
+        }
+    }
+}

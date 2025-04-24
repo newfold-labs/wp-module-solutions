@@ -1,0 +1,96 @@
+{
+    "translation-revision-date": "2025-02-19 14:32",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "build\/solutions-page\/bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Get it": [
+                "Obtenerlo"
+            ],
+            "Upgrade to unlock all features": [
+                "Actualiza para desbloquear todas las funciones"
+            ],
+            "Discover Now": [
+                "Descubrir ahora"
+            ],
+            "Powerful Plugins Included in your %s": [
+                "Potentes plugins incluidos en tu %s"
+            ],
+            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
+                "Descubre la lista completa de funciones avanzadas proporcionadas por tu proveedor de alojamiento Bluehost, dise\u00f1adas para ofrecer un valor incomparable y mejorar tu experiencia en l\u00ednea."
+            ],
+            "The #1 Bundle of Commerce Tools": [
+                "El paquete n.\u00ba 1 de herramientas de comercio"
+            ],
+            "Premium tools available in eCommerce Add-Ons": [
+                "Herramientas premium disponibles en los complementos de comercio electr\u00f3nico"
+            ],
+            "Learn more about eCommerce Add-Ons": [
+                "M\u00e1s informaci\u00f3n sobre los complementos de comercio electr\u00f3nico"
+            ],
+            "Most Popular": [
+                "M\u00e1s populares"
+            ],
+            "Premium Tools": [
+                "Herramientas Premium"
+            ],
+            "All": [
+                "Todo"
+            ],
+            "Search": [
+                "Buscar"
+            ],
+            "Categories": [
+                "Categor\u00edas"
+            ],
+            "No matching tools for '%s'": [
+                "No hay herramientas coincidentes para '%s'"
+            ],
+            "Check the spelling or try another keyword": [
+                "Comprueba la ortograf\u00eda o prueba otra palabra clave"
+            ],
+            "Return to the tools list": [
+                "Volver a la lista de herramientas"
+            ],
+            "Popular": [
+                "Popular"
+            ],
+            "Premium": [
+                "Premium"
+            ],
+            "Upgrade to Save": [
+                "Actualiza para ahorrar"
+            ],
+            "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools": [
+                "Complementos dise\u00f1ados para ayudar a los propietarios de tiendas a impulsar sus ventas en l\u00ednea con un paquete masivo de herramientas premium"
+            ],
+            "Some features included:": [
+                "Algunas caracter\u00edsticas incluidas:"
+            ],
+            "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc.": [
+                "Impulso de rese\u00f1as, reservas y citas, inicio de sesi\u00f3n social, filtros de productos, etc."
+            ],
+            "Bundle of 30 features for a value of $3,500": [
+                "Paquete de 30 funciones por un valor de $3.500"
+            ],
+            "\/month": [
+                "\/mes"
+            ],
+            "Discover": [
+                "Descubrir"
+            ],
+            "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
+                "Comienza con un plan que se ajuste a tus objetivos y desbloquea hasta $3.500 en plugins premium de Bluehost y Yoast."
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Complementos para crear cualquier tipo de sitio, tienda o blog"
+            ]
+        }
+    }
+}

@@ -1,0 +1,96 @@
+{
+    "translation-revision-date": "2025-02-13 19:37+0530",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "build\/solutions-page\/bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "en_AU",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Get it": [
+                "Get it"
+            ],
+            "Upgrade to unlock all features": [
+                "Upgrade to unlock all features"
+            ],
+            "Discover Now": [
+                "Discover Now"
+            ],
+            "Powerful Plugins Included in your %s": [
+                "Powerful Plugins Included in your %s"
+            ],
+            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
+                "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience."
+            ],
+            "The #1 Bundle of Commerce Tools": [
+                "The #1 Bundle of Commerce Tools"
+            ],
+            "Premium tools available in eCommerce Add-Ons": [
+                "Premium tools available in eCommerce Add-Ons"
+            ],
+            "Learn more about eCommerce Add-Ons": [
+                "Learn more about eCommerce Add-Ons"
+            ],
+            "Most Popular": [
+                "Most Popular"
+            ],
+            "Premium Tools": [
+                "Premium Tools"
+            ],
+            "All": [
+                "All"
+            ],
+            "Search": [
+                "Search"
+            ],
+            "Categories": [
+                "Categories"
+            ],
+            "No matching tools for '%s'": [
+                "No matching tools for '%s'"
+            ],
+            "Check the spelling or try another keyword": [
+                "Check the spelling or try another keyword"
+            ],
+            "Return to the tools list": [
+                "Return to the tools list"
+            ],
+            "Popular": [
+                "Popular"
+            ],
+            "Premium": [
+                "Premium"
+            ],
+            "Upgrade to Save": [
+                "Upgrade to Save"
+            ],
+            "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools": [
+                "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools"
+            ],
+            "Some features included:": [
+                "Some features included:"
+            ],
+            "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc.": [
+                "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc."
+            ],
+            "Bundle of 30 features for a value of $3,500": [
+                "Bundle of 30 features for a value of $4,900 AUD"
+            ],
+            "\/month": [
+                "\/month"
+            ],
+            "Discover": [
+                "Discover"
+            ],
+            "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
+                "Start with a plan that fits your goals and unlock up to $4,900 AUD in premium Bluehost and Yoast plugins."
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Add-Ons to build any kind of site, store or blog"
+            ]
+        }
+    }
+}

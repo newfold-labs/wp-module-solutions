@@ -1,6 +1,6 @@
 import { EmptySearchIcon } from 'common/components/Icons';
 import { Title } from '@newfold/ui-component-library';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { useFilter } from '../../contexts/FilterContext';
 
 export const EmptyTools = () => {
@@ -10,10 +10,11 @@ export const EmptyTools = () => {
 		<div className="nfd-solutions-tools--empty nfd-flex nfd-flex-col nfd-items-center nfd-justify-center nfd-gap-5 nfd-h-full nfd--mt-12">
 			<EmptySearchIcon className={ 'nfd-solutions-tools--empty__icon' } />
 			<Title as="h2">
-				{ __(
-					"No matching tools for '{search}'",
-					'wp-module-solutions'
-				).replace( '{search}', search ) }
+				{ sprintf(
+					/* translators: %s: Search term */
+					__( "No matching tools for '%s'", 'wp-module-solutions' ),
+					search
+				) }
 			</Title>
 			<p>
 				{ __(
@@ -26,7 +27,7 @@ export const EmptyTools = () => {
 					'nfd-solutions-tools--empty__return-to-list nfd-cursor-pointer visited:nfd-text-inherit'
 				}
 				onClick={ () => updateSearch( null ) }
-				href="#"
+				href="#clear"
 			>
 				{ __( 'Return to the tools list', 'wp-module-solutions' ) }
 			</a>

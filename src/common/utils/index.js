@@ -10,7 +10,7 @@ const wideCards = [
 ];
 
 const upgradeCardData = {
-	id: 'upgrade-card'
+	id: 'upgrade-card',
 };
 
 function layoutTools( tools, columns, hasUpgradeCard ) {
@@ -97,14 +97,14 @@ function sortTools( ent1, ent2 ) {
 }
 
 const getTools = ( {
-					   includePremium = true,
-					   sortForLayout = true,
-					   sortByPriority = true,
-					   hasUpgradeCard = false,
-					   search = null,
-					   category = 'all',
-					   columns = 3,
-				   } ) => {
+	includePremium = true,
+	sortForLayout = true,
+	sortByPriority = true,
+	hasUpgradeCard = false,
+	search = null,
+	category = 'all',
+	columns = 3,
+} ) => {
 	let tools = NewfoldSolutions.entitlements;
 
 	if ( includePremium ) {
@@ -173,7 +173,7 @@ const getActiveSolution = () => {
 		( solution ) => solution?.sku === NewfoldSolutions?.solution
 	);
 };
-const getSolution = solutionSku => {
+const getSolution = ( solutionSku ) => {
 	return NewfoldSolutions?.solutions.find(
 		( solution ) => solution?.sku === solutionSku
 	);
