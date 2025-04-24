@@ -8,7 +8,7 @@ import { LockClosedIcon } from '@heroicons/react/20/solid';
 
 const PremiumBadge = () => (
 	<Badge
-		label={ __( 'PREMIUM', 'wp-module-solutions' ) }
+		label={ __( 'Premium', 'wp-module-solutions' ) }
 		rounded={ true }
 		className={ 'nfd-mb-2 nfd-solutions-badge--premium' }
 	/>

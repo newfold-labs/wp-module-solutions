@@ -99,7 +99,7 @@ export const Creator = ( { plan } ) => {
 					>
 						<p>
 							{ __(
-								'A solution designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)',
+								'Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)',
 								'wp-module-solutions'
 							) }
 						</p>
