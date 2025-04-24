@@ -217,5 +217,5 @@ msgstr ""
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page/bundle.js:3
-msgid "eCommerce Add-Ons to build any kind of site, store or blog"
+msgid "Add-Ons to build any kind of site, store or blog"
 msgstr ""

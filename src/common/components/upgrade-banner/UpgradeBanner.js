@@ -39,7 +39,7 @@ export const UpgradeBanner = ( { className = '', children, title, secondaryTitle
 					{
 						secondaryTitle ||
 						__(
-							'eCommerce Add-Ons to build any kind of site, store or blog',
+							'Add-Ons to build any kind of site, store or blog',
 							'wp-module-solutions'
 						) }
 				</Title>
