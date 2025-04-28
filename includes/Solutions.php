@@ -31,20 +31,19 @@ class Solutions {
 	 * @param Container $container The module container.
 	 */
 	public function __construct( Container $container ) {
-		$hiive = new HiiveConnection();
-
+		$hiive                  = new HiiveConnection();
 		self::$entitlements_api = new EntitlementsApi( $hiive );
-		// We're trying to avoid adding more stuff to this.
-		$this->container = $container;
+		$this->container        = $container;
 		\add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 		\add_action( 'admin_menu', array( __CLASS__, 'add_plugins_solutions_menu_link' ) );
-		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
 		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'solutions_page_assets' ) );
 		\add_action( 'admin_enqueue_scripts', array( $this, 'addnew_plugins_solutions_assets' ) );
 
 		\add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
 		\add_filter( 'install_plugins_tabs', array( $this, 'addnew_brand_solutions_tab' ), 99 );
 		\add_filter( 'install_plugins_nfd_solutions', array( $this, 'render_nfd_solutions_tab' ) );
+
+		new I18nService( $container );
 	}
 
 	/**
@@ -157,25 +156,6 @@ class Solutions {
 				)
 			);
 		}
-	}
-
-	/**
-	 * Load text domain for Module
-	 *
-	 * @return void
-	 */
-	public static function load_text_domain() {
-		\load_plugin_textdomain(
-			'wp-module-solutions',
-			false,
-			NFD_SOLUTIONS_DIR . '/languages'
-		);
-
-		\load_script_textdomain(
-			'nfd_myplugin_solutions_js',
-			'wp-module-solutions',
-			NFD_SOLUTIONS_DIR . '/languages'
-		);
 	}
 
 	/**
