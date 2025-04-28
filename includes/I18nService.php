@@ -45,7 +45,7 @@ class I18nService {
 	 * Enqueue js/script for translations of the solutions app
 	 */
 	public function add_js_i18n() {
-        // solutions page
+		// solutions page
 		wp_set_script_translations(
 			'solutions-page',
 			'wp-module-solutions',
@@ -57,8 +57,8 @@ class I18nService {
 			NFD_SOLUTIONS_DIR . '/languages'
 		);
 
-        // addnew tools page
-        wp_set_script_translations(
+		// addnew tools page
+		wp_set_script_translations(
 			'solutions-add-new-tools',
 			'wp-module-solutions',
 			NFD_SOLUTIONS_DIR . '/languages'
@@ -87,7 +87,7 @@ class I18nService {
 			// Build the file path using the languages directory and the hash of the script.
 			$file = NFD_SOLUTIONS_DIR . '/languages/' . $file_base . '-' . md5( 'build/solutions-page/bundle.js' ) . '.json';
 		}
-        if ( 'solutions-add-new-tools' === $handle ) {
+		if ( 'solutions-add-new-tools' === $handle ) {
 			$file_base = $domain . '-' . determine_locale();
 			// Build the file path using the languages directory and the hash of the script.
 			$file = NFD_SOLUTIONS_DIR . '/languages/' . $file_base . '-' . md5( 'build/addnew/bundle.js' ) . '.json';
