@@ -47,7 +47,7 @@ class EntitlementsApi {
 
 	/**
 	 * Default empty response.
-	 * 
+	 *
 	 * @var array
 	 */
 	public static $default_response = array(

@@ -248,7 +248,7 @@ class Solutions {
 	public static function get_enhanced_entitlment_data() {
 		// get the entitlements data from the API (or from the transient if it exists)
 		$solutions_data = json_decode( \wp_json_encode( self::$entitlements_api->get_entitlements_data()->data ), true );
-		error_log( 'Solutions data: ' . print_r( $solutions_data, true ) );
+
 		// validate response
 		if ( ! is_array( $solutions_data ) || empty( $solutions_data ) ) {
 			return EntitlementsApi::$default_response;
