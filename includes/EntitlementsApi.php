@@ -46,6 +46,21 @@ class EntitlementsApi {
 	private $rest_base;
 
 	/**
+	 * Default empty response.
+	 *
+	 * @var array
+	 */
+	public static $default_response = array(
+		'message'      => 'Not allowed to load entitlements from server.',
+		'solution'     => false,
+		'categories'   => array(),
+		'solutions'    => array(),
+		'entitlements' => array(),
+		'premium'      => array(),
+	);
+
+
+	/**
 	 * EntitilementsApi constructor.
 	 *
 	 * @param HiiveConnection $hiive           Instance of the HiiveConnection class.
@@ -67,7 +82,7 @@ class EntitlementsApi {
 			$this->rest_base,
 			array(
 				'methods'             => \WP_REST_Server::READABLE,
-				'callback'            => array( $this, 'get_items' ),
+				'callback'            => array( $this, 'get_entitlements_data' ),
 				'permission_callback' => function () {
 					return current_user_can( 'manage_options' );
 				},
@@ -103,7 +118,7 @@ class EntitlementsApi {
 	 *
 	 * @return \WP_REST_Response|\WP_Error Response object on success, or WP_Error object on failure.
 	 */
-	public function get_items() {
+	public function get_entitlements_data() {
 		$entitlements = get_transient( self::TRANSIENT );
 
 		if ( false === $entitlements ) {
@@ -113,14 +128,7 @@ class EntitlementsApi {
 			if ( ! HiiveConnection::is_connected() ) {
 				// If no connection, give an empty response.
 				return new WP_REST_Response(
-					array(
-						'message'      => 'Not allowed to load entitlements from server.',
-						'solution'     => null,
-						'categories'   => array(),
-						'solutions'    => array(),
-						'entitlements' => array(),
-						'premium'      => array(),
-					),
+					self::$default_response,
 					200
 				);
 			}

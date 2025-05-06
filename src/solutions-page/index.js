@@ -14,7 +14,7 @@ const App = () => {
 		<Root>
 			<Router>
 				<FilterProvider>
-					<SolutionsPage/>
+					<SolutionsPage />
 				</FilterProvider>
 			</Router>
 		</Root>

@@ -136,23 +136,11 @@ class Solutions {
 			\wp_enqueue_script( 'solutions-page' );
 			\wp_enqueue_style( 'solutions-page-style' );
 
-			$solutions_data = json_decode( \wp_json_encode( self::$entitlements_api->get_items()->data ), true );
-
-			if ( array_key_exists( 'entitlements', $solutions_data ) ) {
-				$solutions_data['entitlements'] = array_map(
-					function ( $entitlement ) {
-						$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
-						return $entitlement;
-					},
-					$solutions_data['entitlements']
-				);
-			}
-
 			\wp_localize_script(
 				'solutions-page',
 				'NewfoldSolutions',
 				array_merge(
-					$solutions_data,
+					self::get_enhanced_entitlment_data(),
 				)
 			);
 		}
@@ -223,23 +211,11 @@ class Solutions {
 			\wp_enqueue_script( 'solutions-add-new-tools' );
 			\wp_enqueue_style( 'solutions-add-new-style' );
 
-			$solutions_data = json_decode( \wp_json_encode( self::$entitlements_api->get_items()->data ), true );
-
-			if ( array_key_exists( 'entitlements', $solutions_data ) ) {
-				$solutions_data['entitlements'] = array_map(
-					function ( $entitlement ) {
-						$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
-						return $entitlement;
-					},
-					$solutions_data['entitlements']
-				);
-			}
-
 			\wp_localize_script(
 				'solutions-add-new-tools',
 				'NewfoldSolutions',
 				array_merge(
-					$solutions_data,
+					self::get_enhanced_entitlment_data(),
 					array(
 						'siteUrl' => get_site_url(),
 					)
@@ -262,5 +238,32 @@ class Solutions {
 
 			\wp_add_inline_script( 'solutions-add-new-tools', $script );
 		}
+	}
+
+	/**
+	 * Enhance the entitlements data with data regarding isActive on site.
+	 *
+	 * @return array The enhanced entitlements data.
+	 */
+	public static function get_enhanced_entitlment_data() {
+		// get the entitlements data from the API (or from the transient if it exists)
+		$solutions_data = json_decode( \wp_json_encode( self::$entitlements_api->get_entitlements_data()->data ), true );
+
+		// validate response
+		if ( ! is_array( $solutions_data ) || empty( $solutions_data ) ) {
+			return EntitlementsApi::$default_response;
+		}
+		// check if entitlements data is present
+		if ( array_key_exists( 'entitlements', $solutions_data ) && is_array( $solutions_data['entitlements'] ) ) {
+			$solutions_data['entitlements'] = array_map(
+				// add isActive key to any entitlement that is active on the site
+				function ( $entitlement ) {
+					$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
+					return $entitlement;
+				},
+				$solutions_data['entitlements']
+			);
+		}
+		return $solutions_data;
 	}
 }
