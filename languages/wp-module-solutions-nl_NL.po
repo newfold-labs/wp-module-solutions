@@ -20,8 +20,8 @@ msgstr ""
 "X-Crowdin-File-ID: 24\n"
 
 #: bootstrap.php:15
-#: includes/Solutions.php:80
-#: includes/Solutions.php:190
+#: includes/Solutions.php:79
+#: includes/Solutions.php:170
 #: components/entitlements/index.js:8
 msgid "Solutions"
 msgstr "Oplossingen"
@@ -224,3 +224,7 @@ msgstr "Begin met een plan dat bij je doelen past en ontgrendel tot €3.200 aan
 #: build/solutions-page/bundle.js:3
 msgid "Add-Ons to build any kind of site, store or blog"
 msgstr "Add-ons om elk type website, winkel of blog te bouwen"
+
+#: includes/Solutions.php:63
+msgid "My Solution"
+msgstr "Mijn oplossing"
