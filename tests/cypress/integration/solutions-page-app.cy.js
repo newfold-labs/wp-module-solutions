@@ -24,45 +24,8 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 			.contains( 'Premium tools available' )
 			.scrollIntoView()
 			.should( 'be.visible' );
-
-		cy.get( '.nfd-solutions-upgrade-banner' )
-			.contains( 'h2', 'Upgrade' )
-			.scrollIntoView()
-			.should( 'be.visible' );
 	} );
-
-	// test solution=none for ctb atts
-	it( 'Solutions page displays upgrade with CTB atts for those with no solution', () => {
-		setSolution( 'none' );
-		cy.visit( '/wp-admin/admin.php?page=solutions&solution=none' );
-
-		cy.get( '#nfd-solutions-app h1' )
-			.contains( 'Premium tools available' )
-			.scrollIntoView()
-			.should( 'be.visible' );
-
-		cy.get( '.nfd-solutions-upgrade-banner' )
-			.contains( 'h2', 'Upgrade' )
-			.scrollIntoView()
-			.should( 'be.visible' );
-
-		cy.get( '#nfd-solutions-app .nfd-solutions-upgrade-banner__button' )
-			.should( 'have.attr', 'href' )
-			.then( ( href ) => {
-				expect( href.includes( '#click-to-buy-WP_SOLUTION_FAMILY' ) ).to
-					.be.true;
-			} );
-		cy.get(
-			'#nfd-solutions-app .nfd-solutions-upgrade-banner__button'
-		).should(
-			'have.attr',
-			'data-ctb-id',
-			'5dc83bdd-9274-4557-a6d7-0b2adbc3919f'
-		);
-		// dont install or click ctb link
-		// tests in ctb module do that already
-	} );
-
+    
 	// test solution=creator for entitlements and premium
 	it( 'Creator solutions page displays tools with proper button atts', () => {
 		setSolution( 'creator' );
