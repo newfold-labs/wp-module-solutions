@@ -60,7 +60,7 @@ class Solutions {
 		\add_submenu_page(
 			'plugins.php',
 			'My Solution',
-			'My Solution',
+			__( 'My Solution', 'wp-module-solutions' ),
 			'manage_options',
 			'plugin-install.php?tab=nfd_solutions',
 			null,
