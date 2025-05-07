@@ -1,23 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: newfold-labswp-module-staging\n"
-"Report-Msgid-Bugs-To: \n"
-"Last-Translator: \n"
-"Language-Team: Spanish\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-module-solutions/issues\n"
+"Last-Translator: Carlos Rodriguez <carlos.rodriguez@newfold.com>\n"
+"Language-Team: Spanish <es@tp.org.es>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-13T10:58:13+00:00\n"
-"PO-Revision-Date: 2025-02-19 14:32\n"
-"Language: es_ES\n"
+"POT-Creation-Date: 2025-02-13T09:55:55+00:00\n"
+"PO-Revision-Date: 2025-05-07 15:16+0100\n"
+"Language: es_MX\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wp-module-solutions\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: newfold-labswp-module-staging\n"
-"X-Crowdin-Project-ID: 764889\n"
-"X-Crowdin-Language: es-ES\n"
-"X-Crowdin-File: wp-module-solutions.pot\n"
-"X-Crowdin-File-ID: 24\n"
 
 #: bootstrap.php:15
 #: includes/Solutions.php:79
@@ -28,48 +23,25 @@ msgstr "Soluciones"
 
 #: includes/EntitlementsApi.php:179
 msgid "Activated the plugin successfully!"
-msgstr "¡Se ha activado el plugin con éxito!"
+msgstr "¡El plugin se activó correctamente!"
 
 #: includes/EntitlementsApi.php:186
 msgid "Please send valid plugin"
-msgstr "Por favor, envíe un plugin válido"
+msgstr "Por favor, envía un plugin válido"
 
-#: components/entitlements/index.js:25
-msgid "My Plugins & Tools"
-msgstr "Mis Plugins y Herramientas"
+#: includes/Solutions.php:63
+msgid "My Solution"
+msgstr "Mi solución"
 
-#: components/entitlements/index.js:9
-msgid "Explore the plugins & tools available with your solution."
-msgstr "Explore los plugins y herramientas disponibles con su solución."
-
-#: components/entitlements/index.js:13
-msgid "Error"
-msgstr "Error"
-
-#: components/entitlements/index.js:14
-msgid "Oops, there was an error loading the plugins & tools, please try again later."
-msgstr "Vaya, hubo un error al cargar los plugins y herramientas, por favor inténtalo de nuevo más tarde."
-
-#: components/entitlements/index.js:18
-msgid "Sorry, no current plugins & tools. Please, try again later."
-msgstr "Lo sentimos, no hay plugins y herramientas actuales. Por favor, inténtalo de nuevo más tarde."
-
-#: components/entitlements/index.js:22
-msgid "Load More"
-msgstr "Cargar más"
-
-#: components/entitlements/index.js:23
-msgid "Loading…"
-msgstr "Cargando…"
-
-#: components/entitlements/index.js:24
-msgid "Add a New Plugin"
-msgstr "Añadir un nuevo Plugin"
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "Premium"
+msgstr "Premium"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page/bundle.js:3
 msgid "Get it"
-msgstr "Obtenerlo"
+msgstr "Obtener"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page/bundle.js:3
@@ -78,8 +50,13 @@ msgstr "Actualiza para desbloquear todas las funciones"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page/bundle.js:3
+msgid "Add-Ons to build any kind of site, store or blog"
+msgstr "Complementos para crear cualquier tipo de sitio, tienda o blog"
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
 msgid "Discover Now"
-msgstr "Descubrir ahora"
+msgstr "Descúbrelo ahora"
 
 #. translators: %s: Add-on Name
 #: build/addnew/bundle.js:2
@@ -87,7 +64,7 @@ msgstr "Descubrir ahora"
 #: build/addnew/bundle.js:4
 #: build/solutions-page/bundle.js:2
 msgid "Powerful Plugins Included in your %s"
-msgstr "Potentes plugins incluidos en tu %s"
+msgstr "Plugins potentes incluidos en tu %s"
 
 #: build/addnew/bundle.js:2
 msgid "Upgrade to save & unlock 30 advanced tools"
@@ -98,24 +75,24 @@ msgstr "Actualiza para ahorrar y desbloquear 30 herramientas avanzadas"
 #: build/addnew/bundle.js:4
 #: build/solutions-page/bundle.js:2
 msgid "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience."
-msgstr "Descubre la lista completa de funciones avanzadas proporcionadas por tu proveedor de alojamiento Bluehost, diseñadas para ofrecer un valor incomparable y mejorar tu experiencia en línea."
+msgstr "Descubre la lista completa de funciones avanzadas que ofrece tu proveedor de hosting Bluehost, diseñadas para brindar un valor incomparable y mejorar tu experiencia en línea."
 
 #: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
 #: build/addnew/bundle.js:4
 msgid "Learn more about our eCommerce Add-Ons"
-msgstr "Más información sobre nuestros complementos de comercio electrónico"
+msgstr "Conoce más sobre nuestros complementos de comercio electrónico"
 
 #: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
 #: build/addnew/bundle.js:4
 msgid "Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience."
-msgstr "Potencia tu tienda en línea con herramientas poderosas diseñadas para impulsar las ventas, agilizar los pagos, gestionar el inventario y mejorar la experiencia del cliente."
+msgstr "Impulsa tu tienda en línea con herramientas potentes diseñadas para aumentar las ventas, facilitar los pagos, gestionar el inventario y mejorar la experiencia del cliente."
 
 #: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
 msgid "No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit — packed with everything you need at an unbeatable price!"
-msgstr "¡No importa lo que vendas o cómo gestiones tu tienda, este es el kit de herramientas definitivo para comercio electrónico, con todo lo que necesitas a un precio inmejorable!"
+msgstr "No importa qué vendas o cómo administres tu tienda, este es el kit de herramientas de comercio electrónico definitivo, ¡lleno de todo lo que necesitas a un precio inmejorable!"
 
 #: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
@@ -128,7 +105,7 @@ msgstr "El paquete n.º 1 de herramientas de comercio"
 #: build/addnew/bundle.js:3
 #: build/addnew/bundle.js:4
 msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)"
-msgstr "Complementos diseñados para ayudar a los propietarios de tiendas a impulsar sus ventas en línea con un paquete masivo de herramientas premium (valor $3.500)"
+msgstr "Complementos diseñados para ayudar a los dueños de tiendas a aumentar sus ventas en línea con un paquete enorme de herramientas premium (valorado en $3,500)"
 
 #: build/addnew/bundle.js:3
 msgid "Upgrade to save & unlock more advanced tools"
@@ -144,7 +121,7 @@ msgstr "Herramientas premium disponibles en los complementos de comercio electr�
 
 #: build/solutions-page/bundle.js:2
 msgid "Learn more about eCommerce Add-Ons"
-msgstr "Más información sobre los complementos de comercio electrónico"
+msgstr "Conoce más sobre los complementos de comercio electrónico"
 
 #: build/solutions-page/bundle.js:2
 msgid "Most Popular"
@@ -152,11 +129,11 @@ msgstr "Más populares"
 
 #: build/solutions-page/bundle.js:2
 msgid "Premium Tools"
-msgstr "Herramientas Premium"
+msgstr "Herramientas premium"
 
 #: build/solutions-page/bundle.js:2
 msgid "All"
-msgstr "Todo"
+msgstr "Todos"
 
 #: build/solutions-page/bundle.js:2
 msgid "Search"
@@ -169,11 +146,11 @@ msgstr "Categorías"
 #. translators: %s: Search term
 #: build/solutions-page/bundle.js:3
 msgid "No matching tools for '%s'"
-msgstr "No hay herramientas coincidentes para '%s'"
+msgstr "No hay herramientas que coincidan con '%s'"
 
 #: build/solutions-page/bundle.js:3
 msgid "Check the spelling or try another keyword"
-msgstr "Comprueba la ortografía o prueba otra palabra clave"
+msgstr "Revisa la ortografía o intenta con otra palabra clave"
 
 #: build/solutions-page/bundle.js:3
 msgid "Return to the tools list"
@@ -181,12 +158,7 @@ msgstr "Volver a la lista de herramientas"
 
 #: build/solutions-page/bundle.js:3
 msgid "Popular"
-msgstr "Popular"
-
-#: build/addnew/bundle.js:1
-#: build/solutions-page/bundle.js:3
-msgid "Premium"
-msgstr "Premium"
+msgstr "Populares"
 
 #: build/solutions-page/bundle.js:3
 msgid "Upgrade to Save"
@@ -194,19 +166,19 @@ msgstr "Actualiza para ahorrar"
 
 #: build/solutions-page/bundle.js:3
 msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools"
-msgstr "Complementos diseñados para ayudar a los propietarios de tiendas a impulsar sus ventas en línea con un paquete masivo de herramientas premium"
+msgstr "Complementos diseñados para ayudar a los dueños de tiendas a aumentar sus ventas en línea con un enorme paquete de herramientas premium"
 
 #: build/solutions-page/bundle.js:3
 msgid "Some features included:"
-msgstr "Algunas características incluidas:"
+msgstr "Algunas funciones incluidas:"
 
 #: build/solutions-page/bundle.js:3
 msgid "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc."
-msgstr "Impulso de reseñas, reservas y citas, inicio de sesión social, filtros de productos, etc."
+msgstr "Impulsa reseñas, reservas y citas, inicio de sesión social, filtros de productos, etc."
 
 #: build/solutions-page/bundle.js:3
 msgid "Bundle of 30 features for a value of $3,500"
-msgstr "Paquete de 30 funciones por un valor de $3.500"
+msgstr "Paquete de 30 funciones con un valor de $3,500"
 
 #: build/solutions-page/bundle.js:3
 msgid "/month"
@@ -218,13 +190,36 @@ msgstr "Descubrir"
 
 #: build/solutions-page/bundle.js:3
 msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
-msgstr "Comienza con un plan que se ajuste a tus objetivos y desbloquea hasta $3.500 en plugins premium de Bluehost y Yoast."
+msgstr "Comienza con un plan que se adapte a tus objetivos y desbloquea hasta $3,500 en plugins premium de Bluehost y Yoast."
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page/bundle.js:3
-msgid "Add-Ons to build any kind of site, store or blog"
-msgstr "Complementos para crear cualquier tipo de sitio, tienda o blog"
+#: components/entitlements/index.js:9
+msgid "Explore the plugins & tools available with your solution."
+msgstr "Explora los plugins y herramientas disponibles con tu solución."
 
-#: includes/Solutions.php:63
-msgid "My Solution"
-msgstr "Mi solución"
+#: components/entitlements/index.js:13
+msgid "Error"
+msgstr "Error"
+
+#: components/entitlements/index.js:14
+msgid "Oops, there was an error loading the plugins & tools, please try again later."
+msgstr "Ups, hubo un error al cargar los plugins y herramientas. Por favor, inténtalo de nuevo más tarde."
+
+#: components/entitlements/index.js:18
+msgid "Sorry, no current plugins & tools. Please, try again later."
+msgstr "Lo sentimos, no hay plugins ni herramientas disponibles por ahora. Inténtalo de nuevo más tarde."
+
+#: components/entitlements/index.js:22
+msgid "Load More"
+msgstr "Cargar más"
+
+#: components/entitlements/index.js:23
+msgid "Loading…"
+msgstr "Cargando…"
+
+#: components/entitlements/index.js:24
+msgid "Add a New Plugin"
+msgstr "Agregar un nuevo plugin"
+
+#: components/entitlements/index.js:25
+msgid "My Plugins & Tools"
+msgstr "Mis plugins y herramientas"
