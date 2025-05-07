@@ -14,16 +14,16 @@ msgstr ""
 
 #: bootstrap.php:15
 #: includes/Solutions.php:79
-#: includes/Solutions.php:170
+#: includes/Solutions.php:158
 #: components/entitlements/index.js:8
 msgid "Solutions"
 msgstr ""
 
-#: includes/EntitlementsApi.php:171
+#: includes/EntitlementsApi.php:179
 msgid "Activated the plugin successfully!"
 msgstr ""
 
-#: includes/EntitlementsApi.php:178
+#: includes/EntitlementsApi.php:186
 msgid "Please send valid plugin"
 msgstr ""
 
