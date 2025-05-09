@@ -167,16 +167,14 @@ class Solutions {
 	public function render_nfd_solutions_tab() {
 		global $wp_list_table;
 		echo '<div id="nfd-add-new-app"></div>';
-  
+
 		if ( isset( $wp_list_table ) ) {
 			?>
-            <form id="plugin-filter" class="ndf-plugin-filter-section" method="post">
+			<form id="plugin-filter" class="ndf-plugin-filter-section" method="post">
 				<?php $wp_list_table->display(); ?>
-            </form>
-		<?php
-        }
-        
-		
+			</form>
+			<?php
+		}
 	}
 
 	/**
