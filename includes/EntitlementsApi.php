@@ -46,6 +46,21 @@ class EntitlementsApi {
 	private $rest_base;
 
 	/**
+	 * Default empty response.
+	 *
+	 * @var array
+	 */
+	public static $default_response = array(
+		'message'      => 'Not allowed to load entitlements from server.',
+		'solution'     => false,
+		'categories'   => array(),
+		'solutions'    => array(),
+		'entitlements' => array(),
+		'premium'      => array(),
+	);
+
+
+	/**
 	 * EntitilementsApi constructor.
 	 *
 	 * @param HiiveConnection $hiive           Instance of the HiiveConnection class.
@@ -67,7 +82,7 @@ class EntitlementsApi {
 			$this->rest_base,
 			array(
 				'methods'             => \WP_REST_Server::READABLE,
-				'callback'            => array( $this, 'get_items' ),
+				'callback'            => array( $this, 'get_entitlements_data' ),
 				'permission_callback' => function () {
 					return current_user_can( 'manage_options' );
 				},
@@ -103,37 +118,22 @@ class EntitlementsApi {
 	 *
 	 * @return \WP_REST_Response|\WP_Error Response object on success, or WP_Error object on failure.
 	 */
-	public function get_items() {
-
-		// TODO: update response to be available without connection and return solutions categories and premium
-		// If there is no Hiive connection, bail.
-		if ( ! HiiveConnection::is_connected() ) {
-			$allowed_solutions = array( 'commerce', 'service', 'creator', 'none' );
-			if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG && 'local' === wp_get_environment_type() && in_array( $_GET['solution'], $allowed_solutions ) ) {
-				$fixture = NFD_SOLUTIONS_DIR . '/tests/cypress/fixtures/' . $_GET['solution'] . '.json';
-				if ( is_readable( $fixture ) ) {
-					// Use a json fixture rather than hiive entitlement endpoint response - for local dev and cypress tests
-					return new WP_REST_Response( json_decode( file_get_contents( $fixture ) ), 218 );
-				}
-			}
-			// If no connection, give an empty response.
-			return new WP_REST_Response(
-				array(
-					'message'      => 'Not allowed to load entitlements from server.',
-					'solution'     => null,
-					'categories'   => array(),
-					'solutions'    => array(),
-					'entitlements' => array(),
-					'premium'      => array(),
-				),
-				200
-			);
-		}
-
+	public function get_entitlements_data() {
 		$entitlements = get_transient( self::TRANSIENT );
 
 		if ( false === $entitlements ) {
 
+			// TODO: update response to be available without connection and return solutions categories and premium
+			// If there is no Hiive connection, bail.
+			if ( ! HiiveConnection::is_connected() ) {
+				// If no connection, give an empty response.
+				return new WP_REST_Response(
+					self::$default_response,
+					200
+				);
+			}
+
+			// Get fresh entitlements data from Hiive API
 			$response = wp_remote_get(
 				NFD_HIIVE_URL . self::HIIVE_API_ENTITLEMENTS_ENDPOINT,
 				array(

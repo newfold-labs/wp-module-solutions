@@ -11,11 +11,13 @@ export const SolutionsPage = () => {
 		'nfd-page',
 		'min-[783px]:nfd-p-8 min-[783px]:nfd-flex nfd-gap-6 nfd-my-0',
 		{
-			'nfd-solutions-app-container--mobile': ! isLargeViewport
-		}
-	] )
-	return <Page className={ classes }>
-		<Header/>
-		<Content/>
-	</Page>
-}
+			'nfd-solutions-app-container--mobile': ! isLargeViewport,
+		},
+	] );
+	return (
+		<Page className={ classes }>
+			<Header />
+			<Content />
+		</Page>
+	);
+};

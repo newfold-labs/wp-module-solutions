@@ -1,0 +1,60 @@
+{
+    "translation-revision-date": "2025-02-13 19:37+0530",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "build\/addnew\/bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "en_AU",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Get it": [
+                "Get it"
+            ],
+            "Upgrade to unlock all features": [
+                "Upgrade to unlock all features"
+            ],
+            "Discover Now": [
+                "Discover Now"
+            ],
+            "Powerful Plugins Included in your %s": [
+                "Powerful Plugins Included in your %s"
+            ],
+            "Upgrade to save & unlock 30 advanced tools": [
+                "Upgrade to save & unlock 30 advanced tools"
+            ],
+            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
+                "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience."
+            ],
+            "Learn more about our eCommerce Add-Ons": [
+                "Learn more about our eCommerce Add-Ons"
+            ],
+            "Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience.": [
+                "Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience."
+            ],
+            "No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit \u2014 packed with everything you need at an unbeatable price!": [
+                "No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit \u2014 packed with everything you need at an unbeatable price!"
+            ],
+            "The #1 Bundle of Commerce Tools": [
+                "The #1 Bundle of Commerce Tools"
+            ],
+            "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)": [
+                "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $4,900 AUD)"
+            ],
+            "Upgrade to save & unlock more advanced tools": [
+                "Upgrade to save & unlock more advanced tools"
+            ],
+            "Premium tools available in our eCommerce Add-Ons": [
+                "Premium tools available in our eCommerce Add-Ons"
+            ],
+            "Premium": [
+                "Premium"
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Add-Ons to build any kind of site, store or blog"
+            ]
+        }
+    }
+}

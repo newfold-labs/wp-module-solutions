@@ -31,20 +31,19 @@ class Solutions {
 	 * @param Container $container The module container.
 	 */
 	public function __construct( Container $container ) {
-		$hiive = new HiiveConnection();
-
+		$hiive                  = new HiiveConnection();
 		self::$entitlements_api = new EntitlementsApi( $hiive );
-		// We're trying to avoid adding more stuff to this.
-		$this->container = $container;
+		$this->container        = $container;
 		\add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 		\add_action( 'admin_menu', array( __CLASS__, 'add_plugins_solutions_menu_link' ) );
-		\add_action( 'init', array( __CLASS__, 'load_text_domain' ), 100 );
 		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'solutions_page_assets' ) );
 		\add_action( 'admin_enqueue_scripts', array( $this, 'addnew_plugins_solutions_assets' ) );
 
 		\add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
 		\add_filter( 'install_plugins_tabs', array( $this, 'addnew_brand_solutions_tab' ), 99 );
 		\add_filter( 'install_plugins_nfd_solutions', array( $this, 'render_nfd_solutions_tab' ) );
+
+		new I18nService( $container );
 	}
 
 	/**
@@ -61,7 +60,7 @@ class Solutions {
 		\add_submenu_page(
 			'plugins.php',
 			'My Solution',
-			'My Solution',
+			__( 'My Solution', 'wp-module-solutions' ),
 			'manage_options',
 			'plugin-install.php?tab=nfd_solutions',
 			null,
@@ -137,45 +136,14 @@ class Solutions {
 			\wp_enqueue_script( 'solutions-page' );
 			\wp_enqueue_style( 'solutions-page-style' );
 
-			$solutions_data = json_decode( \wp_json_encode( self::$entitlements_api->get_items()->data ), true );
-
-			if ( array_key_exists( 'entitlements', $solutions_data ) ) {
-				$solutions_data['entitlements'] = array_map(
-					function ( $entitlement ) {
-						$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
-						return $entitlement;
-					},
-					$solutions_data['entitlements']
-				);
-			}
-
 			\wp_localize_script(
 				'solutions-page',
 				'NewfoldSolutions',
 				array_merge(
-					$solutions_data,
+					self::get_enhanced_entitlment_data(),
 				)
 			);
 		}
-	}
-
-	/**
-	 * Load text domain for Module
-	 *
-	 * @return void
-	 */
-	public static function load_text_domain() {
-		\load_plugin_textdomain(
-			'wp-module-solutions',
-			false,
-			NFD_SOLUTIONS_DIR . '/languages'
-		);
-
-		\load_script_textdomain(
-			'nfd_myplugin_solutions_js',
-			'wp-module-solutions',
-			NFD_SOLUTIONS_DIR . '/languages'
-		);
 	}
 
 	/**
@@ -254,23 +222,11 @@ class Solutions {
 			\wp_enqueue_script( 'solutions-add-new-tools' );
 			\wp_enqueue_style( 'solutions-add-new-style' );
 
-			$solutions_data = json_decode( \wp_json_encode( self::$entitlements_api->get_items()->data ), true );
-
-			if ( array_key_exists( 'entitlements', $solutions_data ) ) {
-				$solutions_data['entitlements'] = array_map(
-					function ( $entitlement ) {
-						$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
-						return $entitlement;
-					},
-					$solutions_data['entitlements']
-				);
-			}
-
 			\wp_localize_script(
 				'solutions-add-new-tools',
 				'NewfoldSolutions',
 				array_merge(
-					$solutions_data,
+					self::get_enhanced_entitlment_data(),
 					array(
 						'siteUrl' => get_site_url(),
 					)
@@ -293,5 +249,32 @@ class Solutions {
 
 			\wp_add_inline_script( 'solutions-add-new-tools', $script );
 		}
+	}
+
+	/**
+	 * Enhance the entitlements data with data regarding isActive on site.
+	 *
+	 * @return array The enhanced entitlements data.
+	 */
+	public static function get_enhanced_entitlment_data() {
+		// get the entitlements data from the API (or from the transient if it exists)
+		$solutions_data = json_decode( \wp_json_encode( self::$entitlements_api->get_entitlements_data()->data ), true );
+
+		// validate response
+		if ( ! is_array( $solutions_data ) || empty( $solutions_data ) ) {
+			return EntitlementsApi::$default_response;
+		}
+		// check if entitlements data is present
+		if ( array_key_exists( 'entitlements', $solutions_data ) && is_array( $solutions_data['entitlements'] ) ) {
+			$solutions_data['entitlements'] = array_map(
+				// add isActive key to any entitlement that is active on the site
+				function ( $entitlement ) {
+					$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
+					return $entitlement;
+				},
+				$solutions_data['entitlements']
+			);
+		}
+		return $solutions_data;
 	}
 }

@@ -1,0 +1,96 @@
+{
+    "translation-revision-date": "2025-02-19 14:32",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "build\/solutions-page\/bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "de_DE",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Get it": [
+                "Jetzt holen"
+            ],
+            "Upgrade to unlock all features": [
+                "Upgrade, um alle Funktionen freizuschalten"
+            ],
+            "Discover Now": [
+                "Jetzt entdecken"
+            ],
+            "Powerful Plugins Included in your %s": [
+                "Leistungsstarke Plugins in Ihrem %s enthalten"
+            ],
+            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
+                "Entdecken Sie die komplette Liste der erweiterten Funktionen von Ihrem Hosting-Anbieter Bluehost, die entwickelt wurden, um einen unvergleichlichen Mehrwert zu bieten und Ihr Online-Erlebnis zu verbessern."
+            ],
+            "The #1 Bundle of Commerce Tools": [
+                "Das f\u00fchrende Paket an Commerce-Tools"
+            ],
+            "Premium tools available in eCommerce Add-Ons": [
+                "Premium-Tools in E-Commerce-Erweiterungen verf\u00fcgbar"
+            ],
+            "Learn more about eCommerce Add-Ons": [
+                "Mehr \u00fcber E-Commerce-Erweiterungen erfahren"
+            ],
+            "Most Popular": [
+                "Am beliebtesten"
+            ],
+            "Premium Tools": [
+                "Premium-Tools"
+            ],
+            "All": [
+                "Alle"
+            ],
+            "Search": [
+                "Suchen"
+            ],
+            "Categories": [
+                "Kategorien"
+            ],
+            "No matching tools for '%s'": [
+                "Keine passenden Tools f\u00fcr '%s'"
+            ],
+            "Check the spelling or try another keyword": [
+                "\u00dcberpr\u00fcfen Sie die Rechtschreibung oder versuchen Sie ein anderes Stichwort"
+            ],
+            "Return to the tools list": [
+                "Zur\u00fcck zur Tools-Liste"
+            ],
+            "Popular": [
+                "Beliebt"
+            ],
+            "Premium": [
+                "Premium"
+            ],
+            "Upgrade to Save": [
+                "Upgrade zum Sparen"
+            ],
+            "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools": [
+                "Erweiterungen, die Shop-Betreibern helfen, ihren Online-Umsatz mit einem umfangreichen Paket Premium-Tools zu steigern"
+            ],
+            "Some features included:": [
+                "Enthaltene Funktionen:"
+            ],
+            "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc.": [
+                "Bewertungen f\u00f6rdern, Buchungen & Termine, Social Login, Produktfilter usw."
+            ],
+            "Bundle of 30 features for a value of $3,500": [
+                "Paket mit 30 Funktionen im Wert von 3.200 \u20ac"
+            ],
+            "\/month": [
+                "\/Monat"
+            ],
+            "Discover": [
+                "Entdecken"
+            ],
+            "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
+                "Starten Sie mit einem Plan, der zu Ihren Zielen passt, und schalten Sie Premium-Plugins von Bluehost und Yoast im Wert von bis zu 3.200 \u20ac frei."
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Erweiterungen zum Erstellen jeder Art von Website, Shop oder Blog"
+            ]
+        }
+    }
+}

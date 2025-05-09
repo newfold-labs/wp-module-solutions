@@ -1,0 +1,60 @@
+{
+    "translation-revision-date": "2025-05-07 15:16+0100",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "build\/addnew\/bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_MX",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Premium": [
+                "Premium"
+            ],
+            "Get it": [
+                "Obtener"
+            ],
+            "Upgrade to unlock all features": [
+                "Actualiza para desbloquear todas las funciones"
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Complementos para crear cualquier tipo de sitio, tienda o blog"
+            ],
+            "Discover Now": [
+                "Desc\u00fabrelo ahora"
+            ],
+            "Powerful Plugins Included in your %s": [
+                "Plugins potentes incluidos en tu %s"
+            ],
+            "Upgrade to save & unlock 30 advanced tools": [
+                "Actualiza para ahorrar y desbloquear 30 herramientas avanzadas"
+            ],
+            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
+                "Descubre la lista completa de funciones avanzadas que ofrece tu proveedor de hosting Bluehost, dise\u00f1adas para brindar un valor incomparable y mejorar tu experiencia en l\u00ednea."
+            ],
+            "Learn more about our eCommerce Add-Ons": [
+                "Conoce m\u00e1s sobre nuestros complementos de comercio electr\u00f3nico"
+            ],
+            "Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience.": [
+                "Impulsa tu tienda en l\u00ednea con herramientas potentes dise\u00f1adas para aumentar las ventas, facilitar los pagos, gestionar el inventario y mejorar la experiencia del cliente."
+            ],
+            "No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit \u2014 packed with everything you need at an unbeatable price!": [
+                "No importa qu\u00e9 vendas o c\u00f3mo administres tu tienda, este es el kit de herramientas de comercio electr\u00f3nico definitivo, \u00a1lleno de todo lo que necesitas a un precio inmejorable!"
+            ],
+            "The #1 Bundle of Commerce Tools": [
+                "El paquete n.\u00ba 1 de herramientas de comercio"
+            ],
+            "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)": [
+                "Complementos dise\u00f1ados para ayudar a los due\u00f1os de tiendas a aumentar sus ventas en l\u00ednea con un paquete enorme de herramientas premium (valorado en $3,500)"
+            ],
+            "Upgrade to save & unlock more advanced tools": [
+                "Actualiza para ahorrar y desbloquear m\u00e1s herramientas avanzadas"
+            ],
+            "Premium tools available in our eCommerce Add-Ons": [
+                "Herramientas premium disponibles en nuestros complementos de comercio electr\u00f3nico"
+            ]
+        }
+    }
+}

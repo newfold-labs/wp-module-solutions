@@ -40,6 +40,7 @@ export const Tool = ( {
 	ctbId,
 	ctbHref,
 	download,
+	basename,
 } ) => {
 	const isLargeViewport = useViewportMatch( 'medium' );
 	const hasActiveSolution = !! getActiveSolution();
@@ -67,7 +68,7 @@ export const Tool = ( {
 					<ReactSVG
 						alt={ name }
 						className="nfd-solutions-card__feature-icon"
-						src={ featureIcon + '?nocache' }
+						src={ featureIcon }
 					/>
 				</Card.Header>
 			) }
@@ -124,6 +125,9 @@ export const Tool = ( {
 						}
 						data-nfd-installer-plugin-activate={
 							! ctbId ? 'true' : null
+						}
+						data-nfd-installer-plugin-basename={
+							! isActive && ! ctbId ? basename : null
 						}
 						data-nfd-installer-plugin-name={
 							! isActive && ! ctbId ? name : null

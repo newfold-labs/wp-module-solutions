@@ -20,20 +20,21 @@ msgstr ""
 "X-Crowdin-File-ID: 24\n"
 
 #: bootstrap.php:15
+#: includes/Solutions.php:79
+#: includes/Solutions.php:158
 #: components/entitlements/index.js:8
 msgid "Solutions"
 msgstr "Lösungen"
 
-#: includes/EntitlementsApi.php:163
+#: includes/EntitlementsApi.php:179
 msgid "Activated the plugin successfully!"
 msgstr "Plugin erfolgreich aktiviert!"
 
-#: includes/Solutions.php:102
 #: components/entitlements/index.js:25
 msgid "My Plugins & Tools"
 msgstr "Meine Plugins & Tools"
 
-#: includes/EntitlementsApi.php:170
+#: includes/EntitlementsApi.php:186
 msgid "Please send valid plugin"
 msgstr "Bitte senden Sie ein gültiges Plugin"
 
@@ -64,3 +65,166 @@ msgstr "Lade…"
 #: components/entitlements/index.js:24
 msgid "Add a New Plugin"
 msgstr "Neues Plugin hinzufügen"
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "Get it"
+msgstr "Jetzt holen"
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "Upgrade to unlock all features"
+msgstr "Upgrade, um alle Funktionen freizuschalten"
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "Discover Now"
+msgstr "Jetzt entdecken"
+
+#. translators: %s: Add-on Name
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+#: build/solutions-page/bundle.js:2
+msgid "Powerful Plugins Included in your %s"
+msgstr "Leistungsstarke Plugins in Ihrem %s enthalten"
+
+#: build/addnew/bundle.js:2
+msgid "Upgrade to save & unlock 30 advanced tools"
+msgstr "Upgrade, um 30 erweiterte Tools freizuschalten und zu sparen"
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+#: build/solutions-page/bundle.js:2
+msgid "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience."
+msgstr "Entdecken Sie die komplette Liste der erweiterten Funktionen von Ihrem Hosting-Anbieter Bluehost, die entwickelt wurden, um einen unvergleichlichen Mehrwert zu bieten und Ihr Online-Erlebnis zu verbessern."
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+msgid "Learn more about our eCommerce Add-Ons"
+msgstr "Erfahren Sie mehr über unsere E-Commerce-Erweiterungen"
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+msgid "Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience."
+msgstr "Optimieren Sie Ihren Online-Shop mit leistungsstarken Tools, die entwickelt wurden, um den Umsatz zu steigern, Zahlungen zu vereinfachen, den Bestand zu verwalten und das Kundenerlebnis zu verbessern."
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+msgid "No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit — packed with everything you need at an unbeatable price!"
+msgstr "Egal, was Sie verkaufen oder wie Sie Ihren Shop betreiben, dies ist das ultimative E-Commerce-Toolkit — mit allem, was Sie zu einem unschlagbaren Preis benötigen!"
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+#: build/solutions-page/bundle.js:3
+msgid "The #1 Bundle of Commerce Tools"
+msgstr "Das führende Paket an Commerce-Tools"
+
+#: build/addnew/bundle.js:2
+#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
+msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)"
+msgstr "Erweiterungen, die Shop-Betreibern helfen, ihren Online-Umsatz mit einem umfangreichen Paket Premium-Tools zu steigern (Wert 3.200 €)"
+
+#: build/addnew/bundle.js:3
+msgid "Upgrade to save & unlock more advanced tools"
+msgstr "Upgrade, um zu sparen und weitere erweiterte Tools freizuschalten"
+
+#: build/addnew/bundle.js:4
+msgid "Premium tools available in our eCommerce Add-Ons"
+msgstr "Premium-Tools in unseren E-Commerce-Erweiterungen verfügbar"
+
+#: build/solutions-page/bundle.js:2
+msgid "Premium tools available in eCommerce Add-Ons"
+msgstr "Premium-Tools in E-Commerce-Erweiterungen verfügbar"
+
+#: build/solutions-page/bundle.js:2
+msgid "Learn more about eCommerce Add-Ons"
+msgstr "Mehr über E-Commerce-Erweiterungen erfahren"
+
+#: build/solutions-page/bundle.js:2
+msgid "Most Popular"
+msgstr "Am beliebtesten"
+
+#: build/solutions-page/bundle.js:2
+msgid "Premium Tools"
+msgstr "Premium-Tools"
+
+#: build/solutions-page/bundle.js:2
+msgid "All"
+msgstr "Alle"
+
+#: build/solutions-page/bundle.js:2
+msgid "Search"
+msgstr "Suchen"
+
+#: build/solutions-page/bundle.js:2
+msgid "Categories"
+msgstr "Kategorien"
+
+#. translators: %s: Search term
+#: build/solutions-page/bundle.js:3
+msgid "No matching tools for '%s'"
+msgstr "Keine passenden Tools für '%s'"
+
+#: build/solutions-page/bundle.js:3
+msgid "Check the spelling or try another keyword"
+msgstr "Überprüfen Sie die Rechtschreibung oder versuchen Sie ein anderes Stichwort"
+
+#: build/solutions-page/bundle.js:3
+msgid "Return to the tools list"
+msgstr "Zurück zur Tools-Liste"
+
+#: build/solutions-page/bundle.js:3
+msgid "Popular"
+msgstr "Beliebt"
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "Premium"
+msgstr "Premium"
+
+#: build/solutions-page/bundle.js:3
+msgid "Upgrade to Save"
+msgstr "Upgrade zum Sparen"
+
+#: build/solutions-page/bundle.js:3
+msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools"
+msgstr "Erweiterungen, die Shop-Betreibern helfen, ihren Online-Umsatz mit einem umfangreichen Paket Premium-Tools zu steigern"
+
+#: build/solutions-page/bundle.js:3
+msgid "Some features included:"
+msgstr "Enthaltene Funktionen:"
+
+#: build/solutions-page/bundle.js:3
+msgid "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc."
+msgstr "Bewertungen fördern, Buchungen & Termine, Social Login, Produktfilter usw."
+
+#: build/solutions-page/bundle.js:3
+msgid "Bundle of 30 features for a value of $3,500"
+msgstr "Paket mit 30 Funktionen im Wert von 3.200 €"
+
+#: build/solutions-page/bundle.js:3
+msgid "/month"
+msgstr "/Monat"
+
+#: build/solutions-page/bundle.js:3
+msgid "Discover"
+msgstr "Entdecken"
+
+#: build/solutions-page/bundle.js:3
+msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
+msgstr "Starten Sie mit einem Plan, der zu Ihren Zielen passt, und schalten Sie Premium-Plugins von Bluehost und Yoast im Wert von bis zu 3.200 € frei."
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page/bundle.js:3
+msgid "Add-Ons to build any kind of site, store or blog"
+msgstr "Erweiterungen zum Erstellen jeder Art von Website, Shop oder Blog"
+
+#: includes/Solutions.php:63
+msgid "My Solution"
+msgstr "Meine Lösung"

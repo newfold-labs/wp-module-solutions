@@ -1,0 +1,96 @@
+{
+    "translation-revision-date": "2025-02-19 14:32",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "build\/solutions-page\/bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Get it": [
+                "Obtenir"
+            ],
+            "Upgrade to unlock all features": [
+                "Mettez \u00e0 niveau pour d\u00e9bloquer toutes les fonctionnalit\u00e9s"
+            ],
+            "Discover Now": [
+                "D\u00e9couvrir maintenant"
+            ],
+            "Powerful Plugins Included in your %s": [
+                "Plugins puissants inclus dans votre %s"
+            ],
+            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
+                "D\u00e9couvrez la liste compl\u00e8te des fonctionnalit\u00e9s avanc\u00e9es fournies par votre h\u00e9bergeur Bluehost, con\u00e7ues pour offrir une valeur in\u00e9gal\u00e9e et am\u00e9liorer votre exp\u00e9rience en ligne."
+            ],
+            "The #1 Bundle of Commerce Tools": [
+                "Le pack n\u00b01 d'outils de commerce"
+            ],
+            "Premium tools available in eCommerce Add-Ons": [
+                "Outils premium disponibles dans les modules compl\u00e9mentaires e-commerce"
+            ],
+            "Learn more about eCommerce Add-Ons": [
+                "En savoir plus sur les modules compl\u00e9mentaires e-commerce"
+            ],
+            "Most Popular": [
+                "Les plus populaires"
+            ],
+            "Premium Tools": [
+                "Outils Premium"
+            ],
+            "All": [
+                "Tout"
+            ],
+            "Search": [
+                "Rechercher"
+            ],
+            "Categories": [
+                "Cat\u00e9gories"
+            ],
+            "No matching tools for '%s'": [
+                "Aucun outil correspondant pour '%s'"
+            ],
+            "Check the spelling or try another keyword": [
+                "V\u00e9rifiez l'orthographe ou essayez un autre mot-cl\u00e9"
+            ],
+            "Return to the tools list": [
+                "Retourner \u00e0 la liste des outils"
+            ],
+            "Popular": [
+                "Populaire"
+            ],
+            "Premium": [
+                "Premium"
+            ],
+            "Upgrade to Save": [
+                "Mettre \u00e0 niveau pour \u00e9conomiser"
+            ],
+            "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools": [
+                "Modules compl\u00e9mentaires con\u00e7us pour aider les propri\u00e9taires de boutiques \u00e0 augmenter leurs ventes en ligne avec un pack massif d'outils premium"
+            ],
+            "Some features included:": [
+                "Quelques fonctionnalit\u00e9s incluses :"
+            ],
+            "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc.": [
+                "Boost des avis, r\u00e9servations et rendez-vous, connexion sociale, filtres de produits, etc."
+            ],
+            "Bundle of 30 features for a value of $3,500": [
+                "Pack de 30 fonctionnalit\u00e9s d'une valeur de 3 200 \u20ac"
+            ],
+            "\/month": [
+                "\/mois"
+            ],
+            "Discover": [
+                "D\u00e9couvrir"
+            ],
+            "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
+                "Commencez avec un forfait adapt\u00e9 \u00e0 vos objectifs et d\u00e9bloquez jusqu'\u00e0 3 200 \u20ac de plugins premium Bluehost et Yoast."
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Modules compl\u00e9mentaires pour cr\u00e9er tout type de site, boutique ou blog"
+            ]
+        }
+    }
+}

@@ -7,7 +7,7 @@ import { UpgradeBanner } from '../../../../common/components/upgrade-banner';
 export const NoSolution = ( { plan } ) => {
 	const plugins = getPlugins( {} );
 	const title = __(
-		'Premium tools available in our Solutions Bundles',
+		'Premium tools available in our eCommerce Add-Ons',
 		'wp-module-solutions'
 	);
 	return (
@@ -23,7 +23,7 @@ export const NoSolution = ( { plan } ) => {
 					rel="noreferrer"
 				>
 					{ __(
-						'Learn more about our Solutions',
+						'Learn more about our eCommerce Add-Ons',
 						'wp-module-solutions'
 					) }
 				</a>
@@ -38,8 +38,7 @@ export const NoSolution = ( { plan } ) => {
 					>
 						<p>
 							{ __(
-								'A solution designed to help shop owners to boost their online sales with a massive bundle \n' +
-									'of premium tools (value $3,500)',
+								'Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)',
 								'wp-module-solutions'
 							) }
 						</p>
