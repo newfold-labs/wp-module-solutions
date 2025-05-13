@@ -24,8 +24,8 @@ jobs:
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
         id: extract_branch
 
-  bluehost-main:
-    name: Bluehost (main) Build and Test
+  bluehost:
+    name: Bluehost Build and Test
     needs: setup
     uses: newfold-labs/workflows/.github/workflows/module-plugin-test.yml@main
     with:

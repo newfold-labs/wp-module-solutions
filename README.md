@@ -29,3 +29,7 @@ A Newfold module that handles integration of WordPress Solutions Addon packages 
  ```bash
  composer require newfold-labs/wp-module-solutions
  ```
+
+## Releases
+
+Run the `Newfold Prepare Release` github action to automatically bump the version (either patch, minor or major version), and update build and language files all at once. It will create a PR with changed files for review.
