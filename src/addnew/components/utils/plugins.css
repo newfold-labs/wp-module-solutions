@@ -10,9 +10,6 @@ svg#ndf-tools-plugin-bluehost-brand {
     margin-right: 5px;
 }
 
-.plugin-install-tab-nfd_solutions .search-plugins {
-    display:none;
-}
 .plugin-install-nfd_solutions .current {
     border-bottom: 4px solid #196BDE6B;
 }
@@ -101,4 +98,8 @@ svg#ndf-tools-plugin-bluehost-brand {
 }
 .nfd-my-solutions-app-container .nfd-solutions-upgrade-banner {
     top: 25%;
+}
+
+.ndf-plugin-filter-section .no-plugin-results {
+    display:none;
 }
