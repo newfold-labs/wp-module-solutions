@@ -28,4 +28,3 @@ jobs:
       level: ${{ inputs.level }}
       json-file: 'package.json'
       php-file: ''
-    secrets: inherit
