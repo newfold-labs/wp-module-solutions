@@ -9,7 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-02-13T09:55:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wp-module-solutions\n"
 
 #: bootstrap.php:15
@@ -61,6 +61,7 @@ msgstr ""
 #: build/addnew/bundle.js:3
 #: build/addnew/bundle.js:4
 #: build/solutions-page/bundle.js:2
+#, js-format
 msgid "Powerful Plugins Included in your %s"
 msgstr ""
 
@@ -143,6 +144,7 @@ msgstr ""
 
 #. translators: %s: Search term
 #: build/solutions-page/bundle.js:3
+#, js-format
 msgid "No matching tools for '%s'"
 msgstr ""
 

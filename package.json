@@ -4,7 +4,7 @@
   "license": "GPL-2.0-or-later",
   "private": true,
   "author": "arati bhandare",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",

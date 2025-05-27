@@ -81,6 +81,7 @@ msgstr "Discover Now"
 #: build/addnew/bundle.js:3
 #: build/addnew/bundle.js:4
 #: build/solutions-page/bundle.js:2
+#, js-format
 msgid "Powerful Plugins Included in your %s"
 msgstr "Powerful Plugins Included in your %s"
 
@@ -163,6 +164,7 @@ msgstr "Categories"
 
 #. translators: %s: Search term
 #: build/solutions-page/bundle.js:3
+#, js-format
 msgid "No matching tools for '%s'"
 msgstr "No matching tools for '%s'"
 
