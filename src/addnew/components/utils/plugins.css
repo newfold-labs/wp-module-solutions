@@ -93,13 +93,13 @@ svg#ndf-tools-plugin-bluehost-brand {
 
 
 /*Banner*/
-.nfd-my-solutions-app-container .nfd-solutions-upgrade-banner__overlay:before {
-    background-color: #FFFFFF;
+.nfd-plugins-card-list.nfd-page-no-solution {
+    height: 100vh;
 }
-.nfd-my-solutions-app-container .nfd-solutions-upgrade-banner {
-    top: 25%;
-}
-
 .ndf-plugin-filter-section .no-plugin-results {
     display:none;
+}
+.nfd-plugins-card-list.nfd-page-no-solution .nfd-solutions-upgrade-banner {
+    top: 25%;
+    left: 50%;
 }
