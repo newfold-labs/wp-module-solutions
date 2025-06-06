@@ -28,38 +28,39 @@ export const NoSolution = ( { plan } ) => {
 					) }
 				</a>
 			</Section>
-			{ !! plugins.length && (
-				<div className="nfd-plugins-card-list">
-					<UpgradeBanner
-						secondaryTitle={ __(
-							'The #1 Bundle of Commerce Tools',
-							'wp-module-solutions'
-						) }
-					>
-						<p>
-							{ __(
-								'Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)',
-								'wp-module-solutions'
-							) }
-						</p>
-					</UpgradeBanner>
-					<div id="the-list">
-						{ plugins.slice( 0, 6 ).map( ( plugin ) => (
-							<Plugin
-								name={ plugin?.name }
-								category={ plugin.category }
-								description={ plugin.description }
-								icon={ plugin?.image?.primaryImage }
-								premium={ plugin?.premium }
-								popular={ plugin?.popular }
-								key={ plugin?.name }
-								displayAsPremiun={ true }
-								isBlock={ true }
-							/>
-						) ) }
-					</div>
-				</div>
-			) }
-		</>
-	);
+                <div className="nfd-plugins-card-list nfd-page-no-solution">
+                    <UpgradeBanner
+                        secondaryTitle={__(
+                            'The #1 Bundle of Commerce Tools',
+                            'wp-module-solutions'
+                        )}
+                    >
+                        <p>
+                            {__(
+                                'Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)',
+                                'wp-module-solutions'
+                            )}
+                        </p>
+                    </UpgradeBanner>
+                    {!!plugins.length && (
+                        <div id="the-list">
+                            {plugins.slice(0, 6).map((plugin) => (
+                                <Plugin
+                                    name={plugin?.name}
+                                    category={plugin.category}
+                                    description={plugin.description}
+                                    icon={plugin?.image?.primaryImage}
+                                    premium={plugin?.premium}
+                                    popular={plugin?.popular}
+                                    key={plugin?.name}
+                                    displayAsPremiun={true}
+                                    isBlock={true}
+                                />
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+        </>
+    );
 };

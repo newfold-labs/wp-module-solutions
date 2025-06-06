@@ -45,9 +45,9 @@ h3.nfd-solutions-availble-list-item-title{
 }
 
 /* hide the search field in my plugins && tools tab */
-.wrap.plugin-install-tab-nfd_my_plugins_and_tools .search-form.search-plugins{
+/*.wrap.plugin-install-tab-nfd_my_plugins_and_tools .search-form.search-plugins{
     display: none;
-}
+}*/
 
 /* responsive */
 @media screen and (max-width: 782px) {
