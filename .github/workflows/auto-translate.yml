@@ -22,7 +22,7 @@ jobs:
       pull-requests: write
     uses: newfold-labs/workflows/.github/workflows/auto-translate.yml@main
     with:
-      text_domain: 'wp-module-staging'
+      text_domain: 'wp-module-solutions'
     secrets:
       TRANSLATOR_API_KEY: ${{ secrets.TRANSLATOR_API_KEY }}
       NEWFOLD_ACCESS_TOKEN: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
