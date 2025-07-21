@@ -3,7 +3,7 @@ const { merge } = require( 'webpack-merge' );
 const wpScriptsConfig = require( '@wordpress/scripts/config/webpack.config' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
-const apps = [ 'solutions-page', 'addnew' ];
+const apps = [ 'solutions-page', 'solutions-upsell', 'addnew' ];
 
 const alias = {
 	common: path.resolve( __dirname, '/src/common' ),

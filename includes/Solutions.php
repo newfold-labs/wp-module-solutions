@@ -44,6 +44,7 @@ class Solutions {
 		\add_filter( 'install_plugins_nfd_solutions', array( $this, 'render_nfd_solutions_tab' ) );
 
 		new I18nService( $container );
+		new SolutionsUpsell( $container );
 	}
 
 	/**
