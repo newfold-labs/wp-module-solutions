@@ -119,6 +119,6 @@ class SolutionsUpsell {
 	 * Can current user access global CTB?
 	 */
 	protected function can_access_global_ctb(): bool {
-		return ! ! $this->container->get( 'capabilities' )->get( 'canAccessGlobalCTB' );
+		return (bool) $this->container->get( 'capabilities' )->get( 'canAccessGlobalCTB' );
 	}
 }
