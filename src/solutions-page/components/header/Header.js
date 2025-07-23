@@ -30,7 +30,7 @@ export const Header = () => {
 				) }
 				<br />
 				<a
-					href="https://www.bluehost.com/help/article/wp-solutions"
+					href="https://www.bluehost.com/help/article/wp-solutions?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=brand_plugin"
 					target="_blank"
 					rel="noreferrer"
 				>
