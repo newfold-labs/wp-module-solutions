@@ -10,9 +10,9 @@ msgstr ""
 "POT-Creation-Date: 2025-02-13T10:58:13+00:00\n"
 "PO-Revision-Date: 2025-02-13 19:37+0530\n"
 "Language: en_AU\n"
-"X-Generator: WP-CLI 2.11.0\n"
-"X-Domain: wp-module-solutions\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: wp-module-solutions\n"
+"X-Generator: WP-CLI 2.11.0\n"
 
 #: bootstrap.php:15
 #: includes/Solutions.php:79
