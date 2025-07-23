@@ -74,7 +74,13 @@ export const UpgradeCard = () => {
 					</span>
 					{ __( '/month', 'wp-module-solutions' ) }
 				</div>
-				<Button as={ 'a' }>
+				<Button
+					as={ 'a' }
+					href="https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY"
+					data-ctb-id="5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
+					rel="noreferrer"
+					target="_blank"
+				>
 					{ __( 'Discover', 'wp-module-solutions' ) }
 				</Button>
 			</Card.Footer>
