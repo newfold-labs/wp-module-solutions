@@ -19,7 +19,7 @@ domReady( () => {
 
 		// Add premium values.
 		for ( let plugin of premiumPlugins ) {
-			options.push( new Option( plugin.name, plugin.slug ) );
+			options.push( new Option( plugin.name, plugin.basename ) );
 		}
 
 		productTypeSelect.html(options);
@@ -28,7 +28,9 @@ domReady( () => {
 		productTypeSelect.selectWoo({
 			minimumResultsForSearch: Infinity,
 			templateResult: (state) => {
-				return state.text;
+				const premiumPlugin = premiumPlugins.find( plugin => state.id === plugin.basename );
+
+				return premiumPlugin ? jQuery( '<span>' + state.text + '<span class="premium-plugin-icon"></span></span>' ) : state.text;
 			}
 		});
 
@@ -38,7 +40,7 @@ domReady( () => {
 		// Open CTB
 		productTypeSelect.on( 'select2:selecting', (e) => {
 
-			const premiumPlugin = premiumPlugins.find( plugin => e.params.args.data.id === plugin.slug );
+			const premiumPlugin = premiumPlugins.find( plugin => e.params.args.data.id === plugin.basename );
 
 			if ( premiumPlugin ) {
 				e.preventDefault();

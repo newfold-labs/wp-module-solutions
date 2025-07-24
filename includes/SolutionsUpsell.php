@@ -93,10 +93,9 @@ class SolutionsUpsell {
 		$entitlements         = Solutions::get_enhanced_entitlment_data();
 		$premium_entitlements = $entitlements['premium'] ?? array();
 
-		// TODO add to Hiive option to show entitlement in upsell section.
 		$entitlements_with_upsell = array(
-			'yith-woocommerce-booking-premium/init.php'    => 'Bookable product',
-			'yith-woocommerce-gift-cards-premium/init.php' => 'Gift card',
+			'yith-woocommerce-booking-premium/init.php'    => _x( 'Bookable product', 'Solution Upsell product type label', 'wp-module-solutions' ),
+			'yith-woocommerce-gift-cards-premium/init.php' => _x( 'Gift card', 'Solution Upsell product type label', 'wp-module-solutions' ),
 		);
 
 		foreach ( $premium_entitlements as $entitlement ) {
@@ -105,7 +104,6 @@ class SolutionsUpsell {
 			}
 
 			$upsell[] = array(
-				'slug'     => $entitlement['slug'],
 				'name'     => $entitlements_with_upsell[ $entitlement['basename'] ],
 				'basename' => $entitlement['basename'],
 				'ctbId'    => $entitlement['ctbId'],
