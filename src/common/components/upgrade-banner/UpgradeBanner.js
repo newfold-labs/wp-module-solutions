@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { __ } from '@wordpress/i18n';
 import { LockClosedIcon } from '@heroicons/react/24/solid';
 import { Button, Title } from '@newfold/ui-component-library';
+import { useState, useEffect } from 'react';
 
 /**
  * Badge component
@@ -25,7 +26,20 @@ export const UpgradeBanner = ( {
 	...props
 } ) => {
 	const classes = [ className, 'nfd-solutions-upgrade-banner' ];
+    const [link, setLink] = useState('https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY');
+    //Add UTM parameters to the link if the function is available
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (
+                window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof Function
+            ) {
+                const addParamsLink = window.NewfoldRuntime.linkTracker.addUtmParams(link);
+                setLink(addParamsLink);
+            }
+        }, 200);
 
+        return () => clearInterval(interval);
+    }, []);
 	return (
 		<>
 			<span className="nfd-solutions-upgrade-banner__overlay" />
@@ -57,7 +71,7 @@ export const UpgradeBanner = ( {
 					as="a"
 					className="nfd-solutions-upgrade-banner__button"
 					data-ctb-id="5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
-					href="https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY"
+					href={link}
 					rel="noreferrer"
 					size="large"
 					target="_blank"
