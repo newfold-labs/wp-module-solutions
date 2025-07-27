@@ -7,6 +7,7 @@ import { FireIcon } from '@heroicons/react/20/solid';
 import { ReactSVG } from 'react-svg';
 import { getActiveSolution, renderCTAUrl } from 'common/utils';
 import { useViewportMatch } from '@wordpress/compose';
+import {useEffect, useState} from "react";
 
 const PopularBadge = () => (
 	<Badge
@@ -61,7 +62,21 @@ export const Tool = ( {
 		},
 	];
 
-    const ctaHref = ctbId ? ctbHref : renderCTAUrl( ctaUrl );
+
+    const [ ctaHref, setCtaRef] = useState(ctbId ? ctbHref : renderCTAUrl( ctaUrl ) );
+    //Add UTM parameters to the link if the function is available
+    useEffect(() => {
+        const interval = setTimeout(() => {
+            if (
+                window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof Function
+            ) {
+                const addLearnMoreParamsLink = window.NewfoldRuntime.linkTracker.addUtmParams(ctaHref);
+                setCtaRef(addLearnMoreParamsLink);
+            }
+        }, 200);
+
+        return () => clearTimeout(interval);
+    }, []);
 
 	const Header = () => (
 		<>
@@ -140,7 +155,7 @@ export const Tool = ( {
 						data-nfd-installer-pls-slug={
 							! isActive && ! ctbId ? plsSlug : null
 						}
-						href={ window.NewfoldRuntime.linkTracker.addUtmParams(ctaHref) }
+						href={ ctaHref }
 						target={ ctbId ? '_blank' : null }
 					>
 						{ premiumStyle

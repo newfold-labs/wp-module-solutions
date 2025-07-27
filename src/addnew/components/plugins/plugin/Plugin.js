@@ -5,6 +5,7 @@ import { Badge } from '../../../../common/components/badge';
 import { renderCTAUrl } from '../../../../common/utils';
 import { __ } from '@wordpress/i18n';
 import { LockClosedIcon } from '@heroicons/react/20/solid';
+import {useEffect, useState} from "react";
 
 const PremiumBadge = () => (
 	<Badge
@@ -48,12 +49,24 @@ export const Plugin = ( {
 		},
 	];
 
-    const ctaHref =! isBlock
+    const [ ctaHref, setCtaRef] = useState(! isBlock
         ? ctbId
             ? ctbHref
             : renderCTAUrl( ctaUrl )
-        : '#null';
+        : '#null');
+    //Add UTM parameters to the link if the function is available
+    useEffect(() => {
+        const interval = setTimeout(() => {
+            if (
+                window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof Function
+            ) {
+                const addLearnMoreParamsLink = window.NewfoldRuntime.linkTracker.addUtmParams(ctaHref);
+                setCtaRef(addLearnMoreParamsLink);
+            }
+        }, 200);
 
+        return () => clearTimeout(interval);
+    }, []);
 
     return (
 		<div className={ classNames( classes ) }>
@@ -116,7 +129,7 @@ export const Plugin = ( {
 										? plsSlug
 										: null
 								}
-								href={ window.NewfoldRuntime.linkTracker.addUtmParams( ctaHref ) }
+								href={ ctaHref }
 								target={
 									! isBlock
 										? ctbId

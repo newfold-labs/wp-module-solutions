@@ -29,7 +29,7 @@ export const UpgradeBanner = ( {
     const [link, setLink] = useState('https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY');
     //Add UTM parameters to the link if the function is available
     useEffect(() => {
-        const interval = setInterval(() => {
+        const interval = setTimeout(() => {
             if (
                 window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof Function
             ) {
@@ -38,7 +38,7 @@ export const UpgradeBanner = ( {
             }
         }, 200);
 
-        return () => clearInterval(interval);
+        return () => clearTimeout(interval);
     }, []);
 	return (
 		<>
