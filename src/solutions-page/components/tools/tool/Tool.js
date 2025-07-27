@@ -61,6 +61,8 @@ export const Tool = ( {
 		},
 	];
 
+    const ctaHref = ctbId ? ctbHref : renderCTAUrl( ctaUrl );
+
 	const Header = () => (
 		<>
 			{ featureIcon && (
@@ -138,7 +140,7 @@ export const Tool = ( {
 						data-nfd-installer-pls-slug={
 							! isActive && ! ctbId ? plsSlug : null
 						}
-						href={ ctbId ? ctbHref : renderCTAUrl( ctaUrl ) }
+						href={ window.NewfoldRuntime.linkTracker.addUtmParams(ctaHref) }
 						target={ ctbId ? '_blank' : null }
 					>
 						{ premiumStyle

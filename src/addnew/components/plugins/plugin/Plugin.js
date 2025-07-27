@@ -48,7 +48,14 @@ export const Plugin = ( {
 		},
 	];
 
-	return (
+    const ctaHref =! isBlock
+        ? ctbId
+            ? ctbHref
+            : renderCTAUrl( ctaUrl )
+        : '#null';
+
+
+    return (
 		<div className={ classNames( classes ) }>
 			<div className="plugin-card-top">
 				<div className="name column-name">
@@ -109,13 +116,7 @@ export const Plugin = ( {
 										? plsSlug
 										: null
 								}
-								href={
-									! isBlock
-										? ctbId
-											? ctbHref
-											: renderCTAUrl( ctaUrl )
-										: '#null'
-								}
+								href={ window.NewfoldRuntime.linkTracker.addUtmParams( ctaHref ) }
 								target={
 									! isBlock
 										? ctbId
