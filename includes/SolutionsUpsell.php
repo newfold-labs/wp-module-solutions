@@ -53,7 +53,7 @@ class SolutionsUpsell {
 			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-upsell/bundle.js',
 			array_merge(
 				$asset['dependencies'],
-				array( 'newfold-global-ctb', 'selectWoo' ),
+				array( 'newfold-global-ctb', 'nfd-installer-listener', 'nfd-installer', 'selectWoo' ),
 			),
 			$asset['version'],
 			true
@@ -70,9 +70,9 @@ class SolutionsUpsell {
 		$screen = \get_current_screen();
 		if ( isset( $screen->id, $screen->post_type ) && 'product' === $screen->id && 'product' === $screen->post_type ) {
 			\wp_enqueue_script( 'solutions-upsell' );
-
-			\wp_enqueue_style( 'newfold-global-ctb-style' );
 			\wp_enqueue_style( 'solutions-upsell-style' );
+			\wp_enqueue_style( 'newfold-global-ctb-style' );
+			\wp_enqueue_style( 'nfd-installer' );
 
 			\wp_localize_script(
 				'solutions-upsell',
@@ -89,28 +89,27 @@ class SolutionsUpsell {
 	 */
 	protected function get_entitlement_upsell(): array {
 
-		$upsell               = array();
-		$entitlements         = Solutions::get_enhanced_entitlment_data();
-		$premium_entitlements = $entitlements['premium'] ?? array();
+		$upsell            = array();
+		$entitlements_data = Solutions::get_enhanced_entitlment_data();
+        $entitlements      = array( ...$entitlements_data['entitlements'], ...$entitlements_data['premium'] );
 
 		$entitlements_with_upsell = array(
 			'yith-woocommerce-booking-premium/init.php'    => _x( 'Bookable product', 'Solution Upsell product type label', 'wp-module-solutions' ),
 			'yith-woocommerce-gift-cards-premium/init.php' => _x( 'Gift card', 'Solution Upsell product type label', 'wp-module-solutions' ),
 		);
 
-		foreach ( $premium_entitlements as $entitlement ) {
-			if ( is_plugin_active( $entitlement['basename'] ) || empty( $entitlement['ctbId'] ) || ! array_key_exists( $entitlement['basename'], $entitlements_with_upsell ) ) {
+		foreach ( $entitlements as $entitlement ) {
+			if ( is_plugin_active( $entitlement['basename'] ) || ! array_key_exists( $entitlement['basename'], $entitlements_with_upsell ) ) {
 				continue;
 			}
 
 			$upsell[] = array(
-				'name'     => $entitlements_with_upsell[ $entitlement['basename'] ],
-				'basename' => $entitlement['basename'],
-				'ctbId'    => $entitlement['ctbId'],
+				'option_label' => $entitlements_with_upsell[ $entitlement['basename'] ],
+				...$entitlement,
 			);
 		}
 
-		return $upsell;
+        return $upsell;
 	}
 
 	/**

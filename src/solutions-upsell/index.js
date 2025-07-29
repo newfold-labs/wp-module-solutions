@@ -8,7 +8,7 @@ domReady( () => {
 
 	 	// Re-organize select.
 		const currentValue = productTypeSelect.val();
-		const premiumPlugins = NewfoldSolutionsUpsell || [];
+		const upsellPlugins = NewfoldSolutionsUpsell || [];
 
 		let options = [];
 
@@ -18,8 +18,8 @@ domReady( () => {
 		}
 
 		// Add premium values.
-		for ( let plugin of premiumPlugins ) {
-			options.push( new Option( plugin.name, plugin.basename ) );
+		for ( let plugin of upsellPlugins ) {
+			options.push( new Option( plugin.option_label, plugin.basename ) );
 		}
 
 		productTypeSelect.html(options);
@@ -28,9 +28,9 @@ domReady( () => {
 		productTypeSelect.selectWoo({
 			minimumResultsForSearch: Infinity,
 			templateResult: (state) => {
-				const premiumPlugin = premiumPlugins.find( plugin => state.id === plugin.basename );
+				const upsellPlugin = upsellPlugins.find( plugin => state.id === plugin.basename );
 
-				return premiumPlugin ? jQuery( '<span>' + state.text + '<span class="premium-plugin-icon"></span></span>' ) : state.text;
+				return upsellPlugin ? jQuery( '<span>' + state.text + '<span class="premium-plugin-icon"></span></span>' ) : state.text;
 			}
 		});
 
@@ -40,19 +40,33 @@ domReady( () => {
 		// Open CTB
 		productTypeSelect.on( 'select2:selecting', (e) => {
 
-			const premiumPlugin = premiumPlugins.find( plugin => e.params.args.data.id === plugin.basename );
+			const upsellPlugin = upsellPlugins.find( plugin => e.params.args.data.id === plugin.basename );
 
-			if ( premiumPlugin ) {
+			if ( upsellPlugin ) {
 				e.preventDefault();
 				e.stopPropagation();
 
-				let elem = jQuery( `<div data-ctb-id="${premiumPlugin.ctbId}"></div>` );
+				// Close select2.
+				productTypeSelect.selectWoo('close');
+				// Cleanup DOM from old elem.
+				jQuery(document.body).find('.nfd-solution-upsell-trigger').remove();
 
-				jQuery(document.body).append( elem );
-				elem.click();
+				const clickableElem = jQuery( '<a href="#" class="nfd-solution-upsell-trigger"></a>' );
+
+				clickableElem
+					.attr( 'data-ctb-id', upsellPlugin.ctbId )
+					.attr( 'data-nfd-installer-plugin-activate', !upsellPlugin.ctbId ? true : undefined )
+					.attr( 'data-nfd-installer-download-url', !upsellPlugin.ctbId ? upsellPlugin.download : undefined )
+					.attr( 'data-nfd-installer-plugin-basename', !upsellPlugin.ctbId ? upsellPlugin.basename : undefined )
+					.attr( 'data-nfd-installer-plugin-name', !upsellPlugin.ctbId ? upsellPlugin?.name : undefined )
+					.attr( 'data-nfd-installer-pls-provider', !upsellPlugin.ctbId ? upsellPlugin.plsProviderName : undefined )
+					.attr( 'data-nfd-installer-pls-slug', !upsellPlugin.ctbId ? upsellPlugin.plsSlug : undefined );
+
+				// Add clickable elem to DOM and trigger click.
+				jQuery(document.body).append( clickableElem );
+				// Trigger click using vanilla js
+				document.querySelector('.nfd-solution-upsell-trigger').click();
 			}
 		})
 	}
 })
-
-
