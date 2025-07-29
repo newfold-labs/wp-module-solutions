@@ -91,7 +91,10 @@ class SolutionsUpsell {
 
 		$upsell            = array();
 		$entitlements_data = Solutions::get_enhanced_entitlment_data();
-        $entitlements      = array( ...$entitlements_data['entitlements'], ...$entitlements_data['premium'] );
+		$entitlements      = array_merge(
+			isset( $entitlements_data['entitlements'] ) ? $entitlements_data['entitlements'] : array(),
+			isset( $entitlements_data['premium'] ) ? $entitlements_data['premium'] : array()
+		);
 
 		$entitlements_with_upsell = array(
 			'yith-woocommerce-booking-premium/init.php'    => _x( 'Bookable product', 'Solution Upsell product type label', 'wp-module-solutions' ),
@@ -99,17 +102,17 @@ class SolutionsUpsell {
 		);
 
 		foreach ( $entitlements as $entitlement ) {
-			if ( is_plugin_active( $entitlement['basename'] ) || ! array_key_exists( $entitlement['basename'], $entitlements_with_upsell ) ) {
+			if ( ! is_array( $entitlement ) || is_plugin_active( $entitlement['basename'] ) || ! array_key_exists( $entitlement['basename'], $entitlements_with_upsell ) ) {
 				continue;
 			}
 
-			$upsell[] = array(
-				'option_label' => $entitlements_with_upsell[ $entitlement['basename'] ],
-				...$entitlement,
+			$upsell[] = array_merge(
+				array( 'option_label' => $entitlements_with_upsell[ $entitlement['basename'] ] ),
+				$entitlement,
 			);
 		}
 
-        return $upsell;
+		return $upsell;
 	}
 
 	/**
