@@ -20,7 +20,7 @@ export const Creator = ( { plan } ) => {
 		'wp-module-solutions'
 	);
 
-    const [learMoreLink, setLearnMoreLink] = useState('https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin');
+    const [learnMoreLink, setLearnMoreLink] = useState('https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin');
     //Add UTM parameters to the link if the function is available
     useEffect(() => {
         const interval = setTimeout(() => {
