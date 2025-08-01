@@ -4,6 +4,7 @@ import { __, sprintf } from '@wordpress/i18n';
 import { Section } from '../../section';
 import { UpgradeBanner } from '../../../../common/components/upgrade-banner';
 import { getActiveSolution } from 'common/utils';
+import {useEffect, useState} from "react";
 
 export const Service = ( { plan } ) => {
 	const entitlements = getPlugins( { includePremium: false } );
@@ -18,6 +19,20 @@ export const Service = ( { plan } ) => {
 		'Upgrade to save & unlock more advanced tools',
 		'wp-module-solutions'
 	);
+    const [learMoreLink, setLearnMoreLink] = useState('https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin');
+    //Add UTM parameters to the link if the function is available
+    useEffect(() => {
+        const interval = setTimeout(() => {
+            if (
+                window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof Function
+            ) {
+                const addLearnMoreParamsLink = window.NewfoldRuntime.linkTracker.addUtmParams(learMoreLink);
+                setLearnMoreLink(addLearnMoreParamsLink);
+            }
+        }, 200);
+
+        return () => clearTimeout(interval);
+    }, []);
 	return (
 		<>
 			<Section title={ title }>
@@ -26,7 +41,7 @@ export const Service = ( { plan } ) => {
 					'wp-module-solutions'
 				) }
 				<a
-					href="https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin"
+					href={learMoreLink}
 					target="_blank"
 					rel="noreferrer"
 				>
@@ -77,7 +92,7 @@ export const Service = ( { plan } ) => {
 						) }
 					</strong>
 					<a
-						href="https://www.bluehost.com/my-account/account-center?utm_source=wp-admin%2Fadmin.php%3Fpage%3Dsolutions&utm_medium=bluehost_plugin"
+						href={learMoreLink}
 						target="_blank"
 						rel="noreferrer"
 					>

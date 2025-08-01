@@ -32,7 +32,8 @@
     },
     "require": {
         "newfold-labs/wp-module-data": "^2.8.6",
-        "newfold-labs/wp-module-loader": "^1.0.12"
+        "newfold-labs/wp-module-loader": "^1.0.12",
+        "newfold-labs/wp-module-link-tracker": "^1.0"
     },
     "config": {
         "allow-plugins": {
