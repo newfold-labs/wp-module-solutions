@@ -43,7 +43,7 @@ export const Creator = ( { plan } ) => {
 					'wp-module-solutions'
 				) }
 				<a
-					href={learMoreLink}
+					href={learnMoreLink}
 					target="_blank"
 					rel="noreferrer"
 				>
