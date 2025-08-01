@@ -27,7 +27,7 @@ export const Creator = ( { plan } ) => {
             if (
                 window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof Function
             ) {
-                const addLearnMoreParamsLink = window.NewfoldRuntime.linkTracker.addUtmParams(learMoreLink);
+                const addLearnMoreParamsLink = window.NewfoldRuntime.linkTracker.addUtmParams(learnMoreLink);
                 setLearnMoreLink(addLearnMoreParamsLink);
             }
         }, 200);
