@@ -95,7 +95,7 @@ export const Creator = ( { plan } ) => {
 						) }{ ' ' }
 					</strong>
 					<a
-						href={learMoreLink}
+						href={learnMoreLink}
 						target="_blank"
 						rel="noreferrer"
 					>
