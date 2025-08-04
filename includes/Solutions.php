@@ -299,13 +299,12 @@ class Solutions {
 			$connected = false;
 			// Use Jetpack's internal check if available
 			if ( class_exists( '\Automattic\Jetpack\Connection\Manager' ) ) {
-				$manager 	= new \Automattic\Jetpack\Connection\Manager();
-				$connected	= $manager->is_connected();
-        	}
-			
+				$manager   = new \Automattic\Jetpack\Connection\Manager();
+				$connected = $manager->is_connected();
+			}
 			// Set your redirect destinations
-			$redirect_url_if_connected 		= admin_url( 'admin.php?page=jetpack-forms-admin#/responses' ); // Feedback post type
-			$redirect_url_if_not_connected 	= admin_url( 'admin.php?page=jetpack#/dashboard' ); // Jetpack dashboard (onboarding)
+			$redirect_url_if_connected     = admin_url( 'admin.php?page=jetpack-forms-admin#/responses' ); // Feedback post type
+			$redirect_url_if_not_connected = admin_url( 'admin.php?page=jetpack#/dashboard' ); // Jetpack dashboard (onboarding)
 
 			wp_safe_redirect( $connected ? $redirect_url_if_connected : $redirect_url_if_not_connected );
 			exit;
