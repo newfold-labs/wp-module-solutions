@@ -36,6 +36,9 @@ class Solutions {
 		$this->container        = $container;
 		\add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 		\add_action( 'admin_menu', array( __CLASS__, 'add_plugins_solutions_menu_link' ) );
+		\add_action( 'admin_menu', array( __CLASS__, 'add_jetpack_menu_link' ) );
+		\add_action( 'admin_init', array( __CLASS__, 'check_jetpack_connection_redirect' ) );
+
 		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'solutions_page_assets' ) );
 		\add_action( 'admin_enqueue_scripts', array( $this, 'addnew_plugins_solutions_assets' ) );
 
@@ -274,5 +277,52 @@ class Solutions {
 			);
 		}
 		return $solutions_data;
+	}
+
+	/**
+	 * Checks Jetpack connection status and redirects the user accordingly.
+	 *
+	 * This function is triggered when visiting the admin page `admin.php?page=check-jetpack-connection`.
+	 * It checks if Jetpack is connected using the Jetpack Connection Manager class.
+	 * Based on the result, it redirects the user either to the Jetpack Forms responses page
+	 * (if connected) or the Jetpack onboarding dashboard (if not connected).
+	 *
+	 * @return void
+	 */
+	public static function check_jetpack_connection_redirect() {
+
+		if (
+			is_admin() &&
+			isset( $_GET['page'] ) &&
+			'check-jetpack-connection' === $_GET['page']
+		) {
+			$connected = false;
+			// Use Jetpack's internal check if available
+			if ( class_exists( '\Automattic\Jetpack\Connection\Manager' ) ) {
+				$manager   = new \Automattic\Jetpack\Connection\Manager();
+				$connected = $manager->is_connected();
+			}
+			// Set your redirect destinations
+			$redirect_url_if_connected     = admin_url( 'admin.php?page=jetpack-forms-admin#/responses' ); // Feedback post type
+			$redirect_url_if_not_connected = admin_url( 'admin.php?page=jetpack#/dashboard' ); // Jetpack dashboard (onboarding)
+
+			wp_safe_redirect( $connected ? $redirect_url_if_connected : $redirect_url_if_not_connected );
+			exit;
+		}
+	}
+
+	/**
+	 * Registers a hidden submenu page for checking Jetpack connection status.
+	 */
+	public static function add_jetpack_menu_link() {
+
+		\add_submenu_page(
+			null, // No parent, so it won't appear in any menu
+			'Jetpack Connection Check',
+			'',
+			'manage_options',
+			'check-jetpack-connection',
+			array( __CLASS__, 'check_jetpack_connection_redirect' ),
+		);
 	}
 }
