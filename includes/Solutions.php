@@ -36,7 +36,7 @@ class Solutions {
 		$this->container        = $container;
 		\add_action( 'rest_api_init', array( $this, 'init_entitilements_apis' ) );
 		\add_action( 'admin_menu', array( __CLASS__, 'add_plugins_solutions_menu_link' ) );
-		\add_action( 'admin_menu', array( __CLASS__, 'add_jp_menu_link' ) );
+		\add_action( 'admin_menu', array( __CLASS__, 'add_jetpack_menu_link' ) );
 		\add_action( 'admin_init', array( __CLASS__, 'check_jetpack_connection_redirect' ) );
 
 		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'solutions_page_assets' ) );
@@ -312,9 +312,9 @@ class Solutions {
 	}
 
 	/**
-	 * Add "Jetpack Connect Check" sub-link to admin plugins menu.
+	 * Registers a hidden submenu page for checking Jetpack connection status.
 	 */
-	public static function add_jp_menu_link() {
+	public static function add_jetpack_menu_link() {
 
 		\add_submenu_page(
 			null, // No parent, so it won't appear in any menu
