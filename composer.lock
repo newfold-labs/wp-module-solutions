@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65d2db1c9f075dda47c399c54034fe9b",
+    "content-hash": "6d7410a5d4177a5e82bdce62e631f267",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -310,6 +310,79 @@
                 "issues": "https://github.com/newfold-labs/wp-module-data/issues"
             },
             "time": "2025-07-16T20:29:28+00:00"
+        },
+        {
+            "name": "newfold-labs/wp-module-link-tracker",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
+                "reference": "603882c7dc44e5856b2818cf875b5336b5c178d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/603882c7dc44e5856b2818cf875b5336b5c178d3",
+                "reference": "603882c7dc44e5856b2818cf875b5336b5c178d3",
+                "shasum": ""
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2.5",
+                "wp-cli/i18n-command": "^2.6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\LinkTracker\\": "includes/"
+                },
+                "files": [
+                    "includes/functions.php",
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf . --standard=phpcs.xml"
+                ],
+                "i18n-pot": [
+                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests"
+                ],
+                "i18n-po": [
+                    "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
+                ],
+                "i18n-mo": [
+                    "vendor/bin/wp i18n make-mo ./languages"
+                ],
+                "i18n-php": [
+                    "vendor/bin/wp i18n make-php ./languages"
+                ],
+                "i18n-json": [
+                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                ],
+                "i18n": [
+                    "@i18n-pot",
+                    "@i18n-po",
+                    "@i18n-php",
+                    "@i18n-json"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                ]
+            },
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos Rodriguez",
+                    "email": "carlos.rodriguez@newfold.com"
+                }
+            ],
+            "description": "A WordPress module that adds tracking params",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/v1.0.5",
+                "issues": "https://github.com/newfold-labs/wp-module-link-tracker/issues"
+            },
+            "time": "2025-07-25T08:36:45+00:00"
         },
         {
             "name": "newfold-labs/wp-module-loader",
@@ -2060,11 +2133,11 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "platform-overrides": {
         "php": "7.3.0"
     },
