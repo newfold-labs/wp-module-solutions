@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d7410a5d4177a5e82bdce62e631f267",
+    "content-hash": "166772b3ade579dff85cb8e42213af84",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -313,16 +313,16 @@
         },
         {
             "name": "newfold-labs/wp-module-link-tracker",
-            "version": "v1.0.5",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
-                "reference": "603882c7dc44e5856b2818cf875b5336b5c178d3"
+                "reference": "147875be0d012cbfd60cd1f63ede80006a1977f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/603882c7dc44e5856b2818cf875b5336b5c178d3",
-                "reference": "603882c7dc44e5856b2818cf875b5336b5c178d3",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/147875be0d012cbfd60cd1f63ede80006a1977f5",
+                "reference": "147875be0d012cbfd60cd1f63ede80006a1977f5",
                 "shasum": ""
             },
             "require-dev": {
@@ -379,10 +379,10 @@
             ],
             "description": "A WordPress module that adds tracking params",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/v1.0.5",
+                "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/v1.1.1",
                 "issues": "https://github.com/newfold-labs/wp-module-link-tracker/issues"
             },
-            "time": "2025-07-25T08:36:45+00:00"
+            "time": "2025-07-29T15:51:38+00:00"
         },
         {
             "name": "newfold-labs/wp-module-loader",
@@ -2133,11 +2133,11 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "platform-overrides": {
         "php": "7.3.0"
     },
