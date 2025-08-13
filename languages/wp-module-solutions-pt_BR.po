@@ -15,8 +15,8 @@ msgstr ""
 "X-Generator: WP-CLI 2.11.0\n"
 
 #: bootstrap.php:15
-#: includes/Solutions.php:79
-#: includes/Solutions.php:158
+#: includes/Solutions.php:82
+#: includes/Solutions.php:161
 #: components/entitlements/index.js:8
 msgid "Solutions"
 msgstr "Soluções"
@@ -29,7 +29,7 @@ msgstr "Plugin ativado com sucesso!"
 msgid "Please send valid plugin"
 msgstr "Por favor, envie um plugin válido"
 
-#: includes/Solutions.php:63
+#: includes/Solutions.php:66
 msgid "My Solution"
 msgstr "Minha Solução"
 
