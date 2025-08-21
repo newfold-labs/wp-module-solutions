@@ -20,8 +20,8 @@ msgstr ""
 "X-Generator: WP-CLI 2.11.0\n"
 
 #: bootstrap.php:15
-#: includes/Solutions.php:82
-#: includes/Solutions.php:161
+#: includes/Solutions.php:83
+#: includes/Solutions.php:162
 #: components/entitlements/index.js:8
 msgid "Solutions"
 msgstr "Solution"
@@ -255,6 +255,16 @@ msgstr "Commencez avec un forfait adapté à vos objectifs et débloquez jusqu'�
 msgid "Add-Ons to build any kind of site, store or blog"
 msgstr "Modules complémentaires pour créer tout type de site, boutique ou blog"
 
-#: includes/Solutions.php:66
+#: includes/Solutions.php:67
 msgid "My Solution"
 msgstr "Ma solution"
+
+#: includes/SolutionsUpsell.php:100
+msgctxt "Solution Upsell product type label"
+msgid "Bookable product"
+msgstr ""
+
+#: includes/SolutionsUpsell.php:101
+msgctxt "Solution Upsell product type label"
+msgid "Gift card"
+msgstr ""
