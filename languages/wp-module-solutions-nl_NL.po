@@ -1,15 +1,16 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: newfold-labswp-module-staging\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-13T10:58:13+00:00\n"
+"PO-Revision-Date: 2025-02-19 14:32\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-13T10:58:13+00:00\n"
-"PO-Revision-Date: 2025-02-19 14:32\n"
-"Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-File: wp-module-solutions.pot\n"
 "X-Crowdin-File-ID: 24\n"
@@ -19,9 +20,7 @@ msgstr ""
 "X-Domain: wp-module-solutions\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
-#: bootstrap.php:15
-#: includes/Solutions.php:83
-#: includes/Solutions.php:162
+#: bootstrap.php:15 includes/Solutions.php:83 includes/Solutions.php:162
 #: components/entitlements/index.js:8
 msgid "Solutions"
 msgstr "Oplossingen"
@@ -40,15 +39,21 @@ msgstr "Mijn plug-ins & gereedschap"
 
 #: components/entitlements/index.js:9
 msgid "Explore the plugins & tools available with your solution."
-msgstr "Ontdek de plug-ins en gereedschappen die beschikbaar zijn met jouw oplossing."
+msgstr ""
+"Ontdek de plug-ins en gereedschappen die beschikbaar zijn met jouw "
+"oplossing."
 
 #: components/entitlements/index.js:13
 msgid "Error"
 msgstr "Foutmelding"
 
 #: components/entitlements/index.js:14
-msgid "Oops, there was an error loading the plugins & tools, please try again later."
-msgstr "Oeps, er is een fout opgetreden bij het laden van de plugins & tools, probeer het later opnieuw."
+msgid ""
+"Oops, there was an error loading the plugins & tools, please try again "
+"later."
+msgstr ""
+"Oeps, er is een fout opgetreden bij het laden van de plugins & tools, "
+"probeer het later opnieuw."
 
 #: components/entitlements/index.js:18
 msgid "Sorry, no current plugins & tools. Please, try again later."
@@ -66,30 +71,24 @@ msgstr "Laden…"
 msgid "Add a New Plugin"
 msgstr "Een nieuwe plugin toevoegen"
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page/bundle.js:3
+#: build/addnew/bundle.js:1 build/solutions-page/bundle.js:3
 #: build/solutions-page/bundle.js:16210
 msgid "Get it"
 msgstr "Verkrijgen"
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page/bundle.js:3
+#: build/addnew/bundle.js:1 build/solutions-page/bundle.js:3
 #: build/solutions-page/bundle.js:15427
 msgid "Upgrade to unlock all features"
 msgstr "Upgrade om alle functies te ontgrendelen"
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page/bundle.js:3
+#: build/addnew/bundle.js:1 build/solutions-page/bundle.js:3
 #: build/solutions-page/bundle.js:15454
 msgid "Discover Now"
 msgstr "Ontdek nu"
 
 #. translators: %s: Add-on Name
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
-#: build/solutions-page/bundle.js:2
-#: build/solutions-page/bundle.js:15737
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
+#: build/solutions-page/bundle.js:2 build/solutions-page/bundle.js:15737
 #, js-format
 msgid "Powerful Plugins Included in your %s"
 msgstr "Krachtige plugins inbegrepen bij je %s"
@@ -98,44 +97,51 @@ msgstr "Krachtige plugins inbegrepen bij je %s"
 msgid "Upgrade to save & unlock 30 advanced tools"
 msgstr "Upgrade om 30 geavanceerde tools te ontgrendelen en te besparen"
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
-#: build/solutions-page/bundle.js:2
-#: build/solutions-page/bundle.js:15749
-msgid "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience."
-msgstr "Ontdek de complete lijst met geavanceerde functies van je hostingprovider Bluehost, ontworpen om ongeëvenaarde waarde te leveren en je online ervaring te verbeteren."
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
+#: build/solutions-page/bundle.js:2 build/solutions-page/bundle.js:15749
+msgid ""
+"Discover the complete list of advanced features provided by your hosting "
+"provider Bluehost, designed to deliver unmatched value and elevate your "
+"online experience."
+msgstr ""
+"Ontdek de complete lijst met geavanceerde functies van je hostingprovider "
+"Bluehost, ontworpen om ongeëvenaarde waarde te leveren en je online ervaring"
+" te verbeteren."
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
 msgid "Learn more about our eCommerce Add-Ons"
 msgstr "Meer informatie over onze eCommerce Add-Ons"
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
-msgid "Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience."
-msgstr "Geef je online winkel een boost met krachtige tools die zijn ontworpen om de verkoop te verhogen, betalingen te stroomlijnen, voorraad te beheren en de klantervaring te verbeteren."
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
+msgid ""
+"Supercharge your online store with powerful tools designed to boost sales, "
+"streamline payments, manage inventory, and enhance customer experience."
+msgstr ""
+"Geef je online winkel een boost met krachtige tools die zijn ontworpen om de"
+" verkoop te verhogen, betalingen te stroomlijnen, voorraad te beheren en de "
+"klantervaring te verbeteren."
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-msgid "No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit — packed with everything you need at an unbeatable price!"
-msgstr "Ongeacht wat je verkoopt of hoe je je winkel runt, dit is de ultieme e-commerce toolkit — met alles wat je nodig hebt voor een onverslaanbare prijs!"
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3
+msgid ""
+"No matter what you sell or how you run your store, this is the Ultimate "
+"e-commerce toolkit — packed with everything you need at an unbeatable price!"
+msgstr ""
+"Ongeacht wat je verkoopt of hoe je je winkel runt, dit is de ultieme "
+"e-commerce toolkit — met alles wat je nodig hebt voor een onverslaanbare "
+"prijs!"
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:16254
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:16254
 msgid "The #1 Bundle of Commerce Tools"
 msgstr "Het #1 pakket van commerciële tools"
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
-msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)"
-msgstr "Add-ons ontworpen om winkeleigenaren te helpen hun online verkoop te verhogen met een groot pakket premium tools (waarde €3.200)"
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
+msgid ""
+"Add-Ons designed to help shop owners to boost their online sales with a "
+"massive bundle of premium tools (value $3,500)"
+msgstr ""
+"Add-ons ontworpen om winkeleigenaren te helpen hun online verkoop te "
+"verhogen met een groot pakket premium tools (waarde €3.200)"
 
 #: build/addnew/bundle.js:3
 msgid "Upgrade to save & unlock more advanced tools"
@@ -145,112 +151,101 @@ msgstr "Upgrade om te besparen en meer geavanceerde tools te ontgrendelen"
 msgid "Premium tools available in our eCommerce Add-Ons"
 msgstr "Premium tools beschikbaar in onze eCommerce Add-Ons"
 
-#: build/solutions-page/bundle.js:2
-#: build/solutions-page/bundle.js:15743
+#: build/solutions-page/bundle.js:2 build/solutions-page/bundle.js:15743
 msgid "Premium tools available in eCommerce Add-Ons"
 msgstr "Premium tools beschikbaar in eCommerce Add-Ons"
 
-#: build/solutions-page/bundle.js:2
-#: build/solutions-page/bundle.js:15759
+#: build/solutions-page/bundle.js:2 build/solutions-page/bundle.js:15759
 msgid "Learn more about eCommerce Add-Ons"
 msgstr "Meer informatie over eCommerce Add-Ons"
 
-#: build/solutions-page/bundle.js:2
-#: build/solutions-page/bundle.js:15796
+#: build/solutions-page/bundle.js:2 build/solutions-page/bundle.js:15796
 msgid "Most Popular"
 msgstr "Meest populair"
 
-#: build/solutions-page/bundle.js:2
-#: build/solutions-page/bundle.js:15801
+#: build/solutions-page/bundle.js:2 build/solutions-page/bundle.js:15801
 msgid "Premium Tools"
 msgstr "Premium Tools"
 
-#: build/solutions-page/bundle.js:2
-#: build/solutions-page/bundle.js:15809
+#: build/solutions-page/bundle.js:2 build/solutions-page/bundle.js:15809
 msgid "All"
 msgstr "Alles"
 
-#: build/solutions-page/bundle.js:2
-#: build/solutions-page/bundle.js:15820
+#: build/solutions-page/bundle.js:2 build/solutions-page/bundle.js:15820
 msgid "Search"
 msgstr "Zoeken"
 
-#: build/solutions-page/bundle.js:2
-#: build/solutions-page/bundle.js:15849
+#: build/solutions-page/bundle.js:2 build/solutions-page/bundle.js:15849
 #: build/solutions-page/bundle.js:15880
 msgid "Categories"
 msgstr "Categorieën"
 
 #. translators: %s: Search term
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:15961
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:15961
 #, js-format
 msgid "No matching tools for '%s'"
 msgstr "Geen overeenkomende tools voor '%s'"
 
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:15966
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:15966
 msgid "Check the spelling or try another keyword"
 msgstr "Controleer de spelling of probeer een ander zoekwoord"
 
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:15978
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:15978
 msgid "Return to the tools list"
 msgstr "Terug naar de toolslijst"
 
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:16078
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:16078
 msgid "Popular"
 msgstr "Populair"
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page/bundle.js:3
+#: build/addnew/bundle.js:1 build/solutions-page/bundle.js:3
 #: build/solutions-page/bundle.js:16086
 msgid "Premium"
 msgstr "Premie"
 
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:16251
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:16251
 msgid "Upgrade to Save"
 msgstr "Upgrade om te besparen"
 
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:16261
-msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools"
-msgstr "Add-ons ontworpen om winkeleigenaren te helpen hun online verkoop te verhogen met een groot pakket premium tools"
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:16261
+msgid ""
+"Add-Ons designed to help shop owners to boost their online sales with a "
+"massive bundle of premium tools"
+msgstr ""
+"Add-ons ontworpen om winkeleigenaren te helpen hun online verkoop te "
+"verhogen met een groot pakket premium tools"
 
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:16272
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:16272
 msgid "Some features included:"
 msgstr "Enkele inbegrepen functies:"
 
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:16277
-msgid "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc."
-msgstr "Boost Reviews, Boekingen & Afspraken, Social Login, Productfilters, etc."
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:16277
+msgid ""
+"Boost Reviews, Booking & Appointments, Social Login, Product filters, etc."
+msgstr ""
+"Boost Reviews, Boekingen & Afspraken, Social Login, Productfilters, etc."
 
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:16282
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:16282
 msgid "Bundle of 30 features for a value of $3,500"
 msgstr "Pakket van 30 functies met een waarde van €3.200"
 
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:16297
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:16297
 msgid "/month"
 msgstr "/maand"
 
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:16300
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:16300
 msgid "Discover"
 msgstr "Ontdekken"
 
-#: build/solutions-page/bundle.js:3
-#: build/solutions-page/bundle.js:15705
-msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
-msgstr "Begin met een plan dat bij je doelen past en ontgrendel tot €3.200 aan premium Bluehost- en Yoast-plugins."
+#: build/solutions-page/bundle.js:3 build/solutions-page/bundle.js:15705
+msgid ""
+"Start with a plan that fits your goals and unlock up to $3,500 in premium "
+"Bluehost and Yoast plugins."
+msgstr ""
+"Begin met een plan dat bij je doelen past en ontgrendel tot €3.200 aan "
+"premium Bluehost- en Yoast-plugins."
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page/bundle.js:3
+#: build/addnew/bundle.js:1 build/solutions-page/bundle.js:3
 #: build/solutions-page/bundle.js:15437
 msgid "Add-Ons to build any kind of site, store or blog"
 msgstr "Add-ons om elk type website, winkel of blog te bouwen"
