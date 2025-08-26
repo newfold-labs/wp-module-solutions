@@ -4,6 +4,8 @@ import { UpgradeBanner } from 'common/components/upgrade-banner';
 import { getActiveSolution } from 'common/utils';
 import classNames from 'classnames';
 import { __ } from '@wordpress/i18n';
+import { SolutionsPage } from '../solutions-page';
+import { FilterProvider } from '../../contexts/FilterContext';
 
 export const Content = () => {
 	const hasSolution = !! getActiveSolution();
@@ -17,19 +19,21 @@ export const Content = () => {
 	);
 
 	return (
-		<div className={ classes }>
-			{ ! hasSolution && (
-				<UpgradeBanner>
-					{ __(
-						'Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.',
-						'wp-module-solutions'
-					) }
-				</UpgradeBanner>
-			) }
-			<Sidebar />
-			<main className="nfd-w-full">
-				<Tools />
-			</main>
-		</div>
+		<FilterProvider>
+			<div className={ classes }>
+				{ ! hasSolution && (
+					<UpgradeBanner>
+						{ __(
+							'Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.',
+							'wp-module-solutions'
+						) }
+					</UpgradeBanner>
+				) }
+				<Sidebar/>
+				<main className="nfd-w-full">
+					<Tools/>
+				</main>
+			</div>
+		</FilterProvider>
 	);
 };

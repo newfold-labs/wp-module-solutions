@@ -3,20 +3,42 @@ const { merge } = require( 'webpack-merge' );
 const wpScriptsConfig = require( '@wordpress/scripts/config/webpack.config' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
-const apps = [ 'solutions-page', 'solutions-upsell', 'addnew' ];
+const apps = [
+	{
+		name: 'solutions-page',
+		path: 'solutions-page'
+	},
+	{
+		name: 'solutions-upsell',
+		path: 'solutions-upsell',
+	},
+	{
+		name: 'addnew',
+		path: 'addnew',
+	},
+	{
+		name: 'solutions-page-component',
+		path: 'solutions-page/components/content',
+		outputOptions: {
+			filename: 'index.js',
+			library: { type: 'commonjs2' }
+		}
+	},
+];
 
 const alias = {
-	common: path.resolve( __dirname, '/src/common' ),
+	common: path.resolve( __dirname, 'src/common' ),
 };
 
-module.exports = apps.map( ( app ) =>
+module.exports = apps.map( ( { name, path: appPath, outputOptions={} } ) =>
 	merge( wpScriptsConfig, {
 		entry: {
-			[ app ]: path.resolve( __dirname, `./src/${ app }/index.js` ),
+			[ name ]: path.resolve( __dirname, `./src/${ appPath }/index.js` ),
 		},
 		output: {
-			path: path.resolve( __dirname, `./build/${ app }` ),
+			path: path.resolve( __dirname, `./build/${ name }` ),
 			filename: 'bundle.js',
+			...outputOptions
 		},
 		resolve: {
 			alias,
@@ -26,7 +48,7 @@ module.exports = apps.map( ( app ) =>
 				{
 					test: /\.css$/,
 					include: [
-						path.resolve( __dirname, `src/${ app }/*.css` ),
+						path.resolve( __dirname, `src/${ name }/*.css` ),
 					],
 					use: [ MiniCssExtractPlugin.loader, 'css-loader' ],
 				},

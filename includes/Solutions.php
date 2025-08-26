@@ -136,7 +136,7 @@ class Solutions {
 
 		// Only enqueue on solutions page
 		$screen = \get_current_screen();
-		if ( isset( $screen->id ) && false !== strpos( $screen->id, 'solution' ) ) {
+		if ( isset( $screen->id ) && (false !== strpos( $screen->id, 'solution' ) || 'toplevel_page_bluehost' === $screen->id) ) {
 			\wp_enqueue_script( 'solutions-page' );
 			\wp_enqueue_style( 'solutions-page-style' );
 
