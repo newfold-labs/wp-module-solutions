@@ -1,10 +1,9 @@
-import { Sidebar } from '../sidebar';
+import { FilterBar } from '../filter-bar';
 import { Tools } from '../tools';
 import { UpgradeBanner } from 'common/components/upgrade-banner';
 import { getActiveSolution } from 'common/utils';
 import classNames from 'classnames';
 import { __ } from '@wordpress/i18n';
-import { SolutionsPage } from '../solutions-page';
 import { FilterProvider } from '../../contexts/FilterContext';
 
 export const Content = () => {
@@ -12,7 +11,7 @@ export const Content = () => {
 
 	const classes = classNames(
 		'nfd-page-content',
-		'nfd-flex nfd-relative nfd-gap-6 nfd-max-w-full nfd-my-0 nfd-flex-col min-[782px]:nfd-flex-row',
+		'nfd-flex nfd-relative nfd-gap-6 nfd-max-w-full nfd-my-0 nfd-flex-col',
 		{
 			'nfd-page-content--no-solution': ! hasSolution,
 		}
@@ -29,7 +28,7 @@ export const Content = () => {
 						) }
 					</UpgradeBanner>
 				) }
-				<Sidebar/>
+				<FilterBar />
 				<main className="nfd-w-full">
 					<Tools/>
 				</main>
