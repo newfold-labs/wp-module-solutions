@@ -5,6 +5,7 @@ import { getActiveSolution } from 'common/utils';
 import classNames from 'classnames';
 import { __ } from '@wordpress/i18n';
 import { FilterProvider } from '../../contexts/FilterContext';
+import './style.scss';
 
 export const Content = () => {
 	const hasSolution = !! getActiveSolution();
