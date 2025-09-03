@@ -1,0 +1,16 @@
+.nfd-solutions-category-selector {
+
+	ul li:nth-last-child(2) {
+		margin-top : 1rem;
+
+		&:before {
+			content    : '';
+			position   : absolute;
+			top        : -.5rem;
+			left       : .75rem;
+			width      : calc(100% - 1.5rem);
+			height     : 1px;
+			border-top : 1px solid #DCDCDC;
+		}
+	}
+}

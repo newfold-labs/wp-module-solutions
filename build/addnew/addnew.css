@@ -3357,6 +3357,9 @@
 .nfd-min-w-60 {
 		min-width: 15rem !important;
 }
+.nfd-min-w-\[250px\] {
+		min-width: 250px !important;
+}
 .nfd-min-w-full {
 		min-width: 100% !important;
 }
@@ -3947,11 +3950,6 @@ svg#ndf-tools-plugin-bluehost-brand {
 				--tw-scale-x: .95 !important;
 				--tw-scale-y: .95 !important;
 				transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
-		}
-}
-@media (min-width: 782px) {
-		.min-\[782px\]\:nfd-flex-row {
-				flex-direction: row !important;
 		}
 }
 @media (min-width: 783px) {

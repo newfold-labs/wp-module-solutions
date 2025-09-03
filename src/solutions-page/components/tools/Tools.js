@@ -4,6 +4,8 @@ import { UpgradeCard } from './upgrade-card';
 import { useFilter } from '../../contexts/FilterContext';
 import { getTools } from 'common/utils';
 import { useRef, useEffect, useState } from '@wordpress/element';
+import '../../tailwind.pcss';
+import './style.scss';
 
 export const Tools = () => {
 	const grid = useRef();
