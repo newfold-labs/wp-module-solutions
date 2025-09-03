@@ -1,0 +1,11 @@
+.nfd-page-content {
+	&.nfd-page-content--no-solution {
+		max-height : 100vh;
+		min-height : 450px;
+		overflow   : hidden;
+	}
+
+	.nfd-solutions-upgrade-banner {
+		top : min(50%, 300px);
+	}
+}

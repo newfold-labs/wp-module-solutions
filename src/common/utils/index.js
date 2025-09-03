@@ -1,3 +1,6 @@
+import { FireIcon, StarIcon } from '@heroicons/react/20/solid';
+import { __ } from '@wordpress/i18n';
+
 const popularTools = [
 	'ad68e506-8c2b-4c0f-a9e3-16623d00041e', // Booking & Appointments
 	'20085485-7185-40fd-89e4-14dbb690aea2', // Advanced Review
@@ -190,4 +193,40 @@ const renderCTAUrl = ( url ) => {
 	return url;
 };
 
-export { getTools, getActiveSolution, renderCTAUrl, getSolution };
+const getSolutionsCategories = () => {
+	if ( ! window.NewfoldSolutions?.categories ) {
+		return [];
+	}
+
+	const categories = [];
+	window.NewfoldSolutions.categories.map( ( cat ) => {
+		const { slug: id, name: label, priority, count } = cat;
+		categories.push( { id, label, priority, count } );
+	} );
+
+	categories.sort( ( a, b ) => (a.priority > b.priority ? -1 : 1) );
+
+	const staticCategories = [
+		{
+			id: 'popular',
+			label: __( 'Most Popular', 'wp-module-solutions' ),
+			icon: FireIcon,
+		},
+		{
+			id: 'premium',
+			label: __( 'Premium Tools', 'wp-module-solutions' ),
+			icon: StarIcon,
+		},
+	];
+
+	return [
+		{
+			id: 'all',
+			label: __( 'All', 'wp-module-solutions' ),
+		},
+		...categories,
+		...staticCategories,
+	];
+};
+
+export { getTools, getActiveSolution, renderCTAUrl, getSolution, getSolutionsCategories };

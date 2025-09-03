@@ -3,9 +3,8 @@ import './tailwind.pcss';
 import domReady from '@wordpress/dom-ready';
 import { createRoot } from '@wordpress/element';
 import { Root } from '@newfold/ui-component-library';
-import { SolutionsPage } from './components/solutions-page';
-import { FilterProvider } from './contexts/FilterContext';
 import { HashRouter as Router } from 'react-router-dom';
+import { SolutionsPage } from './components/solutions-page';
 
 const WP_SOLUTIONS_PAGE_ROOT_ELEMENT = 'nfd-solutions-app';
 
@@ -13,9 +12,7 @@ const App = () => {
 	return (
 		<Root>
 			<Router>
-				<FilterProvider>
-					<SolutionsPage />
-				</FilterProvider>
+				<SolutionsPage />
 			</Router>
 		</Root>
 	);
