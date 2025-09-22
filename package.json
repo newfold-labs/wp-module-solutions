@@ -20,7 +20,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.8",
     "@tailwindcss/postcss": "^4.1.13",
-    "@wordpress/dom-ready": "^4.30.0",
+    "@wordpress/dom-ready": "^4.31.0",
     "@wordpress/scripts": "^30",
     "@wordpress/url": "^4.31.0",
     "classnames": "^2.5.1",
