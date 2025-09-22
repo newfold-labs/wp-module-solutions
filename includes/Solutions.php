@@ -366,7 +366,7 @@ class Solutions {
 	public static function add_jetpack_menu_link() {
 
 		\add_submenu_page(
-			null, // No parent, so it won't appear in any menu
+			'', // Using empty string as parent, so it won't appear in any menu
 			'Jetpack Connection Check',
 			'',
 			'manage_options',
