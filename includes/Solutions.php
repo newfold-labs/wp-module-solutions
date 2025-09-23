@@ -40,6 +40,7 @@ class Solutions {
 		\add_action( 'admin_init', array( __CLASS__, 'check_jetpack_connection_redirect' ) );
 
 		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'solutions_page_assets' ) );
+		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'solutions_page_component_assets' ) );
 		\add_action( 'admin_enqueue_scripts', array( $this, 'addnew_plugins_solutions_assets' ) );
 
 		\add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
@@ -136,7 +137,7 @@ class Solutions {
 
 		// Only enqueue on solutions page
 		$screen = \get_current_screen();
-		if ( isset( $screen->id ) && false !== strpos( $screen->id, 'solution' ) ) {
+		if ( isset( $screen->id ) && ( false !== strpos( $screen->id, 'solution' ) ) ) {
 			\wp_enqueue_script( 'solutions-page' );
 			\wp_enqueue_style( 'solutions-page-style' );
 
@@ -147,6 +148,53 @@ class Solutions {
 					self::get_enhanced_entitlment_data(),
 				)
 			);
+		}
+	}
+
+
+	/**
+	 * Enqueue assets and set locals.
+	 */
+	public static function solutions_page_component_assets() {
+		$asset_file = NFD_SOLUTIONS_DIR . '/build/solutions-page-component/index.asset.php';
+		if ( is_readable( $asset_file ) ) {
+			$asset = include_once $asset_file;
+		} else {
+			return;
+		}
+
+		\wp_register_script(
+			'solutions-page-component',
+			false,
+			null,
+			$asset['version']
+		);
+
+		\wp_register_style(
+			'solutions-page-component-style-common',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page-component/style-solutions-page-component.css',
+			null,
+			$asset['version']
+		);
+
+		\wp_register_style(
+			'solutions-page-component-style',
+			NFD_SOLUTIONS_PLUGIN_URL . 'vendor/newfold-labs/wp-module-solutions/build/solutions-page-component/solutions-page-component.css',
+			array( 'nfd-installer', 'solutions-page-component-style-common' ),
+			$asset['version']
+		);
+
+		// Only enqueue on solutions page
+		$screen = \get_current_screen();
+		if ( isset( $screen->id ) && 'toplevel_page_bluehost' === $screen->id ) {
+			\wp_enqueue_style( 'solutions-page-component-style' );
+
+			\wp_add_inline_script(
+				'solutions-page-component',
+				'window.NewfoldSolutions =' . wp_json_encode( self::get_enhanced_entitlment_data() ) . ';',
+				'before'
+			);
+			\wp_enqueue_script( 'solutions-page-component' );
 		}
 	}
 
@@ -269,7 +317,7 @@ class Solutions {
 		// check if entitlements data is present
 		if ( array_key_exists( 'entitlements', $solutions_data ) && is_array( $solutions_data['entitlements'] ) ) {
 			$solutions_data['entitlements'] = array_map(
-				// add isActive key to any entitlement that is active on the site
+			// add isActive key to any entitlement that is active on the site
 				function ( $entitlement ) {
 					$entitlement['isActive'] = is_plugin_active( $entitlement['basename'] );
 					return $entitlement;

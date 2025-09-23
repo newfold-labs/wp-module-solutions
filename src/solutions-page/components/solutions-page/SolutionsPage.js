@@ -8,6 +8,7 @@ export const SolutionsPage = () => {
 	const isLargeViewport = useViewportMatch( 'medium' );
 	const classes = classNames( [
 		'nfd-solutions-app-container',
+		'wppbh-page-commerce',
 		'nfd-page',
 		'min-[783px]:nfd-p-8 min-[783px]:nfd-flex nfd-gap-6 nfd-my-0',
 		{
