@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-05-07 15:17+0100",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/solutions-page\/bundle.js",
+    "source": "build\/solutions-page-component\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -25,20 +25,8 @@
             "Discover Now": [
                 "Descubra Agora"
             ],
-            "Powerful Plugins Included in your %s": [
-                "Plugins poderosos inclu\u00eddos no seu %s"
-            ],
-            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
-                "Descubra a lista completa de recursos avan\u00e7ados oferecidos pela sua hospedagem Bluehost, projetados para oferecer um valor incompar\u00e1vel e melhorar sua experi\u00eancia online."
-            ],
             "The #1 Bundle of Commerce Tools": [
                 "O pacote n\u00ba 1 de ferramentas de com\u00e9rcio eletr\u00f4nico"
-            ],
-            "Premium tools available in eCommerce Add-Ons": [
-                "Ferramentas premium dispon\u00edveis nos Add-ons de eCommerce"
-            ],
-            "Learn more about eCommerce Add-Ons": [
-                "Saiba mais sobre os Add-ons de eCommerce"
             ],
             "Most Popular": [
                 "Mais populares"

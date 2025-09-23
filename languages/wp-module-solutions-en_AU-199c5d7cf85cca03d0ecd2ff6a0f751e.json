@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-02-13 19:37+0530",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/solutions-page\/bundle.js",
+    "source": "build\/solutions-page-component\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -19,20 +19,8 @@
             "Discover Now": [
                 "Discover Now"
             ],
-            "Powerful Plugins Included in your %s": [
-                "Powerful Plugins Included in your %s"
-            ],
-            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
-                "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience."
-            ],
             "The #1 Bundle of Commerce Tools": [
                 "The #1 Bundle of Commerce Tools"
-            ],
-            "Premium tools available in eCommerce Add-Ons": [
-                "Premium tools available in eCommerce Add-Ons"
-            ],
-            "Learn more about eCommerce Add-Ons": [
-                "Learn more about eCommerce Add-Ons"
             ],
             "Most Popular": [
                 "Most Popular"
