@@ -1,84 +1,84 @@
 {
-  "translation-revision-date": "2025-05-07 15:16+0100",
-  "generator": "WP-CLI/2.12.0",
-  "source": "build/solutions-page-component/index.js",
-  "domain": "messages",
-  "locale_data": {
-    "messages": {
-      "": {
-        "domain": "messages",
-        "lang": "es_MX",
-        "plural-forms": "nplurals=2; plural=(n != 1);"
-      },
-      "Premium": [
-        "Premium"
-      ],
-      "Get it": [
-        "Obtener"
-      ],
-      "Upgrade to unlock all features": [
-        "Actualiza para desbloquear todas las funciones"
-      ],
-      "Add-Ons to build any kind of site, store or blog": [
-        "Complementos para crear cualquier tipo de sitio, tienda o blog"
-      ],
-      "Discover Now": [
-        "Descúbrelo ahora"
-      ],
-      "The #1 Bundle of Commerce Tools": [
-        "El paquete n.º 1 de herramientas de comercio"
-      ],
-      "Most Popular": [
-        "Más populares"
-      ],
-      "Premium Tools": [
-        "Herramientas premium"
-      ],
-      "All": [
-        "Todos"
-      ],
-      "No matching tools for '%s'": [
-        "No hay herramientas que coincidan con '%s'"
-      ],
-      "Check the spelling or try another keyword": [
-        "Revisa la ortografía o intenta con otra palabra clave"
-      ],
-      "Return to the tools list": [
-        "Volver a la lista de herramientas"
-      ],
-      "Popular": [
-        "Populares"
-      ],
-      "Upgrade to Save": [
-        "Actualiza para ahorrar"
-      ],
-      "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools": [
-        "Complementos diseñados para ayudar a los dueños de tiendas a aumentar sus ventas en línea con un enorme paquete de herramientas premium"
-      ],
-      "Some features included:": [
-        "Algunas funciones incluidas:"
-      ],
-      "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc.": [
-        "Impulsa reseñas, reservas y citas, inicio de sesión social, filtros de productos, etc."
-      ],
-      "Bundle of 30 features for a value of $3,500": [
-        "Paquete de 30 funciones con un valor de $3,500"
-      ],
-      "/month": [
-        "/mes"
-      ],
-      "Discover": [
-        "Descubrir"
-      ],
-      "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
-        "Comienza con un plan que se adapte a tus objetivos y desbloquea hasta $3,500 en plugins premium de Bluehost y Yoast."
-      ],
-      "Search tool": [
-        "Herramienta de búsqueda"
-      ],
-      "Filter by type": [
-        "Filtrar por tipo"
-      ]
+    "translation-revision-date": "2025-05-07 15:16+0100",
+    "generator": "WP-CLI\/2.12.0",
+    "source": "build\/solutions-page-component\/index.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_MX",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Premium": [
+                "Premium"
+            ],
+            "Get it": [
+                "Obtener"
+            ],
+            "Upgrade to unlock all features": [
+                "Actualiza para desbloquear todas las funciones"
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Complementos para crear cualquier tipo de sitio, tienda o blog"
+            ],
+            "Discover Now": [
+                "Desc\u00fabrelo ahora"
+            ],
+            "The #1 Bundle of Commerce Tools": [
+                "El paquete n.\u00ba 1 de herramientas de comercio"
+            ],
+            "Most Popular": [
+                "M\u00e1s populares"
+            ],
+            "Premium Tools": [
+                "Herramientas premium"
+            ],
+            "All": [
+                "Todos"
+            ],
+            "No matching tools for '%s'": [
+                "No hay herramientas que coincidan con '%s'"
+            ],
+            "Check the spelling or try another keyword": [
+                "Revisa la ortograf\u00eda o intenta con otra palabra clave"
+            ],
+            "Return to the tools list": [
+                "Volver a la lista de herramientas"
+            ],
+            "Popular": [
+                "Populares"
+            ],
+            "Upgrade to Save": [
+                "Actualiza para ahorrar"
+            ],
+            "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools": [
+                "Complementos dise\u00f1ados para ayudar a los due\u00f1os de tiendas a aumentar sus ventas en l\u00ednea con un enorme paquete de herramientas premium"
+            ],
+            "Some features included:": [
+                "Algunas funciones incluidas:"
+            ],
+            "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc.": [
+                "Impulsa rese\u00f1as, reservas y citas, inicio de sesi\u00f3n social, filtros de productos, etc."
+            ],
+            "Bundle of 30 features for a value of $3,500": [
+                "Paquete de 30 funciones con un valor de $3,500"
+            ],
+            "\/month": [
+                "\/mes"
+            ],
+            "Discover": [
+                "Descubrir"
+            ],
+            "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
+                "Comienza con un plan que se adapte a tus objetivos y desbloquea hasta $3,500 en plugins premium de Bluehost y Yoast."
+            ],
+            "Search tool": [
+                "Herramienta de b\u00fasqueda"
+            ],
+            "Filter by type": [
+                "Filtrar por tipo"
+            ]
+        }
     }
-  }
 }
