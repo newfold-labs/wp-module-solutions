@@ -20,8 +20,8 @@ msgstr ""
 "X-Generator: WP-CLI 2.11.0\n"
 
 #: bootstrap.php:15
-#: includes/Solutions.php:84
-#: includes/Solutions.php:210
+#: includes/Solutions.php:89
+#: includes/Solutions.php:263
 #: components/entitlements/index.js:8
 msgid "Solutions"
 msgstr "Oplossingen"
@@ -240,7 +240,7 @@ msgstr "Begin met een plan dat bij je doelen past en ontgrendel tot €3.200 aan
 msgid "Add-Ons to build any kind of site, store or blog"
 msgstr "Add-ons om elk type website, winkel of blog te bouwen"
 
-#: includes/Solutions.php:68
+#: includes/Solutions.php:72
 msgid "My Solution"
 msgstr "Mijn oplossing"
 
