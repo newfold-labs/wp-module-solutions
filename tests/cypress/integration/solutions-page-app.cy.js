@@ -18,9 +18,9 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 
 	// test not connected to hiive will not have a solution
 	it( 'Solutions page displays upgrade for those with no solution', () => {
-		cy.visit( '/wp-admin/admin.php?page=solutions' );
+		cy.visit( '/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '#/commerce' );
 
-		cy.get( '#nfd-solutions-app h1' )
+		cy.get( '.nfd-solutions-content h1' )
 			.contains( 'Premium tools available' )
 			.scrollIntoView()
 			.should( 'be.visible' );
@@ -34,9 +34,9 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 	// test solution=none for ctb atts
 	it( 'Solutions page displays upgrade with CTB atts for those with no solution', () => {
 		setSolution( 'none' );
-		cy.visit( '/wp-admin/admin.php?page=solutions&solution=none' );
+		cy.visit( '/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '&solution=none#/commerce' );
 
-		cy.get( '#nfd-solutions-app h1' )
+		cy.get( '.nfd-solutions-content h1' )
 			.contains( 'Premium tools available' )
 			.scrollIntoView()
 			.should( 'be.visible' );
@@ -46,14 +46,14 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 			.scrollIntoView()
 			.should( 'be.visible' );
 
-		cy.get( '#nfd-solutions-app .nfd-solutions-upgrade-banner__button' )
+		cy.get( '.nfd-solutions-content .nfd-solutions-upgrade-banner__button' )
 			.should( 'have.attr', 'href' )
 			.then( ( href ) => {
 				expect( href.includes( '#click-to-buy-WP_SOLUTION_FAMILY' ) ).to
 					.be.true;
 			} );
 		cy.get(
-			'#nfd-solutions-app .nfd-solutions-upgrade-banner__button'
+			'.nfd-solutions-content .nfd-solutions-upgrade-banner__button'
 		).should(
 			'have.attr',
 			'data-ctb-id',
@@ -66,10 +66,10 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 	// test solution=creator for entitlements and premium
 	it( 'Creator solutions page displays tools with proper button atts', () => {
 		setSolution( 'creator' );
-		cy.visit( '/wp-admin/admin.php?page=solutions&solution=creator' );
+		cy.visit( '/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '&solution=creator#/commerce' );
 
-		cy.get( '#nfd-solutions-app h1' )
-			.contains( 'Powerful Plugins Included' )
+		cy.get( '.nfd-solutions-content h1' )
+			.contains( 'Premium tools available' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 
@@ -186,10 +186,10 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 	// test solution=service for entitlements and premium
 	it( 'Service solutions page displays tools with proper button atts', () => {
 		setSolution( 'service' );
-		cy.visit( '/wp-admin/admin.php?page=solutions&solution=service' );
+		cy.visit( '/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '&solution=service#/commerce' );
 
-		cy.get( '#nfd-solutions-app h1' )
-			.contains( 'Powerful Plugins Included' )
+		cy.get( '.nfd-solutions-content h1' )
+			.contains( 'Premium tools available' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 
@@ -313,10 +313,10 @@ describe( 'Solutions App in plugin', { testIsolation: true }, () => {
 	// test solution=commerce for entitlements and premium
 	it( 'Commerce solutions page displays tools with proper button atts', () => {
 		setSolution( 'commerce' );
-		cy.visit( '/wp-admin/admin.php?page=solutions&solution=commerce' );
+		cy.visit( '/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '&solution=commerce#/commerce' );
 
-		cy.get( '#nfd-solutions-app h1' )
-			.contains( 'Powerful Plugins Included' )
+		cy.get( '.nfd-solutions-content h1' )
+			.contains( 'Premium tools available' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 
