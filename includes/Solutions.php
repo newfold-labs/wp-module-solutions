@@ -7,6 +7,8 @@ use NewfoldLabs\WP\Module\Solutions\I18nService;
 use NewfoldLabs\WP\Module\Data\HiiveConnection;
 use NewfoldLabs\WP\Module\Data\SiteCapabilities;
 
+use function NewfoldLabs\WP\ModuleLoader\container;
+
 /**
  * Manages all the functionalities for the module.
  */
@@ -44,6 +46,8 @@ class Solutions {
 		\add_action( 'admin_enqueue_scripts', array( $this, 'addnew_plugins_solutions_assets' ) );
 
 		\add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
+		\add_action( 'admin_menu', array( __CLASS__, 'add_dummy_solutions_menu_link' ) );
+		\add_action( 'admin_init', array( __CLASS__, 'handle_solutions_redirect' ) );
 		\add_filter( 'install_plugins_tabs', array( $this, 'addnew_brand_solutions_tab' ), 99 );
 		\add_filter( 'install_plugins_nfd_solutions', array( $this, 'render_nfd_solutions_tab' ) );
 
@@ -80,11 +84,11 @@ class Solutions {
 	 * @return array The filtered nav array
 	 */
 	public static function add_nfd_subnav( $subnav ) {
+		$brand       = container()->get( 'plugin' )['id'];
 		$solutions = array(
 			'title'    => __( 'Solutions', 'wp-module-solutions' ),
-			'route'    => 'solutions',
+			'route'    => $brand . '#/commerce',
 			'priority' => 10,
-			'callback' => array( __CLASS__, 'render_solutions_page' ),
 		);
 		array_push( $subnav, $solutions );
 		return $subnav;
@@ -97,6 +101,55 @@ class Solutions {
 	 */
 	public static function render_solutions_page() {
 		echo '<div id="nfd-solutions-app"></div>';
+	}
+
+	/**
+	 * Register dummy solutions menu page for redirect purposes
+	 */
+	public static function add_dummy_solutions_menu_link() {
+		add_submenu_page(
+			'', // Using empty string as parent, so it won't appear in any menu
+			'Old Solutions',
+			'',
+			'manage_options',
+			'solutions',
+			array( __CLASS__, 'old_solutions_redirect' )
+		);
+	}
+
+	/**
+	 * Handle performance redirect from old URL.
+	 * This runs on admin_init to catch the redirect before headers are sent.
+	 *
+	 * @return void
+	 */
+	public static function handle_solutions_redirect() {
+		if (
+			is_admin() &&
+			isset( $_GET['page'] ) &&
+			'solutions' === $_GET['page']
+		) {
+			$new_url = admin_url( 'admin.php?page=' . container()->plugin()->id . '#/commerce' );
+			wp_safe_redirect( $new_url );
+			exit;
+		}
+	}
+
+	/**
+	 * Redirects the user to the new solutions page.
+	 * This is the callback for the dummy menu page.
+	 *
+	 * @return void
+	 */
+	public static function old_solutions_redirect() {
+		// Fallback: redirect using JavaScript if headers already sent
+		$new_url = admin_url( 'admin.php?page=' . container()->plugin()->id . '#/commerce' );
+		?>
+		<script>
+			window.location.href = '<?php echo esc_js( $new_url ); ?>';
+		</script>
+		<p>Redirecting to new solutions page...</p>
+		<?php
 	}
 
 	/**
@@ -186,7 +239,7 @@ class Solutions {
 
 		// Only enqueue on solutions page
 		$screen = \get_current_screen();
-		if ( isset( $screen->id ) && 'toplevel_page_bluehost' === $screen->id ) {
+		if ( isset( $screen->id ) && false !== strpos( $screen->id, container()->plugin()->id ) ) {
 			\wp_enqueue_style( 'solutions-page-component-style' );
 
 			\wp_add_inline_script(
