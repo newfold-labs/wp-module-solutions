@@ -5,12 +5,13 @@
 }
 
 .nfd-solutions-tool-card {
-	--background-color : #ecf4fa;
-	--primary-color    : var(--nfd-solutions-bh-blue);
+	--nfd-solutions-bh-blue : #336ad7;
+	--background-color      : #ecf4fa;
+	--primary-color         : var(--nfd-solutions-bh-blue);
 
-	position           : relative;
-	transition         : .3s !important;
-	border-color       : #c3c4c7;
+	position                : relative;
+	transition              : .3s !important;
+	border-color            : #c3c4c7;
 
 	&.nfd-solutions-tool-card--premium {
 		--background-color : #f7eede;
