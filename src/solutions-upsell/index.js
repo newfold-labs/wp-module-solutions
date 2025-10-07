@@ -22,7 +22,7 @@ domReady( () => {
 			options.push( new Option( plugin.option_label, plugin.basename ) );
 		}
 
-		productTypeSelect.html(options);
+		productTypeSelect.html(options).val(currentValue);
 
 		// Apply selectWoo.
 		productTypeSelect.selectWoo({
