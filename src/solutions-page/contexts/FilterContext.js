@@ -22,6 +22,7 @@ export const FilterProvider = ( { children } ) => {
 	useEffect( () => {
 		const url = new URL( window.location.href );
 		const params = new URLSearchParams( url.search );
+        const hash = window.location.hash;
 
 		const paramsToUpdate = {
 			s: search,
@@ -36,7 +37,7 @@ export const FilterProvider = ( { children } ) => {
 			}
 		} );
 
-		const newUrl = `${ url.pathname }?${ params.toString() }`;
+        const newUrl = `${ url.pathname }?${ params.toString() }${hash || ""}`
 		window.history.replaceState( {}, '', newUrl );
 	}, [ search, category ] );
 
