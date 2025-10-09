@@ -60,7 +60,8 @@ domReady( () => {
 					.attr( 'data-nfd-installer-plugin-basename', !upsellPlugin.ctbId ? upsellPlugin.basename : undefined )
 					.attr( 'data-nfd-installer-plugin-name', !upsellPlugin.ctbId ? upsellPlugin?.name : undefined )
 					.attr( 'data-nfd-installer-pls-provider', !upsellPlugin.ctbId ? upsellPlugin.plsProviderName : undefined )
-					.attr( 'data-nfd-installer-pls-slug', !upsellPlugin.ctbId ? upsellPlugin.plsSlug : undefined );
+					.attr( 'data-nfd-installer-pls-slug', !upsellPlugin.ctbId ? upsellPlugin.plsSlug : undefined )
+					.attr( 'data-nfd-installer-plugin-dependency', !upsellPlugin.ctbId && upsellPlugin.dependency ? upsellPlugin.dependency : undefined );
 
 				// Add clickable elem to DOM and trigger click.
 				jQuery(document.body).append( clickableElem );

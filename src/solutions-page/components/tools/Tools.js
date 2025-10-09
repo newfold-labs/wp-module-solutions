@@ -68,6 +68,7 @@ export const Tools = () => {
 								ctbId={ tool?.ctbId }
 								ctbHref={ tool?.ctbHref }
 								download={ tool?.download }
+								dependency={ tool?.dependency }
 							/>
 					);
 				} ) }
