@@ -99,6 +99,18 @@ function sortTools( ent1, ent2 ) {
 	return 0;
 }
 
+function isSearchTermInTags( search, toolName ) {
+	const tags = {
+		'request-a-quote': [ 'raq' ],
+	};
+	if ( tags[ toolName ] ) {
+		return tags[ toolName ].some( ( tag ) =>
+			tag.toLowerCase().includes( search.toLowerCase() )
+		);
+	}
+	return false;
+}
+
 const getTools = ( {
 	includePremium = true,
 	sortForLayout = true,
@@ -156,7 +168,11 @@ const getTools = ( {
 		tools = tools.filter(
 			( tool ) =>
 				tool?.name?.toLowerCase().includes( search.toLowerCase() ) ||
-				tool?.plsSlug?.toLowerCase().includes( search.toLowerCase() )
+				tool?.plsSlug?.toLowerCase().includes( search.toLowerCase() ) ||
+				isSearchTermInTags(
+					search.toLowerCase(),
+					tool?.name?.toLowerCase().replace( /\s/g, '-' )
+				)
 		);
 	}
 
@@ -204,7 +220,7 @@ const getSolutionsCategories = () => {
 		categories.push( { id, label, priority, count } );
 	} );
 
-	categories.sort( ( a, b ) => (a.priority > b.priority ? -1 : 1) );
+	categories.sort( ( a, b ) => ( a.priority > b.priority ? -1 : 1 ) );
 
 	const staticCategories = [
 		{
@@ -229,4 +245,10 @@ const getSolutionsCategories = () => {
 	];
 };
 
-export { getTools, getActiveSolution, renderCTAUrl, getSolution, getSolutionsCategories };
+export {
+	getTools,
+	getActiveSolution,
+	renderCTAUrl,
+	getSolution,
+	getSolutionsCategories,
+};
