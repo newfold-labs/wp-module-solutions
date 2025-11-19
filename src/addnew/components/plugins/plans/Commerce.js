@@ -42,6 +42,7 @@ export const Commerce = ( { plan } ) => {
 								ctbHref={ plugin?.ctbHref }
 								ctaUrl={ plugin?.cta?.url }
 								ctaLabel={ plugin?.cta?.text }
+								dependency={ plugin?.dependency }
 							/>
 						) ) }
 					</div>
