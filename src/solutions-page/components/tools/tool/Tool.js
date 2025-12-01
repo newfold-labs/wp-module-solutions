@@ -42,6 +42,7 @@ export const Tool = ( {
 	ctbHref,
 	download,
 	basename,
+	dependency,
 } ) => {
 	const isLargeViewport = useViewportMatch( 'medium' );
 	const hasActiveSolution = !! getActiveSolution();
@@ -155,6 +156,11 @@ export const Tool = ( {
 						data-nfd-installer-pls-slug={
 							! isActive && ! ctbId ? plsSlug : null
 						}
+						data-nfd-installer-plugin-dependency={
+							! isActive && ! ctbId ? dependency : null
+						}
+						variant={ premiumStyle ? 'primary' : 'secondary' }
+						size={ 'small' }
 						href={ ctaHref }
 						target={ ctbId ? '_blank' : null }
 					>

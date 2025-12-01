@@ -72,6 +72,7 @@ export const Service = ( { plan } ) => {
 								ctaLabel={ plugin?.cta?.text }
 								download={ plugin?.download }
 								basename={ plugin?.basename }
+								dependency={ plugin?.dependency }
 							/>
 						) ) }
 					</div>

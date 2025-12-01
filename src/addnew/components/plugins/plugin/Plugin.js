@@ -31,6 +31,7 @@ export const Plugin = ( {
 	ctaLabel,
 	download,
 	basename,
+	dependency,
 } ) => {
 	const classes = [
 		'plugin-card',
@@ -127,6 +128,11 @@ export const Plugin = ( {
 								data-nfd-installer-pls-slug={
 									! isBlock && ! isActive && ! ctbId
 										? plsSlug
+										: null
+								}
+								data-nfd-installer-plugin-dependency={
+									! isBlock && ! isActive && ! ctbId
+										? dependency
 										: null
 								}
 								href={ ctaHref }
