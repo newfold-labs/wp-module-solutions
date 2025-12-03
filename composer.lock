@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "671a4d50623e3afb8da0e59e7a393779",
+    "content-hash": "14151da5243f79063dff764d6a50950d",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -207,16 +207,16 @@
         },
         {
             "name": "newfold-labs/wp-module-data",
-            "version": "2.8.8",
+            "version": "2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-data.git",
-                "reference": "0875ff46928284c3a04aaa0d88a0a50040442544"
+                "reference": "fb9ebafe5ad7bc23832f87dba83475815db80e4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/0875ff46928284c3a04aaa0d88a0a50040442544",
-                "reference": "0875ff46928284c3a04aaa0d88a0a50040442544",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/fb9ebafe5ad7bc23832f87dba83475815db80e4c",
+                "reference": "fb9ebafe5ad7bc23832f87dba83475815db80e4c",
                 "shasum": ""
             },
             "require": {
@@ -306,10 +306,10 @@
             ],
             "description": "Newfold Data Module",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.8.8",
+                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.9.0",
                 "issues": "https://github.com/newfold-labs/wp-module-data/issues"
             },
-            "time": "2025-11-12T18:57:09+00:00"
+            "time": "2025-12-02T16:15:37+00:00"
         },
         {
             "name": "newfold-labs/wp-module-link-tracker",
@@ -386,16 +386,16 @@
         },
         {
             "name": "newfold-labs/wp-module-loader",
-            "version": "1.0.13",
+            "version": "1.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-loader.git",
-                "reference": "80f049af02079b1ffe81c7d6d616f26c1445e6ad"
+                "reference": "8e01e4ef47c88ac8124e67ff8a0df38f823ed040"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/80f049af02079b1ffe81c7d6d616f26c1445e6ad",
-                "reference": "80f049af02079b1ffe81c7d6d616f26c1445e6ad",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/8e01e4ef47c88ac8124e67ff8a0df38f823ed040",
+                "reference": "8e01e4ef47c88ac8124e67ff8a0df38f823ed040",
                 "shasum": ""
             },
             "require": {
@@ -440,23 +440,23 @@
             ],
             "description": "A module that handles registration and management of Newfold modules used within our WordPress plugins.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-loader/tree/1.0.13",
+                "source": "https://github.com/newfold-labs/wp-module-loader/tree/1.0.14",
                 "issues": "https://github.com/newfold-labs/wp-module-loader/issues"
             },
-            "time": "2025-10-24T15:05:06+00:00"
+            "time": "2025-12-02T15:45:29+00:00"
         },
         {
             "name": "wp-forge/collection",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-forge/collection.git",
-                "reference": "e304ddc0130d466dcc55e3a8dee79f0d745ca47a"
+                "reference": "9bed6ec6a73f0a033276c65e07ced5c894deff71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-forge/collection/zipball/e304ddc0130d466dcc55e3a8dee79f0d745ca47a",
-                "reference": "e304ddc0130d466dcc55e3a8dee79f0d745ca47a",
+                "url": "https://api.github.com/repos/wp-forge/collection/zipball/9bed6ec6a73f0a033276c65e07ced5c894deff71",
+                "reference": "9bed6ec6a73f0a033276c65e07ced5c894deff71",
                 "shasum": ""
             },
             "type": "library",
@@ -478,9 +478,9 @@
             "description": "A PHP utility class for manipulating collections.",
             "support": {
                 "issues": "https://github.com/wp-forge/collection/issues",
-                "source": "https://github.com/wp-forge/collection/tree/1.0.2"
+                "source": "https://github.com/wp-forge/collection/tree/1.0.3"
             },
-            "time": "2022-08-26T17:42:31+00:00"
+            "time": "2025-12-01T15:57:49+00:00"
         },
         {
             "name": "wp-forge/fluent",
