@@ -17,7 +17,6 @@ test.describe('Solutions App in plugin', () => {
 
   test.beforeEach(async ({ page }) => {
     await auth.loginToWordPress(page);
-    await page.goto('/wp-admin/index.php');
   });
 
   test.afterAll(async () => {

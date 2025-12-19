@@ -5,11 +5,9 @@ import {
   clearSolutionTransient,
   uninstallPlugin,
   navigateToMySolutionsTab,
-  navigateToPluginsPage,
   verifyPluginInstalled,
   verifyPluginActive,
   clickInstallAndVerifyModal,
-  SELECTORS,
   CTB_IDS,
   verifyInstallerAttributes,
   verifyMissingAttributes,
@@ -20,7 +18,6 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
 
   test.beforeEach(async ({ page }) => {
     await auth.loginToWordPress(page);
-    await page.goto('/wp-admin/index.php');
     await uninstallPlugin('wordpress-seo');
   });
 
@@ -32,13 +29,7 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
   // Test free Yoast SEO plugin install functions
   test('Yoast SEO plugin installs properly', async ({ page }) => {
     await setSolution('creator');
-
-    // Verify Yoast is not installed
-    await navigateToPluginsPage(page);
-    const yoastRow = page.locator(SELECTORS.pluginRow('wordpress-seo'));
-    await expect(yoastRow).toHaveCount(0);
-
-    // Load plugin install page
+    // Note: Yoast is already uninstalled in beforeEach via wp-cli
     await navigateToMySolutionsTab(page, 'creator');
 
     // Use first() to select the first plugins card list (there may be multiple)

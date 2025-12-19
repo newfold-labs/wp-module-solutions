@@ -15,7 +15,6 @@ test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => 
 
   test.beforeEach(async ({ page }) => {
     await auth.loginToWordPress(page);
-    await page.goto('/wp-admin/index.php');
   });
 
   test.afterAll(async () => {

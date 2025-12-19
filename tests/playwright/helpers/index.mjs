@@ -92,19 +92,20 @@ async function setSolution(solution, expiration = 3600) {
     return;
   }
 
+  const expiry = Math.floor(Date.now() / 1000) + expiration;
+  
   try {
-    // Set solution transient
-    await wordpress.wpCli(
-      `option update _transient_newfold_solutions '${JSON.stringify(fixtureData)}' --format=json`,
-      { failOnNonZeroExit: false }
-    );
-
-    // Set expiration
-    const expiry = Math.floor(Date.now() / 1000) + expiration;
-    await wordpress.wpCli(
-      `option update _transient_timeout_newfold_solutions ${expiry}`,
-      { failOnNonZeroExit: false }
-    );
+    // Run both wp-cli commands in parallel for faster execution
+    await Promise.all([
+      wordpress.wpCli(
+        `option update _transient_newfold_solutions '${JSON.stringify(fixtureData)}' --format=json`,
+        { failOnNonZeroExit: false }
+      ),
+      wordpress.wpCli(
+        `option update _transient_timeout_newfold_solutions ${expiry}`,
+        { failOnNonZeroExit: false }
+      ),
+    ]);
   } catch (error) {
     fancyLog(`Failed to set solution: ${error.message}`, 55, 'yellow');
   }
@@ -115,12 +116,15 @@ async function setSolution(solution, expiration = 3600) {
  */
 async function clearSolutionTransient() {
   try {
-    await wordpress.wpCli('option delete _transient_newfold_solutions', {
-      failOnNonZeroExit: false,
-    });
-    await wordpress.wpCli('option delete _transient_timeout_newfold_solutions', {
-      failOnNonZeroExit: false,
-    });
+    // Run both delete commands in parallel for faster cleanup
+    await Promise.all([
+      wordpress.wpCli('option delete _transient_newfold_solutions', {
+        failOnNonZeroExit: false,
+      }),
+      wordpress.wpCli('option delete _transient_timeout_newfold_solutions', {
+        failOnNonZeroExit: false,
+      }),
+    ]);
   } catch (error) {
     fancyLog(`Failed to clear solution transient: ${error.message}`, 55, 'yellow');
   }
@@ -261,7 +265,9 @@ async function clickInstallAndVerifyModal(page, pluginSlug, pluginName) {
   
   // Wait for modal to close (installation complete)
   await expect(modal).toBeHidden({ timeout: 30000 });
-  await page.waitForTimeout(2000);
+  
+  // Wait for page to finish loading after installation redirect
+  await page.waitForLoadState('networkidle');
 }
 
 /**
