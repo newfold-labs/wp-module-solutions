@@ -1,0 +1,261 @@
+{
+    "solutions": [
+        {
+            "id": "15948a14-248a-4de9-9b01-c93a568ce760",
+            "name": "Services",
+            "sku": "WP_SOLUTION_SERVICE",
+            "description": "Boost local visibility and streamline your business operations with specialized tools",
+            "price": "$4.99",
+            "fullPrice": "$0.00",
+            "url": null,
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f",
+            "priority": 20,
+            "features": [
+                "Includes the <strong>Content Creator bundle</strong>",
+                "8 Exclusive Local Business Plugins",
+                "Integrated Invoicing",
+                "Local Social Media and SEO Plugins"
+            ],
+            "ctbHref": "https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY"
+        },
+        {
+            "id": "d66b1e8b-1d1f-4da3-914d-42f12f01f2e0",
+            "name": "eCommerce Premium Add-On",
+            "sku": "WP_SOLUTION_COMMERCE",
+            "description": "Promote, sell, and grow your online store with powerful eCommerce tools.",
+            "price": "$6.99",
+            "fullPrice": "$0.00",
+            "url": null,
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f",
+            "priority": 30,
+            "features": [
+                "Includes the <strong>Service Business</strong> bundle",
+                "Express 1-Click Checkout",
+                "24 Exclusive eCommerce Plugins",
+                "Customizable Customer Account Creation"
+            ],
+            "ctbHref": "https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY"
+        },
+        {
+            "id": "f090d687-6e78-46af-99b0-f4f371a721cc",
+            "name": "eCommerce Essentials Add-On",
+            "sku": "WP_SOLUTION_CREATOR",
+            "description": "Manage your site, build your brand, and monetize your content with essential tools.",
+            "price": "$5.59",
+            "fullPrice": "$0.00",
+            "url": null,
+            "ctbId": "5dc83bdd-9274-4557-a6d7-0b2adbc3919f",
+            "priority": 10,
+            "features": [
+                "Monetize Content with Ease",
+                "4 Exclusive Social Media Plugins",
+                "6 Exclusive Marketing Plugins",
+                "Secure Payment Gateway Included"
+            ],
+            "ctbHref": "https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY"
+        }
+    ],
+    "categories": [
+        {
+            "id": "0d0743fa-8f69-44ef-a64a-6f2bab8025d0",
+            "name": "Store Operations",
+            "priority": 70,
+            "count": 2,
+            "slug": "store-operations"
+        },
+        {
+            "id": "1d464335-e588-4a5d-9f57-a7581a2273dc",
+            "name": "Search Engine Optimization",
+            "priority": 60,
+            "count": 1,
+            "slug": "search-engine-optimization"
+        },
+        {
+            "id": "1df2e41d-7458-48c8-b2d7-a6dfd6ab9b01",
+            "name": "Sales & Checkout",
+            "priority": 50,
+            "count": 1,
+            "slug": "sales-checkout"
+        },
+        {
+            "id": "f7959867-a50c-4ca3-ae7c-bd215d6fa681",
+            "name": "Product Management",
+            "priority": 40,
+            "count": 1,
+            "slug": "product-management"
+        }
+    ],
+    "premium": [
+        {
+            "id": "bb65fce0-24b6-4714-8d5d-3a693f428df4",
+            "type": "plugin",
+            "name": "Yoast Premium",
+            "description": "SEO made easy! Improve your ranking in search engines, boost performance and visibility, and get 24/7 premium support.",
+            "longDescription": null,
+            "author": {
+                "name": "Yoast",
+                "url": "https://yoast.com"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=wpseo_installation_successful"
+            },
+            "plsProviderName": "yoast",
+            "plsSlug": "yoast-seo-wordpress-premium",
+            "download": null,
+            "slug": "wp-seo-premium",
+            "basename": "wordpress-seo-premium/wp-seo-premium.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/yoast-premium.svg",
+                "featureImage": "https://cdn.hiive.space/solutions/feature/yoast-premium.svg"
+            },
+            "category": "Search Engine Optimization",
+            "categorySlug": "search-engine-optimization",
+            "priority": 0,
+            "solutions": [],
+            "dependency": "yoast",
+            "ctbId": "57d6a568-783c-45e2-a388-847cff155897",
+            "ctbHref": "https://yoast.com/?yst-add-to-cart=2811749&utm_source=wp-marketplace&utm_medium=brand-plugin"
+        }
+    ],
+    "solution": "WP_SOLUTION_COMMERCE",
+    "entitlements": [
+        {
+            "id": "1b080683-ea8f-4300-ac81-afc7e6355d40",
+            "type": "plugin",
+            "name": "Yoast SEO",
+            "description": "Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.",
+            "longDescription": null,
+            "author": {
+                "name": "Yoast",
+                "url": "https://yoast.com/"
+            },
+            "url": "https://wordpress.org/plugins/wordpress-seo/",
+            "cta": {
+                "text": "Configure",
+                "url": "{siteUrl}/wp-admin/admin.php?page=wpseo_dashboard#top#first-time-configuration"
+            },
+            "plsProviderName": null,
+            "plsSlug": null,
+            "download": "https://downloads.wordpress.org/plugin/wordpress-seo.latest-stable.zip",
+            "slug": "wp-seo",
+            "basename": "wordpress-seo/wp-seo.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/yoast-premium.svg",
+                "featureImage": "https://cdn.hiive.space/solutions/feature/yoast.svg"
+            },
+            "category": "Search Engine Optimization",
+            "categorySlug": "search-engine-optimization",
+            "priority": 0,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE",
+                "WP_SOLUTION_CREATOR"
+            ],
+            "dependency": null,
+            "isActive": false
+        },
+        {
+            "id": "49efa0f3-4e0d-43a7-a486-5e87420d995a",
+            "type": "plugin",
+            "name": "Jetpack",
+            "description": "Security, performance, and marketing tools made by WordPress experts.",
+            "longDescription": null,
+            "author": {
+                "name": "Automattic",
+                "url": "https://jetpack.com/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=my-jetpack"
+            },
+            "plsProviderName": null,
+            "plsSlug": null,
+            "download": "https://downloads.wordpress.org/plugin/jetpack.latest-stable.zip",
+            "slug": "jetpack",
+            "basename": "jetpack/jetpack.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/jetpack.svg",
+                "featureImage": "https://cdn.hiive.space/solutions/feature/jetpack.svg"
+            },
+            "category": "Store Operations",
+            "categorySlug": "store-operations",
+            "priority": 0,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE"
+            ],
+            "dependency": null,
+            "isActive": true
+        },
+        {
+            "id": "694770cc-dfee-481d-b3b4-6b456cc0c47c",
+            "type": "plugin",
+            "name": "Advanced Reviews",
+            "description": "Get positive product reviews and use social proof to drive sales.",
+            "longDescription": null,
+            "author": {
+                "name": "YITH",
+                "url": "https://yithemes.com/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/admin.php?page=yith_ywar_panel"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-advanced-reviews",
+            "download": null,
+            "slug": "advanced-reviews",
+            "basename": "yith-woocommerce-advanced-reviews-premium/init.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/advanced-reviews.svg",
+                "featureImage": "https://cdn.hiive.space/solutions/feature/yith-woocommerce-advanced-reviews.svg"
+            },
+            "category": "Product Management",
+            "categorySlug": "product-management",
+            "priority": 0,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE"
+            ],
+            "dependency": "woocommerce",
+            "isActive": false
+        },
+        {
+            "id": "ad68e506-8c2b-4c0f-a9e3-16623d00041e",
+            "type": "plugin",
+            "name": "Bookings & Appointments",
+            "description": "Manage renting or booking of services and items.",
+            "longDescription": null,
+            "author": {
+                "name": "Yith",
+                "url": "https://yithemes.com/"
+            },
+            "url": null,
+            "cta": {
+                "text": "Manage",
+                "url": "{siteUrl}/wp-admin/edit.php?post_type=yith_booking&yith-plugin-fw-panel-skip-redirect=1"
+            },
+            "plsProviderName": "yith",
+            "plsSlug": "yith-woocommerce-booking",
+            "download": null,
+            "slug": "init",
+            "basename": "yith-woocommerce-booking-premium/init.php",
+            "image": {
+                "primaryImage": "https://cdn.hiive.space/solutions/entitlements/bookings-appointments.svg",
+                "featureImage": "https://cdn.hiive.space/solutions/feature/yith-woocommerce-booking.svg"
+            },
+            "category": "Sales & Checkout",
+            "categorySlug": "sales-checkout",
+            "priority": 0,
+            "solutions": [
+                "WP_SOLUTION_COMMERCE",
+                "WP_SOLUTION_SERVICE"
+            ],
+            "dependency": "woocommerce",
+            "isActive": false
+        }
+    ]
+}
