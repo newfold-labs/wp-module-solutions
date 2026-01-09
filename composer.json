@@ -31,7 +31,7 @@
         "wp-cli/i18n-command": "^2.6.6"
     },
     "require": {
-        "newfold-labs/wp-module-data": "^2.9.1",
+        "newfold-labs/wp-module-data": "^2.9.2",
         "newfold-labs/wp-module-loader": "^1.0.14",
         "newfold-labs/wp-module-link-tracker": "^1.1"
     },
