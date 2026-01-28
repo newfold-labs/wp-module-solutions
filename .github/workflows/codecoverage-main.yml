@@ -1,0 +1,38 @@
+name: Codecoverage-Main
+
+# Runs PHPUnit unit and Codeception wp-browser wpunit tests, merges the code coverage, commits the html report to
+# GitHub Pages, generates a README badge with the coverage percentage.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [ opened, reopened, ready_for_review, synchronize ]
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  get-repo-name:
+    runs-on: ubuntu-latest
+    outputs:
+      repository-name: ${{ steps.repo-name.outputs.name }}
+    steps:
+      - name: Extract repository name
+        id: repo-name
+        run: echo "name=$(echo ${{ github.repository }} | cut -d'/' -f2)" >> $GITHUB_OUTPUT
+
+  codecoverage:
+    needs: get-repo-name
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: newfold-labs/workflows/.github/workflows/reusable-codecoverage.yml@main
+    with:
+      php-versions: '["7.4", "8.0", "8.1", "8.2", "8.3", "8.4"]'
+      coverage-php-version: '7.4'
+      repository-name: ${{ needs.get-repo-name.outputs.repository-name }}
+      minimum-coverage: 25
+    secrets:
+      repo_token: ${{ secrets.GITHUB_TOKEN }}
