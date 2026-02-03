@@ -59,10 +59,22 @@ class SolutionsWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		$plugin        = new \stdClass();
 		$plugin->brand = 'bluehost';
 		$plugin->id    = 'bluehost';
+		// SolutionsUpsell (created in Solutions constructor) calls container->get('capabilities')->get('canAccessGlobalCTB').
+		$capabilities  = new class() {
+			public function get( $key ) {
+				return false;
+			}
+		};
 		$container     = $this->createMock( Container::class );
 		$container->method( 'get' )->willReturnCallback(
-			function ( $key ) use ( $plugin ) {
-				return 'plugin' === $key ? $plugin : null;
+			function ( $key ) use ( $plugin, $capabilities ) {
+				if ( 'plugin' === $key ) {
+					return $plugin;
+				}
+				if ( 'capabilities' === $key ) {
+					return $capabilities;
+				}
+				return null;
 			}
 		);
 		$container->method( 'plugin' )->willReturn( $plugin );

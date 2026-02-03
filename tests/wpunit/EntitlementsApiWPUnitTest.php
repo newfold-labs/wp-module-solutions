@@ -33,10 +33,13 @@ class EntitlementsApiWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase 
 	/**
 	 * Verifies register_routes registers REST routes.
 	 *
+	 * Routes must be registered on rest_api_init to avoid incorrect usage notice.
+	 *
 	 * @return void
 	 */
 	public function test_register_routes_adds_entitlements_route() {
-		$this->api->register_routes();
+		add_action( 'rest_api_init', array( $this->api, 'register_routes' ) );
+		do_action( 'rest_api_init' );
 		$server = rest_get_server();
 		$this->assertNotNull( $server );
 		$routes = $server->get_routes();
