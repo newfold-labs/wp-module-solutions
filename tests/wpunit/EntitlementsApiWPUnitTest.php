@@ -13,6 +13,8 @@ use WP_REST_Request;
 class EntitlementsApiWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 
 	/**
+	 * EntitlementsApi instance under test.
+	 *
 	 * @var EntitlementsApi
 	 */
 	private $api;
@@ -24,7 +26,7 @@ class EntitlementsApiWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase 
 	 */
 	public function setUp(): void {
 		parent::setUp();
-		$hiive = $this->createMock( HiiveConnection::class );
+		$hiive     = $this->createMock( HiiveConnection::class );
 		$this->api = new EntitlementsApi( $hiive );
 	}
 
@@ -48,7 +50,10 @@ class EntitlementsApiWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase 
 	 * @return void
 	 */
 	public function test_set_transient_stores_data() {
-		$data = array( 'entitlements' => array(), 'categories' => array() );
+		$data = array(
+			'entitlements' => array(),
+			'categories'   => array(),
+		);
 		$this->api->set_the_transient( $data, 60 );
 		$response = $this->api->get_entitlements_data();
 		$this->assertInstanceOf( \WP_REST_Response::class, $response );

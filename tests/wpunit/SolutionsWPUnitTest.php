@@ -21,13 +21,13 @@ class SolutionsWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 	public function test_add_nfd_subnav_adds_solutions_entry() {
 		$subnav = array();
 		// add_nfd_subnav calls container()->get('plugin')['id'] - we need a mock container.
-		$plugin       = new \stdClass();
-		$plugin->id   = 'bluehost';
-		$container    = $this->createMock( Container::class );
+		$plugin      = new \stdClass();
+		$plugin->id  = 'bluehost';
+		$container   = $this->createMock( Container::class );
 		$container->method( 'get' )->with( 'plugin' )->willReturn( array( 'id' => 'bluehost' ) );
 		// We cannot easily swap global container, so test the filter shape by calling with a stub.
-		$brand    = 'bluehost';
-		$solutions = array(
+		$brand      = 'bluehost';
+		$solutions  = array(
 			'title'    => __( 'Solutions', 'wp-module-solutions' ),
 			'route'    => $brand . '#/commerce',
 			'priority' => 10,
@@ -56,13 +56,13 @@ class SolutionsWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 	 * @return void
 	 */
 	public function test_addnew_brand_solutions_tab_adds_tab() {
-		$plugin         = new \stdClass();
-		$plugin->brand  = 'bluehost';
-		$plugin->id     = 'bluehost';
-		$container      = $this->createMock( Container::class );
+		$plugin        = new \stdClass();
+		$plugin->brand = 'bluehost';
+		$plugin->id    = 'bluehost';
+		$container     = $this->createMock( Container::class );
 		$container->method( 'get' )->willReturnCallback(
 			function ( $key ) use ( $plugin ) {
-				return $key === 'plugin' ? $plugin : null;
+				return 'plugin' === $key ? $plugin : null;
 			}
 		);
 		$container->method( 'plugin' )->willReturn( $plugin );

@@ -16,4 +16,3 @@ if ( ! defined( 'NFD_SOLUTIONS_DIR' ) ) {
 if ( ! defined( 'NFD_SOLUTIONS_BUILD_DIR' ) ) {
 	define( 'NFD_SOLUTIONS_BUILD_DIR', $module_root . '/build/' );
 }
-
