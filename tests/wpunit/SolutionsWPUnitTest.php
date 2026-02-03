@@ -19,20 +19,20 @@ class SolutionsWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 	 * @return void
 	 */
 	public function test_add_nfd_subnav_adds_solutions_entry() {
-		$subnav = array();
+		$subnav    = array();
 		// add_nfd_subnav calls container()->get('plugin')['id'] - we need a mock container.
-		$plugin      = new \stdClass();
-		$plugin->id  = 'bluehost';
-		$container   = $this->createMock( Container::class );
+		$plugin     = new \stdClass();
+		$plugin->id = 'bluehost';
+		$container  = $this->createMock( Container::class );
 		$container->method( 'get' )->with( 'plugin' )->willReturn( array( 'id' => 'bluehost' ) );
 		// We cannot easily swap global container, so test the filter shape by calling with a stub.
-		$brand      = 'bluehost';
-		$solutions  = array(
+		$brand     = 'bluehost';
+		$solutions = array(
 			'title'    => __( 'Solutions', 'wp-module-solutions' ),
 			'route'    => $brand . '#/commerce',
 			'priority' => 10,
 		);
-		$subnav[] = $solutions;
+		$subnav[]   = $solutions;
 		$this->assertCount( 1, $subnav );
 		$this->assertSame( 'Solutions', $subnav[0]['title'] );
 		$this->assertSame( 'bluehost#/commerce', $subnav[0]['route'] );
@@ -56,11 +56,17 @@ class SolutionsWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 	 * @return void
 	 */
 	public function test_addnew_brand_solutions_tab_adds_tab() {
-		$plugin        = new \stdClass();
-		$plugin->brand = 'bluehost';
-		$plugin->id    = 'bluehost';
+		$plugin         = new \stdClass();
+		$plugin->brand  = 'bluehost';
+		$plugin->id     = 'bluehost';
 		// SolutionsUpsell (created in Solutions constructor) calls container->get('capabilities')->get('canAccessGlobalCTB').
 		$capabilities  = new class() {
+			/**
+			 * Stub for capabilities get (SolutionsUpsell::can_access_global_ctb).
+			 *
+			 * @param string $key Key to get.
+			 * @return bool
+			 */
 			public function get( $key ) {
 				return false;
 			}
@@ -78,8 +84,8 @@ class SolutionsWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 			}
 		);
 		$container->method( 'plugin' )->willReturn( $plugin );
-		$solutions = new Solutions( $container );
-		$tabs      = $solutions->addnew_brand_solutions_tab( array() );
+		$solutions     = new Solutions( $container );
+		$tabs           = $solutions->addnew_brand_solutions_tab( array() );
 		$this->assertArrayHasKey( 'nfd_solutions', $tabs );
 		$this->assertStringContainsString( 'Solutions', $tabs['nfd_solutions'] );
 	}
