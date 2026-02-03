@@ -1,0 +1,24 @@
+paths:
+  tests: tests
+  output: tests/_output
+  data: tests/_data
+  support: tests/_support
+  envs: tests/_envs
+actor_suffix: Tester
+extensions:
+  enabled:
+    - Codeception\Extension\RunFailed
+  commands:
+    - Codeception\Command\GenerateWPUnit
+params:
+  - .env.testing
+coverage:
+  enabled: true
+  include:
+    - bootstrap.php
+    - includes/*
+  exclude:
+    - tests/*
+    - vendor/*
+    - src/*
+    - build/*
