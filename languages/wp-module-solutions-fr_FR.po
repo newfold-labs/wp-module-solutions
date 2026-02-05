@@ -1,15 +1,16 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: newfold-labswp-module-staging\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-13T10:58:13+00:00\n"
+"PO-Revision-Date: 2025-02-19 14:32\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-13T10:58:13+00:00\n"
-"PO-Revision-Date: 2025-02-19 14:32\n"
-"Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Crowdin-File: wp-module-solutions.pot\n"
 "X-Crowdin-File-ID: 24\n"
@@ -19,9 +20,7 @@ msgstr ""
 "X-Domain: wp-module-solutions\n"
 "X-Generator: WP-CLI 2.11.0\n"
 
-#: bootstrap.php:15
-#: includes/Solutions.php:89
-#: includes/Solutions.php:263
+#: bootstrap.php:15 includes/Solutions.php:89 includes/Solutions.php:263
 #: components/entitlements/index.js:8
 msgid "Solutions"
 msgstr "Solution"
@@ -47,8 +46,12 @@ msgid "Error"
 msgstr "Erreur"
 
 #: components/entitlements/index.js:14
-msgid "Oops, there was an error loading the plugins & tools, please try again later."
-msgstr "Oups, il y a eu une erreur lors du chargement des plugins et outils, veuillez réessayer plus tard."
+msgid ""
+"Oops, there was an error loading the plugins & tools, please try again "
+"later."
+msgstr ""
+"Oups, il y a eu une erreur lors du chargement des plugins et outils, "
+"veuillez réessayer plus tard."
 
 #: components/entitlements/index.js:18
 msgid "Sorry, no current plugins & tools. Please, try again later."
@@ -66,28 +69,23 @@ msgstr "Chargement de…"
 msgid "Add a New Plugin"
 msgstr "Ajouter un nouveau plugin"
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page-component/index.js:2
+#: build/addnew/bundle.js:1 build/solutions-page-component/index.js:2
 #: build/solutions-page/bundle.js:3
 msgid "Get it"
 msgstr "Obtenir"
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page-component/index.js:2
+#: build/addnew/bundle.js:1 build/solutions-page-component/index.js:2
 #: build/solutions-page/bundle.js:3
 msgid "Upgrade to unlock all features"
 msgstr "Mettez à niveau pour débloquer toutes les fonctionnalités"
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page-component/index.js:2
+#: build/addnew/bundle.js:1 build/solutions-page-component/index.js:2
 #: build/solutions-page/bundle.js:3
 msgid "Discover Now"
 msgstr "Découvrir maintenant"
 
 #. translators: %s: Add-on Name
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
 #: build/solutions-page/bundle.js:2
 #, js-format
 msgid "Powerful Plugins Included in your %s"
@@ -97,43 +95,52 @@ msgstr "Plugins puissants inclus dans votre %s"
 msgid "Upgrade to save & unlock 30 advanced tools"
 msgstr "Mettez à niveau pour économiser et débloquer 30 outils avancés"
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
 #: build/solutions-page/bundle.js:2
-msgid "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience."
-msgstr "Découvrez la liste complète des fonctionnalités avancées fournies par votre hébergeur Bluehost, conçues pour offrir une valeur inégalée et améliorer votre expérience en ligne."
+msgid ""
+"Discover the complete list of advanced features provided by your hosting "
+"provider Bluehost, designed to deliver unmatched value and elevate your "
+"online experience."
+msgstr ""
+"Découvrez la liste complète des fonctionnalités avancées fournies par votre "
+"hébergeur Bluehost, conçues pour offrir une valeur inégalée et améliorer "
+"votre expérience en ligne."
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
 msgid "Learn more about our eCommerce Add-Ons"
 msgstr "En savoir plus sur nos modules complémentaires e-commerce"
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
-msgid "Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience."
-msgstr "Optimisez votre boutique en ligne avec des outils puissants conçus pour augmenter les ventes, simplifier les paiements, gérer les stocks et améliorer l'expérience client."
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
+msgid ""
+"Supercharge your online store with powerful tools designed to boost sales, "
+"streamline payments, manage inventory, and enhance customer experience."
+msgstr ""
+"Optimisez votre boutique en ligne avec des outils puissants conçus pour "
+"augmenter les ventes, simplifier les paiements, gérer les stocks et "
+"améliorer l'expérience client."
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-msgid "No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit — packed with everything you need at an unbeatable price!"
-msgstr "Peu importe ce que vous vendez ou comment vous gérez votre boutique, voici la boîte à outils e-commerce ultime — avec tout ce dont vous avez besoin à un prix imbattable !"
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3
+msgid ""
+"No matter what you sell or how you run your store, this is the Ultimate "
+"e-commerce toolkit — packed with everything you need at an unbeatable price!"
+msgstr ""
+"Peu importe ce que vous vendez ou comment vous gérez votre boutique, voici "
+"la boîte à outils e-commerce ultime — avec tout ce dont vous avez besoin à "
+"un prix imbattable !"
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
 msgid "The #1 Bundle of Commerce Tools"
 msgstr "Le pack n°1 d'outils de commerce"
 
-#: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
-msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)"
-msgstr "Modules complémentaires conçus pour aider les propriétaires de boutiques à augmenter leurs ventes en ligne avec un pack massif d'outils premium (valeur 3 200 €)"
+#: build/addnew/bundle.js:2 build/addnew/bundle.js:3 build/addnew/bundle.js:4
+msgid ""
+"Add-Ons designed to help shop owners to boost their online sales with a "
+"massive bundle of premium tools (value $3,500)"
+msgstr ""
+"Modules complémentaires conçus pour aider les propriétaires de boutiques à "
+"augmenter leurs ventes en ligne avec un pack massif d'outils premium (valeur"
+" 3 200 €)"
 
 #: build/addnew/bundle.js:3
 msgid "Upgrade to save & unlock more advanced tools"
@@ -141,104 +148,101 @@ msgstr "Mettez à niveau pour économiser et débloquer plus d'outils avancés"
 
 #: build/addnew/bundle.js:4
 msgid "Premium tools available in our eCommerce Add-Ons"
-msgstr "Outils premium disponibles dans nos modules complémentaires e-commerce"
+msgstr ""
+"Outils premium disponibles dans nos modules complémentaires e-commerce"
 
 #: build/solutions-page/bundle.js:2
 msgid "Premium tools available in eCommerce Add-Ons"
-msgstr "Outils premium disponibles dans les modules complémentaires e-commerce"
+msgstr ""
+"Outils premium disponibles dans les modules complémentaires e-commerce"
 
 #: build/solutions-page/bundle.js:2
 msgid "Learn more about eCommerce Add-Ons"
 msgstr "En savoir plus sur les modules complémentaires e-commerce"
 
-#: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
+#: build/solutions-page-component/index.js:1 build/solutions-page/bundle.js:2
 msgid "Most Popular"
 msgstr "Les plus populaires"
 
-#: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
+#: build/solutions-page-component/index.js:1 build/solutions-page/bundle.js:2
 msgid "Premium Tools"
 msgstr "Outils Premium"
 
-#: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
+#: build/solutions-page-component/index.js:1 build/solutions-page/bundle.js:2
 msgid "All"
 msgstr "Tout"
 
 #. translators: %s: Search term
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
 #, js-format
 msgid "No matching tools for '%s'"
 msgstr "Aucun outil correspondant pour '%s'"
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
 msgid "Check the spelling or try another keyword"
 msgstr "Vérifiez l'orthographe ou essayez un autre mot-clé"
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
 msgid "Return to the tools list"
 msgstr "Retourner à la liste des outils"
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
 msgid "Popular"
 msgstr "Populaire"
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page-component/index.js:2
+#: build/addnew/bundle.js:1 build/solutions-page-component/index.js:2
 #: build/solutions-page/bundle.js:3
 msgid "Premium"
 msgstr "Premium"
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
 msgid "Upgrade to Save"
 msgstr "Mettre à niveau pour économiser"
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
-msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools"
-msgstr "Modules complémentaires conçus pour aider les propriétaires de boutiques à augmenter leurs ventes en ligne avec un pack massif d'outils premium"
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
+msgid ""
+"Add-Ons designed to help shop owners to boost their online sales with a "
+"massive bundle of premium tools"
+msgstr ""
+"Modules complémentaires conçus pour aider les propriétaires de boutiques à "
+"augmenter leurs ventes en ligne avec un pack massif d'outils premium"
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
 msgid "Some features included:"
 msgstr "Quelques fonctionnalités incluses :"
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
-msgid "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc."
-msgstr "Boost des avis, réservations et rendez-vous, connexion sociale, filtres de produits, etc."
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
+msgid ""
+"Boost Reviews, Booking & Appointments, Social Login, Product filters, etc."
+msgstr ""
+"Boost des avis, réservations et rendez-vous, connexion sociale, filtres de "
+"produits, etc."
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
 msgid "Bundle of 30 features for a value of $3,500"
 msgstr "Pack de 30 fonctionnalités d'une valeur de 3 200 €"
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
 msgid "/month"
 msgstr "/mois"
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
 msgid "Discover"
 msgstr "Découvrir"
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
-msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
-msgstr "Commencez avec un forfait adapté à vos objectifs et débloquez jusqu'à 3 200 € de plugins premium Bluehost et Yoast."
+#: build/solutions-page-component/index.js:2 build/solutions-page/bundle.js:3
+msgid ""
+"Start with a plan that fits your goals and unlock up to $3,500 in premium "
+"Bluehost and Yoast plugins."
+msgstr ""
+"Commencez avec un forfait adapté à vos objectifs et débloquez jusqu'à 3 200 "
+"€ de plugins premium Bluehost et Yoast."
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page-component/index.js:2
+#: build/addnew/bundle.js:1 build/solutions-page-component/index.js:2
 #: build/solutions-page/bundle.js:3
 msgid "Add-Ons to build any kind of site, store or blog"
-msgstr "Modules complémentaires pour créer tout type de site, boutique ou blog"
+msgstr ""
+"Modules complémentaires pour créer tout type de site, boutique ou blog"
 
 #: includes/Solutions.php:72
 msgid "My Solution"
@@ -254,12 +258,662 @@ msgctxt "Solution Upsell product type label"
 msgid "Gift card"
 msgstr "Carte cadeau"
 
-#: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
+#: build/solutions-page-component/index.js:1 build/solutions-page/bundle.js:2
 msgid "Search tool"
 msgstr "Outil de recherche"
 
-#: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
+#: build/solutions-page-component/index.js:1 build/solutions-page/bundle.js:2
 msgid "Filter by type"
 msgstr "Filtrer par type"
+
+#: wordpress/wp-includes/blocks/widget-group/block.json
+msgctxt "block title"
+msgid "Widget Group"
+msgstr "Groupe de widgets"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Color name"
+msgid "Base"
+msgstr "Base"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Color name"
+msgid "Contrast"
+msgstr "Contrast"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Color name"
+msgid "Accent 1"
+msgstr "Accent 1"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Color name"
+msgid "Accent 2"
+msgstr "Accent 2"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Color name"
+msgid "Accent 3"
+msgstr "Accent 3"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Color name"
+msgid "Accent 4"
+msgstr "Accent 4"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Color name"
+msgid "Accent 5"
+msgstr "Accent 5"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Color name"
+msgid "Accent 6"
+msgstr "Accent 6"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Space size name"
+msgid "Tiny"
+msgstr "Tiny"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Space size name"
+msgid "X-Small"
+msgstr "X-Small"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Space size name"
+msgid "Small"
+msgstr "Petit"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Space size name"
+msgid "Regular"
+msgstr "Régulier"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Space size name"
+msgid "Large"
+msgstr "Large"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Space size name"
+msgid "X-Large"
+msgstr "X-Large"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Space size name"
+msgid "XX-Large"
+msgstr "XX-Large"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Petit"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Medium"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Large"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr "Extra Large"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Font size name"
+msgid "Extra Extra Large"
+msgstr "Extra Extra Large"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Font family name"
+msgid "Manrope"
+msgstr "Manrope"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Font family name"
+msgid "Fira Code"
+msgstr "Code Fira"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Template part name"
+msgid "Header"
+msgstr "En-tête"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Template part name"
+msgid "Vertical site header"
+msgstr "En-tête vertical du site"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Template part name"
+msgid "Header with large title"
+msgstr "En-tête avec un titre grand"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Template part name"
+msgid "Footer"
+msgstr "Pied de page"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Template part name"
+msgid "Footer Columns"
+msgstr "Colonnes de pied de page"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+msgctxt "Template part name"
+msgid "Footer Newsletter"
+msgstr "Newsletter en bas de page"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr "Encadré"
+
+#: wordpress/wp-content/themes/twentytwentyfive/theme.json
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Custom template name"
+msgid "Page No Title"
+msgstr "Page sans titre"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Duotone name"
+msgid "Black and white"
+msgstr "Noir et blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Duotone name"
+msgid "Black and sandstone"
+msgstr "Noir et grès"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Duotone name"
+msgid "Black and rust"
+msgstr "Noir et rouille"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Duotone name"
+msgid "Black and sage"
+msgstr "Noir et sauge"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Duotone name"
+msgid "Black and pastel blue"
+msgstr "Noir et bleu pastel"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft beige to white"
+msgstr "Beige doux vertical à blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft sandstone to white"
+msgstr "Grès tendre vertical vers blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft rust to white"
+msgstr "De la rouille douce verticale au blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft sage to white"
+msgstr "De la sauge douce verticale au blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft mint to white"
+msgstr "De la menthe douce verticale au blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft pewter to white"
+msgstr "Étain doux vertical à blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard beige to white"
+msgstr "Vertical dur beige à blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard sandstone to white"
+msgstr "Grès dur vertical vers blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard rust to white"
+msgstr "De la rouille verticale dure au blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard sage to white"
+msgstr "De la sauge dure verticale au blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard mint to white"
+msgstr "Vertical hard mint vers blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard pewter to white"
+msgstr "Étain dur vertical vers blanc"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Base / Two"
+msgstr "Base / Deux"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Contrast / Two"
+msgstr "Contrast / Deux"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Contrast / Three"
+msgstr "Contrast / Three"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "Accent"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Accent / Two"
+msgstr "Accent / Deux"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Accent / Three"
+msgstr "Accent / Three"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Accent / Four"
+msgstr "Accent / Quatre"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Accent / Five"
+msgstr "Accent / Cinq"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "1"
+msgstr "1"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "2"
+msgstr "2"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "3"
+msgstr "3"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr "4"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "5"
+msgstr "5"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "6"
+msgstr "6"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Font family name"
+msgid "Cardo"
+msgstr "Cardo"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Font family name"
+msgid "System Sans-serif"
+msgstr "System Sans-serif"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Font family name"
+msgid "System Serif"
+msgstr "Système à empattement"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Template part name"
+msgid "Post Meta"
+msgstr "Post Meta"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Custom template name"
+msgid "Page with Sidebar"
+msgstr "Page avec barre latérale"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Custom template name"
+msgid "Page with Wide Image"
+msgstr "Page avec image large"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Custom template name"
+msgid "Single with Sidebar"
+msgstr "Single avec barre latérale"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Custom template name"
+msgid "Blank"
+msgstr "Blank"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Custom template name"
+msgid "Blog (Alternative)"
+msgstr "Blog (Alternative)"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Custom template name"
+msgid "404"
+msgstr "404"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "Primaire"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "Secondaire"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Color name"
+msgid "Tertiary"
+msgstr "Tertiaire"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Font family name"
+msgid "DM Sans"
+msgstr "DM Sans"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Font family name"
+msgid "IBM Plex Mono"
+msgstr "IBM Plex Mono"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Font family name"
+msgid "System Font"
+msgstr "Police système"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Font family name"
+msgid "Source Serif Pro"
+msgstr "Source Serif Pro"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Template part name"
+msgid "Comments Template Part"
+msgstr "Partie modèle de commentaires"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Dark grayscale"
+msgstr "Niveaux de gris foncé"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Grayscale"
+msgstr "Niveaux de gris"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Purple and yellow"
+msgstr "Violet et jaune"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Blue and red"
+msgstr "Bleu et rouge"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Midnight"
+msgstr "Minuit"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Magenta and yellow"
+msgstr "Magenta et jaune"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Purple and green"
+msgstr "Violet et vert"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Blue and orange"
+msgstr "Bleu et orange"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Vivid cyan blue to vivid purple"
+msgstr "Bleu cyan vif à violet vif"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Light green cyan to vivid green cyan"
+msgstr "Du cyan vert clair au cyan vert vif"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Luminous vivid amber to luminous vivid orange"
+msgstr "De l’ambre vif lumineux à l’orange vif lumineux"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Luminous vivid orange to vivid red"
+msgstr "Orange vif lumineux à rouge vif"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Very light gray to cyan bluish gray"
+msgstr "Gris très clair à gris cyan bleuâtre"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Cool to warm spectrum"
+msgstr "Spectre froid à chaud"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Blush light purple"
+msgstr "Blush violet clair"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Blush bordeaux"
+msgstr "Blush bordeaux"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Luminous dusk"
+msgstr "Crépuscule lumineux"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Pale ocean"
+msgstr "Océan pâle"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Electric grass"
+msgstr "Gazon électrique"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Midnight"
+msgstr "Minuit"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Black"
+msgstr "Noir"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Cyan bluish gray"
+msgstr "Gris bleuâtre cyan"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "White"
+msgstr "Blanc"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Pale pink"
+msgstr "Rose pâle"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid red"
+msgstr "Rouge vif"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Luminous vivid orange"
+msgstr "Orange vif lumineux"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Luminous vivid amber"
+msgstr "Ambre lumineux et vif"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Light green cyan"
+msgstr "Cyan vert clair"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid green cyan"
+msgstr "Cyan vert vif"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Pale cyan blue"
+msgstr "Bleu cyan pâle"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid cyan blue"
+msgstr "Bleu cyan vif"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid purple"
+msgstr "Violet vif"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Square - 1:1"
+msgstr "Carré - 1:1"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Standard - 4:3"
+msgstr "Standard - 4:3"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Portrait - 3:4"
+msgstr "Portrait - 3:4"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Classic - 3:2"
+msgstr "Classic - 3:2"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Classic Portrait - 2:3"
+msgstr "Classic Portrait - 2:3"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Wide - 16:9"
+msgstr "Largeur - 16:9"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Tall - 9:16"
+msgstr "Hauteur - 9:16"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Natural"
+msgstr "Natural"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Deep"
+msgstr "Deep"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Sharp"
+msgstr "Sharp"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Outlined"
+msgstr "Contourné"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Crisp"
+msgstr "Crisp"
