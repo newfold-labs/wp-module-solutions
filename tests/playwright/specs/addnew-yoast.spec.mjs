@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import {
   auth,
+  newfold,
   setSolution,
   clearSolutionTransient,
   uninstallPlugin,
@@ -14,7 +15,17 @@ import {
   verifyHrefContains,
 } from '../helpers/index.mjs';
 
+let yoastSupported = false;
+let yoastSkipMessage = '';
+
 test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
+
+  test.beforeAll(async () => {
+    yoastSupported = await newfold.supportsYoast();
+    yoastSkipMessage = await newfold.getSkipMessage('yoast');
+  });
+
+  test.skip(() => !yoastSupported, yoastSkipMessage);
 
   test.beforeEach(async ({ page }) => {
     await auth.loginToWordPress(page);
