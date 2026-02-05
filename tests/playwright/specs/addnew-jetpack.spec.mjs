@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import {
   auth,
+  newfold,
   setSolution,
   clearSolutionTransient,
   uninstallPlugin,
@@ -14,7 +15,17 @@ import {
   verifyHrefContains,
 } from '../helpers/index.mjs';
 
+let jetpackSupported = false;
+let jetpackSkipMessage = '';
+
 test.describe('My Solutions on Plugin Install Page - Jetpack Plugin', () => {
+
+  test.beforeAll(async () => {
+    jetpackSupported = await newfold.supportsJetpack();
+    jetpackSkipMessage = await newfold.getSkipMessage('jetpack');
+  });
+
+  test.skip(() => !jetpackSupported, jetpackSkipMessage);
 
   test.beforeEach(async ({ page }) => {
     await auth.loginToWordPress(page);
