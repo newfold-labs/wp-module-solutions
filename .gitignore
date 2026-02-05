@@ -5,3 +5,4 @@ vendor
 .env.testing
 tests/_output
 tests/_support/_generated
+wordpress
