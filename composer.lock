@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e045fad5eea82827eb95d76fc9619631",
+    "content-hash": "0d4026c97addcf3e119d3cb7034c1c02",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -386,16 +386,16 @@
         },
         {
             "name": "newfold-labs/wp-module-loader",
-            "version": "1.0.14",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-loader.git",
-                "reference": "8e01e4ef47c88ac8124e67ff8a0df38f823ed040"
+                "reference": "97de22d322f838edc26c1ac3969708a0902ef714"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/8e01e4ef47c88ac8124e67ff8a0df38f823ed040",
-                "reference": "8e01e4ef47c88ac8124e67ff8a0df38f823ed040",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-loader/zipball/97de22d322f838edc26c1ac3969708a0902ef714",
+                "reference": "97de22d322f838edc26c1ac3969708a0902ef714",
                 "shasum": ""
             },
             "require": {
@@ -405,7 +405,7 @@
                 "wp-forge/wp-options": "^1.1"
             },
             "require-dev": {
-                "johnpbloch/wordpress": "6.8.3",
+                "johnpbloch/wordpress": "6.9.1",
                 "lucatume/wp-browser": "*",
                 "phpunit/phpcov": "*"
             },
@@ -440,10 +440,10 @@
             ],
             "description": "A module that handles registration and management of Newfold modules used within our WordPress plugins.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-loader/tree/1.0.14",
+                "source": "https://github.com/newfold-labs/wp-module-loader/tree/1.1.0",
                 "issues": "https://github.com/newfold-labs/wp-module-loader/issues"
             },
-            "time": "2025-12-02T15:45:29+00:00"
+            "time": "2026-02-05T21:09:56+00:00"
         },
         {
             "name": "wp-forge/collection",
