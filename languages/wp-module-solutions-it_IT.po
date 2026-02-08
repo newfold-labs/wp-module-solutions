@@ -266,651 +266,651 @@ msgstr "Filtra per tipologia"
 #: wordpress/wp-includes/blocks/widget-group/block.json
 msgctxt "block title"
 msgid "Widget Group"
-msgstr ""
+msgstr "Gruppo Widget"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Color name"
 msgid "Base"
-msgstr ""
+msgstr "Base"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Color name"
 msgid "Contrast"
-msgstr ""
+msgstr "Contrast"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Color name"
 msgid "Accent 1"
-msgstr ""
+msgstr "Accento 1"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Color name"
 msgid "Accent 2"
-msgstr ""
+msgstr "Accento 2"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Color name"
 msgid "Accent 3"
-msgstr ""
+msgstr "Accento 3"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Color name"
 msgid "Accent 4"
-msgstr ""
+msgstr "Accento 4"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Color name"
 msgid "Accent 5"
-msgstr ""
+msgstr "Accento 5"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Color name"
 msgid "Accent 6"
-msgstr ""
+msgstr "Accent 6"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Space size name"
 msgid "Tiny"
-msgstr ""
+msgstr "Tiny"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Space size name"
 msgid "X-Small"
-msgstr ""
+msgstr "X-Small"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Space size name"
 msgid "Small"
-msgstr ""
+msgstr "Piccolo"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Space size name"
 msgid "Regular"
-msgstr ""
+msgstr "Regolare"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Space size name"
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Space size name"
 msgid "X-Large"
-msgstr ""
+msgstr "X-Large"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Space size name"
 msgid "XX-Large"
-msgstr ""
+msgstr "XX-Grande"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-includes/theme.json
 msgctxt "Font size name"
 msgid "Small"
-msgstr ""
+msgstr "Piccolo"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-includes/theme.json
 msgctxt "Font size name"
 msgid "Medium"
-msgstr ""
+msgstr "Medium"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-includes/theme.json
 msgctxt "Font size name"
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-includes/theme.json
 msgctxt "Font size name"
 msgid "Extra Large"
-msgstr ""
+msgstr "Extra Large"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Font size name"
 msgid "Extra Extra Large"
-msgstr ""
+msgstr "Extra Extra Large"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Font family name"
 msgid "Manrope"
-msgstr ""
+msgstr "Manrope"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Font family name"
 msgid "Fira Code"
-msgstr ""
+msgstr "Fira Code"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Template part name"
 msgid "Header"
-msgstr ""
+msgstr "Header"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Template part name"
 msgid "Vertical site header"
-msgstr ""
+msgstr "Intestazione verticale del sito"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Template part name"
 msgid "Header with large title"
-msgstr ""
+msgstr "Intestazione con titolo grande"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Template part name"
 msgid "Footer"
-msgstr ""
+msgstr "Piè di pagina"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Template part name"
 msgid "Footer Columns"
-msgstr ""
+msgstr "Colonne a piè di pagina"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 msgctxt "Template part name"
 msgid "Footer Newsletter"
-msgstr ""
+msgstr "Newsletter a piè di pagina"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Template part name"
 msgid "Sidebar"
-msgstr ""
+msgstr "Sidebar"
 
 #: wordpress/wp-content/themes/twentytwentyfive/theme.json
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Custom template name"
 msgid "Page No Title"
-msgstr ""
+msgstr "Pagina Senza Titolo"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Duotone name"
 msgid "Black and white"
-msgstr ""
+msgstr "Bianco e nero"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Duotone name"
 msgid "Black and sandstone"
-msgstr ""
+msgstr "Nero e arenaria"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Duotone name"
 msgid "Black and rust"
-msgstr ""
+msgstr "Nero e ruggine"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Duotone name"
 msgid "Black and sage"
-msgstr ""
+msgstr "Nero e salvia"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Duotone name"
 msgid "Black and pastel blue"
-msgstr ""
+msgstr "Nero e blu pastello"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical soft beige to white"
-msgstr ""
+msgstr "Verticale beige tenue a bianco"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical soft sandstone to white"
-msgstr ""
+msgstr "Da arenaria molle verticale a bianca"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical soft rust to white"
-msgstr ""
+msgstr "Dalla ruggine verticale morbida al bianco"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical soft sage to white"
-msgstr ""
+msgstr "Da salvia morbida verticale a bianco"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical soft mint to white"
-msgstr ""
+msgstr "Da verticale da menta morbida a bianco"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical soft pewter to white"
-msgstr ""
+msgstr "Dal peltro morbido verticale al bianco"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical hard beige to white"
-msgstr ""
+msgstr "Verticale dura beige a bianca"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical hard sandstone to white"
-msgstr ""
+msgstr "Da arenaria dura verticale a bianca"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical hard rust to white"
-msgstr ""
+msgstr "Da ruggine verticale dura a bianco"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical hard sage to white"
-msgstr ""
+msgstr "Da salvia verticale dura a bianco"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical hard mint to white"
-msgstr ""
+msgstr "Verticale hard mint a bianco"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Gradient name"
 msgid "Vertical hard pewter to white"
-msgstr ""
+msgstr "Da peltro duro verticale a bianco"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Color name"
 msgid "Base / Two"
-msgstr ""
+msgstr "Base / Due"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Color name"
 msgid "Contrast / Two"
-msgstr ""
+msgstr "Contrast / Due"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Color name"
 msgid "Contrast / Three"
-msgstr ""
+msgstr "Contrast / Three"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Color name"
 msgid "Accent"
-msgstr ""
+msgstr "Accento"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Color name"
 msgid "Accent / Two"
-msgstr ""
+msgstr "Accento / Due"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Color name"
 msgid "Accent / Three"
-msgstr ""
+msgstr "Accento / Tre"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Color name"
 msgid "Accent / Four"
-msgstr ""
+msgstr "Accento / Quattro"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Color name"
 msgid "Accent / Five"
-msgstr ""
+msgstr "Accento / Cinque"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Space size name"
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Space size name"
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Space size name"
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Space size name"
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Space size name"
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Space size name"
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Font family name"
 msgid "Inter"
-msgstr ""
+msgstr "Inter"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Font family name"
 msgid "Cardo"
-msgstr ""
+msgstr "Cardo"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Font family name"
 msgid "System Sans-serif"
-msgstr ""
+msgstr "Sistema Sans-serif"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Font family name"
 msgid "System Serif"
-msgstr ""
+msgstr "System Serif"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Template part name"
 msgid "Post Meta"
-msgstr ""
+msgstr "Post Meta"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Custom template name"
 msgid "Page with Sidebar"
-msgstr ""
+msgstr "Pagina con barra laterale"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Custom template name"
 msgid "Page with Wide Image"
-msgstr ""
+msgstr "Pagina con immagine ampia"
 
 #: wordpress/wp-content/themes/twentytwentyfour/theme.json
 msgctxt "Custom template name"
 msgid "Single with Sidebar"
-msgstr ""
+msgstr "Singolo con barra laterale"
 
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Custom template name"
 msgid "Blank"
-msgstr ""
+msgstr "Blank"
 
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Custom template name"
 msgid "Blog (Alternative)"
-msgstr ""
+msgstr "Blog (Alternativa)"
 
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Custom template name"
 msgid "404"
-msgstr ""
+msgstr "404"
 
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Color name"
 msgid "Primary"
-msgstr ""
+msgstr "Primaria"
 
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Color name"
 msgid "Secondary"
-msgstr ""
+msgstr "Secondario"
 
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Color name"
 msgid "Tertiary"
-msgstr ""
+msgstr "Terziario"
 
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Font family name"
 msgid "DM Sans"
-msgstr ""
+msgstr "DM Sans"
 
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Font family name"
 msgid "IBM Plex Mono"
-msgstr ""
+msgstr "IBM Plex Mono"
 
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Font family name"
 msgid "System Font"
-msgstr ""
+msgstr "Font di sistema"
 
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Font family name"
 msgid "Source Serif Pro"
-msgstr ""
+msgstr "Fonte Serif Pro"
 
 #: wordpress/wp-content/themes/twentytwentythree/theme.json
 msgctxt "Template part name"
 msgid "Comments Template Part"
-msgstr ""
+msgstr "Parte Modello Commenti"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Duotone name"
 msgid "Dark grayscale"
-msgstr ""
+msgstr "Scala di grigi scuro"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Duotone name"
 msgid "Grayscale"
-msgstr ""
+msgstr "Grayscale"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Duotone name"
 msgid "Purple and yellow"
-msgstr ""
+msgstr "Viola e giallo"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Duotone name"
 msgid "Blue and red"
-msgstr ""
+msgstr "Blu e rosso"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Duotone name"
 msgid "Midnight"
-msgstr ""
+msgstr "Midnight"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Duotone name"
 msgid "Magenta and yellow"
-msgstr ""
+msgstr "Magenta e giallo"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Duotone name"
 msgid "Purple and green"
-msgstr ""
+msgstr "Viola e verde"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Duotone name"
 msgid "Blue and orange"
-msgstr ""
+msgstr "Blu e arancione"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Vivid cyan blue to vivid purple"
-msgstr ""
+msgstr "Da un blu ciano vivido a un viola vivido"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Light green cyan to vivid green cyan"
-msgstr ""
+msgstr "Ciano verde chiaro a ciano verde vivido"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Luminous vivid amber to luminous vivid orange"
-msgstr ""
+msgstr "Da ambra luminosa e vivida a arancione vivido luminoso"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Luminous vivid orange to vivid red"
-msgstr ""
+msgstr "Arancione vivido luminoso a rosso vivido"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Very light gray to cyan bluish gray"
-msgstr ""
+msgstr "Grigio molto chiaro a grigio ciano bluastro"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Cool to warm spectrum"
-msgstr ""
+msgstr "Spettro da freddo a caldo"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Blush light purple"
-msgstr ""
+msgstr "Blush viola chiaro"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Blush bordeaux"
-msgstr ""
+msgstr "Blush bordeaux"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Luminous dusk"
-msgstr ""
+msgstr "Crepuscolo luminoso"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Pale ocean"
-msgstr ""
+msgstr "Oceano pallido"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Electric grass"
-msgstr ""
+msgstr "Erba elettrica"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Gradient name"
 msgid "Midnight"
-msgstr ""
+msgstr "Midnight"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "Black"
-msgstr ""
+msgstr "Nero"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "Cyan bluish gray"
-msgstr ""
+msgstr "Grigio ciano bluastro"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "White"
-msgstr ""
+msgstr "Bianco"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "Pale pink"
-msgstr ""
+msgstr "Rosa pallido"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "Vivid red"
-msgstr ""
+msgstr "Rosso vivido"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "Luminous vivid orange"
-msgstr ""
+msgstr "Arancione luminoso e vivido"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "Luminous vivid amber"
-msgstr ""
+msgstr "Ambra luminosa e vivida"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "Light green cyan"
-msgstr ""
+msgstr "Ciano verde chiaro"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "Vivid green cyan"
-msgstr ""
+msgstr "Verde ciano vivido"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "Pale cyan blue"
-msgstr ""
+msgstr "Blu ciano pallido"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "Vivid cyan blue"
-msgstr ""
+msgstr "Blu ciano vivido"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Color name"
 msgid "Vivid purple"
-msgstr ""
+msgstr "Viola vivido"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Aspect ratio name"
 msgid "Square - 1:1"
-msgstr ""
+msgstr "Quadrato - 1:1"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Aspect ratio name"
 msgid "Standard - 4:3"
-msgstr ""
+msgstr "Standard - 4:3"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Aspect ratio name"
 msgid "Portrait - 3:4"
-msgstr ""
+msgstr "Ritratto - 3:4"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Aspect ratio name"
 msgid "Classic - 3:2"
-msgstr ""
+msgstr "Classic - 3:2"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Aspect ratio name"
 msgid "Classic Portrait - 2:3"
-msgstr ""
+msgstr "Classic Portrait - 2:3"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Aspect ratio name"
 msgid "Wide - 16:9"
-msgstr ""
+msgstr "Ampia - 16:9"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Aspect ratio name"
 msgid "Tall - 9:16"
-msgstr ""
+msgstr "Alto - 9:16"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Shadow name"
 msgid "Natural"
-msgstr ""
+msgstr "Natural"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Shadow name"
 msgid "Deep"
-msgstr ""
+msgstr "Deep"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Shadow name"
 msgid "Sharp"
-msgstr ""
+msgstr "Sharp"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Shadow name"
 msgid "Outlined"
-msgstr ""
+msgstr "Contorno"
 
 #: wordpress/wp-includes/theme.json
 msgctxt "Shadow name"
 msgid "Crisp"
-msgstr ""
+msgstr "Crisp"
