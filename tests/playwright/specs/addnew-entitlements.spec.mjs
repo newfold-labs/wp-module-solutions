@@ -28,9 +28,8 @@ test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => 
     await setSolution('commerce');
     await navigateToMySolutionsTab(page, 'commerce');
 
-    // Wait for the app to fully load
-    await page.waitForLoadState('networkidle');
-    
+    // Wait for the app to be ready
+    await page.waitForLoadState('load');
     // Use first() to select the first plugins card list (there may be multiple)
     const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();
     await expect(pluginsList).toBeVisible({ timeout: 10000 });

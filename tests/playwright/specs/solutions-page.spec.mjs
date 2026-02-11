@@ -190,8 +190,8 @@ test.describe('Solutions App in plugin', () => {
     await title.scrollIntoViewIfNeeded();
     await expect(title).toBeVisible();
 
-    // Wait for the page content to fully load
-    await page.waitForLoadState('networkidle');
+    // Wait for the page to be ready
+    await page.waitForLoadState('load');
 
     // Yoast SEO listed as downloadable plugin
     const yoastCard = page.locator(SELECTORS.toolCard('yoast-seo'));
