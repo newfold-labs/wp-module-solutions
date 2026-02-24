@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.11",
-    "@tailwindcss/postcss": "^4.2.0",
+    "@tailwindcss/postcss": "^4.2.1",
     "@wordpress/dom-ready": "^4.40.0",
     "@wordpress/scripts": "^31",
     "@wordpress/url": "^4.39.0",
