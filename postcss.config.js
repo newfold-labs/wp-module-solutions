@@ -23,7 +23,7 @@ module.exports = (ctx = {}) => {
 	const maybePrefix = addPrefix
 		? [
 			prefixSelector({
-				prefix: '.wppbh-app-commerce-page',
+				prefix: '.nfd-page-solutions',
 				transform(prefix, selector, prefixed) {
 					if (selector === 'html' || selector === 'body') return prefix;
 					if (selector.startsWith(prefix)) return selector;
