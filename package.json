@@ -24,7 +24,7 @@
     "@wordpress/scripts": "^31",
     "@wordpress/url": "^4.42.0",
     "classnames": "^2.5.1",
-    "mini-css-extract-plugin": "^2.10.1",
+    "mini-css-extract-plugin": "^2.10.2",
     "postcss-prefix-selector": "^2.1.1",
     "react-router-dom": "^7.13.2",
     "tailwindcss": "^3.4.19",
