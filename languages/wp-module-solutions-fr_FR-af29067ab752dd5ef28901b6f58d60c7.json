@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2025-02-19 14:32",
+    "translation-revision-date": "2026-04-20T18:19:44+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/addnew\/bundle.js",
     "domain": "messages",
@@ -10,11 +10,17 @@
                 "lang": "fr_FR",
                 "plural-forms": "nplurals=2; plural=(n > 1);"
             },
+            "Premium": [
+                "Premium"
+            ],
             "Get it": [
                 "Obtenir"
             ],
             "Upgrade to unlock all features": [
                 "Mettez \u00e0 niveau pour d\u00e9bloquer toutes les fonctionnalit\u00e9s"
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Modules compl\u00e9mentaires pour cr\u00e9er tout type de site, boutique ou blog"
             ],
             "Discover Now": [
                 "D\u00e9couvrir maintenant"
@@ -48,12 +54,6 @@
             ],
             "Premium tools available in our eCommerce Add-Ons": [
                 "Outils premium disponibles dans nos modules compl\u00e9mentaires e-commerce"
-            ],
-            "Premium": [
-                "Premium"
-            ],
-            "Add-Ons to build any kind of site, store or blog": [
-                "Modules compl\u00e9mentaires pour cr\u00e9er tout type de site, boutique ou blog"
             ]
         }
     }

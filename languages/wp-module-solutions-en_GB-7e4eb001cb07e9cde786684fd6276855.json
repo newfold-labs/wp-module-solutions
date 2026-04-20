@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2025-02-13 19:37+0530",
+    "translation-revision-date": "2026-04-20T18:19:44+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page\/bundle.js",
     "domain": "messages",
@@ -10,11 +10,17 @@
                 "lang": "en_GB",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
+            "Premium": [
+                "Premium"
+            ],
             "Get it": [
                 "Get it"
             ],
             "Upgrade to unlock all features": [
                 "Upgrade to unlock all features"
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Add-Ons to build any kind of site, store or blog"
             ],
             "Discover Now": [
                 "Discover Now"
@@ -28,11 +34,8 @@
             "The #1 Bundle of Commerce Tools": [
                 "The #1 Bundle of Commerce Tools"
             ],
-            "Premium tools available in eCommerce Add-Ons": [
-                "Premium tools available in eCommerce Add-Ons"
-            ],
-            "Learn more about eCommerce Add-Ons": [
-                "Learn more about eCommerce Add-Ons"
+            "Search tool": [
+                "Search tool"
             ],
             "Most Popular": [
                 "Most Popular"
@@ -42,6 +45,9 @@
             ],
             "All": [
                 "All"
+            ],
+            "Filter by type": [
+                "Filter by type"
             ],
             "No matching tools for '%s'": [
                 "No matching tools for '%s'"
@@ -54,9 +60,6 @@
             ],
             "Popular": [
                 "Popular"
-            ],
-            "Premium": [
-                "Premium"
             ],
             "Upgrade to Save": [
                 "Upgrade to Save"
@@ -82,14 +85,11 @@
             "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
                 "Start with a plan that fits your goals and unlock up to \u00a32,800 in premium Bluehost and Yoast plugins."
             ],
-            "Add-Ons to build any kind of site, store or blog": [
-                "Add-Ons to build any kind of site, store or blog"
+            "Premium tools available in eCommerce Add-Ons": [
+                "Premium tools available in eCommerce Add-Ons"
             ],
-            "Search tool": [
-                "Search tool"
-            ],
-            "Filter by type": [
-                "Filter by type"
+            "Learn more about eCommerce Add-Ons": [
+                "Learn more about eCommerce Add-Ons"
             ]
         }
     }

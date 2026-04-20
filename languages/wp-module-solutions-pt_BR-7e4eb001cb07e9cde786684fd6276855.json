@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2025-05-07 15:17+0100",
+    "translation-revision-date": "2026-04-20T18:19:44+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page\/bundle.js",
     "domain": "messages",
@@ -34,11 +34,8 @@
             "The #1 Bundle of Commerce Tools": [
                 "O pacote n\u00ba 1 de ferramentas de com\u00e9rcio eletr\u00f4nico"
             ],
-            "Premium tools available in eCommerce Add-Ons": [
-                "Ferramentas premium dispon\u00edveis nos Add-ons de eCommerce"
-            ],
-            "Learn more about eCommerce Add-Ons": [
-                "Saiba mais sobre os Add-ons de eCommerce"
+            "Search tool": [
+                "Ferramenta de pesquisa"
             ],
             "Most Popular": [
                 "Mais populares"
@@ -48,6 +45,9 @@
             ],
             "All": [
                 "Todas"
+            ],
+            "Filter by type": [
+                "Filtrar por tipo"
             ],
             "No matching tools for '%s'": [
                 "Nenhuma ferramenta encontrada para '%s'"
@@ -85,11 +85,11 @@
             "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
                 "Comece com um plano que atenda aos seus objetivos e desbloqueie at\u00e9 US$ 3.500 em plugins premium da Bluehost e Yoast."
             ],
-            "Search tool": [
-                "Ferramenta de pesquisa"
+            "Premium tools available in eCommerce Add-Ons": [
+                "Ferramentas premium dispon\u00edveis nos Add-ons de eCommerce"
             ],
-            "Filter by type": [
-                "Filtrar por tipo"
+            "Learn more about eCommerce Add-Ons": [
+                "Saiba mais sobre os Add-ons de eCommerce"
             ]
         }
     }
