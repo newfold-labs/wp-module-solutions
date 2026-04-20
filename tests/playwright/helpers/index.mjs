@@ -92,20 +92,14 @@ async function setSolution(solution, expiration = 3600) {
     return;
   }
 
-  const expiry = Math.floor(Date.now() / 1000) + expiration;
-  
   try {
-    // Run both wp-cli commands in parallel for faster execution
-    await Promise.all([
-      wordpress.wpCli(
-        `option update _transient_newfold_solutions '${JSON.stringify(fixtureData)}' --format=json`,
-        { failOnNonZeroExit: false }
-      ),
-      wordpress.wpCli(
-        `option update _transient_timeout_newfold_solutions ${expiry}`,
-        { failOnNonZeroExit: false }
-      ),
-    ]);
+    // Use set_transient via wp eval so data is stored the same way WordPress expects.
+    // Passing large JSON via `wp option update ... '...'` breaks on CI (shell length, quoting).
+    const json = JSON.stringify(fixtureData);
+    const b64 = Buffer.from(json, 'utf8').toString('base64');
+    await wordpress.wpCli(
+      `eval "set_transient( 'newfold_solutions', json_decode( base64_decode( '${b64}' ), true ), ${expiration} );"`
+    );
   } catch (error) {
     fancyLog(`Failed to set solution: ${error.message}`, 55, 'yellow');
   }

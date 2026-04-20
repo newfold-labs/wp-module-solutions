@@ -143,12 +143,12 @@ test.describe('Solutions App in plugin', () => {
     await verifyHrefContains(yoastButton, 'wpseo_dashboard');
 
     // Advanced Reviews listed (for service, it's an entitlement - has PLS attributes)
-    const advReviewsTitle = page.locator(SELECTORS.toolCardTitle('advanced-reviews'));
+    const advReviewsCard = page.locator(SELECTORS.toolCard('advanced-reviews'));
+    await expect(advReviewsCard).toBeVisible();
+    const advReviewsTitle = advReviewsCard.locator('h4');
     await expect(advReviewsTitle).toContainText('Advanced Reviews');
-    await advReviewsTitle.scrollIntoViewIfNeeded();
-    await expect(advReviewsTitle).toBeVisible();
 
-    const advReviewsButton = page.locator(SELECTORS.toolCardButton('advanced-reviews'));
+    const advReviewsButton = advReviewsCard.locator('.nfd-button');
     await verifyInstallerAttributes(advReviewsButton, {
       basename: 'yith-woocommerce-advanced-reviews-premium/init.php',
       name: 'Advanced Reviews',
