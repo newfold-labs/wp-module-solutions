@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-02-13T10:58:13+00:00\n"
-"PO-Revision-Date: 2025-02-13 19:37+0530\n"
+"PO-Revision-Date: 2026-04-20T18:19:44+00:00\n"
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: wp-module-solutions\n"
@@ -29,37 +29,25 @@ msgstr "Activated the plugin successfully!"
 msgid "Please send valid plugin"
 msgstr "Please send valid plugin"
 
-#: components/entitlements/index.js:25
-msgid "My Plugins & Tools"
-msgstr "My Plugins & Tools"
+#: includes/Solutions.php:72
+msgid "My Solution"
+msgstr "My Solution"
 
-#: components/entitlements/index.js:9
-msgid "Explore the plugins & tools available with your solution."
-msgstr "Explore the plugins & tools available with your solution."
+#: includes/SolutionsUpsell.php:100
+msgctxt "Solution Upsell product type label"
+msgid "Bookable product"
+msgstr "Bookable product"
 
-#: components/entitlements/index.js:13
-msgid "Error"
-msgstr "Error"
+#: includes/SolutionsUpsell.php:101
+msgctxt "Solution Upsell product type label"
+msgid "Gift card"
+msgstr "Gift card"
 
-#: components/entitlements/index.js:14
-msgid "Oops, there was an error loading the plugins & tools, please try again later."
-msgstr "Oops, there was an error loading the plugins & tools, please try again later."
-
-#: components/entitlements/index.js:18
-msgid "Sorry, no current plugins & tools. Please, try again later."
-msgstr "Sorry, no current plugins & tools. Please, try again later."
-
-#: components/entitlements/index.js:22
-msgid "Load More"
-msgstr "Load More"
-
-#: components/entitlements/index.js:23
-msgid "Loading…"
-msgstr "Loading…"
-
-#: components/entitlements/index.js:24
-msgid "Add a New Plugin"
-msgstr "Add a New Plugin"
+#: build/addnew/bundle.js:1
+#: build/solutions-page-component/index.js:2
+#: build/solutions-page/bundle.js:3
+msgid "Premium"
+msgstr "Premium"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
@@ -72,6 +60,12 @@ msgstr "Get it"
 #: build/solutions-page/bundle.js:3
 msgid "Upgrade to unlock all features"
 msgstr "Upgrade to unlock all features"
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page-component/index.js:2
+#: build/solutions-page/bundle.js:3
+msgid "Add-Ons to build any kind of site, store or blog"
+msgstr "Add-Ons to build any kind of site, store or blog"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
@@ -138,13 +132,10 @@ msgstr "Upgrade to save & unlock more advanced tools"
 msgid "Premium tools available in our eCommerce Add-Ons"
 msgstr "Premium tools available in our eCommerce Add-Ons"
 
+#: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
-msgid "Premium tools available in eCommerce Add-Ons"
-msgstr "Premium tools available in eCommerce Add-Ons"
-
-#: build/solutions-page/bundle.js:2
-msgid "Learn more about eCommerce Add-Ons"
-msgstr "Learn more about eCommerce Add-Ons"
+msgid "Search tool"
+msgstr "Search tool"
 
 #: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
@@ -160,6 +151,11 @@ msgstr "Premium Tools"
 #: build/solutions-page/bundle.js:2
 msgid "All"
 msgstr "All"
+
+#: build/solutions-page-component/index.js:1
+#: build/solutions-page/bundle.js:2
+msgid "Filter by type"
+msgstr "Filter by type"
 
 #. translators: %s: Search term
 #: build/solutions-page-component/index.js:2
@@ -182,12 +178,6 @@ msgstr "Return to the tools list"
 #: build/solutions-page/bundle.js:3
 msgid "Popular"
 msgstr "Popular"
-
-#: build/addnew/bundle.js:1
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
-msgid "Premium"
-msgstr "Premium"
 
 #: build/solutions-page-component/index.js:2
 #: build/solutions-page/bundle.js:3
@@ -229,32 +219,42 @@ msgstr "Discover"
 msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
 msgstr "Start with a plan that fits your goals and unlock up to £2,800 in premium Bluehost and Yoast plugins."
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
-msgid "Add-Ons to build any kind of site, store or blog"
-msgstr "Add-Ons to build any kind of site, store or blog"
-
-#: includes/Solutions.php:72
-msgid "My Solution"
-msgstr "My Solution"
-
-#: includes/SolutionsUpsell.php:100
-msgctxt "Solution Upsell product type label"
-msgid "Bookable product"
-msgstr "Bookable product"
-
-#: includes/SolutionsUpsell.php:101
-msgctxt "Solution Upsell product type label"
-msgid "Gift card"
-msgstr "Gift card"
-
-#: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
-msgid "Search tool"
-msgstr "Search tool"
+msgid "Premium tools available in eCommerce Add-Ons"
+msgstr "Premium tools available in eCommerce Add-Ons"
 
-#: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
-msgid "Filter by type"
-msgstr "Filter by type"
+msgid "Learn more about eCommerce Add-Ons"
+msgstr "Learn more about eCommerce Add-Ons"
+
+#: components/entitlements/index.js:9
+msgid "Explore the plugins & tools available with your solution."
+msgstr "Explore the plugins & tools available with your solution."
+
+#: components/entitlements/index.js:13
+msgid "Error"
+msgstr "Error"
+
+#: components/entitlements/index.js:14
+msgid "Oops, there was an error loading the plugins & tools, please try again later."
+msgstr "Oops, there was an error loading the plugins & tools, please try again later."
+
+#: components/entitlements/index.js:18
+msgid "Sorry, no current plugins & tools. Please, try again later."
+msgstr "Sorry, no current plugins & tools. Please, try again later."
+
+#: components/entitlements/index.js:22
+msgid "Load More"
+msgstr "Load More"
+
+#: components/entitlements/index.js:23
+msgid "Loading…"
+msgstr "Loading…"
+
+#: components/entitlements/index.js:24
+msgid "Add a New Plugin"
+msgstr "Add a New Plugin"
+
+#: components/entitlements/index.js:25
+msgid "My Plugins & Tools"
+msgstr "My Plugins & Tools"

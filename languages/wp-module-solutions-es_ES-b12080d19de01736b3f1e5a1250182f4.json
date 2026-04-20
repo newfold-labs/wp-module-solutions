@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2025-02-19 14:32",
+    "translation-revision-date": "2026-04-20T18:19:44+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "components\/entitlements\/index.js",
     "domain": "messages",
@@ -12,9 +12,6 @@
             },
             "Solutions": [
                 "Soluciones"
-            ],
-            "My Plugins & Tools": [
-                "Mis Plugins y Herramientas"
             ],
             "Explore the plugins & tools available with your solution.": [
                 "Explore los plugins y herramientas disponibles con su soluci\u00f3n."
@@ -36,6 +33,9 @@
             ],
             "Add a New Plugin": [
                 "A\u00f1adir un nuevo Plugin"
+            ],
+            "My Plugins & Tools": [
+                "Mis Plugins y Herramientas"
             ]
         }
     }
