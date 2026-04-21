@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-02-13T10:58:13+00:00\n"
-"PO-Revision-Date: 2025-02-19 14:32\n"
+"PO-Revision-Date: 2026-04-20T18:19:44+00:00\n"
 "Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-File: wp-module-solutions.pot\n"
@@ -34,37 +34,25 @@ msgstr "De plugin is succesvol geactiveerd!"
 msgid "Please send valid plugin"
 msgstr "Stuur een geldige plugin"
 
-#: components/entitlements/index.js:25
-msgid "My Plugins & Tools"
-msgstr "Mijn plug-ins & gereedschap"
+#: includes/Solutions.php:72
+msgid "My Solution"
+msgstr "Mijn oplossing"
 
-#: components/entitlements/index.js:9
-msgid "Explore the plugins & tools available with your solution."
-msgstr "Ontdek de plug-ins en gereedschappen die beschikbaar zijn met jouw oplossing."
+#: includes/SolutionsUpsell.php:100
+msgctxt "Solution Upsell product type label"
+msgid "Bookable product"
+msgstr "Boekbaar product"
 
-#: components/entitlements/index.js:13
-msgid "Error"
-msgstr "Foutmelding"
+#: includes/SolutionsUpsell.php:101
+msgctxt "Solution Upsell product type label"
+msgid "Gift card"
+msgstr "Cadeaubon"
 
-#: components/entitlements/index.js:14
-msgid "Oops, there was an error loading the plugins & tools, please try again later."
-msgstr "Oeps, er is een fout opgetreden bij het laden van de plugins & tools, probeer het later opnieuw."
-
-#: components/entitlements/index.js:18
-msgid "Sorry, no current plugins & tools. Please, try again later."
-msgstr "Sorry, geen huidige plugins & tools. Probeer het later opnieuw."
-
-#: components/entitlements/index.js:22
-msgid "Load More"
-msgstr "Meer laden"
-
-#: components/entitlements/index.js:23
-msgid "Loading…"
-msgstr "Laden…"
-
-#: components/entitlements/index.js:24
-msgid "Add a New Plugin"
-msgstr "Een nieuwe plugin toevoegen"
+#: build/addnew/bundle.js:1
+#: build/solutions-page-component/index.js:2
+#: build/solutions-page/bundle.js:3
+msgid "Premium"
+msgstr "Premie"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
@@ -77,6 +65,12 @@ msgstr "Verkrijgen"
 #: build/solutions-page/bundle.js:3
 msgid "Upgrade to unlock all features"
 msgstr "Upgrade om alle functies te ontgrendelen"
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page-component/index.js:2
+#: build/solutions-page/bundle.js:3
+msgid "Add-Ons to build any kind of site, store or blog"
+msgstr "Add-ons om elk type website, winkel of blog te bouwen"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
@@ -143,13 +137,10 @@ msgstr "Upgrade om te besparen en meer geavanceerde tools te ontgrendelen"
 msgid "Premium tools available in our eCommerce Add-Ons"
 msgstr "Premium tools beschikbaar in onze eCommerce Add-Ons"
 
+#: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
-msgid "Premium tools available in eCommerce Add-Ons"
-msgstr "Premium tools beschikbaar in eCommerce Add-Ons"
-
-#: build/solutions-page/bundle.js:2
-msgid "Learn more about eCommerce Add-Ons"
-msgstr "Meer informatie over eCommerce Add-Ons"
+msgid "Search tool"
+msgstr "Zoekfunctie"
 
 #: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
@@ -165,6 +156,11 @@ msgstr "Premium Tools"
 #: build/solutions-page/bundle.js:2
 msgid "All"
 msgstr "Alles"
+
+#: build/solutions-page-component/index.js:1
+#: build/solutions-page/bundle.js:2
+msgid "Filter by type"
+msgstr "Filter op type"
 
 #. translators: %s: Search term
 #: build/solutions-page-component/index.js:2
@@ -187,12 +183,6 @@ msgstr "Terug naar de toolslijst"
 #: build/solutions-page/bundle.js:3
 msgid "Popular"
 msgstr "Populair"
-
-#: build/addnew/bundle.js:1
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
-msgid "Premium"
-msgstr "Premie"
 
 #: build/solutions-page-component/index.js:2
 #: build/solutions-page/bundle.js:3
@@ -234,32 +224,42 @@ msgstr "Ontdekken"
 msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
 msgstr "Begin met een plan dat bij je doelen past en ontgrendel tot €3.200 aan premium Bluehost- en Yoast-plugins."
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
-msgid "Add-Ons to build any kind of site, store or blog"
-msgstr "Add-ons om elk type website, winkel of blog te bouwen"
-
-#: includes/Solutions.php:72
-msgid "My Solution"
-msgstr "Mijn oplossing"
-
-#: includes/SolutionsUpsell.php:100
-msgctxt "Solution Upsell product type label"
-msgid "Bookable product"
-msgstr "Boekbaar product"
-
-#: includes/SolutionsUpsell.php:101
-msgctxt "Solution Upsell product type label"
-msgid "Gift card"
-msgstr "Cadeaubon"
-
-#: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
-msgid "Search tool"
-msgstr "Zoekfunctie"
+msgid "Premium tools available in eCommerce Add-Ons"
+msgstr "Premium tools beschikbaar in eCommerce Add-Ons"
 
-#: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
-msgid "Filter by type"
-msgstr "Filter op type"
+msgid "Learn more about eCommerce Add-Ons"
+msgstr "Meer informatie over eCommerce Add-Ons"
+
+#: components/entitlements/index.js:9
+msgid "Explore the plugins & tools available with your solution."
+msgstr "Ontdek de plug-ins en gereedschappen die beschikbaar zijn met jouw oplossing."
+
+#: components/entitlements/index.js:13
+msgid "Error"
+msgstr "Foutmelding"
+
+#: components/entitlements/index.js:14
+msgid "Oops, there was an error loading the plugins & tools, please try again later."
+msgstr "Oeps, er is een fout opgetreden bij het laden van de plugins & tools, probeer het later opnieuw."
+
+#: components/entitlements/index.js:18
+msgid "Sorry, no current plugins & tools. Please, try again later."
+msgstr "Sorry, geen huidige plugins & tools. Probeer het later opnieuw."
+
+#: components/entitlements/index.js:22
+msgid "Load More"
+msgstr "Meer laden"
+
+#: components/entitlements/index.js:23
+msgid "Loading…"
+msgstr "Laden…"
+
+#: components/entitlements/index.js:24
+msgid "Add a New Plugin"
+msgstr "Een nieuwe plugin toevoegen"
+
+#: components/entitlements/index.js:25
+msgid "My Plugins & Tools"
+msgstr "Mijn plug-ins & gereedschap"

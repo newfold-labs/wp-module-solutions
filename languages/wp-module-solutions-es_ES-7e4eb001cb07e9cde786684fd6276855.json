@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2025-02-19 14:32",
+    "translation-revision-date": "2026-04-20T18:19:44+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page\/bundle.js",
     "domain": "messages",
@@ -10,11 +10,17 @@
                 "lang": "es_ES",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
+            "Premium": [
+                "Premium"
+            ],
             "Get it": [
                 "Obtenerlo"
             ],
             "Upgrade to unlock all features": [
                 "Actualiza para desbloquear todas las funciones"
+            ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Complementos para crear cualquier tipo de sitio, tienda o blog"
             ],
             "Discover Now": [
                 "Descubrir ahora"
@@ -28,11 +34,8 @@
             "The #1 Bundle of Commerce Tools": [
                 "El paquete n.\u00ba 1 de herramientas de comercio"
             ],
-            "Premium tools available in eCommerce Add-Ons": [
-                "Herramientas premium disponibles en los complementos de comercio electr\u00f3nico"
-            ],
-            "Learn more about eCommerce Add-Ons": [
-                "M\u00e1s informaci\u00f3n sobre los complementos de comercio electr\u00f3nico"
+            "Search tool": [
+                "Herramienta de b\u00fasqueda"
             ],
             "Most Popular": [
                 "M\u00e1s populares"
@@ -42,6 +45,9 @@
             ],
             "All": [
                 "Todo"
+            ],
+            "Filter by type": [
+                "Filtrar por tipo"
             ],
             "No matching tools for '%s'": [
                 "No hay herramientas coincidentes para '%s'"
@@ -54,9 +60,6 @@
             ],
             "Popular": [
                 "Popular"
-            ],
-            "Premium": [
-                "Premium"
             ],
             "Upgrade to Save": [
                 "Actualiza para ahorrar"
@@ -82,14 +85,11 @@
             "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
                 "Comienza con un plan que se ajuste a tus objetivos y desbloquea hasta $3.500 en plugins premium de Bluehost y Yoast."
             ],
-            "Add-Ons to build any kind of site, store or blog": [
-                "Complementos para crear cualquier tipo de sitio, tienda o blog"
+            "Premium tools available in eCommerce Add-Ons": [
+                "Herramientas premium disponibles en los complementos de comercio electr\u00f3nico"
             ],
-            "Search tool": [
-                "Herramienta de b\u00fasqueda"
-            ],
-            "Filter by type": [
-                "Filtrar por tipo"
+            "Learn more about eCommerce Add-Ons": [
+                "M\u00e1s informaci\u00f3n sobre los complementos de comercio electr\u00f3nico"
             ]
         }
     }

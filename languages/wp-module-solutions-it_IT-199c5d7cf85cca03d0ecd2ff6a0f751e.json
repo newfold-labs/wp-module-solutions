@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2025-02-19 14:32",
+    "translation-revision-date": "2026-04-20T18:19:44+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page-component\/index.js",
     "domain": "messages",
@@ -10,17 +10,26 @@
                 "lang": "it_IT",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
+            "Premium": [
+                "Premium"
+            ],
             "Get it": [
                 "Ottienilo"
             ],
             "Upgrade to unlock all features": [
                 "Aggiorna per sbloccare tutte le funzionalit\u00e0"
             ],
+            "Add-Ons to build any kind of site, store or blog": [
+                "Add-On per costruire qualsiasi tipo di sito, negozio o blog"
+            ],
             "Discover Now": [
                 "Scopri Ora"
             ],
             "The #1 Bundle of Commerce Tools": [
                 "Il Bundle #1 di Strumenti per il Commercio"
+            ],
+            "Search tool": [
+                "Strumento di ricerca"
             ],
             "Most Popular": [
                 "Pi\u00f9 Popolari"
@@ -30,6 +39,9 @@
             ],
             "All": [
                 "Tutti"
+            ],
+            "Filter by type": [
+                "Filtra per tipologia"
             ],
             "No matching tools for '%s'": [
                 "Nessuno strumento corrispondente per '%s'"
@@ -42,9 +54,6 @@
             ],
             "Popular": [
                 "Popolari"
-            ],
-            "Premium": [
-                "Premium"
             ],
             "Upgrade to Save": [
                 "Aggiorna per Risparmiare"
@@ -69,15 +78,6 @@
             ],
             "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
                 "Inizia con un piano adatto ai tuoi obiettivi e sblocca fino a 3.200 \u20ac in plugin premium Bluehost e Yoast."
-            ],
-            "Add-Ons to build any kind of site, store or blog": [
-                "Add-On per costruire qualsiasi tipo di sito, negozio o blog"
-            ],
-            "Search tool": [
-                "Strumento di ricerca"
-            ],
-            "Filter by type": [
-                "Filtra per tipologia"
             ]
         }
     }

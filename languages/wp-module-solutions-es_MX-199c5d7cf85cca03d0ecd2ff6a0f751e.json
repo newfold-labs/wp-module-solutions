@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2025-05-07 15:16+0100",
+    "translation-revision-date": "2026-04-20T18:19:44+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page-component\/index.js",
     "domain": "messages",
@@ -28,6 +28,9 @@
             "The #1 Bundle of Commerce Tools": [
                 "El paquete n.\u00ba 1 de herramientas de comercio"
             ],
+            "Search tool": [
+                "Herramienta de b\u00fasqueda"
+            ],
             "Most Popular": [
                 "M\u00e1s populares"
             ],
@@ -36,6 +39,9 @@
             ],
             "All": [
                 "Todos"
+            ],
+            "Filter by type": [
+                "Filtrar por tipo"
             ],
             "No matching tools for '%s'": [
                 "No hay herramientas que coincidan con '%s'"
@@ -72,12 +78,6 @@
             ],
             "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
                 "Comienza con un plan que se adapte a tus objetivos y desbloquea hasta $3,500 en plugins premium de Bluehost y Yoast."
-            ],
-            "Search tool": [
-                "Herramienta de b\u00fasqueda"
-            ],
-            "Filter by type": [
-                "Filtrar por tipo"
             ]
         }
     }

@@ -4,7 +4,7 @@
   "license": "GPL-2.0-or-later",
   "private": true,
   "author": "arati bhandare",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",
@@ -13,23 +13,23 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@newfold/ui-component-library": "^2.1.1",
-    "@wordpress/api-fetch": "^7.40.0",
-    "@wordpress/element": "^6.37.0",
-    "react-svg": "^17.2.2"
+    "@wordpress/api-fetch": "^7.44.0",
+    "@wordpress/element": "^6.44.0",
+    "react-svg": "^17.2.4"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.11",
-    "@tailwindcss/postcss": "^4.2.1",
-    "@wordpress/dom-ready": "^4.40.0",
-    "@wordpress/scripts": "^31",
-    "@wordpress/url": "^4.39.0",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@wordpress/dom-ready": "^4.44.0",
+    "@wordpress/scripts": "^32",
+    "@wordpress/url": "^4.44.0",
     "classnames": "^2.5.1",
-    "mini-css-extract-plugin": "^2.10.0",
+    "mini-css-extract-plugin": "^2.10.2",
     "postcss-prefix-selector": "^2.1.1",
-    "react-router-dom": "^7.13.1",
+    "react-router-dom": "^7.14.1",
     "tailwindcss": "^3.4.19",
-    "webpack": "^5.105.2",
-    "webpack-cli": "^6.0.1",
+    "webpack": "^5.106.2",
+    "webpack-cli": "^7.0.2",
     "webpack-merge": "^6.0.1"
   }
 }

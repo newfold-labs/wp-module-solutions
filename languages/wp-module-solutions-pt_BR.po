@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-02-13T09:55:55+00:00\n"
-"PO-Revision-Date: 2025-05-07 15:17+0100\n"
+"PO-Revision-Date: 2026-04-20T18:19:44+00:00\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Domain: wp-module-solutions\n"
@@ -32,6 +32,16 @@ msgstr "Por favor, envie um plugin válido"
 #: includes/Solutions.php:72
 msgid "My Solution"
 msgstr "Minha Solução"
+
+#: includes/SolutionsUpsell.php:100
+msgctxt "Solution Upsell product type label"
+msgid "Bookable product"
+msgstr "Produto reservável"
+
+#: includes/SolutionsUpsell.php:101
+msgctxt "Solution Upsell product type label"
+msgid "Gift card"
+msgstr "Cartão-presente"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
@@ -122,13 +132,10 @@ msgstr "Atualize para economizar e desbloquear mais ferramentas avançadas"
 msgid "Premium tools available in our eCommerce Add-Ons"
 msgstr "Ferramentas premium disponíveis nos nossos Add-ons de eCommerce"
 
+#: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
-msgid "Premium tools available in eCommerce Add-Ons"
-msgstr "Ferramentas premium disponíveis nos Add-ons de eCommerce"
-
-#: build/solutions-page/bundle.js:2
-msgid "Learn more about eCommerce Add-Ons"
-msgstr "Saiba mais sobre os Add-ons de eCommerce"
+msgid "Search tool"
+msgstr "Ferramenta de pesquisa"
 
 #: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
@@ -144,6 +151,11 @@ msgstr "Ferramentas Premium"
 #: build/solutions-page/bundle.js:2
 msgid "All"
 msgstr "Todas"
+
+#: build/solutions-page-component/index.js:1
+#: build/solutions-page/bundle.js:2
+msgid "Filter by type"
+msgstr "Filtrar por tipo"
 
 #. translators: %s: Search term
 #: build/solutions-page-component/index.js:2
@@ -207,6 +219,14 @@ msgstr "Descobrir"
 msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
 msgstr "Comece com um plano que atenda aos seus objetivos e desbloqueie até US$ 3.500 em plugins premium da Bluehost e Yoast."
 
+#: build/solutions-page/bundle.js:2
+msgid "Premium tools available in eCommerce Add-Ons"
+msgstr "Ferramentas premium disponíveis nos Add-ons de eCommerce"
+
+#: build/solutions-page/bundle.js:2
+msgid "Learn more about eCommerce Add-Ons"
+msgstr "Saiba mais sobre os Add-ons de eCommerce"
+
 #: components/entitlements/index.js:9
 msgid "Explore the plugins & tools available with your solution."
 msgstr "Explore os plugins e ferramentas disponíveis na sua solução."
@@ -238,23 +258,3 @@ msgstr "Adicionar novo plugin"
 #: components/entitlements/index.js:25
 msgid "My Plugins & Tools"
 msgstr "Meus Plugins e Ferramentas"
-
-#: includes/SolutionsUpsell.php:100
-msgctxt "Solution Upsell product type label"
-msgid "Bookable product"
-msgstr "Produto reservável"
-
-#: includes/SolutionsUpsell.php:101
-msgctxt "Solution Upsell product type label"
-msgid "Gift card"
-msgstr "Cartão-presente"
-
-#: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
-msgid "Search tool"
-msgstr "Ferramenta de pesquisa"
-
-#: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
-msgid "Filter by type"
-msgstr "Filtrar por tipo"

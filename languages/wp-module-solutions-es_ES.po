@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-02-13T10:58:13+00:00\n"
-"PO-Revision-Date: 2025-02-19 14:32\n"
+"PO-Revision-Date: 2026-04-20T18:19:44+00:00\n"
 "Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-File: wp-module-solutions.pot\n"
@@ -34,37 +34,25 @@ msgstr "¡Se ha activado el plugin con éxito!"
 msgid "Please send valid plugin"
 msgstr "Por favor, envíe un plugin válido"
 
-#: components/entitlements/index.js:25
-msgid "My Plugins & Tools"
-msgstr "Mis Plugins y Herramientas"
+#: includes/Solutions.php:72
+msgid "My Solution"
+msgstr "Mi solución"
 
-#: components/entitlements/index.js:9
-msgid "Explore the plugins & tools available with your solution."
-msgstr "Explore los plugins y herramientas disponibles con su solución."
+#: includes/SolutionsUpsell.php:100
+msgctxt "Solution Upsell product type label"
+msgid "Bookable product"
+msgstr "Producto que se puede reservar"
 
-#: components/entitlements/index.js:13
-msgid "Error"
-msgstr "Error"
+#: includes/SolutionsUpsell.php:101
+msgctxt "Solution Upsell product type label"
+msgid "Gift card"
+msgstr "Tarjeta de regalo"
 
-#: components/entitlements/index.js:14
-msgid "Oops, there was an error loading the plugins & tools, please try again later."
-msgstr "Vaya, hubo un error al cargar los plugins y herramientas, por favor inténtalo de nuevo más tarde."
-
-#: components/entitlements/index.js:18
-msgid "Sorry, no current plugins & tools. Please, try again later."
-msgstr "Lo sentimos, no hay plugins y herramientas actuales. Por favor, inténtalo de nuevo más tarde."
-
-#: components/entitlements/index.js:22
-msgid "Load More"
-msgstr "Cargar más"
-
-#: components/entitlements/index.js:23
-msgid "Loading…"
-msgstr "Cargando…"
-
-#: components/entitlements/index.js:24
-msgid "Add a New Plugin"
-msgstr "Añadir un nuevo Plugin"
+#: build/addnew/bundle.js:1
+#: build/solutions-page-component/index.js:2
+#: build/solutions-page/bundle.js:3
+msgid "Premium"
+msgstr "Premium"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
@@ -77,6 +65,12 @@ msgstr "Obtenerlo"
 #: build/solutions-page/bundle.js:3
 msgid "Upgrade to unlock all features"
 msgstr "Actualiza para desbloquear todas las funciones"
+
+#: build/addnew/bundle.js:1
+#: build/solutions-page-component/index.js:2
+#: build/solutions-page/bundle.js:3
+msgid "Add-Ons to build any kind of site, store or blog"
+msgstr "Complementos para crear cualquier tipo de sitio, tienda o blog"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
@@ -143,13 +137,10 @@ msgstr "Actualiza para ahorrar y desbloquear más herramientas avanzadas"
 msgid "Premium tools available in our eCommerce Add-Ons"
 msgstr "Herramientas premium disponibles en nuestros complementos de comercio electrónico"
 
+#: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
-msgid "Premium tools available in eCommerce Add-Ons"
-msgstr "Herramientas premium disponibles en los complementos de comercio electrónico"
-
-#: build/solutions-page/bundle.js:2
-msgid "Learn more about eCommerce Add-Ons"
-msgstr "Más información sobre los complementos de comercio electrónico"
+msgid "Search tool"
+msgstr "Herramienta de búsqueda"
 
 #: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
@@ -165,6 +156,11 @@ msgstr "Herramientas Premium"
 #: build/solutions-page/bundle.js:2
 msgid "All"
 msgstr "Todo"
+
+#: build/solutions-page-component/index.js:1
+#: build/solutions-page/bundle.js:2
+msgid "Filter by type"
+msgstr "Filtrar por tipo"
 
 #. translators: %s: Search term
 #: build/solutions-page-component/index.js:2
@@ -187,12 +183,6 @@ msgstr "Volver a la lista de herramientas"
 #: build/solutions-page/bundle.js:3
 msgid "Popular"
 msgstr "Popular"
-
-#: build/addnew/bundle.js:1
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
-msgid "Premium"
-msgstr "Premium"
 
 #: build/solutions-page-component/index.js:2
 #: build/solutions-page/bundle.js:3
@@ -234,32 +224,42 @@ msgstr "Descubrir"
 msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
 msgstr "Comienza con un plan que se ajuste a tus objetivos y desbloquea hasta $3.500 en plugins premium de Bluehost y Yoast."
 
-#: build/addnew/bundle.js:1
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
-msgid "Add-Ons to build any kind of site, store or blog"
-msgstr "Complementos para crear cualquier tipo de sitio, tienda o blog"
-
-#: includes/Solutions.php:72
-msgid "My Solution"
-msgstr "Mi solución"
-
-#: includes/SolutionsUpsell.php:100
-msgctxt "Solution Upsell product type label"
-msgid "Bookable product"
-msgstr "Producto que se puede reservar"
-
-#: includes/SolutionsUpsell.php:101
-msgctxt "Solution Upsell product type label"
-msgid "Gift card"
-msgstr "Tarjeta de regalo"
-
-#: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
-msgid "Search tool"
-msgstr "Herramienta de búsqueda"
+msgid "Premium tools available in eCommerce Add-Ons"
+msgstr "Herramientas premium disponibles en los complementos de comercio electrónico"
 
-#: build/solutions-page-component/index.js:1
 #: build/solutions-page/bundle.js:2
-msgid "Filter by type"
-msgstr "Filtrar por tipo"
+msgid "Learn more about eCommerce Add-Ons"
+msgstr "Más información sobre los complementos de comercio electrónico"
+
+#: components/entitlements/index.js:9
+msgid "Explore the plugins & tools available with your solution."
+msgstr "Explore los plugins y herramientas disponibles con su solución."
+
+#: components/entitlements/index.js:13
+msgid "Error"
+msgstr "Error"
+
+#: components/entitlements/index.js:14
+msgid "Oops, there was an error loading the plugins & tools, please try again later."
+msgstr "Vaya, hubo un error al cargar los plugins y herramientas, por favor inténtalo de nuevo más tarde."
+
+#: components/entitlements/index.js:18
+msgid "Sorry, no current plugins & tools. Please, try again later."
+msgstr "Lo sentimos, no hay plugins y herramientas actuales. Por favor, inténtalo de nuevo más tarde."
+
+#: components/entitlements/index.js:22
+msgid "Load More"
+msgstr "Cargar más"
+
+#: components/entitlements/index.js:23
+msgid "Loading…"
+msgstr "Cargando…"
+
+#: components/entitlements/index.js:24
+msgid "Add a New Plugin"
+msgstr "Añadir un nuevo Plugin"
+
+#: components/entitlements/index.js:25
+msgid "My Plugins & Tools"
+msgstr "Mis Plugins y Herramientas"
