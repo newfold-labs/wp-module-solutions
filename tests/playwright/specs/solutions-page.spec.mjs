@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/test';
 import {
   auth,
-  setSolution,
   clearSolutionTransient,
-  navigateToSolutionsPage,
+  setSolutionAndOpenSolutionsPage,
   SELECTORS,
   CTB_IDS,
   verifyInstallerAttributes,
@@ -24,8 +23,7 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Solutions page displays upgrade for those with no solution', async ({ page }) => {
-    await setSolution('none');
-    await navigateToSolutionsPage(page, pluginId);
+    await setSolutionAndOpenSolutionsPage(page, 'none', pluginId, null);
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -40,8 +38,7 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Solutions page displays upgrade with CTB atts for those with no solution', async ({ page }) => {
-    await setSolution('none');
-    await navigateToSolutionsPage(page, pluginId, 'none');
+    await setSolutionAndOpenSolutionsPage(page, 'none', pluginId, 'none');
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -60,8 +57,7 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Creator solutions page displays tools with proper button atts', async ({ page }) => {
-    await setSolution('creator');
-    await navigateToSolutionsPage(page, pluginId, 'creator');
+    await setSolutionAndOpenSolutionsPage(page, 'creator', pluginId, 'creator');
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -120,8 +116,7 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Service solutions page displays tools with proper button atts', async ({ page }) => {
-    await setSolution('service');
-    await navigateToSolutionsPage(page, pluginId, 'service');
+    await setSolutionAndOpenSolutionsPage(page, 'service', pluginId, 'service');
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -143,12 +138,12 @@ test.describe('Solutions App in plugin', () => {
     await verifyHrefContains(yoastButton, 'wpseo_dashboard');
 
     // Advanced Reviews listed (for service, it's an entitlement - has PLS attributes)
-    const advReviewsTitle = page.locator(SELECTORS.toolCardTitle('advanced-reviews'));
+    const advReviewsCard = page.locator(SELECTORS.toolCard('advanced-reviews'));
+    await expect(advReviewsCard).toBeVisible();
+    const advReviewsTitle = advReviewsCard.locator('h4');
     await expect(advReviewsTitle).toContainText('Advanced Reviews');
-    await advReviewsTitle.scrollIntoViewIfNeeded();
-    await expect(advReviewsTitle).toBeVisible();
 
-    const advReviewsButton = page.locator(SELECTORS.toolCardButton('advanced-reviews'));
+    const advReviewsButton = advReviewsCard.locator('.nfd-button');
     await verifyInstallerAttributes(advReviewsButton, {
       basename: 'yith-woocommerce-advanced-reviews-premium/init.php',
       name: 'Advanced Reviews',
@@ -182,8 +177,7 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Commerce solutions page displays tools with proper button atts', async ({ page }) => {
-    await setSolution('commerce');
-    await navigateToSolutionsPage(page, pluginId, 'commerce');
+    await setSolutionAndOpenSolutionsPage(page, 'commerce', pluginId, 'commerce');
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');

@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/test';
 import {
   auth,
-  setSolution,
   clearSolutionTransient,
-  navigateToMySolutionsTab,
+  setSolutionAndOpenMySolutions,
   SELECTORS,
   CTB_IDS,
   verifyInstallerAttributes,
@@ -25,10 +24,8 @@ test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => 
   // Cannot fully test PLS install here because the site is not hiive registered
   // and the PLS endpoint requires a site and user with solution add-on
   test('PLS plugin has proper attributes', async ({ page }) => {
-    await setSolution('commerce');
-    await navigateToMySolutionsTab(page, 'commerce');
+    await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
 
-    // Wait for the app to be ready
     await page.waitForLoadState('load');
     // Use first() to select the first plugins card list (there may be multiple)
     const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();
@@ -61,8 +58,7 @@ test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => 
 
   // Test premium entitlement button in upgrade solution section for solution upgrade CTA
   test('Advanced Reviews as premium upgrade for creator', async ({ page }) => {
-    await setSolution('creator');
-    await navigateToMySolutionsTab(page, 'creator');
+    await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
 
     // Use first() to select the first plugins card list (there may be multiple)
     const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();
