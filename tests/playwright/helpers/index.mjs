@@ -49,7 +49,7 @@ const SELECTORS = {
   toolCard: (slug) => `.nfd-solutions-tool-card-${slug}`,
   toolCardButton: (slug) => `.nfd-solutions-tool-card-${slug} .nfd-button`,
   toolCardTitle: (slug) => `.nfd-solutions-tool-card-${slug} h4`,
-  
+
   // Add new plugins page (My Solutions tab)
   addNewApp: '#nfd-add-new-app',
   addNewAppTitle: '#nfd-add-new-app h1:first-of-type',
@@ -62,11 +62,11 @@ const SELECTORS = {
   pluginCardTitle: (slug) => `.plugin-card-${slug} h2`,
   pluginCardButton: (slug) => `.plugin-card-${slug} .button`,
   brandLogoSvg: '.plugin-install-nfd_solutions a svg',
-  
+
   // Installer modal
   installerModal: '.nfd-installer-modal__content',
   installerModalSubheading: '.nfd-installer-modal__content-subheading',
-  
+
   // Plugins page
   pluginsList: '#the-list',
   pluginRow: (slug) => `tr[data-slug="${slug}"]`,
@@ -404,19 +404,19 @@ async function verifyHrefContains(button, expected) {
 async function clickInstallAndVerifyModal(page, pluginSlug, pluginName) {
   const button = page.locator(SELECTORS.pluginCardButton(pluginSlug));
   await button.click();
-  
+
   // Verify modal opens
   const modal = page.locator(SELECTORS.installerModal);
   await expect(modal).toBeVisible();
-  
+
   const subheading = page.locator(SELECTORS.installerModalSubheading);
   await expect(subheading).toContainText(pluginName);
-  
+
   // Wait for modal to close (installation complete)
   await expect(modal).toBeHidden({ timeout: 30000 });
-  
+
   // Wait for page to finish loading after installation redirect
-  await page.waitForLoadState('networkidle');
+  await page.waitForLoadState('domcontentloaded');
 }
 
 /**
@@ -427,7 +427,7 @@ async function clickInstallAndVerifyModal(page, pluginSlug, pluginName) {
  */
 async function verifyPluginInstalled(page, pluginSlug) {
   await navigateToPluginsPage(page);
-  
+
   const pluginRow = page.locator(SELECTORS.pluginRow(pluginSlug));
   await pluginRow.scrollIntoViewIfNeeded();
   await expect(pluginRow).toBeVisible();
