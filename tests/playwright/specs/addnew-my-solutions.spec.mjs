@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/test';
 import {
   auth,
-  setSolution,
   clearSolutionTransient,
-  navigateToMySolutionsTab,
+  setSolutionAndOpenMySolutions,
   SELECTORS,
 } from '../helpers/index.mjs';
 
@@ -18,8 +17,7 @@ test.describe('My Solutions on Plugin Install Page', () => {
   });
 
   test('The brand logo is shown on solutions tab', async ({ page }) => {
-    await setSolution('none');
-    await navigateToMySolutionsTab(page, 'none');
+    await setSolutionAndOpenMySolutions(page, 'none', 'none');
 
     const brandLogo = page.locator(SELECTORS.brandLogoSvg);
     await brandLogo.scrollIntoViewIfNeeded();
@@ -27,8 +25,7 @@ test.describe('My Solutions on Plugin Install Page', () => {
   });
 
   test('My Solution page is rendered with no solution', async ({ page }) => {
-    await setSolution('none');
-    await navigateToMySolutionsTab(page, 'none');
+    await setSolutionAndOpenMySolutions(page, 'none', 'none');
 
     const title = page.locator(SELECTORS.addNewAppTitle);
     await expect(title).toContainText('Premium tools available');
@@ -37,8 +34,7 @@ test.describe('My Solutions on Plugin Install Page', () => {
   });
 
   test('My Solution page is rendered with Commerce solution', async ({ page }) => {
-    await setSolution('commerce');
-    await navigateToMySolutionsTab(page, 'commerce');
+    await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
 
     // Commerce solution with plugins shows "Powerful Plugins Included"
     const title = page.locator(SELECTORS.addNewAppTitle);
@@ -48,8 +44,7 @@ test.describe('My Solutions on Plugin Install Page', () => {
   });
 
   test('My Solution page is rendered with Creator solution', async ({ page }) => {
-    await setSolution('creator');
-    await navigateToMySolutionsTab(page, 'creator');
+    await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
 
     // Use first() to select the first h1 (there may be multiple due to upgrade banner)
     const title = page.locator('#nfd-add-new-app h1').first();
@@ -65,8 +60,7 @@ test.describe('My Solutions on Plugin Install Page', () => {
   });
 
   test('My Solution page is rendered with Service solution', async ({ page }) => {
-    await setSolution('service');
-    await navigateToMySolutionsTab(page, 'service');
+    await setSolutionAndOpenMySolutions(page, 'service', 'service');
 
     // Use first() to select the first h1 (there may be multiple due to upgrade banner)
     const title = page.locator('#nfd-add-new-app h1').first();

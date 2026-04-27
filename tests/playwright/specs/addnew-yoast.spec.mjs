@@ -2,8 +2,9 @@ import { test, expect } from '@playwright/test';
 import {
   auth,
   newfold,
-  setSolution,
   clearSolutionTransient,
+  setSolutionAndOpenMySolutions,
+  expectNewfoldSolutionsHydrated,
   uninstallPlugin,
   navigateToMySolutionsTab,
   verifyPluginInstalled,
@@ -39,9 +40,8 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
 
   // Test free Yoast SEO plugin install functions
   test('Yoast SEO plugin installs properly', async ({ page }) => {
-    await setSolution('creator');
     // Note: Yoast is already uninstalled in beforeEach via wp-cli
-    await navigateToMySolutionsTab(page, 'creator');
+    await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
 
     // Use first() to select the first plugins card list (there may be multiple)
     const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();
@@ -81,6 +81,7 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
 
     // Return to entitlements list to verify installed attributes are in place
     await navigateToMySolutionsTab(page, 'creator');
+    await expectNewfoldSolutionsHydrated(page, 'creator');
 
     const yoastButtonAfter = page.locator('.plugin-card-yoast-seo .button');
     await expect(yoastButtonAfter).toHaveAttribute('data-is-active', 'true');
@@ -89,8 +90,7 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
 
   // Test premium Yoast premium plugin CTB attributes
   test('Yoast Premium plugin has CTB attributes', async ({ page }) => {
-    await setSolution('commerce');
-    await navigateToMySolutionsTab(page, 'commerce');
+    await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
 
     // Use first() to select the first plugins card list (there may be multiple)
     const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();
@@ -121,8 +121,7 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
   });
 
   test('Yoast SEO available for creator', async ({ page }) => {
-    await setSolution('creator');
-    await navigateToMySolutionsTab(page, 'creator');
+    await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
 
     // Use first() to select the first plugins card list (there may be multiple)
     const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();

@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/test';
 import {
   auth,
-  setSolution,
   clearSolutionTransient,
-  navigateToSolutionsPage,
+  setSolutionAndOpenSolutionsPage,
   SELECTORS,
   CTB_IDS,
   verifyInstallerAttributes,
@@ -24,8 +23,7 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Solutions page displays upgrade for those with no solution', async ({ page }) => {
-    await setSolution('none');
-    await navigateToSolutionsPage(page, pluginId);
+    await setSolutionAndOpenSolutionsPage(page, 'none', pluginId, null);
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -40,8 +38,7 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Solutions page displays upgrade with CTB atts for those with no solution', async ({ page }) => {
-    await setSolution('none');
-    await navigateToSolutionsPage(page, pluginId, 'none');
+    await setSolutionAndOpenSolutionsPage(page, 'none', pluginId, 'none');
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -60,8 +57,7 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Creator solutions page displays tools with proper button atts', async ({ page }) => {
-    await setSolution('creator');
-    await navigateToSolutionsPage(page, pluginId, 'creator');
+    await setSolutionAndOpenSolutionsPage(page, 'creator', pluginId, 'creator');
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -120,8 +116,7 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Service solutions page displays tools with proper button atts', async ({ page }) => {
-    await setSolution('service');
-    await navigateToSolutionsPage(page, pluginId, 'service');
+    await setSolutionAndOpenSolutionsPage(page, 'service', pluginId, 'service');
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -182,8 +177,7 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Commerce solutions page displays tools with proper button atts', async ({ page }) => {
-    await setSolution('commerce');
-    await navigateToSolutionsPage(page, pluginId, 'commerce');
+    await setSolutionAndOpenSolutionsPage(page, 'commerce', pluginId, 'commerce');
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');

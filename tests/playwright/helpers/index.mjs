@@ -49,7 +49,7 @@ const SELECTORS = {
   toolCard: (slug) => `.nfd-solutions-tool-card-${slug}`,
   toolCardButton: (slug) => `.nfd-solutions-tool-card-${slug} .nfd-button`,
   toolCardTitle: (slug) => `.nfd-solutions-tool-card-${slug} h4`,
-  
+
   // Add new plugins page (My Solutions tab)
   addNewApp: '#nfd-add-new-app',
   addNewAppTitle: '#nfd-add-new-app h1:first-of-type',
@@ -62,11 +62,11 @@ const SELECTORS = {
   pluginCardTitle: (slug) => `.plugin-card-${slug} h2`,
   pluginCardButton: (slug) => `.plugin-card-${slug} .button`,
   brandLogoSvg: '.plugin-install-nfd_solutions a svg',
-  
+
   // Installer modal
   installerModal: '.nfd-installer-modal__content',
   installerModalSubheading: '.nfd-installer-modal__content-subheading',
-  
+
   // Plugins page
   pluginsList: '#the-list',
   pluginRow: (slug) => `tr[data-slug="${slug}"]`,
@@ -100,9 +100,103 @@ async function setSolution(solution, expiration = 3600) {
     await wordpress.wpCli(
       `eval "set_transient( 'newfold_solutions', json_decode( base64_decode( '${b64}' ), true ), ${expiration} );"`
     );
+    fancyLog(`Solution set to ${solution}`, 55, 'green');
   } catch (error) {
     fancyLog(`Failed to set solution: ${error.message}`, 55, 'yellow');
   }
+}
+
+/**
+ * Normalize `solution` field from API/fixture for comparisons (null/false/empty).
+ *
+ * @param {*} value
+ * @returns {string|null}
+ */
+function normalizeSolutionSku(value) {
+  if (value === false || value === undefined || value === '' || value === null) {
+    return null;
+  }
+  return value;
+}
+
+/**
+ * Lightweight preflight check for fixture validity.
+ *
+ * @param {string} solutionKey - 'none' | 'creator' | 'service' | 'commerce'
+ */
+async function verifySolutionTransient(solutionKey) {
+  if (!Object.prototype.hasOwnProperty.call(FIXTURES, solutionKey)) {
+    throw new Error(`verifySolutionTransient: unknown solution fixture key: ${solutionKey}`);
+  }
+  normalizeSolutionSku(FIXTURES[solutionKey]?.solution);
+}
+
+/**
+ * Wait until `window.NewfoldSolutions` is present and `solution` matches the fixture.
+ * This follows the same payload `wp_localize_script` injects on plugin-install and plugin app screens.
+ *
+ * @param {import('@playwright/test').Page} page
+ * @param {string} solutionKey
+ */
+async function expectNewfoldSolutionsHydrated(page, solutionKey) {
+  const expected = normalizeSolutionSku(FIXTURES[solutionKey]?.solution);
+  await expect
+    .poll(
+      async () =>
+        page.evaluate((exp) => {
+          const ns = window.NewfoldSolutions;
+          if (!ns) {
+            return false;
+          }
+          const norm = (v) =>
+            v === false || v === undefined || v === '' || v === null ? null : v;
+          return norm(ns.solution) === norm(exp);
+        }, expected),
+      {
+        message: `window.NewfoldSolutions.solution did not match fixture (${solutionKey})`,
+        timeout: 20000,
+        intervals: [100, 250, 500, 1000],
+      }
+    )
+    .toBe(true);
+}
+
+/**
+ * Seed transient, run check, open My Solutions tab, optionally reload, assert data.
+ *
+ * @param {import('@playwright/test').Page} page
+ * @param {string} solutionKey
+ * @param {string|null} queryParam - URL `solution` query value (e.g. 'commerce'), or null
+ * @param {{ reload?: boolean }} [navOptions]
+ */
+async function setSolutionAndOpenMySolutions(page, solutionKey, queryParam, navOptions = {}) {
+  await setSolution(solutionKey);
+  await verifySolutionTransient(solutionKey);
+  await navigateToMySolutionsTab(page, queryParam, navOptions);
+  await expectNewfoldSolutionsHydrated(page, solutionKey);
+}
+
+/**
+ * Seed transient, run lightweight preflight, open the in-plugin Solutions app (hash #/commerce),
+ * optionally reload, then assert localized data.
+ *
+ * @param {import('@playwright/test').Page} page
+ * @param {string} solutionKey
+ * @param {string} pluginId - Admin page slug (e.g. bluehost)
+ * @param {string|null} solutionQueryParam - URL `solution` query value or null
+ * @param {{ reload?: boolean }} [navOptions]
+ */
+async function setSolutionAndOpenSolutionsPage(
+  page,
+  solutionKey,
+  pluginId = 'bluehost',
+  solutionQueryParam = null,
+  navOptions = {}
+) {
+  await setSolution(solutionKey);
+  await verifySolutionTransient(solutionKey);
+  await navigateToSolutionsPage(page, pluginId, solutionQueryParam, navOptions);
+  await expectNewfoldSolutionsHydrated(page, solutionKey);
 }
 
 /**
@@ -147,13 +241,17 @@ async function uninstallPlugin(pluginSlug) {
  * @param {string} pluginId - Plugin ID (default: 'bluehost')
  * @param {string} solution - Solution query param (optional)
  */
-async function navigateToSolutionsPage(page, pluginId = 'bluehost', solution = null) {
+async function navigateToSolutionsPage(page, pluginId = 'bluehost', solution = null, options = {}) {
+  const { reload = false } = options || {};
   let url = `/wp-admin/admin.php?page=${pluginId}`;
   if (solution) {
     url += `&solution=${solution}`;
   }
   url += '#/commerce';
-  await page.goto(url);
+  await page.goto(url, { waitUntil: 'load' });
+  if (reload) {
+    await page.reload({ waitUntil: 'load' });
+  }
 }
 
 /**
@@ -161,13 +259,18 @@ async function navigateToSolutionsPage(page, pluginId = 'bluehost', solution = n
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
  * @param {string} solution - Solution query param (optional)
+ * @param {{ reload?: boolean }} [options] - Set `reload: true` to force a second full request so PHP re-reads transients and re-localizes scripts
  */
-async function navigateToMySolutionsTab(page, solution = null) {
+async function navigateToMySolutionsTab(page, solution = null, options = {}) {
+  const { reload = false } = options || {};
   let url = '/wp-admin/plugin-install.php?tab=nfd_solutions';
   if (solution) {
     url += `&solution=${solution}`;
   }
-  await page.goto(url);
+  await page.goto(url, { waitUntil: 'load' });
+  if (reload) {
+    await page.reload({ waitUntil: 'load' });
+  }
 }
 
 /**
@@ -249,19 +352,19 @@ async function verifyHrefContains(button, expected) {
 async function clickInstallAndVerifyModal(page, pluginSlug, pluginName) {
   const button = page.locator(SELECTORS.pluginCardButton(pluginSlug));
   await button.click();
-  
+
   // Verify modal opens
   const modal = page.locator(SELECTORS.installerModal);
   await expect(modal).toBeVisible();
-  
+
   const subheading = page.locator(SELECTORS.installerModalSubheading);
   await expect(subheading).toContainText(pluginName);
-  
+
   // Wait for modal to close (installation complete)
   await expect(modal).toBeHidden({ timeout: 30000 });
-  
+
   // Wait for page to finish loading after installation redirect
-  await page.waitForLoadState('networkidle');
+  await page.waitForLoadState('domcontentloaded');
 }
 
 /**
@@ -272,7 +375,7 @@ async function clickInstallAndVerifyModal(page, pluginSlug, pluginName) {
  */
 async function verifyPluginInstalled(page, pluginSlug) {
   await navigateToPluginsPage(page);
-  
+
   const pluginRow = page.locator(SELECTORS.pluginRow(pluginSlug));
   await pluginRow.scrollIntoViewIfNeeded();
   await expect(pluginRow).toBeVisible();
@@ -316,6 +419,10 @@ export {
   FIXTURES,
   // Solution helpers
   setSolution,
+  verifySolutionTransient,
+  expectNewfoldSolutionsHydrated,
+  setSolutionAndOpenMySolutions,
+  setSolutionAndOpenSolutionsPage,
   clearSolutionTransient,
   uninstallPlugin,
   // Navigation helpers
