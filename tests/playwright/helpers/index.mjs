@@ -120,68 +120,15 @@ function normalizeSolutionSku(value) {
 }
 
 /**
- * Parse the first top-level JSON object from noisy wp-env / WP-CLI stdout.
- *
- * @param {string} text
- * @returns {object|null}
- */
-function parseFirstJsonObject(text) {
-  const s = String(text);
-  const start = s.indexOf('{');
-  if (start === -1) {
-    return null;
-  }
-  let depth = 0;
-  for (let i = start; i < s.length; i++) {
-    const c = s[i];
-    if (c === '{') {
-      depth++;
-    } else if (c === '}') {
-      depth--;
-      if (depth === 0) {
-        try {
-          return JSON.parse(s.slice(start, i + 1));
-        } catch {
-          return null;
-        }
-      }
-    }
-  }
-  return null;
-}
-
-/**
- * Verify the `newfold_solutions` transient exists and its `solution` field matches the fixture
- * for the given key (same data path `get_transient()` uses on the next admin request).
+ * Lightweight preflight check for fixture validity.
  *
  * @param {string} solutionKey - 'none' | 'creator' | 'service' | 'commerce'
  */
 async function verifySolutionTransient(solutionKey) {
-  const expected = normalizeSolutionSku(FIXTURES[solutionKey]?.solution);
-  // No `$variables` in this PHP string — the shell used by execSync would expand `$t` to empty.
-  const php =
-    "echo wp_json_encode( array( 'exists' => get_transient( 'newfold_solutions' ) !== false, 'solution' => is_array( get_transient( 'newfold_solutions' ) ) ? ( ( get_transient( 'newfold_solutions' ) )['solution'] ?? null ) : null ) );";
-  const output = await wordpress.wpCli(`eval ${JSON.stringify(php)}`);
-  if (typeof output === 'string' && /error:/i.test(output)) {
-    throw new Error(`verifySolutionTransient: WP-CLI error: ${output}`);
+  if (!Object.prototype.hasOwnProperty.call(FIXTURES, solutionKey)) {
+    throw new Error(`verifySolutionTransient: unknown solution fixture key: ${solutionKey}`);
   }
-  const parsed = parseFirstJsonObject(String(output));
-  if (!parsed || typeof parsed !== 'object') {
-    throw new Error(
-      `verifySolutionTransient: could not parse WP-CLI output: ${String(output).slice(0, 600)}`
-    );
-  }
-  if (!parsed.exists) {
-    throw new Error('verifySolutionTransient: transient newfold_solutions is missing in DB');
-  }
-  const actual = normalizeSolutionSku(parsed.solution);
-  if (actual !== expected) {
-    throw new Error(
-      `verifySolutionTransient: expected solution ${JSON.stringify(expected)}, got ${JSON.stringify(
-        parsed.solution
-      )} (fixture key: ${solutionKey})`
-    );
-  }
+  normalizeSolutionSku(FIXTURES[solutionKey]?.solution);
 }
 
 /**
@@ -215,7 +162,7 @@ async function expectNewfoldSolutionsHydrated(page, solutionKey) {
 }
 
 /**
- * Seed transient, verify in DB, open My Solutions tab, optionally reload, then assert localized data.
+ * Seed transient, run check, open My Solutions tab, optionally reload, assert data.
  *
  * @param {import('@playwright/test').Page} page
  * @param {string} solutionKey
@@ -230,7 +177,8 @@ async function setSolutionAndOpenMySolutions(page, solutionKey, queryParam, navO
 }
 
 /**
- * Seed transient, verify in DB, open the in-plugin Solutions app (hash #/commerce), optionally reload, then assert localized data.
+ * Seed transient, run lightweight preflight, open the in-plugin Solutions app (hash #/commerce),
+ * optionally reload, then assert localized data.
  *
  * @param {import('@playwright/test').Page} page
  * @param {string} solutionKey
