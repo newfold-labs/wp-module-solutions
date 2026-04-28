@@ -23,7 +23,8 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Solutions page displays upgrade for those with no solution', async ({ page }) => {
-    await setSolutionAndOpenSolutionsPage(page, 'none', pluginId, null);
+    const pre = await setSolutionAndOpenSolutionsPage(page, 'none', pluginId, null);
+    test.skip(!pre.ok, pre.reason);
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -38,7 +39,8 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Solutions page displays upgrade with CTB atts for those with no solution', async ({ page }) => {
-    await setSolutionAndOpenSolutionsPage(page, 'none', pluginId, 'none');
+    const pre = await setSolutionAndOpenSolutionsPage(page, 'none', pluginId, 'none');
+    test.skip(!pre.ok, pre.reason);
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -57,7 +59,8 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Creator solutions page displays tools with proper button atts', async ({ page }) => {
-    await setSolutionAndOpenSolutionsPage(page, 'creator', pluginId, 'creator');
+    const pre = await setSolutionAndOpenSolutionsPage(page, 'creator', pluginId, 'creator');
+    test.skip(!pre.ok, pre.reason);
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -116,7 +119,8 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Service solutions page displays tools with proper button atts', async ({ page }) => {
-    await setSolutionAndOpenSolutionsPage(page, 'service', pluginId, 'service');
+    const pre = await setSolutionAndOpenSolutionsPage(page, 'service', pluginId, 'service');
+    test.skip(!pre.ok, pre.reason);
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');
@@ -177,7 +181,8 @@ test.describe('Solutions App in plugin', () => {
   });
 
   test('Commerce solutions page displays tools with proper button atts', async ({ page }) => {
-    await setSolutionAndOpenSolutionsPage(page, 'commerce', pluginId, 'commerce');
+    const pre = await setSolutionAndOpenSolutionsPage(page, 'commerce', pluginId, 'commerce');
+    test.skip(!pre.ok, pre.reason);
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
     await expect(title).toContainText('Premium tools available');

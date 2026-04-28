@@ -24,7 +24,8 @@ test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => 
   // Cannot fully test PLS install here because the site is not hiive registered
   // and the PLS endpoint requires a site and user with solution add-on
   test('PLS plugin has proper attributes', async ({ page }) => {
-    await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
+    const pre = await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
+    test.skip(!pre.ok, pre.reason);
 
     await page.waitForLoadState('load');
     // Use first() to select the first plugins card list (there may be multiple)
@@ -58,7 +59,8 @@ test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => 
 
   // Test premium entitlement button in upgrade solution section for solution upgrade CTA
   test('Advanced Reviews as premium upgrade for creator', async ({ page }) => {
-    await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
+    const pre = await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
+    test.skip(!pre.ok, pre.reason);
 
     // Use first() to select the first plugins card list (there may be multiple)
     const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();

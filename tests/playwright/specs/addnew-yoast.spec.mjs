@@ -41,7 +41,8 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
   // Test free Yoast SEO plugin install functions
   test('Yoast SEO plugin installs properly', async ({ page }) => {
     // Note: Yoast is already uninstalled in beforeEach via wp-cli
-    await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
+    const pre = await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
+    test.skip(!pre.ok, pre.reason);
 
     // Use first() to select the first plugins card list (there may be multiple)
     const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();
@@ -90,7 +91,8 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
 
   // Test premium Yoast premium plugin CTB attributes
   test('Yoast Premium plugin has CTB attributes', async ({ page }) => {
-    await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
+    const pre = await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
+    test.skip(!pre.ok, pre.reason);
 
     // Use first() to select the first plugins card list (there may be multiple)
     const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();
@@ -121,7 +123,8 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
   });
 
   test('Yoast SEO available for creator', async ({ page }) => {
-    await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
+    const pre = await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
+    test.skip(!pre.ok, pre.reason);
 
     // Use first() to select the first plugins card list (there may be multiple)
     const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();

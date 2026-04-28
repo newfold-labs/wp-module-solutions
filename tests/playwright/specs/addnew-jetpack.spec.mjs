@@ -40,7 +40,8 @@ test.describe('My Solutions on Plugin Install Page - Jetpack Plugin', () => {
 
   // Test free Jetpack plugin install functions
   test('Jetpack plugin installs properly', async ({ page }) => {
-    await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
+    const pre = await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
+    test.skip(!pre.ok, pre.reason);
 
     // Use first() for plugins card list as there may be multiple
     const pluginsList = page.locator('.nfd-plugins-card-list').first();

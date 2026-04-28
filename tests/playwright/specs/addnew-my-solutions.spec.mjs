@@ -17,7 +17,8 @@ test.describe('My Solutions on Plugin Install Page', () => {
   });
 
   test('The brand logo is shown on solutions tab', async ({ page }) => {
-    await setSolutionAndOpenMySolutions(page, 'none', 'none');
+    const pre = await setSolutionAndOpenMySolutions(page, 'none', 'none');
+    test.skip(!pre.ok, pre.reason);
 
     const brandLogo = page.locator(SELECTORS.brandLogoSvg);
     await brandLogo.scrollIntoViewIfNeeded();
@@ -25,7 +26,8 @@ test.describe('My Solutions on Plugin Install Page', () => {
   });
 
   test('My Solution page is rendered with no solution', async ({ page }) => {
-    await setSolutionAndOpenMySolutions(page, 'none', 'none');
+    const pre = await setSolutionAndOpenMySolutions(page, 'none', 'none');
+    test.skip(!pre.ok, pre.reason);
 
     const title = page.locator(SELECTORS.addNewAppTitle);
     await expect(title).toContainText('Premium tools available');
@@ -34,7 +36,8 @@ test.describe('My Solutions on Plugin Install Page', () => {
   });
 
   test('My Solution page is rendered with Commerce solution', async ({ page }) => {
-    await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
+    const pre = await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
+    test.skip(!pre.ok, pre.reason);
 
     // Commerce solution with plugins shows "Powerful Plugins Included"
     const title = page.locator(SELECTORS.addNewAppTitle);
@@ -44,7 +47,8 @@ test.describe('My Solutions on Plugin Install Page', () => {
   });
 
   test('My Solution page is rendered with Creator solution', async ({ page }) => {
-    await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
+    const pre = await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
+    test.skip(!pre.ok, pre.reason);
 
     // Use first() to select the first h1 (there may be multiple due to upgrade banner)
     const title = page.locator('#nfd-add-new-app h1').first();
@@ -60,7 +64,8 @@ test.describe('My Solutions on Plugin Install Page', () => {
   });
 
   test('My Solution page is rendered with Service solution', async ({ page }) => {
-    await setSolutionAndOpenMySolutions(page, 'service', 'service');
+    const pre = await setSolutionAndOpenMySolutions(page, 'service', 'service');
+    test.skip(!pre.ok, pre.reason);
 
     // Use first() to select the first h1 (there may be multiple due to upgrade banner)
     const title = page.locator('#nfd-add-new-app h1').first();

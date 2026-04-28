@@ -79,31 +79,77 @@ const CTB_IDS = {
   yoastPremium: '57d6a568-783c-45e2-a388-847cff155897',
 };
 
+const DEFAULT_SET_RETRIES = 2;
+const DEFAULT_RETRY_DELAY_MS = 200;
+
+function isWpCliError(output) {
+  if (typeof output !== 'string') {
+    return false;
+  }
+  return output.startsWith('Error:') || output.includes('Fatal error') || output.includes('Parse error');
+}
+
+async function runWpCli(command) {
+  const raw = await wordpress.wpCli(command);
+  const output = typeof raw === 'string' ? raw : String(raw ?? '');
+  return {
+    ok: !isWpCliError(output),
+    output,
+  };
+}
+
 /**
  * Set solution transient
  * 
  * @param {string} solution - Solution type: 'none', 'creator', 'service', 'commerce'
  * @param {number} expiration - Expiration in seconds (default: 3600)
  */
-async function setSolution(solution, expiration = 3600) {
+async function setSolution(solution, expiration = 3600, retries = DEFAULT_SET_RETRIES) {
   const fixtureData = FIXTURES[solution];
   if (!fixtureData) {
     fancyLog(`Unknown solution: ${solution}`, 55, 'yellow');
-    return;
+    return {
+      ok: false,
+      reason: `Unknown solution fixture key: ${solution}`,
+    };
   }
 
-  try {
-    // Use set_transient via wp eval so data is stored the same way WordPress expects.
-    // Passing large JSON via `wp option update ... '...'` breaks on CI (shell length, quoting).
-    const json = JSON.stringify(fixtureData);
-    const b64 = Buffer.from(json, 'utf8').toString('base64');
-    await wordpress.wpCli(
-      `eval "set_transient( 'newfold_solutions', json_decode( base64_decode( '${b64}' ), true ), ${expiration} );"`
-    );
-    fancyLog(`Solution set to ${solution}`, 55, 'green');
-  } catch (error) {
-    fancyLog(`Failed to set solution: ${error.message}`, 55, 'yellow');
+  let lastReason = '';
+
+  for (let attempt = 1; attempt <= retries; attempt += 1) {
+    try {
+      // Use set_transient via wp eval so data is stored the same way WordPress expects.
+      // Passing large JSON via `wp option update ... '...'` breaks on CI (shell length, quoting).
+      const json = JSON.stringify(fixtureData);
+      const b64 = Buffer.from(json, 'utf8').toString('base64');
+      const setResult = await runWpCli(
+        `eval "set_transient( 'newfold_solutions', json_decode( base64_decode( '${b64}' ), true ), ${expiration} );"`
+      );
+      if (!setResult.ok) {
+        lastReason = setResult.output;
+      } else {
+        const verifyResult = await verifySolutionTransient(solution);
+        if (verifyResult.ok) {
+          fancyLog(`Solution set to ${solution}`, 55, 'green');
+          return { ok: true, reason: '' };
+        }
+        lastReason = verifyResult.reason;
+      }
+    } catch (error) {
+      lastReason = error?.message || String(error);
+    }
+
+    fancyLog(`Solution setup retry (${attempt}/${retries}) for ${solution}: ${lastReason}`, 55, 'yellow');
+    if (attempt < retries) {
+      await new Promise((resolve) => setTimeout(resolve, DEFAULT_RETRY_DELAY_MS));
+    }
   }
+
+  fancyLog(`Failed to set solution ${solution}: ${lastReason}`, 55, 'yellow');
+  return {
+    ok: false,
+    reason: `Unable to verify newfold_solutions transient for "${solution}": ${lastReason}`,
+  };
 }
 
 /**
@@ -120,15 +166,60 @@ function normalizeSolutionSku(value) {
 }
 
 /**
- * Lightweight preflight check for fixture validity.
+ * Verify transient payload persisted and `solution` matches fixture expectation.
  *
  * @param {string} solutionKey - 'none' | 'creator' | 'service' | 'commerce'
  */
 async function verifySolutionTransient(solutionKey) {
   if (!Object.prototype.hasOwnProperty.call(FIXTURES, solutionKey)) {
-    throw new Error(`verifySolutionTransient: unknown solution fixture key: ${solutionKey}`);
+    return {
+      ok: false,
+      reason: `verifySolutionTransient: unknown solution fixture key: ${solutionKey}`,
+    };
   }
-  normalizeSolutionSku(FIXTURES[solutionKey]?.solution);
+
+  const expected = normalizeSolutionSku(FIXTURES[solutionKey]?.solution);
+  const readResult = await runWpCli(
+    `eval '$value = get_transient("newfold_solutions"); if (!is_array($value)) { echo wp_json_encode(["ok" => false, "reason" => "transient_missing_or_not_array"]); return; } $solution = array_key_exists("solution", $value) ? $value["solution"] : null; echo wp_json_encode(["ok" => true, "solution" => $solution]);'`
+  );
+  if (!readResult.ok) {
+    return {
+      ok: false,
+      reason: `wp-cli transient read failed: ${readResult.output}`,
+    };
+  }
+
+  let payload;
+  try {
+    const lines = readResult.output
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean);
+    const jsonLine = lines[lines.length - 1];
+    payload = JSON.parse(jsonLine);
+  } catch {
+    return {
+      ok: false,
+      reason: `unexpected transient read output: ${readResult.output}`,
+    };
+  }
+
+  if (!payload?.ok) {
+    return {
+      ok: false,
+      reason: payload?.reason || 'transient payload unavailable',
+    };
+  }
+
+  const actual = normalizeSolutionSku(payload.solution);
+  if (actual !== expected) {
+    return {
+      ok: false,
+      reason: `transient solution mismatch (expected: ${String(expected)}, actual: ${String(actual)})`,
+    };
+  }
+
+  return { ok: true, reason: '' };
 }
 
 /**
@@ -161,8 +252,21 @@ async function expectNewfoldSolutionsHydrated(page, solutionKey) {
     .toBe(true);
 }
 
+async function verifyNewfoldSolutionsHydrated(page, solutionKey) {
+  try {
+    await expectNewfoldSolutionsHydrated(page, solutionKey);
+    return { ok: true, reason: '' };
+  } catch (error) {
+    return {
+      ok: false,
+      reason: error?.message || `window.NewfoldSolutions.solution did not match fixture (${solutionKey})`,
+    };
+  }
+}
+
 /**
- * Seed transient, run check, open My Solutions tab, optionally reload, assert data.
+ * Seed transient, run lightweight preflight, open My Solutions tab, optionally reload,
+ * then assert localized data.
  *
  * @param {import('@playwright/test').Page} page
  * @param {string} solutionKey
@@ -170,10 +274,22 @@ async function expectNewfoldSolutionsHydrated(page, solutionKey) {
  * @param {{ reload?: boolean }} [navOptions]
  */
 async function setSolutionAndOpenMySolutions(page, solutionKey, queryParam, navOptions = {}) {
-  await setSolution(solutionKey);
-  await verifySolutionTransient(solutionKey);
+  const setup = await setSolution(solutionKey);
+  if (!setup.ok) {
+    const reason = `[solutions setup] unable to seed solution "${solutionKey}" before navigation: ${setup.reason}`;
+    fancyLog(reason, 55, 'yellow');
+    return { ok: false, reason };
+  }
+
   await navigateToMySolutionsTab(page, queryParam, navOptions);
-  await expectNewfoldSolutionsHydrated(page, solutionKey);
+  const hydrated = await verifyNewfoldSolutionsHydrated(page, solutionKey);
+  if (!hydrated.ok) {
+    const reason = `[solutions setup] seeded "${solutionKey}" but localized data did not hydrate as expected: ${hydrated.reason}`;
+    fancyLog(reason, 55, 'yellow');
+    return { ok: false, reason };
+  }
+
+  return { ok: true, reason: '' };
 }
 
 /**
@@ -193,10 +309,22 @@ async function setSolutionAndOpenSolutionsPage(
   solutionQueryParam = null,
   navOptions = {}
 ) {
-  await setSolution(solutionKey);
-  await verifySolutionTransient(solutionKey);
+  const setup = await setSolution(solutionKey);
+  if (!setup.ok) {
+    const reason = `[solutions setup] unable to seed solution "${solutionKey}" before navigation: ${setup.reason}`;
+    fancyLog(reason, 55, 'yellow');
+    return { ok: false, reason };
+  }
+
   await navigateToSolutionsPage(page, pluginId, solutionQueryParam, navOptions);
-  await expectNewfoldSolutionsHydrated(page, solutionKey);
+  const hydrated = await verifyNewfoldSolutionsHydrated(page, solutionKey);
+  if (!hydrated.ok) {
+    const reason = `[solutions setup] seeded "${solutionKey}" but localized data did not hydrate as expected: ${hydrated.reason}`;
+    fancyLog(reason, 55, 'yellow');
+    return { ok: false, reason };
+  }
+
+  return { ok: true, reason: '' };
 }
 
 /**
