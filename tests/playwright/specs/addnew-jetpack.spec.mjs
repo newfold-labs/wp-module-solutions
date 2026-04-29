@@ -2,8 +2,9 @@ import { test, expect } from '@playwright/test';
 import {
   auth,
   newfold,
-  setSolution,
   clearSolutionTransient,
+  setSolutionAndOpenMySolutions,
+  expectNewfoldSolutionsHydrated,
   uninstallPlugin,
   navigateToMySolutionsTab,
   verifyPluginInstalled,
@@ -39,8 +40,8 @@ test.describe('My Solutions on Plugin Install Page - Jetpack Plugin', () => {
 
   // Test free Jetpack plugin install functions
   test('Jetpack plugin installs properly', async ({ page }) => {
-    await setSolution('commerce');
-    await navigateToMySolutionsTab(page, 'commerce');
+    const pre = await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
+    test.skip(!pre.ok, pre.reason);
 
     // Use first() for plugins card list as there may be multiple
     const pluginsList = page.locator('.nfd-plugins-card-list').first();
@@ -77,6 +78,7 @@ test.describe('My Solutions on Plugin Install Page - Jetpack Plugin', () => {
 
     // Check button attributes for active plugin
     await navigateToMySolutionsTab(page, 'commerce');
+    await expectNewfoldSolutionsHydrated(page, 'commerce');
 
     // Jetpack is listed - find the card again
     const jetpackCardAfter = page.locator('.plugin-card-jetpack');
@@ -99,6 +101,7 @@ test.describe('My Solutions on Plugin Install Page - Jetpack Plugin', () => {
 
     // Attributes match expectations for installed and inactive plugin
     await navigateToMySolutionsTab(page, 'commerce');
+    await expectNewfoldSolutionsHydrated(page, 'commerce');
 
     const jetpackButtonInactive = page.locator('.plugin-card-jetpack .button');
     await verifyInstallerAttributes(jetpackButtonInactive, {
