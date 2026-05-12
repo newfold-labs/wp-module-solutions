@@ -36,7 +36,7 @@
         "newfold-labs/wp-module-link-tracker": "^1.1"
     },
     "require-dev": {
-        "newfold-labs/wp-php-standards": "^1.2.5",
+        "newfold-labs/wp-php-standards": "^1.2.6",
         "wp-cli/i18n-command": "^2.7.0",
         "johnpbloch/wordpress": "@stable",
         "lucatume/wp-browser": "*",
