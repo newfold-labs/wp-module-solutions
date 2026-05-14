@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d33ca5e7b0aafc4dc8597137cdf0e61",
+    "content-hash": "aefa3f41469ce1200660acaf716fc25e",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1428,16 +1428,16 @@
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/composer-installer.git",
-                "reference": "845eb62303d2ca9b289ef216356568ccc075ffd1"
+                "reference": "963f0c67bffde0eac41b56be71ac0e8ba132f0bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/composer-installer/zipball/845eb62303d2ca9b289ef216356568ccc075ffd1",
-                "reference": "845eb62303d2ca9b289ef216356568ccc075ffd1",
+                "url": "https://api.github.com/repos/PHPCSStandards/composer-installer/zipball/963f0c67bffde0eac41b56be71ac0e8ba132f0bd",
+                "reference": "963f0c67bffde0eac41b56be71ac0e8ba132f0bd",
                 "shasum": ""
             },
             "require": {
@@ -1520,7 +1520,7 @@
                     "type": "thanks_dev"
                 }
             ],
-            "time": "2025-11-11T04:32:07+00:00"
+            "time": "2026-05-06T08:26:05+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -2546,16 +2546,16 @@
         },
         {
             "name": "newfold-labs/wp-php-standards",
-            "version": "1.2.5",
+            "version": "1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-php-standards.git",
-                "reference": "f895273a11b3f53dc29719fb859629e13291bf37"
+                "reference": "1b52c4ada6d08948e4587afe8e962bc76c440c44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-php-standards/zipball/f895273a11b3f53dc29719fb859629e13291bf37",
-                "reference": "f895273a11b3f53dc29719fb859629e13291bf37",
+                "url": "https://api.github.com/repos/newfold-labs/wp-php-standards/zipball/1b52c4ada6d08948e4587afe8e962bc76c440c44",
+                "reference": "1b52c4ada6d08948e4587afe8e962bc76c440c44",
                 "shasum": ""
             },
             "require": {
@@ -2581,10 +2581,10 @@
             ],
             "description": "PHP Code Sniffer Standards for Newfold WordPress projects.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-php-standards/tree/1.2.5",
+                "source": "https://github.com/newfold-labs/wp-php-standards/tree/1.2.6",
                 "issues": "https://github.com/newfold-labs/wp-php-standards/issues"
             },
-            "time": "2025-03-19T23:24:54+00:00"
+            "time": "2026-05-11T14:04:37+00:00"
         },
         {
             "name": "nikic/php-parser",
