@@ -504,4 +504,151 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 
 		$this->assertSame( '#abcdef', SolutionsBranding::get_primary_color_hex( $container ) );
 	}
+
+	/**
+	 * `brandKey` should stay preset-derived unless `plugin()->brand` is a string.
+	 *
+	 * @return void
+	 */
+	public function test_non_string_plugin_brand_does_not_override_brand_key() {
+		$plugin        = new \stdClass();
+		$plugin->id    = 'bluehost';
+		$plugin->brand = array( 'unsupported' );
+
+		$container = $this->branding_container_mock( $plugin );
+
+		$branding = SolutionsBranding::build_for_container( $container );
+
+		$this->assertSame( 'bluehost', $branding['brandKey'] ?? null );
+	}
+
+	/**
+	 * Filters may coerce `assets.wordmarkUrl` to explicit false for consumers that omit images entirely.
+	 *
+	 * @return void
+	 */
+	public function test_filter_may_force_wordmark_url_boolean_false_even_for_bluehost() {
+		$plugin        = new \stdClass();
+		$plugin->id    = 'bluehost';
+		$plugin->brand = 'bluehost';
+
+		add_filter(
+			'nfd_solutions_branding',
+			static function ( array $merged ) {
+				if ( ! isset( $merged['assets'] ) || ! is_array( $merged['assets'] ) ) {
+					$merged['assets'] = array();
+				}
+
+				$merged['assets']['wordmarkUrl'] = false;
+
+				return $merged;
+			},
+			99,
+			1
+		);
+
+		$container = $this->branding_container_mock( $plugin );
+
+		$branding = SolutionsBranding::build_for_container( $container );
+
+		$this->assertArrayHasKey( 'assets', $branding );
+		$this->assertIsArray( $branding['assets'] ?? null );
+		$this->assertArrayHasKey( 'wordmarkUrl', isset( $branding['assets'] ) ? $branding['assets'] : array() );
+		$this->assertSame( false, $branding['assets']['wordmarkUrl'] ?? null );
+	}
+
+	/**
+	 * Container merges should trump Bluehost lattice tab markup while leaving other assets intact.
+	 *
+	 * @return void
+	 */
+	public function test_bluehost_merge_overwrites_default_tab_icon_svg_markup() {
+		$plugin        = new \stdClass();
+		$plugin->id    = 'bluehost';
+		$plugin->brand = 'bluehost';
+		$merge_payload = array(
+			'assets' => array(
+				'tabIconSvg' => 'CUSTOM_BLUEHOST_TAB_SVG_MARKER',
+			),
+		);
+
+		$container = $this->branding_container_mock( $plugin, $merge_payload );
+		$branding  = SolutionsBranding::build_for_container( $container );
+
+		$this->assertSame(
+			'CUSTOM_BLUEHOST_TAB_SVG_MARKER',
+			isset( $branding['assets']['tabIconSvg'] ) ? $branding['assets']['tabIconSvg'] : null
+		);
+		$this->assertIsString( $branding['assets']['wordmarkUrl'] ?? null );
+		$this->assertStringContainsString(
+			'bluehost.svg',
+			isset( $branding['assets']['wordmarkUrl'] ) ? $branding['assets']['wordmarkUrl'] : ''
+		);
+	}
+
+	/**
+	 * Empty tab icon payloads should stringify to falsy literals for the Plugins » Install injector.
+	 *
+	 * @return void
+	 */
+	public function test_tab_icon_inline_script_uses_double_quoted_empty_string_when_icon_markup_missing() {
+		$plugin        = new \stdClass();
+		$plugin->id    = 'hostgator';
+		$plugin->brand = 'hostgator';
+
+		$container = $this->branding_container_mock( $plugin );
+		$script    = SolutionsBranding::get_plugin_install_tab_icon_inline_script( $container );
+
+		$this->assertMatchesRegularExpression( '/let\s+icon\s*=\s*\"\"/', $script );
+		$this->assertStringContainsString( 'if (filterPremiumLink && icon)', $script );
+	}
+
+	/**
+	 * Trimmed-but-empty hue strings coerce to canonical defaults (invalid input path).
+	 *
+	 * @return void
+	 */
+	public function test_get_primary_color_hex_empty_primary_string_returns_default_fallback() {
+		$plugin        = new \stdClass();
+		$plugin->id    = 'hostgator';
+		$plugin->brand = 'hostgator';
+
+		add_filter(
+			'nfd_solutions_branding',
+			static function ( array $merged ) {
+				$merged['colors']['primary'] = '   ';
+
+				return $merged;
+			},
+			21,
+			1
+		);
+
+		$container = $this->branding_container_mock( $plugin );
+
+		$this->assertSame( '#336AD7', SolutionsBranding::get_primary_color_hex( $container ) );
+	}
+
+	/**
+	 * Callable merges returning an empty array should still traverse the resolver path unchanged.
+	 *
+	 * @return void
+	 */
+	public function test_callable_container_merge_payload_empty_array_is_no_op() {
+		$plugin        = new \stdClass();
+		$plugin->id    = 'bluehost';
+		$plugin->brand = 'bluehost';
+
+		$merge = static function (): array {
+			return array();
+		};
+
+		$container = $this->branding_container_mock( $plugin, $merge );
+		$branding  = SolutionsBranding::build_for_container( $container );
+
+		$this->assertStringContainsString(
+			'bluehost.svg',
+			isset( $branding['assets']['wordmarkUrl'] ) ? $branding['assets']['wordmarkUrl'] : ''
+		);
+	}
 }

@@ -44,6 +44,10 @@ const FIXTURES = {
 const SELECTORS = {
   // Solutions page in plugin app
   solutionsPageTitle: '.nfd-page-solutions h1',
+  /** Header wordmark `<img>` when `branding.assets.wordmarkUrl` is a non-empty string. */
+  solutionsBrandLogoImg: 'img.nfd-solutions-brand-logo',
+  /** Text fallback when `wordmarkUrl` is omitted / null (per `BrandLogo.js`). */
+  solutionsBrandFallback: '.nfd-solutions-brand-fallback-logo',
   upgradeBanner: '.nfd-solutions-upgrade-banner',
   upgradeBannerButton: '.nfd-page-solutions .nfd-solutions-upgrade-banner__button',
   toolCard: (slug) => `.nfd-solutions-tool-card-${slug}`,
@@ -220,6 +224,26 @@ async function verifySolutionTransient(solutionKey) {
   }
 
   return { ok: true, reason: '' };
+}
+
+/**
+ * Read `window.NewfoldSolutions.branding` (JSON-cloned) for assertions.
+ *
+ * @param {import('@playwright/test').Page} page
+ * @returns {Promise<Record<string, unknown>|null>}
+ */
+async function readNewfoldSolutionsBranding(page) {
+  return page.evaluate(() => {
+    const raw = window.NewfoldSolutions?.branding;
+    if (!raw || typeof raw !== 'object') {
+      return null;
+    }
+    try {
+      return JSON.parse(JSON.stringify(raw));
+    } catch {
+      return null;
+    }
+  });
 }
 
 /**
@@ -549,6 +573,7 @@ export {
   setSolution,
   verifySolutionTransient,
   expectNewfoldSolutionsHydrated,
+  readNewfoldSolutionsBranding,
   setSolutionAndOpenMySolutions,
   setSolutionAndOpenSolutionsPage,
   clearSolutionTransient,
