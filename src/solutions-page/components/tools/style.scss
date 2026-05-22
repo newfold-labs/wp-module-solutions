@@ -1,13 +1,13 @@
 .nfd-solutions-tools--empty {
 	a {
-		color : var(--nfd-solutions-bh-blue) !important;
+		color : var(--nfd-solutions-primary) !important;
 	}
 }
 
 .nfd-solutions-tool-card {
-	--nfd-solutions-bh-blue : #336ad7;
-	--background-color      : #ecf4fa;
-	--primary-color         : var(--nfd-solutions-bh-blue);
+	--nfd-solutions-primary : #336ad7;
+	--background-color       : #ecf4fa;
+	--primary-color          : var(--nfd-solutions-primary);
 
 	position                : relative;
 	transition              : .3s !important;

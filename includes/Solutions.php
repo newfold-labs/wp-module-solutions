@@ -28,6 +28,24 @@ class Solutions {
 	protected static $entitlements_api;
 
 	/**
+	 * Body class for standalone Solutions admin screens loaded by this module.
+	 *
+	 * @param string $classes Space-separated class list from WordPress core.
+	 * @return string
+	 */
+	public static function add_solutions_admin_body_class( $classes ) {
+		if ( ! is_admin() ) {
+			return $classes;
+		}
+		$screen = function_exists( 'get_current_screen' ) ? \get_current_screen() : null;
+		if ( isset( $screen->id ) && false !== strpos( $screen->id, 'solution' ) ) {
+			return trim( $classes . ' nfd-solutions-admin' );
+		}
+
+		return $classes;
+	}
+
+	/**
 	 * Constructor for the Solutions class.
 	 *
 	 * @param Container $container The module container.
@@ -44,6 +62,8 @@ class Solutions {
 		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'solutions_page_assets' ) );
 		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'solutions_page_component_assets' ) );
 		\add_action( 'admin_enqueue_scripts', array( $this, 'addnew_plugins_solutions_assets' ) );
+
+		\add_filter( 'admin_body_class', array( __CLASS__, 'add_solutions_admin_body_class' ), 99 );
 
 		\add_filter( 'nfd_plugin_subnav', array( $this, 'add_nfd_subnav' ) );
 		\add_action( 'admin_menu', array( __CLASS__, 'add_dummy_solutions_menu_link' ) );
@@ -193,13 +213,12 @@ class Solutions {
 		if ( isset( $screen->id ) && ( false !== strpos( $screen->id, 'solution' ) ) ) {
 			\wp_enqueue_script( 'solutions-page' );
 			\wp_enqueue_style( 'solutions-page-style' );
+			self::add_branding_primary_inline_style( 'solutions-page-style' );
 
 			\wp_localize_script(
 				'solutions-page',
 				'NewfoldSolutions',
-				array_merge(
-					self::get_enhanced_entitlment_data(),
-				)
+				self::get_newfold_solutions_payload()
 			);
 		}
 	}
@@ -241,10 +260,11 @@ class Solutions {
 		$screen = \get_current_screen();
 		if ( isset( $screen->id ) && false !== strpos( $screen->id, container()->plugin()->id ) ) {
 			\wp_enqueue_style( 'solutions-page-component-style' );
+			self::add_branding_primary_inline_style( 'solutions-page-component-style' );
 
 			\wp_add_inline_script(
 				'solutions-page-component',
-				'window.NewfoldSolutions =' . wp_json_encode( self::get_enhanced_entitlment_data() ) . ';',
+				'window.NewfoldSolutions =' . wp_json_encode( self::get_newfold_solutions_payload() ) . ';',
 				'before'
 			);
 			\wp_enqueue_script( 'solutions-page-component' );
@@ -259,8 +279,14 @@ class Solutions {
 	 * @return array
 	 */
 	public function addnew_brand_solutions_tab( $tabs ) {
-		$name          = $this->container->plugin()->brand;
-		$solutions_tab = array( 'nfd_solutions' => ucfirst( $name ) . ' ' . __( 'Solutions', 'wp-module-solutions' ) );
+		$branding = SolutionsBranding::get_localization_branding( $this->container );
+		$name     = '';
+		if ( isset( $branding['brandDisplayName'] ) && is_string( $branding['brandDisplayName'] ) && '' !== trim( $branding['brandDisplayName'] ) ) {
+			$name = trim( $branding['brandDisplayName'] );
+		} else {
+			$name = ucfirst( (string) $this->container->plugin()->brand );
+		}
+		$solutions_tab = array( 'nfd_solutions' => $name . ' ' . __( 'Solutions', 'wp-module-solutions' ) );
 		return array_merge( $solutions_tab, $tabs );
 	}
 
@@ -324,34 +350,51 @@ class Solutions {
 		if ( 'plugin-install.php' === $hook ) {
 			\wp_enqueue_script( 'solutions-add-new-tools' );
 			\wp_enqueue_style( 'solutions-add-new-style' );
+			self::add_branding_primary_inline_style( 'solutions-add-new-style' );
 
 			\wp_localize_script(
 				'solutions-add-new-tools',
 				'NewfoldSolutions',
 				array_merge(
-					self::get_enhanced_entitlment_data(),
+					self::get_newfold_solutions_payload(),
 					array(
 						'siteUrl' => get_site_url(),
 					)
 				)
 			);
 
-			$script = "
-			document.addEventListener('DOMContentLoaded', function() {
-				let icon = `<svg id='ndf-tools-plugin-bluehost-brand' width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
-					<path fill-rule='evenodd' clip-rule='evenodd'
-						d='M16 4.46067V0H11.5302V4.46067H16ZM16 5.76933V10.2307H11.5302V5.76933H16ZM4.46778 16V11.5387H0V16H4.46778ZM10.2339 11.5387V16H5.76409V11.5387H10.2339ZM16 11.5387V16H11.5302V11.5387H16ZM10.2339 10.2307V5.76933H5.76409V10.2307H10.2339ZM4.46778 5.76933V10.2307H0V5.76933H4.46778ZM10.2305 0V4.46067H5.76409V0H10.2305ZM4.46778 4.46067V0H0V4.46067H4.46778Z'
-						fill='#196BDE'/>
-				</svg>`;
-				const filterPremiumLink = document.querySelector('.plugin-install-nfd_solutions > a');
-				if (filterPremiumLink) {
-					filterPremiumLink.innerHTML = icon + filterPremiumLink.innerHTML;
-				}
-			});
-		";
-
-			\wp_add_inline_script( 'solutions-add-new-tools', $script );
+			\wp_add_inline_script(
+				'solutions-add-new-tools',
+				SolutionsBranding::get_plugin_install_tab_icon_inline_script( $this->container )
+			);
 		}
+	}
+
+	/**
+	 * Entitlements merged with localization branding for `window.NewfoldSolutions`.
+	 *
+	 * @return array<string,mixed>
+	 */
+	public static function get_newfold_solutions_payload(): array {
+		return array_merge(
+			self::get_enhanced_entitlment_data(),
+			array(
+				'branding' => SolutionsBranding::get_localization_branding( container() ),
+			)
+		);
+	}
+
+	/**
+	 * Outputs inline CSS custom property for `--nfd-solutions-primary`.
+	 *
+	 * @param string $style_handle Style handle queued before calling.
+	 * @return void
+	 */
+	protected static function add_branding_primary_inline_style( $style_handle ) {
+		$hex = SolutionsBranding::get_primary_color_hex( container() );
+		$css = ':root{--nfd-solutions-primary:' . esc_attr( $hex ) . ';}';
+
+		wp_add_inline_style( $style_handle, $css );
 	}
 
 	/**

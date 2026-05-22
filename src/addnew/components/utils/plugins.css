@@ -5,13 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
-svg#ndf-tools-plugin-bluehost-brand {
+svg#nfd-tools-plugin-brand-icon {
     vertical-align: text-top;
     margin-right: 5px;
 }
 
 .plugin-install-nfd_solutions .current {
-    border-bottom: 4px solid #196BDE6B;
+    border-bottom: 4px solid color-mix(in srgb, var(--nfd-solutions-primary, #336ad7) 42%, transparent);
 }
 
 .nfd-root .nfd-page {

@@ -3,6 +3,8 @@ import { BoltIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import { __ } from '@wordpress/i18n';
 import { getSolution } from 'common/utils';
+import { getEcomFamilyCtb } from 'common/utils/branding';
+import { useMemo } from 'react';
 
 export const UpgradeCard = () => {
 	const commercePlan = getSolution( 'WP_SOLUTION_COMMERCE' );
@@ -14,6 +16,11 @@ export const UpgradeCard = () => {
 		'nfd-solutions-tool-card--premium',
 		'nfd-solutions-tool-card--with-featured-icon',
 	];
+
+	const { href: ctbHref, ctbId } = useMemo(
+		() => getEcomFamilyCtb(),
+		[]
+	);
 
 	return (
 		<Card className={ classNames( classes ) }>
@@ -76,8 +83,8 @@ export const UpgradeCard = () => {
 				</div>
 				<Button
 					as={ 'a' }
-					href="https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY"
-					data-ctb-id="5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
+					href={ ctbHref }
+					data-ctb-id={ ctbId || undefined }
 					rel="noreferrer"
 					target="_blank"
 				>
