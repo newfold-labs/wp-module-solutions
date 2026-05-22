@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-02-13T10:58:13+00:00\n"
-"PO-Revision-Date: 2026-04-29T15:30:47+00:00\n"
+"PO-Revision-Date: 2026-05-22T16:06:52+00:00\n"
 "Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Crowdin-File: wp-module-solutions.pot\n"
@@ -20,8 +20,8 @@ msgstr ""
 "X-Generator: WP-CLI 2.11.0\n"
 
 #: bootstrap.php:15
-#: includes/Solutions.php:89
-#: includes/Solutions.php:263
+#: includes/Solutions.php:109
+#: includes/Solutions.php:283
 #: components/entitlements/index.js:8
 msgid "Solutions"
 msgstr "Solution"
@@ -34,9 +34,17 @@ msgstr "Le plugin a été activé avec succès !"
 msgid "Please send valid plugin"
 msgstr "Veuillez envoyer un plugin valide"
 
-#: includes/Solutions.php:72
+#: includes/Solutions.php:92
 msgid "My Solution"
 msgstr "Ma solution"
+
+#: includes/SolutionsBranding.php:111
+msgid "Bluehost"
+msgstr ""
+
+#: includes/SolutionsBranding.php:112
+msgid "HostGator"
+msgstr ""
 
 #: includes/SolutionsUpsell.php:100
 msgctxt "Solution Upsell product type label"
@@ -50,38 +58,38 @@ msgstr "Carte cadeau"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Premium"
 msgstr "Premium"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Get it"
 msgstr "Obtenir"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Upgrade to unlock all features"
 msgstr "Mettez à niveau pour débloquer toutes les fonctionnalités"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Add-Ons to build any kind of site, store or blog"
 msgstr "Modules complémentaires pour créer tout type de site, boutique ou blog"
 
 #: build/addnew/bundle.js:1
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Discover Now"
 msgstr "Découvrir maintenant"
 
 #. translators: %s: Add-on Name
 #: build/addnew/bundle.js:2
-#: build/addnew/bundle.js:3
 #: build/addnew/bundle.js:4
+#: build/addnew/bundle.js:6
 #: build/solutions-page/bundle.js:2
 #, js-format
 msgid "Powerful Plugins Included in your %s"
@@ -91,144 +99,149 @@ msgstr "Plugins puissants inclus dans votre %s"
 msgid "Upgrade to save & unlock 30 advanced tools"
 msgstr "Mettez à niveau pour économiser et débloquer 30 outils avancés"
 
-#: build/addnew/bundle.js:2
+#. translators: %s: Hosting brand label (localized)
+#. translators: %s: Hosting brand label (localized), e.g. Bluehost
 #: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
-#: build/solutions-page/bundle.js:2
-msgid "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience."
-msgstr "Découvrez la liste complète des fonctionnalités avancées fournies par votre hébergeur Bluehost, conçues pour offrir une valeur inégalée et améliorer votre expérience en ligne."
+#: build/addnew/bundle.js:5
+#: build/addnew/bundle.js:7
+#: build/solutions-page/bundle.js:3
+#, js-format
+msgid "Discover the complete list of advanced features provided by your hosting provider %s, designed to deliver unmatched value and elevate your online experience."
+msgstr "Découvrez la liste complète des fonctionnalités avancées fournies par votre hébergeur %s, conçues pour offrir une valeur inégalée et améliorer votre expérience en ligne."
 
-#: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
+#: build/addnew/bundle.js:5
+#: build/addnew/bundle.js:7
 msgid "Learn more about our eCommerce Add-Ons"
 msgstr "En savoir plus sur nos modules complémentaires e-commerce"
 
-#: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
+#: build/addnew/bundle.js:5
+#: build/addnew/bundle.js:6
 msgid "Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience."
 msgstr "Optimisez votre boutique en ligne avec des outils puissants conçus pour augmenter les ventes, simplifier les paiements, gérer les stocks et améliorer l'expérience client."
 
-#: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:5
 msgid "No matter what you sell or how you run your store, this is the Ultimate e-commerce toolkit — packed with everything you need at an unbeatable price!"
 msgstr "Peu importe ce que vous vendez ou comment vous gérez votre boutique, voici la boîte à outils e-commerce ultime — avec tout ce dont vous avez besoin à un prix imbattable !"
 
-#: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
+#: build/addnew/bundle.js:5
+#: build/addnew/bundle.js:7
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "The #1 Bundle of Commerce Tools"
 msgstr "Le pack n°1 d'outils de commerce"
 
-#: build/addnew/bundle.js:2
 #: build/addnew/bundle.js:3
-#: build/addnew/bundle.js:4
+#: build/addnew/bundle.js:5
+#: build/addnew/bundle.js:7
 msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools (value $3,500)"
 msgstr "Modules complémentaires conçus pour aider les propriétaires de boutiques à augmenter leurs ventes en ligne avec un pack massif d'outils premium (valeur 3 200 €)"
 
-#: build/addnew/bundle.js:3
+#: build/addnew/bundle.js:4
 msgid "Upgrade to save & unlock more advanced tools"
 msgstr "Mettez à niveau pour économiser et débloquer plus d'outils avancés"
 
-#: build/addnew/bundle.js:4
+#: build/addnew/bundle.js:6
 msgid "Premium tools available in our eCommerce Add-Ons"
 msgstr "Outils premium disponibles dans nos modules complémentaires e-commerce"
 
 #: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
+#: build/solutions-page/bundle.js:3
 msgid "Search tool"
 msgstr "Outil de recherche"
 
 #: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
+#: build/solutions-page/bundle.js:3
 msgid "Most Popular"
 msgstr "Les plus populaires"
 
 #: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
+#: build/solutions-page/bundle.js:3
 msgid "Premium Tools"
 msgstr "Outils Premium"
 
 #: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
+#: build/solutions-page/bundle.js:3
 msgid "All"
 msgstr "Tout"
 
 #: build/solutions-page-component/index.js:1
-#: build/solutions-page/bundle.js:2
+#: build/solutions-page/bundle.js:3
 msgid "Filter by type"
 msgstr "Filtrer par type"
 
 #. translators: %s: Search term
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 #, js-format
 msgid "No matching tools for '%s'"
 msgstr "Aucun outil correspondant pour '%s'"
 
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Check the spelling or try another keyword"
 msgstr "Vérifiez l'orthographe ou essayez un autre mot-clé"
 
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Return to the tools list"
 msgstr "Retourner à la liste des outils"
 
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Popular"
 msgstr "Populaire"
 
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Upgrade to Save"
 msgstr "Mettre à niveau pour économiser"
 
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Add-Ons designed to help shop owners to boost their online sales with a massive bundle of premium tools"
 msgstr "Modules complémentaires conçus pour aider les propriétaires de boutiques à augmenter leurs ventes en ligne avec un pack massif d'outils premium"
 
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Some features included:"
 msgstr "Quelques fonctionnalités incluses :"
 
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Boost Reviews, Booking & Appointments, Social Login, Product filters, etc."
 msgstr "Boost des avis, réservations et rendez-vous, connexion sociale, filtres de produits, etc."
 
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Bundle of 30 features for a value of $3,500"
 msgstr "Pack de 30 fonctionnalités d'une valeur de 3 200 €"
 
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "/month"
 msgstr "/mois"
 
 #: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
+#: build/solutions-page/bundle.js:4
 msgid "Discover"
 msgstr "Découvrir"
 
-#: build/solutions-page-component/index.js:2
-#: build/solutions-page/bundle.js:3
-msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins."
-msgstr "Commencez avec un forfait adapté à vos objectifs et débloquez jusqu'à 3 200 € de plugins premium Bluehost et Yoast."
+#. translators: %s: Hosting brand label (localized)
+#: build/solutions-page-component/index.js:3
+#: build/solutions-page/bundle.js:5
+#, js-format
+msgid "Start with a plan that fits your goals and unlock up to $3,500 in premium %s and Yoast plugins."
+msgstr "Commencez avec un forfait adapté à vos objectifs et débloquez jusqu'à 3 200 € de plugins premium %s et Yoast."
 
 #: build/solutions-page/bundle.js:2
 msgid "Premium tools available in eCommerce Add-Ons"
 msgstr "Outils premium disponibles dans les modules complémentaires e-commerce"
 
-#: build/solutions-page/bundle.js:2
+#: build/solutions-page/bundle.js:3
 msgid "Learn more about eCommerce Add-Ons"
 msgstr "En savoir plus sur les modules complémentaires e-commerce"
 

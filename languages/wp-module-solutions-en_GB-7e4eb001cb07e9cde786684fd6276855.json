@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2026-04-29T15:30:47+00:00",
+    "translation-revision-date": "2026-05-22T16:06:52+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page\/bundle.js",
     "domain": "messages",
@@ -28,8 +28,8 @@
             "Powerful Plugins Included in your %s": [
                 "Powerful Plugins Included in your %s"
             ],
-            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
-                "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience."
+            "Discover the complete list of advanced features provided by your hosting provider %s, designed to deliver unmatched value and elevate your online experience.": [
+                "Discover the complete list of advanced features provided by your hosting provider %s, designed to deliver unmatched value and elevate your online experience."
             ],
             "The #1 Bundle of Commerce Tools": [
                 "The #1 Bundle of Commerce Tools"
@@ -82,8 +82,8 @@
             "Discover": [
                 "Discover"
             ],
-            "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
-                "Start with a plan that fits your goals and unlock up to \u00a32,800 in premium Bluehost and Yoast plugins."
+            "Start with a plan that fits your goals and unlock up to $3,500 in premium %s and Yoast plugins.": [
+                "Start with a plan that fits your goals and unlock up to \u00a32,800 in premium %s and Yoast plugins."
             ],
             "Premium tools available in eCommerce Add-Ons": [
                 "Premium tools available in eCommerce Add-Ons"

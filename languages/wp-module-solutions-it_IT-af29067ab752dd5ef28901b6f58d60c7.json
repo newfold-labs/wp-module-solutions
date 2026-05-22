@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2026-04-29T15:30:47+00:00",
+    "translation-revision-date": "2026-05-22T16:06:52+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/addnew\/bundle.js",
     "domain": "messages",
@@ -31,8 +31,8 @@
             "Upgrade to save & unlock 30 advanced tools": [
                 "Aggiorna per risparmiare e sbloccare 30 strumenti avanzati"
             ],
-            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
-                "Scopri l'elenco completo delle funzionalit\u00e0 avanzate fornite dal tuo provider di hosting Bluehost, progettate per offrire un valore impareggiabile e migliorare la tua esperienza online."
+            "Discover the complete list of advanced features provided by your hosting provider %s, designed to deliver unmatched value and elevate your online experience.": [
+                "Scopri l'elenco completo delle funzionalit\u00e0 avanzate fornite dal tuo provider di hosting %s, progettate per offrire un valore impareggiabile e migliorare la tua esperienza online."
             ],
             "Learn more about our eCommerce Add-Ons": [
                 "Scopri di pi\u00f9 sui nostri Add-On per eCommerce"
