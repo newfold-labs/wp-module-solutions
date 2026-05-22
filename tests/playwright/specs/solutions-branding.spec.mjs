@@ -52,7 +52,9 @@ test.describe('Solutions page branding', () => {
     expect(branding.colors && typeof branding.colors === 'object').toBeTruthy();
   });
 
-  test('header resolves Bluehost module wordmark vs text fallback on other presets', async ({ page }) => {
+  test('localized wordmarkUrl matches preset; BrandLogo UI only on full solutions-page bundle', async ({
+    page,
+  }) => {
     const pre = await setSolutionAndOpenSolutionsPage(page, 'none', pluginSlug, null);
     test.skip(!pre.ok, pre.reason);
 
@@ -63,7 +65,6 @@ test.describe('Solutions page branding', () => {
     expect(branding).not.toBe(null);
 
     const resolvedId = String(branding.pluginId || '').toLowerCase();
-
     const wordmarkImg = page.locator(SELECTORS.solutionsBrandLogoImg);
     const fallback = page.locator(SELECTORS.solutionsBrandFallback);
 
@@ -71,17 +72,31 @@ test.describe('Solutions page branding', () => {
       const wm = branding.assets?.wordmarkUrl;
       expect(typeof wm).toBe('string');
       expect(String(wm)).toContain('bluehost.svg');
+    } else {
+      expect(isWordmarkUnset(branding.assets?.wordmarkUrl)).toBe(true);
+    }
 
-      await expect(wordmarkImg).toBeVisible();
+    /**
+     * Brand plugins (e.g. Bluehost) embed `solutions-page-component` (Content only) and render
+     * their own page title — `BrandLogo` lives in the standalone `solutions-page` bundle Header.
+     */
+    const moduleHeader = page.locator('.nfd-solutions-app-header');
+    const hasModuleHeader = (await moduleHeader.count()) > 0;
+
+    if (!hasModuleHeader) {
+      await expect(wordmarkImg).toHaveCount(0);
       await expect(fallback).toHaveCount(0);
       return;
     }
 
-    /** Hosts without a bundled wordmark omit or clear `wordmarkUrl`; UI shows textual fallback per `BrandLogo.js`. */
-    expect(isWordmarkUnset(branding.assets?.wordmarkUrl)).toBe(true);
+    if ('bluehost' === resolvedId) {
+      await expect(wordmarkImg).toBeVisible({ timeout: 20000 });
+      await expect(fallback).toHaveCount(0);
+      return;
+    }
 
     await expect(wordmarkImg).toHaveCount(0);
-    await expect(fallback).toBeVisible();
+    await expect(fallback).toBeVisible({ timeout: 20000 });
     await expect(fallback).toContainText(branding.brandDisplayName || '');
   });
 });

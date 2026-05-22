@@ -20,6 +20,6 @@ Browser specs ship under **`tests/playwright/specs/`** and **`tests/playwright/h
 Examples:
 
 - **`solutions-page.spec.mjs`** — app tools and installer attributes.
-- **`solutions-branding.spec.mjs`** — **`window.NewfoldSolutions.branding`** shape plus header wordmark (**Bluehost**) vs **text fallback** when **`assets.wordmarkUrl`** is omitted (non-Bluehost defaults).
+- **`solutions-branding.spec.mjs`** — **`window.NewfoldSolutions.branding`** shape plus **`wordmarkUrl`** preset rules. **`BrandLogo`** DOM checks run only when **`.nfd-solutions-app-header`** is present (standalone **`solutions-page`** bundle); brand plugins that embed **`solutions-page-component`** (Content only) assert localized payload only.
 
 Pass **`PLUGIN_ID`** to match the loader’s `admin.php?page=` slug (e.g. `bluehost` vs `hostgator`) alongside the rest of your harness env vars.
