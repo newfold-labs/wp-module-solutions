@@ -1,5 +1,5 @@
 .nfd-solutions-badge {
-	--bg-color       : var(--nfd-solutions-bh-blue);
+	--bg-color       : var(--nfd-solutions-primary);
 	align-items      : center;
 	background-color : var(--bg-color);
 	border-radius    : .2rem;

@@ -3316,6 +3316,9 @@
 .nfd-box-content {
 		box-sizing: content-box !important;
 }
+.nfd-block {
+		display: block !important;
+}
 .nfd-flex {
 		display: flex !important;
 }
@@ -3360,6 +3363,9 @@
 }
 .nfd-h-\[64px\] {
 		height: 64px !important;
+}
+.nfd-h-auto {
+		height: auto !important;
 }
 .nfd-h-full {
 		height: 100% !important;
@@ -3694,6 +3700,9 @@
 .nfd-text-2xl {
 		font-size: 1.5rem !important;
 }
+.nfd-text-3xl {
+		font-size: 1.875rem !important;
+}
 .nfd-text-\[14px\] {
 		font-size: 14px !important;
 }
@@ -3839,12 +3848,12 @@
 		container-type: inline-size !important;
 		container-name: nfd-image-import !important;
 }
-svg#ndf-tools-plugin-bluehost-brand {
+svg#nfd-tools-plugin-brand-icon {
     vertical-align: text-top;
     margin-left: 5px;
 }
 .plugin-install-nfd_solutions .current {
-    border-bottom: 4px solid #196BDE6B;
+    border-bottom: 4px solid color-mix(in srgb, var(--nfd-solutions-primary, #336ad7) 42%, transparent);
 }
 .nfd-root .nfd-page {
     display: flex;
