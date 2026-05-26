@@ -30,7 +30,7 @@ export const Service = ( { plan } ) => {
 			? brand.urls.accountCenterLearnMore
 			: '';
 
-	const [ learMoreLink, setLearnMoreLink ] = useState(
+	const [ learnMoreLink, setLearnMoreLink ] = useState(
 		initialLearnMoreUrl
 	);
 
@@ -61,17 +61,22 @@ export const Service = ( { plan } ) => {
 						'wp-module-solutions'
 					),
 					brandName
-				) }{ ' ' }
-				<a
-					href={ learMoreLink }
-					target="_blank"
-					rel="noreferrer"
-				>
-					{ __(
-						'Learn more about our eCommerce Add-Ons',
-						'wp-module-solutions'
-					) }
-				</a>
+				) }
+				{ learnMoreLink.trim() ? (
+					<>
+						{ ' ' }
+						<a
+							href={ learnMoreLink }
+							target="_blank"
+							rel="noreferrer"
+						>
+							{ __(
+								'Learn more about our eCommerce Add-Ons',
+								'wp-module-solutions'
+							) }
+						</a>
+					</>
+				) : null }
 			</Section>
 			{ !! entitlements.length && (
 				<div className="nfd-plugins-card-list">

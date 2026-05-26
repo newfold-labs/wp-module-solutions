@@ -22,7 +22,7 @@ export const NoSolution = ( { plan } ) => {
 			? brand.urls.accountCenterLearnMore
 			: '';
 
-	const [ learMoreLink, setLearnMoreLink ] = useState(
+	const [ learnMoreLink, setLearnMoreLink ] = useState(
 		initialLearnMoreUrl
 	);
 
@@ -53,13 +53,22 @@ export const NoSolution = ( { plan } ) => {
 						'wp-module-solutions'
 					),
 					brandName
-				) }{ ' ' }
-				<a href={ learMoreLink } target="_blank" rel="noreferrer">
-					{ __(
-						'Learn more about our eCommerce Add-Ons',
-						'wp-module-solutions'
-					) }
-				</a>
+				) }
+				{ learnMoreLink.trim() ? (
+					<>
+						{ ' ' }
+						<a
+							href={ learnMoreLink }
+							target="_blank"
+							rel="noreferrer"
+						>
+							{ __(
+								'Learn more about our eCommerce Add-Ons',
+								'wp-module-solutions'
+							) }
+						</a>
+					</>
+				) : null }
 			</Section>
 			<div className="nfd-plugins-card-list nfd-page-no-solution">
 				<UpgradeBanner

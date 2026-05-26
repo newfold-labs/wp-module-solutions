@@ -59,17 +59,22 @@ export const Creator = ( { plan } ) => {
 						'wp-module-solutions'
 					),
 					brandName
-				) }{ ' ' }
-				<a
-					href={ learnMoreLink }
-					target="_blank"
-					rel="noreferrer"
-				>
-					{ __(
-						'Learn more about our eCommerce Add-Ons',
-						'wp-module-solutions'
-					) }
-				</a>
+				) }
+				{ learnMoreLink.trim() ? (
+					<>
+						{ ' ' }
+						<a
+							href={ learnMoreLink }
+							target="_blank"
+							rel="noreferrer"
+						>
+							{ __(
+								'Learn more about our eCommerce Add-Ons',
+								'wp-module-solutions'
+							) }
+						</a>
+					</>
+				) : null }
 			</Section>
 			{ !! entitlements.length && (
 				<div className="nfd-plugins-card-list">
