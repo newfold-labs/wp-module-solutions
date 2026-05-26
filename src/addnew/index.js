@@ -3,7 +3,6 @@ import './components/utils/plugins.css';
 import domReady from '@wordpress/dom-ready';
 import { createRoot } from '@wordpress/element';
 import { Root, Page } from '@newfold/ui-component-library';
-import { E2E_TEST_IDS } from 'common/constants/e2eTestIds';
 import { Plugins } from './components/plugins';
 import { getPlan } from './components/utils';
 
@@ -16,7 +15,7 @@ const App = () => {
 			<Root>
 				<Page
 					className="nfd-my-solutions-app-container"
-					data-testid={ E2E_TEST_IDS.mySolutionsContainer }
+					data-testid="nfd-solutions-my-solutions-container"
 				>
 					<Plugins plan={ plan } />
 				</Page>
@@ -30,7 +29,7 @@ const SolutionsPageRender = () => {
 		WP_SOLUTIONS_PAGE_ROOT_ELEMENT
 	);
 	if ( null !== DOM_ELEMENT ) {
-		DOM_ELEMENT.setAttribute( 'data-testid', E2E_TEST_IDS.addNewApp );
+		DOM_ELEMENT.setAttribute( 'data-testid', 'nfd-solutions-addnew-app' );
 		if ( 'undefined' !== typeof createRoot ) {
 			createRoot( DOM_ELEMENT ).render( <App /> );
 		}

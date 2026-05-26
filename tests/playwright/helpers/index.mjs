@@ -32,7 +32,7 @@ function loadFixture(name) {
   return JSON.parse(readFileSync(filePath, 'utf-8'));
 }
 
-import { E2E_TEST_IDS, testIdSelector } from '../../../src/common/constants/e2eTestIds.js';
+import { E2E_TEST_IDS, testIdSelector } from '../constants/e2eTestIds.mjs';
 
 // Pre-load fixtures
 const FIXTURES = {
@@ -42,7 +42,7 @@ const FIXTURES = {
   commerce: loadFixture('commerce'),
 };
 
-// Common selectors (`data-testid` — see `src/common/constants/e2eTestIds.js`)
+// Common selectors (`data-testid` — see `tests/playwright/constants/e2eTestIds.mjs`)
 const SELECTORS = {
   // Solutions page in plugin app (host commerce shell + module header)
   solutionsPageTitle: testIdSelector( E2E_TEST_IDS.solutionsCommercePageTitle ),

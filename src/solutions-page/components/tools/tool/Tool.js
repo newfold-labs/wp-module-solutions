@@ -6,7 +6,6 @@ import { cleanForSlug } from '@wordpress/url';
 import { FireIcon } from '@heroicons/react/20/solid';
 import { ReactSVG } from 'react-svg';
 import { getActiveSolution, renderCTAUrl } from 'common/utils';
-import { E2E_TEST_IDS } from 'common/constants/e2eTestIds';
 import { useViewportMatch } from '@wordpress/compose';
 import {useEffect, useState} from "react";
 
@@ -112,7 +111,7 @@ export const Tool = ( {
 			<Title
 				as={ 'h4' }
 				className="nfd-solutions-card-title"
-				data-testid={ E2E_TEST_IDS.toolCardTitle( toolSlug ) }
+				data-testid={ `nfd-solutions-tool-card-${ toolSlug }-title` }
 			>
 				{ name }
 			</Title>
@@ -125,7 +124,7 @@ export const Tool = ( {
 	return (
 		<Card
 			className={ classNames( classes ) }
-			data-testid={ E2E_TEST_IDS.toolCard( toolSlug ) }
+			data-testid={ `nfd-solutions-tool-card-${ toolSlug }` }
 		>
 			{ wide && (
 				<div className="nfd-solutions-tool-card--wide-body nfd-flex nfd-gap-4 nfd-items-end">
@@ -145,7 +144,7 @@ export const Tool = ( {
 				>
 					<Button
 						as={ 'a' }
-						data-testid={ E2E_TEST_IDS.toolCardCta( toolSlug ) }
+						data-testid={ `nfd-solutions-tool-card-${ toolSlug }-cta` }
 						data-ctb-id={ ctbId }
 						data-is-active={ isActive ? true : null }
 						data-nfd-installer-download-url={

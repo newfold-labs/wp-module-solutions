@@ -2,7 +2,6 @@ import { getPlugins } from '../../utils';
 import { Plugin } from '../plugin';
 import { __, sprintf } from '@wordpress/i18n';
 import { Section } from '../../section';
-import { E2E_TEST_IDS } from 'common/constants/e2eTestIds';
 import { getActiveSolution } from 'common/utils';
 
 export const Commerce = ( { plan } ) => {
@@ -17,7 +16,7 @@ export const Commerce = ( { plan } ) => {
 		<>
 			<Section
 				title={ title }
-				titleTestId={ E2E_TEST_IDS.addNewPrimaryTitle }
+				titleTestId="nfd-solutions-addnew-primary-title"
 			>
 				{ __(
 					'Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience.',
@@ -27,7 +26,7 @@ export const Commerce = ( { plan } ) => {
 			{ !! plugins.length && (
 				<div
 					className="nfd-plugins-card-list"
-					data-testid={ E2E_TEST_IDS.pluginsListEntitlements }
+					data-testid="nfd-solutions-plugins-list-entitlements"
 				>
 					<div id="the-list">
 						{ plugins.map( ( plugin ) => (

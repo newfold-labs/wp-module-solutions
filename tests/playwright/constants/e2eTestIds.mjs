@@ -1,6 +1,6 @@
 /**
- * Stable `data-testid` values for Playwright and component markup.
- * Import in UI code; Playwright helpers import the same module to avoid drift.
+ * Stable `data-testid` values for Playwright selectors.
+ * Keep in sync with `data-testid` attributes on Solutions UI markup (see docs/development.md).
  */
 export const E2E_TEST_IDS = Object.freeze( {
 	addNewApp: 'nfd-solutions-addnew-app',
@@ -26,8 +26,6 @@ export const E2E_TEST_IDS = Object.freeze( {
 } );
 
 /**
- * CSS selector for a data-testid (for page.locator).
- *
  * @param {string} id
  * @returns {string}
  */

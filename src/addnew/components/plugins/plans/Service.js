@@ -4,7 +4,6 @@ import { __, sprintf } from '@wordpress/i18n';
 import { Section } from '../../section';
 import { UpgradeBanner } from '../../../../common/components/upgrade-banner';
 import { getActiveSolution } from 'common/utils';
-import { E2E_TEST_IDS } from 'common/constants/e2eTestIds';
 import { getSolutionsBranding } from 'common/utils/branding';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -56,7 +55,7 @@ export const Service = ( { plan } ) => {
 		<>
 			<Section
 				title={ title }
-				titleTestId={ E2E_TEST_IDS.addNewPrimaryTitle }
+				titleTestId="nfd-solutions-addnew-primary-title"
 			>
 				{ sprintf(
 					/* translators: %s: Hosting brand label (localized) */
@@ -85,7 +84,7 @@ export const Service = ( { plan } ) => {
 			{ !! entitlements.length && (
 				<div
 					className="nfd-plugins-card-list"
-					data-testid={ E2E_TEST_IDS.pluginsListEntitlements }
+					data-testid="nfd-solutions-plugins-list-entitlements"
 				>
 					<div id="the-list">
 						{ entitlements.map( ( plugin ) => (
@@ -142,7 +141,7 @@ export const Service = ( { plan } ) => {
 			{ !! premium.length && (
 				<div
 					className="nfd-plugins-card-list"
-					data-testid={ E2E_TEST_IDS.pluginsListPremium }
+					data-testid="nfd-solutions-plugins-list-premium"
 				>
 					<UpgradeBanner
 						secondaryTitle={ __(
