@@ -433,11 +433,11 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 
 		$container = $this->branding_container_mock( $plugin );
 
-		$this->assertSame( '#336AD7', SolutionsBranding::get_primary_color_hex( $container ) );
+		$this->assertSame( '#336ad7', SolutionsBranding::get_primary_color_hex( $container ) );
 	}
 
 	/**
-	 * Plugin Install inline script wraps JSON-encoded tab icon markup.
+	 * Plugin Install inline script should use CSS variable injection (no innerHTML concat).
 	 *
 	 * @return void
 	 */
@@ -457,6 +457,9 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 		$this->assertStringContainsString( 'DOMContentLoaded', $script );
 		$this->assertStringContainsString( 'plugin-install-nfd_solutions', $script );
 		$this->assertStringContainsString( 'INLINE_ICON_TOKEN_MARKER', $script );
+		$this->assertStringContainsString( 'classList.add(\'nfd-solutions-tab-has-icon\')', $script );
+		$this->assertStringContainsString( 'style.setProperty(\'--nfd-solutions-tab-icon\'', $script );
+		$this->assertStringNotContainsString( 'innerHTML', $script );
 	}
 
 	/**
@@ -599,8 +602,9 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 		$container = $this->branding_container_mock( $plugin );
 		$script    = SolutionsBranding::get_plugin_install_tab_icon_inline_script( $container );
 
-		$this->assertMatchesRegularExpression( '/let\s+icon\s*=\s*\"\"/', $script );
-		$this->assertStringContainsString( 'if (filterPremiumLink && icon)', $script );
+		$this->assertMatchesRegularExpression( '/const\s+iconSvg\s*=\s*\"\"/', $script );
+		$this->assertStringContainsString( 'if (filterPremiumLink && iconSvg)', $script );
+		$this->assertStringNotContainsString( 'innerHTML', $script );
 	}
 
 	/**
@@ -626,7 +630,7 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 
 		$container = $this->branding_container_mock( $plugin );
 
-		$this->assertSame( '#336AD7', SolutionsBranding::get_primary_color_hex( $container ) );
+		$this->assertSame( '#336ad7', SolutionsBranding::get_primary_color_hex( $container ) );
 	}
 
 	/**
@@ -650,5 +654,54 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 			'bluehost.svg',
 			isset( $branding['assets']['wordmarkUrl'] ) ? $branding['assets']['wordmarkUrl'] : ''
 		);
+	}
+
+	/**
+	 * Wordmark URLs should reject unsafe protocols after merge/filter sanitization.
+	 *
+	 * @return void
+	 */
+	public function test_wordmark_url_sanitizes_unsafe_protocols_to_empty_string() {
+		$plugin        = new \stdClass();
+		$plugin->id    = 'bluehost';
+		$plugin->brand = 'bluehost';
+
+		add_filter(
+			'nfd_solutions_branding',
+			static function ( array $merged ) {
+				$merged['assets']['wordmarkUrl'] = 'javascript:alert(1)';
+				return $merged;
+			},
+			99,
+			1
+		);
+
+		$container = $this->branding_container_mock( $plugin );
+		$branding  = SolutionsBranding::build_for_container( $container );
+
+		$this->assertSame( '', $branding['assets']['wordmarkUrl'] ?? null );
+	}
+
+	/**
+	 * Tab icon SVG markup should strip unsafe tags/attributes before localization.
+	 *
+	 * @return void
+	 */
+	public function test_tab_icon_svg_sanitization_strips_script_markup() {
+		$plugin        = new \stdClass();
+		$plugin->id    = 'hostgator';
+		$plugin->brand = 'hostgator';
+		$merge_payload = array(
+			'assets' => array(
+				'tabIconSvg' => '<svg><script>alert(1)</script><path d="M0 0" /></svg>',
+			),
+		);
+
+		$container = $this->branding_container_mock( $plugin, $merge_payload );
+		$branding  = SolutionsBranding::build_for_container( $container );
+
+		$this->assertStringContainsString( '<svg', $branding['assets']['tabIconSvg'] ?? '' );
+		$this->assertStringContainsString( '<path', $branding['assets']['tabIconSvg'] ?? '' );
+		$this->assertStringNotContainsString( '<script', $branding['assets']['tabIconSvg'] ?? '' );
 	}
 }
