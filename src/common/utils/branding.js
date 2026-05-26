@@ -23,14 +23,15 @@ export function getSolutionsBranding() {
 	const rt = runtimeEcom();
 	const runtimeCtbsPresent =
 		rt && typeof rt === 'object' && typeof rt.url === 'string';
+	const localizedEcomFamily = base.ctbs.ecomFamily;
 
-	if ( runtimeCtbsPresent && typeof base.ctbs.ecomFamily !== 'object' ) {
+	if ( runtimeCtbsPresent && ! isPlainObject( localizedEcomFamily ) ) {
 		base.ctbs.ecomFamily = {
 			id: rt.id ?? '',
 			url: rt.url,
 		};
-	} else if ( runtimeCtbsPresent && typeof base.ctbs.ecomFamily === 'object' ) {
-		const ec = base.ctbs.ecomFamily;
+	} else if ( runtimeCtbsPresent && isPlainObject( localizedEcomFamily ) ) {
+		const ec = localizedEcomFamily;
 
 		base.ctbs.ecomFamily = {
 			id:
@@ -82,4 +83,16 @@ export function getEcomFamilyCtb() {
 /** @returns {Record<string,string>|undefined} */
 function runtimeEcom() {
 	return window.NewfoldRuntime?.ctbs?.ecomFamily;
+}
+
+/**
+ * @param {unknown} value
+ * @returns {value is Record<string, unknown>}
+ */
+function isPlainObject( value ) {
+	return (
+		null !== value &&
+		typeof value === 'object' &&
+		! Array.isArray( value )
+	);
 }
