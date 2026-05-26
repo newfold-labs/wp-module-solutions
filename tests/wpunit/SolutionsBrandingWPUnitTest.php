@@ -48,6 +48,19 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 	}
 
 	/**
+	 * Minimal SVG markup for tab-icon merge/script tests (must pass kses allowlist).
+	 *
+	 * @param string $marker Unique substring stored in the root svg `id`.
+	 * @return string
+	 */
+	private function tab_icon_svg_fixture( string $marker ): string {
+		return sprintf(
+			'<svg id="%s" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 0"/></svg>',
+			$marker
+		);
+	}
+
+	/**
 	 * Verifies preset HostGator URLs populate when loader plugin slug is hostgator.
 	 *
 	 * @return void
@@ -203,14 +216,17 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 		$plugin->brand = 'hostgator';
 		$merge_payload = array(
 			'assets' => array(
-				'tabIconSvg' => 'MERGED_TAB_ICON_TOKEN',
+				'tabIconSvg' => $this->tab_icon_svg_fixture( 'MERGED_TAB_ICON_TOKEN' ),
 			),
 		);
 
 		$container = $this->branding_container_mock( $plugin, $merge_payload );
 		$branding  = SolutionsBranding::build_for_container( $container );
 
-		$this->assertSame( 'MERGED_TAB_ICON_TOKEN', $branding['assets']['tabIconSvg'] ?? null );
+		$this->assertStringContainsString(
+			'MERGED_TAB_ICON_TOKEN',
+			isset( $branding['assets']['tabIconSvg'] ) ? $branding['assets']['tabIconSvg'] : ''
+		);
 		$this->assertArrayNotHasKey( 'wordmarkUrl', isset( $branding['assets'] ) ? $branding['assets'] : array() );
 	}
 
@@ -447,7 +463,7 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 		$plugin->brand = 'hostgator';
 		$merge_payload = array(
 			'assets' => array(
-				'tabIconSvg' => 'INLINE_ICON_TOKEN_MARKER',
+				'tabIconSvg' => $this->tab_icon_svg_fixture( 'INLINE_ICON_TOKEN_MARKER' ),
 			),
 		);
 
@@ -569,17 +585,16 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 		$plugin->brand = 'bluehost';
 		$merge_payload = array(
 			'assets' => array(
-				'tabIconSvg' => 'CUSTOM_BLUEHOST_TAB_SVG_MARKER',
+				'tabIconSvg' => $this->tab_icon_svg_fixture( 'CUSTOM_BLUEHOST_TAB_SVG_MARKER' ),
 			),
 		);
 
 		$container = $this->branding_container_mock( $plugin, $merge_payload );
 		$branding  = SolutionsBranding::build_for_container( $container );
 
-		$this->assertSame(
-			'CUSTOM_BLUEHOST_TAB_SVG_MARKER',
-			isset( $branding['assets']['tabIconSvg'] ) ? $branding['assets']['tabIconSvg'] : null
-		);
+		$tab_icon = isset( $branding['assets']['tabIconSvg'] ) ? $branding['assets']['tabIconSvg'] : '';
+		$this->assertStringContainsString( 'CUSTOM_BLUEHOST_TAB_SVG_MARKER', $tab_icon );
+		$this->assertStringNotContainsString( 'nfd-tools-plugin-brand-icon', $tab_icon );
 		$this->assertIsString( $branding['assets']['wordmarkUrl'] ?? null );
 		$this->assertStringContainsString(
 			'bluehost.svg',
