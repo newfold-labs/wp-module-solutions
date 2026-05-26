@@ -62,13 +62,17 @@ export const Header = () => {
 					),
 					brandName
 				) }
-				<br />
-				<a href={ helpUrl } target="_blank" rel="noreferrer">
-					{ __(
-						'Learn more about eCommerce Add-Ons',
-						'wp-module-solutions'
-					) }
-				</a>
+				{ helpUrl.trim() ? (
+					<>
+						<br />
+						<a href={ helpUrl } target="_blank" rel="noreferrer">
+							{ __(
+								'Learn more about eCommerce Add-Ons',
+								'wp-module-solutions'
+							) }
+						</a>
+					</>
+				) : null }
 			</p>
 		</div>
 	);

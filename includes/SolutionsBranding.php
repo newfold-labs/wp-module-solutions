@@ -50,7 +50,12 @@ class SolutionsBranding {
 		 * @param array     $merged    Branding data.
 		 * @param Container $container Loader container.
 		 */
-		return \apply_filters( 'nfd_solutions_branding', $merged, $container );
+		$filtered = \apply_filters( 'nfd_solutions_branding', $merged, $container );
+		if ( ! is_array( $filtered ) ) {
+			$filtered = $merged;
+		}
+
+		return self::sanitize_branding_payload( $filtered );
 	}
 
 	/**
@@ -64,7 +69,7 @@ class SolutionsBranding {
 	}
 
 	/**
-	 * Inline JS for Plugin Install tab icon (SVG string JSON-encoded).
+	 * Inline JS for Plugin Install tab icon using a CSS data URI var (no innerHTML injection).
 	 *
 	 * @param Container $container Module loader container.
 	 * @return string Script body (no script tags).
@@ -77,10 +82,12 @@ class SolutionsBranding {
 
 		return "
 			document.addEventListener('DOMContentLoaded', function() {
-				let icon = {$safe_icon_var};
+				const iconSvg = {$safe_icon_var};
 				const filterPremiumLink = document.querySelector('.plugin-install-nfd_solutions > a');
-				if (filterPremiumLink && icon) {
-					filterPremiumLink.innerHTML = icon + filterPremiumLink.innerHTML;
+				if (filterPremiumLink && iconSvg) {
+					const iconDataUri = 'data:image/svg+xml,' + encodeURIComponent(iconSvg);
+					filterPremiumLink.classList.add('nfd-solutions-tab-has-icon');
+					filterPremiumLink.style.setProperty('--nfd-solutions-tab-icon', 'url(\"' + iconDataUri + '\")');
 				}
 			});
 		";
@@ -282,6 +289,192 @@ class SolutionsBranding {
 	 */
 	protected static function deep_merge_arrays( array $base, array $overlay ): array {
 		return array_replace_recursive( $base, $overlay );
+	}
+
+	/**
+	 * Sanitize localization payload before exposing it to JavaScript consumers.
+	 *
+	 * @param array<string, mixed> $branding Branding payload.
+	 * @return array<string, mixed>
+	 */
+	protected static function sanitize_branding_payload( array $branding ): array {
+		if ( ! isset( $branding['urls'] ) || ! is_array( $branding['urls'] ) ) {
+			$branding['urls'] = array();
+		}
+		$url_keys = array(
+			'accountCenterLearnMore',
+			'helpArticleSolutions',
+			'ecomFamilyUpgrade',
+		);
+		foreach ( $url_keys as $key ) {
+			$branding['urls'][ $key ] = self::sanitize_url_field(
+				isset( $branding['urls'][ $key ] ) ? $branding['urls'][ $key ] : ''
+			);
+		}
+
+		if ( ! isset( $branding['ctbs'] ) || ! is_array( $branding['ctbs'] ) ) {
+			$branding['ctbs'] = array();
+		}
+		if ( ! isset( $branding['ctbs']['ecomFamily'] ) || ! is_array( $branding['ctbs']['ecomFamily'] ) ) {
+			$branding['ctbs']['ecomFamily'] = array();
+		}
+		$branding['ctbs']['ecomFamily']['id']  = isset( $branding['ctbs']['ecomFamily']['id'] ) && is_scalar( $branding['ctbs']['ecomFamily']['id'] )
+			? (string) $branding['ctbs']['ecomFamily']['id']
+			: self::DEFAULT_ECOM_FAMILY_CTB_ID;
+		$branding['ctbs']['ecomFamily']['url'] = self::sanitize_url_field(
+			isset( $branding['ctbs']['ecomFamily']['url'] ) ? $branding['ctbs']['ecomFamily']['url'] : ''
+		);
+
+		if ( ! isset( $branding['assets'] ) || ! is_array( $branding['assets'] ) ) {
+			$branding['assets'] = array();
+		}
+		$branding['assets']['tabIconSvg'] = self::sanitize_tab_icon_svg_markup(
+			isset( $branding['assets']['tabIconSvg'] ) ? (string) $branding['assets']['tabIconSvg'] : ''
+		);
+		if ( array_key_exists( 'wordmarkUrl', $branding['assets'] ) ) {
+			$wordmark_url = $branding['assets']['wordmarkUrl'];
+			if ( false === $wordmark_url ) {
+				$branding['assets']['wordmarkUrl'] = false;
+			} elseif ( is_string( $wordmark_url ) ) {
+				$branding['assets']['wordmarkUrl'] = self::sanitize_url_field( $wordmark_url );
+			} elseif ( null !== $wordmark_url ) {
+				unset( $branding['assets']['wordmarkUrl'] );
+			}
+		}
+
+		if ( ! isset( $branding['colors'] ) || ! is_array( $branding['colors'] ) ) {
+			$branding['colors'] = array();
+		}
+		$branding['colors']['primary']     = self::sanitize_hex_color_allow_short(
+			isset( $branding['colors']['primary'] ) ? (string) $branding['colors']['primary'] : ''
+		);
+		$branding['colors']['tabIconFill'] = self::sanitize_hex_color_allow_short(
+			isset( $branding['colors']['tabIconFill'] ) ? (string) $branding['colors']['tabIconFill'] : ''
+		);
+
+		return $branding;
+	}
+
+	/**
+	 * Restrict URLs to expected protocols for localization payloads.
+	 *
+	 * @param mixed $value Candidate URL.
+	 * @return string
+	 */
+	protected static function sanitize_url_field( $value ): string {
+		if ( ! is_string( $value ) ) {
+			return '';
+		}
+		return esc_url_raw( trim( $value ), array( 'http', 'https' ) );
+	}
+
+	/**
+	 * Allowlist-safe SVG markup for the plugin-install tab icon.
+	 *
+	 * @param string $markup SVG markup candidate.
+	 * @return string
+	 */
+	protected static function sanitize_tab_icon_svg_markup( string $markup ): string {
+		$trimmed = trim( $markup );
+		if ( '' === $trimmed ) {
+			return '';
+		}
+		if ( 0 !== strpos( strtolower( $trimmed ), '<svg' ) ) {
+			return '';
+		}
+
+		$allowed = array(
+			'svg'      => array(
+				'id'                  => true,
+				'class'               => true,
+				'xmlns'               => true,
+				'viewbox'             => true,
+				'width'               => true,
+				'height'              => true,
+				'fill'                => true,
+				'stroke'              => true,
+				'stroke-width'        => true,
+				'role'                => true,
+				'aria-hidden'         => true,
+				'focusable'           => true,
+				'preserveaspectratio' => true,
+			),
+			'g'        => array(
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+				'transform'    => true,
+				'opacity'      => true,
+			),
+			'path'     => array(
+				'd'            => true,
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+				'fill-rule'    => true,
+				'clip-rule'    => true,
+				'transform'    => true,
+				'opacity'      => true,
+			),
+			'rect'     => array(
+				'x'            => true,
+				'y'            => true,
+				'width'        => true,
+				'height'       => true,
+				'rx'           => true,
+				'ry'           => true,
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+				'opacity'      => true,
+			),
+			'circle'   => array(
+				'cx'           => true,
+				'cy'           => true,
+				'r'            => true,
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+				'opacity'      => true,
+			),
+			'ellipse'  => array(
+				'cx'           => true,
+				'cy'           => true,
+				'rx'           => true,
+				'ry'           => true,
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+				'opacity'      => true,
+			),
+			'line'     => array(
+				'x1'           => true,
+				'x2'           => true,
+				'y1'           => true,
+				'y2'           => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+				'opacity'      => true,
+			),
+			'polyline' => array(
+				'points'       => true,
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+				'opacity'      => true,
+			),
+			'polygon'  => array(
+				'points'       => true,
+				'fill'         => true,
+				'stroke'       => true,
+				'stroke-width' => true,
+				'opacity'      => true,
+			),
+			'title'    => array(),
+			'desc'     => array(),
+		);
+
+		return trim( wp_kses( $trimmed, $allowed ) );
 	}
 
 	/**
