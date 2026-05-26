@@ -23,3 +23,7 @@ Examples:
 - **`solutions-branding.spec.mjs`** — **`window.NewfoldSolutions.branding`** shape plus **`wordmarkUrl`** preset rules. **`BrandLogo`** DOM checks run only when **`.nfd-solutions-app-header`** is present (standalone **`solutions-page`** bundle); brand plugins that embed **`solutions-page-component`** (Content only) assert localized payload only.
 
 Pass **`PLUGIN_ID`** to match the loader’s `admin.php?page=` slug (e.g. `bluehost` vs `hostgator`) alongside the rest of your harness env vars.
+
+### E2E `data-testid` hooks
+
+Stable selectors live in **`src/common/constants/e2eTestIds.js`** (`E2E_TEST_IDS`). React markup and **`tests/playwright/helpers/index.mjs`** import the same constants so specs do not drift from UI refactors. Prefer **`SELECTORS.*`** (or **`page.getByTestId(E2E_TEST_IDS.…)`**) over class-based queries for Solutions-owned UI. Host commerce shells (Bluehost/HostGator `#/commerce`) expose **`nfd-solutions-commerce-page-title`** on the page `<h1>`; the module **`Header`** uses **`nfd-solutions-page-title`** when the full **`solutions-page`** bundle renders. Installer modal markup still comes from **`wp-module-installer`** (class selectors until that package adds test ids).

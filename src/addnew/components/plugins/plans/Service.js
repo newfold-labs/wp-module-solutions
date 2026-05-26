@@ -4,6 +4,7 @@ import { __, sprintf } from '@wordpress/i18n';
 import { Section } from '../../section';
 import { UpgradeBanner } from '../../../../common/components/upgrade-banner';
 import { getActiveSolution } from 'common/utils';
+import { E2E_TEST_IDS } from 'common/constants/e2eTestIds';
 import { getSolutionsBranding } from 'common/utils/branding';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -53,7 +54,10 @@ export const Service = ( { plan } ) => {
 
 	return (
 		<>
-			<Section title={ title }>
+			<Section
+				title={ title }
+				titleTestId={ E2E_TEST_IDS.addNewPrimaryTitle }
+			>
 				{ sprintf(
 					/* translators: %s: Hosting brand label (localized) */
 					__(
@@ -79,7 +83,10 @@ export const Service = ( { plan } ) => {
 				) : null }
 			</Section>
 			{ !! entitlements.length && (
-				<div className="nfd-plugins-card-list">
+				<div
+					className="nfd-plugins-card-list"
+					data-testid={ E2E_TEST_IDS.pluginsListEntitlements }
+				>
 					<div id="the-list">
 						{ entitlements.map( ( plugin ) => (
 							<Plugin
@@ -133,7 +140,10 @@ export const Service = ( { plan } ) => {
 				</span>
 			</Section>
 			{ !! premium.length && (
-				<div className="nfd-plugins-card-list">
+				<div
+					className="nfd-plugins-card-list"
+					data-testid={ E2E_TEST_IDS.pluginsListPremium }
+				>
 					<UpgradeBanner
 						secondaryTitle={ __(
 							'The #1 Bundle of Commerce Tools',

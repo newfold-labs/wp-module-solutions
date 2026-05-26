@@ -6,6 +6,7 @@ import { cleanForSlug } from '@wordpress/url';
 import { FireIcon } from '@heroicons/react/20/solid';
 import { ReactSVG } from 'react-svg';
 import { getActiveSolution, renderCTAUrl } from 'common/utils';
+import { E2E_TEST_IDS } from 'common/constants/e2eTestIds';
 import { useViewportMatch } from '@wordpress/compose';
 import {useEffect, useState} from "react";
 
@@ -44,12 +45,13 @@ export const Tool = ( {
 	basename,
 	dependency,
 } ) => {
+	const toolSlug = cleanForSlug( name );
 	const isLargeViewport = useViewportMatch( 'medium' );
 	const hasActiveSolution = !! getActiveSolution();
 	const premiumStyle = premium && !! getActiveSolution();
 	const classes = [
 		'nfd-solutions-tool-card',
-		'nfd-solutions-tool-card-' + cleanForSlug( name ),
+		'nfd-solutions-tool-card-' + toolSlug,
 		'nfd-bg-white',
 		'nfd-justify-end',
 		{
@@ -107,7 +109,11 @@ export const Tool = ( {
 					{ !! popular && <PopularBadge /> }
 				</div>
 			) }
-			<Title as={ 'h4' } className="nfd-solutions-card-title">
+			<Title
+				as={ 'h4' }
+				className="nfd-solutions-card-title"
+				data-testid={ E2E_TEST_IDS.toolCardTitle( toolSlug ) }
+			>
 				{ name }
 			</Title>
 			<span className="nfd-solutions-card-description">
@@ -117,7 +123,10 @@ export const Tool = ( {
 	);
 
 	return (
-		<Card className={ classNames( classes ) }>
+		<Card
+			className={ classNames( classes ) }
+			data-testid={ E2E_TEST_IDS.toolCard( toolSlug ) }
+		>
 			{ wide && (
 				<div className="nfd-solutions-tool-card--wide-body nfd-flex nfd-gap-4 nfd-items-end">
 					<Content />
@@ -136,6 +145,7 @@ export const Tool = ( {
 				>
 					<Button
 						as={ 'a' }
+						data-testid={ E2E_TEST_IDS.toolCardCta( toolSlug ) }
 						data-ctb-id={ ctbId }
 						data-is-active={ isActive ? true : null }
 						data-nfd-installer-download-url={

@@ -1,6 +1,7 @@
 import { Title, Button } from '@newfold/ui-component-library';
 import { cleanForSlug } from '@wordpress/url';
 import classNames from 'classnames';
+import { E2E_TEST_IDS } from 'common/constants/e2eTestIds';
 import { Badge } from '../../../../common/components/badge';
 import { renderCTAUrl } from '../../../../common/utils';
 import { __ } from '@wordpress/i18n';
@@ -33,10 +34,11 @@ export const Plugin = ( {
 	basename,
 	dependency,
 } ) => {
+	const pluginSlug = cleanForSlug( name );
 	const classes = [
 		'plugin-card',
 		'nfd-plugin-card',
-		'plugin-card-' + cleanForSlug( name ),
+		'plugin-card-' + pluginSlug,
 		{
 			'nfd-plugin-card-premium': premium && displayAsPremiun,
 			'nfd-plugin-card--icon': icon,
@@ -70,10 +72,16 @@ export const Plugin = ( {
     }, []);
 
     return (
-		<div className={ classNames( classes ) }>
+		<div
+			className={ classNames( classes ) }
+			data-testid={ E2E_TEST_IDS.pluginCard( pluginSlug ) }
+		>
 			<div className="plugin-card-top">
 				<div className="name column-name">
-					<Title as="h2">
+					<Title
+						as="h2"
+						data-testid={ E2E_TEST_IDS.pluginCardTitle( pluginSlug ) }
+					>
 						{ !! premium && !! displayAsPremiun && (
 							<div className="nfd-tools-card-badges nfd-flex nfd-gap-1">
 								{ !! premium && <PremiumBadge /> }
@@ -103,6 +111,7 @@ export const Plugin = ( {
 						<li>
 							<a
 								className={ classNames( buttonClass ) }
+								data-testid={ E2E_TEST_IDS.pluginCardCta( pluginSlug ) }
 								data-ctb-id={ ctbId }
 								data-is-active={ isActive ? true : null }
 								data-nfd-installer-download-url={

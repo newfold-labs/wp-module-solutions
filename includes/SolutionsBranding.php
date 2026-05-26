@@ -258,7 +258,7 @@ class SolutionsBranding {
 	protected static function square_grid_tab_icon_markup( string $fill ): string {
 		$fill = self::sanitize_hex_color_allow_short( $fill );
 
-		return '<svg id="nfd-tools-plugin-brand-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">'
+		return '<svg id="nfd-tools-plugin-brand-icon" data-testid="nfd-solutions-install-tab-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">'
 			. '<path fill-rule="evenodd" clip-rule="evenodd" d=\''
 			. 'M16 4.46067V0H11.5302V4.46067H16ZM16 5.76933V10.2307H11.5302V5.76933H16ZM4.46778 16V11.5387H0V16H4.46778ZM10.2339 11.5387V16H5.76409V11.5387H10.2339ZM16 11.5387V16H11.5302V11.5387H16ZM10.2339 10.2307V5.76933H5.76409V10.2307H10.2339ZM4.46778 5.76933V10.2307H0V5.76933H4.46778ZM10.2305 0V4.46067H5.76409V0H10.2305ZM4.46778 4.46067V0H0V4.46067H4.46778Z\''
 			. ' fill="' . esc_attr( $fill ) . '"/></svg>';
@@ -384,6 +384,7 @@ class SolutionsBranding {
 		$allowed = array(
 			'svg'      => array(
 				'id'                  => true,
+				'data-testid'         => true,
 				'class'               => true,
 				'xmlns'               => true,
 				'viewbox'             => true,

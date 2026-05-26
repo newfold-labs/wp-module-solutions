@@ -4,6 +4,7 @@ import { __ } from '@wordpress/i18n';
 import { LockClosedIcon } from '@heroicons/react/24/solid';
 import { Button, Title } from '@newfold/ui-component-library';
 import { useState, useEffect, useMemo } from 'react';
+import { E2E_TEST_IDS } from 'common/constants/e2eTestIds';
 import { getEcomFamilyCtb } from 'common/utils/branding';
 
 /**
@@ -51,11 +52,19 @@ export const UpgradeBanner = ( {
 	return (
 		<>
 			<span className="nfd-solutions-upgrade-banner__overlay" />
-			<div className={ classNames( classes ) } { ...props }>
+			<div
+				className={ classNames( classes ) }
+				data-testid={ E2E_TEST_IDS.upgradeBanner }
+				{ ...props }
+			>
 				<span className="nfd-solutions-upgrade-banner__lock-icon">
 					<LockClosedIcon />
 				</span>
-				<Title as="h2" className="nfd-solutions-upgrade-banner__title">
+				<Title
+					as="h2"
+					className="nfd-solutions-upgrade-banner__title"
+					data-testid={ E2E_TEST_IDS.upgradeBannerTitle }
+				>
 					{ title ||
 						__(
 							'Upgrade to unlock all features',
@@ -78,6 +87,7 @@ export const UpgradeBanner = ( {
 				<Button
 					as={ hasUpgradeLink ? 'a' : 'button' }
 					className="nfd-solutions-upgrade-banner__button"
+					data-testid={ E2E_TEST_IDS.upgradeBannerButton }
 					data-ctb-id={ ctbDefaults.ctbId || undefined }
 					disabled={ ! hasUpgradeLink }
 					href={ hasUpgradeLink ? link : undefined }

@@ -55,8 +55,7 @@ test.describe('My Solutions on Plugin Install Page', () => {
     await title.scrollIntoViewIfNeeded();
     await expect(title).toBeVisible();
 
-    const upgradeBanner = page.locator(SELECTORS.mySolutionsUpgradeBanner);
-    const bannerTitle = upgradeBanner.locator('h2');
+    const bannerTitle = page.locator(SELECTORS.mySolutionsUpgradeBannerTitle);
     await expect(bannerTitle).toContainText('Upgrade');
     await bannerTitle.scrollIntoViewIfNeeded();
     await expect(bannerTitle).toBeVisible();
@@ -71,8 +70,7 @@ test.describe('My Solutions on Plugin Install Page', () => {
     await title.scrollIntoViewIfNeeded();
     await expect(title).toBeVisible();
 
-    const upgradeBanner = page.locator(SELECTORS.mySolutionsUpgradeBanner);
-    const bannerTitle = upgradeBanner.locator('h2');
+    const bannerTitle = page.locator(SELECTORS.mySolutionsUpgradeBannerTitle);
     await expect(bannerTitle).toContainText('Upgrade');
     await bannerTitle.scrollIntoViewIfNeeded();
     await expect(bannerTitle).toBeVisible();

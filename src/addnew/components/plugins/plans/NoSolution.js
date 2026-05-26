@@ -3,6 +3,7 @@ import { Plugin } from '../plugin';
 import { __, sprintf } from '@wordpress/i18n';
 import { Section } from '../../section';
 import { UpgradeBanner } from '../../../../common/components/upgrade-banner';
+import { E2E_TEST_IDS } from 'common/constants/e2eTestIds';
 import { getSolutionsBranding } from 'common/utils/branding';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -45,7 +46,10 @@ export const NoSolution = ( { plan } ) => {
 
 	return (
 		<>
-			<Section title={ title }>
+			<Section
+				title={ title }
+				titleTestId={ E2E_TEST_IDS.addNewPrimaryTitle }
+			>
 				{ sprintf(
 					/* translators: %s: Hosting brand label (localized) */
 					__(
@@ -70,7 +74,10 @@ export const NoSolution = ( { plan } ) => {
 					</>
 				) : null }
 			</Section>
-			<div className="nfd-plugins-card-list nfd-page-no-solution">
+			<div
+				className="nfd-plugins-card-list nfd-page-no-solution"
+				data-testid={ E2E_TEST_IDS.pluginsListEntitlements }
+			>
 				<UpgradeBanner
 					secondaryTitle={ __(
 						'The #1 Bundle of Commerce Tools',

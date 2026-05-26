@@ -80,7 +80,7 @@ test.describe('Solutions page branding', () => {
      * Brand plugins (e.g. Bluehost) embed `solutions-page-component` (Content only) and render
      * their own page title — `BrandLogo` lives in the standalone `solutions-page` bundle Header.
      */
-    const moduleHeader = page.locator('.nfd-solutions-app-header');
+    const moduleHeader = page.locator(SELECTORS.solutionsAppHeader);
     const hasModuleHeader = (await moduleHeader.count()) > 0;
 
     if (!hasModuleHeader) {

@@ -2,6 +2,7 @@ import { BrandLogo } from '../brand-logo';
 import { Title } from '@newfold/ui-component-library';
 import { __, sprintf } from '@wordpress/i18n';
 import { getSolutionsBranding } from 'common/utils/branding';
+import { E2E_TEST_IDS } from 'common/constants/e2eTestIds';
 import { getActiveSolution } from 'common/utils';
 import { useMemo, useState, useEffect } from 'react';
 
@@ -36,9 +37,12 @@ export const Header = () => {
 	}, [ initialHelpUrl ] );
 
 	return (
-		<div className="nfd-solutions-app-header nfd-flex nfd-flex-col nfd-gap-y-4 nfd-mb-8">
+		<div
+			className="nfd-solutions-app-header nfd-flex nfd-flex-col nfd-gap-y-4 nfd-mb-8"
+			data-testid={ E2E_TEST_IDS.solutionsAppHeader }
+		>
 			<BrandLogo width={ '160px' } className="nfd-mb-6" />
-			<Title>
+			<Title data-testid={ E2E_TEST_IDS.solutionsPageTitle }>
 				{ currentSolution
 					? sprintf(
 							/* translators: %s: Add-on Name */

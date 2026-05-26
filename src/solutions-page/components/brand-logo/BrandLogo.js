@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { E2E_TEST_IDS } from 'common/constants/e2eTestIds';
 import { getSolutionsBranding } from 'common/utils/branding';
 
 const BrandWordFallback = ( { width, brandDisplayName, className, ...props } ) => (
@@ -7,6 +8,7 @@ const BrandWordFallback = ( { width, brandDisplayName, className, ...props } ) =
 			'nfd-solutions-brand-fallback-logo nfd-text-3xl nfd-font-semibold',
 			className
 		) }
+		data-testid={ E2E_TEST_IDS.brandLogoFallback }
 		style={ width ? { width, display: 'inline-block' } : undefined }
 		{ ...props }
 	>
@@ -64,6 +66,7 @@ export const BrandLogo = ( { width, height, className, ...props } ) => {
 			<img
 				src={ logoUrl.trim() }
 				alt={ alt }
+				data-testid={ E2E_TEST_IDS.brandLogo }
 				className={ classNames(
 					'nfd-solutions-brand-logo nfd-block nfd-max-w-full nfd-h-auto',
 					className
