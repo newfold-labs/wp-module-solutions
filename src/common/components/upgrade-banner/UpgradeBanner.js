@@ -29,6 +29,7 @@ export const UpgradeBanner = ( {
 	const classes = [ className, 'nfd-solutions-upgrade-banner' ];
 	const ctbDefaults = useMemo( () => getEcomFamilyCtb(), [] );
 	const [ link, setLink ] = useState( ctbDefaults.href );
+	const hasUpgradeLink = Boolean( link?.trim() );
 
 	useEffect( () => {
 		const timer = window.setTimeout( () => {
@@ -75,13 +76,14 @@ export const UpgradeBanner = ( {
 					{ children }
 				</span>
 				<Button
-					as="a"
+					as={ hasUpgradeLink ? 'a' : 'button' }
 					className="nfd-solutions-upgrade-banner__button"
 					data-ctb-id={ ctbDefaults.ctbId || undefined }
-					href={ link }
+					disabled={ ! hasUpgradeLink }
+					href={ hasUpgradeLink ? link : undefined }
 					rel="noreferrer"
 					size="large"
-					target="_blank"
+					target={ hasUpgradeLink ? '_blank' : undefined }
 				>
 					{ __( 'Discover Now', 'wp-module-solutions' ) }
 				</Button>

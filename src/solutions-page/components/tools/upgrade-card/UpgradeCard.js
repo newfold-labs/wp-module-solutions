@@ -21,6 +21,7 @@ export const UpgradeCard = () => {
 		() => getEcomFamilyCtb(),
 		[]
 	);
+	const hasCtbHref = Boolean( ctbHref?.trim() );
 
 	return (
 		<Card className={ classNames( classes ) }>
@@ -82,11 +83,12 @@ export const UpgradeCard = () => {
 					{ __( '/month', 'wp-module-solutions' ) }
 				</div>
 				<Button
-					as={ 'a' }
-					href={ ctbHref }
+					as={ hasCtbHref ? 'a' : 'button' }
+					disabled={ ! hasCtbHref }
+					href={ hasCtbHref ? ctbHref : undefined }
 					data-ctb-id={ ctbId || undefined }
 					rel="noreferrer"
-					target="_blank"
+					target={ hasCtbHref ? '_blank' : undefined }
 				>
 					{ __( 'Discover', 'wp-module-solutions' ) }
 				</Button>
