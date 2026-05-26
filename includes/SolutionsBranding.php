@@ -69,7 +69,7 @@ class SolutionsBranding {
 	}
 
 	/**
-	 * Inline JS for Plugin Install tab icon using a CSS data URI var (no innerHTML injection).
+	 * Inline JS for Plugin Install tab icon (kses-sanitized SVG markup JSON-encoded).
 	 *
 	 * @param Container $container Module loader container.
 	 * @return string Script body (no script tags).
@@ -82,12 +82,10 @@ class SolutionsBranding {
 
 		return "
 			document.addEventListener('DOMContentLoaded', function() {
-				const iconSvg = {$safe_icon_var};
+				let icon = {$safe_icon_var};
 				const filterPremiumLink = document.querySelector('.plugin-install-nfd_solutions > a');
-				if (filterPremiumLink && iconSvg) {
-					const iconDataUri = 'data:image/svg+xml,' + encodeURIComponent(iconSvg);
-					filterPremiumLink.classList.add('nfd-solutions-tab-has-icon');
-					filterPremiumLink.style.setProperty('--nfd-solutions-tab-icon', 'url(\"' + iconDataUri + '\")');
+				if (filterPremiumLink && icon) {
+					filterPremiumLink.innerHTML = icon + filterPremiumLink.innerHTML;
 				}
 			});
 		";

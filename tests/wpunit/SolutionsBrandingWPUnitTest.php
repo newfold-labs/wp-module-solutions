@@ -437,7 +437,7 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 	}
 
 	/**
-	 * Plugin Install inline script should use CSS variable injection (no innerHTML concat).
+	 * Plugin Install inline script prepends kses-sanitized tab icon markup.
 	 *
 	 * @return void
 	 */
@@ -457,9 +457,7 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 		$this->assertStringContainsString( 'DOMContentLoaded', $script );
 		$this->assertStringContainsString( 'plugin-install-nfd_solutions', $script );
 		$this->assertStringContainsString( 'INLINE_ICON_TOKEN_MARKER', $script );
-		$this->assertStringContainsString( 'classList.add(\'nfd-solutions-tab-has-icon\')', $script );
-		$this->assertStringContainsString( 'style.setProperty(\'--nfd-solutions-tab-icon\'', $script );
-		$this->assertStringNotContainsString( 'innerHTML', $script );
+		$this->assertStringContainsString( 'innerHTML', $script );
 	}
 
 	/**
@@ -602,9 +600,8 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 		$container = $this->branding_container_mock( $plugin );
 		$script    = SolutionsBranding::get_plugin_install_tab_icon_inline_script( $container );
 
-		$this->assertMatchesRegularExpression( '/const\s+iconSvg\s*=\s*\"\"/', $script );
-		$this->assertStringContainsString( 'if (filterPremiumLink && iconSvg)', $script );
-		$this->assertStringNotContainsString( 'innerHTML', $script );
+		$this->assertMatchesRegularExpression( '/let\s+icon\s*=\s*\"\"/', $script );
+		$this->assertStringContainsString( 'if (filterPremiumLink && icon)', $script );
 	}
 
 	/**

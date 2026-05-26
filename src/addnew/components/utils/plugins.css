@@ -10,25 +10,6 @@ svg#nfd-tools-plugin-brand-icon {
     margin-right: 5px;
 }
 
-.plugin-install-nfd_solutions > a.nfd-solutions-tab-has-icon {
-    position: relative;
-    padding-left: 22px;
-}
-
-.plugin-install-nfd_solutions > a.nfd-solutions-tab-has-icon::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 16px;
-    height: 16px;
-    transform: translateY(-50%);
-    background-image: var(--nfd-solutions-tab-icon);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
 .plugin-install-nfd_solutions .current {
     border-bottom: 4px solid #336ad76b;
     border-bottom: 4px solid color-mix(in srgb, var(--nfd-solutions-primary, #336ad7) 42%, transparent);
