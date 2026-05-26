@@ -3853,6 +3853,7 @@ svg#nfd-tools-plugin-brand-icon {
     margin-left: 5px;
 }
 .plugin-install-nfd_solutions .current {
+    border-bottom: 4px solid #336ad76b;
     border-bottom: 4px solid color-mix(in srgb, var(--nfd-solutions-primary, #336ad7) 42%, transparent);
 }
 .nfd-root .nfd-page {
