@@ -50,8 +50,7 @@ test.describe('My Solutions on Plugin Install Page', () => {
     const pre = await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
     test.skip(!pre.ok, pre.reason);
 
-    // Use first() to select the first h1 (there may be multiple due to upgrade banner)
-    const title = page.locator('#nfd-add-new-app h1').first();
+    const title = page.locator(SELECTORS.addNewAppTitle);
     await expect(title).toContainText('Powerful Plugins Included');
     await title.scrollIntoViewIfNeeded();
     await expect(title).toBeVisible();
@@ -67,8 +66,7 @@ test.describe('My Solutions on Plugin Install Page', () => {
     const pre = await setSolutionAndOpenMySolutions(page, 'service', 'service');
     test.skip(!pre.ok, pre.reason);
 
-    // Use first() to select the first h1 (there may be multiple due to upgrade banner)
-    const title = page.locator('#nfd-add-new-app h1').first();
+    const title = page.locator(SELECTORS.addNewAppTitle);
     await expect(title).toContainText('Powerful Plugins Included');
     await title.scrollIntoViewIfNeeded();
     await expect(title).toBeVisible();
