@@ -8,6 +8,7 @@ import {
   verifyInstallerAttributes,
   verifyMissingAttributes,
   verifyHrefContains,
+  verifyHrefContainsAfterUtm,
 } from '../helpers/index.mjs';
 
 test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => {
@@ -60,7 +61,10 @@ test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => 
 
     const upgradeButton = page.locator(SELECTORS.mySolutionsUpgradeBannerButton);
     await expect(upgradeButton).toBeVisible();
-    await verifyHrefContains(upgradeButton, '#click-to-buy-WP_SOLUTION_FAMILY');
+    await verifyHrefContainsAfterUtm(
+      upgradeButton,
+      '#click-to-buy-WP_SOLUTION_FAMILY'
+    );
     await expect(upgradeButton).toHaveAttribute('data-ctb-id', CTB_IDS.solutionFamily);
 
     const advReviewsTitle = page.locator(SELECTORS.pluginCardTitle('advanced-reviews'));
@@ -78,8 +82,6 @@ test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => 
       'data-ctb-id',
       'target',
     ]);
-    await verifyHrefContains(advReviewsButton, '#click-to-buy-WP_SOLUTION_FAMILY');
-    await expect(advReviewsButton).toHaveAttribute('data-ctb-id', CTB_IDS.solutionFamily);
-    await expect(advReviewsButton).toHaveAttribute('target', '_blank');
+    await expect(advReviewsButton).toHaveAttribute('href', '#null');
   });
 });

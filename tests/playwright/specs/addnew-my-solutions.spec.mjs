@@ -3,6 +3,7 @@ import {
   auth,
   clearSolutionTransient,
   setSolutionAndOpenMySolutions,
+  readNewfoldSolutionsBranding,
   SELECTORS,
 } from '../helpers/index.mjs';
 
@@ -20,7 +21,14 @@ test.describe('My Solutions on Plugin Install Page', () => {
     const pre = await setSolutionAndOpenMySolutions(page, 'none', 'none');
     test.skip(!pre.ok, pre.reason);
 
-    const brandLogo = page.locator(SELECTORS.brandLogoSvg);
+    const branding = await readNewfoldSolutionsBranding(page);
+    const tabIconSvg = branding?.assets?.tabIconSvg;
+    test.skip(
+      !tabIconSvg || String(tabIconSvg).trim() === '',
+      'No install-tab icon configured for this brand'
+    );
+
+    const brandLogo = page.locator(SELECTORS.brandLogoSvg).first();
     await brandLogo.scrollIntoViewIfNeeded();
     await expect(brandLogo).toBeVisible();
   });

@@ -45,7 +45,7 @@ const FIXTURES = {
 // Common selectors (`data-testid` — see `tests/playwright/constants/e2eTestIds.mjs`)
 const SELECTORS = {
   // Solutions page in plugin app (host commerce shell + module header)
-  solutionsPageTitle: testIdSelector( E2E_TEST_IDS.solutionsCommercePageTitle ),
+  solutionsPageTitle: `${ testIdSelector( E2E_TEST_IDS.solutionsCommercePageTitle ) }, ${ testIdSelector( E2E_TEST_IDS.solutionsPageTitle ) }, .nfd-page-solutions h1`,
   solutionsModulePageTitle: testIdSelector( E2E_TEST_IDS.solutionsPageTitle ),
   solutionsAppHeader: testIdSelector( E2E_TEST_IDS.solutionsAppHeader ),
   solutionsBrandLogoImg: testIdSelector( E2E_TEST_IDS.brandLogo ),
@@ -70,7 +70,7 @@ const SELECTORS = {
   pluginCard: ( slug ) => testIdSelector( E2E_TEST_IDS.pluginCard( slug ) ),
   pluginCardTitle: ( slug ) => testIdSelector( E2E_TEST_IDS.pluginCardTitle( slug ) ),
   pluginCardButton: ( slug ) => testIdSelector( E2E_TEST_IDS.pluginCardCta( slug ) ),
-  brandLogoSvg: testIdSelector( E2E_TEST_IDS.installTabIcon ),
+  brandLogoSvg: `${ testIdSelector( E2E_TEST_IDS.installTabIcon ) }, .plugin-install-nfd_solutions > a svg`,
 
   // Installer modal (wp-module-installer — class hooks until test ids exist upstream)
   installerModal: '.nfd-installer-modal__content',
@@ -409,6 +409,10 @@ async function navigateToSolutionsPage(page, pluginId = 'bluehost', solution = n
   if (reload) {
     await page.reload({ waitUntil: 'load' });
   }
+  await page
+    .locator(SELECTORS.solutionsPageTitle)
+    .first()
+    .waitFor({ state: 'visible', timeout: 30000 });
 }
 
 /**
@@ -497,6 +501,31 @@ async function verifyMissingAttributes(button, attrs) {
 async function verifyHrefContains(button, expected) {
   const href = await button.getAttribute('href');
   expect(href).toContain(expected);
+}
+
+/**
+ * Wait for link-tracker UTM rewrites, then assert href contains expected substring.
+ *
+ * @param {import('@playwright/test').Locator} button
+ * @param {string} expected
+ */
+async function verifyHrefContainsAfterUtm(button, expected) {
+  await expect
+    .poll(async () => button.getAttribute('href'), {
+      timeout: 5000,
+      intervals: [100, 250, 500],
+    })
+    .toContain(expected);
+}
+
+/**
+ * Assert CTB purchase buttons expose the expected click-to-buy id (href optional).
+ *
+ * @param {import('@playwright/test').Locator} button
+ * @param {string} ctbId
+ */
+async function verifyCtbButton(button, ctbId) {
+  await expect(button).toHaveAttribute('data-ctb-id', ctbId);
 }
 
 /**
@@ -592,6 +621,8 @@ export {
   verifyInstallerAttributes,
   verifyMissingAttributes,
   verifyHrefContains,
+  verifyHrefContainsAfterUtm,
+  verifyCtbButton,
   clickInstallAndVerifyModal,
   verifyPluginInstalled,
   verifyPluginActive,
