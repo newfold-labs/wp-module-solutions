@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2026-04-29T15:30:47+00:00",
+    "translation-revision-date": "2026-05-22T16:06:52+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page-component\/index.js",
     "domain": "messages",
@@ -76,8 +76,8 @@
             "Discover": [
                 "Ontdekken"
             ],
-            "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
-                "Begin met een plan dat bij je doelen past en ontgrendel tot \u20ac3.200 aan premium Bluehost- en Yoast-plugins."
+            "Start with a plan that fits your goals and unlock up to $3,500 in premium %s and Yoast plugins.": [
+                "Begin met een plan dat bij je doelen past en ontgrendel tot \u20ac3.200 aan premium %s- en Yoast-plugins."
             ]
         }
     }

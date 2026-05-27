@@ -32,7 +32,7 @@ test.describe('Solutions App in plugin', () => {
     await expect(title).toBeVisible();
 
     const upgradeBanner = page.locator(SELECTORS.upgradeBanner);
-    const bannerTitle = upgradeBanner.locator('h2');
+    const bannerTitle = page.locator(SELECTORS.upgradeBannerTitle);
     await expect(bannerTitle).toContainText('Upgrade');
     await bannerTitle.scrollIntoViewIfNeeded();
     await expect(bannerTitle).toBeVisible();
@@ -48,7 +48,7 @@ test.describe('Solutions App in plugin', () => {
     await expect(title).toBeVisible();
 
     const upgradeBanner = page.locator(SELECTORS.upgradeBanner);
-    const bannerTitle = upgradeBanner.locator('h2');
+    const bannerTitle = page.locator(SELECTORS.upgradeBannerTitle);
     await expect(bannerTitle).toContainText('Upgrade');
     await bannerTitle.scrollIntoViewIfNeeded();
     await expect(bannerTitle).toBeVisible();
@@ -144,10 +144,10 @@ test.describe('Solutions App in plugin', () => {
     // Advanced Reviews listed (for service, it's an entitlement - has PLS attributes)
     const advReviewsCard = page.locator(SELECTORS.toolCard('advanced-reviews'));
     await expect(advReviewsCard).toBeVisible();
-    const advReviewsTitle = advReviewsCard.locator('h4');
+    const advReviewsTitle = page.locator(SELECTORS.toolCardTitle('advanced-reviews'));
     await expect(advReviewsTitle).toContainText('Advanced Reviews');
 
-    const advReviewsButton = advReviewsCard.locator('.nfd-button');
+    const advReviewsButton = page.locator(SELECTORS.toolCardButton('advanced-reviews'));
     await verifyInstallerAttributes(advReviewsButton, {
       basename: 'yith-woocommerce-advanced-reviews-premium/init.php',
       name: 'Advanced Reviews',
@@ -195,10 +195,10 @@ test.describe('Solutions App in plugin', () => {
     // Yoast SEO listed as downloadable plugin
     const yoastCard = page.locator(SELECTORS.toolCard('yoast-seo'));
     await expect(yoastCard).toBeVisible();
-    const yoastTitle = yoastCard.locator('h4');
+    const yoastTitle = page.locator(SELECTORS.toolCardTitle('yoast-seo'));
     await expect(yoastTitle).toContainText('Yoast SEO');
 
-    const yoastButton = yoastCard.locator('.nfd-button');
+    const yoastButton = page.locator(SELECTORS.toolCardButton('yoast-seo'));
     await verifyInstallerAttributes(yoastButton, {
       downloadUrl: 'https://downloads.wordpress.org/plugin/wordpress-seo.latest-stable.zip',
       basename: 'wordpress-seo/wp-seo.php',
@@ -209,10 +209,10 @@ test.describe('Solutions App in plugin', () => {
     // Advanced Reviews listed (for commerce, it's an entitlement - has PLS attributes)
     const advReviewsCard = page.locator(SELECTORS.toolCard('advanced-reviews'));
     await expect(advReviewsCard).toBeVisible();
-    const advReviewsTitle = advReviewsCard.locator('h4');
+    const advReviewsTitle = page.locator(SELECTORS.toolCardTitle('advanced-reviews'));
     await expect(advReviewsTitle).toContainText('Advanced Reviews');
 
-    const advReviewsButton = advReviewsCard.locator('.nfd-button');
+    const advReviewsButton = page.locator(SELECTORS.toolCardButton('advanced-reviews'));
     await verifyInstallerAttributes(advReviewsButton, {
       basename: 'yith-woocommerce-advanced-reviews-premium/init.php',
       name: 'Advanced Reviews',
@@ -229,10 +229,10 @@ test.describe('Solutions App in plugin', () => {
     // Bookings & Appointments listed (commerce entitlement)
     const bookingsCard = page.locator(SELECTORS.toolCard('bookings-appointments'));
     await expect(bookingsCard).toBeVisible();
-    const bookingsTitle = bookingsCard.locator('h4');
+    const bookingsTitle = page.locator(SELECTORS.toolCardTitle('bookings-appointments'));
     await expect(bookingsTitle).toContainText('Bookings');
 
-    const bookingsButton = bookingsCard.locator('.nfd-button');
+    const bookingsButton = page.locator(SELECTORS.toolCardButton('bookings-appointments'));
     await verifyInstallerAttributes(bookingsButton, {
       basename: 'yith-woocommerce-booking-premium/init.php',
       name: 'Bookings & Appointments',
@@ -249,10 +249,10 @@ test.describe('Solutions App in plugin', () => {
     // Yoast Premium listed as premium tool with CTB attributes
     const yoastPremiumCard = page.locator(SELECTORS.toolCard('yoast-premium'));
     await expect(yoastPremiumCard).toBeVisible();
-    const yoastPremiumTitle = yoastPremiumCard.locator('h4');
+    const yoastPremiumTitle = page.locator(SELECTORS.toolCardTitle('yoast-premium'));
     await expect(yoastPremiumTitle).toContainText('Yoast Premium');
 
-    const yoastPremiumButton = yoastPremiumCard.locator('.nfd-button');
+    const yoastPremiumButton = page.locator(SELECTORS.toolCardButton('yoast-premium'));
     await verifyMissingAttributes(yoastPremiumButton, [
       'data-nfd-installer-plugin-basename',
       'data-nfd-installer-plugin-name',

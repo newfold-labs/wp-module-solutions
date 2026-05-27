@@ -14,6 +14,7 @@ import {
   verifyInstallerAttributes,
   verifyMissingAttributes,
   verifyHrefContains,
+  SELECTORS,
 } from '../helpers/index.mjs';
 
 let yoastSupported = false;
@@ -44,19 +45,16 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
     const pre = await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
     test.skip(!pre.ok, pre.reason);
 
-    // Use first() to select the first plugins card list (there may be multiple)
-    const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();
+    const pluginsList = page.locator(SELECTORS.mySolutionsPluginsList);
     await expect(pluginsList).toBeVisible();
 
-    // Yoast is listed - find by text within the plugins list
-    const yoastCard = page.locator('.plugin-card-yoast-seo');
-    const yoastTitle = yoastCard.locator('h2');
+    const yoastCard = page.locator(SELECTORS.pluginCard('yoast-seo'));
+    const yoastTitle = page.locator(SELECTORS.pluginCardTitle('yoast-seo'));
     await yoastTitle.scrollIntoViewIfNeeded();
     await expect(yoastTitle).toContainText('Yoast SEO');
     await expect(yoastTitle).toBeVisible();
 
-    // Test free entitlement with download attributes
-    const yoastButton = yoastCard.locator('.button');
+    const yoastButton = page.locator(SELECTORS.pluginCardButton('yoast-seo'));
     await verifyInstallerAttributes(yoastButton, {
       name: 'Yoast SEO',
       downloadUrl: 'https://downloads.wordpress.org/plugin/wordpress-seo.latest-stable.zip',
@@ -70,21 +68,17 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
     ]);
     await verifyHrefContains(yoastButton, 'wpseo_dashboard');
 
-    // Install Yoast
     await clickInstallAndVerifyModal(page, 'yoast-seo', 'Yoast');
 
-    // Verify redirect occurred
     await expect(page).toHaveURL(/wpseo_dashboard/);
 
-    // Verify wordpress-seo is installed and active
     await verifyPluginInstalled(page, 'wordpress-seo');
     await verifyPluginActive(page, 'wordpress-seo');
 
-    // Return to entitlements list to verify installed attributes are in place
     await navigateToMySolutionsTab(page, 'creator');
     await expectNewfoldSolutionsHydrated(page, 'creator');
 
-    const yoastButtonAfter = page.locator('.plugin-card-yoast-seo .button');
+    const yoastButtonAfter = page.locator(SELECTORS.pluginCardButton('yoast-seo'));
     await expect(yoastButtonAfter).toHaveAttribute('data-is-active', 'true');
     await verifyHrefContains(yoastButtonAfter, 'wpseo_dashboard');
   });
@@ -94,19 +88,15 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
     const pre = await setSolutionAndOpenMySolutions(page, 'commerce', 'commerce');
     test.skip(!pre.ok, pre.reason);
 
-    // Use first() to select the first plugins card list (there may be multiple)
-    const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();
+    const pluginsList = page.locator(SELECTORS.mySolutionsPluginsList);
     await expect(pluginsList).toBeVisible();
 
-    // Yoast Premium is listed - find by text
-    const yoastPremiumCard = page.locator('.plugin-card-yoast-premium');
-    const yoastPremiumTitle = yoastPremiumCard.locator('h2');
+    const yoastPremiumTitle = page.locator(SELECTORS.pluginCardTitle('yoast-premium'));
     await yoastPremiumTitle.scrollIntoViewIfNeeded();
     await expect(yoastPremiumTitle).toContainText('Yoast Premium');
     await expect(yoastPremiumTitle).toBeVisible();
 
-    // CTB premium has CTB attributes (standalone premium tool: Yoast Premium)
-    const yoastPremiumButton = yoastPremiumCard.locator('.button');
+    const yoastPremiumButton = page.locator(SELECTORS.pluginCardButton('yoast-premium'));
     await verifyMissingAttributes(yoastPremiumButton, [
       'data-nfd-installer-plugin-name',
       'data-nfd-installer-download-url',
@@ -116,22 +106,17 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
     await expect(yoastPremiumButton).toHaveAttribute('data-ctb-id', CTB_IDS.yoastPremium);
     await expect(yoastPremiumButton).toHaveAttribute('target', '_blank');
 
-    // CTB fallback href
     await verifyHrefContains(yoastPremiumButton, 'yoast.com');
-
-    // Don't install or click CTB link - tests in CTB module do that already
   });
 
   test('Yoast SEO available for creator', async ({ page }) => {
     const pre = await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
     test.skip(!pre.ok, pre.reason);
 
-    // Use first() to select the first plugins card list (there may be multiple)
-    const pluginsList = page.locator('.nfd-my-solutions-app-container .nfd-plugins-card-list').first();
+    const pluginsList = page.locator(SELECTORS.mySolutionsPluginsList);
     await expect(pluginsList).toBeVisible();
 
-    // Yoast SEO listed as downloadable plugin
-    const yoastButton = page.locator('.plugin-card-yoast-seo .button');
+    const yoastButton = page.locator(SELECTORS.pluginCardButton('yoast-seo'));
     await verifyInstallerAttributes(yoastButton, {
       name: 'Yoast SEO',
       downloadUrl: 'https://downloads.wordpress.org/plugin/wordpress-seo.latest-stable.zip',
@@ -146,4 +131,3 @@ test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
     await verifyHrefContains(yoastButton, 'wpseo_dashboard');
   });
 });
-

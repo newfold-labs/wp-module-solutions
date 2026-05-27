@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2026-04-29T15:30:47+00:00",
+    "translation-revision-date": "2026-05-22T16:06:52+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page\/bundle.js",
     "domain": "messages",
@@ -28,8 +28,8 @@
             "Powerful Plugins Included in your %s": [
                 "Plugins poderosos inclu\u00eddos no seu %s"
             ],
-            "Discover the complete list of advanced features provided by your hosting provider Bluehost, designed to deliver unmatched value and elevate your online experience.": [
-                "Descubra a lista completa de recursos avan\u00e7ados oferecidos pela sua hospedagem Bluehost, projetados para oferecer um valor incompar\u00e1vel e melhorar sua experi\u00eancia online."
+            "Discover the complete list of advanced features provided by your hosting provider %s, designed to deliver unmatched value and elevate your online experience.": [
+                "Descubra a lista completa de recursos avan\u00e7ados oferecidos pela sua hospedagem %s, projetados para oferecer um valor incompar\u00e1vel e melhorar sua experi\u00eancia online."
             ],
             "The #1 Bundle of Commerce Tools": [
                 "O pacote n\u00ba 1 de ferramentas de com\u00e9rcio eletr\u00f4nico"
@@ -82,8 +82,8 @@
             "Discover": [
                 "Descobrir"
             ],
-            "Start with a plan that fits your goals and unlock up to $3,500 in premium Bluehost and Yoast plugins.": [
-                "Comece com um plano que atenda aos seus objetivos e desbloqueie at\u00e9 US$ 3.500 em plugins premium da Bluehost e Yoast."
+            "Start with a plan that fits your goals and unlock up to $3,500 in premium %s and Yoast plugins.": [
+                "Comece com um plano que atenda aos seus objetivos e desbloqueie at\u00e9 US$ 3.500 em plugins premium da %s e Yoast."
             ],
             "Premium tools available in eCommerce Add-Ons": [
                 "Ferramentas premium dispon\u00edveis nos Add-ons de eCommerce"

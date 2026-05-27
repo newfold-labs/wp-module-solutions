@@ -15,6 +15,45 @@ const PremiumBadge = () => (
 	/>
 );
 
+/**
+ * Initial CTA `href` before link-tracker UTM rewrites.
+ *
+ * - CTB cards use `ctbHref` (purchase flow; `data-ctb-id` handles the click).
+ * - Blocked premium cards use `#null` (no navigation; upgrade is via the banner).
+ * - Installable cards use the rendered plugin CTA URL.
+ *
+ * @param {{ ctbId?: string, ctbHref?: string, isBlock: boolean, ctaUrl?: string }} args
+ * @return {string|undefined}
+ */
+function resolveInitialCtaHref( { ctbId, ctbHref, isBlock, ctaUrl } ) {
+	if ( ctbId ) {
+		return ctbHref;
+	}
+	if ( isBlock ) {
+		return '#null';
+	}
+	return renderCTAUrl( ctaUrl );
+}
+
+/**
+ * `target` for the plugin card CTA anchor.
+ *
+ * Opens CTB purchase links in a new tab; blocked and installer CTAs omit `target`.
+ *
+ * @param {string|undefined} ctbId
+ * @param {boolean} isBlock
+ * @return {'_blank'|null}
+ */
+function resolveCtaTarget( ctbId, isBlock ) {
+	if ( isBlock ) {
+		return null;
+	}
+	if ( ctbId ) {
+		return '_blank';
+	}
+	return null;
+}
+
 export const Plugin = ( {
 	name,
 	description = '',
@@ -33,10 +72,11 @@ export const Plugin = ( {
 	basename,
 	dependency,
 } ) => {
+	const pluginSlug = cleanForSlug( name );
 	const classes = [
 		'plugin-card',
 		'nfd-plugin-card',
-		'plugin-card-' + cleanForSlug( name ),
+		'plugin-card-' + pluginSlug,
 		{
 			'nfd-plugin-card-premium': premium && displayAsPremiun,
 			'nfd-plugin-card--icon': icon,
@@ -50,30 +90,49 @@ export const Plugin = ( {
 		},
 	];
 
-    const [ ctaHref, setCtaRef] = useState(! isBlock
-        ? ctbId
-            ? ctbHref
-            : renderCTAUrl( ctaUrl )
-        : '#null');
-    //Add UTM parameters to the link if the function is available
-    useEffect(() => {
-        const interval = setTimeout(() => {
-            if (
-                window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof Function
-            ) {
-                const addLearnMoreParamsLink = window.NewfoldRuntime.linkTracker.addUtmParams(ctaHref);
-                setCtaRef(addLearnMoreParamsLink);
-            }
-        }, 200);
+	const initialCtaHref = resolveInitialCtaHref( {
+		ctbId,
+		ctbHref,
+		isBlock,
+		ctaUrl,
+	} );
+	const ctaTarget = resolveCtaTarget( ctbId, isBlock );
 
-        return () => clearTimeout(interval);
-    }, []);
+	const [ resolvedCtaHref, setResolvedCtaHref ] = useState( initialCtaHref );
+
+	// Add UTM parameters when the href is a real URL (skip block placeholders).
+	useEffect( () => {
+		if ( ! initialCtaHref || '#null' === initialCtaHref || '#' === initialCtaHref ) {
+			return undefined;
+		}
+
+		const timer = window.setTimeout( () => {
+			if (
+				window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof
+				Function
+			) {
+				setResolvedCtaHref(
+					window.NewfoldRuntime.linkTracker.addUtmParams(
+						initialCtaHref
+					)
+				);
+			}
+		}, 200 );
+
+		return () => window.clearTimeout( timer );
+	}, [ initialCtaHref ] );
 
     return (
-		<div className={ classNames( classes ) }>
+		<div
+			className={ classNames( classes ) }
+			data-testid={ `nfd-solutions-plugin-card-${ pluginSlug }` }
+		>
 			<div className="plugin-card-top">
 				<div className="name column-name">
-					<Title as="h2">
+					<Title
+						as="h2"
+						data-testid={ `nfd-solutions-plugin-card-${ pluginSlug }-title` }
+					>
 						{ !! premium && !! displayAsPremiun && (
 							<div className="nfd-tools-card-badges nfd-flex nfd-gap-1">
 								{ !! premium && <PremiumBadge /> }
@@ -103,6 +162,7 @@ export const Plugin = ( {
 						<li>
 							<a
 								className={ classNames( buttonClass ) }
+								data-testid={ `nfd-solutions-plugin-card-${ pluginSlug }-cta` }
 								data-ctb-id={ ctbId }
 								data-is-active={ isActive ? true : null }
 								data-nfd-installer-download-url={
@@ -135,14 +195,8 @@ export const Plugin = ( {
 										? dependency
 										: null
 								}
-								href={ ctaHref }
-								target={
-									! isBlock
-										? ctbId
-											? '_blank'
-											: null
-										: null
-								}
+								href={ resolvedCtaHref }
+								target={ ctaTarget }
 							>
 								{ !! premium && !! displayAsPremiun
 									? __( 'Get it', 'wp-module-solutions' )

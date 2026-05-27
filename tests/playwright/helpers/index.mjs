@@ -32,6 +32,8 @@ function loadFixture(name) {
   return JSON.parse(readFileSync(filePath, 'utf-8'));
 }
 
+import { E2E_TEST_IDS, testIdSelector } from '../constants/e2eTestIds.mjs';
+
 // Pre-load fixtures
 const FIXTURES = {
   none: loadFixture('none'),
@@ -40,37 +42,44 @@ const FIXTURES = {
   commerce: loadFixture('commerce'),
 };
 
-// Common selectors
+// Common selectors (`data-testid` — see `tests/playwright/constants/e2eTestIds.mjs`)
 const SELECTORS = {
-  // Solutions page in plugin app
-  solutionsPageTitle: '.nfd-page-solutions h1',
-  upgradeBanner: '.nfd-solutions-upgrade-banner',
-  upgradeBannerButton: '.nfd-page-solutions .nfd-solutions-upgrade-banner__button',
-  toolCard: (slug) => `.nfd-solutions-tool-card-${slug}`,
-  toolCardButton: (slug) => `.nfd-solutions-tool-card-${slug} .nfd-button`,
-  toolCardTitle: (slug) => `.nfd-solutions-tool-card-${slug} h4`,
+  // Solutions page in plugin app (host commerce shell + module header)
+  solutionsPageTitle: `${ testIdSelector( E2E_TEST_IDS.solutionsCommercePageTitle ) }, ${ testIdSelector( E2E_TEST_IDS.solutionsPageTitle ) }, .nfd-page-solutions h1`,
+  solutionsModulePageTitle: testIdSelector( E2E_TEST_IDS.solutionsPageTitle ),
+  solutionsAppHeader: testIdSelector( E2E_TEST_IDS.solutionsAppHeader ),
+  solutionsBrandLogoImg: testIdSelector( E2E_TEST_IDS.brandLogo ),
+  solutionsBrandFallback: testIdSelector( E2E_TEST_IDS.brandLogoFallback ),
+  upgradeBanner: testIdSelector( E2E_TEST_IDS.upgradeBanner ),
+  upgradeBannerTitle: testIdSelector( E2E_TEST_IDS.upgradeBannerTitle ),
+  upgradeBannerButton: testIdSelector( E2E_TEST_IDS.upgradeBannerButton ),
+  toolCard: ( slug ) => testIdSelector( E2E_TEST_IDS.toolCard( slug ) ),
+  toolCardButton: ( slug ) => testIdSelector( E2E_TEST_IDS.toolCardCta( slug ) ),
+  toolCardTitle: ( slug ) => testIdSelector( E2E_TEST_IDS.toolCardTitle( slug ) ),
 
   // Add new plugins page (My Solutions tab)
-  addNewApp: '#nfd-add-new-app',
-  addNewAppTitle: '#nfd-add-new-app h1:first-of-type',
-  pluginsCardList: '.nfd-plugins-card-list',
-  mySolutionsAppContainer: '.nfd-my-solutions-app-container',
-  mySolutionsPluginsList: '.nfd-my-solutions-app-container .nfd-plugins-card-list:first-of-type',
-  mySolutionsUpgradeBanner: '.nfd-my-solutions-app-container .nfd-solutions-upgrade-banner',
-  mySolutionsUpgradeBannerButton: '.nfd-my-solutions-app-container .nfd-solutions-upgrade-banner__button',
-  pluginCard: (slug) => `.plugin-card-${slug}`,
-  pluginCardTitle: (slug) => `.plugin-card-${slug} h2`,
-  pluginCardButton: (slug) => `.plugin-card-${slug} .button`,
-  brandLogoSvg: '.plugin-install-nfd_solutions a svg',
+  addNewApp: testIdSelector( E2E_TEST_IDS.addNewApp ),
+  addNewAppTitle: testIdSelector( E2E_TEST_IDS.addNewPrimaryTitle ),
+  pluginsListEntitlements: testIdSelector( E2E_TEST_IDS.pluginsListEntitlements ),
+  pluginsListPremium: testIdSelector( E2E_TEST_IDS.pluginsListPremium ),
+  mySolutionsAppContainer: testIdSelector( E2E_TEST_IDS.mySolutionsContainer ),
+  mySolutionsPluginsList: `${ testIdSelector( E2E_TEST_IDS.mySolutionsContainer ) } ${ testIdSelector( E2E_TEST_IDS.pluginsListEntitlements ) }`,
+  mySolutionsUpgradeBanner: `${ testIdSelector( E2E_TEST_IDS.mySolutionsContainer ) } ${ testIdSelector( E2E_TEST_IDS.upgradeBanner ) }`,
+  mySolutionsUpgradeBannerTitle: `${ testIdSelector( E2E_TEST_IDS.mySolutionsContainer ) } ${ testIdSelector( E2E_TEST_IDS.upgradeBannerTitle ) }`,
+  mySolutionsUpgradeBannerButton: `${ testIdSelector( E2E_TEST_IDS.mySolutionsContainer ) } ${ testIdSelector( E2E_TEST_IDS.upgradeBannerButton ) }`,
+  pluginCard: ( slug ) => testIdSelector( E2E_TEST_IDS.pluginCard( slug ) ),
+  pluginCardTitle: ( slug ) => testIdSelector( E2E_TEST_IDS.pluginCardTitle( slug ) ),
+  pluginCardButton: ( slug ) => testIdSelector( E2E_TEST_IDS.pluginCardCta( slug ) ),
+  brandLogoSvg: `${ testIdSelector( E2E_TEST_IDS.installTabIcon ) }, .plugin-install-nfd_solutions > a svg`,
 
-  // Installer modal
+  // Installer modal (wp-module-installer — class hooks until test ids exist upstream)
   installerModal: '.nfd-installer-modal__content',
   installerModalSubheading: '.nfd-installer-modal__content-subheading',
 
-  // Plugins page
+  // Plugins page (core WP list table)
   pluginsList: '#the-list',
-  pluginRow: (slug) => `tr[data-slug="${slug}"]`,
-  deactivateLink: (slug) => `a#deactivate-${slug}`,
+  pluginRow: ( slug ) => `tr[data-slug="${slug}"]`,
+  deactivateLink: ( slug ) => `a#deactivate-${slug}`,
 };
 
 // CTB IDs
@@ -220,6 +229,26 @@ async function verifySolutionTransient(solutionKey) {
   }
 
   return { ok: true, reason: '' };
+}
+
+/**
+ * Read `window.NewfoldSolutions.branding` (JSON-cloned) for assertions.
+ *
+ * @param {import('@playwright/test').Page} page
+ * @returns {Promise<Record<string, unknown>|null>}
+ */
+async function readNewfoldSolutionsBranding(page) {
+  return page.evaluate(() => {
+    const raw = window.NewfoldSolutions?.branding;
+    if (!raw || typeof raw !== 'object') {
+      return null;
+    }
+    try {
+      return JSON.parse(JSON.stringify(raw));
+    } catch {
+      return null;
+    }
+  });
 }
 
 /**
@@ -380,6 +409,10 @@ async function navigateToSolutionsPage(page, pluginId = 'bluehost', solution = n
   if (reload) {
     await page.reload({ waitUntil: 'load' });
   }
+  await page
+    .locator(SELECTORS.solutionsPageTitle)
+    .first()
+    .waitFor({ state: 'visible', timeout: 30000 });
 }
 
 /**
@@ -471,6 +504,31 @@ async function verifyHrefContains(button, expected) {
 }
 
 /**
+ * Wait for link-tracker UTM rewrites, then assert href contains expected substring.
+ *
+ * @param {import('@playwright/test').Locator} button
+ * @param {string} expected
+ */
+async function verifyHrefContainsAfterUtm(button, expected) {
+  await expect
+    .poll(async () => button.getAttribute('href'), {
+      timeout: 5000,
+      intervals: [100, 250, 500],
+    })
+    .toContain(expected);
+}
+
+/**
+ * Assert CTB purchase buttons expose the expected click-to-buy id (href optional).
+ *
+ * @param {import('@playwright/test').Locator} button
+ * @param {string} ctbId
+ */
+async function verifyCtbButton(button, ctbId) {
+  await expect(button).toHaveAttribute('data-ctb-id', ctbId);
+}
+
+/**
  * Click install button and verify modal
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
@@ -543,12 +601,14 @@ export {
   utils,
   // Constants
   SELECTORS,
+  E2E_TEST_IDS,
   CTB_IDS,
   FIXTURES,
   // Solution helpers
   setSolution,
   verifySolutionTransient,
   expectNewfoldSolutionsHydrated,
+  readNewfoldSolutionsBranding,
   setSolutionAndOpenMySolutions,
   setSolutionAndOpenSolutionsPage,
   clearSolutionTransient,
@@ -561,6 +621,8 @@ export {
   verifyInstallerAttributes,
   verifyMissingAttributes,
   verifyHrefContains,
+  verifyHrefContainsAfterUtm,
+  verifyCtbButton,
   clickInstallAndVerifyModal,
   verifyPluginInstalled,
   verifyPluginActive,

@@ -14,14 +14,20 @@ export const Commerce = ( { plan } ) => {
 	);
 	return (
 		<>
-			<Section title={ title }>
+			<Section
+				title={ title }
+				titleTestId="nfd-solutions-addnew-primary-title"
+			>
 				{ __(
 					'Supercharge your online store with powerful tools designed to boost sales, streamline payments, manage inventory, and enhance customer experience.',
 					'wp-module-solutions'
 				) }
 			</Section>
 			{ !! plugins.length && (
-				<div className="nfd-plugins-card-list">
+				<div
+					className="nfd-plugins-card-list"
+					data-testid="nfd-solutions-plugins-list-entitlements"
+				>
 					<div id="the-list">
 						{ plugins.map( ( plugin ) => (
 							<Plugin

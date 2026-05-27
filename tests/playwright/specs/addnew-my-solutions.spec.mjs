@@ -3,6 +3,7 @@ import {
   auth,
   clearSolutionTransient,
   setSolutionAndOpenMySolutions,
+  readNewfoldSolutionsBranding,
   SELECTORS,
 } from '../helpers/index.mjs';
 
@@ -20,7 +21,14 @@ test.describe('My Solutions on Plugin Install Page', () => {
     const pre = await setSolutionAndOpenMySolutions(page, 'none', 'none');
     test.skip(!pre.ok, pre.reason);
 
-    const brandLogo = page.locator(SELECTORS.brandLogoSvg);
+    const branding = await readNewfoldSolutionsBranding(page);
+    const tabIconSvg = branding?.assets?.tabIconSvg;
+    test.skip(
+      !tabIconSvg || String(tabIconSvg).trim() === '',
+      'No install-tab icon configured for this brand'
+    );
+
+    const brandLogo = page.locator(SELECTORS.brandLogoSvg).first();
     await brandLogo.scrollIntoViewIfNeeded();
     await expect(brandLogo).toBeVisible();
   });
@@ -50,14 +58,12 @@ test.describe('My Solutions on Plugin Install Page', () => {
     const pre = await setSolutionAndOpenMySolutions(page, 'creator', 'creator');
     test.skip(!pre.ok, pre.reason);
 
-    // Use first() to select the first h1 (there may be multiple due to upgrade banner)
-    const title = page.locator('#nfd-add-new-app h1').first();
+    const title = page.locator(SELECTORS.addNewAppTitle);
     await expect(title).toContainText('Powerful Plugins Included');
     await title.scrollIntoViewIfNeeded();
     await expect(title).toBeVisible();
 
-    const upgradeBanner = page.locator(SELECTORS.mySolutionsUpgradeBanner);
-    const bannerTitle = upgradeBanner.locator('h2');
+    const bannerTitle = page.locator(SELECTORS.mySolutionsUpgradeBannerTitle);
     await expect(bannerTitle).toContainText('Upgrade');
     await bannerTitle.scrollIntoViewIfNeeded();
     await expect(bannerTitle).toBeVisible();
@@ -67,14 +73,12 @@ test.describe('My Solutions on Plugin Install Page', () => {
     const pre = await setSolutionAndOpenMySolutions(page, 'service', 'service');
     test.skip(!pre.ok, pre.reason);
 
-    // Use first() to select the first h1 (there may be multiple due to upgrade banner)
-    const title = page.locator('#nfd-add-new-app h1').first();
+    const title = page.locator(SELECTORS.addNewAppTitle);
     await expect(title).toContainText('Powerful Plugins Included');
     await title.scrollIntoViewIfNeeded();
     await expect(title).toBeVisible();
 
-    const upgradeBanner = page.locator(SELECTORS.mySolutionsUpgradeBanner);
-    const bannerTitle = upgradeBanner.locator('h2');
+    const bannerTitle = page.locator(SELECTORS.mySolutionsUpgradeBannerTitle);
     await expect(bannerTitle).toContainText('Upgrade');
     await bannerTitle.scrollIntoViewIfNeeded();
     await expect(bannerTitle).toBeVisible();

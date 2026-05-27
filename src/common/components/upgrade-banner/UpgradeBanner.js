@@ -3,7 +3,8 @@ import classNames from 'classnames';
 import { __ } from '@wordpress/i18n';
 import { LockClosedIcon } from '@heroicons/react/24/solid';
 import { Button, Title } from '@newfold/ui-component-library';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { getEcomFamilyCtb } from 'common/utils/branding';
 
 /**
  * Badge component
@@ -26,28 +27,43 @@ export const UpgradeBanner = ( {
 	...props
 } ) => {
 	const classes = [ className, 'nfd-solutions-upgrade-banner' ];
-    const [link, setLink] = useState('https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY');
-    //Add UTM parameters to the link if the function is available
-    useEffect(() => {
-        const interval = setTimeout(() => {
-            if (
-                window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof Function
-            ) {
-                const addParamsLink = window.NewfoldRuntime.linkTracker.addUtmParams(link);
-                setLink(addParamsLink);
-            }
-        }, 200);
+	const ctbDefaults = useMemo( () => getEcomFamilyCtb(), [] );
+	const [ link, setLink ] = useState( ctbDefaults.href );
+	const hasUpgradeLink = Boolean( link?.trim() );
 
-        return () => clearTimeout(interval);
-    }, []);
+	useEffect( () => {
+		const timer = window.setTimeout( () => {
+			if (
+				window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof
+				Function
+			) {
+				setLink(
+					window.NewfoldRuntime.linkTracker.addUtmParams(
+						ctbDefaults.href
+					)
+				);
+			}
+		}, 200 );
+
+		return () => window.clearTimeout( timer );
+	}, [ ctbDefaults.href ] );
+
 	return (
 		<>
 			<span className="nfd-solutions-upgrade-banner__overlay" />
-			<div className={ classNames( classes ) } { ...props }>
+			<div
+				className={ classNames( classes ) }
+				data-testid="nfd-solutions-upgrade-banner"
+				{ ...props }
+			>
 				<span className="nfd-solutions-upgrade-banner__lock-icon">
 					<LockClosedIcon />
 				</span>
-				<Title as="h2" className="nfd-solutions-upgrade-banner__title">
+				<Title
+					as="h2"
+					className="nfd-solutions-upgrade-banner__title"
+					data-testid="nfd-solutions-upgrade-banner-title"
+				>
 					{ title ||
 						__(
 							'Upgrade to unlock all features',
@@ -68,13 +84,15 @@ export const UpgradeBanner = ( {
 					{ children }
 				</span>
 				<Button
-					as="a"
+					as={ hasUpgradeLink ? 'a' : 'button' }
 					className="nfd-solutions-upgrade-banner__button"
-					data-ctb-id="5dc83bdd-9274-4557-a6d7-0b2adbc3919f"
-					href={link}
+					data-testid="nfd-solutions-upgrade-banner-button"
+					data-ctb-id={ ctbDefaults.ctbId || undefined }
+					disabled={ ! hasUpgradeLink }
+					href={ hasUpgradeLink ? link : undefined }
 					rel="noreferrer"
 					size="large"
-					target="_blank"
+					target={ hasUpgradeLink ? '_blank' : undefined }
 				>
 					{ __( 'Discover Now', 'wp-module-solutions' ) }
 				</Button>

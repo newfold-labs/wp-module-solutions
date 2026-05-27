@@ -13,7 +13,10 @@ const App = () => {
 	return (
 		<>
 			<Root>
-				<Page className="nfd-my-solutions-app-container">
+				<Page
+					className="nfd-my-solutions-app-container"
+					data-testid="nfd-solutions-my-solutions-container"
+				>
 					<Plugins plan={ plan } />
 				</Page>
 			</Root>
@@ -26,6 +29,7 @@ const SolutionsPageRender = () => {
 		WP_SOLUTIONS_PAGE_ROOT_ELEMENT
 	);
 	if ( null !== DOM_ELEMENT ) {
+		DOM_ELEMENT.setAttribute( 'data-testid', 'nfd-solutions-addnew-app' );
 		if ( 'undefined' !== typeof createRoot ) {
 			createRoot( DOM_ELEMENT ).render( <App /> );
 		}
