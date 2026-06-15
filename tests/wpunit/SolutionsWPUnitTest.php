@@ -19,7 +19,7 @@ class SolutionsWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 	 * @return void
 	 */
 	public function test_add_nfd_subnav_adds_solutions_entry() {
-		$subnav    = array();
+		$subnav = array();
 		// add_nfd_subnav calls container()->get('plugin')['id'] - we need a mock container.
 		$plugin     = new \stdClass();
 		$plugin->id = 'bluehost';
@@ -32,7 +32,7 @@ class SolutionsWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 			'route'    => $brand . '#/commerce',
 			'priority' => 10,
 		);
-		$subnav[]   = $solutions;
+		$subnav[]  = $solutions;
 		$this->assertCount( 1, $subnav );
 		$this->assertSame( 'Solutions', $subnav[0]['title'] );
 		$this->assertSame( 'bluehost#/commerce', $subnav[0]['route'] );
@@ -56,10 +56,54 @@ class SolutionsWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 	 * @return void
 	 */
 	public function test_addnew_brand_solutions_tab_adds_tab() {
-		$plugin         = new \stdClass();
-		$plugin->brand  = 'bluehost';
-		$plugin->id     = 'bluehost';
+		$plugin        = new \stdClass();
+		$plugin->brand = 'bluehost';
+		$plugin->id    = 'bluehost';
 		// SolutionsUpsell (created in Solutions constructor) calls container->get('capabilities')->get('canAccessGlobalCTB').
+		$capabilities = new class() {
+			/**
+			 * Stub for capabilities get (SolutionsUpsell::can_access_global_ctb).
+			 *
+			 * @param string $key Key to get.
+			 * @return bool
+			 */
+			public function get( $key ) {
+				return false;
+			}
+		};
+		$container    = $this->createMock( Container::class );
+		$container->method( 'get' )->willReturnCallback(
+			function ( $key ) use ( $plugin, $capabilities ) {
+				if ( 'plugin' === $key ) {
+					return $plugin;
+				}
+				if ( 'capabilities' === $key ) {
+					return $capabilities;
+				}
+				return null;
+			}
+		);
+		$container->method( 'plugin' )->willReturn( $plugin );
+		$solutions = new Solutions( $container );
+		$tabs      = $solutions->addnew_brand_solutions_tab( array() );
+		$this->assertArrayHasKey( 'nfd_solutions', $tabs );
+		$this->assertStringContainsString( 'Solutions', $tabs['nfd_solutions'] );
+	}
+
+	/**
+	 * Verifies addnew_brand_solutions_tab appends the Solutions tab rather than
+	 * making it the default landing tab. WordPress falls back to the first
+	 * registered tab when no `tab` query arg is present, so the Solutions tab
+	 * must not be first or it would replace the native plugin search/install
+	 * screen on every "Add New" click.
+	 *
+	 * @covers \NewfoldLabs\WP\Module\Solutions\Solutions::addnew_brand_solutions_tab
+	 * @return void
+	 */
+	public function test_addnew_brand_solutions_tab_is_not_default() {
+		$plugin        = new \stdClass();
+		$plugin->brand = 'bluehost';
+		$plugin->id    = 'bluehost';
 		$capabilities  = new class() {
 			/**
 			 * Stub for capabilities get (SolutionsUpsell::can_access_global_ctb).
@@ -84,9 +128,12 @@ class SolutionsWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 			}
 		);
 		$container->method( 'plugin' )->willReturn( $plugin );
-		$solutions     = new Solutions( $container );
-		$tabs           = $solutions->addnew_brand_solutions_tab( array() );
+		$solutions = new Solutions( $container );
+
+		$tabs = $solutions->addnew_brand_solutions_tab( array( 'featured' => 'Featured' ) );
+
+		// Native tab stays first (the default landing view); Solutions is offered, appended.
+		$this->assertSame( 'featured', array_key_first( $tabs ) );
 		$this->assertArrayHasKey( 'nfd_solutions', $tabs );
-		$this->assertStringContainsString( 'Solutions', $tabs['nfd_solutions'] );
 	}
 }
