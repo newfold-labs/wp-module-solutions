@@ -12,7 +12,7 @@ return [
 		'Activated the plugin successfully!' => 'Le plugin a été activé avec succès !',
 		'Please send valid plugin' => 'Veuillez envoyer un plugin valide',
 		'My Solution' => 'Ma solution',
-		'Bluehost' => 'Hôte bleu',
+		'Bluehost' => 'Bluehost',
 		'HostGator' => 'HostGator',
 		'Solution Upsell product type labelBookable product' => 'Produit réservable',
 		'Solution Upsell product type labelGift card' => 'Carte cadeau',

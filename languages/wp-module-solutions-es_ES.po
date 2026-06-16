@@ -40,7 +40,7 @@ msgstr "Mi solución"
 
 #: includes/SolutionsBranding.php:116
 msgid "Bluehost"
-msgstr "Presentador azul"
+msgstr "Bluehost"
 
 #: includes/SolutionsBranding.php:117
 msgid "HostGator"
