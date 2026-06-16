@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1781594827">
-  <project timestamp="1781594827">
+<coverage generated="1781594950">
+  <project timestamp="1781594950">
     <file name="/home/runner/work/wp-module-solutions/wp-module-solutions/bootstrap.php">
       <line num="9" type="stmt" count="0"/>
       <line num="10" type="stmt" count="0"/>
@@ -302,37 +302,31 @@
       <line num="268" type="stmt" count="0"/>
       <line num="269" type="stmt" count="0"/>
       <line num="270" type="stmt" count="0"/>
-      <line num="281" type="method" name="addnew_brand_solutions_tab" visibility="public" complexity="4" crap="4.05" count="1"/>
-      <line num="282" type="stmt" count="1"/>
-      <line num="283" type="stmt" count="1"/>
-      <line num="284" type="stmt" count="1"/>
-      <line num="285" type="stmt" count="1"/>
+      <line num="281" type="method" name="addnew_brand_solutions_tab" visibility="public" complexity="4" crap="4.05" count="2"/>
+      <line num="282" type="stmt" count="2"/>
+      <line num="283" type="stmt" count="2"/>
+      <line num="284" type="stmt" count="2"/>
+      <line num="285" type="stmt" count="2"/>
       <line num="287" type="stmt" count="0"/>
-      <line num="289" type="stmt" count="1"/>
-      <line num="290" type="stmt" count="1"/>
-      <line num="298" type="method" name="render_nfd_solutions_tab" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="299" type="stmt" count="0"/>
-      <line num="300" type="stmt" count="0"/>
-      <line num="302" type="stmt" count="0"/>
-      <line num="304" type="stmt" count="0"/>
-      <line num="305" type="stmt" count="0"/>
+      <line num="289" type="stmt" count="2"/>
+      <line num="297" type="stmt" count="2"/>
+      <line num="305" type="method" name="render_nfd_solutions_tab" visibility="public" complexity="2" crap="6" count="0"/>
       <line num="306" type="stmt" count="0"/>
       <line num="307" type="stmt" count="0"/>
-      <line num="316" type="method" name="addnew_plugins_solutions_assets" visibility="public" complexity="3" crap="12" count="0"/>
-      <line num="317" type="stmt" count="0"/>
-      <line num="318" type="stmt" count="0"/>
-      <line num="319" type="stmt" count="0"/>
-      <line num="321" type="stmt" count="0"/>
+      <line num="309" type="stmt" count="0"/>
+      <line num="311" type="stmt" count="0"/>
+      <line num="312" type="stmt" count="0"/>
+      <line num="313" type="stmt" count="0"/>
+      <line num="314" type="stmt" count="0"/>
+      <line num="323" type="method" name="addnew_plugins_solutions_assets" visibility="public" complexity="3" crap="12" count="0"/>
       <line num="324" type="stmt" count="0"/>
       <line num="325" type="stmt" count="0"/>
       <line num="326" type="stmt" count="0"/>
-      <line num="327" type="stmt" count="0"/>
       <line num="328" type="stmt" count="0"/>
-      <line num="329" type="stmt" count="0"/>
-      <line num="330" type="stmt" count="0"/>
       <line num="331" type="stmt" count="0"/>
       <line num="332" type="stmt" count="0"/>
       <line num="333" type="stmt" count="0"/>
+      <line num="334" type="stmt" count="0"/>
       <line num="335" type="stmt" count="0"/>
       <line num="336" type="stmt" count="0"/>
       <line num="337" type="stmt" count="0"/>
@@ -345,70 +339,76 @@
       <line num="345" type="stmt" count="0"/>
       <line num="346" type="stmt" count="0"/>
       <line num="347" type="stmt" count="0"/>
+      <line num="349" type="stmt" count="0"/>
       <line num="350" type="stmt" count="0"/>
       <line num="351" type="stmt" count="0"/>
       <line num="352" type="stmt" count="0"/>
       <line num="353" type="stmt" count="0"/>
-      <line num="355" type="stmt" count="0"/>
-      <line num="356" type="stmt" count="0"/>
+      <line num="354" type="stmt" count="0"/>
       <line num="357" type="stmt" count="0"/>
       <line num="358" type="stmt" count="0"/>
       <line num="359" type="stmt" count="0"/>
       <line num="360" type="stmt" count="0"/>
-      <line num="361" type="stmt" count="0"/>
       <line num="362" type="stmt" count="0"/>
       <line num="363" type="stmt" count="0"/>
       <line num="364" type="stmt" count="0"/>
+      <line num="365" type="stmt" count="0"/>
       <line num="366" type="stmt" count="0"/>
       <line num="367" type="stmt" count="0"/>
       <line num="368" type="stmt" count="0"/>
       <line num="369" type="stmt" count="0"/>
-      <line num="378" type="method" name="get_newfold_solutions_payload" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="379" type="stmt" count="0"/>
-      <line num="380" type="stmt" count="0"/>
-      <line num="381" type="stmt" count="0"/>
-      <line num="382" type="stmt" count="0"/>
-      <line num="383" type="stmt" count="0"/>
-      <line num="384" type="stmt" count="0"/>
-      <line num="393" type="method" name="add_branding_primary_inline_style" visibility="protected" complexity="1" crap="2" count="0"/>
-      <line num="394" type="stmt" count="0"/>
-      <line num="395" type="stmt" count="0"/>
-      <line num="397" type="stmt" count="0"/>
-      <line num="405" type="method" name="get_enhanced_entitlment_data" visibility="public" complexity="5" crap="30" count="0"/>
-      <line num="407" type="stmt" count="0"/>
-      <line num="410" type="stmt" count="0"/>
-      <line num="411" type="stmt" count="0"/>
+      <line num="370" type="stmt" count="0"/>
+      <line num="371" type="stmt" count="0"/>
+      <line num="373" type="stmt" count="0"/>
+      <line num="374" type="stmt" count="0"/>
+      <line num="375" type="stmt" count="0"/>
+      <line num="376" type="stmt" count="0"/>
+      <line num="385" type="method" name="get_newfold_solutions_payload" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="386" type="stmt" count="0"/>
+      <line num="387" type="stmt" count="0"/>
+      <line num="388" type="stmt" count="0"/>
+      <line num="389" type="stmt" count="0"/>
+      <line num="390" type="stmt" count="0"/>
+      <line num="391" type="stmt" count="0"/>
+      <line num="400" type="method" name="add_branding_primary_inline_style" visibility="protected" complexity="1" crap="2" count="0"/>
+      <line num="401" type="stmt" count="0"/>
+      <line num="402" type="stmt" count="0"/>
+      <line num="404" type="stmt" count="0"/>
+      <line num="412" type="method" name="get_enhanced_entitlment_data" visibility="public" complexity="5" crap="30" count="0"/>
       <line num="414" type="stmt" count="0"/>
-      <line num="415" type="stmt" count="0"/>
       <line num="417" type="stmt" count="0"/>
       <line num="418" type="stmt" count="0"/>
-      <line num="419" type="stmt" count="0"/>
-      <line num="420" type="stmt" count="0"/>
       <line num="421" type="stmt" count="0"/>
       <line num="422" type="stmt" count="0"/>
       <line num="424" type="stmt" count="0"/>
-      <line num="437" type="method" name="check_jetpack_connection_redirect" visibility="public" complexity="6" crap="42" count="0"/>
-      <line num="440" type="stmt" count="0"/>
-      <line num="441" type="stmt" count="0"/>
-      <line num="442" type="stmt" count="0"/>
-      <line num="444" type="stmt" count="0"/>
-      <line num="446" type="stmt" count="0"/>
+      <line num="425" type="stmt" count="0"/>
+      <line num="426" type="stmt" count="0"/>
+      <line num="427" type="stmt" count="0"/>
+      <line num="428" type="stmt" count="0"/>
+      <line num="429" type="stmt" count="0"/>
+      <line num="431" type="stmt" count="0"/>
+      <line num="444" type="method" name="check_jetpack_connection_redirect" visibility="public" complexity="6" crap="42" count="0"/>
       <line num="447" type="stmt" count="0"/>
       <line num="448" type="stmt" count="0"/>
+      <line num="449" type="stmt" count="0"/>
       <line num="451" type="stmt" count="0"/>
-      <line num="452" type="stmt" count="0"/>
+      <line num="453" type="stmt" count="0"/>
       <line num="454" type="stmt" count="0"/>
       <line num="455" type="stmt" count="0"/>
-      <line num="462" type="method" name="add_jetpack_menu_link" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="464" type="stmt" count="0"/>
-      <line num="465" type="stmt" count="0"/>
-      <line num="466" type="stmt" count="0"/>
-      <line num="467" type="stmt" count="0"/>
-      <line num="468" type="stmt" count="0"/>
-      <line num="469" type="stmt" count="0"/>
-      <line num="470" type="stmt" count="0"/>
+      <line num="458" type="stmt" count="0"/>
+      <line num="459" type="stmt" count="0"/>
+      <line num="461" type="stmt" count="0"/>
+      <line num="462" type="stmt" count="0"/>
+      <line num="469" type="method" name="add_jetpack_menu_link" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="471" type="stmt" count="0"/>
-      <metrics loc="474" ncloc="352" classes="1" methods="19" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="226" coveredstatements="7" elements="245" coveredelements="8"/>
+      <line num="472" type="stmt" count="0"/>
+      <line num="473" type="stmt" count="0"/>
+      <line num="474" type="stmt" count="0"/>
+      <line num="475" type="stmt" count="0"/>
+      <line num="476" type="stmt" count="0"/>
+      <line num="477" type="stmt" count="0"/>
+      <line num="478" type="stmt" count="0"/>
+      <metrics loc="481" ncloc="353" classes="1" methods="19" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="226" coveredstatements="7" elements="245" coveredelements="8"/>
     </file>
     <file name="/home/runner/work/wp-module-solutions/wp-module-solutions/includes/SolutionsBranding.php">
       <class name="NewfoldLabs\WP\Module\Solutions\SolutionsBranding" namespace="global">
@@ -787,6 +787,6 @@
       <line num="122" type="stmt" count="0"/>
       <metrics loc="125" ncloc="99" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="57" coveredstatements="0" elements="62" coveredelements="0"/>
     </file>
-    <metrics files="6" loc="1417" ncloc="1074" classes="5" methods="47" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="706" coveredstatements="326" elements="753" coveredelements="339"/>
+    <metrics files="6" loc="1424" ncloc="1075" classes="5" methods="47" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="706" coveredstatements="326" elements="753" coveredelements="339"/>
   </project>
 </coverage>
