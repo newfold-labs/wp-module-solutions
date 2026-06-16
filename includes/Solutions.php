@@ -287,7 +287,14 @@ class Solutions {
 			$name = ucfirst( (string) $this->container->plugin()->brand );
 		}
 		$solutions_tab = array( 'nfd_solutions' => $name . ' ' . __( 'Solutions', 'wp-module-solutions' ) );
-		return array_merge( $solutions_tab, $tabs );
+
+		// Append (not prepend) the Solutions tab so it is offered alongside the
+		// native tabs without becoming the default landing view. WordPress falls
+		// back to the first registered tab (`key( $tabs )` in
+		// WP_Plugin_Install_List_Table::prepare_items()) when no `tab` query arg
+		// is present, so prepending here replaced the native plugin
+		// search/install screen with the Solutions screen on every "Add New" click.
+		return array_merge( $tabs, $solutions_tab );
 	}
 
 	/**
