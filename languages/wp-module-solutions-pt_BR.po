@@ -35,7 +35,7 @@ msgstr "Minha Solução"
 
 #: includes/SolutionsBranding.php:116
 msgid "Bluehost"
-msgstr "Hospedeiro azul"
+msgstr "Bluehost"
 
 #: includes/SolutionsBranding.php:117
 msgid "HostGator"
