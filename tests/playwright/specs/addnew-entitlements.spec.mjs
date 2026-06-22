@@ -8,7 +8,7 @@ import {
   verifyInstallerAttributes,
   verifyMissingAttributes,
   verifyHrefContains,
-  verifyHrefContainsAfterUtm,
+  verifyEcomFamilyCtaHref,
 } from '../helpers/index.mjs';
 
 test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => {
@@ -61,11 +61,11 @@ test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => 
 
     const upgradeButton = page.locator(SELECTORS.mySolutionsUpgradeBannerButton);
     await expect(upgradeButton).toBeVisible();
-    await verifyHrefContainsAfterUtm(
-      upgradeButton,
-      '#click-to-buy-WP_SOLUTION_FAMILY'
-    );
     await expect(upgradeButton).toHaveAttribute('data-ctb-id', CTB_IDS.solutionFamily);
+
+    // Brand-agnostic: assert the href resolves to the localized eCom family URL
+    // with UTM params injected before the (preserved) fragment.
+    await verifyEcomFamilyCtaHref(page, upgradeButton);
 
     const advReviewsTitle = page.locator(SELECTORS.pluginCardTitle('advanced-reviews'));
     await expect(advReviewsTitle).toContainText('Advanced Reviews');

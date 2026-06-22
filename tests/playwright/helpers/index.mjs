@@ -519,6 +519,54 @@ async function verifyHrefContainsAfterUtm(button, expected) {
 }
 
 /**
+ * Assert an eCom-family upsell CTA points at the brand's localized
+ * `ctbs.ecomFamily.url`, with link-tracker UTM params injected before the
+ * fragment and the fragment preserved.
+ *
+ * Brand-agnostic: derives the expected destination from the localized branding
+ * instead of hardcoding a path, so it stays correct across brands and future
+ * destination changes.
+ *
+ * @param {import('@playwright/test').Page} page
+ * @param {import('@playwright/test').Locator} button
+ */
+async function verifyEcomFamilyCtaHref(page, button) {
+  const branding = await readNewfoldSolutionsBranding(page);
+  const ctbUrl = branding?.ctbs?.ecomFamily?.url;
+  expect(typeof ctbUrl).toBe('string');
+  expect(ctbUrl.length).toBeGreaterThan(0);
+
+  const [ctbBase, ctbFragment] = ctbUrl.split('#');
+
+  // The link tracker rewrites the href shortly after mount; poll until UTM params land.
+  await expect
+    .poll(async () => button.getAttribute('href'), {
+      timeout: 5000,
+      intervals: [100, 250, 500],
+    })
+    .toContain('utm_medium=');
+
+  const href = await button.getAttribute('href');
+
+  // Base path is preserved (whatever the backend localized for this brand).
+  expect(href.startsWith(ctbBase)).toBeTruthy();
+
+  // Tracking params are appended by the link tracker.
+  for (const param of ['channelid=', 'utm_source=', 'utm_medium=']) {
+    expect(href).toContain(param);
+  }
+
+  // Params are inserted before the fragment, and the fragment is preserved at the end.
+  if (ctbFragment) {
+    expect(href.endsWith(`#${ctbFragment}`)).toBeTruthy();
+    const queryIndex = href.indexOf('?');
+    const fragmentIndex = href.indexOf('#');
+    expect(queryIndex).toBeGreaterThan(-1);
+    expect(queryIndex).toBeLessThan(fragmentIndex);
+  }
+}
+
+/**
  * Assert CTB purchase buttons expose the expected click-to-buy id (href optional).
  *
  * @param {import('@playwright/test').Locator} button
@@ -622,6 +670,7 @@ export {
   verifyMissingAttributes,
   verifyHrefContains,
   verifyHrefContainsAfterUtm,
+  verifyEcomFamilyCtaHref,
   verifyCtbButton,
   clickInstallAndVerifyModal,
   verifyPluginInstalled,
