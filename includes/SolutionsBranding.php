@@ -188,7 +188,7 @@ class SolutionsBranding {
 				'ctbs'   => array(
 					'ecomFamily' => array(
 						'id'  => self::DEFAULT_ECOM_FAMILY_CTB_ID,
-						'url' => 'https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY',
+						'url' => 'https://www.bluehost.com/my-account/market-place#marketplace-WordPress%20Solutions',
 					),
 				),
 				'colors' => array(

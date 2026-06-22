@@ -8,6 +8,7 @@ import {
   verifyInstallerAttributes,
   verifyMissingAttributes,
   verifyHrefContains,
+  verifyEcomFamilyCtaHref,
 } from '../helpers/index.mjs';
 
 const pluginId = process.env.PLUGIN_ID || 'bluehost';
@@ -38,7 +39,7 @@ test.describe('Solutions App in plugin', () => {
     await expect(bannerTitle).toBeVisible();
   });
 
-  test('Solutions page displays upgrade with CTB atts for those with no solution', async ({ page }) => {
+  test('Solutions page upgrade CTA targets the localized eCom family URL with UTM params preserved across the fragment', async ({ page }) => {
     const pre = await setSolutionAndOpenSolutionsPage(page, 'none', pluginId, 'none');
     test.skip(!pre.ok, pre.reason);
 
@@ -54,8 +55,14 @@ test.describe('Solutions App in plugin', () => {
     await expect(bannerTitle).toBeVisible();
 
     const upgradeButton = page.locator(SELECTORS.upgradeBannerButton);
-    await verifyHrefContains(upgradeButton, '#click-to-buy-WP_SOLUTION_FAMILY');
+    await expect(upgradeButton).toBeVisible();
+
+    // The CTB id stays on the button regardless of the destination URL.
     await expect(upgradeButton).toHaveAttribute('data-ctb-id', CTB_IDS.solutionFamily);
+
+    // Brand-agnostic: assert the href resolves to the localized eCom family URL
+    // with UTM params injected before the (preserved) fragment.
+    await verifyEcomFamilyCtaHref(page, upgradeButton);
   });
 
   test('Creator solutions page displays tools with proper button atts', async ({ page }) => {
