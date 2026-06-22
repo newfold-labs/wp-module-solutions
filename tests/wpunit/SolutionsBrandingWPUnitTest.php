@@ -89,6 +89,53 @@ class SolutionsBrandingWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCas
 	}
 
 	/**
+	 * Bluehost eCom family CTB (Discover Now CTA) should target the marketplace
+	 * WordPress Solutions section, keep the shared CTB id, and survive URL
+	 * sanitization with the encoded fragment intact (PRESS0-4701).
+	 *
+	 * @return void
+	 */
+	public function test_bluehost_ecom_family_ctb_points_to_marketplace() {
+		$plugin        = new \stdClass();
+		$plugin->id    = 'bluehost';
+		$plugin->brand = 'bluehost';
+
+		$container = $this->branding_container_mock( $plugin );
+		$branding  = SolutionsBranding::build_for_container( $container );
+
+		$this->assertSame(
+			'https://www.bluehost.com/my-account/market-place#marketplace-WordPress%20Solutions',
+			$branding['ctbs']['ecomFamily']['url'] ?? null,
+			'Bluehost Discover Now CTA should point to the marketplace WordPress Solutions section with the encoded fragment preserved.'
+		);
+		$this->assertSame(
+			SolutionsBranding::DEFAULT_ECOM_FAMILY_CTB_ID,
+			$branding['ctbs']['ecomFamily']['id'] ?? null,
+			'The shared eCom family CTB id should be unchanged.'
+		);
+	}
+
+	/**
+	 * The Bluehost marketplace retarget must not leak into the HostGator preset,
+	 * which keeps its own click-to-buy destination (PRESS0-4701).
+	 *
+	 * @return void
+	 */
+	public function test_hostgator_ecom_family_ctb_unaffected_by_bluehost_retarget() {
+		$plugin        = new \stdClass();
+		$plugin->id    = 'hostgator';
+		$plugin->brand = 'hostgator';
+
+		$container = $this->branding_container_mock( $plugin );
+		$branding  = SolutionsBranding::build_for_container( $container );
+
+		$url = $branding['ctbs']['ecomFamily']['url'] ?? '';
+		$this->assertStringContainsString( 'hostgator.com', $url );
+		$this->assertStringContainsString( 'click-to-buy-WP_SOLUTION_FAMILY', $url );
+		$this->assertStringNotContainsString( 'market-place', $url );
+	}
+
+	/**
 	 * Bluehost preset should expose a module wordmark URL (static SVG file).
 	 *
 	 * @return void
