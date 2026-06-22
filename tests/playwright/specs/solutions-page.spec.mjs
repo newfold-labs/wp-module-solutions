@@ -8,6 +8,7 @@ import {
   verifyInstallerAttributes,
   verifyMissingAttributes,
   verifyHrefContains,
+  readNewfoldSolutionsBranding,
 } from '../helpers/index.mjs';
 
 const pluginId = process.env.PLUGIN_ID || 'bluehost';
@@ -38,7 +39,7 @@ test.describe('Solutions App in plugin', () => {
     await expect(bannerTitle).toBeVisible();
   });
 
-  test('Solutions page displays upgrade with CTB atts for those with no solution', async ({ page }) => {
+  test('Solutions page upgrade CTA targets the localized eCom family URL with UTM params preserved across the fragment', async ({ page }) => {
     const pre = await setSolutionAndOpenSolutionsPage(page, 'none', pluginId, 'none');
     test.skip(!pre.ok, pre.reason);
 
@@ -53,9 +54,48 @@ test.describe('Solutions App in plugin', () => {
     await bannerTitle.scrollIntoViewIfNeeded();
     await expect(bannerTitle).toBeVisible();
 
+    // Source of truth: the eCom family URL the backend localized for THIS brand.
+    // Asserting against it (rather than a hardcoded path) keeps the test brand-agnostic
+    // and resilient to future destination changes.
+    const branding = await readNewfoldSolutionsBranding(page);
+    const ctbUrl = branding?.ctbs?.ecomFamily?.url;
+    expect(typeof ctbUrl).toBe('string');
+    expect(ctbUrl.length).toBeGreaterThan(0);
+
+    const [ctbBase, ctbFragment] = ctbUrl.split('#');
+
     const upgradeButton = page.locator(SELECTORS.upgradeBannerButton);
-    await verifyHrefContains(upgradeButton, '#click-to-buy-WP_SOLUTION_FAMILY');
+    await expect(upgradeButton).toBeVisible();
+
+    // The CTB id stays on the button regardless of the destination URL.
     await expect(upgradeButton).toHaveAttribute('data-ctb-id', CTB_IDS.solutionFamily);
+
+    // The link tracker rewrites the href shortly after mount; poll until UTM params land.
+    await expect
+      .poll(async () => upgradeButton.getAttribute('href'), {
+        timeout: 5000,
+        intervals: [100, 250, 500],
+      })
+      .toContain('utm_medium=');
+
+    const href = await upgradeButton.getAttribute('href');
+
+    // Base path is preserved (whatever the backend provided for this brand).
+    expect(href.startsWith(ctbBase)).toBeTruthy();
+
+    // Tracking params are appended by the link tracker.
+    for (const param of ['channelid=', 'utm_source=', 'utm_medium=']) {
+      expect(href).toContain(param);
+    }
+
+    // Params are inserted before the fragment, and the fragment is preserved at the end.
+    if (ctbFragment) {
+      expect(href.endsWith(`#${ctbFragment}`)).toBeTruthy();
+      const queryIndex = href.indexOf('?');
+      const fragmentIndex = href.indexOf('#');
+      expect(queryIndex).toBeGreaterThan(-1);
+      expect(queryIndex).toBeLessThan(fragmentIndex);
+    }
   });
 
   test('Creator solutions page displays tools with proper button atts', async ({ page }) => {
