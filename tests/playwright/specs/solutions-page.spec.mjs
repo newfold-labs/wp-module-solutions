@@ -70,6 +70,10 @@ test.describe('Solutions App in plugin', () => {
     test.skip(!pre.ok, pre.reason);
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
+    // Title text is owned by the host plugin's #/commerce shell; assert only the
+    // shared prefix here. The plan-aware suffix ("in <add-on name>") is covered by
+    // the module's bundle smoke test (npm run test:smoke) and the host plugin's own
+    // e2e once it adopts getSolutionsPageTitle().
     await expect(title).toContainText('Premium tools available');
     await title.scrollIntoViewIfNeeded();
     await expect(title).toBeVisible();
