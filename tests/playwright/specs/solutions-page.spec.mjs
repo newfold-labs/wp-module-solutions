@@ -70,7 +70,8 @@ test.describe('Solutions App in plugin', () => {
     test.skip(!pre.ok, pre.reason);
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
-    await expect(title).toContainText('Premium tools available');
+    // Active solution => title reflects the purchased add-on name (creator.json: "Content Creator").
+    await expect(title).toContainText('Premium tools available in Content Creator');
     await title.scrollIntoViewIfNeeded();
     await expect(title).toBeVisible();
 
@@ -130,7 +131,8 @@ test.describe('Solutions App in plugin', () => {
     test.skip(!pre.ok, pre.reason);
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
-    await expect(title).toContainText('Premium tools available');
+    // Active solution => title reflects the purchased add-on name (service.json: "Services").
+    await expect(title).toContainText('Premium tools available in Services');
     await title.scrollIntoViewIfNeeded();
     await expect(title).toBeVisible();
 
@@ -192,7 +194,9 @@ test.describe('Solutions App in plugin', () => {
     test.skip(!pre.ok, pre.reason);
 
     const title = page.locator(SELECTORS.solutionsPageTitle);
-    await expect(title).toContainText('Premium tools available');
+    // With an active solution the title reflects the purchased add-on name
+    // (see commerce.json fixture: active "WP_SOLUTION_COMMERCE" => "eCommerce Premium Add-On").
+    await expect(title).toContainText('Premium tools available in eCommerce Premium Add-On');
     await title.scrollIntoViewIfNeeded();
     await expect(title).toBeVisible();
 

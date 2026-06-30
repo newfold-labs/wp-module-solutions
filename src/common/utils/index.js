@@ -1,5 +1,5 @@
 import { FireIcon, StarIcon } from '@heroicons/react/20/solid';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 
 const popularTools = [
 	'ad68e506-8c2b-4c0f-a9e3-16623d00041e', // Booking & Appointments
@@ -192,6 +192,32 @@ const getActiveSolution = () => {
 		( solution ) => solution?.sku === NewfoldSolutions?.solution
 	);
 };
+
+/**
+ * Build the Solutions/Commerce page title.
+ *
+ * When the site has an active solution, the title reflects the purchased
+ * add-on (e.g. "Premium tools available in eCommerce Premium Add-On"). When
+ * there is no active solution it falls back to the generic add-ons title.
+ *
+ * @return {string} The localized page title.
+ */
+const getSolutionsPageTitle = () => {
+	const activeSolution = getActiveSolution();
+
+	if ( activeSolution?.name ) {
+		return sprintf(
+			/* translators: %s: Active solution/add-on name, e.g. "eCommerce Premium Add-On" */
+			__( 'Premium tools available in %s', 'wp-module-solutions' ),
+			activeSolution.name
+		);
+	}
+
+	return __(
+		'Premium tools available in eCommerce Add-Ons',
+		'wp-module-solutions'
+	);
+};
 const getSolution = ( solutionSku ) => {
 	return NewfoldSolutions?.solutions.find(
 		( solution ) => solution?.sku === solutionSku
@@ -248,6 +274,7 @@ const getSolutionsCategories = () => {
 export {
 	getTools,
 	getActiveSolution,
+	getSolutionsPageTitle,
 	renderCTAUrl,
 	getSolution,
 	getSolutionsCategories,
