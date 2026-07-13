@@ -8,7 +8,8 @@
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",
-    "watch": "npm run start"
+    "watch": "npm run start",
+    "test:smoke": "node tests/smoke/solutions-page-component-exports.cjs"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

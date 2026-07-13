@@ -2,11 +2,10 @@ import { BrandLogo } from '../brand-logo';
 import { Title } from '@newfold/ui-component-library';
 import { __, sprintf } from '@wordpress/i18n';
 import { getSolutionsBranding } from 'common/utils/branding';
-import { getActiveSolution } from 'common/utils';
+import { getSolutionsPageTitle } from 'common/utils';
 import { useMemo, useState, useEffect } from 'react';
 
 export const Header = () => {
-	const currentSolution = getActiveSolution();
 	const brand = useMemo( () => getSolutionsBranding(), [] );
 	const brandName =
 		typeof brand.brandDisplayName === 'string' ? brand.brandDisplayName : '';
@@ -42,19 +41,7 @@ export const Header = () => {
 		>
 			<BrandLogo width={ '160px' } className="nfd-mb-6" />
 			<Title data-testid="nfd-solutions-page-title">
-				{ currentSolution
-					? sprintf(
-							/* translators: %s: Add-on Name */
-							__(
-								'Powerful Plugins Included in your %s',
-								'wp-module-solutions'
-							),
-							currentSolution.name
-					  )
-					: __(
-							'Premium tools available in eCommerce Add-Ons',
-							'wp-module-solutions'
-					  ) }
+				{ getSolutionsPageTitle() }
 			</Title>
 			<p>
 				{ sprintf(
