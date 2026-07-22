@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2026-06-22T11:54:07+00:00",
+    "translation-revision-date": "2026-07-22T21:24:59+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page-component\/index.js",
     "domain": "messages",
@@ -27,6 +27,12 @@
             ],
             "The #1 Bundle of Commerce Tools": [
                 "Il Bundle #1 di Strumenti per il Commercio"
+            ],
+            "Premium tools available in %s": [
+                "Strumenti premium disponibili in percentuali"
+            ],
+            "Premium tools available in eCommerce Add-Ons": [
+                "Strumenti premium disponibili negli Add-On per eCommerce"
             ],
             "Search tool": [
                 "Strumento di ricerca"

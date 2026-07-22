@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2026-06-22T11:54:07+00:00",
+    "translation-revision-date": "2026-07-22T21:24:59+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page\/bundle.js",
     "domain": "messages",
@@ -25,14 +25,17 @@
             "Discover Now": [
                 "Jetzt entdecken"
             ],
-            "Powerful Plugins Included in your %s": [
-                "Leistungsstarke Plugins in Ihrem %s enthalten"
-            ],
             "Discover the complete list of advanced features provided by your hosting provider %s, designed to deliver unmatched value and elevate your online experience.": [
                 "Entdecken Sie die komplette Liste der erweiterten Funktionen von Ihrem Hosting-Anbieter %s, die entwickelt wurden, um einen unvergleichlichen Mehrwert zu bieten und Ihr Online-Erlebnis zu verbessern."
             ],
             "The #1 Bundle of Commerce Tools": [
                 "Das f\u00fchrende Paket an Commerce-Tools"
+            ],
+            "Premium tools available in %s": [
+                "Premium-Tools in % verf\u00fcgbar"
+            ],
+            "Premium tools available in eCommerce Add-Ons": [
+                "Premium-Tools in E-Commerce-Erweiterungen verf\u00fcgbar"
             ],
             "Search tool": [
                 "Suchwerkzeug"
@@ -84,9 +87,6 @@
             ],
             "Start with a plan that fits your goals and unlock up to $3,500 in premium %s and Yoast plugins.": [
                 "Starten Sie mit einem Plan, der zu Ihren Zielen passt, und schalten Sie Premium-Plugins von %s und Yoast im Wert von bis zu 3.200 \u20ac frei."
-            ],
-            "Premium tools available in eCommerce Add-Ons": [
-                "Premium-Tools in E-Commerce-Erweiterungen verf\u00fcgbar"
             ],
             "Learn more about eCommerce Add-Ons": [
                 "Mehr \u00fcber E-Commerce-Erweiterungen erfahren"

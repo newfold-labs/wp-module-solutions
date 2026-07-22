@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2026-06-22T11:54:07+00:00",
+    "translation-revision-date": "2026-07-22T21:24:59+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page\/bundle.js",
     "domain": "messages",
@@ -25,14 +25,17 @@
             "Discover Now": [
                 "D\u00e9couvrir maintenant"
             ],
-            "Powerful Plugins Included in your %s": [
-                "Plugins puissants inclus dans votre %s"
-            ],
             "Discover the complete list of advanced features provided by your hosting provider %s, designed to deliver unmatched value and elevate your online experience.": [
                 "D\u00e9couvrez la liste compl\u00e8te des fonctionnalit\u00e9s avanc\u00e9es fournies par votre h\u00e9bergeur %s, con\u00e7ues pour offrir une valeur in\u00e9gal\u00e9e et am\u00e9liorer votre exp\u00e9rience en ligne."
             ],
             "The #1 Bundle of Commerce Tools": [
                 "Le pack n\u00b01 d'outils de commerce"
+            ],
+            "Premium tools available in %s": [
+                "Outils premium disponibles en pourcentages"
+            ],
+            "Premium tools available in eCommerce Add-Ons": [
+                "Outils premium disponibles dans les modules compl\u00e9mentaires e-commerce"
             ],
             "Search tool": [
                 "Outil de recherche"
@@ -84,9 +87,6 @@
             ],
             "Start with a plan that fits your goals and unlock up to $3,500 in premium %s and Yoast plugins.": [
                 "Commencez avec un forfait adapt\u00e9 \u00e0 vos objectifs et d\u00e9bloquez jusqu'\u00e0 3 200 \u20ac de plugins premium %s et Yoast."
-            ],
-            "Premium tools available in eCommerce Add-Ons": [
-                "Outils premium disponibles dans les modules compl\u00e9mentaires e-commerce"
             ],
             "Learn more about eCommerce Add-Ons": [
                 "En savoir plus sur les modules compl\u00e9mentaires e-commerce"
