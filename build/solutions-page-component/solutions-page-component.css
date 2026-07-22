@@ -140,9 +140,7 @@
 
 		line-height: 1.5;
 		-webkit-text-size-adjust: 100%;
-		-moz-tab-size: 4;
-		-o-tab-size: 4;
-		   tab-size: 4;
+		tab-size: 4;
 		font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 		margin: 0;
@@ -380,10 +378,6 @@
 		1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
 		2. Set the default placeholder color to the user's configured gray 400 color.
 		*/
-.nfd-page-solutions .nfd-root input::-moz-placeholder, .nfd-page-solutions .nfd-root textarea::-moz-placeholder {
-			opacity: 1; /* 1 */
-			color: #6b7280; /* 2 */
-		}
 .nfd-page-solutions .nfd-root input::placeholder,
 		.nfd-page-solutions .nfd-root textarea::placeholder {
 			opacity: 1; /* 1 */
@@ -438,9 +432,7 @@
 		.nfd-page-solutions .nfd-root [type='tel'],
 		.nfd-page-solutions .nfd-root [type='time'],
 		.nfd-page-solutions .nfd-root [type='week'] {
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-		        appearance: none;
+		appearance: none;
 		background-color: #fff;
 		border-color: #6b7280;
 		border-width: 1px;
@@ -475,10 +467,6 @@
 		--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
 		box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 		border-color: #2563eb;
-}
-.nfd-page-solutions .nfd-root [type='text']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='email']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='url']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='password']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='number']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='date']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='datetime-local']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='month']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='search']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='tel']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='time']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='week']::-moz-placeholder {
-		color: #6b7280;
-		opacity: 1;
 }
 .nfd-page-solutions .nfd-root [type='text']::placeholder,
 		.nfd-page-solutions .nfd-root [type='email']::placeholder,
@@ -543,9 +531,7 @@
 		padding-bottom: 0;
 }
 .nfd-page-solutions .nfd-root textarea {
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-		        appearance: none;
+		appearance: none;
 		background-color: #fff;
 		border-color: #6b7280;
 		border-width: 1px;
@@ -570,18 +556,12 @@
 		box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 		border-color: #2563eb;
 }
-.nfd-page-solutions .nfd-root textarea::-moz-placeholder {
-		color: #6b7280;
-		opacity: 1;
-}
 .nfd-page-solutions .nfd-root textarea::placeholder {
 		color: #6b7280;
 		opacity: 1;
 }
 .nfd-page-solutions .nfd-root select {
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-		        appearance: none;
+		appearance: none;
 		background-color: #fff;
 		border-color: #6b7280;
 		border-width: 1px;
@@ -625,9 +605,7 @@
 		        print-color-adjust: unset;
 }
 .nfd-page-solutions .nfd-root select[multiple] {
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-		        appearance: none;
+		appearance: none;
 		background-color: #fff;
 		border-color: #6b7280;
 		border-width: 1px;
@@ -653,9 +631,7 @@
 		border-color: #2563eb;
 }
 .nfd-page-solutions .nfd-root [type='checkbox'] {
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-		        appearance: none;
+		appearance: none;
 		padding: 0;
 		-webkit-print-color-adjust: exact;
 		        print-color-adjust: exact;
@@ -663,7 +639,6 @@
 		vertical-align: middle;
 		background-origin: border-box;
 		-webkit-user-select: none;
-		   -moz-user-select: none;
 		        user-select: none;
 		flex-shrink: 0;
 		height: 1rem;
@@ -696,9 +671,7 @@
 }
 @media (forced-colors: active)  {
 		.nfd-page-solutions .nfd-root [type='checkbox']:checked {
-				-webkit-appearance: auto;
-				   -moz-appearance: auto;
-				        appearance: auto;
+				appearance: auto;
 		}
 }
 .nfd-page-solutions .nfd-root [type='checkbox']:checked:hover,.nfd-page-solutions .nfd-root [type='checkbox']:checked:focus {
@@ -715,9 +688,7 @@
 }
 @media (forced-colors: active)  {
 		.nfd-page-solutions .nfd-root [type='checkbox']:indeterminate {
-				-webkit-appearance: auto;
-				   -moz-appearance: auto;
-				        appearance: auto;
+				appearance: auto;
 		}
 }
 .nfd-page-solutions .nfd-root [type='checkbox']:indeterminate:hover,.nfd-page-solutions .nfd-root [type='checkbox']:indeterminate:focus {
@@ -725,9 +696,7 @@
 		background-color: currentColor;
 }
 .nfd-page-solutions .nfd-root [type='radio'] {
-		-webkit-appearance: none;
-		   -moz-appearance: none;
-		        appearance: none;
+		appearance: none;
 		padding: 0;
 		-webkit-print-color-adjust: exact;
 		        print-color-adjust: exact;
@@ -735,7 +704,6 @@
 		vertical-align: middle;
 		background-origin: border-box;
 		-webkit-user-select: none;
-		   -moz-user-select: none;
 		        user-select: none;
 		flex-shrink: 0;
 		height: 1rem;
@@ -768,9 +736,7 @@
 }
 @media (forced-colors: active)  {
 		.nfd-page-solutions .nfd-root [type='radio']:checked {
-				-webkit-appearance: auto;
-				   -moz-appearance: auto;
-				        appearance: auto;
+				appearance: auto;
 		}
 }
 .nfd-page-solutions .nfd-root [type='radio']:checked:hover,.nfd-page-solutions .nfd-root [type='radio']:checked:focus {
@@ -815,10 +781,6 @@
 		--tw-ring-color: rgb(79 70 229 / var(--tw-ring-opacity, 1));
 		--tw-ring-offset-width: 1px;
 		--tw-ring-offset-color: transparent;
-}
-.nfd-page-solutions .nfd-root [type='text']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='email']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='url']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='password']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='number']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='date']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='datetime-local']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='month']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='search']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='tel']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='time']::-moz-placeholder, .nfd-page-solutions .nfd-root [type='week']::-moz-placeholder, .nfd-page-solutions .nfd-root textarea::-moz-placeholder {
-		--tw-placeholder-opacity: 1;
-		color: rgb(100 116 139 / var(--tw-placeholder-opacity, 1));
 }
 .nfd-page-solutions .nfd-root [type='text']::placeholder,
 		.nfd-page-solutions .nfd-root [type='email']::placeholder,
@@ -930,10 +892,6 @@
 		--tw-ring-opacity: 1;
 		--tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity, 1));
 }
-.nfd-page-solutions .nfd-root .nfd-autocomplete--error .nfd-autocomplete__input::-moz-placeholder {
-		--tw-placeholder-opacity: 1;
-		color: rgb(252 165 165 / var(--tw-placeholder-opacity, 1));
-}
 .nfd-page-solutions .nfd-root .nfd-autocomplete--error .nfd-autocomplete__input::placeholder {
 		--tw-placeholder-opacity: 1;
 		color: rgb(252 165 165 / var(--tw-placeholder-opacity, 1));
@@ -1033,7 +991,6 @@
 		display: flex;
 		cursor: default;
 		-webkit-user-select: none;
-		   -moz-user-select: none;
 		        user-select: none;
 		align-items: center;
 		justify-content: space-between;
@@ -1475,7 +1432,6 @@
 }
 .nfd-page-solutions .nfd-root .nfd-image-input {
 		display: flex;
-		min-width: -moz-max-content;
 		min-width: max-content;
 		align-items: center;
 		gap: 1rem;
@@ -1503,8 +1459,7 @@
 		z-index: 10;
 		height: 100%;
 		width: 100%;
-		-o-object-fit: cover;
-		   object-fit: cover;
+		object-fit: cover;
 }
 .nfd-page-solutions .nfd-root .nfd-image-input .nfd-image-input__preview-reset {
 		position: absolute;
@@ -1861,7 +1816,6 @@
 		display: flex;
 		cursor: default;
 		-webkit-user-select: none;
-		   -moz-user-select: none;
 		        user-select: none;
 		align-items: center;
 		justify-content: space-between;
@@ -1915,10 +1869,6 @@
 		line-height: 1.5rem;
 		--tw-text-opacity: 1;
 		color: rgb(30 41 59 / var(--tw-text-opacity, 1));
-}
-.nfd-page-solutions .nfd-root .nfd-tag-input::-moz-placeholder {
-		--tw-placeholder-opacity: 1;
-		color: rgb(100 116 139 / var(--tw-placeholder-opacity, 1));
 }
 .nfd-page-solutions .nfd-root .nfd-tag-input::placeholder {
 		--tw-placeholder-opacity: 1;

@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2026-06-22T11:54:07+00:00",
+    "translation-revision-date": "2026-07-22T21:24:59+00:00",
     "generator": "WP-CLI\/2.12.0",
     "source": "build\/solutions-page\/bundle.js",
     "domain": "messages",
@@ -25,14 +25,17 @@
             "Discover Now": [
                 "Discover Now"
             ],
-            "Powerful Plugins Included in your %s": [
-                "Powerful Plugins Included in your %s"
-            ],
             "Discover the complete list of advanced features provided by your hosting provider %s, designed to deliver unmatched value and elevate your online experience.": [
                 "Discover the complete list of advanced features provided by your hosting provider %s, designed to deliver unmatched value and elevate your online experience."
             ],
             "The #1 Bundle of Commerce Tools": [
                 "The #1 Bundle of Commerce Tools"
+            ],
+            "Premium tools available in %s": [
+                "Premium tools available in %s"
+            ],
+            "Premium tools available in eCommerce Add-Ons": [
+                "Premium tools available in eCommerce Add-Ons"
             ],
             "Search tool": [
                 "Search tool"
@@ -84,9 +87,6 @@
             ],
             "Start with a plan that fits your goals and unlock up to $3,500 in premium %s and Yoast plugins.": [
                 "Start with a plan that fits your goals and unlock up to $4,900 AUD in premium %s and Yoast plugins."
-            ],
-            "Premium tools available in eCommerce Add-Ons": [
-                "Premium tools available in eCommerce Add-Ons"
             ],
             "Learn more about eCommerce Add-Ons": [
                 "Learn more about eCommerce Add-Ons"
