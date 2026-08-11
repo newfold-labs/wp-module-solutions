@@ -23,6 +23,7 @@ const pluginHelpers = await import(helpersUrl);
 // Destructure plugin helpers
 let { auth, wordpress, newfold, a11y, utils } = pluginHelpers;
 const { fancyLog } = utils;
+const clearInstallerQueues = newfold.clearInstallerQueues;
 
 // Load solution fixtures
 const fixturesPath = join(__dirname, '../fixtures');
@@ -660,6 +661,7 @@ export {
   setSolutionAndOpenMySolutions,
   setSolutionAndOpenSolutionsPage,
   clearSolutionTransient,
+  clearInstallerQueues,
   uninstallPlugin,
   // Navigation helpers
   navigateToSolutionsPage,

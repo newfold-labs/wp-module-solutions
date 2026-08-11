@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import {
   auth,
+  clearInstallerQueues,
   clearSolutionTransient,
   setSolutionAndOpenSolutionsPage,
   SELECTORS,
@@ -14,6 +15,10 @@ import {
 const pluginId = process.env.PLUGIN_ID || 'bluehost';
 
 test.describe('Solutions App in plugin', () => {
+
+  test.beforeAll(async () => {
+    await clearInstallerQueues();
+  });
 
   test.beforeEach(async ({ page }) => {
     await auth.loginToWordPress(page);
