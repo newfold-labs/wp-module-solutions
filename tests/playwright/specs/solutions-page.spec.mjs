@@ -3,9 +3,11 @@ import {
   auth,
   clearInstallerQueues,
   clearSolutionTransient,
+  ensurePluginInactive,
   setSolutionAndOpenSolutionsPage,
   SELECTORS,
   CTB_IDS,
+  TOOL_PLUGINS,
   verifyInstallerAttributes,
   verifyMissingAttributes,
   verifyHrefContains,
@@ -16,11 +18,20 @@ const pluginId = process.env.PLUGIN_ID || 'bluehost';
 
 test.describe('Solutions App in plugin', () => {
 
+  // The tool card assertions below describe Yoast SEO's *pre-install* state: a download URL
+  // and an install action. If Yoast is active the card renders "Configure" with no download
+  // URL, and those assertions fail on an empty attribute rather than on anything this module
+  // owns. Rather than inherit that precondition from global setup or a sibling spec, this
+  // file establishes and verifies it itself.
+  let yoastInactive = { ok: false, reason: 'precondition not evaluated' };
+
   test.beforeAll(async () => {
+    // Drop any queued installs first, so nothing re-activates Yoast between tests.
     await clearInstallerQueues();
   });
 
   test.beforeEach(async ({ page }) => {
+    yoastInactive = await ensurePluginInactive(TOOL_PLUGINS.yoastSeo.basename);
     await auth.loginToWordPress(page);
   });
 
@@ -89,6 +100,8 @@ test.describe('Solutions App in plugin', () => {
     await yoastTitle.scrollIntoViewIfNeeded();
     await expect(yoastTitle).toBeVisible();
 
+    expect(yoastInactive.ok, yoastInactive.reason).toBe(true);
+
     const yoastButton = page.locator(SELECTORS.toolCardButton('yoast-seo'));
     await verifyInstallerAttributes(yoastButton, {
       downloadUrl: 'https://downloads.wordpress.org/plugin/wordpress-seo.latest-stable.zip',
@@ -148,6 +161,8 @@ test.describe('Solutions App in plugin', () => {
     await expect(yoastTitle).toContainText('Yoast SEO');
     await yoastTitle.scrollIntoViewIfNeeded();
     await expect(yoastTitle).toBeVisible();
+
+    expect(yoastInactive.ok, yoastInactive.reason).toBe(true);
 
     const yoastButton = page.locator(SELECTORS.toolCardButton('yoast-seo'));
     await verifyInstallerAttributes(yoastButton, {
@@ -213,6 +228,8 @@ test.describe('Solutions App in plugin', () => {
     await expect(yoastCard).toBeVisible();
     const yoastTitle = page.locator(SELECTORS.toolCardTitle('yoast-seo'));
     await expect(yoastTitle).toContainText('Yoast SEO');
+
+    expect(yoastInactive.ok, yoastInactive.reason).toBe(true);
 
     const yoastButton = page.locator(SELECTORS.toolCardButton('yoast-seo'));
     await verifyInstallerAttributes(yoastButton, {
