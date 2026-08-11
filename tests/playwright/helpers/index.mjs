@@ -23,6 +23,14 @@ const pluginHelpers = await import(helpersUrl);
 // Destructure plugin helpers
 let { auth, wordpress, newfold, a11y, utils } = pluginHelpers;
 const { fancyLog } = utils;
+const clearInstallerQueues = newfold.clearInstallerQueues;
+const ensurePluginInactive = newfold.ensurePluginInactive;
+
+// Plugins whose pre-install UI this module asserts, so specs can state the precondition
+// they depend on rather than inheriting it from global setup or a sibling spec.
+const TOOL_PLUGINS = {
+  yoastSeo: { slug: 'wordpress-seo', basename: 'wordpress-seo/wp-seo.php' },
+};
 
 // Load solution fixtures
 const fixturesPath = join(__dirname, '../fixtures');
@@ -377,17 +385,33 @@ async function clearSolutionTransient() {
 
 /**
  * Uninstall a plugin
- * 
+ *
+ * Runs on the default WP-CLI timeout. A short override used to kill this partway through:
+ * `npx wp-env run cli` spends several seconds starting the container before WP-CLI even
+ * runs, so uninstalling a large plugin could time out, leave it installed and active, and
+ * hand that state to the next spec.
+ *
  * @param {string} pluginSlug - Plugin slug to uninstall
+ * @returns {Promise<{ok: boolean, reason: string}>}
  */
 async function uninstallPlugin(pluginSlug) {
   try {
-    await wordpress.wpCli(`plugin uninstall ${pluginSlug} --deactivate`, {
-      timeout: 15000,
-      failOnNonZeroExit: false,
-    });
+    const result = await wordpress.wpCli(
+      `plugin uninstall ${pluginSlug} --deactivate`,
+      { failOnNonZeroExit: false }
+    );
+
+    if (wordpress.isWpCliFailure(result)) {
+      const reason = `Failed to uninstall ${pluginSlug}: ${wordpress.formatWpCliResult(result)}`;
+      fancyLog(reason, 55, 'yellow');
+      return { ok: false, reason };
+    }
+
+    return { ok: true, reason: '' };
   } catch (error) {
-    fancyLog(`Failed to uninstall ${pluginSlug}: ${error.message}`, 55, 'yellow');
+    const reason = `Failed to uninstall ${pluginSlug}: ${error.message}`;
+    fancyLog(reason, 55, 'yellow');
+    return { ok: false, reason };
   }
 }
 
@@ -652,6 +676,7 @@ export {
   E2E_TEST_IDS,
   CTB_IDS,
   FIXTURES,
+  TOOL_PLUGINS,
   // Solution helpers
   setSolution,
   verifySolutionTransient,
@@ -660,6 +685,8 @@ export {
   setSolutionAndOpenMySolutions,
   setSolutionAndOpenSolutionsPage,
   clearSolutionTransient,
+  clearInstallerQueues,
+  ensurePluginInactive,
   uninstallPlugin,
   // Navigation helpers
   navigateToSolutionsPage,
