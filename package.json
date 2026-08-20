@@ -14,7 +14,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@newfold/ui-component-library": "^2.1.1",
-    "@wordpress/api-fetch": "^7.52.0",
+    "@wordpress/api-fetch": "^7.53.0",
     "@wordpress/element": "^8.4.0",
     "react-svg": "^19.1.4"
   },
