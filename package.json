@@ -26,7 +26,7 @@
     "@wordpress/url": "^4.54.0",
     "classnames": "^2.5.1",
     "mini-css-extract-plugin": "^2.10.2",
-    "postcss-prefix-selector": "^2.1.1",
+    "postcss-prefix-selector": "^2.2.0",
     "react-router-dom": "^7.18.3",
     "tailwindcss": "^3.4.19",
     "webpack": "^5.110.2",
