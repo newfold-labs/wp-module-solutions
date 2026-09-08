@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c7370b1bdf9e602a0738d3c0816df959",
+    "content-hash": "2e902adf068bb9ca42305a98ed9a6413",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -7198,7 +7198,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "johnpbloch/wordpress": 0
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {},
