@@ -20,7 +20,7 @@ import {
 let jetpackSupported = false;
 let jetpackSkipMessage = '';
 
-test.describe('My Solutions on Plugin Install Page - Jetpack Plugin', () => {
+test.describe('My Solutions on Plugin Install Page - Jetpack Plugin', { tag: '@env-local' }, () => {
 
   test.beforeAll(async () => {
     jetpackSupported = await newfold.supportsJetpack();

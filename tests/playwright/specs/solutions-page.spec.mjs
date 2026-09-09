@@ -16,7 +16,18 @@ import {
 
 const pluginId = process.env.PLUGIN_ID || 'bluehost';
 
-test.describe('Solutions App in plugin', () => {
+test.describe('Solutions App in plugin (env-any)', { tag: '@env-any' }, () => {
+  test('Commerce solutions route renders', async ({ page }) => {
+    await auth.navigateToAdminPage(page, `admin.php?page=${pluginId}#/commerce`);
+    await page.waitForSelector('#wppbh-app-rendered, .nfd-page-solutions, .wppbh-app-body', {
+      timeout: 15000,
+    });
+    const hash = await page.evaluate(() => window.location.hash);
+    expect(hash).toMatch(/commerce/);
+  });
+});
+
+test.describe('Solutions App in plugin', { tag: '@env-local' }, () => {
 
   // The tool card assertions below describe Yoast SEO's *pre-install* state: a download URL
   // and an install action. If Yoast is active the card renders "Configure" with no download
