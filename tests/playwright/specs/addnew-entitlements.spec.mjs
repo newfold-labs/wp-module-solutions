@@ -11,7 +11,7 @@ import {
   verifyEcomFamilyCtaHref,
 } from '../helpers/index.mjs';
 
-test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => {
+test.describe('My Solutions on Plugin Install Page - Entitlements Check', { tag: '@env-local' }, () => {
 
   test.beforeEach(async ({ page }) => {
     await auth.loginToWordPress(page);
