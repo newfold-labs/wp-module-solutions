@@ -7,7 +7,15 @@ import {
   SELECTORS,
 } from '../helpers/index.mjs';
 
-test.describe('My Solutions on Plugin Install Page', () => {
+test.describe('My Solutions on Plugin Install Page (env-any)', { tag: '@env-any' }, () => {
+  test('Solutions tab is present on plugin-install', async ({ page }) => {
+    await auth.navigateToAdminPage(page, 'plugin-install.php');
+    const tab = page.locator('.plugin-install-nfd_solutions, a[href*="tab=nfd_solutions"]');
+    await expect(tab.first()).toBeVisible({ timeout: 15000 });
+  });
+});
+
+test.describe('My Solutions on Plugin Install Page', { tag: '@env-local' }, () => {
 
   test.beforeEach(async ({ page }) => {
     await auth.loginToWordPress(page);
