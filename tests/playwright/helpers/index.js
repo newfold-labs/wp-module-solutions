@@ -13,8 +13,8 @@ const __dirname = dirname(__filename);
 // Resolve plugin directory from PLUGIN_DIR env var (set by playwright.config.mjs) or process.cwd()
 const pluginDir = process.env.PLUGIN_DIR || process.cwd();
 
-// Build path to plugin helpers (.mjs extension for ES module compatibility)
-const finalHelpersPath = join(pluginDir, 'tests/playwright/helpers/index.mjs');
+// Build path to plugin helpers (compiled as CJS under Playwright; use .js entry)
+const finalHelpersPath = join(pluginDir, 'tests/playwright/helpers/index.js');
 
 // Import plugin helpers using file:// URL
 const helpersUrl = pathToFileURL(finalHelpersPath).href;
@@ -40,7 +40,7 @@ function loadFixture(name) {
   return JSON.parse(readFileSync(filePath, 'utf-8'));
 }
 
-import { E2E_TEST_IDS, testIdSelector } from '../constants/e2eTestIds.mjs';
+import { E2E_TEST_IDS, testIdSelector } from '../constants/e2eTestIds.js';
 
 // Pre-load fixtures
 const FIXTURES = {
@@ -50,7 +50,7 @@ const FIXTURES = {
   commerce: loadFixture('commerce'),
 };
 
-// Common selectors (`data-testid` — see `tests/playwright/constants/e2eTestIds.mjs`)
+// Common selectors (`data-testid` — see `tests/playwright/constants/e2eTestIds.js`)
 const SELECTORS = {
   // Solutions page in plugin app (host commerce shell + module header)
   solutionsPageTitle: `${ testIdSelector( E2E_TEST_IDS.solutionsCommercePageTitle ) }, ${ testIdSelector( E2E_TEST_IDS.solutionsPageTitle ) }, .nfd-page-solutions h1`,

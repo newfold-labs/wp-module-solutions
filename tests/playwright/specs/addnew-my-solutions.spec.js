@@ -5,7 +5,7 @@ import {
   setSolutionAndOpenMySolutions,
   readNewfoldSolutionsBranding,
   SELECTORS,
-} from '../helpers/index.mjs';
+} from '../helpers/index.js';
 
 test.describe('My Solutions on Plugin Install Page', () => {
 
