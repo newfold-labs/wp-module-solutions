@@ -9,7 +9,7 @@ import {
   verifyMissingAttributes,
   verifyHrefContains,
   verifyEcomFamilyCtaHref,
-} from '../helpers/index.mjs';
+} from '../helpers/index.js';
 
 test.describe('My Solutions on Plugin Install Page - Entitlements Check', () => {
 
