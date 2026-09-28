@@ -5,7 +5,7 @@ return [
 	'language' => 'en_AU',
 	'project-id-version' => '',
 	'pot-creation-date' => '2025-02-13T10:58:13+00:00',
-	'po-revision-date' => '2026-08-20T13:53:15+00:00',
+	'po-revision-date' => '2026-09-28T16:59:50+00:00',
 	'x-generator' => 'WP-CLI 2.11.0',
 	'messages' => [
 		'Solutions' => 'Solutions',

@@ -659,8 +659,7 @@
 		background-repeat: no-repeat;
 		background-size: 1.5em 1.5em;
 		padding-right: 2.5rem;
-		-webkit-print-color-adjust: exact;
-		        print-color-adjust: exact;
+		print-color-adjust: exact;
 }
 
 		.nfd-page-solutions .nfd-root select:where([size]:not([size="1"])) {
@@ -669,8 +668,7 @@
 		background-repeat: unset;
 		background-size: initial;
 		padding-right: 0.75rem;
-		-webkit-print-color-adjust: unset;
-		        print-color-adjust: unset;
+		print-color-adjust: unset;
 }
 
 		.nfd-page-solutions .nfd-root select[multiple] {
@@ -704,8 +702,7 @@
 		.nfd-page-solutions .nfd-root [type='checkbox'] {
 		appearance: none;
 		padding: 0;
-		-webkit-print-color-adjust: exact;
-		        print-color-adjust: exact;
+		print-color-adjust: exact;
 		display: inline-block;
 		vertical-align: middle;
 		background-origin: border-box;
@@ -779,8 +776,7 @@
 		.nfd-page-solutions .nfd-root [type='radio'] {
 		appearance: none;
 		padding: 0;
-		-webkit-print-color-adjust: exact;
-		        print-color-adjust: exact;
+		print-color-adjust: exact;
 		display: inline-block;
 		vertical-align: middle;
 		background-origin: border-box;
