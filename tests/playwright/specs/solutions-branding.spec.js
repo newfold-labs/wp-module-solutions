@@ -5,7 +5,7 @@ import {
   setSolutionAndOpenSolutionsPage,
   SELECTORS,
   readNewfoldSolutionsBranding,
-} from '../helpers/index.mjs';
+} from '../helpers/index.js';
 
 const pluginSlug = process.env.PLUGIN_ID || 'bluehost';
 
