@@ -12,7 +12,7 @@ import {
   verifyMissingAttributes,
   verifyHrefContains,
   verifyEcomFamilyCtaHref,
-} from '../helpers/index.js';
+} from '../helpers/index.mjs';
 
 const pluginId = process.env.PLUGIN_ID || 'bluehost';
 

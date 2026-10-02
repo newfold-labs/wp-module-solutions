@@ -9,7 +9,7 @@ import {
   verifyMissingAttributes,
   verifyHrefContains,
   verifyEcomFamilyCtaHref,
-} from '../helpers/index.js';
+} from '../helpers/index.mjs';
 
 test.describe('My Solutions on Plugin Install Page - Entitlements Check', {
   tag: '@env-local',

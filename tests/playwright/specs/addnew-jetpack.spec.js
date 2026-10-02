@@ -15,7 +15,7 @@ import {
   verifyMissingAttributes,
   verifyHrefContains,
   SELECTORS,
-} from '../helpers/index.js';
+} from '../helpers/index.mjs';
 
 let jetpackSupported = false;
 let jetpackSkipMessage = '';

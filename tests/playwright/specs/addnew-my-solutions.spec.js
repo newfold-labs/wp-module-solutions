@@ -5,7 +5,7 @@ import {
   setSolutionAndOpenMySolutions,
   readNewfoldSolutionsBranding,
   SELECTORS,
-} from '../helpers/index.js';
+} from '../helpers/index.mjs';
 
 test.describe('My Solutions on Plugin Install Page', { tag: '@env-local' }, () => {
 

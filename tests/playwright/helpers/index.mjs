@@ -2,14 +2,75 @@
  * Solutions Module Test Helpers for Playwright
  */
 import { expect } from '@playwright/test';
-import { createRequire } from 'module';
-import { join } from 'path';
-import { readFileSync } from 'fs';
+import { dirname, join } from 'path';
+import { existsSync, readFileSync } from 'fs';
+import { fileURLToPath, pathToFileURL } from 'url';
 
-// Resolve plugin directory from PLUGIN_DIR env var (set by playwright.config.mjs) or process.cwd()
-const pluginDir = process.env.PLUGIN_DIR || process.cwd();
-const requireFromPlugin = createRequire(join(pluginDir, 'package.json'));
-const pluginHelpers = requireFromPlugin('./tests/playwright/helpers/index.js');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+function readPackageName(dir) {
+  try {
+    const pkg = JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8'));
+    return String(pkg.name || '');
+  } catch {
+    return '';
+  }
+}
+
+function isSolutionsModuleRoot(dir) {
+  const name = readPackageName(dir);
+  return name.includes('wp-module-solutions');
+}
+
+function hostPlaywrightHelpersPath(dir) {
+  const mjs = join(dir, 'tests/playwright/helpers/index.mjs');
+  if (existsSync(mjs)) {
+    return mjs;
+  }
+  const js = join(dir, 'tests/playwright/helpers/index.js');
+  if (existsSync(js)) {
+    return js;
+  }
+  return null;
+}
+
+/**
+ * Brand plugin root (wp-plugin-bluehost, etc.). Avoid resolving to this module's own tree.
+ */
+function resolveHostPluginDir() {
+  const candidates = [process.env.PLUGIN_DIR, process.env.BRAND_PLUGIN_DIR, process.cwd()].filter(
+    Boolean
+  );
+
+  for (const dir of candidates) {
+    if (!isSolutionsModuleRoot(dir) && hostPlaywrightHelpersPath(dir)) {
+      return dir;
+    }
+  }
+
+  let current = __dirname;
+  for (;;) {
+    const parent = dirname(current);
+    if (parent === current) {
+      break;
+    }
+    if (!isSolutionsModuleRoot(current) && hostPlaywrightHelpersPath(current)) {
+      return current;
+    }
+    current = parent;
+  }
+
+  throw new Error(
+    'Could not resolve host plugin Playwright helpers. Set PLUGIN_DIR to the brand plugin root (e.g. wp-plugin-bluehost).'
+  );
+}
+
+const pluginDir = resolveHostPluginDir();
+const hostHelpersFile = hostPlaywrightHelpersPath(pluginDir);
+const pluginHelpersModule = await import(pathToFileURL(hostHelpersFile).href);
+const pluginHelpers =
+  pluginHelpersModule.auth !== undefined ? pluginHelpersModule : pluginHelpersModule.default;
 
 // Destructure plugin helpers
 let { auth, wordpress, newfold, a11y, utils } = pluginHelpers;
