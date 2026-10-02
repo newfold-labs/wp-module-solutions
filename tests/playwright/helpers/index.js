@@ -415,7 +415,7 @@ async function uninstallPlugin(pluginSlug) {
  */
 async function navigateToSolutionsPage(page, pluginId = 'bluehost', solution = null, options = {}) {
   const { reload = false } = options || {};
-  let url = `/wp-admin/admin.php?page=${pluginId}`;
+  let url = `wp-admin/admin.php?page=${pluginId}`;
   if (solution) {
     url += `&solution=${solution}`;
   }
@@ -439,7 +439,7 @@ async function navigateToSolutionsPage(page, pluginId = 'bluehost', solution = n
  */
 async function navigateToMySolutionsTab(page, solution = null, options = {}) {
   const { reload = false } = options || {};
-  let url = '/wp-admin/plugin-install.php?tab=nfd_solutions';
+  let url = 'wp-admin/plugin-install.php?tab=nfd_solutions';
   if (solution) {
     url += `&solution=${solution}`;
   }
@@ -455,7 +455,7 @@ async function navigateToMySolutionsTab(page, solution = null, options = {}) {
  * @param {import('@playwright/test').Page} page - Playwright page object
  */
 async function navigateToPluginsPage(page) {
-  await page.goto('/wp-admin/plugins.php');
+  await page.goto('wp-admin/plugins.php');
 }
 
 /**
