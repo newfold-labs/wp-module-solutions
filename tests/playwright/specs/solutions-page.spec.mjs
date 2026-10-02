@@ -12,11 +12,11 @@ import {
   verifyMissingAttributes,
   verifyHrefContains,
   verifyEcomFamilyCtaHref,
-} from '../helpers/index.js';
+} from '../helpers/index.mjs';
 
 const pluginId = process.env.PLUGIN_ID || 'bluehost';
 
-test.describe('Solutions App in plugin', () => {
+test.describe('Solutions App in plugin', { tag: '@env-local' }, () => {
 
   // The tool card assertions below describe Yoast SEO's *pre-install* state: a download URL
   // and an install action. If Yoast is active the card renders "Configure" with no download
