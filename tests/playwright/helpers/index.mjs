@@ -23,16 +23,11 @@ function isSolutionsModuleRoot(dir) {
   return name.includes('wp-module-solutions');
 }
 
-function hostPlaywrightHelpersPath(dir) {
-  const mjs = join(dir, 'tests/playwright/helpers/index.mjs');
-  if (existsSync(mjs)) {
-    return mjs;
-  }
-  const js = join(dir, 'tests/playwright/helpers/index.js');
-  if (existsSync(js)) {
-    return js;
-  }
-  return null;
+function hostPlaywrightHelpersExist(dir) {
+  return (
+    existsSync(join(dir, 'tests/playwright/helpers/index.js')) ||
+    existsSync(join(dir, 'tests/playwright/helpers/index.mjs'))
+  );
 }
 
 /**
@@ -44,7 +39,7 @@ function resolveHostPluginDir() {
   );
 
   for (const dir of candidates) {
-    if (!isSolutionsModuleRoot(dir) && hostPlaywrightHelpersPath(dir)) {
+    if (!isSolutionsModuleRoot(dir) && hostPlaywrightHelpersExist(dir)) {
       return dir;
     }
   }
@@ -55,7 +50,7 @@ function resolveHostPluginDir() {
     if (parent === current) {
       break;
     }
-    if (!isSolutionsModuleRoot(current) && hostPlaywrightHelpersPath(current)) {
+    if (!isSolutionsModuleRoot(current) && hostPlaywrightHelpersExist(current)) {
       return current;
     }
     current = parent;
@@ -67,7 +62,9 @@ function resolveHostPluginDir() {
 }
 
 const pluginDir = resolveHostPluginDir();
-const hostHelpersFile = hostPlaywrightHelpersPath(pluginDir);
+const hostHelpersMjs = join(pluginDir, 'tests/playwright/helpers/index.mjs');
+const hostHelpersJs = join(pluginDir, 'tests/playwright/helpers/index.js');
+const hostHelpersFile = existsSync(hostHelpersMjs) ? hostHelpersMjs : hostHelpersJs;
 const pluginHelpersModule = await import(pathToFileURL(hostHelpersFile).href);
 const pluginHelpers =
   pluginHelpersModule.auth !== undefined ? pluginHelpersModule : pluginHelpersModule.default;
@@ -92,7 +89,7 @@ function loadFixture(name) {
   return JSON.parse(readFileSync(filePath, 'utf-8'));
 }
 
-import { E2E_TEST_IDS, testIdSelector } from '../constants/e2eTestIds.js';
+import { E2E_TEST_IDS, testIdSelector } from '../constants/e2eTestIds.mjs';
 
 // Pre-load fixtures
 const FIXTURES = {
@@ -102,7 +99,7 @@ const FIXTURES = {
   commerce: loadFixture('commerce'),
 };
 
-// Common selectors (`data-testid` — see `tests/playwright/constants/e2eTestIds.js`)
+// Common selectors (`data-testid` — see `tests/playwright/constants/e2eTestIds.mjs`)
 const SELECTORS = {
   // Solutions page in plugin app (host commerce shell + module header)
   solutionsPageTitle: `${ testIdSelector( E2E_TEST_IDS.solutionsCommercePageTitle ) }, ${ testIdSelector( E2E_TEST_IDS.solutionsPageTitle ) }, .nfd-page-solutions h1`,
