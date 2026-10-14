@@ -329,16 +329,16 @@
         },
         {
             "name": "newfold-labs/wp-module-link-tracker",
-            "version": "1.1.6",
+            "version": "1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
-                "reference": "f49b8adf1fd2f599c11007d0883c5e1564990316"
+                "reference": "9a88b783bc7665b7b6affb24705780fbbe762793"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/f49b8adf1fd2f599c11007d0883c5e1564990316",
-                "reference": "f49b8adf1fd2f599c11007d0883c5e1564990316",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/9a88b783bc7665b7b6affb24705780fbbe762793",
+                "reference": "9a88b783bc7665b7b6affb24705780fbbe762793",
                 "shasum": ""
             },
             "require-dev": {
@@ -346,7 +346,7 @@
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-module-loader": "^1.1",
-                "newfold-labs/wp-php-standards": "^1.2.6",
+                "newfold-labs/wp-php-standards": "^2.0",
                 "phpunit/phpcov": "*",
                 "wp-cli/i18n-command": "^2.7.0"
             },
@@ -365,10 +365,10 @@
                     "vendor/bin/phpcbf . --standard=phpcs.xml"
                 ],
                 "i18n-pot": [
-                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-solutions.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-solutions/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
+                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-link-tracker.pot --domain=wp-module-link-tracker --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-link-tracker/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,tests,wordpress"
                 ],
                 "i18n-po": [
-                    "vendor/bin/wp i18n update-po ./languages/wp-module-solutions.pot ./languages"
+                    "vendor/bin/wp i18n update-po ./languages/wp-module-link-tracker.pot ./languages"
                 ],
                 "i18n-php": [
                     "vendor/bin/wp i18n make-php ./languages --pretty-print"
@@ -381,6 +381,14 @@
                     "@i18n-po",
                     "@i18n-php",
                     "@i18n-json"
+                ],
+                "i18n-ci-pre": [
+                    "@i18n-pot",
+                    "@i18n-po"
+                ],
+                "i18n-ci-post": [
+                    "@i18n-json",
+                    "@i18n-php"
                 ],
                 "lint": [
                     "vendor/bin/phpcs . --standard=phpcs.xml -s"
@@ -402,7 +410,7 @@
                 }
             ],
             "description": "A WordPress module that adds tracking params",
-            "time": "2026-08-20T23:13:30+00:00"
+            "time": "2026-09-28T19:03:08+00:00"
         },
         {
             "name": "newfold-labs/wp-module-loader",
@@ -7198,7 +7206,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "johnpbloch/wordpress": 0
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {},
