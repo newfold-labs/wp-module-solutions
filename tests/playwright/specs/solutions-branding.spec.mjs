@@ -5,7 +5,7 @@ import {
   setSolutionAndOpenSolutionsPage,
   SELECTORS,
   readNewfoldSolutionsBranding,
-} from '../helpers/index.js';
+} from '../helpers/index.mjs';
 
 const pluginSlug = process.env.PLUGIN_ID || 'bluehost';
 
@@ -17,7 +17,7 @@ function isWordmarkUnset(value) {
   return value === undefined || value === null || value === false || value === '';
 }
 
-test.describe('Solutions page branding', () => {
+test.describe('Solutions page branding', { tag: '@env-local' }, () => {
   test.beforeEach(async ({ page }) => {
     await auth.loginToWordPress(page);
   });
