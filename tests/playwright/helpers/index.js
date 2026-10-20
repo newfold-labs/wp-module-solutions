@@ -9,7 +9,9 @@ import { readFileSync } from 'fs';
 // Resolve plugin directory from PLUGIN_DIR env var (set by playwright.config.mjs) or process.cwd()
 const pluginDir = process.env.PLUGIN_DIR || process.cwd();
 const requireFromPlugin = createRequire(join(pluginDir, 'package.json'));
-const pluginHelpers = requireFromPlugin('./tests/playwright/helpers/index.js');
+const rawPluginHelpers = requireFromPlugin('./tests/playwright/helpers/index.js');
+const pluginHelpers =
+	rawPluginHelpers?.auth !== undefined ? rawPluginHelpers : rawPluginHelpers?.default;
 
 // Destructure plugin helpers
 let { auth, wordpress, newfold, a11y, utils } = pluginHelpers;

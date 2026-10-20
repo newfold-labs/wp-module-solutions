@@ -20,7 +20,7 @@ import {
 let yoastSupported = false;
 let yoastSkipMessage = '';
 
-test.describe('My Solutions on Plugin Install Page - Yoast Check', () => {
+test.describe('My Solutions on Plugin Install Page - Yoast Check', { tag: '@env-local' }, () => {
 
   test.beforeAll(async () => {
     yoastSupported = await newfold.supportsYoast();
