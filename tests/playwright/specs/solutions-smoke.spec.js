@@ -3,7 +3,7 @@ import {
   auth,
   readNewfoldSolutionsBranding,
   SELECTORS,
-} from '../helpers/index.mjs';
+} from '../helpers/index.js';
 
 const pluginId = process.env.PLUGIN_ID || 'bluehost';
 

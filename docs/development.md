@@ -15,12 +15,13 @@ Tests: `composer run test` (Codeception **`wpunit`**, requires `.env.testing` wi
 
 ## Playwright (consumer wiring)
 
-Browser specs ship under **`tests/playwright/specs/`** and **`tests/playwright/helpers/`**. Host plugins (or blueprint harnesses) typically run Playwright from their own repo while pointing **`PLUGIN_DIR`** at this module root so **`helpers/index.mjs`** can load shared WordPress helpers and fixtures.
+Browser specs ship under **`tests/playwright/specs/`** and **`tests/playwright/helpers/`**. Host plugins run Playwright from their repo; **`playwright.config.mjs`** sets **`PLUGIN_DIR`** to the brand plugin root so **`helpers/index.js`** can `createRequire` the host **`tests/playwright/helpers/index.js`** entry (see [wp-plugin-bluehost#1504](https://github.com/newfold-labs/wp-plugin-bluehost/pull/1504) and module [#603](https://github.com/newfold-labs/wp-module-solutions/pull/603)). Use **`.js`** spec/helper files — native **`.mjs`** bypasses Playwright’s transform on 1.63+.
 
 Examples:
 
-- **`solutions-page.spec.mjs`** — app tools and installer attributes.
-- **`solutions-branding.spec.mjs`** — **`window.NewfoldSolutions.branding`** shape plus **`wordmarkUrl`** preset rules. **`BrandLogo`** DOM checks run only when **`.nfd-solutions-app-header`** is present (standalone **`solutions-page`** bundle); brand plugins that embed **`solutions-page-component`** (which exports **`Content`** plus the **`getSolutionsPageTitle`** helper) assert localized payload only.
+- **`solutions-smoke.spec.js`** — read-only **`@env-any`** smoke (My Solutions tab, commerce branding payload).
+- **`solutions-page.spec.js`** — app tools and installer attributes (**`@env-local`**, WP-CLI fixtures).
+- **`solutions-branding.spec.js`** — **`window.NewfoldSolutions.branding`** shape plus **`wordmarkUrl`** preset rules. **`BrandLogo`** DOM checks run only when **`.nfd-solutions-app-header`** is present (standalone **`solutions-page`** bundle); brand plugins that embed **`solutions-page-component`** (which exports **`Content`** plus the **`getSolutionsPageTitle`** helper) assert localized payload only.
 
 Pass **`PLUGIN_ID`** to match the loader’s `admin.php?page=` slug (e.g. `bluehost` vs `hostgator`) alongside the rest of your harness env vars.
 
@@ -30,4 +31,4 @@ Pass **`PLUGIN_ID`** to match the loader’s `admin.php?page=` slug (e.g. `blueh
 
 ### E2E `data-testid` hooks
 
-`data-testid` strings are set inline on Solutions UI components. The canonical list for Playwright lives in **`tests/playwright/constants/e2eTestIds.mjs`** (`E2E_TEST_IDS`); **`tests/playwright/helpers/index.mjs`** builds **`SELECTORS`** from that file. When adding or renaming a test id, update both the component markup and **`e2eTestIds.mjs`**. Prefer **`SELECTORS.*`** (or **`page.getByTestId(E2E_TEST_IDS.…)`**) over class-based queries. Host commerce shells (Bluehost/HostGator `#/commerce`) use **`nfd-solutions-commerce-page-title`** on the page `<h1>`; the module **`Header`** uses **`nfd-solutions-page-title`** when the full **`solutions-page`** bundle renders. Both surfaces derive their title text from **`getSolutionsPageTitle()`** (`src/common/utils`), so an active solution reads "Premium tools available in &lt;add-on name&gt;" (e.g. "eCommerce Premium Add-On") and falls back to the generic add-ons title otherwise. Installer modal markup still comes from **`wp-module-installer`** (class selectors until that package adds test ids).
+`data-testid` strings are set inline on Solutions UI components. The canonical list for Playwright lives in **`tests/playwright/constants/e2eTestIds.js`** (`E2E_TEST_IDS`); **`tests/playwright/helpers/index.js`** builds **`SELECTORS`** from that file. When adding or renaming a test id, update both the component markup and **`e2eTestIds.js`**. Prefer **`SELECTORS.*`** (or **`page.getByTestId(E2E_TEST_IDS.…)`**) over class-based queries. Host commerce shells (Bluehost/HostGator `#/commerce`) use **`nfd-solutions-commerce-page-title`** on the page `<h1>`; the module **`Header`** uses **`nfd-solutions-page-title`** when the full **`solutions-page`** bundle renders. Both surfaces derive their title text from **`getSolutionsPageTitle()`** (`src/common/utils`), so an active solution reads "Premium tools available in &lt;add-on name&gt;" (e.g. "eCommerce Premium Add-On") and falls back to the generic add-ons title otherwise. Installer modal markup still comes from **`wp-module-installer`** (class selectors until that package adds test ids).

@@ -2,72 +2,16 @@
  * Solutions Module Test Helpers for Playwright
  */
 import { expect } from '@playwright/test';
-import { dirname, join } from 'path';
-import { existsSync, readFileSync } from 'fs';
-import { fileURLToPath, pathToFileURL } from 'url';
+import { createRequire } from 'module';
+import { join } from 'path';
+import { readFileSync } from 'fs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-function readPackageName(dir) {
-  try {
-    const pkg = JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8'));
-    return String(pkg.name || '');
-  } catch {
-    return '';
-  }
-}
-
-function isSolutionsModuleRoot(dir) {
-  const name = readPackageName(dir);
-  return name.includes('wp-module-solutions');
-}
-
-function hostPlaywrightHelpersExist(dir) {
-  return (
-    existsSync(join(dir, 'tests/playwright/helpers/index.js')) ||
-    existsSync(join(dir, 'tests/playwright/helpers/index.mjs'))
-  );
-}
-
-/**
- * Brand plugin root (wp-plugin-bluehost, etc.). Avoid resolving to this module's own tree.
- */
-function resolveHostPluginDir() {
-  const candidates = [process.env.PLUGIN_DIR, process.env.BRAND_PLUGIN_DIR, process.cwd()].filter(
-    Boolean
-  );
-
-  for (const dir of candidates) {
-    if (!isSolutionsModuleRoot(dir) && hostPlaywrightHelpersExist(dir)) {
-      return dir;
-    }
-  }
-
-  let current = __dirname;
-  for (;;) {
-    const parent = dirname(current);
-    if (parent === current) {
-      break;
-    }
-    if (!isSolutionsModuleRoot(current) && hostPlaywrightHelpersExist(current)) {
-      return current;
-    }
-    current = parent;
-  }
-
-  throw new Error(
-    'Could not resolve host plugin Playwright helpers. Set PLUGIN_DIR to the brand plugin root (e.g. wp-plugin-bluehost).'
-  );
-}
-
-const pluginDir = resolveHostPluginDir();
-const hostHelpersMjs = join(pluginDir, 'tests/playwright/helpers/index.mjs');
-const hostHelpersJs = join(pluginDir, 'tests/playwright/helpers/index.js');
-const hostHelpersFile = existsSync(hostHelpersMjs) ? hostHelpersMjs : hostHelpersJs;
-const pluginHelpersModule = await import(pathToFileURL(hostHelpersFile).href);
+// Resolve plugin directory from PLUGIN_DIR env var (set by playwright.config.mjs) or process.cwd()
+const pluginDir = process.env.PLUGIN_DIR || process.cwd();
+const requireFromPlugin = createRequire(join(pluginDir, 'package.json'));
+const rawPluginHelpers = requireFromPlugin('./tests/playwright/helpers/index.js');
 const pluginHelpers =
-  pluginHelpersModule.auth !== undefined ? pluginHelpersModule : pluginHelpersModule.default;
+	rawPluginHelpers?.auth !== undefined ? rawPluginHelpers : rawPluginHelpers?.default;
 
 // Destructure plugin helpers
 let { auth, wordpress, newfold, a11y, utils } = pluginHelpers;
@@ -89,7 +33,7 @@ function loadFixture(name) {
   return JSON.parse(readFileSync(filePath, 'utf-8'));
 }
 
-import { E2E_TEST_IDS, testIdSelector } from '../constants/e2eTestIds.mjs';
+import { E2E_TEST_IDS, testIdSelector } from '../constants/e2eTestIds.js';
 
 // Pre-load fixtures
 const FIXTURES = {
@@ -99,7 +43,7 @@ const FIXTURES = {
   commerce: loadFixture('commerce'),
 };
 
-// Common selectors (`data-testid` — see `tests/playwright/constants/e2eTestIds.mjs`)
+// Common selectors (`data-testid` — see `tests/playwright/constants/e2eTestIds.js`)
 const SELECTORS = {
   // Solutions page in plugin app (host commerce shell + module header)
   solutionsPageTitle: `${ testIdSelector( E2E_TEST_IDS.solutionsCommercePageTitle ) }, ${ testIdSelector( E2E_TEST_IDS.solutionsPageTitle ) }, .nfd-page-solutions h1`,
@@ -473,7 +417,7 @@ async function uninstallPlugin(pluginSlug) {
  */
 async function navigateToSolutionsPage(page, pluginId = 'bluehost', solution = null, options = {}) {
   const { reload = false } = options || {};
-  let url = `wp-admin/admin.php?page=${pluginId}`;
+  let url = `/wp-admin/admin.php?page=${pluginId}`;
   if (solution) {
     url += `&solution=${solution}`;
   }
@@ -497,7 +441,7 @@ async function navigateToSolutionsPage(page, pluginId = 'bluehost', solution = n
  */
 async function navigateToMySolutionsTab(page, solution = null, options = {}) {
   const { reload = false } = options || {};
-  let url = 'wp-admin/plugin-install.php?tab=nfd_solutions';
+  let url = '/wp-admin/plugin-install.php?tab=nfd_solutions';
   if (solution) {
     url += `&solution=${solution}`;
   }
@@ -513,7 +457,7 @@ async function navigateToMySolutionsTab(page, solution = null, options = {}) {
  * @param {import('@playwright/test').Page} page - Playwright page object
  */
 async function navigateToPluginsPage(page) {
-  await page.goto('wp-admin/plugins.php');
+  await page.goto('/wp-admin/plugins.php');
 }
 
 /**
