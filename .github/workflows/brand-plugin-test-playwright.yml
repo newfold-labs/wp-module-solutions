@@ -6,8 +6,9 @@ on:
       - main
   workflow_dispatch:
 
-permissions:
-  contents: read
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
@@ -17,6 +18,8 @@ jobs:
   setup:
     name: Setup
     runs-on: ubuntu-latest
+    permissions: {} # No checkout or GitHub API calls; only derives the branch name from the event.
+    timeout-minutes: 5
     outputs:
       branch: ${{ steps.extract_branch.outputs.branch }}
     steps:
@@ -29,6 +32,8 @@ jobs:
   bluehost:
     name: Bluehost Build and Test Playwright
     needs: setup
+    permissions:
+      contents: read # Required so the reusable workflow can check out this repository with the inherited GITHUB_TOKEN.
     uses: newfold-labs/workflows/.github/workflows/module-plugin-test-playwright.yml@main
     with:
       module-repo: ${{ github.repository }}
@@ -39,6 +44,8 @@ jobs:
   bluehost-dev:
     name: Bluehost DEV Build and Test Playwright
     needs: setup
+    permissions:
+      contents: read # Required so the reusable workflow can check out this repository with the inherited GITHUB_TOKEN.
     uses: newfold-labs/workflows/.github/workflows/module-plugin-test-playwright.yml@main
     with:
       module-repo: ${{ github.repository }}
@@ -50,6 +57,8 @@ jobs:
   hostgator:
     name: HostGator Build and Test Playwright
     needs: setup
+    permissions:
+      contents: read # Required so the reusable workflow can check out this repository with the inherited GITHUB_TOKEN.
     uses: newfold-labs/workflows/.github/workflows/module-plugin-test-playwright.yml@main
     with:
       module-repo: ${{ github.repository }}
