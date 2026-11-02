@@ -16,7 +16,7 @@
     "@newfold/ui-component-library": "^2.1.1",
     "@wordpress/api-fetch": "^8.0.0",
     "@wordpress/element": "^10.0.0",
-    "react-svg": "^19.2.3"
+    "react-svg": "^19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.11",
