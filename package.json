@@ -30,7 +30,7 @@
     "react-router-dom": "^7.18.5",
     "tailwindcss": "^3.4.19",
     "webpack": "^5.112.2",
-    "webpack-cli": "^7.2.3",
+    "webpack-cli": "^7.3.1",
     "webpack-merge": "^6.0.1"
   },
   "overrides": {
