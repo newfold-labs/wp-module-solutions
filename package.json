@@ -23,7 +23,7 @@
     "@tailwindcss/postcss": "^4.3.4",
     "@wordpress/dom-ready": "^5.0.0",
     "@wordpress/scripts": "^37",
-    "@wordpress/url": "^5.0.0",
+    "@wordpress/url": "^5.1.0",
     "classnames": "^2.5.1",
     "mini-css-extract-plugin": "^2.10.2",
     "postcss-prefix-selector": "^2.2.1",
